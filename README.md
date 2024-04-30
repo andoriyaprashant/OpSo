@@ -2,6 +2,9 @@
 
 OpSo is a Flutter app that provides comprehensive information about various open-source programs, including Google Summer of Code, Summer of Bitcoin, Linux Foundation, and more. It allows users to explore different open-source opportunities, learn about their eligibility criteria, and access important resources.
 
+![image](https://github.com/andoriyaprashant/OpSo/assets/121665385/4e8aa67b-a161-4e94-82b3-461e153cdcbb)
+
+
 ## Contributing to OpSo
 
 Thank you for considering contributing to OpSo! We welcome contributions from the community to help improve the app and add new features. Below are some guidelines for contributing:
