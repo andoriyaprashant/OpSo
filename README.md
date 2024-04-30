@@ -1,16 +1,41 @@
-# opso
+# OpSo - Open Source Programs App
 
-A new Flutter project.
+OpSo is a Flutter app that provides comprehensive information about various open-source programs, including Google Summer of Code, Summer of Bitcoin, Linux Foundation, and more. It allows users to explore different open-source opportunities, learn about their eligibility criteria, and access important resources.
 
-## Getting Started
+## Contributing to OpSo
 
-This project is a starting point for a Flutter application.
+Thank you for considering contributing to OpSo! We welcome contributions from the community to help improve the app and add new features. Below are some guidelines for contributing:
 
-A few resources to get you started if this is your first Flutter project:
+### Bug Reports and Feature Requests
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+If you encounter any bugs or have ideas for new features, please [open an issue](https://github.com/yourusername/OpSo/issues) on GitHub. Make sure to provide detailed information about the issue or feature request, including steps to reproduce the bug if applicable.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Code Contributions
+
+We appreciate any code contributions that enhance the functionality or improve the user experience of OpSo. To contribute code, follow these steps:
+
+1. Fork the repository to your GitHub account.
+2. Clone your forked repository to your local machine.
+3. Create a new branch for your feature or bug fix: `git checkout -b feature-name`.
+4. Make your changes and ensure that the code follows the [Flutter style guide](https://flutter.dev/docs/development/tools/formatting).
+5. Test your changes locally to ensure they work as expected.
+6. Commit your changes with descriptive commit messages: `git commit -m "Add feature XYZ"`.
+7. Push your changes to your forked repository: `git push origin feature-name`.
+8. Create a pull request against the `main` branch of the original repository.
+
+### Adding New Open Source Programs
+
+If you would like to add information about a new open-source program to OpSo, you can contribute by:
+
+1. Gathering comprehensive information about the program, including its objectives, eligibility criteria, application process, and important dates.
+2. Creating a new screen in the app to display information about the program.
+3. Adding the program to the list of options in the home screen with relevant details.
+4. Testing the new feature to ensure it works correctly.
+
+### Improving Documentation
+
+Good documentation is essential for the success of any open-source project. If you notice any areas where the documentation can be improved, feel free to make updates or additions.
+
+## Code of Conduct
+
+Please note that by contributing to OpSo, you agree to abide by the [code of conduct](CODE_OF_CONDUCT.md). We expect all contributors to uphold the principles of respect, inclusivity, and collaboration.
