@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:opso/bar.dart';
+import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/mlh.dart';
 
 import 'programs screen/google_season_of_docs_screen.dart';
@@ -9,7 +11,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('OpSa - Open Source Programs'),
+        title: Text('OpSa'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {
+               Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => AppBarWidget()),
+  );
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -104,8 +117,11 @@ class HomePage extends StatelessWidget {
                 height: 50,
               ),
               onTap: () {
-               
-              },
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => GSSOCScreen()),
+  );
+},
             ),
            
           ],
