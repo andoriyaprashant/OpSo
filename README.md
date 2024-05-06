@@ -26,6 +26,41 @@ We appreciate any code contributions that enhance the functionality or improve t
 7. Push your changes to your forked repository: `git push origin feature-name`.
 8. Create a pull request against the `main` branch of the original repository.
 
+## Getting Started
+
+To run the OpSo app locally, you need to have Flutter and Dart installed on your machine. Follow these steps:
+
+1. Clone this repository:
+
+ ```bash
+ git clone https://github.com/andoriyaprashant/OpSo.git
+```
+
+2. Navigate to the project's root directory:
+
+```bash
+cd OpSo
+```
+
+3. Install dependencies:
+
+```bash
+flutter pub get
+``` 
+
+4. Check for Flutter setup and connected devices:
+
+```bash
+flutter doctor
+```
+
+5. Run the app:
+
+```bash
+flutter run
+```
+
+
 ### Adding New Open Source Programs
 
 If you would like to add information about a new open-source program to OpSo, you can contribute by:
