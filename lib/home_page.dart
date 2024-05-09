@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:opso/bar.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/mlh.dart';
+import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
+import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
 
-import 'programs screen/google_season_of_docs_screen.dart';
-import 'programs screen/google_summer_of_code_screen.dart';
+import 'bar.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -14,12 +14,18 @@ class HomePage extends StatelessWidget {
         title: Text('OpSa'),
         actions: [
           IconButton(
+            icon: Icon(Icons.search_sharp),
+            onPressed: () {
+              showSearch(context: context, delegate: ProgramSearchDelegate());
+            },
+          ),
+          IconButton(
             icon: Icon(Icons.menu),
             onPressed: () {
-               Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => AppBarWidget()),
-  );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AppBarWidget()),
+              );
             },
           ),
         ],
@@ -30,100 +36,71 @@ class HomePage extends StatelessWidget {
           children: [
             ProgramOption(
               title: 'Google Summer of Code',
-              image: Image.asset(
-                'assets/gsoc_logo.png',
-                width: 50,
-                height: 50,
-              ),
-             onTap: () {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => GoogleSummerOfCodeScreen()),
-  );
-},
-            ),
-            SizedBox(height: 20),
-                         ProgramOption(
-              title: 'Google season of docs',
-              image: Image.asset(
-                'assets/Google_season_of_docs.png',
-                width: 50,
-                height: 50,
-              ),
-               onTap: () {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => GoogleSeasonOfDocsScreen()),
-  );
-},
+              imageAssetPath: 'assets/gsoc_logo.png',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GoogleSummerOfCodeScreen(),
+                  ),
+                );
+              },
             ),
             SizedBox(height: 20),
             ProgramOption(
-              title: 'Major league hacking fellowship',
-              image: Image.asset(
-                'assets/mlh_logo.jpg',
-                width: 50,
-                height: 50,
-              ),
+              title: 'Google Season of Docs',
+              imageAssetPath: 'assets/Google_season_of_docs.png',
               onTap: () {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => mlhfellow()),
-  );
-},
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GoogleSeasonOfDocsScreen(),
+                  ),
+                );
+              },
+            ),
+            SizedBox(height: 20),
+            ProgramOption(
+              title: 'Major League Hacking Fellowship',
+              imageAssetPath: 'assets/mlh_logo.jpg',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => mlhfellow()),
+                );
+              },
             ),
             SizedBox(height: 20),
             ProgramOption(
               title: 'Summer of Bitcoin',
-              image: Image.asset(
-                'assets/summer_of_bitcoin_logo.png',
-                width: 50,
-                height: 50,
-              ),
-              onTap: () {
-               
-              },
+              imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
+              onTap: () {},
             ),
             SizedBox(height: 20),
             ProgramOption(
               title: 'Linux Foundation',
-              image: Image.asset(
-                'assets/linux_foundation_logo.png',
-                width: 50,
-                height: 50,
-              ),
-              onTap: () {
-               
-              },
+              imageAssetPath: 'assets/linux_foundation_logo.png',
+              onTap: () {},
             ),
             SizedBox(height: 20),
-             ProgramOption(
+            ProgramOption(
               title: 'Outreachy',
-              image: Image.asset(
-                'assets/outreachy.png',
-                width: 50,
-                height: 50,
-              ),
-              onTap: () {
-               
-              },
+              imageAssetPath: 'assets/outreachy.png',
+              onTap: () {},
             ),
             SizedBox(height: 20),
             ProgramOption(
               title: 'GirlScript Summer of Code',
-              image: Image.asset(
-                'assets/girlscript_logo.png',
-                width: 50,
-                height: 50,
-              ),
+              imageAssetPath: 'assets/girlscript_logo.png',
               onTap: () {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => GSSOCScreen()),
-  );
-},
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GSSOCScreen(),
+                  ),
+                );
+              },
             ),
-           
           ],
         ),
       ),
@@ -133,12 +110,12 @@ class HomePage extends StatelessWidget {
 
 class ProgramOption extends StatelessWidget {
   final String title;
-  final Widget image;
+  final String imageAssetPath;
   final VoidCallback onTap;
 
   const ProgramOption({
     required this.title,
-    required this.image,
+    required this.imageAssetPath,
     required this.onTap,
   });
 
@@ -154,10 +131,10 @@ class ProgramOption extends StatelessWidget {
         ),
         child: Row(
           children: [
-            SizedBox(
-              width: 60, 
-              height: 60,
-              child: image,
+            Image.asset(
+              imageAssetPath,
+              width: 50,
+              height: 50,
             ),
             SizedBox(width: 20),
             Expanded(
@@ -174,5 +151,102 @@ class ProgramOption extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class ProgramSearchDelegate extends SearchDelegate<String> {
+  List<String> orgTitles = [
+    'Google Summer of Code',
+    'Google Season of Docs',
+    'Major League Hacking Fellowship',
+    'Summer of Bitcoin',
+    'Linux Foundation',
+    'Outreachy',
+    'GirlScript Summer of Code',
+  ];
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: Icon(Icons.clear),
+        onPressed: () {
+          query = '';
+        },
+      ),
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, '');
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return Container();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final List<String> suggestionList = query.isEmpty
+        ? []
+        : orgTitles
+            .where((title) => title.toLowerCase().contains(query.toLowerCase()))
+            .toList();
+
+    return ListView.builder(
+      itemCount: suggestionList.length,
+      itemBuilder: (context, index) => ListTile(
+        title: Text(suggestionList[index]),
+        onTap: () {
+          navigateToScreen(context, suggestionList[index]);
+        },
+      ),
+    );
+  }
+
+  void navigateToScreen(BuildContext context, String title) {
+    switch (title) {
+      case 'Google Summer of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => GoogleSummerOfCodeScreen(),
+          ),
+        );
+        break;
+      case 'Google Season of Docs':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => GoogleSeasonOfDocsScreen(),
+          ),
+        );
+        break;
+      case 'Major League Hacking Fellowship':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => mlhfellow(),
+          ),
+        );
+        break;
+      case 'GirlScript Summer of Code':
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => GSSOCScreen(),
+            ));
+        break;
+
+      default:
+        break;
+    }
   }
 }
