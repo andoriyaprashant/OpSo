@@ -63,13 +63,4 @@ class AboutScreen extends StatelessWidget {
       ),
     );
   }
-
-  // Function to launch URLs
-  Future<void> _launchURL(String url) async {
-    if (await UrlLauncher.canLaunch(url)) {
-      await UrlLauncher.launch(url);
-    } else {
-      print('Could not launch $url');
-    }
-  }
 }
