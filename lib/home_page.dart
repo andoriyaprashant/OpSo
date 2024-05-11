@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
+import 'package:opso/programs%20screen/lfx.dart';
 import 'package:opso/programs%20screen/mlh.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
+import 'package:opso/programs%20screen/outreachy.dart';
+import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 
 import 'bar.dart';
 
@@ -74,19 +77,28 @@ class HomePage extends StatelessWidget {
             ProgramOption(
               title: 'Summer of Bitcoin',
               imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => bitcoin()),
+                );
+              },
             ),
             SizedBox(height: 20),
             ProgramOption(
               title: 'Linux Foundation',
               imageAssetPath: 'assets/linux_foundation_logo.png',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => linux()),);
+              },
             ),
             SizedBox(height: 20),
             ProgramOption(
               title: 'Outreachy',
               imageAssetPath: 'assets/outreachy.png',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => outreachy()),);
+              },
             ),
             SizedBox(height: 20),
             ProgramOption(

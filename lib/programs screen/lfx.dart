@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class mlhfellow extends StatelessWidget {
+class linux extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('lfx'),
+        title: Text('The Linus Foundation'),
       ),
       body: Center(
-        child: Text('lfx'),
+        child: Text('LFX'),
       ),
     );
   }
