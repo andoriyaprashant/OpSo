@@ -1,69 +1,74 @@
 import 'package:flutter/material.dart';
 
 class GSSOCScreen extends StatelessWidget {
+  const GSSOCScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Girl Script Summer of Code'),
+        title: const Text('Girlscript Summer of Code'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Search',
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
-                contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+                contentPadding: const EdgeInsets.symmetric(
+                    vertical: 12.0, horizontal: 20.0),
               ),
               onChanged: (value) {
                 // Handle search input
               },
             ),
           ),
-          SizedBox(height: 20),
-          Row(
+          const SizedBox(height: 20),
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               YearButton(
                 year: '2021',
-                url: 'https://gssoc.girlscript.tech/project', // Replace with actual URL
+                url:
+                    'https://gssoc.girlscript.tech/project', // Replace with actual URL
               ),
               YearButton(
                 year: '2022',
-                url: 'https://gssoc.girlscript.tech/project', // Replace with actual URL
+                url:
+                    'https://gssoc.girlscript.tech/project', // Replace with actual URL
               ),
             ],
           ),
-          SizedBox(height: 20),
-          Row(
+          const SizedBox(height: 20),
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               YearButton(
                 year: '2023',
-                url: 'https://gssoc.girlscript.tech/project', // Replace with actual URL
+                url: 'https://gssoc.girlscript.tech/project',
               ),
               YearButton(
                 year: '2024',
-                url: 'https://gssoc.girlscript.tech/project', // Replace with actual URL
+                url: 'https://gssoc.girlscript.tech/project',
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {
-              // launch('https://example.com/projects'); // Replace with actual URL
-            },
+            onPressed: () {},
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color.fromARGB(255, 226, 230, 120), // Set button color
-              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+              backgroundColor: const Color.fromARGB(255, 226, 230, 120),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
             ),
-            child: Text('View Projects'),
+            child: const Text('View Projects'),
           ),
         ],
       ),
@@ -75,7 +80,7 @@ class YearButton extends StatelessWidget {
   final String year;
   final String url;
 
-  const YearButton({required this.year, required this.url});
+  const YearButton({super.key, required this.year, required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +90,8 @@ class YearButton extends StatelessWidget {
         // launch(url);
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: Color.fromARGB(255, 172, 207, 236), // Set button color
+        backgroundColor:
+            const Color.fromARGB(255, 172, 207, 236), // Set button color
       ),
       child: Text(year),
     );
@@ -93,9 +99,7 @@ class YearButton extends StatelessWidget {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: GSSOCScreen(),
   ));
 }
-
-

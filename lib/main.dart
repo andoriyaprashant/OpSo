@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
+import 'package:opso/Screens/google_summer_of_code_screen.dart';
 import 'home_page.dart';
 
 void main() {
-  runApp(OpSaApp());
+  runApp(const OpSaApp());
 }
 
 class OpSaApp extends StatelessWidget {
+  const OpSaApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,10 +17,8 @@ class OpSaApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
-
