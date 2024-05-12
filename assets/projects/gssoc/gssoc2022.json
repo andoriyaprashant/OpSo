@@ -1,0 +1,1286 @@
+[
+    {
+        "name": "Project-Guidance",
+        "githubUrl": "https://github.com/Kushal997-das/Project-Guidance",
+        "techstack": [
+          "AI",
+          "iOT",
+          "Web Dev",
+          "Android",
+          "Data Science",
+          "Machine Learning"
+        ],
+        "hostedBy": "Kushal Das",
+        "year": "2022"
+      },
+      {
+        "name": "URL Minify",
+        "githubUrl": "https://github.com/bravo68web/url-minify",
+        "techstack": [
+          "NextJS",
+          "NodeJS",
+          "MongoDB",
+          "ExpressJS"
+        ],
+        "hostedBy": "Jyotirmoy Bandyopadhayaya",
+        "year": "2022"
+      },
+      {
+        "name": "Cool Front End Templates",
+        "githubUrl": "https://github.com/arpit456jain/Cool-Front-End-Templates",
+        "techstack": [
+          "CSS",
+          "HTML",
+          "Bootstrap",
+          "JavaScript"
+        ],
+        "hostedBy": "Arpit Jain",
+        "year": "2022"
+      },
+      {
+        "name": "CodeIN Community Website",
+        "githubUrl": "https://github.com/SauravMukherjee44/CodeIN-Community-Website",
+        "techstack": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Bootstrap and SCSS"
+        ],
+        "hostedBy": "Saurav Mukherjee",
+        "year": "2022"
+      },
+      {
+        "name": "GDSC PHCET App",
+        "githubUrl": "https://github.com/DSC-PHCET/gdsc-android-app",
+        "techstack": [
+          "Kotlin",
+          "Android",
+          "Firebase",
+          "Android Jetpack"
+        ],
+        "hostedBy": "Rishabh Mehta",
+        "year": "2022"
+      },
+      {
+        "name": "CodeSetGo Website",
+        "githubUrl": "https://github.com/agamjotsingh18/codesetgo-website",
+        "techstack": [
+          "ReactJS",
+          "NodeJS",
+          "MongoDB"
+        ],
+        "hostedBy": "Agamjot Singh",
+        "year": "2022"
+      },
+      {
+        "name": "HashIDE",
+        "githubUrl": "https://github.com/hash-define-organization/hashdefine-onlineIDE",
+        "techstack": [
+          "MongoDB",
+          "NodeJS",
+          "ReactJS",
+          "ExpressJS",
+          "Material UI"
+        ],
+        "hostedBy": "Vaibhav Paliwal",
+        "year": "2022"
+      },
+      {
+        "name": "Take A Break",
+        "githubUrl": "https://github.com/Daksh777/TakeABreak",
+        "techstack": [
+          "CSS",
+          "HTML",
+          "JavaScript"
+        ],
+        "hostedBy": "Daksh P. Jain",
+        "year": "2022"
+      },
+      {
+        "name": "json-hub",
+        "githubUrl": "https://github.com/adityabisoi/json-hub",
+        "techstack": [
+          "NodeJS",
+          "CI/CD",
+          "heroku",
+          "rest-api",
+          "Typescript"
+        ],
+        "hostedBy": "Aditya Bisoi",
+        "year": "2022"
+      },
+      {
+        "name": "Planzap",
+        "githubUrl": "https://github.com/SaraswatGit/PlanZap",
+        "techstack": [
+          "MySQL",
+          "NodeJS",
+          "ReactJS",
+          "ExpressJS"
+        ],
+        "hostedBy": "Saraswat Majumder",
+        "year": "2022"
+      },
+      {
+        "name": "Face-X",
+        "githubUrl": "https://github.com/akshitagupta15june/Face-X",
+        "techstack": [
+          "ML",
+          "IoT",
+          "CNN",
+          "ANN",
+          "openCV"
+        ],
+        "hostedBy": "Akshita Gupta",
+        "year": "2022"
+      },
+      {
+        "name": "Rezume",
+        "githubUrl": "https://github.com/CatsInTech/Rezume/",
+        "techstack": [
+          "HTML",
+          "SCSS",
+          "NodeJS",
+          "ReactJS",
+          "Bootstrap"
+        ],
+        "hostedBy": "Praveen Kumar Purushothaman",
+        "year": "2022"
+      },
+      {
+        "name": "Athena - Article Repository Management System",
+        "githubUrl": "https://github.com/hariketsheth/Article_Repository_Management_System",
+        "techstack": [
+          "CSS",
+          "PHP",
+          "HTML",
+          "Ajax",
+          "MySQL",
+          "jQuery",
+          "Bootstrap",
+          "JavaScript"
+        ],
+        "hostedBy": "Hariket Sukesh Kumar Sheth",
+        "year": "2022"
+      },
+      {
+        "name": "Elemental 3D",
+        "githubUrl": "https://github.com/data-charya/Elemental",
+        "techstack": [
+          "NodeJS",
+          "Flutter",
+          "MongoDB",
+          "REST API"
+        ],
+        "hostedBy": "Shanwill pinto",
+        "year": "2022"
+      },
+      {
+        "name": "Breast Cancer Predictor",
+        "githubUrl": "https://github.com/srimani-programmer/Breast-Cancer-Predictor",
+        "techstack": [
+          "Python",
+          "Flask",
+          "Deep Learning",
+          "Machine Learning"
+        ],
+        "hostedBy": "Sri Manikanta Palakollu",
+        "year": "2022"
+      },
+      {
+        "name": "Dynamic-cli",
+        "githubUrl": "https://github.com/IndianOpenSourceFoundation/dynamic-cli",
+        "techstack": [
+          "Python"
+        ],
+        "hostedBy": "Gourav Sardana",
+        "year": "2022"
+      },
+      {
+        "name": "Tarana - Best Music Player",
+        "githubUrl": "https://github.com/flyingsonu122/tarana",
+        "techstack": [
+          "CSS",
+          "HTML",
+          "NodeJS",
+          "MongoDB",
+          "ExpressJS",
+          "JavaScript"
+        ],
+        "hostedBy": "Sonu Kumar Kushwaha",
+        "year": "2022"
+      },
+      {
+        "name": "Coding Easy",
+        "githubUrl": "https://github.com/arpit456jain/CodingEasy",
+        "techstack": [
+          "HTML",
+          "CSS",
+          "Python",
+          "Django.",
+          "Bootstrap"
+        ],
+        "hostedBy": "Arpit Jain",
+        "year": "2022"
+      },
+      {
+        "name": "Twitter video emotion and sentiment analysis",
+        "githubUrl": "https://github.com/hritikksingh/Twitter-video-emotion-and-sentiment-analysis",
+        "techstack": [
+          "API",
+          "Python",
+          "Twitter",
+          "Tensorflow",
+          "Neural Networks",
+          "Machine Learning"
+        ],
+        "hostedBy": "Hritik Kumar Singh",
+        "year": "2022"
+      },
+      {
+        "name": "Openforms",
+        "githubUrl": "https://github.com/RahulPalve/openforms",
+        "techstack": [
+          "Flask",
+          "Python",
+          "ReactJS",
+          "MongoDB"
+        ],
+        "hostedBy": "Rahul Palve",
+        "year": "2022"
+      },
+      {
+        "name": "Algoders community website",
+        "githubUrl": "https://github.com/mohityadav0903/Algoders-Community",
+        "techstack": [
+          "CSS",
+          "JSX",
+          "ReactJS",
+          "NodeJS",
+          "Bootstrap",
+          "JavaScript"
+        ],
+        "hostedBy": "Mohit Yadav",
+        "year": "2022"
+      },
+      {
+        "name": "Open-Certs-FrontEnd",
+        "githubUrl": "https://github.com/open-certs/oc-frontend",
+        "techstack": [
+          "ReactJS",
+          "TypeScript",
+          "Material-UI",
+          "Tailwind CSS"
+        ],
+        "hostedBy": "Shubham Kumar",
+        "year": "2022"
+      },
+      {
+        "name": "Meetly - Open Source",
+        "githubUrl": "https://github.com/vigneshshettyin/Meetly",
+        "techstack": [
+          "Kotlin",
+          "Flask",
+          "Python",
+          "Firebase"
+        ],
+        "hostedBy": "Vignesh Shetty",
+        "year": "2022"
+      },
+      {
+        "name": "Facial-Expression-Recognition",
+        "githubUrl": "https://github.com/nikki-priyaHIT/Project-Exp-Recog",
+        "techstack": [
+          "Python",
+          "Open CV",
+          "Machine Learning"
+        ],
+        "hostedBy": "Nikki Priya",
+        "year": "2022"
+      },
+      {
+        "name": "30 Days Of JavaScript",
+        "githubUrl": "https://github.com/swapnilsparsh/30DaysOfJavaScript",
+        "techstack": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "hostedBy": "Swapnil Srivastava",
+        "year": "2022"
+      },
+      {
+        "name": "Pacify-A mental health awareness website",
+        "githubUrl": "https://github.com/Hackathon7/Pacify-final",
+        "techstack": [
+          "CSS",
+          "HTML",
+          "JavaScript",
+          "Bootstrap"
+        ],
+        "hostedBy": "Mansi Prajapati",
+        "year": "2022"
+      },
+      {
+        "name": "Checkpoint",
+        "githubUrl": "https://github.com/antrikshmisri/checkpoint",
+        "techstack": [
+          "CLI",
+          "Python",
+          "Pytest",
+          "Sphinx",
+          "ReactJS",
+          "Electronjs"
+        ],
+        "hostedBy": "Antriksh Misri",
+        "year": "2022"
+      },
+      {
+        "name": "Python Assistant",
+        "githubUrl": "https://github.com/Umesh-01/Python-Assistant",
+        "techstack": [
+          "APIs",
+          "Python",
+          "Web Scraping"
+        ],
+        "hostedBy": "Umesh Singh",
+        "year": "2022"
+      },
+      {
+        "name": "Relating Social Media to Stock Movements",
+        "githubUrl": "https://github.com/VishalSinghParmar2001/Relating-Social-Media-to-Stock-Movement-Public",
+        "techstack": [
+          "Python"
+        ],
+        "hostedBy": "Vishal Singh Parmar",
+        "year": "2022"
+      },
+      {
+        "name": "QuickLearn",
+        "githubUrl": "https://github.com/DSC-JSS-NOIDA/QuickLearn",
+        "techstack": [
+          "CSS",
+          "HTML",
+          "Bootstrap",
+          "JavaScript"
+        ],
+        "hostedBy": "GDSC JSS NOIDA",
+        "year": "2022"
+      },
+      {
+        "name": "Community Website",
+        "githubUrl": "https://github.com/Eduhub-Community/eduhub-website",
+        "techstack": [
+          "HTML",
+          "CSS",
+          "PHP",
+          "Bootstrap",
+          "JavaScript"
+        ],
+        "hostedBy": "Sahitya Roy",
+        "year": "2022"
+      },
+      {
+        "name": "Go-Airbnb",
+        "githubUrl": "https://github.com/aman34503/Lets-Talk/",
+        "techstack": [
+          "NodeJS",
+          "ReactJS",
+          "MongoDB",
+          "Bootstrap",
+          "ExpressJS",
+          "MaterialUI"
+        ],
+        "hostedBy": "Aman Shrivastava",
+        "year": "2022"
+      },
+      {
+        "name": "Solgames",
+        "githubUrl": "https://solgames.fun/",
+        "techstack": [
+          "ReactJS",
+          "NodeJS",
+          "NestJS",
+          "Web3JS",
+          "Solana",
+          "ExpressJS"
+        ],
+        "hostedBy": "Sandeep Ghosh",
+        "year": "2022"
+      },
+      {
+        "name": "Dezenix",
+        "githubUrl": "https://github.com/Dezenix/",
+        "techstack": [
+          "Figma",
+          "Adobe",
+          "Flutter",
+          "ReactJS",
+          "HTML CSS",
+          "JavaScript"
+        ],
+        "hostedBy": "Jaideep Singh",
+        "year": "2022"
+      },
+      {
+        "name": "Amazing-Css-Effects",
+        "githubUrl": "https://github.com/arpit456jain/Amazing-Css-Effects",
+        "techstack": [
+          "CSS",
+          "HTML",
+          "Bootstrap",
+          "JavaScript"
+        ],
+        "hostedBy": "Arpit Jain",
+        "year": "2022"
+      },
+      {
+        "name": "Open-Certs-Backend",
+        "githubUrl": "https://github.com/open-certs/oc-backend",
+        "techstack": [
+          "EJS",
+          "MongoDB",
+          "NodeJS",
+          "ExpressJS"
+        ],
+        "hostedBy": "Shubham Kumar",
+        "year": "2022"
+      },
+      {
+        "name": "Sampoorna",
+        "githubUrl": "https://github.com/OpenLake/Sampoorna",
+        "techstack": [
+          "Kotlin",
+          "Android"
+        ],
+        "hostedBy": "Shashwat Jaiswal",
+        "year": "2022"
+      },
+      {
+        "name": "Retro Music Player",
+        "githubUrl": "https://github.com/RetroMusicPlayer/RetroMusicPlayer",
+        "techstack": [
+          "Java",
+          "MVVM",
+          "Kotlin",
+          "Android"
+        ],
+        "hostedBy": "Daksh P. Jain",
+        "year": "2022"
+      },
+      {
+        "name": "Mail Tracker (All in One Mail Application)",
+        "githubUrl": "https://github.com/TusharAMD/Mailtrack",
+        "techstack": [
+          "Python",
+          "Flask",
+          "ReactJS",
+          "MongoDB",
+          "Open CV",
+          "JavaScript"
+        ],
+        "hostedBy": "Tushar Amdoskar",
+        "year": "2022"
+      },
+      {
+        "name": "AI Interview system",
+        "githubUrl": "https://github.com/aryasoni98/AI-Interview",
+        "techstack": [
+          "AWS",
+          "Flask",
+          "Python",
+          "NodeJS",
+          "Docker",
+          "ReactJS",
+          "ML/AI/DL",
+          "JavaScript"
+        ],
+        "hostedBy": "Arya Soni",
+        "year": "2022"
+      },
+      {
+        "name": "DoctorVerse",
+        "githubUrl": "https://github.com/jain-rishabh-21/DoctorVerse/",
+        "techstack": [
+          "Git",
+          "Jest",
+          "Figma",
+          "NodeJS",
+          "ReactJS",
+          "MongoDB",
+          "adobeXD",
+          "ExpressJS"
+        ],
+        "hostedBy": "Rishabh Jain",
+        "year": "2022"
+      },
+      {
+        "name": "Curiomind",
+        "githubUrl": "https://github.com/curiomind-e-learning/curiomind",
+        "techstack": [
+          "NodeJS",
+          "MongoDB",
+          "ReactJS",
+          "Firebase",
+          "ExpressJS",
+          "TailwindCSS"
+        ],
+        "hostedBy": "Srijan Kumar Gupta",
+        "year": "2022"
+      },
+      {
+        "name": "Chrome-Extension",
+        "githubUrl": "https://github.com/harshita214/Chrome-Extension",
+        "techstack": [
+          "CSS",
+          "HTML",
+          "JavaScript",
+          "Chrome API"
+        ],
+        "hostedBy": "Harshita sharma",
+        "year": "2022"
+      },
+      {
+        "name": "WebDev ProjectKart",
+        "githubUrl": "https://github.com/khushi-purwar/WebDev-ProjectKart",
+        "techstack": [
+          "HTML",
+          "CSS",
+          "ReactJS",
+          "JavaScript"
+        ],
+        "hostedBy": "Khushi Purwar",
+        "year": "2022"
+      },
+      {
+        "name": "Ezlogs",
+        "githubUrl": "https://github.com/Aryamanz29/Elastic-CFC",
+        "techstack": [
+          "Django",
+          "React",
+          "Redis",
+          "SQLite",
+          "Elastic search",
+          "Django REST framework"
+        ],
+        "hostedBy": "Aryaman",
+        "year": "2022"
+      },
+      {
+        "name": "Rotten Scripts",
+        "githubUrl": "https://github.com/harshcasper/rotten-scripts",
+        "techstack": [
+          "BASH",
+          "Python",
+          "Golang",
+          "Javascript"
+        ],
+        "hostedBy": "Harsh Bardhan Mishra",
+        "year": "2022"
+      },
+      {
+        "name": "Hash Define Official Website",
+        "githubUrl": "https://github.com/hash-define-organization/website-update",
+        "techstack": [
+          "Gulp",
+          "Pug",
+          "SASS",
+          "NodeJS",
+          "Vanilla JS"
+        ],
+        "hostedBy": "Achit Jain",
+        "year": "2022"
+      },
+      {
+        "name": "LearnCPP",
+        "githubUrl": "https://github.com/Lakhankumawat/LearnCPP",
+        "techstack": [
+          "C++",
+          "STL",
+          "Algorithms",
+          "Data-Structures",
+          "Problem-solving",
+          "Competitive Programming"
+        ],
+        "hostedBy": "Lakhan Kumawat",
+        "year": "2022"
+      },
+      {
+        "name": "Hash-Whiteboard",
+        "githubUrl": "https://github.com/hash-define-organization/Hash-Whiteboard",
+        "techstack": [
+          "ReactJS",
+          "SocketIO"
+        ],
+        "hostedBy": "Dhairya Bahl",
+        "year": "2022"
+      },
+      {
+        "name": "Watch in sync",
+        "githubUrl": "https://github.com/FABhishek/WatchPawrii/",
+        "techstack": [
+          "MongoDB",
+          "ReactJS",
+          "NodeJS",
+          "Socket",
+          "ExpressJS"
+        ],
+        "hostedBy": "Aman Bisht",
+        "year": "2022"
+      },
+      {
+        "name": "Fun with Science",
+        "githubUrl": "https://github.com/Tech-N-Science/FunwithScience",
+        "techstack": [
+          "HTML",
+          "CSS",
+          "PHP",
+          "ReactJS"
+        ],
+        "hostedBy": "Amit Kumar Mishra",
+        "year": "2022"
+      },
+      {
+        "name": "Medi-Care",
+        "githubUrl": "https://github.com/mohit200008/medi-Care",
+        "techstack": [
+          "Reactjs",
+          "Django",
+          "BootStrap",
+          "Machine learning"
+        ],
+        "hostedBy": "Mohit Lamba",
+        "year": "2022"
+      },
+      {
+        "name": "IoT-Spot",
+        "githubUrl": "https://github.com/prathimacode-hub/IoT-Spot",
+        "techstack": [
+          "C",
+          "C++",
+          "CSS",
+          "HTML",
+          "Python",
+          "JavaScript"
+        ],
+        "hostedBy": "Prathima Kadari",
+        "year": "2022"
+      },
+      {
+        "name": "MrktDB",
+        "githubUrl": "https://github.com/FedgeHund/mrktdb",
+        "techstack": [
+          "Django",
+          "Python",
+          "MongoDB",
+          "ReactJS"
+        ],
+        "hostedBy": "Pushpit Bhardwaj",
+        "year": "2022"
+      },
+      {
+        "name": "Runn (Gesture Gaming)",
+        "githubUrl": "https://github.com/TusharAMD/Runn",
+        "techstack": [
+          "Python",
+          "openCV",
+          "Pygame",
+          "MediaPipe"
+        ],
+        "hostedBy": "Tushar Amdoskar",
+        "year": "2022"
+      },
+      {
+        "name": "HITK-Tech-Community-Website",
+        "githubUrl": "https://github.com/HITK-TECH-Community/Community-Website",
+        "techstack": [
+          "MongoDB",
+          "NodeJS",
+          "ReactJS",
+          "ExpressJS"
+        ],
+        "hostedBy": "Kajol Kumari",
+        "year": "2022"
+      },
+      {
+        "name": "Ai and ML voice assistant like alexa",
+        "githubUrl": "https://github.com/karunakaran186/KAVI-voice-Assitant",
+        "techstack": [
+          "Python.py"
+        ],
+        "hostedBy": "KARUNAKARAN V VIJAYARAGHAVAN",
+        "year": "2022"
+      },
+      {
+        "name": "Startup Incubator",
+        "githubUrl": "https://github.com/adityabisoi/startup-incubator",
+        "techstack": [
+          "jest",
+          "ReactJS",
+          "NodeJS",
+          "heroku",
+          "eslint",
+          "prettier"
+        ],
+        "hostedBy": "Aditya Bisoi",
+        "year": "2022"
+      },
+      {
+        "name": "Clone IT",
+        "githubUrl": "https://github.com/Rayman-Sodhi/Clone-IT",
+        "techstack": [
+          "HTML",
+          "CSS",
+          "WebRTC",
+          "NodeJS",
+          "ReactJS",
+          "ExpressJS",
+          "ExpressJS",
+          "Bootstrap",
+          "JavaScript"
+        ],
+        "hostedBy": "Rayman Kour Sodhi",
+        "year": "2022"
+      },
+      {
+        "name": "CoinSwap using Cosmwasm and Terraswap",
+        "githubUrl": "https://github.com/pjdurden/CoinSwap-using-Cosmwasm-and-Terraswap",
+        "techstack": [
+          "Rust",
+          "Cosmwasm",
+          "TerraMoney",
+          "Typescript",
+          "JavaScript",
+          "TerraSwap",
+          "TerraFinder",
+          "cw-storage-plus",
+          "Terra Blockchain",
+          "TerraSwaggerAPIs"
+        ],
+        "hostedBy": "Prajjwal Chittori",
+        "year": "2022"
+      },
+      {
+        "name": "Certified-Cliché",
+        "githubUrl": "https://github.com/Megabyte-143/certified_cliche",
+        "techstack": [
+          "NextJS",
+          "NodeJS",
+          "Solidity",
+          "JavaScript"
+        ],
+        "hostedBy": "Yash Garg",
+        "year": "2022"
+      },
+      {
+        "name": "CalcHub",
+        "githubUrl": "https://github.com/vasu-1/CalcHub",
+        "techstack": [
+          "HTML",
+          "CSS",
+          "Bootstrap",
+          "JavaScript"
+        ],
+        "hostedBy": "Vashishth Patel",
+        "year": "2022"
+      },
+      {
+        "name": "Smart Home App",
+        "githubUrl": "https://github.com/Lakhankumawat/smart-home-app",
+        "techstack": [
+          "IOT",
+          "Dart",
+          "Flutter",
+          "Firebase"
+        ],
+        "hostedBy": "Lakhan Kumawat",
+        "year": "2022"
+      },
+      {
+        "name": "notation-converter",
+        "githubUrl": "https://github.com/adityabisoi/notation-converter",
+        "techstack": [
+          "NodeJS",
+          "ReactJS",
+          "rest-api",
+          "JavaScript",
+          "data-structures"
+        ],
+        "hostedBy": "Aditya Bisoi",
+        "year": "2022"
+      },
+      {
+        "name": "ElectroTech E-commerce Website",
+        "githubUrl": "https://github.com/TheTeamEngineer/ElectroTech",
+        "techstack": [
+          "ReactJS",
+          "NodeJS",
+          "Firebase",
+          "Bootstrap"
+        ],
+        "hostedBy": "Syed Md Furquan",
+        "year": "2022"
+      },
+      {
+        "name": "GrihSangini",
+        "githubUrl": "https://github.com/KaizenGirl1111/GSGrihSangini",
+        "techstack": [
+          "MongoDB",
+          "NodeJS",
+          "ReactJS",
+          "ExpressJS"
+        ],
+        "hostedBy": "Avni Uplabdhee",
+        "year": "2022"
+      },
+      {
+        "name": "Amazing-Js-Projects",
+        "githubUrl": "https://github.com/arpit456jain/Amazing-Js-Projects",
+        "techstack": [
+          "CSS",
+          "HTML",
+          "Bootstrap",
+          "JavaScript"
+        ],
+        "hostedBy": "Arpit Jain",
+        "year": "2022"
+      },
+      {
+        "name": "Cosmo Infinitas",
+        "githubUrl": "https://github.com/cosmoinfinitas",
+        "techstack": [
+          "ReactJS",
+          "Web3JS",
+          "NodeJS",
+          "NextJS",
+          "Solidity"
+        ],
+        "hostedBy": "Abhisek Yadav",
+        "year": "2022"
+      },
+      {
+        "name": "AEC-LIBRARY-WEBSITE",
+        "githubUrl": "https://github.com/SauravMukherjee44/Aec-Library-Website",
+        "techstack": [
+          "HTML",
+          "CSS",
+          "PHP",
+          "API",
+          "JavaScript",
+          "Bootstrap"
+        ],
+        "hostedBy": "Saurav Mukherjee",
+        "year": "2022"
+      },
+      {
+        "name": "e-bureau",
+        "githubUrl": "https://github.com/geekymeeky/e-bureau",
+        "techstack": [
+          "MongoDB",
+          "NextJS",
+          "NodeJS"
+        ],
+        "hostedBy": "Madiha Mallick",
+        "year": "2022"
+      },
+      {
+        "name": "Kidney Exchange",
+        "githubUrl": "https://github.com/siv2r/kidney-exchange",
+        "techstack": [
+          "PHP",
+          "CSS",
+          "MySQL",
+          "Python",
+          "JavaScript"
+        ],
+        "hostedBy": "D Sivaram",
+        "year": "2022"
+      },
+      {
+        "name": "ML Capsule",
+        "githubUrl": "https://github.com/Niketkumardheeryan/ML-CaPsule",
+        "techstack": [
+          "Python",
+          "Flask",
+          "Django",
+          "Android",
+          "Front-End",
+          "Deep learning",
+          "Computer Vision",
+          "Machine Learning"
+        ],
+        "hostedBy": "Niket Kumar dheeryan",
+        "year": "2022"
+      },
+      {
+        "name": "Stake Overflow",
+        "githubUrl": "https://github.com/Saviour1001/StakeOverflow",
+        "techstack": [
+          "ReactJS",
+          "Moralis",
+          "Solidity"
+        ],
+        "hostedBy": "Harsh Ghodkar",
+        "year": "2022"
+      },
+      {
+        "name": "NFT-Emporium",
+        "githubUrl": "https://github.com/Suvraneel/NFT-Emporium",
+        "techstack": [
+          "NodeJS",
+          "Web3JS",
+          "ReactJS",
+          "Moralis",
+          "Solidity",
+          "Chainlink"
+        ],
+        "hostedBy": "Suvraneel Bhuin",
+        "year": "2022"
+      },
+      {
+        "name": "techsquad-community-website",
+        "githubUrl": "https://github.com/Tech-Squad-Community/techsquad-community-website",
+        "techstack": [
+          "CSS",
+          "HTML",
+          "NodeJS",
+          "ReactJS",
+          "Bootstrap",
+          "ExpressJS",
+          "JavaScript",
+          "TailwindCSS"
+        ],
+        "hostedBy": "Ronit Banerjee",
+        "year": "2022"
+      },
+      {
+        "name": "Vita",
+        "githubUrl": "https://github.com/Rishabh-malhotraa/Vita",
+        "techstack": [
+          "UI/UX",
+          "ReactJS",
+          "NodeJS",
+          "MongoDB",
+          "ExpressJS",
+          "TypeScript",
+          "MaterialUI",
+          "Websockets"
+        ],
+        "hostedBy": "Rishabh Malhotra",
+        "year": "2022"
+      },
+      {
+        "name": "Bundli-Frontend",
+        "githubUrl": "https://github.com/Ayush7614/Bundli-Frontend",
+        "techstack": [
+          "EJS",
+          "HTML5",
+          "CSS3",
+          "SCSS",
+          "React",
+          "Angular",
+          "Bootstrap",
+          "JavaScript",
+          "Typescript"
+        ],
+        "hostedBy": "Ayush Kumar",
+        "year": "2022"
+      },
+      {
+        "name": "EatMyURL",
+        "githubUrl": "https://github.com/vigneshshettyin/EatMyURL",
+        "techstack": [
+          "MongoDB",
+          "NodeJS",
+          "ReactJS",
+          "Flutter",
+          "ExpressJS"
+        ],
+        "hostedBy": "Vignesh Shetty",
+        "year": "2022"
+      },
+      {
+        "name": "PollItUp",
+        "githubUrl": "https://github.com/agamjotsingh18/pollitup",
+        "techstack": [
+          "ReactJS",
+          "NodeJS",
+          "MongoDB",
+          "ChakraUI",
+          "Firebase"
+        ],
+        "hostedBy": "Agamjot Singh",
+        "year": "2022"
+      },
+      {
+        "name": "Zipify",
+        "githubUrl": "https://github.com/MetaVASP/Zipify",
+        "techstack": [
+          "CSS3",
+          "JSZip",
+          "HTML5",
+          "NodeJS",
+          "Multer",
+          "ExpressJS"
+        ],
+        "hostedBy": "Pulkit Gupta & Ayush Kumar",
+        "year": "2022"
+      },
+      {
+        "name": "Awesome Chrome Extensions",
+        "githubUrl": "https://github.com/ridsuteri/Awesome-Chrome-Extensions/",
+        "techstack": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "hostedBy": "Riddhi Suteri",
+      "year" : "2022"
+      },
+      {
+          "name": "Traffic Sign Recognition",
+          "githubUrl": "https://github.com/debamitr1012/TrafficSignRecognition_PyTorch",
+          "techstack": [
+            "Python",
+            "Numpy",
+            "Jupyter",
+            "PyTorch",
+            "Matplotlib"
+          ],
+          "hostedBy": "Debayudh Mitra",
+          "year": "2022"
+        },
+        {
+          "name": "PyDataStructs",
+          "githubUrl": "https://github.com/codezonediitj/pydatastructs",
+          "techstack": [
+            "Git",
+            "C++",
+            "Python"
+          ],
+          "hostedBy": "Gagandeep Singh",
+          "year": "2022"
+        },
+        {
+          "name": "UniAuth",
+          "githubUrl": "https://github.com/uniauth",
+          "techstack": [
+            "Java",
+            "flask",
+            "MongoDB",
+            "NodeJS",
+            "NestJS",
+            "GoLang",
+            "Python",
+            "Django",
+            "ReactJS",
+            "TypeScript"
+          ],
+          "hostedBy": "Yash Kumar Verma",
+          "year": "2022"
+        },
+        {
+          "name": "Unsplashy",
+          "githubUrl": "https://github.com/PrathmeshSadake/unsplashy",
+          "techstack": [
+            "ReactJS",
+            "Firebase",
+            "Material UI"
+          ],
+          "hostedBy": "Prathmesh Sadake",
+          "year": "2022"
+        },
+        {
+          "name": "ZeroOctave-JavaScript-Projects",
+          "githubUrl": "https://github.com/ZeroOctave/ZeroOctave-Javascript-Projects",
+          "techstack": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          "hostedBy": "Amitesh Anand",
+          "year": "2022"
+        },
+        {
+          "name": "BigB E-learning website",
+          "githubUrl": "https://github.com/The-Shivam-garg/BigB-E-learn-Websit-e",
+          "techstack": [
+            "SAAS",
+            "CSS",
+            "HTML",
+            "Ruby",
+            "JavaScript"
+          ],
+          "hostedBy": "Shivam Garg",
+          "year": "2022"
+        },
+        {
+          "name": "GCECT-APP",
+          "githubUrl": "https://github.com/ByteMonk-GCECT/GCECT-APP",
+          "techstack": [
+            "XML",
+            "Android",
+            "Kotlin",
+            "Firebase"
+          ],
+          "hostedBy": "Sitam Sardar",
+          "year": "2022"
+        },
+        {
+          "name": "Open-Certs-Truffle",
+          "githubUrl": "https://github.com/open-certs/oc-truffle",
+          "techstack": [
+            "Truffle",
+            "Web3JS",
+            "Crypto"
+          ],
+          "hostedBy": "Shubham Kumar",
+          "year": "2022"
+        },
+        {
+          "name": "FemSTEM",
+          "githubUrl": "https://github.com/Fem-STEM/FemSTEM-Web-App",
+          "techstack": [
+            "MongoDB",
+            "NodeJS",
+            "ExpressJS"
+          ],
+          "hostedBy": "Chehak Agrawal",
+          "year": "2022"
+        },
+        {
+          "name": "SeqAuto",
+          "githubUrl": "https://github.com/gokulprathin8/SeqAuto",
+          "techstack": [
+            "AWS",
+            "ReactJS",
+            "Django",
+            "Python",
+            "Selenium",
+            "Postgres",
+            "Memcached",
+            "JavaScript",
+            "TailwindCSS",
+            "Django REST Framework"
+          ],
+          "hostedBy": "Gokul Prathin Asamani",
+          "year": "2022"
+        },
+        {
+          "name": "ekatra",
+          "githubUrl": "http://github.com/vruksheco/ekatraone",
+          "techstack": [
+            "MongoDB",
+            "NodeJS",
+            "ReactJS",
+            "ExpressJS"
+          ],
+          "hostedBy": "Abheejit",
+          "year": "2022"
+        },
+        {
+          "name": "Tomper Wear E-commerce",
+          "githubUrl": "https://github.com/varunKT001/tomper-wear-ecommerce",
+          "techstack": [
+            "NodeJS",
+            "ReactJS",
+            "MongoDB",
+            "Firebase",
+            "ExpressJS"
+          ],
+          "hostedBy": "Varun Tiwari",
+          "year": "2022"
+        },
+        {
+          "name": "Dev-Scripts",
+          "githubUrl": "https://github.com/abhijeet007rocks8/Dev-Scripts",
+          "techstack": [
+            "CSS",
+            "Java",
+            "HTML",
+            "ReactJS",
+            "NodeJS",
+            "Python"
+          ],
+          "hostedBy": "Abhijeet Chatterjee",
+          "year": "2022"
+        },
+        {
+          "name": "CSwala-Web",
+          "githubUrl": "https://github.com/CSwala/CSwala-website",
+          "techstack": [
+            "NodeJS",
+            "ReactJS",
+            "MongoDB",
+            "Firebase",
+            "ExpressJS"
+          ],
+          "hostedBy": "Rituraj Jain",
+          "year": "2022"
+        },
+        {
+          "name": "DailyMint",
+          "githubUrl": "https://github.com/DevMan-open-source/dailymint",
+          "techstack": [
+            "MongoDB",
+            "NodeJS",
+            "ReactJS",
+            "ExpressJS"
+          ],
+          "hostedBy": "Himanshu",
+          "year": "2022"
+        },
+        {
+          "name": "Dev Empire",
+          "githubUrl": "https://github.com/swapnilsparsh/DevEmpire",
+          "techstack": [
+            "SAAS",
+            "NextJS",
+            "ReactJS"
+          ],
+          "hostedBy": "Swapnil Srivastava",
+          "year": "2022"
+        },
+        {
+          "name": "ClassDeck",
+          "githubUrl": "https://github.com/coding-geek21/classDeck",
+          "techstack": [
+            "CSS",
+            "HTML",
+            "Django",
+            "Sqlite",
+            "Bootstrap",
+            "JavaScript"
+          ],
+          "hostedBy": "Jayapritha N",
+          "year": "2022"
+        },
+        {
+          "name": "hash.bin",
+          "githubUrl": "https://github.com/hash-define-organization/hash.bin",
+          "techstack": [
+            "SCSS",
+            "MongoDB",
+            "NodeJS",
+            "ReactJS",
+            "ExpressJS",
+            "JavaScript",
+            "TypeScript"
+          ],
+          "hostedBy": "Samriddh Jain",
+          "year": "2022"
+        },
+        {
+          "name": "Ace-The-FrontEnd",
+          "githubUrl": "https://github.com/surajm-333/Ace-The-FrontEnd",
+          "techstack": [
+            "CSS",
+            "HTML",
+            "React",
+            "UI Design",
+            "JavaScript"
+          ],
+          "hostedBy": "Suraj Mulchandani",
+          "year": "2022"
+        } 
+]
