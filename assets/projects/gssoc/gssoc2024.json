@@ -1,0 +1,1485 @@
+[
+    {
+      "name": "Maa-Vimala",
+      "githubUrl": "https://github.com/Omkar-Sonawane-23/Maa-Vimala",
+      "techstack": ["JS", "CSS", "HTML"],
+      "hostedBy": "Omkar Sonawane",
+      "year": "2024"
+    },
+    {
+      "name": "SwapReads",
+      "githubUrl": "https://github.com/anuragverma108/SwapReads",
+      "techstack": ["CSS", "HTML", "JavaScript&Firebase"],
+      "hostedBy": "Anurag Verma",
+      "year": "2024"
+    },
+    {
+      "name": "IMAGE SCRAPING TOOL",
+      "githubUrl": "https://github.com/RituKumari98/imgIN",
+      "techstack": ["Css", "Html", "Node.js"],
+      "hostedBy": "Ritu Kumari",
+      "year": "2024"
+    },
+    {
+      "name": "IRCTC-backend",
+      "githubUrl": "https://github.com/Mayank2808sharma/IRCTC-backend",
+      "techstack": ["Nodejs", "express", "Postgres", "sequelize", "Javascript"],
+      "hostedBy": "Mayank Sharma",
+      "year": "2024"
+    },
+    {
+      "name": "DevExchange",
+      "githubUrl": "https://github.com/Nishitbaria/Dev-Exchange",
+      "techstack": ["Nextjs", "mongodb", "openaiapi", "Clerkauth", "Azurecloud", "Typescript", "tailwindcss"],
+      "hostedBy": "Nishit Baria",
+      "year": "2024"
+    },
+    {
+      "name": "SBOMgen",
+      "githubUrl": "https://github.com/SBOMgen",
+      "techstack": ["MySQL", "CI/CD", "Python", "NodeJs", "ReactJs", "Security", "ExpressJs", "Automation", "GitHubActions"],
+      "hostedBy": "Divij Sharma",
+      "year": "2024"
+    },
+    {
+      "name": "PickPalette",
+      "githubUrl": "https://github.com/ArnabChatterjee20k/PickPalette-PaletteFromImage",
+      "techstack": ["Deno", "Reactjs", "Mongodb", "Supabase", "Pinecone", "Expressjs", "Playwright", "GoogleAppScript"],
+      "hostedBy": "Arnab Chatterjee",
+      "year": "2024"
+    },
+    {
+      "name": "News Aggregator Project Using Django",
+      "githubUrl": "https://github.com/SiddharthBahuguna/NEWS-AGGREGATOR-PROJECT",
+      "techstack": ["JS", "CSS", "HTML", "Django"],
+      "hostedBy": "Siddharth Bahuguna",
+      "year": "2024"
+    },
+    {
+      "name": "InfraBoard",
+      "githubUrl": "https://github.com/xerocodee/InfraBoard",
+      "techstack": ["CI/CD", "Hooks", "Redux", "NodeJS", "Terraform", "Typescript", "RESTfulAPI", "GithubAction"],
+      "hostedBy": "Arya Soni",
+      "year": "2024"
+    },
+    {
+      "name": "Spring",
+      "githubUrl": "https://github.com/Satyam1923/Spring",
+      "techstack": ["CSS", "HTML", "ReactJS", "MongoDB", "Javascript"],
+      "hostedBy": "Satyam Rathor",
+      "year": "2024"
+    },
+    {
+      "name": "Dots & Boxes",
+      "githubUrl": "https://github.com/shrawani21/gamer_21",
+      "techstack": ["Python"],
+      "hostedBy": "Shrawani Kajal",
+      "year": "2024"
+    },
+    {
+      "name": "Project-Guidance",
+      "githubUrl": "https://github.com/Kushal997-das/Project-Guidance",
+      "techstack": ["css", "java", "python", "flutter.", "javascript", "Data-science"],
+      "hostedBy": "Kushal Das",
+      "year": "2024"
+    },
+    {
+      "name": "Hedging-of-Financial-Derivatives",
+      "githubUrl": "https://github.com/Akshat111111/Hedging-of-Financial-Derivatives",
+      "techstack": ["R", "Python", "DeepLearning", "MachineLearning"],
+      "hostedBy": "Akshat Sharma",
+      "year": "2024"
+    },
+    {
+      "name": "New Age Safety App (SURAKSHAK)",
+      "githubUrl": "https://github.com/ShrutiSaini07/SURAKSHAK",
+      "techstack": ["Flutter", "TensorFlow"],
+      "hostedBy": "Shruti Sain",
+      "year": "2024"
+    },
+    {
+      "name": "Study notion",
+      "githubUrl": "https://github.com/Muskansahuincredible/StudyNotion-An-Online-Education-Platform",
+      "techstack": ["MERN", "Nodejs"],
+      "hostedBy": "Muskan sahu",
+      "year": "2024"
+    },
+    {
+      "name": "30DaysOfJavaScript",
+      "githubUrl": "https://github.com/swapnilsparsh/30DaysOfJavaScript",
+      "techstack": ["JS", "CSS", "HTML"],
+      "hostedBy": "Swapnil Srivastava",
+      "year": "2024"
+    },
+    {
+      "name": "ExamTime",
+      "githubUrl": "https://github.com/Yashshukla11/ExamTime_android",
+      "techstack": ["Flutter", "RestAPI", "MongoDB"],
+      "hostedBy": "Yash Shukla",
+      "year": "2024"
+    },
+    {
+      "name": "NyayaSadhak",
+      "githubUrl": "https://github.com/Saurabh2862/nyayaSadhak.git",
+      "techstack": ["HTML", "Python", "Reactjs", "FastAPI", "streamlit", "javascript", "tailwindCSS"],
+      "hostedBy": "Saurabh Pandey",
+      "year": "2024"
+    },
+    {
+      "name": "Face-X",
+      "githubUrl": "https://github.com/akshitagupta15june/Face-X",
+      "techstack": ["ML", "ANN", "CNN", "OpenCV", "Python"],
+      "hostedBy": "Akshita Gupta",
+      "year": "2024"
+    },
+    {
+      "name": "Brick Breaker game",
+      "githubUrl": "https://github.com/awaismirza/Java-Game-Brick-Breaker.git",
+      "techstack": ["Java"],
+      "hostedBy": "Meghali Dutta",
+      "year": "2024"
+    },
+    {
+      "name": "GithubCrawler",
+      "githubUrl": "https://github.com/bishalde/GithubCrawler",
+      "techstack": ["CSS", "SCSS", "ReactJs", "GitHubAPI"],
+      "hostedBy": "Bishal De",
+      "year": "2024"
+    },
+    {
+      "name": "AutoMarket",
+      "githubUrl": "https://github.com/knight1001d/automarket",
+      "techstack": ["NextJS", "Python", "NodeJS", "FastAPI"],
+      "hostedBy": "Pratham Jagga",
+      "year": "2024"
+    },
+    {
+      "name": "Shrinkk",
+      "githubUrl": "https://github.com/bishalde/Shrinkk",
+      "techstack": ["CSS", "HTML", "SCSS", "Python", "Django", "MongoDB"],
+      "hostedBy": "Bishal De",
+      "year": "2024"
+    },
+    {
+      "name": "VoteChain",
+      "githubUrl": "https://github.com/jaibhedia/NPB_VOTE_WEB3",
+      "techstack": ["CSS", "SCSS", "JavaScript"],
+      "hostedBy": "Shantanu Swami",
+      "year": "2024"
+    },
+    {
+      "name": "SWAP (Smart Waste Allocation Platform)",
+      "githubUrl": "https://swap-revolutionizing-was-7w09vzm.gamma.site/swap-webapp",
+      "techstack": ["CSS", "HTML", "Vue.js", "Angular", "Node.js", "MongoDB", "JavaScript", "Express.js"],
+      "hostedBy": "Saurabh nage",
+      "year": "2024"
+    },
+    {
+      "name": "School or College Management System (ERP) - Wordpress Plugin",
+      "githubUrl": "https://github.com/iHRex/school-management",
+      "techstack": ["PHP"],
+      "hostedBy": "School Management System - ERP [Wordpress Plugin]",
+      "year": "2024"
+    },
+    {
+      "name": "PetMe",
+      "githubUrl": "https://github.com/akshitagupta15june/PetMe",
+      "techstack": ["JS", "CSS", "HTML", "Nodejs", "Reactjs"],
+      "hostedBy": "Akshita Gupta",
+      "year": "2024"
+    },
+    {
+      "name": "website",
+      "githubUrl": "https://github.com/gofr-dev/website",
+      "techstack": ["Next.js", "Markdoc", "HeadlessUI", "FlexSearch", "TailwindCSS", "AlgoliaAutocomplete"],
+      "hostedBy": "Vikash Kumar",
+      "year": "2024"
+    },
+    {
+      "name": "Deep Learning Simplified",
+      "githubUrl": "https://github.com/abhisheks008/DL-Simplified",
+      "techstack": ["OpenCV", "Tensorflow", "DeepLearning", "NeuralNetworks", "ImageProcessing", "NaturalLanguageProcessing"],
+      "hostedBy": "Abhishek Sharma",
+      "year": "2024"
+    },
+    {
+      "name": "MindSpace-Web",
+      "githubUrl": "https://github.com/The-MindSpace/MindSpace-Web",
+      "techstack": ["JS", "CSS", "HTML"],
+      "hostedBy": "Subroto Banerjee",
+      "year": "2024"
+    },
+    {
+      "name": "Blogging Application",
+      "githubUrl": "https://github.com/DikshakAdhikari/Blogging-Application",
+      "techstack": ["Next.js", "Node.js", "Mongodb", "Typescript", "Express.js"],
+      "hostedBy": "Dikshak Adhikari",
+      "year": "2024"
+    },
+    {
+      "name": "DocTalk",
+      "githubUrl": "https://github.com/govind-kumarr/simple_rag_dashboard",
+      "techstack": ["AWS", "React", "NodeJS", "Python", "MongoDB", "Fastapi"],
+      "hostedBy": "Govind Kumar",
+      "year": "2024"
+    },
+    {
+      "name": "SwapReads.com",
+      "githubUrl": "https://github.com/anuragverma108/SwapReads",
+      "techstack": ["CSS", "HTML", "Firebase", "Javascript"],
+      "hostedBy": "Anurag Verma",
+      "year": "2024"
+    },
+    {
+      "name": "ChainzRegistry",
+      "githubUrl": "https://github.com/jaibhedia/NPB_LandRecordManagement",
+      "techstack": ["Dart", "Polygon", "Ethereum", "Blockchain"],
+      "hostedBy": "Shantanu Swami",
+      "year": "2024"
+    },
+    {
+      "name": "Nacto-Care",
+      "githubUrl": "https://github.com/Nactore-Org/Nacto-Care",
+      "techstack": ["ReactJS", "FastAPI", "PostgreSQL", "FigmaDesigns"],
+      "hostedBy": "Harshil Jani",
+      "year": "2024"
+    },
+    {
+      "name": "Basic Native",
+      "githubUrl": "https://github.com/smilewithkhushi/BasicNative",
+      "techstack": ["Expo", "NativeWind", "ReactNative"],
+      "hostedBy": "BasicNative",
+      "year": "2024"
+    },
+    {
+      "name": "VigyBag",
+      "githubUrl": "http://github.com/codervivek5/vigyBag/",
+      "techstack": ["CSS", "HTML", "React", "Figma", "Python", "Django", "JavaScript"],
+      "hostedBy": "Vivek Kumar",
+      "year": "2024"
+    },
+    {
+      "name": "Stackoverflow-Analysis",
+      "githubUrl": "https://github.com/Recode-Hive/Stackoverflow-Analysis",
+      "techstack": ["HTML", "Python", "Nodejs", "TailwindCSS", "DataAnalysis", "MachineLearning"],
+      "hostedBy": "Sanjay Viswanathan",
+      "year": "2024"
+    },
+    {
+      "name": "TechAgro",
+      "githubUrl": "https://github.com/shubhangi24kashid/TechAgro",
+      "techstack": ["NumPy", "Pandas", "matloploid"],
+      "hostedBy": "Shubhangi kashid",
+      "year": "2024"
+    },
+    {
+      "name": "XceeDesigns - The one Stop Digital Solution",
+      "githubUrl": "https://github.com/XceeDesigns/Website.git",
+      "techstack": ["CSS", "PHP", "HTML", "JQuery", "MongoDB", "React.js", "JavaScript", "Express.js"],
+      "hostedBy": "XceeDesigns",
+      "year": "2024"
+    },
+    {
+      "name": "AMUpedia",
+      "githubUrl": "https://github.com/amupedia2021",
+      "techstack": ["js", "Next", "Nodejs", "MongoDB", "React.js"],
+      "hostedBy": "Jatin Mamtora",
+      "year": "2024"
+    },
+    {
+      "name": "devFind - Open Source",
+      "githubUrl": "https://github.com/shyamtawli/devFind",
+      "techstack": ["NextJS", "ReactJS", "JavaScript", "TailwindCSS"],
+      "hostedBy": "Shyam Tawli",
+      "year": "2024"
+    },
+    {
+      "name": "CareerZunction",
+      "githubUrl": "https://github.com/HimanshuNarware/CareerZunction_Intern",
+      "techstack": ["css", "html", "scss", "React.js"],
+      "hostedBy": "CareerZunction",
+      "year": "2024"
+    },
+    {
+      "name": "GlamourSaver",
+      "githubUrl": "https://github.com/open-xyz/GlamourSaver",
+      "techstack": ["NextJs", "Python"],
+      "hostedBy": "Shweta Kadam",
+      "year": "2024"
+    },
+    {
+      "name": "Scrape ML",
+      "githubUrl": "https://github.com/Recode-Hive/Scrape-ML",
+      "techstack": ["ML", "Python"],
+      "hostedBy": "Sanjay Viswanathan",
+      "year": "2024"
+    },
+    {
+      "name": "GGExtensions",
+      "githubUrl": "https://github.com/Sulagna-Dutta-Roy/GGExtensions",
+      "techstack": ["CSS", "Html", "Json:Any", "Javascript"],
+      "hostedBy": "Sulagna Dutta Roy",
+      "year": "2024"
+    },
+    {
+      "name": "AgriLearnNetwork",
+      "githubUrl": "https://github.com/Suchitra-Sahoo/AgriLearnNetwork",
+      "techstack": ["CSS", "HTML", "JavaScript"],
+      "hostedBy": "Suchitra Sahoo",
+      "year": "2024"
+    },
+    {
+      "name": "NextDraw",
+      "githubUrl": "https://github.com/dhruvpatidar359/nextdraw",
+      "techstack": ["Docker", "Next.js", "MongoDb", "CanvasApi", "Websocket.io"],
+      "hostedBy": "NextDraw",
+      "year": "2024"
+    },
+    {
+      "name": "Wanderlust",
+      "githubUrl": "https://github.com/krishnaacharyaa/wanderlust/",
+      "techstack": ["MERN"],
+      "hostedBy": "Krishna R Acharya",
+      "year": "2024"
+    },
+    {
+      "name": "Conway's Game of Life",
+      "githubUrl": "https://github.com/EternoSeeker/gameoflife",
+      "techstack": ["JS", "CSS", "HTML", "JSON"],
+      "hostedBy": "Shrihari Magar",
+      "year": "2024"
+    },
+    {
+      "name": "Shopy",
+      "githubUrl": "https://github.com/mohitparmar1/Shopy",
+      "techstack": ["MERN"],
+      "hostedBy": "Mohit Parmar",
+      "year": "2024"
+    },
+    {
+      "name": "Comic-cult",
+      "githubUrl": "https://github.com/Girishbari/comic-cult",
+      "techstack": ["AI", "Nextjs", "nodejs", "DreamstudioAPI"],
+      "hostedBy": "Girish",
+      "year": "2024"
+    },
+    {
+      "name": "KrishiConnect",
+      "githubUrl": "https://github.com/Anushkabh/krishiconnect",
+      "techstack": ["js", "css", "html", "scss", "firebase", "bootstarp"],
+      "hostedBy": "Anushka Bhandari",
+      "year": "2024"
+    },
+    {
+      "name": "TaskMate",
+      "githubUrl": "https://github.com/bishalde/TaskMate",
+      "techstack": ["css", "django", "javascript"],
+      "hostedBy": "Bishal De",
+      "year": "2024"
+    },
+    {
+      "name": "GitGlance",
+      "githubUrl": "https://github.com/devXprite/gitglance",
+      "techstack": ["NextJs", "ChartJs", "Tailwind", "GitHubGraphql"],
+      "hostedBy": "Prateek Singh",
+      "year": "2024"
+    },
+    {
+      "name": "PACKABUNCHAS",
+      "githubUrl": "https://github.com/GameSphere-MultiPlayer/PACKABUNCHAS",
+      "techstack": ["CSS", "HTML", "Bootstrap", "javascript", "jQueryetc."],
+      "hostedBy": "Arpit verma",
+      "year": "2024"
+    },
+    {
+      "name": "VedicVani",
+      "githubUrl": "https://github.com/Omkar-Sonawane-23/VedicVani",
+      "techstack": ["Nodejs", "ReactJS"],
+      "hostedBy": "Omkar Sonawane",
+      "year": "2024"
+    },
+    {
+      "name": "ML-CaPsule",
+      "githubUrl": "https://github.com/Niketkumardheeryan/ML-CaPsule",
+      "techstack": ["R", "Flask", "Python", "Django", "Datascience", "DeepLearning", "Dataanalysis", "MachineLearning"],
+      "hostedBy": "Niket Kumar Dheeryan",
+      "year": "2024"
+    },
+    {
+      "name": "APIVerse",
+      "githubUrl": "https://github.com/dishamodi0910/APIVerse",
+      "techstack": ["Node.js", "Express.js", "Javascript", "Typescript"],
+      "hostedBy": "Disha Modi",
+      "year": "2024"
+    },
+    {
+      "name": "farmerConsultant",
+      "githubUrl": "we are about to start our idea",
+      "techstack": ["MERN", "AI/ML", "Docker"],
+      "hostedBy": "Waris Amir",
+      "year": "2024"
+    },
+    {
+      "name": "CodeBin",
+      "githubUrl": "https://github.com/MAVRICK-1/causewaylogin",
+      "techstack": ["Angular", "firebase"],
+      "hostedBy": "Rishi Mondal",
+      "year": "2024"
+    },
+    {
+      "name": "Flipkart_Clone",
+      "githubUrl": "https://github.com/arghadipmanna101/Flipkart_Clone",
+      "techstack": ["JS", "CSS", "HTML"],
+      "hostedBy": "Arghadip Manna",
+      "year": "2024"
+    },
+    {
+      "name": "GoFr",
+      "githubUrl": "https://github.com/gofr-dev/gofr",
+      "techstack": ["Golang"],
+      "hostedBy": "Vikash Kumar",
+      "year": "2024"
+    },
+    {
+      "name": "ResourceHub",
+      "githubUrl": "https://github.com/jfmartinz/ResourceHub",
+      "techstack": ["JS", "CSS", "HTML"],
+      "hostedBy": "Joseph Martin",
+      "year": "2024"
+    },
+    {
+      "name": "Discord Clone",
+      "githubUrl": "https://github.com/Yeasir0032/Discord-Clone",
+      "techstack": ["NextJs", "Nodejs", "Reactjs", "Socketio", "Typescript", "TailwindCSS"],
+      "hostedBy": "Yeasir Rahaman",
+      "year": "2024"
+    },
+    {
+      "name": "db-drawer",
+      "githubUrl": "https://github.com/Bhanu-code/db-drawer",
+      "techstack": ["EJS", "Express", "Mongoose", "Sequelize", "JavaScript"],
+      "hostedBy": "db-drawer",
+      "year": "2024"
+    },
+    {
+      "name": "codeharborhub",
+      "githubUrl": "https://github.com/CodeHarborHub/codeharborhub",
+      "techstack": ["MERN", "docusaurus"],
+      "hostedBy": "Ajay Dhangar",
+      "year": "2024"
+    },
+    {
+      "name": "Resume Scan",
+      "githubUrl": "https://github.com/open-xyz/resume-scan",
+      "techstack": ["nextjs", "mongodb", "expressjs", "typescript"],
+      "hostedBy": "Resume Scan",
+      "year": "2024"
+    },
+    {
+      "name": "Blox AI",
+      "githubUrl": "https://github.com/subhadeeproy3902/BloxAI",
+      "techstack": ["Kinde", "NextJs", "Convex", "EditorJs", "Typescript", "TailwindCSS", "ExcalidrawJs"],
+      "hostedBy": "Subhadeep Roy",
+      "year": "2024"
+    },
+    {
+      "name": "Moksh",
+      "githubUrl": "https://github.com/akshitagupta15june/Moksh",
+      "techstack": ["JS", "CSS", "HTML", "echo3d", "Reactjs"],
+      "hostedBy": "Akshita Gupta",
+      "year": "2024"
+    },
+    {
+      "name": "ChatBox",
+      "githubUrl": "https://github.com/SamarthKadam/ChatBox",
+      "techstack": ["React", "redux", "Nodejs", "Express", "Mongodb", "SocketIO", "materialUI", "TailwindCSS"],
+      "hostedBy": "Samarth kadam",
+      "year": "2024"
+    },
+    {
+      "name": "Palettegram",
+      "githubUrl": "https://github.com/Sanchitbajaj02/palettegram",
+      "techstack": ["Nextjs", "Appwrite", "TypeScript", "TailwindCSS"],
+      "hostedBy": "Sanchit Bajaj",
+      "year": "2024"
+    },
+    {
+      "name": "Crew Connect",
+      "githubUrl": "https://github.com/jatiinyadav/Crew-Connect",
+      "techstack": [".NET6", "Angular", "MongoDB"],
+      "hostedBy": "Jatin Yadav",
+      "year": "2024"
+    },
+    {
+      "name": "OpneZone",
+      "githubUrl": "https://github.com/AbhiPatel10/openzone",
+      "techstack": ["Next.js", "Node.js", "Typescript", "TailwindCss"],
+      "hostedBy": "Abhi P. Patel",
+      "year": "2024"
+    },
+    {
+      "name": "Formation Absent",
+      "githubUrl": "https://github.com/GameSphere-MultiPlayer/Formation-Absent",
+      "techstack": ["CSS", "PHP", "HTML", "MySQL", "jQuery", "Bootstrap", "WebSocket", "JavaScript", "Laraveletc.."],
+      "hostedBy": "Ajeet Prajapati",
+      "year": "2024"
+    },
+    {
+      "name": "Tourism",
+      "githubUrl": "https://github.com/Omkar-Sonawane-23/Tourism",
+      "techstack": ["ReactJS"],
+      "hostedBy": "Omkar Sonawane",
+      "year": "2024"
+    },
+    {
+      "name": "PrimiStore",
+      "githubUrl": "https://github.com/frankhart2018/primistore",
+      "techstack": ["MERN", "FastAP"],
+      "hostedBy": "Siddhartha Dhar Choudhury",
+      "year": "2024"
+    },
+    {
+      "name": "Talk-In",
+      "githubUrl": "https://github.com/Ijaiswalshivam/Talk-In",
+      "techstack": ["Kotlin"],
+      "hostedBy": "Shivam Jaiswal",
+      "year": "2024"
+    },
+    {
+      "name": "DevXClub",
+      "githubUrl": "https://github.com/The-Xiting-Way/DevXClub",
+      "techstack": ["Nextjs", "Typescript", "Javascript", "AceternityUI", "TailwindCSS."],
+      "hostedBy": "Gurpreet Kaur",
+      "year": "2024"
+    },
+    {
+      "name": "Rapidoc",
+      "githubUrl": "https://github.com/Anishkagupta04/RAPIDOC-HEALTHCARE-WEBSITE-",
+      "techstack": ["CSS", "HTML", "bootstrap", "JavaScript"],
+      "hostedBy": "Anishka Gupta",
+      "year": "2024"
+    },
+    {
+      "name": "xmail",
+      "githubUrl": "https://github.com/open-xyz/xmail/tree/main",
+      "techstack": ["Nextjs", "MongoDB", "Expressjs", "Typescript", "Postgresql"],
+      "hostedBy": "Rohan Sharma",
+      "year": "2024"
+    },
+    {
+      "name": "CSEdge Learn",
+      "githubUrl": "https://github.com/CSEdgeOfficial/learn.csedge.courses",
+      "techstack": ["JS", "CSS3", "HTML5", "Bootstrap"],
+      "hostedBy": "Durgesh Vaigandla",
+      "year": "2024"
+    },
+    {
+      "name": "ThereForYou",
+      "githubUrl": "https://github.com/TAHIR0110/ThereForYou",
+      "techstack": ["Python", "Pytorch", "DeepLearning", "MachineLearning"],
+      "hostedBy": "Syed Tahir Abbas Hasani",
+      "year": "2024"
+    },
+    {
+      "name": "OpSo",
+      "githubUrl": "https://github.com/andoriyaprashant/OpSo",
+      "techstack": ["Dart", "Flutter"],
+      "hostedBy": "Prashant Andoriya",
+      "year": "2024"
+    },
+    {
+      "name": "NASA-APOD",
+      "githubUrl": "https://github.com/Yashc885/Nasa-APOD",
+      "techstack": ["Pythonframeworrk"],
+      "hostedBy": "YASH",
+      "year": "2024"
+    },
+    {
+      "name": "Counsellor",
+      "githubUrl": "https://github.com/Counselllor",
+      "techstack": ["CSS", "Nodejs", "Reactjs", "MongoDB", "Firebase", "Socket.io", "MachineLearning"],
+      "hostedBy": "Sahil Ali",
+      "year": "2024"
+    },
+    {
+      "name": "Job portal",
+      "githubUrl": "https://github.com/Rajan-Barnwal/jobproject",
+      "techstack": ["js", "css", "Html"],
+      "hostedBy": "Rajan kumar barnwal",
+      "year": "2024"
+    },
+    {
+      "name": "SoundScape",
+      "githubUrl": "https://github.com/soumya-kushwaha/soundscape",
+      "techstack": ["Python"],
+      "hostedBy": "Soumya Kushwaha",
+      "year": "2024"
+    },
+    {
+      "name": "Travel_Website",
+      "githubUrl": "https://github.com/apu52/Travel_Website",
+      "techstack": ["JS", "CSS", "HTML"],
+      "hostedBy": "Arpan Chowdhury",
+      "year": "2024"
+    },
+    {
+      "name": "Drawn2Shoe",
+      "githubUrl": "https://github.com/dvjsharma/Drawn2Shoe",
+      "techstack": ["MySql", "Redux", "NodeJs", "ReactJs", "daisyUI", "ExpressJs", "TailwindCSS", "GitHubActions"],
+      "hostedBy": "Shashank Shekhar",
+      "year": "2024"
+    },
+    {
+      "name": "Doc_Man",
+      "githubUrl": "https://github.com/Sakshamjain98/Doc_Man",
+      "techstack": ["JavaScript"],
+      "hostedBy": "Saksham Jain",
+      "year": "2024"
+    },
+    {
+      "name": "Beautiify",
+      "githubUrl": "https://github.com/Rakesh9100/Beautiify",
+      "techstack": ["CSS", "HTML", "JavaScript"],
+      "hostedBy": "Rakesh Roshan",
+      "year": "2024"
+    },
+    {
+      "name": "HackHive",
+      "githubUrl": "https://github.com/DSC-JSS-NOIDA/HackHive",
+      "techstack": ["Css", "Html", "React", "Python", "nodejs", "selenium", "avascript", "expressjs", "TailwindCss"],
+      "hostedBy": "Ramit VIshwakarma",
+      "year": "2024"
+    },
+    {
+      "name": "Coding Contest Companion",
+      "githubUrl": "https://github.com/dashroshan/coding-contests-companion",
+      "techstack": ["Node", "Axios", "jsDom", "MonogDB", "Puppeteer"],
+      "hostedBy": "Roshan Dash",
+      "year": "2024"
+    },
+    {
+      "name": "",
+      "githubUrl": "https://github.com/Ayushpanditmoto/Trading-Bot",
+      "techstack": ["ML", "NLP", "Python"],
+      "hostedBy": "",
+      "year": "2024"
+    },
+    {
+      "name": "Blog Application",
+      "githubUrl": "https://github.com/Sejal99/blogging-site",
+      "techstack": ["AWSS3", "Next.js", "Node.js", "MongoDB", "Typescript", "Express.js", "TailwindCSS"],
+      "hostedBy": "Sejal Srivastava",
+      "year": "2024"
+    },
+    
+        {
+          "name": "ScrapQuest",
+          "githubUrl": "https://github.com/Abidsyed25/ScrapQuest",
+          "techstack": ["Next.js", "Typescript"],
+          "hostedBy": "Abid",
+          "year": "2024"
+        },
+        {
+          "name": "Pop-Shop",
+          "githubUrl": "https://github.com/pooranjoyb/popShop",
+          "techstack": ["ReactTS", "DaisyUI", "Tailwind", "Supabase"],
+          "hostedBy": "Pooranjoy Bhattacharya",
+          "year": "2024"
+        },
+        {
+          "name": "CalcDiverse",
+          "githubUrl": "https://github.com/Rakesh9100/CalcDiverse",
+          "techstack": ["CSS", "HTML", "JavaScript"],
+          "hostedBy": "Rakesh Roshan",
+          "year": "2024"
+        },
+        {
+          "name": "mystory",
+          "githubUrl": "https://github.com/Sayak-Bhunia/mystory",
+          "techstack": ["GSAP", "NextJS14", "TailwindCSS", "Framer-motion"],
+          "hostedBy": "Sayak Bhunia",
+          "year": "2024"
+        },
+        {
+          "name": "CrazyCoderServerlessAPI",
+          "githubUrl": "https://github.com/Yash-Parsana/CrazyCoderServerlessApi",
+          "techstack": ["Nodejs", "Expressjs"],
+          "hostedBy": "Yash Parsana",
+          "year": "2024"
+        },
+        {
+          "name": "Community-Page",
+          "githubUrl": "https://github.com/GameSphere-MultiPlayer/Community-Page",
+          "techstack": ["CSS", "PHP", "HTML", "MySQL", "jQuery", "Laravel", "Bootstrap", "WebSocket", "JavaScript"],
+          "hostedBy": "Durgesh Kumar Prajapati",
+          "year": "2024"
+        },
+        {
+          "name": "Learn app",
+          "githubUrl": "https://github.com/VaibhavCodeClub/learn",
+          "techstack": ["Flutter"],
+          "hostedBy": "Sapate Vaibhav",
+          "year": "2024"
+        },
+        {
+          "name": "FitBody",
+          "githubUrl": "https://github.com/abhay-raj19/FitBody.git",
+          "techstack": ["NodeJs", "ReactJS", "ExpressJS"],
+          "hostedBy": "Abhay Rajpoot",
+          "year": "2024"
+        },
+        {
+          "name": "Rubik cube",
+          "githubUrl": "https://github.com/Dev-tanay/Rubik-Cube",
+          "techstack": ["JS", "CSS", "HTML"],
+          "hostedBy": "Tanay Das",
+          "year": "2024"
+        },
+        {
+          "name": "Learn Python 3",
+          "githubUrl": "https://github.com/animator/learn-python",
+          "techstack": ["HTML", "Python", "Markdown"],
+          "hostedBy": "Ankit Mahato",
+          "year": "2024"
+        },
+        {
+          "name": "Wellread",
+          "githubUrl": "https://github.com/chirantanbanik/Wellread",
+          "techstack": ["Vercel", "Reactjs", "Tailwind", "Appwrite"],
+          "hostedBy": "Chirantan Banik",
+          "year": "2024"
+        },
+        {
+          "name": "Virtuo Learn",
+          "githubUrl": "https://github.com/JAYESHBATRA/Virtuo-Learn",
+          "techstack": ["CSS", "HTML", "MATTER.JS", "JAVASCRIPT"],
+          "hostedBy": "Jayesh Batra",
+          "year": "2024"
+        },
+        {
+          "name": "Spaceship Escort",
+          "githubUrl": "https://github.com/GameSphere-MultiPlayer/Spaceship-escort",
+          "techstack": ["CSS", "HTML", "JQUERY", "BOOTSTRAP", "JAVASCRIPT"],
+          "hostedBy": "Ashutosh Singh Yadav",
+          "year": "2024"
+        },
+        {
+          "name": "mern stack hospital management system",
+          "githubUrl": "https://github.com/itsmohit097/mern_stack_hospital_management_system",
+          "techstack": ["JWT", "NodeJs", "ReactJs", "MongoDB", "Mongoose", "ExpressJs", "Cloudinary"],
+          "hostedBy": "Mohit Kumar",
+          "year": "2024"
+        },
+        {
+          "name": "Community Site",
+          "githubUrl": "https://github.com/Its-Aman-Yadav/Community-Site",
+          "techstack": ["JS", "CSS", "HTML"],
+          "hostedBy": "Aman Yadav",
+          "year": "2024"
+        },
+        {
+          "name": "Luffy",
+          "githubUrl": "https://github.com/anupammaurya6767/luffy",
+          "techstack": ["Docker", "JavaScript", "Typescript"],
+          "hostedBy": "Anupam Maurya",
+          "year": "2024"
+        },
+        {
+          "name": "MindMate Wellness",
+          "githubUrl": "https://github.com/algovengers/MindMate",
+          "techstack": ["React", "GenAI", "Express", "Firebase", "Tailwind", "WebSocket"],
+          "hostedBy": "Subharthi Hazra",
+          "year": "2024"
+        },
+        {
+          "name": "Draw-it-out",
+          "githubUrl": "https://github.com/singodiyashubham87/Draw-it-out",
+          "techstack": ["JS", "CSS", "HTML", "ReactJS", "TailwindCSS"],
+          "hostedBy": "Shubham Singodiya",
+          "year": "2024"
+        },
+        {
+          "name": "URLShortener",
+          "githubUrl": "https://github.com/abhijeetnishal/URLShortener",
+          "techstack": ["Node.js", "Reactjs", "MongoDB", "Express.js"],
+          "hostedBy": "Abhijeet kumar",
+          "year": "2024"
+        },
+        {
+          "name": "METAVERSE",
+          "githubUrl": "https://github.com/apu52/METAVERSE",
+          "techstack": ["JS", "EJS", "Pug", "SCSS"],
+          "hostedBy": "Arpan Chowdhury",
+          "year": "2024"
+        },
+        {
+          "name": "Taaveez",
+          "githubUrl": "https://github.com/Suryansh1720001/Taaveez",
+          "techstack": ["XML", "Kotlin", "RoomDB"],
+          "hostedBy": "Suryansh Prajapati",
+          "year": "2024"
+        },
+        {
+          "name": "Squard-line",
+          "githubUrl": "https://github.com/GameSphere-MultiPlayer/Squard-line",
+          "techstack": ["CSS", "HTML", "Bootstrap", "JavaScript"],
+          "hostedBy": "Durgesh Kumar Prajapati",
+          "year": "2024"
+        },
+        {
+          "name": "Ecommerce Website (SpectaStyle)",
+          "githubUrl": "https://github.com/harshalhonde21/EcommerceSpectastyle",
+          "techstack": ["React.js", "Node.js)", "Express.js", "MERNSTACK(Mongodb"],
+          "hostedBy": "Harshal Honde",
+          "year": "2024"
+        },
+        {
+          "name": "Awesome Open Source Flutter Apps",
+          "githubUrl": "https://github.com/fluttergems/awesome-open-source-flutter-apps",
+          "techstack": ["CSS", "Dart", "HTML", "Flutter", "Markdown"],
+          "hostedBy": "Ashita Prasad",
+          "year": "2024"
+        },
+        {
+          "name": "Eduford University",
+          "githubUrl": "https://github.com/juhinagpure/Eduford-university",
+          "techstack": ["CSS", "HTML", "React"],
+          "hostedBy": "Eduford University",
+          "year": "2024"
+        },
+        {
+          "name": "Coding Hustlers",
+          "githubUrl": "https://github.com/Satakshijain/CodingHustlers",
+          "techstack": ["CSS", "HTML", "BootStrap", "JavaScript"],
+          "hostedBy": "Satakshi Jain",
+          "year": "2024"
+        },
+        {
+          "name": "Blood Donation",
+          "githubUrl": "https://github.com/Saurav-Pant/Blood-Donation-Project",
+          "techstack": ["Nextjs", "Prisma", "Docker"],
+          "hostedBy": "Saurav Pant",
+          "year": "2024"
+        },
+        {
+          "name": "Dot-Box",
+          "githubUrl": "https://github.com/GameSphere-MultiPlayer/Dot-Box",
+          "techstack": ["CSS", "HTML", "JavaScript"],
+          "hostedBy": "Arpit verma",
+          "year": "2024"
+        },
+        {
+          "name": "Carbon Katha",
+          "githubUrl": "https://github.com/HeyfromNandini/Carbon-Katha",
+          "techstack": ["CSS", "HTML", "Kotlin", "TypeScript", "JavaScript", "JetpackCompose"],
+          "hostedBy": "Nandini Singh",
+          "year": "2024"
+        },
+        {
+          "name": "Food WebApp",
+          "githubUrl": "https://github.com/VGandhi27/FoodWebApp",
+          "techstack": ["MERN"],
+          "hostedBy": "Vidushi Gandhi",
+          "year": "2024"
+        },
+        {
+          "name": "Credit Seeker",
+          "githubUrl": "https://github.com/usha-madithati/esmart.github.io",
+          "techstack": ["Js", "CSS", "Html"],
+          "hostedBy": "Usha Madithati",
+          "year": "2024"
+        },
+        {
+          "name": "IndieKart",
+          "githubUrl": "https://github.com/Indie-Kart",
+          "techstack": ["React", "MySQL", "Prisma", "Next.js", "Tailwind", "Typescript"],
+          "hostedBy": "Trishanu Nayak",
+          "year": "2024"
+        },
+        {
+          "name": "Joblane - Job application portal",
+          "githubUrl": "https://github.com/sujaltangde/JobLane",
+          "techstack": ["Redux", "Node.js", "MongoDB", "React.js", "Express.js", "TailwindCSS"],
+          "hostedBy": "Sujal Tangde",
+          "year": "2024"
+        },
+        {
+          "name": "Binary Trading AI Bot",
+          "githubUrl": "https://github.com/Ayushpanditmoto/Trading-Bot",
+          "techstack": ["ML", "NLP", "Python"],
+          "hostedBy": "Ayush Kumar Pandit",
+          "year": "2024"
+        },
+        {
+          "name": "Web Master Log",
+          "githubUrl": "https://github.com/Avdhesh-Varshney/WebMasterLog",
+          "techstack": ["Vue", "Angular", "MongoDB", "Bootstrap", "JavaScript", "TailwindCSS"],
+          "hostedBy": "Avdhesh Varshney",
+          "year": "2024"
+        },
+        {
+          "name": "Open Source APIs (Core library)",
+          "githubUrl": "https://github.com/foss42/foss42-core",
+          "techstack": ["Python"],
+          "hostedBy": "Ankit Mahato",
+          "year": "2024"
+        },
+        {
+          "name": "Physi-c-Tech",
+          "githubUrl": "https://github.com/GameSphere-MultiPlayer/Physi-c-Tech",
+          "techstack": ["CSS", "HTML", "Javascript", "Typescript"],
+          "hostedBy": "Durgesh Kumar Prajapati",
+          "year": "2024"
+        },
+        {
+          "name": "Open Source APIs",
+          "githubUrl": "https://github.com/foss42/api",
+          "techstack": ["Python", "FastAPI"],
+          "hostedBy": "Ankit Mahato",
+          "year": "2024"
+        },
+        {
+          "name": "Faculty Evaluation System",
+          "githubUrl": "https://github.com/SaiyamTuteja/Faculty_Evaluation_System",
+          "techstack": ["php", "css", "htmlMySQL", "Javascript"],
+          "hostedBy": "Saiyam Tuteja",
+          "year": "2024"
+        },
+        {
+          "name": "Gamesphere",
+          "githubUrl": "https://github.com/GameSphere-MultiPlayer/GameSphere",
+          "techstack": ["CSS", "PHP", "HTML", "MySQL", "jQuery", "WebSocket", "JavaScriptBootstrap"],
+          "hostedBy": "Aman Kumar Singh",
+          "year": "2024"
+        },
+        {
+          "name": "Community-Website",
+          "githubUrl": "https://github.com/HITK-TECH-Community/Community-Website",
+          "techstack": ["MERN"],
+          "hostedBy": "Kajol Kumari",
+          "year": "2024"
+        },
+        {
+          "name": "Lupo Skill",
+          "githubUrl": "https://github.com/Tanay-ErrorCode/lupo-skill",
+          "techstack": ["reactjs", "Firebase", "typescript"],
+          "hostedBy": "Tanay",
+          "year": "2024"
+        },
+        {
+          "name": "API Dash",
+          "githubUrl": "https://github.com/foss42/apidash",
+          "techstack": ["API", "Dart", "Flutter"],
+          "hostedBy": "Ankit Mahato",
+          "year": "2024"
+        },
+        {
+          "name": "Ayurved GPT",
+          "githubUrl": "https://github.com/Vijayy-ai/Talker.ai.git",
+          "techstack": ["SQL", "AWS", "Django", "Javascript"],
+          "hostedBy": "Vijay",
+          "year": "2024"
+        },
+        {
+          "name": "Foodies website",
+          "githubUrl": "https://github.com/khushi-joshi-05/Food-ordering-website",
+          "techstack": ["CSS", "HTML", "JavaScript"],
+          "hostedBy": "Khushi Joshi",
+          "year": "2024"
+        },
+        {
+          "name": "Articulus-RAG",
+          "githubUrl": "https://github.com/AryaChakraborty/articulus_rag/tree/main",
+          "techstack": ["Flask", "Python", "LlamaIndex", "HuggingFace", "GoogleGemini"],
+          "hostedBy": "Abhiruchi Arvind Patil Bhagat",
+          "year": "2024"
+        },
+        {
+          "name": "Super Speech Saga",
+          "githubUrl": "https://github.com/TusharAMD/SuperSpeechSaga",
+          "techstack": ["LLM", "TTS", "Python", "PyGame", "GenerativeAI"],
+          "hostedBy": "Tushar Amdoskar",
+          "year": "2024"
+        },
+        {
+          "name": "StartConnect-Hub",
+          "githubUrl": "https://github.com/Priyaaa1/StartConnect-Hub",
+          "techstack": ["CSS", "HTML", "Node.js", "React.js", "JavaScript"],
+          "hostedBy": "Priya Maheshwari",
+          "year": "2024"
+        },
+        {
+          "name": "Communet",
+          "githubUrl": "https://github.com/Commu-net",
+          "techstack": ["React", "Nodejs", "Docker", "MongoDb", "Express", "Typescript", "Microservices"],
+          "hostedBy": "Ayush Vishwakarma",
+          "year": "2024"
+        },
+        {
+          "name": "sarthi",
+          "githubUrl": "https://github.com/samarthhapse/sarthi",
+          "techstack": ["JS", "CSS", "HTML", "Nodejs", "Reactjs", "MongoDB"],
+          "hostedBy": "Samarth M Hapse",
+          "year": "2024"
+        },
+        {
+          "name": "TimeWarp",
+          "githubUrl": "https://github.com/Akshatchaube01/TimeWarp",
+          "techstack": ["WebGL", "Unity", "AR/VR", "ReactJs", "Threejs"],
+          "hostedBy": "Akshat Chaube",
+          "year": "2024"
+        },
+        {
+          "name": "Devlabs",
+          "githubUrl": "https://github.com/HimanshuNarware/Devlabs",
+          "techstack": ["Css", "React.js", "Javascript"],
+          "hostedBy": "Himanshu Narware",
+          "year": "2024"
+        },
+        {
+          "name": "OpenGrame",
+          "githubUrl": "https://github.com/Nishitbaria/OpenGrame",
+          "techstack": ["Shadcn", "ReactJs", "Appwrites", "Javascript", "Typescript", "React-Query", "Tailwindcss"],
+          "hostedBy": "Nishit Baria",
+          "year": "2024"
+        },
+        {
+          "name": "Petari (food donate management system)",
+          "githubUrl": "https://github.com/Sahil1786/Petari",
+          "techstack": ["CSS", "EJS", "HTML", "AUTH", "NODEJS", "MONGODB", "BOOTSTRAP", "EXPRESSJS", "JAVASCRIPT"],
+          "hostedBy": "SAHIL HOSSAIN",
+          "year": "2024"
+        },
+        {
+          "name": "Scrape U",
+          "githubUrl": "https://github.com/Clueless-Community/scrape-up",
+          "techstack": ["Python"],
+          "hostedBy": "Nikhil Ra",
+          "year": "2024"
+        },
+        {
+          "name": "CrazyCoderApp",
+          "githubUrl": "https://github.com/Yash-Parsana/CrazyCoderApp",
+          "techstack": ["Androidkotlin"],
+          "hostedBy": "Yash Parsana",
+          "year": "2024"
+        },
+        {
+          "name": "Wife Predictor",
+          "githubUrl": "https://github.com/1Shubham7/wife-predictor-v2",
+          "techstack": ["CSS", "HTML", "React", "Golang"],
+          "hostedBy": "Shubham Singh Mahar",
+          "year": "2024"
+        },
+        {
+          "name": "ElectiveHub",
+          "githubUrl": "https://github.com/TechNodes2-0/ElectiveHub",
+          "techstack": ["html", "Nodejs", "ReactJs", "Mongodb", "expressJs", "Javascript", "tailwindcss"],
+          "hostedBy": "Nishit Baria",
+          "year": "2024"
+        },
+        {
+          "name": "Paws",
+          "githubUrl": "https://github.com/Innovateninjas/Paws-frontend",
+          "techstack": ["ReactJS", "Firebase", "JavaScript", "TailwindCSS"],
+          "hostedBy": "Rishi Paul",
+          "year": "2024"
+        },
+        {
+          "name": "TailoredUI",
+          "githubUrl": "https://github.com/TailoredUI/TailoredUI",
+          "techstack": ["ReactJS", "Tailwind", "Typescript"],
+          "hostedBy": "Aman Singh Chandel",
+          "year": "2024"
+        },
+        {
+          "name": "Kaam Do",
+          "githubUrl": "https://github.com/PatilHarshh/Kaam-Do",
+          "techstack": ["Nodejs", "ReactJs", "Express", "Mongodb"],
+          "hostedBy": "Harsh Patil",
+          "year": "2024"
+        },
+        {
+          "name": "Euphoria Check",
+          "githubUrl": "https://github.com/Open-Source-Chandigarh/Euphoria-Check",
+          "techstack": ["CSS", "EJS", "HTML", "NodeJS", "ExpressJS", "JavaScript"],
+          "hostedBy": "Aryan Inguz",
+          "year": "2024"
+        },
+        {
+          "name": "Community-Page",
+          "githubUrl": "https://github.com/GameSphere-MultiPlayer/Community-Page",
+          "techstack": ["jQuery", "Bootstrap", "Javascript."],
+          "hostedBy": "Durgesh Kumar Prajapati",
+          "year": "2024"
+        },
+        {
+          "name": "Digitomize",
+          "githubUrl": "https://github.com/digitomize/digitomize",
+          "techstack": ["MUI", "React", "Nodejs", "MongoDb", "Express", "Firebase", "Firebase"],
+          "hostedBy": "Pranshu Gupta",
+          "year": "2024"
+        },
+        {
+          "name": "Spoon Share",
+          "githubUrl": "https://github.com/sanika391/SpoonShare",
+          "techstack": ["Flutter", "Firebase", "GoogleCloud", "GoogleMapsAPI", "AndroidStudio", "GoogleAnalytics", "GooglePlacedAPI"],
+          "hostedBy": "Sanika Chavan (Spoon Share)",
+          "year": "2024"
+        },
+        {
+          "name": "Translatekor",
+          "githubUrl": "https://github.com/bishalde/Translatekor",
+          "techstack": ["CSS", "HTML", "Flask", "Tkinter"],
+          "hostedBy": "Bishal De",
+          "year": "2024"
+        },
+        {
+          "name": "FinVeda",
+          "githubUrl": "https://github.com/ayush-that/FinVeda",
+          "techstack": ["CSS", "HTML", "ChatGPT", "Bootstrap", "JavaScript"],
+          "hostedBy": "Ayush Singh",
+          "year": "2024"
+        },
+        {
+          "name": "Git-re",
+          "githubUrl": "https://github.com/ashutosh-rath02/git-re",
+          "techstack": ["React", "NextJS", "Shadcn/ui", "TypeScript", "Tailwindcss"],
+          "hostedBy": "Ashutosh Rath",
+          "year": "2024"
+        },
+        {
+          "name": "Scrape Up",
+          "githubUrl": "https://github.com/Clueless-Community/scrape-up",
+          "techstack": ["Python"],
+          "hostedBy": "Nikhil Raj",
+          "year": "2024"
+        },
+        {
+          "name": "Password Shield",
+          "githubUrl": "https://github.com/abhijeetnishal/Password-Shield",
+          "techstack": ["Redis", "Node.js", "React.js", "PostgreSQL"],
+          "hostedBy": "Abhijeet kumar",
+          "year": "2024"
+        },
+        {
+          "name": "Monitor",
+          "githubUrl": "https://github.com/Pratikdate/ecard",
+          "techstack": ["Dart", "Flutter"],
+          "hostedBy": "Pratik",
+          "year": "2024"
+        },
+        {
+          "name": "NEST ONDC",
+          "githubUrl": "https://github.com/MAVRICK-1/e-commerce_website",
+          "techstack": ["Redux", "Reactjs", "Firbase", "Materialui"],
+          "hostedBy": "Rishi Mondal",
+          "year": "2024"
+        },
+        {
+          "name": "BigOhhh Official Web Application",
+          "githubUrl": "https://github.com/omrajsharma/bigohhh.com",
+          "techstack": ["JS", "CSS", "HTML", "Node", "NextJS", "ReactJS", "Express", "MaterialUI"],
+          "hostedBy": "Omraj Sharma",
+          "year": "2024"
+        },
+        {
+          "name": "EmoWell",
+          "githubUrl": "https://github.com/Mansi168/EmoWell",
+          "techstack": ["CSS", "HTML", "Vite", "Auth0", "API.ai", "Node.js", "MongoDB", "React.js", "Bootstrap", "Streamlit", "JavaScript", "Dialogflow"],
+          "hostedBy": "Mansi",
+          "year": "2024"
+        },
+        {
+          "name": "Hairify",
+          "githubUrl": "https://github.com/algovengers/Hairify",
+          "techstack": ["NextJS", "Django", "PostgreSQL", "TypeScript", "TailwindCSS"],
+          "hostedBy": "Afeefuddin",
+          "year": "2024"
+        },
+        {
+          "name": "AI Jarvis",
+          "githubUrl": "https://github.com/Kunal-agrawall/AI-Jarvis/tree/main",
+          "techstack": ["CSS", "HTML", "JavaScript"],
+          "hostedBy": "Kunal Garg",
+          "year": "2024"
+        },
+        {
+          "name": "Cansat Ground station",
+          "githubUrl": "https://github.com/Gagan-Space/Cansat-Ground-Station.git",
+          "techstack": ["Vite", "React", "three.js"],
+          "hostedBy": "Shashank Agarwal",
+          "year": "2024"
+        },
+        {
+          "name": "ReactChatSocketIo",
+          "githubUrl": "https://github.com/urstrulynishkarsh/ReactChat",
+          "techstack": ["react", "nodejs", "Express", "socketio"],
+          "hostedBy": "ReactChatSocketIo",
+          "year": "2024"
+        },
+        {
+          "name": "BuildFast",
+          "githubUrl": "https://github.com/open-xyz/build-fast",
+          "techstack": ["nextjs", "typescript"],
+          "hostedBy": "Rohan Sharma",
+          "year": "2024"
+        },
+        {
+          "name": "Health Learning",
+          "githubUrl": "https://github.com/SrijanShovit/HealthLearning",
+          "techstack": ["Numpy", "Pandas", "Seaborn", "Matplotlib", "Tensorflow", "Scikit-learn"],
+          "hostedBy": "SRIJAN SHOVIT",
+          "year": "2024"
+        },
+        {
+          "name": "Lux Vitae (Living Light)",
+          "githubUrl": "https://github.com/joyhughes/Jen/tree/main/Lux",
+          "techstack": ["C++", "MUI", "React", "Emscripten"],
+          "hostedBy": "Joy Hughes",
+          "year": "2024"
+        },
+        {
+          "name": "Chat Chat",
+          "githubUrl": "https://github.com/Chit-Chat-Org",
+          "techstack": ["AWS", "Node", "NextJS", "express"],
+          "hostedBy": "Apurv Krishn Jha",
+          "year": "2024"
+        },
+        {
+          "name": "ShopNex",
+          "githubUrl": "https://github.com/JiyaGupta-cs/ShopNex",
+          "techstack": ["CSS", "HTML", "ReactJS", "JavaScript"],
+          "hostedBy": "Jiya Gupta",
+          "year": "2024"
+        },
+        {
+          "name": "Blox AI",
+          "githubUrl": "https://github.com/subhadeeproy3902/BloxAI",
+          "techstack": ["Kinde", "Convex", "ShadCNUI", "EditorJS", "Next.Js14", "Typescript", "Excalidraw", "TailwindCSS"],
+          "hostedBy": "Anish Biswas",
+          "year": "2024"
+        },
+        {
+          "name": "Online Book Sales",
+          "githubUrl": "https://github.com/Trisha-tech/OnlineBookSales",
+          "techstack": ["NodeJS", "MongoDB", "ExpressJS", "JavaScript"],
+          "hostedBy": "Trisha Sahu",
+          "year": "2024"
+        },
+        {
+          "name": "Bloggoo",
+          "githubUrl": "https://github.com/bishalde/Bloggoo",
+          "techstack": ["ReactJS", "MongoDB", "ExpressJs"],
+          "hostedBy": "Bishal De",
+          "year": "2024"
+        },
+        {
+          "name": "UltimateHealth (Backend + Frontend)",
+          "githubUrl": "https://github.com/SB2318/UltimateHealth.git",
+          "techstack": ["Java", "Node.js", "Expressjs", "ReactNative"],
+          "hostedBy": "Susmita Bhattacharya",
+          "year": "2024"
+        },
+        {
+          "name": "ResQFood",
+          "githubUrl": "https://github.com/sourabhkumar47/ResQFood",
+          "techstack": ["Kotlin", "JetpackCompose"],
+          "hostedBy": "Sourabh Kumar",
+          "year": "2024"
+        },
+        {
+          "name": "OpenVPN WireGuard Admin",
+          "githubUrl": "https://github.com/dashroshan/openvpn-wireguard-admin",
+          "techstack": ["Flask", "React", "Tailwind", "ShellScript"],
+          "hostedBy": "Roshan Dash",
+          "year": "2024"
+        },
+        {
+          "name": "Unified-Travelling-and-Transport-System",
+          "githubUrl": "https://github.com/HartzFrequency/Unified-Travelling-and-Transport-System",
+          "techstack": ["SQL", "Python", "Tkinter", "Mongodb"],
+          "hostedBy": "Harsh Shrivastava",
+          "year": "2024"
+        },
+        {
+          "name": "Curious Connect",
+          "githubUrl": "https://github.com/Curious-Ecosystem/Curious-Connect",
+          "techstack": ["CSS", "HTML", "NodeJS", "ReactJS", "JavaScript", "TailwindCSS"],
+          "hostedBy": "Nandan G N",
+          "year": "2024"
+        },
+        {
+          "name": "Note-Vault",
+          "githubUrl": "https://github.com/Note-Vault/Note-Vault",
+          "techstack": ["CSS", "HTML", "NODE.JS", "MONGODB", "BOOTSTRAP", "JAVASCRIPT", "EJSTEMPLATEENGINE"],
+          "hostedBy": "Harsh Goyal",
+          "year": "2024"
+        },
+        {
+          "name": "Exam Time",
+          "githubUrl": "https://github.com/hereisSwapnil/ExamTime",
+          "techstack": ["NodeJs", "ReactJs", "MongoDB", "Firebase", "ExpressJs"],
+          "hostedBy": "Swapnil Singh",
+          "year": "2024"
+        },
+        {
+          "name": "Capabilix",
+          "githubUrl": "https://github.com/JiyaGupta-cs/mytwit",
+          "techstack": ["ReactJS", "Firebase", "Razorpay", "TwitterAPI", "GoogleCalendar"],
+          "hostedBy": "Jiya Gupta",
+          "year": "2024"
+        },
+        {
+          "name": "Blogzen",
+          "githubUrl": "https://github.com/piug-07/blogzen-OpenSource",
+          "techstack": ["CSS", "HTML", "JAVASCRIPT"],
+          "hostedBy": "Piyush Gupta",
+          "year": "2024"
+        },
+        {
+          "name": "QRBuilder",
+          "githubUrl": "https://github.com/bishalde/QR-Code-Generator",
+          "techstack": ["CSS", "API", "SCSS", "HTML", "ViteJs", "ReactJS"],
+          "hostedBy": "Bishal De",
+          "year": "2024"
+        },
+        {
+            "name": "Awesome Generative AI APIs",
+            "githubUrl": "https://github.com/foss42/awesome-generative-ai-apis",
+            "techstack": [
+              "LLM",
+              "API",
+              "CSS",
+              "HTML",
+              "Markdown",
+              "GenerativeAI"
+            ],
+            "hostedBy": "Ashita Prasad",
+            "year": "2024"
+          },
+          {
+            "name": "Foodies Web",
+            "githubUrl": "https://github.com/VanshKing30/FoodiesWeb",
+            "techstack": [
+              "React",
+              "NodeJs",
+              "Express",
+              "MongoDb"
+            ],
+            "hostedBy": "Vansh Waldeo",
+            "year": "2024"
+          },
+          {
+            "name": "CodeIN Community Website",
+            "githubUrl": "https://github.com/SauravMukherjee44/CodeIN-Community-Website",
+            "techstack": [
+              "CSS",
+              "PHP",
+              "HTML",
+              "SCCS",
+              "Firebase",
+              "JavaScript"
+            ],
+            "hostedBy": "Saurav Mukherjee",
+            "year": "2024"
+          },
+          {
+            "name": "Smart-grid",
+            "githubUrl": "https://github.com/SmartGrid-ETHIndia/Smart-grid",
+            "techstack": [
+              "Nextjs",
+              "Solidity",
+              "tailwind",
+              "PushProtocol"
+            ],
+            "hostedBy": "Mayank Sharma",
+            "year": "2024"
+          },
+          {
+            "name": "chat hub",
+            "githubUrl": "https://github.com/him-raw99/chat-hub-client",
+            "techstack": [
+              "MERN"
+            ],
+            "hostedBy": "Himanshu Rawat",
+            "year": "2024"
+          },
+          {
+            "name": "Unicollab",
+            "githubUrl": "https://github.com/SUGAM-ARORA/UniCollab",
+            "techstack": [
+              "AI",
+              "ML",
+              "CSS",
+              "Html",
+              "React",
+              "Javascript"
+            ],
+            "hostedBy": "Sugam Arora",
+            "year": "2024"
+          },
+          {
+            "name": "GameZone🕹️",
+            "githubUrl": "https://github.com/kunjgit/GameZone",
+            "techstack": [
+              "CSS",
+              "HTML",
+              "JavaScript"
+            ],
+            "hostedBy": "Kunj Patel",
+            "year": "2024"
+          },
+          {
+            "name": "CrazyCoderWebApp",
+            "githubUrl": "https://github.com/Yash-Parsana/CrazyCoderWebApp",
+            "techstack": [
+              "ReactJsfirebase"
+            ],
+            "hostedBy": "Yash Parsana",
+            "year": "2024"
+          },
+          {
+            "name": "Watchful Guardian",
+            "githubUrl": "https://github.com/hasmithagunda123/ALL_INDIA_HACKATHON",
+            "techstack": [
+              "python"
+            ],
+            "hostedBy": "Hasmitha gunds",
+            "year": "2024"
+          },
+          {
+            "name": "AutomaDesk - Desktop Organizer",
+            "githubUrl": "https://github.com/Ash515/AutomaDesk",
+            "techstack": [
+              "Python",
+              "SQLite",
+              "Tkinter"
+            ],
+            "hostedBy": "Ashwin Kumar R",
+            "year": "2024"
+          },
+          {
+            "name": "cosmoXplore",
+            "githubUrl": "https://github.com/PranavBarthwal/cosmoXplore",
+            "techstack": [
+              "CSS",
+              "HTML",
+              "Bootstrap",
+              "JavaScript",
+              "NASAOpenAPI",
+              "Particle.js"
+            ],
+            "hostedBy": "Pranav Barthwal",
+            "year": "2024"
+          },
+          {
+            "name": "Dev-G",
+            "githubUrl": "https://github.com/ashutoshgithubs/iemhacks_DEV-G",
+            "techstack": [
+              "MERN"
+            ],
+            "hostedBy": "Ashutosh Kumar",
+            "year": "2024"
+          }
+        ]
