@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
+import 'package:url_launcher/link.dart';
 
 class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text('About App'),
       ),
       body: Center(
@@ -16,7 +17,7 @@ class AboutScreen extends StatelessWidget {
             children: [
               // Image
               Image.asset(
-                'assets/girlscript_logo.png', 
+                'assets/girlscript_logo.png',
                 width: 300,
                 height: 300,
                 fit: BoxFit.contain,
@@ -24,7 +25,7 @@ class AboutScreen extends StatelessWidget {
               SizedBox(height: 20),
               // Version
               Text(
-                'Version 1.0.0', 
+                'Version 1.0.0',
                 style: TextStyle(fontSize: 18),
               ),
               SizedBox(height: 10),
@@ -36,35 +37,30 @@ class AboutScreen extends StatelessWidget {
               ),
               SizedBox(height: 30),
               // GitHub Button
-              ElevatedButton.icon(
-                onPressed: () {
-                  _launchURL('https://github.com/andoriyaprashant/');
-                },
-                icon: Icon(Icons.code),
-                label: Text('GitHub'),
+              Link(
+                uri: Uri.parse('https://github.com/andoriyaprashant/'),
+                target: LinkTarget.self,
+                builder: (context, followlink) => ElevatedButton.icon(
+                  onPressed: followlink,
+                  icon: Icon(Icons.code),
+                  label: Text('GitHub'),
+                ),
               ),
               SizedBox(height: 10),
-              // Liquid Galaxy Website Link
-              ElevatedButton.icon(
-                onPressed: () {
-                  _launchURL('https://gssoc.girlscript.tech/');
-                },
-                icon: Icon(Icons.link),
-                label: Text('Gssoc Website'),
+
+              Link(
+                uri: Uri.parse('https://gssoc.girlscript.tech/'),
+                target: LinkTarget.self,
+                builder: (context, followlink) => ElevatedButton.icon(
+                  onPressed: followlink,
+                  icon: Icon(Icons.link),
+                  label: Text('Gssoc Website'),
+                ),
               ),
             ],
           ),
         ),
       ),
     );
-  }
-
-  // Function to launch URLs
-  Future<void> _launchURL(String url) async {
-    if (await UrlLauncher.canLaunch(url)) {
-      await UrlLauncher.launch(url);
-    } else {
-      print('Could not launch $url');
-    }
   }
 }
