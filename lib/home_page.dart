@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:opso/Functions/SearchFunctions.dart';
+import 'package:flutter/services.dart';
+import 'package:opso/Functions/screenNavigation.dart';
+import 'package:opso/widgets/SearchWidget.dart';
 import 'package:opso/Screens/girl_script.dart';
 import 'package:opso/Screens/mlh.dart';
 import 'package:opso/Screens/google_season_of_docs_screen.dart';
@@ -22,21 +24,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Contributor> contributors = [];
-  void _dataEntry() {
-    String file = "assets/Json/contributor.json";
-    File(file).readAsString().then((String contents) {
-      setState(() {
-        List<dynamic> jsonData = jsonDecode(contents);
-        contributors = jsonData
-            .map((data) => Contributor(
-                  name: data['Name'],
-                  image: data['Image'],
-                  onTap: () {},
-                ))
-            .toList();
-      });
-    }).catchError((error) {
-      print(' $error');
+  Future<void> _dataEntry() async {
+    String file = "assets/contributor.json";
+    final String response = await rootBundle.loadString(file);
+    final List<dynamic> jsonData = await json.decode(response);
+    setState(() {
+      contributors = jsonData
+          .map((data) => Contributor(
+                name: data['Name'],
+                image: data['Image'],
+              ))
+          .toList();
     });
   }
 
@@ -71,15 +69,22 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(6.0),
         child: ListView.builder(
           itemCount: contributors.length,
           itemBuilder: (context, index) {
             String title = contributors[index].name;
             String imageAssetPath = contributors[index].image;
-            Function onTap = contributors[index].onTap;
-            return ProgramOption(
-                title: title, imageAssetPath: imageAssetPath, onTap: () {});
+
+            return Container(
+              padding: const EdgeInsets.all(10),
+              child: ProgramOption(
+                  title: title,
+                  imageAssetPath: imageAssetPath,
+                  onTap: () {
+                    screenNavigation().navigateToScreen(context, title);
+                  }),
+            );
           },
         ),
       ),

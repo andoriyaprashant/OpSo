@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:opso/Functions/screenNavigation.dart';
 import 'package:opso/Screens/girl_script.dart';
 import 'package:opso/Screens/google_season_of_docs_screen.dart';
 import 'package:opso/Screens/google_summer_of_code_screen.dart';
@@ -56,55 +57,9 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
       itemBuilder: (context, index) => ListTile(
         title: Text(suggestionList[index]),
         onTap: () {
-          navigateToScreen(context, suggestionList[index]);
+          screenNavigation().navigateToScreen(context, suggestionList[index]);
         },
       ),
     );
-  }
-
-  void navigateToScreen(BuildContext context, String title) {
-    switch (title) {
-      case 'Google Summer of Code':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => GoogleSummerOfCodeScreen(),
-          ),
-        );
-        break;
-      case 'Google Season of Docs':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => GoogleSeasonOfDocsScreen(),
-          ),
-        );
-        break;
-      case 'Major League Hacking Fellowship':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => mlhfellow(),
-          ),
-        );
-        break;
-      case 'GirlScript Summer of Code':
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const GSSOCScreen(),
-            ));
-        break;
-      case 'Summer of Bitcoin':
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const SummerofBitcoin(),
-            ));
-        break;
-
-      default:
-        break;
-    }
   }
 }

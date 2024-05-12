@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "Google Summer of Code",
+    "Image": "assets/Images/gsoc_logo.png"
+  },
+  {
+    "Name": "Google Season of Docs",
+    "Image": "assets/Images/Google_season_of_docs.png"
+  },
+  {
+    "Name": "Major League Hacking Fellowship",
+    "Image": "assets/Images/mlh_logo.jpg"
+  },
+  {
+    "Name": "Summer of Bitcoin",
+    "Image": "assets/Images/summer_of_bitcoin_logo.png"
+  },
+  {
+    "Name": "Linux Foundation",
+    "Image": "assets/Images/linux_foundation_logo.png"
+  },
+  {
+    "Name": "Outreachy",
+    "Image": "assets/Images/outreachy.png"
+  },
+  {
+    "Name": "GirlScript Summer of Code",
+    "Image": "assets/Images/girlscript_logo.png"
+  }
+]

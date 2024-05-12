@@ -10,6 +10,10 @@ class SummerofBitcoin extends StatefulWidget {
 class _SummerofBitcoinState extends State<SummerofBitcoin> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Summer of Bitcoin"),
+      ),
+    );
   }
 }
