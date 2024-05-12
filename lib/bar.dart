@@ -61,7 +61,6 @@ class MenuOption extends StatefulWidget {
 }
 
 class _MenuOptionState extends State<MenuOption> {
-  bool _isHovered = false;
   bool _isClicked = false;
 
   @override
@@ -73,50 +72,40 @@ class _MenuOptionState extends State<MenuOption> {
         });
         widget.onTap();
       },
-      child: MouseRegion(
-        onEnter: (_) {
-          setState(() => _isHovered = true);
-        },
-        onExit: (_) {
-          setState(() => _isHovered = false);
-        },
-        child: Material(
-          child: Ink(
-            decoration: BoxDecoration(
-              color: _isHovered
-                  ? Colors.orange
-                  : Color.fromARGB(255, 237, 237, 239),
-              borderRadius: BorderRadius.circular(25),
-            ),
-            child: InkWell(
-              borderRadius: BorderRadius.circular(20),
-              onTap: () {
-                setState(() {
-                  _isClicked = !_isClicked;
-                });
-                widget.onTap();
-              },
-              child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          widget.title,
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
+      child: Material(
+        child: Ink(
+          decoration: BoxDecoration(
+            color: Color.fromARGB(255, 237, 237, 239),
+            borderRadius: BorderRadius.circular(25),
+          ),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(20),
+            onTap: () {
+              setState(() {
+                _isClicked = !_isClicked;
+              });
+              widget.onTap();
+            },
+            child: Container(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        widget.title,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(
-                        width: 220,
-                      ),
-                      Icon(Icons.arrow_forward_ios),
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      width: 220,
+                    ),
+                    Icon(Icons.arrow_forward_ios),
+                  ],
                 ),
               ),
             ),
