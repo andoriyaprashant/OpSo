@@ -1,0 +1,709 @@
+[
+    {
+      "name": "CSwala",
+      "githubUrl": "https://github.com/CSwala",
+      "techstack": ["XML", "Android", "Kotlin/Java", "Material I/O", "Google Analytics", "Firebase Fire Store", "Firebase Authentication", "Firebase Real Time Database"],
+      "hostedBy": "Rituraj Jain",
+      "year": "2021"
+    },
+    {
+      "name": "RollCall",
+      "githubUrl": "https://github.com/Swarnimashukla/Automatic-attendance-management-system",
+      "techstack": ["CSS", "Python", "HTML", "OpenCV", "Javascript", "Computer Vision"],
+      "hostedBy": "Swarnima Shukla",
+      "year": "2021"
+    },
+    {
+      "name": "WordNook",
+      "githubUrl": "https://github.com/ALPHAVIO/WordNook",
+      "techstack": ["HTML", "CSS", "EJS", "Heroku", "Node JS", "Mongoose", "Mongo DB", "Express JS"],
+      "hostedBy": "Pranav Mendiratta",
+      "year": "2021"
+    },
+    {
+      "name": "SheHeroes",
+      "githubUrl": "https://github.com/shagun25/SheHeroes",
+      "techstack": ["C++", "DART", "FLUTTER", "SQLITE", "GITHUB", "Python", "FIREBASE", "GOOGLE API", "DEEPLEARNING"],
+      "hostedBy": "Shagun Goyal",
+      "year": "2021"
+    },
+    {
+      "name": "HealthCheck",
+      "githubUrl": "https://github.com/kritikaparmar-programmer/HealthCheck",
+      "techstack": ["Python", "Flask", "Deep Learning", "Machine Learning"],
+      "hostedBy": "Kritika Parmar",
+      "year": "2021"
+    },
+    {
+      "name": "Image-Processing-OpenCV",
+      "githubUrl": "https://github.com/geekquad/Image-Processing-OpenCV",
+      "techstack": ["Python", "OpenCV", "Machine Learning"],
+      "hostedBy": "Aditya Kumar Gupta",
+      "year": "2021"
+    },
+    {
+      "name": "Dynamic-CLI",
+      "githubUrl": "https://github.com/IndianOpenSourceFoundation/dynamic-cli",
+      "techstack": ["Python"],
+      "hostedBy": "IndianOpenSourceFoundation",
+      "year": "2021"
+    },
+    {
+      "name": "ScanIt",
+      "githubUrl": "https://github.com/mishraaditya595/ScanIt",
+      "techstack": ["Java", "Kotlin"],
+      "hostedBy": "Aditya Mishra",
+      "year": "2021"
+    },
+    {
+      "name": "Algo-Phantoms-Frontend",
+      "githubUrl": "https://github.com/Algo-Phantoms/Algo-Phantoms-Frontend",
+      "techstack": ["HTML", "CSS", "Bootstrap", "VanillaJs", "Javascript"],
+      "hostedBy": "Manshi Todi",
+      "year": "2021"
+    },
+    {
+      "name": "Libro",
+      "githubUrl": "https://github.com/infiniteoverflow/Libro",
+      "techstack": ["REST", "Flutter", "Firebase"],
+      "hostedBy": "Aswin Gopinathan",
+      "year": "2021"
+    },
+    {
+      "name": "Algo-ScriptML",
+      "githubUrl": "https://github.com/Algo-Phantoms/Algo-ScriptML",
+      "techstack": ["Python", "NumPy", "Machine Learning"],
+      "hostedBy": "Aditya Kumar Gupta",
+      "year": "2021"
+    },
+    {
+      "name": "UniAuth",
+      "githubUrl": "https://github.com/uniauth",
+      "techstack": ["MERN", "Swift", "Golang", "Kotlin", "Python Java"],
+      "hostedBy": "Yash Kumar Verma",
+      "year": "2021"
+    },
+    {
+      "name": "Feminist Bible Phase 1",
+      "githubUrl": "https://github.com/girlscript/Feminist-Bible-FrontEnd-Phase1",
+      "techstack": ["CSS", "HTML", "Redux", "NodeJS", "React.js", "MongoDB", "JavaScript"],
+      "hostedBy": "Anushka Jadhav",
+      "year": "2021"
+    },
+    {
+      "name": "Jssconnect",
+      "githubUrl": "https://github.com/threefreespirited/Jssconnect",
+      "techstack": ["EJS", "CSS3", "HTML5", "Node JS", "Mongo DB", "Express JS", "JAVASCRIPT"],
+      "hostedBy": "Harshit Sharma",
+      "year": "2021"
+    },
+    {
+      "name": "Desgen",
+      "githubUrl": "https://github.com/awantika10/Desgen",
+      "techstack": ["HTML", "CSS", "Figma", "Anima", "Framer", "AdobeXD", "Illustrator"],
+      "hostedBy": "Awantika Nigam",
+      "year": "2021"
+    },
+    {
+      "name": "Study Partner",
+      "githubUrl": "https://www.github.com/krayong/Study_Partner",
+      "techstack": ["Java", "XML", "MVC", "GSON", "Jetpack Navigation"],
+      "hostedBy": "Karan Gourisaria",
+      "year": "2021"
+    },
+    {
+      "name": "SFC-Foundations Website",
+      "githubUrl": "https://github.com/himanshu007-creator/SFC-foundations",
+      "techstack": ["Web development"],
+      "hostedBy": "Himanshu",
+      "year": "2021"
+    },
+    {
+      "name": "CoinShift-Imaging-Box",
+      "githubUrl": "https://github.com/CoinShift-Imaging/CoinShift-Imaging-Box",
+      "techstack": ["Python", "Pytorch", "Tensorflow"],
+      "hostedBy": "Ritesh Yadav",
+      "year": "2021"
+    },
+    {
+      "name": "Athavani",
+      "githubUrl": "https://github.com/Tejas1510/Athavani",
+      "techstack": ["MERN"],
+      "hostedBy": "Tejas",
+      "year": "2021"
+    },
+    {
+      "name": "Relic Bazaar",
+      "githubUrl": "https://github.com/himanshusharma89/relic_bazaar",
+      "techstack": ["Flutter", "Firebase", "Matic API", "TensorFlow", "TensorFlow Lite"],
+      "hostedBy": "Himanshu Sharma",
+      "year": "2021"
+    },
+    {
+      "name": "CamOps",
+      "githubUrl": "https://github.com/Developer-Student-Clubs-VSSUT-Burla/CamOps",
+      "techstack": ["Java", "OpenCV", "Android"],
+      "hostedBy": "Rittik Biswal",
+      "year": "2021"
+    },
+    {
+      "name": "College Comrade",
+      "githubUrl": "https://github.com/Developer-Student-Clubs-VSSUT-Burla/College-Comrade",
+      "techstack": ["Java", "Android", "Firebase"],
+      "hostedBy": "Altamas Bari",
+      "year": "2021"
+    },
+    {
+      "name": "Awesome JavaScript Projects",
+      "githubUrl": "https://github.com/Vishal-raj-1/Awesome-JavaScript-Projects",
+      "techstack": ["CSS", "HTML5", "Bootstrap", "Vanilla JS"],
+      "hostedBy": "Vishal",
+      "year": "2021"
+    },
+    {
+      "name": "Periodo - The tracker",
+      "githubUrl": "https://github.com/Feminine-Divine/periodo",
+      "techstack": ["CSS", "Html", "Figma", "Next-js", "NodeJs", "ReactJs", "Webpack", "bootsrap", "Javascript", "Material-Ui"],
+      "hostedBy": "Khushi Gautam, Shipra Verma",
+      "year": "2021"
+    },
+    {
+      "name": "Project Sakura",
+      "githubUrl": "https://github.com/ProjectSakura/Mirai",
+      "techstack": ["Adobe XD", "Javascript", "Logo Design", "Express Node"],
+      "hostedBy": "Arun Teltia",
+      "year": "2021"
+    },
+    {
+      "name": "Kurakoo",
+      "githubUrl": "https://github.com/purnima143/Kurakoo",
+      "techstack": ["js", "css", "html", "nodejs", "reactjs", "MERN stack", "UI/UX design"],
+      "hostedBy": "Purnima Sharma",
+      "year": "2021"
+    },
+    {
+      "name": "Project Sakura",
+      "githubUrl": "https://github.com/ProjectSakura/ProjectSakura.github.io",
+      "techstack": ["CSS", "HTML", "Adobe XD", "Javascript", "Logo Design"],
+      "hostedBy": "Arun Teltia",
+      "year": "2021"
+    },
+    {
+      "name": "Book Recommendation Analysis",
+      "githubUrl": "https://github.com/vikasdo/Book-Recommendation-Analysis",
+      "techstack": ["Python", "Flask"],
+      "hostedBy": "Vikas",
+      "year": "2021"
+    },
+    {
+      "name": "SyntaxMeets",
+      "githubUrl": "https://github.com/kothariji/SyntaxMeets",
+      "techstack": ["CSS", "HTML", "Node JS", "Bootstrap", "Javascript", "Material UI", "React - Frontend", "Express - Backend", "Socket-IO for Web RTC"],
+      "hostedBy": "Dhruv Kothari",
+      "year": "2021"
+    },
+    {
+      "name": "Algo-Phantoms-Backend",
+      "githubUrl": "https://github.com/Algo-Phantoms/Algo-Phantoms-Backend",
+      "techstack": ["Python", "Django", "Django REST Framework"],
+      "hostedBy": "Diya Jaiswal",
+      "year": "2021"
+    },
+    {
+      "name": "Doc2pen",
+      "githubUrl": "https://github.com/smaranjitghose/doc2pen",
+      "techstack": ["CSS", "HTML", "Reactjs"],
+      "hostedBy": "Anush Bhatia",
+      "year": "2021"
+    },
+    {
+      "name": "SpeakEd",
+      "githubUrl": "https://github.com/harshcasper/speaked",
+      "techstack": ["AWS", "Flask", "MongoDB", "ReactJS", "Github Actions"],
+      "hostedBy": "Harsh Bardhan Mishra",
+      "year": "2021"
+    },
+    {
+      "name": "Feminist Bible (Phase 2)",
+      "githubUrl": "https://github.com/girlscript/feminist-bible-phase-2",
+      "techstack": ["HTML", "Node JS", "React JS", "Mongo DB", "CSS(SCSS)"],
+      "hostedBy": "Gaurav Das",
+      "year": "2021"
+    },
+    {
+      "name": "HITK Community Website",
+      "githubUrl": "https://github.com/HITK-TECH-Community/Community-Website",
+      "techstack": ["MERN", "AWS", "Node", "React", "Express", "MongoDB"],
+      "hostedBy": "Rohit Agarwal",
+      "year": "2021"
+    },
+    {
+      "name": "Animated Text Kit",
+      "githubUrl": "https://github.com/aagarwal1012/Animated-Text-Kit",
+      "techstack": ["Flutter"],
+      "hostedBy": "Ayush Agarwal",
+      "year": "2021"
+    },
+    {
+      "name": "Knoldus LeaderBoard",
+      "githubUrl": "https://github.com/knoldus/leaderboard",
+      "techstack": ["Scala", "Java", "Postgress", "React / Angular / Ionic"],
+      "hostedBy": "Manas Kashyap , Vikas Hazrati , Himanshu Gupta",
+      "year": "2021"
+    },
+    {
+      "name": "Friday",
+      "githubUrl": "https://github.com/avinashkranjan/Friday",
+      "techstack": ["JS", "CSS", "Dart", "HTML", "UI/UX", "Flutter", "Firebase"],
+      "hostedBy": "Avinash Ranjan",
+      "year": "2021"
+    },
+    {
+      "name": "DocLense",
+      "githubUrl": "https://github.com/smaranjitghose/DocLense",
+      "techstack": ["Dart", "Flutter", "TFlite"],
+      "hostedBy": "Anush Bhatia",
+      "year": "2021"
+    },
+    {
+      "name": "Simulate",
+      "githubUrl": "https://github.com/cod-ed/simulate",
+      "techstack": ["IOS", "Dart", "Android", "Physics", "Flutter", "Algorithms", "Mathematics", "Simulations", "Cross-Platform", "Visualizations"],
+      "hostedBy": "Yashu Garg",
+      "year": "2021"
+    },
+    {
+      "name": "Rocket Competitive Programming",
+      "githubUrl": "https://github.com/kaushik-rishi/rocketcp",
+      "techstack": ["Bash", "Node JS", "Javascript"],
+      "hostedBy": "Kaushik Rishi",
+      "year": "2021"
+    },
+    {
+      "name": "Gurujii",
+      "githubUrl": "https://github.com/Namanl2001/MERN-Gurujii-dev",
+      "techstack": ["MERN-stack"],
+      "hostedBy": "Naman Lakhwani",
+      "year": "2021"
+    },
+    {
+      "name": "EduHelp",
+      "githubUrl": "https://github.com/CrewMates-Open-Source/EduHelp",
+      "techstack": ["NLTK", "Python", "OpenCV", "speech-to-text", "Electron.js ( Or any desktop app framework)"],
+      "hostedBy": "Shankhanil Borthakur",
+      "year": "2021"
+    },
+    {
+      "name": "Certificate Generation and Verification System",
+      "githubUrl": "https://github.com/vigneshshettyin/Flask-Generate-Certificate",
+      "techstack": ["Flask", "Python", "jQuery", "Bootstrap", "JavaScript"],
+      "hostedBy": "Vignesh",
+      "year": "2021"
+    },
+    {
+      "name": "Face-X",
+      "githubUrl": "https://github.com/akshitagupta15june/Face-X",
+      "techstack": ["CNN", "Python", "AI/ML", "OpenCV"],
+      "hostedBy": "Akshita Gupta",
+      "year": "2021"
+    },
+    {
+      "name": "Opportunity Calendar (BackEnd)",
+      "githubUrl": "https://github.com/Girl-Code-It/Opportunity-Calendar-Backend",
+      "techstack": ["NodeJS", "MongoDB", "ExpressJS", "JavaScript"],
+      "hostedBy": "Manvi Tyagi",
+      "year": "2021"
+    },
+    {
+      "name": "Project Sakura",
+      "githubUrl": "https://github.com/ProjectSakura/blog",
+      "techstack": ["React", "Adobe XD", "Javascript"],
+      "hostedBy": "Arun Teltia",
+      "year": "2021"
+    },
+    {
+      "name": "Easy Job Intern",
+      "githubUrl": "https://github.com/pankajkumarbij/easy-job-intern",
+      "techstack": ["Node.js", "React Js", "Express Js", "MERN Stack (MongoDB"],
+      "hostedBy": "Pankaj Kumar Bijarniya",
+      "year": "2021"
+    },
+    {
+      "name": "Foss Events",
+      "githubUrl": "https://github.com/DSC-JSS-NOIDA/foss-events",
+      "techstack": ["JS", "HTML", "CSS", "NodeJS", "MongoDB"],
+      "hostedBy": "Pragati Verma",
+      "year": "2021"
+    },
+    {
+      "name": "REST-fetch",
+      "githubUrl": "https://github.com/adityabisoi/REST-fetch",
+      "techstack": ["NodeJS", "CI/CD", "Docker", "MongoDB", "ReactJS", "REST API", "TypeScript", "JavaScript"],
+      "hostedBy": "Aditya Bisoi",
+      "year": "2021"
+    },
+    {
+      "name": "Plasma Donor",
+      "githubUrl": "https://github.com/DSC-JSS-NOIDA/Plasma-Donor-App",
+      "techstack": ["Android", "Kotlin", "Firebase"],
+      "hostedBy": "Dheeraj Kotwani",
+      "year": "2021"
+    },
+    {
+      "name": "Master PyAlgo",
+      "githubUrl": "https://github.com/Developer-Student-Clubs-VSSUT-Burla/Master-PyAlgo",
+      "techstack": ["Python or PYPY"],
+      "hostedBy": "Aitik Dandapat",
+      "year": "2021"
+    },
+    {
+      "name": "Makes Math Easy",
+      "githubUrl": "https://github.com/makesmatheasy/makesmatheasy",
+      "techstack": ["CSS3", "HTML5", "LaTeX", "JavaScript", "Bootstrap"],
+      "hostedBy": "Rajinderpal Singh",
+      "year": "2021"
+    },
+    {
+      "name": "Batua",
+      "githubUrl": "https://github.com/pratyushmp/Batua",
+      "techstack": ["REST", "Flutter", "Firebase"],
+      "hostedBy": "Pratyush M",
+      "year": "2021"
+    },
+    {
+      "name": "Pentesting-and-Hacking-Scripts",
+      "githubUrl": "https://github.com/dscciem/Pentesting-and-Hacking-Scripts",
+      "techstack": ["C", "Go", "JS", "CSS", "Java", "HTML", "Python", "NodeJS"],
+      "hostedBy": "Avinash Kr. Ranjan",
+      "year": "2021"
+    },
+    {
+      "name": "Manthan",
+      "githubUrl": "https://github.com/Manthan933/Manthan",
+      "techstack": ["Mongodb", "Nodejs", "Reactjs", "Expressjs"],
+      "hostedBy": "Aavishkar Mishra",
+      "year": "2021"
+    },
+    {
+      "name": "Algo-Phantoms-Android",
+      "githubUrl": "https://github.com/Algo-Phantoms/Algo-Phantoms-Android",
+      "techstack": ["Android", "Kotlin"],
+      "hostedBy": "Dheeraj Kotwani",
+      "year": "2021"
+    },
+    {
+      "name": "Food Ordering Application for cloud kitchen",
+      "githubUrl": "https://github.com/rhythm98/Food-Ordering-Application",
+      "techstack": ["MERN Stack - Web"],
+      "hostedBy": "Rhythm Agrawal",
+      "year": "2021"
+    },
+    {
+      "name": "Forest Tree Tagging",
+      "githubUrl": "https://github.com/CodeFlow201/forestTreesTagging",
+      "techstack": ["Flutter", "Deep Learning", "Machine Learning"],
+      "hostedBy": "Vaibhav Arra",
+      "year": "2021"
+    },
+    {
+      "name": "Makes Math Easy Documentation",
+      "githubUrl": "https://github.com/makesmatheasy/makesmatheasy-documentation",
+      "techstack": ["CSS3", "HTML5", "LaTeX", "JavaScript", "Bootstrap"],
+      "hostedBy": "Rajinderpal Singh",
+      "year": "2021"
+    },
+    {
+      "name": "Algo-Tree",
+      "githubUrl": "https://github.com/Algo-Phantoms/Algo-Tree",
+      "techstack": ["C++", "Java", "Python"],
+      "hostedBy": "Vatsal Kesarwani",
+      "year": "2021"
+    },
+    {
+      "name": "Operationalizing ML",
+      "githubUrl": "https://github.com/vaibhavirohilla741/Operationalizing-ML",
+      "techstack": ["HTML", "CSS", "JQuery", "Arduino", "JavaScript"],
+      "hostedBy": "Vaibhavi Rohilla",
+      "year": "2021"
+    },
+    {
+      "name": "Bunk Manager",
+      "githubUrl": "https://github.com/ADRE9/bunk-manager-mern",
+      "techstack": ["MongoDb", "Node.js", "Mongoose", "React.js", "Express.js", "Framer Motion", "Material UI"],
+      "hostedBy": "Md Arshad Khan",
+      "year": "2021"
+    },
+    {
+      "name": "Jaisalmer E-Commerce",
+      "githubUrl": "https://github.com/gokulprathin8/Jaisalmer-E-Commerce",
+      "techstack": ["Django & React Tech Stack"],
+      "hostedBy": "Gokul Prathin",
+      "year": "2021"
+    },
+    {
+      "name": "Breast Cancer Predictor",
+      "githubUrl": "https://github.com/srimani-programmer/Breast-Cancer-Predictor",
+      "techstack": ["Python", "Flask", "Deep Learning", "Machine Learning", "Image Processing"],
+      "hostedBy": "Sri Manikanta Palakollu",
+      "year": "2021"
+    },
+    {
+      "name": "Delhi tourism",
+      "githubUrl": "https://github.com/PoojaMittal2842/Delhi-Tourism",
+      "techstack": ["Full Stack Tools"],
+      "hostedBy": "Pooja Mittal",
+      "year": "2021"
+    },
+    {
+      "name": "Flow2Ml",
+      "githubUrl": "https://github.com/flow2ml/Flow2ML",
+      "techstack": ["Python"],
+      "hostedBy": "Vedha Krishna Yarasuri",
+      "year": "2021"
+    },
+    {
+      "name": "Project Sakura",
+      "githubUrl": "https://github.com/ProjectSakura/contributors",
+      "techstack": ["React", "Adobe XD", "Logo Design", "Javascript"],
+      "hostedBy": "Arun Teltia",
+      "year": "2021"
+    },
+    {
+      "name": "Rescue",
+      "githubUrl": "https://github.com/swapnilsparsh/Rescue",
+      "techstack": ["HTML", "CSS", "Django"],
+      "hostedBy": "Swapnil Srivastava",
+      "year": "2021"
+    },
+    {
+      "name": "CodeTrophs",
+      "githubUrl": "https://github.com/CodeTrophs",
+      "techstack": ["Machine Learning"],
+      "hostedBy": "Arya Soni",
+      "year": "2021"
+    },
+    {
+      "name": "ELEKTRA",
+      "githubUrl": "https://github.com/khannakshat7/Elektra",
+      "techstack": ["JS", "CSS", "HTML", "Django"],
+      "hostedBy": "Akshat Khanna",
+      "year": "2021"
+    },
+    {
+      "name": "PRO_Act",
+      "githubUrl": "https://github.com/sruti2024/PRO_Act",
+      "techstack": ["C", "C++", "HTML", "Java", "Rust", "Python", "Django", "Angular"],
+      "hostedBy": "Sruti Chatterjee",
+      "year": "2021"
+    },
+    {
+      "name": "lifeMEDeasy",
+      "githubUrl": "https://github.com/avinashkranjan/lifeMEDeasy",
+      "techstack": ["NLP", "ReactJS", "Django", "Python", "Firebase"],
+      "hostedBy": "Avinash Kumar Ranjan",
+      "year": "2021"
+    },
+    {
+      "name": "Statistics and Econometrics for Data Science",
+      "githubUrl": "https://github.com/PetalsOnWind/Statistics-and-Econometrics-for-Data-Science",
+      "techstack": ["Python", "Jupyter Notebook"],
+      "hostedBy": "Pankhuri Saxena",
+      "year": "2021"
+    },
+    {
+      "name": "NeoAlgo",
+      "githubUrl": "https://github.com/TesseractCoding/NeoAlgo",
+      "techstack": ["C", "C++", "Q#", "Java", "Python", "Kotlin", "Golang", "Markdown", "Javascript"],
+      "hostedBy": "Harsh Bardhan Mishra",
+      "year": "2021"
+    },
+    {
+      "name": "Jagrati WebApp",
+      "githubUrl": "https://github.com/garg3133/JagratiWebApp",
+      "techstack": ["HTML", "JavaScript", "Python/Django", "CSS (+ Bootstrap 4)"],
+      "hostedBy": "Priyansh Garg",
+      "year": "2021"
+    },
+    {
+      "name": "Opportunity Calendar (FrontEnd)",
+      "githubUrl": "https://github.com/Girl-Code-It/Opportunity-Calendar-Frontend",
+      "techstack": ["AdobeXD Library", "React-Bootstrap", "ReactJs Framework", "Frontend: Wireframing & Designing"],
+      "hostedBy": "Manvi Tyagi",
+      "year": "2021"
+    },
+    {
+      "name": "Pixelvibe",
+      "githubUrl": "https://github.com/FOSS-Cell-GECPKD/pixelvibe",
+      "techstack": ["Front-End Web tools"],
+      "hostedBy": "Ankita Puri",
+      "year": "2021"
+    },
+    {
+      "name": "Kitabe",
+      "githubUrl": "https://github.com/Praful932/Kitabe",
+      "techstack": ["HTML", "CSS", "Python", "Django", "Surprise", "JavaScript", "Deep Learning", "Machine Learning"],
+      "hostedBy": "Praful Mohanan & Prajakta Mane",
+      "year": "2021"
+    },
+    {
+      "name": "PyDataStructs",
+      "githubUrl": "https://github.com/codezonediitj/pydatastructs",
+      "techstack": ["Git", "Python 3.0"],
+      "hostedBy": "Gagandeep Singh",
+      "year": "2021"
+    },
+    {
+      "name": "Share N Learn",
+      "githubUrl": "https://github.com/chiraag-kakar/sharenlearn",
+      "techstack": ["JS", "CSS3", "HTML5", "JQuery", "Bootstrap", "Backend : Python(Django)", "Database : Sqlite3 (will be migrated to Postgres soon)"],
+      "hostedBy": "Chiraag Kakar",
+      "year": "2021"
+    },
+    {
+      "name": "Chords",
+      "githubUrl": "https://github.com/Ayush-projects/chords",
+      "techstack": ["CSS", "HTML", "nodeJs", "MongoDB", "React.js", "JavaScript", "Tensorflow.js"],
+      "hostedBy": "Ayush",
+      "year": "2021"
+    },
+    {
+      "name": "React Messenger App",
+      "githubUrl": "https://github.com/DhairyaBahl/React-Messenger-App",
+      "techstack": ["React or react native and Firebase"],
+      "hostedBy": "Dhairya Bahl",
+      "year": "2021"
+    },
+    {
+      "name": "Project Sakura",
+      "githubUrl": "https://github.com/ProjectSakura/wiki",
+      "techstack": ["React", "Adobe XD", "Javascript", "Logo Design"],
+      "hostedBy": "Arun Teltia",
+      "year": "2021"
+    },
+    {
+      "name": "HotelonTouch",
+      "githubUrl": "https://github.com/ayan-biswas0412/gssoc2021-HotelOnTouch",
+      "techstack": ["ReactJS", "Firebase", "MongoDB and ExpressJS"],
+      "hostedBy": "AYAN BISWAS",
+      "year": "2021"
+    },
+    {
+      "name": "Project Sakura",
+      "githubUrl": "https://github.com/ProjectSakura/maintainers",
+      "techstack": ["React", "Java", "Node", "Adobe XD", "Javascript", "Logo Design"],
+      "hostedBy": "Arun Teltia",
+      "year": "2021"
+    },
+    {
+      "name": "Project Sakura",
+      "githubUrl": "https://github.com/ProjectSakura/kord-app",
+      "techstack": ["React", "Adobe XD", "Javascript", "Postgresql Express Node Typescript"],
+      "hostedBy": "Arun Teltia",
+      "year": "2021"
+    },
+    {
+      "name": "pbchess",
+      "githubUrl": "https://github.com/fave77/pbchess",
+      "techstack": ["HTML", "CSS", "Jest", "React", "Redis", "Socket", "Node.js", "Express", "MongoDB", "Bootstrap", "JavaScript"],
+      "hostedBy": "Priyabrata Biswas",
+      "year": "2021"
+    },
+    {
+      "name": "Kidney Exchange",
+      "githubUrl": "https://github.com/siv2r/kidney-exchange",
+      "techstack": ["PHP", "CSS", "HTML", "Python", "JavaScript"],
+      "hostedBy": "Sivaram D",
+      "year": "2021"
+    },
+    {
+      "name": "LesKollab",
+      "githubUrl": "https://github.com/Spectrum-CETB/LesKollab",
+      "techstack": ["HTML", "CSS", "PHP", "Javascript"],
+      "hostedBy": "Rupesh Chanda Mohanty",
+      "year": "2021"
+    },
+    {
+      "name": "Amazing-Python-Scripts",
+      "githubUrl": "https://github.com/avinashkranjan/Amazing-Python-Scripts",
+      "techstack": ["JS", "CSS", "HTML", "Python"],
+      "hostedBy": "Avinash Kumar Ranjan",
+      "year": "2021"
+    },
+    {
+      "name": "DevTernShip",
+      "githubUrl": "https://github.com/praveenscience/Internship-LMS-FrontEnd",
+      "techstack": ["CSS", "HTML", "React JS", "JavaScript"],
+      "hostedBy": "Praveen Kumar Purushothaman",
+      "year": "2021"
+    },
+    {
+      "name": "Network Scanner",
+      "githubUrl": "https://github.com/vinitshahdeo/PortScanner",
+      "techstack": ["SQL", "Python"],
+      "hostedBy": "Vinit Shahdeo",
+      "year": "2021"
+    },
+    {
+      "name": "EasyA Website",
+      "githubUrl": "https://github.com/praveenscience/easya-website",
+      "techstack": ["React", "SCSS", "JavaScript"],
+      "hostedBy": "Praveen Kumar",
+      "year": "2021"
+    },
+    {
+      "name": "Girlscript Community Website",
+      "githubUrl": "https://github.com/girlscript/Girscript-Community-Website",
+      "techstack": ["Django", "MERN Stack"],
+      "hostedBy": "Dharm Narayan",
+      "year": "2021"
+    },
+    {
+      "name": "ML-Projectyard",
+      "githubUrl": "https://github.com/ashishsahu1/ML-ProjectYard",
+      "techstack": ["Python", "deep learning", "machine learning", "backend development", "frontend developement"],
+      "hostedBy": "Ashish Sahu",
+      "year": "2021"
+    },
+    {
+        "name": "Rotten Scripts",
+        "githubUrl": "https://github.com/harshcasper/rotten-scripts",
+        "techstack": ["BASH", "Python", "Golang", "Javascript"],
+        "hostedBy": "Harsh Bardhan Mishra",
+        "year": "2021"
+      },
+      {
+        "name": "klarEDA",
+        "githubUrl": "https://github.com/klarEDA/klar-EDA",
+        "techstack": ["Python", "Seaborn", "Machine Learning", "Python Libraries - Matplotlib"],
+        "hostedBy": "Ashish Kshirsagar",
+        "year": "2021"
+      },
+      {
+        "name": "Recess",
+        "githubUrl": "https://github.com/avinashkranjan/Recess",
+        "techstack": ["ReactJS", "Firebase"],
+        "hostedBy": "Avinash Kumar Ranjan",
+        "year": "2021"
+      },
+      {
+        "name": "Project Sakura",
+        "githubUrl": "https://github.com/ProjectSakura/download",
+        "techstack": ["Vue", "Adobe XD", "Javascript", "Logo Design"],
+        "hostedBy": "Arun Teltia",
+        "year": "2021"
+      },
+      {
+        "name": "Bulk Mailer",
+        "githubUrl": "https://github.com/vigneshshettyin/Bulk-Mailer",
+        "techstack": ["Flask", "Python", "Bootstrap", "JavaScript"],
+        "hostedBy": "Vignesh",
+        "year": "2021"
+      },
+      {
+        "name": "Alumni Connect",
+        "githubUrl": "https://github.com/ChetnaNSharma/Alumni-Connect",
+        "techstack": ["HTML", "CSS", "Node JS", "React JS", "JAVASCRIPT"],
+        "hostedBy": "Chetna Sharma",
+        "year": "2021"
+      }
+    ]
