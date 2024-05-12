@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:opso/modals/gssoc_project_modal.dart';
+
 import 'package:opso/widgets/gssoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
+
+import '../widgets/SearchandFilterWidget.dart';
 
 class GSSOCScreen extends StatefulWidget {
   @override
@@ -13,6 +16,7 @@ class GSSOCScreen extends StatefulWidget {
 }
 
 class _GSSOCScreenState extends State<GSSOCScreen> {
+
   List<GssocProjectModal> gssoc2024 = [];
   List<GssocProjectModal> gssoc2023 = [];
   List<GssocProjectModal> gssoc2022 = [];
@@ -24,26 +28,26 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
 
   Future<void> initializeProjectLists() async {
     String response =
-        await rootBundle.loadString('assets/projects/gssoc/gssoc2024.json');
+    await rootBundle.loadString('assets/projects/gssoc/gssoc2024.json');
     var jsonList = await json.decode(response);
     for (var data in jsonList) {
       gssoc2024.add(GssocProjectModal.getDataFromJson(data));
     }
     projectList = List.from(gssoc2024);
     response =
-        await rootBundle.loadString('assets/projects/gssoc/gssoc2023.json');
+    await rootBundle.loadString('assets/projects/gssoc/gssoc2023.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gssoc2023.add(GssocProjectModal.getDataFromJson(data));
     }
     response =
-        await rootBundle.loadString('assets/projects/gssoc/gssoc2022.json');
+    await rootBundle.loadString('assets/projects/gssoc/gssoc2022.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gssoc2022.add(GssocProjectModal.getDataFromJson(data));
     }
     response =
-        await rootBundle.loadString('assets/projects/gssoc/gssoc2021.json');
+    await rootBundle.loadString('assets/projects/gssoc/gssoc2021.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gssoc2021.add(GssocProjectModal.getDataFromJson(data));
@@ -55,7 +59,15 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     getProjectFunction = initializeProjectLists();
     super.initState();
   }
-
+  void searchTag(String searchTag){
+    projectList = projectList
+        .where(
+            (element) =>
+            element.techstack.contains(searchTag)
+    )
+        .toList();
+    setState(() {});
+  }
   void search(String searchText) {
     if (searchText.isEmpty) {
       switch (selectedYear) {
@@ -78,10 +90,10 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     projectList = projectList
         .where(
           (element) =>
-              element.name.toLowerCase().contains(searchText.toLowerCase()) ||
-              element.techstack.contains(searchText) ||
-              element.hostedBy.toLowerCase().contains(searchText.toLowerCase()),
-        )
+      element.name.toLowerCase().contains(searchText.toLowerCase()) ||
+          element.techstack.contains(searchText) ||
+          element.hostedBy.toLowerCase().contains(searchText.toLowerCase()),
+    )
         .toList();
     setState(() {});
   }
@@ -90,6 +102,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
   Widget build(BuildContext context) {
     var height = MediaQuery.sizeOf(context).height;
     var width = MediaQuery.sizeOf(context).width;
+    List<String> languages = ['Js','Python','React','Angular','Bootstrap','Firebase','Node','MongoDb','Express','Next','CSS', 'HTML', 'JavaScript', 'Flutter','Dart'];
     return Scaffold(
       appBar: AppBar(
         title: const Text('Girl Script Summer of Code'),
@@ -102,7 +115,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
             } else if (snapshot.connectionState == ConnectionState.done) {
               return Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
+                const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -139,7 +152,10 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                         contentPadding: const EdgeInsets.symmetric(
                             vertical: 12.0, horizontal: 20.0),
                       ),
-                      onFieldSubmitted: (value) => search(value.trim()),
+                      onFieldSubmitted: (value) {
+                        print("value is $value");
+                        search(value.trim());
+                      },
                       onChanged: (value) {
                         if (value.isEmpty) {
                           search(value);
@@ -153,7 +169,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                       child: GridView(
                         physics: const NeverScrollableScrollPhysics(),
                         gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           childAspectRatio: 4 / 2,
                           crossAxisSpacing: 10,
@@ -238,6 +254,48 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                     const SizedBox(
                       height: 20,
                     ),
+
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text('Filter by Language:',style: TextStyle(fontWeight: FontWeight.w400),),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              DropdownWidget(
+                                items: languages,
+                                hintText: 'Language',
+                                onChanged: (newValue) {
+                                  setState(() {
+                                    switch (selectedYear) {
+                                      case 2021:
+                                        projectList = gssoc2021;
+                                        break;
+                                      case 2022:
+                                        projectList = gssoc2022;
+                                        break;
+                                      case 2023:
+                                        projectList = gssoc2023;
+                                        break;
+                                      case 2024:
+                                        projectList = gssoc2024;
+                                        break;
+                                    }
+                                    searchTag(newValue);
+                                  });
+                                  // Perform filtering based on selectedLanguage
+                                },
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+
                     Expanded(
                       // width: width,
                       child: ListView.builder(
