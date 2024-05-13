@@ -7,6 +7,5 @@
 
 4. Make the changes that you are willing to do.
 
-5. Then click "source control button" and then clcik on "commit" as shown in fig.
+5. Then click "source control button" and then name the commit and then only clcik on "commit" as shown in fig.
 
-6.
