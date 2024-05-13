@@ -155,7 +155,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          childAspectRatio: 1.4 / 0.6,
+                          childAspectRatio: 1.5 / 0.6,
                           crossAxisSpacing: 15,
                           mainAxisSpacing: 15,
                         ),
