@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:opso/about.dart';
+import 'package:url_launcher/link.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget({Key? key}) : super(key: key);
@@ -8,7 +9,6 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         title: Text(
           'OpSo',
           style: TextStyle(fontWeight: FontWeight.bold),
