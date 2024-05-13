@@ -11,7 +11,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       appBar: AppBar(
         title: Text(
           'OpSo',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
       body: Material(
