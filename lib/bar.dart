@@ -1,32 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:opso/about.dart';
+import 'package:url_launcher/link.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
+  const AppBarWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        // ignore: prefer_const_constructors
         title: Text(
           'OpSo',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView(
-          children: [
-            MenuOption(
-              title: 'About',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AboutScreen()),
-                );
-              },
+      body: Material(
+        color: Colors.transparent,
+        child: Ink(
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          child: InkWell(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ListView(
+                children: [
+                  MenuOption(
+                    title: 'About',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AboutScreen()),
+                      );
+                    },
+                  ),
+                ],
+              ),
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -36,8 +47,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }
 
-// MenuOption is a custom widget that represents a menu option.
-class MenuOption extends StatelessWidget {
+class MenuOption extends StatefulWidget {
   final String title;
   final VoidCallback onTap;
 
@@ -47,30 +57,59 @@ class MenuOption extends StatelessWidget {
   });
 
   @override
+  _MenuOptionState createState() => _MenuOptionState();
+}
+
+class _MenuOptionState extends State<MenuOption> {
+  bool _isClicked = false;
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 237, 237, 239),
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: Row(
-          children: [
-            SizedBox(width: 20),
-            Expanded(
-              child: Text(
-                title,
-                // ignore: prefer_const_constructors
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+      onTap: () {
+        setState(() {
+          _isClicked = !_isClicked;
+        });
+        widget.onTap();
+      },
+      child: Material(
+        child: Ink(
+          decoration: BoxDecoration(
+            color: Color.fromARGB(255, 237, 237, 239),
+            borderRadius: BorderRadius.circular(25),
+          ),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(20),
+            onTap: () {
+              setState(() {
+                _isClicked = !_isClicked;
+              });
+              widget.onTap();
+            },
+            child: Container(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        widget.title,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 220,
+                    ),
+                    Icon(Icons.arrow_forward_ios),
+                  ],
                 ),
               ),
             ),
-            Icon(Icons.arrow_forward_ios),
-          ],
+          ),
         ),
       ),
     );
