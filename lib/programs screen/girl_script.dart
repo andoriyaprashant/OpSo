@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:opso/modals/gssoc_project_modal.dart';
 
 import 'package:opso/widgets/gssoc_project_widget.dart';
@@ -11,6 +10,8 @@ import 'package:opso/widgets/year_button.dart';
 import '../widgets/SearchandFilterWidget.dart';
 
 class GSSOCScreen extends StatefulWidget {
+  const GSSOCScreen({super.key});
+
   @override
   State<GSSOCScreen> createState() => _GSSOCScreenState();
 }
@@ -259,7 +260,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text('Filter by Language:',style: TextStyle(fontWeight: FontWeight.w400),),
+                        const Text('Filter by Language:',style: TextStyle(fontWeight: FontWeight.w400),),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
