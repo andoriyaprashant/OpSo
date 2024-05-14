@@ -38,6 +38,9 @@ dependencies:
   http: ^1.2.1
   html: ^0.15.4
   url_launcher: ^6.2.6
+  webview_flutter: ^4.7.0
+  chaleno: ^0.0.8
+  beautiful_soup_dart: ^0.3.0
 
 dev_dependencies:
   flutter_test:
