@@ -163,17 +163,7 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     var width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       appBar: AppBar(
-<<<<<<< HEAD
-        title: Text('Google Season of Docs'),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.bookmark_add)),
-        ],
-      ),
-      body: Center(
-        child: Text('Google Season of Docs Screen'),
-=======
         title: const Text('Google Summer of Docs'),
->>>>>>> fb52a22e37a259f9e38082632380cb45731bc3df
       ),
       body: FutureBuilder<void>(
           future: getProjectFunction,
