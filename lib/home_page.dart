@@ -5,10 +5,39 @@ import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
 import 'package:opso/programs%20screen/mlh.dart';
+import 'package:opso/services/notificationService.dart';
 
 import 'bar.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  void initState() {
+    showNotification();
+    super.initState();
+  }
+//show various notification from here
+  void showNotification() async{
+    await NotificationService.showNotification(
+      title: "OpSo",
+      body: "Explore various Open-Source Programs",
+    );
+  }
+
+
+//used to show the notification every 5 ms
+  void showScheduleNotification() async{
+    await NotificationService.showNotification(
+        title: "OpSo",
+        body: "Explore various Open-Source Programs",
+        scheduled: true,
+        interval: 5
+    );
+  }
+
   final List<Program> programs = [
     Program(
       title: 'Google Summer of Code',
