@@ -109,7 +109,7 @@ class HomePage extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => mlhfellow(),
+            builder: (context) => MajorLeagueHackingFellowship()
           ),
         );
         break;
@@ -286,7 +286,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => mlhfellow(),
+            builder: (context) => MajorLeagueHackingFellowship(),
           ),
         );
         break;

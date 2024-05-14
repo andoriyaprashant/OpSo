@@ -1,37 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class GoogleSummerOfCodeScreen extends StatelessWidget {
+class GoogleSummerOfCodeScreen extends StatefulWidget {
+  @override
+  _GoogleSummerOfCodeScreenState createState() => _GoogleSummerOfCodeScreenState();
+}
+
+class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
+  bool flag = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Google Summer of Code'),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.bookmark_add)),
+        title: const Text('OpSo'),
+        actions: <Widget>[
+          IconButton(
+            icon: (flag)
+                ? const Icon(Icons.bookmark_add)
+                : const Icon(Icons.bookmark_added),
+            onPressed: () {
+              setState(() {
+                flag = !flag;
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(flag ? 'Bookmark removed' : 'Bookmark added'),
+                    duration: const Duration(seconds: 2),
+                  ),
+                );
+              });
+            },
+          )
         ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Search',
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
-                contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+                contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
               ),
               onChanged: (value) {
                 // Handle search input
               },
             ),
           ),
-          SizedBox(height: 20),
-          Row(
+          const SizedBox(height: 20),
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               YearButton(
@@ -44,8 +66,8 @@ class GoogleSummerOfCodeScreen extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
-          Row(
+          const SizedBox(height: 20),
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               YearButton(
@@ -58,16 +80,16 @@ class GoogleSummerOfCodeScreen extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
               // launch('https://example.com/projects'); // Replace with actual URL
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color.fromARGB(255, 226, 230, 120), // Set button color
-              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+              backgroundColor: const Color.fromARGB(255, 226, 230, 120), // Set button color
+              padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
             ),
-            child: Text('View Projects'),
+            child: const Text('View Projects'),
           ),
         ],
       ),
@@ -89,7 +111,7 @@ class YearButton extends StatelessWidget {
         // launch(url);
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: Color.fromARGB(255, 172, 207, 236), // Set button color
+        backgroundColor: const Color.fromARGB(255, 172, 207, 236), // Set button color
       ),
       child: Text(year),
     );
