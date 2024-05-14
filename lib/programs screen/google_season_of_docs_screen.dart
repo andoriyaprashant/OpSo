@@ -23,6 +23,7 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
   List<GsodModalNew> gsod2021 = [];
   List<GsodModalOld> gsod2020 = [];
   List<GsodModalOld> gsod2019 = [];
+  bool flag = true;
   int selectedYear = 2023;
 
   List projectList = [];
@@ -162,9 +163,29 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     var height = MediaQuery.sizeOf(context).height;
     var width = MediaQuery.sizeOf(context).width;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Google Summer of Docs'),
-      ),
+
+          appBar: AppBar(
+        title: const Text('OpSo'),
+          actions: <Widget>[
+            IconButton(
+            icon: (flag)
+                ? const Icon(Icons.bookmark_add)
+                : const Icon(Icons.bookmark_added),
+            onPressed: () {
+              setState(() {
+                flag = !flag;
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(flag ? 'Bookmark removed' : 'Bookmark added'),
+                    duration: const Duration(seconds: 2), // Adjust the duration as needed
+                  ),
+                );
+              });
+            },
+            )
+          ]
+        ),
+
       body: FutureBuilder<void>(
           future: getProjectFunction,
           builder: (context, snapshot) {

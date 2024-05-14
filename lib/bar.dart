@@ -10,7 +10,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'OpSo',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
@@ -18,7 +18,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       body: Material(
         color: Colors.transparent,
         child: Ink(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
           ),
           child: InkWell(
@@ -26,6 +26,19 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
               padding: const EdgeInsets.all(16.0),
               child: ListView(
                 children: [
+
+                  MenuOption(
+                    title: 'Bookmarks',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const BookMarkScreen()),
+                      );
+                    },
+                  ),
+
+                  const Padding(padding: EdgeInsets.only(top: 40)),
+
                   MenuOption(
                     title: 'About',
                     onTap: () {
@@ -35,6 +48,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                       );
                     },
                   ),
+
                 ],
               ),
             ),
@@ -45,7 +59,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
 class MenuOption extends StatefulWidget {
@@ -76,7 +90,7 @@ class _MenuOptionState extends State<MenuOption> {
       child: Material(
         child: Ink(
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 237, 237, 239),
+            color: const Color.fromARGB(255, 237, 237, 239),
             borderRadius: BorderRadius.circular(25),
           ),
           child: InkWell(
@@ -91,21 +105,22 @@ class _MenuOptionState extends State<MenuOption> {
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
                         widget.title,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 220,
                     ),
-                    Icon(Icons.arrow_forward_ios),
+                    const Icon(Icons.arrow_forward_ios),
                   ],
                 ),
               ),
