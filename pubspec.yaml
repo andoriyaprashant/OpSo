@@ -72,6 +72,7 @@ flutter:
   assets:
     - assets/
     - assets/projects/gssoc/
+    - assets/projects/gsod/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
