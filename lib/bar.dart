@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:opso/about.dart';
+import 'package:opso/widgets/book_mark_screen.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -10,13 +11,26 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         // ignore: prefer_const_constructors
         title: Text(
           'OpSo',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
+
+           MenuOption(
+              title: 'Bookmarks',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const BookMarkScreen()),
+                );
+              },
+            ),
+
+            const Padding(padding: EdgeInsets.only(top: 30)),
+
             MenuOption(
               title: 'About',
               onTap: () {
@@ -26,6 +40,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                 );
               },
             ),
+
           ],
         ),
       ),

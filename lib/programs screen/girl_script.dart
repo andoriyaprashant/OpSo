@@ -1,9 +1,11 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:opso/modals/gssoc_project_modal.dart';
+import 'package:opso/widgets/book_mark_screen.dart';
 
 import 'package:opso/widgets/gssoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
@@ -19,6 +21,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
 
   List<GssocProjectModal> gssoc2024 = [];
   List<GssocProjectModal> gssoc2023 = [];
+  bool flag = true;
   List<GssocProjectModal> gssoc2022 = [];
   List<GssocProjectModal> gssoc2021 = [];
   int selectedYear = 2024;
@@ -104,10 +107,31 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     var width = MediaQuery.sizeOf(context).width;
     List<String> languages = ['Js','Python','React','Angular','Bootstrap','Firebase','Node','MongoDb','Express','Next','CSS', 'HTML', 'JavaScript', 'Flutter','Dart'];
     return Scaffold(
+
       appBar: AppBar(
-        title: const Text('Girl Script Summer of Code'),
-      ),
-      body: FutureBuilder<void>(
+        title: const Text('OpSo'),
+          actions: <Widget>[
+            IconButton(
+            icon: (flag)
+                ? const Icon(Icons.bookmark_add)
+                : const Icon(Icons.bookmark_added),
+            onPressed: () {
+              setState(() {
+                flag = !flag;
+                // Show a SnackBar to indicate whether the bookmark was added or removed
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(flag ? 'Bookmark removed' : 'Bookmark added'),
+                    duration: const Duration(seconds: 2), // Adjust the duration as needed
+                  ),
+                );
+              });
+            },
+            )
+          ]
+        ),
+
+        body: FutureBuilder<void>(
           future: getProjectFunction,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
@@ -259,7 +283,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text('Filter by Language:',style: TextStyle(fontWeight: FontWeight.w400),),
+                        const Text('Filter by Language:',style: TextStyle(fontWeight: FontWeight.w400),),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
