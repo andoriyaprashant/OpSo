@@ -19,7 +19,6 @@ class GssocProjectWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () async {
         Uri uri = Uri.parse(modal.githubUrl);
-        print("heloooooooooooooooooooooooooo");
         // if (await canLaunchUrl(uri)) {
         //   launchUrl(uri);
         // }
