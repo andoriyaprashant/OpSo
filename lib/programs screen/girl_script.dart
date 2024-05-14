@@ -3,7 +3,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:opso/modals/gssoc_project_modal.dart';
 import 'package:opso/widgets/book_mark_screen.dart';
 
@@ -13,6 +12,8 @@ import 'package:opso/widgets/year_button.dart';
 import '../widgets/SearchandFilterWidget.dart';
 
 class GSSOCScreen extends StatefulWidget {
+  const GSSOCScreen({super.key});
+
   @override
   State<GSSOCScreen> createState() => _GSSOCScreenState();
 }
