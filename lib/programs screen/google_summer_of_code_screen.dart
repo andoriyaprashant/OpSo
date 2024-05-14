@@ -7,6 +7,9 @@ class GoogleSummerOfCodeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Google Summer of Code'),
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.bookmark_add)),
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

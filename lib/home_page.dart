@@ -5,6 +5,7 @@ import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
 import 'package:opso/programs%20screen/mlh.dart';
+import 'package:opso/programs%20screen/outreachy.dart';
 
 import 'bar.dart';
 
@@ -85,6 +86,7 @@ class HomePage extends StatelessWidget {
 
   void navigateToScreen(BuildContext context, Program program) {
     switch (program.title) {
+
       case 'Google Summer of Code':
         Navigator.push(
           context,
@@ -93,6 +95,7 @@ class HomePage extends StatelessWidget {
           ),
         );
         break;
+
       case 'Google Season of Docs':
         Navigator.push(
           context,
@@ -101,6 +104,7 @@ class HomePage extends StatelessWidget {
           ),
         );
         break;
+
       case 'Major League Hacking Fellowship':
         Navigator.push(
           context,
@@ -109,6 +113,7 @@ class HomePage extends StatelessWidget {
           ),
         );
         break;
+
       case 'GirlScript Summer of Code':
         Navigator.push(
           context,
@@ -117,6 +122,10 @@ class HomePage extends StatelessWidget {
           ),
         );
         break;
+
+        case 'Outreachy':
+          Navigator.push(context, MaterialPageRoute(builder: (context) => OutReachy()));
+
       default:
         break;
     }

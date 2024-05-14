@@ -6,6 +6,9 @@ class mlhfellow extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('mlh'),
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.bookmark_add)),
+        ],
       ),
       body: Center(
         child: Text('mlh'),
