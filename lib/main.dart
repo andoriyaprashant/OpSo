@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
+import 'package:opso/services/notificationService.dart';
 import 'home_page.dart';
 
-void main() {
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await NotificationService.initialNotification();
   runApp(OpSoApp());
 }
+
 
 class OpSoApp extends StatelessWidget {
   @override
@@ -15,10 +20,11 @@ class OpSoApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        
+
       ),
       home: HomePage(),
     );
   }
 }
+
 
