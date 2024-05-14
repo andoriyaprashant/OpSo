@@ -117,9 +117,7 @@ class _MenuOptionState extends State<MenuOption> {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      width: 220,
-                    ),
+                  
                     const Icon(Icons.arrow_forward_ios),
                   ],
                 ),
