@@ -109,83 +109,99 @@ class GsodProjectWidgetOld extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            GestureDetector(
-              child: Wrap(
-                children: [
-                  const Text(
-                    "Project : ",
-                    style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontWeight: FontWeight.bold,
+            Row(
+              children: [
+                GestureDetector(
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 249, 241, 226),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const IntrinsicWidth(
+                      stepWidth: 30,
+                      child: Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: Center(
+                          child: Text(
+                            "Project",
+                            style: TextStyle(
+                              color: Colors.orange,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                  Text(
-                    modal.project,
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationColor: primaryColor,
-                      color: primaryColor,
+                  onTap: () {
+                    launchUrl(Uri.parse(modal.projectUrl));
+                  },
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.1,
+                ),
+                GestureDetector(
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 249, 241, 226),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const IntrinsicWidth(
+                      stepWidth: 30,
+                      child: Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: Center(
+                          child: Text(
+                            "Report",
+                            style: TextStyle(
+                              color: Colors.orange,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ],
-              ),
-              onTap: () {
-                launchUrl(Uri.parse(modal.projectUrl));
-              },
+                  onTap: () {
+                    launchUrl(Uri.parse(modal.reportUrl));
+                  },
+                ),
+              ],
             ),
             const SizedBox(
               height: 10,
             ),
             GestureDetector(
-              child: Wrap(
-                children: [
-                  const Text(
-                    "Report : ",
-                    style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontWeight: FontWeight.bold,
+              child: Container(
+                margin: const EdgeInsets.only(right: 10),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 249, 241, 226),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const IntrinsicWidth(
+                  stepWidth: 30,
+                  child: Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Center(
+                      child: Text(
+                        "Original project proposal",
+                        style: TextStyle(
+                          color: Colors.orange,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
-                  Text(
-                    modal.report,
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationColor: primaryColor,
-                      color: primaryColor,
-                    ),
-                  ),
-                ],
-              ),
-              onTap: () {
-                launchUrl(Uri.parse(modal.reportUrl));
-              },
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            GestureDetector(
-              child: Wrap(
-                children: [
-                  const Text(
-                    "Original project proposal : ",
-                    style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    modal.originalProjectProposal,
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationColor: primaryColor,
-                      color: primaryColor,
-                    ),
-                  ),
-                ],
+                ),
               ),
               onTap: () {
                 launchUrl(Uri.parse(modal.originalProjectProposalUrl));
               },
+            ),
+            const SizedBox(
+              height: 10,
             ),
           ],
         ),
