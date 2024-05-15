@@ -2,12 +2,16 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:opso/modals/gssoc_project_modal.dart';
+
 import 'package:opso/widgets/gssoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
+import '../widgets/SearchandFilterWidget.dart';
+
 class GSSOCScreen extends StatefulWidget {
+  const GSSOCScreen({super.key});
+
   @override
   State<GSSOCScreen> createState() => _GSSOCScreenState();
 }
@@ -56,6 +60,13 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     super.initState();
   }
 
+  void searchTag(String searchTag) {
+    projectList = projectList
+        .where((element) => element.techstack.contains(searchTag))
+        .toList();
+    setState(() {});
+  }
+
   void search(String searchText) {
     if (searchText.isEmpty) {
       switch (selectedYear) {
@@ -90,6 +101,23 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
   Widget build(BuildContext context) {
     var height = MediaQuery.sizeOf(context).height;
     var width = MediaQuery.sizeOf(context).width;
+    List<String> languages = [
+      'Js',
+      'Python',
+      'React',
+      'Angular',
+      'Bootstrap',
+      'Firebase',
+      'Node',
+      'MongoDb',
+      'Express',
+      'Next',
+      'CSS',
+      'HTML',
+      'JavaScript',
+      'Flutter',
+      'Dart'
+    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text('Girl Script Summer of Code'),
@@ -98,7 +126,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
           future: getProjectFunction,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return const CircularProgressIndicator();
+              return const Center(child: CircularProgressIndicator());
             } else if (snapshot.connectionState == ConnectionState.done) {
               return Padding(
                 padding:
@@ -139,7 +167,10 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                         contentPadding: const EdgeInsets.symmetric(
                             vertical: 12.0, horizontal: 20.0),
                       ),
-                      onFieldSubmitted: (value) => search(value.trim()),
+                      onFieldSubmitted: (value) {
+                        print("value is $value");
+                        search(value.trim());
+                      },
                       onChanged: (value) {
                         if (value.isEmpty) {
                           search(value);
@@ -155,9 +186,9 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          childAspectRatio: 4 / 2,
-                          crossAxisSpacing: 10,
-                          mainAxisSpacing: 10,
+                          childAspectRatio: 1.5 / 0.6,
+                          crossAxisSpacing: 15,
+                          mainAxisSpacing: 15,
                         ),
                         children: [
                           YearButton(
@@ -238,6 +269,51 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                     const SizedBox(
                       height: 20,
                     ),
+
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Text(
+                          'Filter by Language:',
+                          style: TextStyle(fontWeight: FontWeight.w400),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              DropdownWidget(
+                                items: languages,
+                                hintText: 'Language',
+                                onChanged: (newValue) {
+                                  setState(() {
+                                    switch (selectedYear) {
+                                      case 2021:
+                                        projectList = gssoc2021;
+                                        break;
+                                      case 2022:
+                                        projectList = gssoc2022;
+                                        break;
+                                      case 2023:
+                                        projectList = gssoc2023;
+                                        break;
+                                      case 2024:
+                                        projectList = gssoc2024;
+                                        break;
+                                    }
+                                    searchTag(newValue);
+                                  });
+                                  // Perform filtering based on selectedLanguage
+                                },
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+
                     Expanded(
                       // width: width,
                       child: ListView.builder(
