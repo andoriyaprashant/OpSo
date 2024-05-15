@@ -221,10 +221,8 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                       },
                     ),
                     const SizedBox(height: 20),
-                    Container(
-                      constraints: BoxConstraints(
-                        maxHeight: height * 0.3,
-                      ),
+                    SizedBox(
+                      height: height * 0.25,
                       width: width,
                       child: GridView(
                         physics: const NeverScrollableScrollPhysics(),
