@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
@@ -14,27 +12,40 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>  {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller; // Define the AnimationController
+
+  @override
   void initState() {
-    showNotification();
     super.initState();
+    controller = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500), // Set animation duration
+    );
+    controller.forward();
+
+    Future.delayed(Duration(milliseconds: 2000), () {
+      showNotification();
+    });
   }
-//show various notification from here
-  void showNotification() async{
-    await NotificationService.showNotification(
+
+  @override
+  void dispose() {
+    controller.dispose(); // Dispose the controller when not needed
+    super.dispose();
+  }
+
+  // Show notification
+  void showNotification() {
+    /*NotificationService.showNotification(
       title: "OpSo",
       body: "Explore various Open-Source Programs",
-    );
-  }
-
-
-//used to show the notification every 5 ms
-  void showScheduleNotification() async{
-    await NotificationService.showNotification(
-        title: "OpSo",
-        body: "Explore various Open-Source Programs",
+    );*/
+    NotificationService.showNotification(
+        title: "OpSo", body: "Explore various Open-Source Programs",
         scheduled: true,
-        interval: 5
+        interval: 10
     );
   }
 
@@ -81,7 +92,8 @@ class _HomePageState extends State<HomePage>  {
           IconButton(
             icon: Icon(Icons.search_sharp),
             onPressed: () {
-              showSearch(context: context, delegate: ProgramSearchDelegate());
+              showSearch(
+                  context: context, delegate: ProgramSearchDelegate(programs));
             },
           ),
           IconButton(
@@ -97,16 +109,30 @@ class _HomePageState extends State<HomePage>  {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView(
-          children: programs.map((program) {
-            return ProgramOption(
-              title: program.title,
-              imageAssetPath: program.imageAssetPath,
-              onTap: () {
-                navigateToScreen(context, program);
-              },
+        child: ListView.builder(
+          itemCount: programs.length,
+          itemBuilder: (context, index) {
+            return DelayedAnimation(
+              delay: Duration(milliseconds: index * 150),
+              // Delay animation for each item
+              child: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(1.0, 0.0), // Start position off the screen
+                  end: Offset.zero, // End position at zero
+                ).animate(CurvedAnimation(
+                  parent: controller,
+                  curve: Curves.easeInOut,
+                )),
+                child: ProgramOption(
+                  title: programs[index].title,
+                  imageAssetPath: programs[index].imageAssetPath,
+                  onTap: () {
+                    navigateToScreen(context, programs[index]);
+                  },
+                ),
+              ),
             );
-          }).toList(),
+          },
         ),
       ),
     );
@@ -203,38 +229,10 @@ class ProgramOption extends StatelessWidget {
   }
 }
 
-
 class ProgramSearchDelegate extends SearchDelegate<String> {
-  final List<Program> programs = [
-    Program(
-      title: 'Google Summer of Code',
-      imageAssetPath: 'assets/gsoc_logo.png',
-    ),
-    Program(
-      title: 'Google Season of Docs',
-      imageAssetPath: 'assets/Google_season_of_docs.png',
-    ),
-    Program(
-      title: 'Major League Hacking Fellowship',
-      imageAssetPath: 'assets/mlh_logo.jpg',
-    ),
-    Program(
-      title: 'Summer of Bitcoin',
-      imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
-    ),
-    Program(
-      title: 'Linux Foundation',
-      imageAssetPath: 'assets/linux_foundation_logo.png',
-    ),
-    Program(
-      title: 'Outreachy',
-      imageAssetPath: 'assets/outreachy.png',
-    ),
-    Program(
-      title: 'GirlScript Summer of Code',
-      imageAssetPath: 'assets/girlscript_logo.png',
-    ),
-  ];
+  final List<Program> programs;
+
+  ProgramSearchDelegate(this.programs);
 
   @override
   List<Widget> buildActions(BuildContext context) {
@@ -268,23 +266,26 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     final List<String> suggestionList = query.isEmpty
         ? []
         : programs
-        .where((program) => program.title.toLowerCase().contains(query.toLowerCase()))
-          .map((program) => program.title)
+        .where((program) =>
+        program.title.toLowerCase().contains(query.toLowerCase()))
+        .map((program) => program.title)
         .toList();
 
     return ListView.builder(
       itemCount: suggestionList.length,
-      itemBuilder: (context, index) => ListTile(
-        title: Text(suggestionList[index]),
-        onTap: () {
-          navigateToScreen(context, suggestionList[index]);
-        },
-      ),
+      itemBuilder: (context, index) =>
+          ListTile(
+            title: Text(suggestionList[index]),
+            onTap: () {
+              navigateToScreen(context, suggestionList[index]);
+            },
+          ),
     );
   }
 
   void navigateToScreen(BuildContext context, String title) {
-    final Program selectedProgram = programs.firstWhere((program) => program.title == title);
+    final Program selectedProgram = programs.firstWhere((program) =>
+    program.title == title);
     switch (selectedProgram.title) {
       case 'Google Summer of Code':
         Navigator.push(
@@ -332,4 +333,48 @@ class Program {
     required this.title,
     required this.imageAssetPath,
   });
+}
+
+class DelayedAnimation extends StatefulWidget {
+  final Widget child;
+  final Duration delay;
+
+  DelayedAnimation({required this.child, required this.delay});
+
+  @override
+  _DelayedAnimationState createState() => _DelayedAnimationState();
+}
+
+class _DelayedAnimationState extends State<DelayedAnimation>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  late Animation<Offset> position;
+
+  @override
+  void initState() {
+    super.initState();
+    controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+    position = Tween<Offset>(begin: Offset(1.0, 0.0), end: Offset.zero).animate(
+      CurvedAnimation(parent: controller, curve: Curves.easeInOut),
+    );
+
+    Future.delayed(widget.delay, () {
+      controller.forward();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideTransition(
+      position: position,
+      child: widget.child,
+    );
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super. dispose();
+  }
 }
