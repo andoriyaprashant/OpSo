@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:opso/about.dart';
-import 'package:url_launcher/link.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget({Key? key}) : super(key: key);
@@ -9,42 +8,38 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'OpSo',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              showSearch(context: context, delegate: CustomSearchDelegate());
+            },
+          ),
+        ],
       ),
-      body: Material(
-        color: Colors.transparent,
-        child: Ink(
-          decoration: BoxDecoration(
-            color: Colors.white,
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          MenuOption(
+            title: 'About',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AboutScreen()),
+              );
+            },
           ),
-          child: InkWell(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: ListView(
-                children: [
-                  MenuOption(
-                    title: 'About',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => AboutScreen()),
-                      );
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
+        ],
       ),
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
 class MenuOption extends StatefulWidget {
@@ -52,9 +47,10 @@ class MenuOption extends StatefulWidget {
   final VoidCallback onTap;
 
   const MenuOption({
+    Key? key,
     required this.title,
     required this.onTap,
-  });
+  }) : super(key: key);
 
   @override
   _MenuOptionState createState() => _MenuOptionState();
@@ -72,46 +68,71 @@ class _MenuOptionState extends State<MenuOption> {
         });
         widget.onTap();
       },
-      child: Material(
-        child: Ink(
-          decoration: BoxDecoration(
-            color: Color.fromARGB(255, 237, 237, 239),
-            borderRadius: BorderRadius.circular(25),
-          ),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(20),
-            onTap: () {
-              setState(() {
-                _isClicked = !_isClicked;
-              });
-              widget.onTap();
-            },
-            child: Container(
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(
-                        widget.title,
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 220,
-                    ),
-                    Icon(Icons.arrow_forward_ios),
-                  ],
+      child: Container(
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 237, 237, 239),
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Row(
+            children: [
+              Text(
+                widget.title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
+              const Spacer(),
+              const Icon(Icons.arrow_forward_ios),
+            ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class CustomSearchDelegate extends SearchDelegate {
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    return [
+      query.isNotEmpty
+          ? IconButton(
+        icon: const Icon(Icons.clear),
+        onPressed: () {
+          query = '';
+          showSuggestions(context);
+        },
+      )
+          : Container(),
+    ];
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    return IconButton(
+      icon: const Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // Implement your search results logic here.
+    return Center(
+      child: Text('Search Result for "$query"'),
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    // Implement your search suggestions logic here.
+    return Center(
+      child: Text('Suggestions for "$query"'),
     );
   }
 }
