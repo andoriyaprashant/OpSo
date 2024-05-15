@@ -8,7 +8,7 @@
 
 
     <application
-        android:label="opso"
+        android:label="OpSo"
         android:enableOnBackInvokedCallback="true"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
