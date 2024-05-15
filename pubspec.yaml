@@ -49,12 +49,12 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
   flutter_launcher_icons: ^0.13.1
+  awesome_notifications: ^0.9.3+1
 
 flutter_icons:
   android: true
   ios: true
   image_path: "assets/logo.png"
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -78,6 +78,7 @@ flutter:
   assets:
     - assets/
     - assets/projects/gssoc/
+    - assets/projects/gsod/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
