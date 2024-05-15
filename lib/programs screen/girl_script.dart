@@ -182,7 +182,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                       height: height * 0.2,
                       width: width,
                       child: GridView(
-                        physics: const NeverScrollableScrollPhysics(),
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
