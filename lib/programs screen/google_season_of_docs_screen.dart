@@ -221,7 +221,7 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                       },
                     ),
                     const SizedBox(height: 20),
-                    SizedBox(
+                    Container(
                       constraints: BoxConstraints(
                         maxHeight: height * 0.3,
                       ),
