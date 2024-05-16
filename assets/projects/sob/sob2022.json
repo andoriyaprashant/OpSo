@@ -1,7 +1,7 @@
 [
   {
     "name": "Adithya Vardhan",
-    "orgaization": "Alby",
+    "organization": "Alby",
     "description": "Fix frontend-related issues and improve the overall design",
     "mentor": "Michael Bumann",
     "university": "Birla Institute of Technology and Science Pilani, Pilani Campus",
@@ -13,7 +13,7 @@
   },
   {
     "name": "Aditya Gite",
-    "orgaization": "Utreexo",
+    "organization": "Utreexo",
     "description": "Visualize Utreexo Algorithms",
     "mentor": "Calvin Kim",
     "university": "IIT Roorkee",
@@ -30,7 +30,7 @@
   },
   {
     "name": "Aditya Sharma",
-    "orgaization": "Core Lightning",
+    "organization": "Core Lightning",
     "description": "Static channel backups for c-lightning",
     "mentor": "Rusty Russell",
     "university": "IIT-BHU",
@@ -45,7 +45,7 @@
   },
   {
     "name": "Akanksha Kashyap",
-    "orgaization": "Bitcoin Core",
+    "organization": "Bitcoin Core",
     "description": "Bitcoin Core - Functional test for coin selection, Bitcoin Core - Functional test for coin selection, Hexa Wallet - Improving UTXO selection ",
     "mentor": "Bruno Gracia",
     "university": "Indian Institute of Information Technology Allahabad",
@@ -59,7 +59,7 @@
   },
   {
     "name": "Aman Kumar Kashyap",
-    "orgaization": "Rust miniscript",
+    "organization": "Rust miniscript",
     "description": "Bitcoin-s multipeer neutrino, Price of Anarchy in Selfish Routing on the Lightning Network, Access tokens for the REST API, Tapscript Compiler in miniscript",
     "mentor": "Sanket Kanjalkar",
     "university": "IIIT Hyderabad",
@@ -76,7 +76,7 @@
   },
   {
     "name": "Andreas Kouloumos",
-    "orgaization": "Utreexo",
+    "organization": "Utreexo",
     "description": "Transaction Conflicts in simulaterawtransaction, Add Benchmarks to the libutreexo library",
     "mentor": "Calvin Kim",
     "university": "National Technical University of Athens",
@@ -100,7 +100,7 @@
   },
   {
     "name": "Aniket Rochwani",
-    "orgaization": "Hexawallet",
+    "organization": "Hexawallet",
     "description": "Use the hash of phone number to uniquely identify a wallet owner ",
     "mentor": "Anant Tapadia",
     "university": "Indian Institute of Information Technology, Design and Manufacturing, Kancheepuram",
@@ -126,7 +126,7 @@
   },
   {
     "name": "Animesh Bilthare",
-    "orgaization": "Bitcoin Core",
+    "organization": "Bitcoin Core",
     "description": "Transaction Conflicts in simulaterawtransaction",
     "mentor": "Andrew Chow",
     "university": "Bits pilani",
@@ -136,7 +136,7 @@
   },
   {
     "name": "Ankur Patil",
-    "orgaization": "Specter Desktop",
+    "organization": "Specter Desktop",
     "description": "Unit test automation framework for Bitcoin wallet  , Test Automation, Test Automation, Exploring the Lightning Network, Make payment transactions smart with structured metadata, Access tokens for the REST API, Fix frontend-related issues and improve the overall design, Access tokens for the REST API",
     "mentor": "Kim Neunert",
     "university": "IIT BHU Varanasi",
@@ -149,7 +149,7 @@
   },
   {
     "name": "Anmol Sharma",
-    "orgaization": "bcoin",
+    "organization": "bcoin",
     "description": "Implement branch-and-bound coin selection in bcoin wallet",
     "mentor": "Matthew Zipkin",
     "university": "PDPM Indian Institute of Information Technology, Design and Manufacturing, Jabalpur",
@@ -166,7 +166,7 @@
   },
   {
     "name": "Arsalan Thoker",
-    "orgaization": "The Eye of Satoshi",
+    "organization": "The Eye of Satoshi",
     "description": "Memory outsourcing for hardware wallets, Plugin Support for lndart.clightning, Plugin Support for lndart.clightning, Plugin Support for rust-clightnining-rpc, Generalize rust-teos to support different SQL engines, Plugin Support for lndart.clightning, Use LND as a PayJoin client, Use LND as a PayJoin client, Generalize rust-teos to support different SQL engines",
     "mentor": "Sergi Delgado",
     "university": "NIT Srinagar",
@@ -179,7 +179,7 @@
   },
   {
     "name": "Atharva  Sharad Amritkar",
-    "orgaization": "Fedimint",
+    "organization": "Fedimint",
     "description": "Building a nix module for MiniMint",
     "mentor": "Elsirion",
     "university": "IIT Kharagpur",
@@ -227,7 +227,7 @@
   },
   {
     "name": "Autumn Domingo",
-    "orgaization": "Padawan Wallet",
+    "organization": "Padawan Wallet",
     "description": "Designing Padawan Wallet | Design",
     "mentor": "Stephen DeLorme",
     "university": "NA",
@@ -243,7 +243,7 @@
   },
   {
     "name": "Ayomide Yusuf ",
-    "orgaization": "Hexawallet",
+    "organization": "Hexawallet",
     "description": "Bitcoin and Friends – Secure chat like interface for the interaction between wallets | Design",
     "mentor": "Sumaiah Khan",
     "university": "University of Lagos",
@@ -258,7 +258,7 @@
   },
   {
     "name": "Ayush Anand",
-    "orgaization": "bcoin",
+    "organization": "bcoin",
     "description": "Update bcoin networking protocol: pruning and compact blocks, Implement compact block filter service and Neutrino client in bcoin",
     "mentor": "Matthew Zipkin",
     "university": "Indian Institute of Technology Jodhpur",
@@ -272,7 +272,7 @@
   },
   {
     "name": "César Alvarez Vallero",
-    "orgaization": "Bitcoin Dev Kit",
+    "organization": "Bitcoin Dev Kit",
     "description": "Improving Coinselection in BDK, Real-Time Stream of Blocks API, lnprototest in LDK, Foundations of Open Source Development",
     "mentor": "Daniela Brozzoni",
     "university": "Universidad Nacional de Córdoba",
@@ -288,7 +288,7 @@
   },
   {
     "name": "Davison Souza",
-    "orgaization": "Utreexo",
+    "organization": "Utreexo",
     "description": "Bitcoin Core - Functional test for coin selection, Batch Verification Interface in libsecp256k1, Rust Utreexo library",
     "mentor": "Calvin Kim",
     "university": "Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de Minas Gerais",
@@ -303,7 +303,7 @@
   },
   {
     "name": "Dhananjay Purohit",
-    "orgaization": "Alby",
+    "organization": "Alby",
     "description": "Content distribution proxy implementing the LSATs spec",
     "mentor": "Michael Bumann, Kwinten De Backer",
     "university": "Institute of Engineering and Technology, Devi Ahilya Vishwavidyalaya, Indore (M.P.)",
@@ -317,7 +317,7 @@
   },
   {
     "name": "Dhruv Baliyan",
-    "orgaization": "Bitcoin Dev Kit",
+    "organization": "Bitcoin Dev Kit",
     "description": "Add api to generate child keys from master key ",
     "mentor": "notmandatory, artfuldev",
     "university": "AKTU",
@@ -327,7 +327,7 @@
   },
   {
     "name": "Eduardo Quintana Miranda",
-    "orgaization": "Lightning Network",
+    "organization": "Lightning Network",
     "description": "Cross testing in libsecp256k1, Batch Verification Interface in libsecp256k1, Efficient Min Convex Cost Flow Solver for Lightning Network Payment Delivery",
     "mentor": "Rene Pickhardt",
     "university": "University of Trieste",
@@ -340,7 +340,7 @@
   },
   {
     "name": "Gautam Jajoo",
-    "orgaization": "Core Lightning",
+    "organization": "Core Lightning",
     "description": "Plugin Support for rust-clightnining-rpc",
     "mentor": "Vincenzo Palazzo",
     "university": "Birla Institute of Technology and Science, Pilani ",
@@ -352,7 +352,7 @@
   },
   {
     "name": "Goutam Verma Verma",
-    "orgaization": "Eclair",
+    "organization": "Eclair",
     "description": "Breez Podcast Player Enhancements, Eclair Node Monitoring",
     "mentor": "Bastien Teinturier",
     "university": "Devi Ahiliya University ",
@@ -367,7 +367,7 @@
   },
   {
     "name": "Harsh Singhal",
-    "orgaization": "LN Capital",
+    "organization": "LN Capital",
     "description": "Designing Padawan Wallet | Design, Design System for Torq | Design, Rethink Payment Transaction Lists | Design, Rethinking the digital presence of Bitcoin Core | Design, Design System for Torq | Design",
     "mentor": "Henrik Skogstrøm",
     "university": "Vellore Institute of Technology, Vellore",
@@ -379,7 +379,7 @@
   },
   {
     "name": "Harshit Varma",
-    "orgaization": "Specter Desktop",
+    "organization": "Specter Desktop",
     "description": "Spotbit Specter plugin",
     "mentor": "Kim, Manolis",
     "university": "Amrita Vishwa Vidyapeetham",
@@ -392,7 +392,7 @@
   },
   {
     "name": "Himanshu Goel",
-    "orgaization": "Padawan Wallet",
+    "organization": "Padawan Wallet",
     "description": "Designing Padawan Wallet | Design",
     "mentor": "Stephen DeLorme",
     "university": "Maharaja Surajmal Institute of Technology",
@@ -404,7 +404,7 @@
   },
   {
     "name": "Jatin Gupta",
-    "orgaization": "bcoin",
+    "organization": "bcoin",
     "description": "Update bcoin RPC API and add tests, Update bcoin networking protocol: pruning and compact blocks, Implement compact block filter service and Neutrino client in bcoin",
     "mentor": "Matthew Zipkin",
     "university": "Indian Institute of Information Technology, Vadodara",
@@ -418,7 +418,7 @@
   },
   {
     "name": "Jessica Alexandra Jide",
-    "orgaization": "Hexawallet",
+    "organization": "Hexawallet",
     "description": "Bitcoin and Friends – Secure chat like interface for the interaction between wallets | Design",
     "mentor": "Sumaiah Khan",
     "university": "Federal university of technology Owerri ",
@@ -432,7 +432,7 @@
   },
   {
     "name": "Jing Liu",
-    "orgaization": "Bitcoin Core",
+    "organization": "Bitcoin Core",
     "description": "Add fuzz target for txorphanage",
     "mentor": "Marco Falke",
     "university": "Shanghai University",
@@ -448,7 +448,7 @@
   },
   {
     "name": "Juhie Chandra",
-    "orgaization": "Hexawallet",
+    "organization": "Hexawallet",
     "description": "Bitcoin and Friends – Secure chat like interface for the interaction between wallets | Design, A wallet that teaches bitcoin as you use them | Design , A wallet that teaches bitcoin as you use them | Design ",
     "mentor": "Sumaiah Khan",
     "university": "Dr. B. R. Ambedkar National Institute of Technology",
@@ -463,7 +463,7 @@
   },
   {
     "name": "Jurvis Tan",
-    "orgaization": "LDK",
+    "organization": "LDK",
     "description": "Improve Payment Routing",
     "mentor": "Jeff Czyz",
     "university": "University of Southern California",
@@ -484,7 +484,7 @@
   },
   {
     "name": "Kavan Desai",
-    "orgaization": "Core Lightning",
+    "organization": "Core Lightning",
     "description": "Implement a GUI for Importing to the Wallet, Convert non-wallet tests to use Python MiniWallet, Tor Support, Plugin Support for lndart.clightning, Breez Point-of-Sale Enhancements, Breez Podcast Player Enhancements, Plugin Support for lndart.clightning",
     "mentor": "Vincenzo Palazzo",
     "university": "Ahmedabad University",
@@ -501,7 +501,7 @@
 
   {
     "name": "Khaled Emara",
-    "orgaization": "Electrs",
+    "organization": "Electrs",
     "description": "Choosing a better DB for electrs",
     "mentor": "Roman Zeyde",
     "university": "Ain Shams University",
@@ -514,7 +514,7 @@
   },
   {
     "name": "kolby moroz Liebl",
-    "orgaization": "Bitcoin Core",
+    "organization": "Bitcoin Core",
     "description": "Implement a GUI for Importing to the Wallet",
     "mentor": "Andrew Chow",
     "university": "University of Alberta",
@@ -524,7 +524,7 @@
   },
   {
     "name": "Krystal A Maughan Maughan",
-    "orgaization": "Lightning Network",
+    "organization": "Lightning Network",
     "description": "Price of Anarchy in Selfish Routing on the Lightning Network",
     "mentor": "René Pickhardt",
     "university": "University of Vermont",
@@ -551,7 +551,7 @@
   },
   {
     "name": "Kunal Jain",
-    "orgaization": "Bitcoin Dev Kit",
+    "organization": "Bitcoin Dev Kit",
     "description": "Price of Anarchy in Selfish Routing on the Lightning Network, Implement PrunedBlockchain backend: RPC on pruned node",
     "mentor": "Alexos Felini",
     "university": "International Institute of Information Technology, Hyderabad",
@@ -561,7 +561,7 @@
   },
   {
     "name": "Leonardo Cumplido",
-    "orgaization": "LN Capital",
+    "organization": "LN Capital",
     "description": "Convert non-wallet tests to use Python MiniWallet, Routing Node research and automation, Add a cool Specter plugin",
     "mentor": "Henrik Skogstrøm",
     "university": "Monterrey Institute of Technology and Higher Education",
@@ -579,7 +579,7 @@
   },
   {
     "name": "Leonardo Souza",
-    "orgaization": "Bitcoin Dev Kit",
+    "organization": "Bitcoin Dev Kit",
     "description": "Real-Time Stream of Blocks API,  Mempool.space integration in BDK",
     "mentor": "Lloyd Fournier",
     "university": "University of Campinas - UNICAMP",
@@ -601,7 +601,7 @@
   },
   {
     "name": "Lorenzo Bonazzi",
-    "orgaization": "Stratum Mining",
+    "organization": "Stratum Mining",
     "description": "Improve examples and documentation, General codebase improvement, Explore Coinbase Negotiator role",
     "mentor": "Fi3",
     "university": "Università degli Sutdi di Firenze",
@@ -614,7 +614,7 @@
   },
   {
     "name": "Manmeet Singh",
-    "orgaization": "Fedimint",
+    "organization": "Fedimint",
     "description": "Graphical Wallet for MiniMint using WASM",
     "mentor": "Elsirion",
     "university": "National Institute of Technology, Kurukshetra",
@@ -633,7 +633,7 @@
   },
   {
     "name": "Mayank Modi",
-    "orgaization": "Galoy",
+    "organization": "Galoy",
     "description": "rust-hwi improvements, Get Galoy instance running on Azure or AWS",
     "mentor": "Sandipan Dey",
     "university": "IIIT Hyderabad",
@@ -648,7 +648,7 @@
   },
   {
     "name": "Micky Yun Chan",
-    "orgaization": "Lightning Network",
+    "organization": "Lightning Network",
     "description": "LN spec tests for lnprototest, lnprototest in LDK",
     "mentor": "Vincenzo Palazzo",
     "university": "Lappeenranta-Lahti University of Technology",
@@ -666,7 +666,7 @@
   },
   {
     "name": "Mohammad Warid",
-    "orgaization": "bcoin",
+    "organization": "bcoin",
     "description": "Update bcoin networking protocol: pruning and compact blocks",
     "mentor": "Matthew Zipkin",
     "university": "Delhi Technological University",
@@ -680,7 +680,7 @@
   },
   {
     "name": "omer yacine Yacine",
-    "orgaization": "The Eye of Satoshi",
+    "organization": "The Eye of Satoshi",
     "description": "Manual CPFP for Revault managers, Improve Payment Routing, Add Lightning as transport for rust-teos",
     "mentor": "Sergi Delgado",
     "university": "Cairo University",
@@ -693,7 +693,7 @@
   },
   {
     "name": "Pavan Joshi",
-    "orgaization": "Alby",
+    "organization": "Alby",
     "description": "Make payment transactions smart with structured metadata, WebLN Support, WebLN Support",
     "mentor": "Michael Bumann",
     "university": "Government College of Engineering, Yavatmal",
@@ -705,7 +705,7 @@
   },
   {
     "name": "Pedro Felix",
-    "orgaization": "Bitcoin Dev Kit",
+    "organization": "Bitcoin Dev Kit",
     "description": "BDK descriptor improvements: Add a generic descriptor trait, Implement PrunedBlockchain backend: RPC on pruned node, rust-hwi improvements, Implement basic spending policy APIs",
     "mentor": "Steve Myers",
     "university": "CSUSB",
@@ -721,7 +721,7 @@
   },
   {
     "name": "Piyush Kumar",
-    "orgaization": "Bitcoin Dev Kit",
+    "organization": "Bitcoin Dev Kit",
     "description": "rust-hwi improvements",
     "mentor": "Daniela Brozzoni",
     "university": "Indian Institute of Technology Kharagpur",
@@ -734,7 +734,7 @@
   },
   {
     "name": "Prakhar Saxena",
-    "orgaization": "LDK",
+    "organization": "LDK",
     "description": "General codebase improvement, lnprototest in LDK",
     "mentor": "Conor Okus",
     "university": "Indian Institute of Technology (BHU) Varanasi",
@@ -748,7 +748,7 @@
   },
   {
     "name": "Pranshu Kumar Agrawal",
-    "orgaization": "bcoin",
+    "organization": "bcoin",
     "description": "Review and test bcoin PR#811 Replace-by-fee, add feature to wallet",
     "mentor": "Matthew Zipkin",
     "university": "Veer Surendra Sai University of Technology",
@@ -766,7 +766,7 @@
   },
   {
     "name": "Precious Enyi",
-    "orgaization": "Padawan Wallet",
+    "organization": "Padawan Wallet",
     "description": "Designing Padawan Wallet | Design, Designing Padawan Wallet | Design",
     "mentor": "Stephen DeLorme, Christoph Ono",
     "university": "Federal University of Technology, Owerri",
@@ -781,7 +781,7 @@
   },
   {
     "name": "Precious Ndubueze Ndubueze",
-    "orgaization": "Core Lightning",
+    "organization": "Core Lightning",
     "description": "Plugin Support for lndart.clightning",
     "mentor": "Vincenzo Palazzo ",
     "university": "Silesian University of Technology ",
@@ -804,7 +804,7 @@
   },
   {
     "name": "Priyansh Rastogi",
-    "orgaization": "LND",
+    "organization": "LND",
     "description": "Improve the LND wallet kit , Batch chain backend requests in lnd ",
     "mentor": "Oliver Gugger",
     "university": "IIIT Gwalior",
@@ -816,7 +816,7 @@
   },
   {
     "name": "Raj Maheshwari",
-    "orgaization": "bcoin",
+    "organization": "bcoin",
     "description": "Add full Taproot validation to bcoin full node and wallet",
     "mentor": "Matthew Zipkins",
     "university": "IIIT Hyderabad",
@@ -826,7 +826,7 @@
   },
   {
     "name": "SAI KRISHNA KISHORE CHALLAPALLI",
-    "orgaization": "Bitcoin Dev Kit",
+    "organization": "Bitcoin Dev Kit",
     "description": "Update bcoin networking protocol: pruning and compact blocks, Better address setup , Proof of ownership of bitcoin funds, Access tokens for the REST API, Refactor BDK Integration tests",
     "mentor": "Rajarshi Maitra",
     "university": "Rajiv Gandhi University of Knowledge Technologies,Nuzvid",
@@ -839,7 +839,7 @@
   },
   {
     "name": "Samay Kothari",
-    "orgaization": "Utreexo",
+    "organization": "Utreexo",
     "description": "Implement downloading blocks from multiple peers in utreexod/btcd, Improve Payment Routing,  Mempool.space integration in BDK",
     "mentor": "Calvin Kim",
     "university": "International Institute of Information Technology, Hyderabad",
@@ -854,7 +854,7 @@
   },
   {
     "name": "Sanjay Singh Rajpoot",
-    "orgaization": "RTL",
+    "organization": "RTL",
     "description": "RTL-Quickpay Browser extension, Review and test bcoin PR#811 Replace-by-fee, add feature to wallet, WebLN Support, RTL-Quickpay Browser extension, Test Automation",
     "mentor": "Shahana Farooqui",
     "university": "Institute of Engineering & Technology, DAVV",
@@ -867,7 +867,7 @@
   },
   {
     "name": "Santhosh Anguluri",
-    "orgaization": "Bitcoin Dev Kit",
+    "organization": "Bitcoin Dev Kit",
     "description": "Refactor BDK Integration tests",
     "mentor": "Rajarshi Maitra",
     "university": "MANIT Bhopal",
@@ -880,7 +880,7 @@
   },
   {
     "name": "Saranya Satheesh",
-    "orgaization": "Alby",
+    "organization": "Alby",
     "description": "Rethink Payment Transaction Lists | Design, A wallet that teaches bitcoin as you use them | Design , Bitcoin and Friends – Secure chat like interface for the interaction between wallets | Design",
     "mentor": "Michael Bumann",
     "university": "Indian Institute of Technology",
@@ -898,7 +898,7 @@
   },
   {
     "name": "Sebastian Alscher",
-    "orgaization": "Lightning Network",
+    "organization": "Lightning Network",
     "description": "Price of Anarchy in Selfish Routing on the Lightning Network",
     "mentor": "Rene Pickhardt",
     "university": "Ruhr-Universität Bochum",
@@ -914,7 +914,7 @@
   },
   {
     "name": "Shantanu Gaikwad",
-    "orgaization": "VLS",
+    "organization": "VLS",
     "description": "Embedded Validating Lightning Signer Demo, UTXO Set Oracle",
     "mentor": "Ken Sedgwic, Devrandom",
     "university": "College of Engineering Pune",
@@ -930,7 +930,7 @@
   },
   {
     "name": "Shaswat Gupta Gupta",
-    "orgaization": "bcoin",
+    "organization": "bcoin",
     "description": "Use PGP keys to prove an address belongs to you , Use the hash of phone number to uniquely identify a wallet owner , Build advanced bitcoin features on Padawan Wallet, Implement compact block filter service and Neutrino client in bcoin, Access tokens for the REST API, Build advanced bitcoin features on Padawan Wallet",
     "mentor": "Matthew Zipkin",
     "university": "Indian Institute of Information Technology, Design and Manufacturing, Jabalpur",
@@ -945,7 +945,7 @@
   },
   {
     "name": "Shlok Pandey",
-    "orgaization": "Specter Desktop",
+    "organization": "Specter Desktop",
     "description": "Access tokens for the REST API, Make payment transactions smart with structured metadata, Bring the Alby Browser Wallet to Mobile, Bring the Alby Browser Wallet to Mobile, Foundations of Open Source Development, Hexa Wallet – Split bill, split expenses, Bring the Alby Browser Wallet to Mobile, Hexa Wallet – Split bill, split expenses, Packaging new applications into CADR, Loans plugin, Loans plugin, Loans plugin, Access tokens for the REST API, Add a cool Specter plugin",
     "mentor": "Kim, Manolis",
     "university": "International Institute of Information Technology, Hyderabad",
@@ -965,7 +965,7 @@
   },
   {
     "name": "Shreyansh Yadav",
-    "orgaization": "Bitcoin-S",
+    "organization": "Bitcoin-S",
     "description": "Bitcoin-s multipeer neutrino",
     "mentor": "Chris Stewart",
     "university": "IIT (BHU), Varanasi",
@@ -993,7 +993,7 @@
   },
   {
     "name": "Sivaram Dhakshinamoorthy",
-    "orgaization": "libsecp256k1",
+    "organization": "libsecp256k1",
     "description": "Batch Verification Interface in libsecp256k1",
     "mentor": "Jonas Nick",
     "university": "Indian Institute of Technology, Kharagpur",
@@ -1007,7 +1007,7 @@
 
   {
     "name": "Songlin Jiang",
-    "orgaization": "Cryptoanarchy Debian",
+    "organization": "Cryptoanarchy Debian",
     "description": "Polishing CADR-guide, CI for CADR, Packaging new applications into CADR",
     "mentor": "Kixunil (Martin Habovštiak)",
     "university": "Lanzhou University",
@@ -1030,7 +1030,7 @@
   },
   {
     "name": "Swapnil Tripathi",
-    "orgaization": "Core Lightning",
+    "organization": "Core Lightning",
     "description": "Improve examples and documentation, Plugin Support for lndart.clightning",
     "mentor": "Vincenzo Palazzo",
     "university": "KIIT University, Bhubaneswar, Orissa, India",
@@ -1044,7 +1044,7 @@
   },
   {
     "name": "Utkarsh Shendge",
-    "orgaization": "Breez",
+    "organization": "Breez",
     "description": "Breez Podcast Player Enhancements",
     "mentor": "Roy Sheinfeld, Roei Erez",
     "university": "Vishwakarma Institute of Technology",
@@ -1058,7 +1058,7 @@
   },
   {
     "name": "Vaibhav Dixit",
-    "orgaization": "Galoy",
+    "organization": "Galoy",
     "description": "Handle database migrations, Improving Coinselection in BDK, Refactor BDK Integration tests, Access tokens for the REST API, Review and test bcoin PR#811 Replace-by-fee, add feature to wallet, Proof of Reserves for Open Source Bitcoin Banking",
     "mentor": "Sam Peters ",
     "university": "IIITDM  Jabalpur ",
@@ -1074,7 +1074,7 @@
   },
   {
     "name": "Vatsal Mehta",
-    "orgaization": "Hexawallet",
+    "organization": "Hexawallet",
     "description": "Use the hash of phone number to uniquely identify a wallet owner ",
     "mentor": "Pawan Paliwal",
     "university": "The LNM Institute of Information Technology",
@@ -1095,7 +1095,7 @@
   },
   {
     "name": "Vibhav Sharma",
-    "orgaization": "LND",
+    "organization": "LND",
     "description": "Watchtower insights , Batch chain backend requests in lnd , Improve the LND wallet kit ",
     "mentor": "Andras Banki-Horvath",
     "university": "Bennett University",
@@ -1110,7 +1110,7 @@
   },
   {
     "name": "Vinayak Sharma",
-    "orgaization": "Esplora Block Explorer",
+    "organization": "Esplora Block Explorer",
     "description": "Exploring the Lightning Network",
     "mentor": "Christian Decker",
     "university": "Shri Mata Vaishno Devi University",
@@ -1125,7 +1125,7 @@
   },
   {
     "name": "Yetong Tang Tang",
-    "orgaization": "Padawan Wallet",
+    "organization": "Padawan Wallet",
     "description": "Build advanced bitcoin features on Padawan Wallet",
     "mentor": "thunderbiscuit",
     "university": "NUS",
@@ -1139,7 +1139,7 @@
   },
   {
     "name": "yogendra sankhla Sankhla",
-    "orgaization": "Specter Desktop",
+    "organization": "Specter Desktop",
     "description": "Access tokens for the REST API, Loans plugin, Warden Specter plugin",
     "mentor": "K9ert and Manolis",
     "university": "BITS-PILANI goa campus",
