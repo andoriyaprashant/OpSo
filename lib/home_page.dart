@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:opso/validators.dart'; // Import the validators
+
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
@@ -14,26 +16,30 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController _usernameController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
   void initState() {
     showNotification();
     super.initState();
   }
-//show various notification from here
-  void showNotification() async{
+
+  // Show various notifications from here
+  void showNotification() async {
     await NotificationService.showNotification(
       title: "OpSo",
       body: "Explore various Open-Source Programs",
     );
   }
 
-
-//used to show the notification every 5 ms
-  void showScheduleNotification() async{
+  // Used to show the notification every 5 ms
+  void showScheduleNotification() async {
     await NotificationService.showNotification(
-        title: "OpSo",
-        body: "Explore various Open-Source Programs",
-        scheduled: true,
-        interval: 5
+      title: "OpSo",
+      body: "Explore various Open-Source Programs",
+      scheduled: true,
+      interval: 5,
     );
   }
 
@@ -83,13 +89,6 @@ class _HomePageState extends State<HomePage> {
               showSearch(context: context, delegate: ProgramSearchDelegate());
             },
           ),
-          /*IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {
-              // Open drawer when the menu icon is clicked
-              Scaffold.of(context).openDrawer();
-            },
-          ),*/
         ],
       ),
       drawer: Drawer(
@@ -115,7 +114,6 @@ class _HomePageState extends State<HomePage> {
                   context,
                   MaterialPageRoute(builder: (context) => AboutScreen()),
                 );
-                // Add functionality for item 1
               },
             ),
             ListTile(
@@ -124,7 +122,6 @@ class _HomePageState extends State<HomePage> {
                 // Add functionality for item 2
               },
             ),
-            // Add more list tiles for additional menu items
           ],
         ),
       ),
@@ -144,7 +141,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
 
   void navigateToScreen(BuildContext context, Program program) {
     switch (program.title) {
@@ -237,7 +233,6 @@ class ProgramOption extends StatelessWidget {
   }
 }
 
-
 class ProgramSearchDelegate extends SearchDelegate<String> {
   final List<Program> programs = [
     Program(
@@ -290,80 +285,4 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         close(context, '');
       },
     );
-  }
-
-  @override
-  Widget buildResults(BuildContext context) {
-    return Container();
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    final List<String> suggestionList = query.isEmpty
-        ? []
-        : programs
-        .where((program) => program.title.toLowerCase().contains(query.toLowerCase()))
-        .map((program) => program.title)
-        .toList();
-
-    return ListView.builder(
-      itemCount: suggestionList.length,
-      itemBuilder: (context, index) => ListTile(
-        title: Text(suggestionList[index]),
-        onTap: () {
-          navigateToScreen(context, suggestionList[index]);
-        },
-      ),
-    );
-  }
-
-  void navigateToScreen(BuildContext context, String title) {
-    final Program selectedProgram = programs.firstWhere((program) => program.title == title);
-    switch (selectedProgram.title) {
-      case 'Google Summer of Code':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => GoogleSummerOfCodeScreen(),
-          ),
-        );
-        break;
-      case 'Google Season of Docs':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => GoogleSeasonOfDocsScreen(),
-          ),
-        );
-        break;
-      case 'Major League Hacking Fellowship':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => mlhfellow(),
-          ),
-        );
-        break;
-      case 'GirlScript Summer of Code':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => GSSOCScreen(),
-          ),
-        );
-        break;
-      default:
-        break;
-    }
-  }
-}
-
-class Program {
-  final String title;
-  final String imageAssetPath;
-
-  Program({
-    required this.title,
-    required this.imageAssetPath,
-  });
-}
+ 
