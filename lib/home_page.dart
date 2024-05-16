@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
@@ -8,6 +6,7 @@ import 'package:opso/programs%20screen/mlh.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
 import 'package:opso/services/notificationService.dart';
 
+import 'about.dart';
 import 'bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -85,16 +84,50 @@ class _HomePageState extends State<HomePage> {
               showSearch(context: context, delegate: ProgramSearchDelegate());
             },
           ),
-          IconButton(
+          /*IconButton(
             icon: Icon(Icons.menu),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AppBarWidget()),
-              );
+              // Open drawer when the menu icon is clicked
+              Scaffold.of(context).openDrawer();
             },
-          ),
+          ),*/
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text(
+                'Menu',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(255, 183, 77, 1),
+              ),
+            ),
+            ListTile(
+              title: Text('About'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutScreen()),
+                );
+                // Add functionality for item 1
+              },
+            ),
+            ListTile(
+              title: Text('Add Bookmark'),
+              onTap: () {
+                // Add functionality for item 2
+              },
+            ),
+            // Add more list tiles for additional menu items
+          ],
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -112,6 +145,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
 
   void navigateToScreen(BuildContext context, Program program) {
     switch (program.title) {
@@ -278,7 +312,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         ? []
         : programs
         .where((program) => program.title.toLowerCase().contains(query.toLowerCase()))
-          .map((program) => program.title)
+        .map((program) => program.title)
         .toList();
 
     return ListView.builder(
