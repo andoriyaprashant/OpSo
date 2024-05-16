@@ -4,6 +4,8 @@ import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
+import 'package:opso/programs%20screen/mlh.dart';
+import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/services/notificationService.dart';
 
 import 'about.dart';
@@ -19,23 +21,22 @@ class _HomePageState extends State<HomePage> {
     showNotification();
     super.initState();
   }
+
 //show various notification from here
-  void showNotification() async{
+  void showNotification() async {
     await NotificationService.showNotification(
       title: "OpSo",
       body: "Explore various Open-Source Programs",
     );
   }
 
-
 //used to show the notification every 5 ms
-  void showScheduleNotification() async{
+  void showScheduleNotification() async {
     await NotificationService.showNotification(
         title: "OpSo",
         body: "Explore various Open-Source Programs",
         scheduled: true,
-        interval: 5
-    );
+        interval: 5);
   }
 
   final List<Program> programs = [
@@ -146,7 +147,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-
   void navigateToScreen(BuildContext context, Program program) {
     switch (program.title) {
 
@@ -192,6 +192,14 @@ class _HomePageState extends State<HomePage> {
         case 'Summer of Bitcoin' :
           Navigator.pushNamed(context, "/summer_of_bitcoin");
 
+      case 'Summer of Bitcoin':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SummerOfBitcoin(),
+          ),
+        );
+        
       default:
         break;
     }
@@ -248,7 +256,6 @@ class ProgramOption extends StatelessWidget {
     );
   }
 }
-
 
 class ProgramSearchDelegate extends SearchDelegate<String> {
   final List<Program> programs = [
@@ -314,9 +321,10 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     final List<String> suggestionList = query.isEmpty
         ? []
         : programs
-        .where((program) => program.title.toLowerCase().contains(query.toLowerCase()))
-        .map((program) => program.title)
-        .toList();
+            .where((program) =>
+                program.title.toLowerCase().contains(query.toLowerCase()))
+            .map((program) => program.title)
+            .toList();
 
     return ListView.builder(
       itemCount: suggestionList.length,
@@ -330,7 +338,8 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
   }
 
   void navigateToScreen(BuildContext context, String title) {
-    final Program selectedProgram = programs.firstWhere((program) => program.title == title);
+    final Program selectedProgram =
+        programs.firstWhere((program) => program.title == title);
     switch (selectedProgram.title) {
       case 'Google Summer of Code':
         Navigator.push(
