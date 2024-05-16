@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
-import 'package:opso/programs%20screen/mlh.dart';
+import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
 import 'package:opso/services/notificationService.dart';
 
@@ -154,6 +154,9 @@ class _HomePageState extends State<HomePage> {
 
         case 'Outreachy':
           Navigator.push(context, MaterialPageRoute(builder: (context) => OutReachy()));
+
+        case 'Summer of Bitcoin' :
+          Navigator.pushNamed(context, "/summer_of_bitcoin");
 
       default:
         break;
