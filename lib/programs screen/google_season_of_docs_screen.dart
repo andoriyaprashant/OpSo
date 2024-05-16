@@ -2,14 +2,13 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/gsod/gsod_modal_new.dart';
 import 'package:opso/modals/gsod/gsod_modal_old.dart';
 import 'package:opso/widgets/gsod/gsod_project_widget_new.dart';
 import 'package:opso/widgets/gsod/gsod_project_widget_old.dart';
 import 'package:opso/widgets/year_button.dart';
 
-import '../widgets/SearchandFilterWidget.dart';
 
 class GoogleSeasonOfDocsScreen extends StatefulWidget {
   @override
@@ -18,6 +17,9 @@ class GoogleSeasonOfDocsScreen extends StatefulWidget {
 }
 
 class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
+  String currentProgram = "Google Season of Docs";
+  bool isBookmarked = true;
+  String currentPage = "/google_season_of_docs";
   List<GsodModalNew> gsod2023 = [];
   List<GsodModalNew> gsod2022 = [];
   List<GsodModalNew> gsod2021 = [];
@@ -85,7 +87,15 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
   @override
   void initState() {
     getProjectFunction = initializeProjectLists();
+    _checkBookmarkStatus();
     super.initState();
+  }
+
+   Future<void> _checkBookmarkStatus() async {
+    bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProgram);
+    setState(() {
+      isBookmarked = bookmarkStatus;
+    });
   }
 
   void search(String searchText) {
@@ -163,24 +173,31 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     var height = MediaQuery.sizeOf(context).height;
     var width = MediaQuery.sizeOf(context).width;
     return Scaffold(
-
-          appBar: AppBar(
+        appBar : AppBar(
         title: const Text('OpSo'),
           actions: <Widget>[
             IconButton(
-            icon: (flag)
-                ? const Icon(Icons.bookmark_add)
-                : const Icon(Icons.bookmark_added),
+            icon: (isBookmarked)
+                ? const Icon(Icons.bookmark_add_rounded)
+                : const Icon(Icons.bookmark_add_outlined),
             onPressed: () {
               setState(() {
-                flag = !flag;
-                ScaffoldMessenger.of(context).showSnackBar(
+                isBookmarked = !isBookmarked;
+              });
+              ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text(flag ? 'Bookmark removed' : 'Bookmark added'),
+                    content: Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
                     duration: const Duration(seconds: 2), // Adjust the duration as needed
                   ),
                 );
-              });
+              if(isBookmarked){
+                print("Adding");
+                HandleBookmark.addBookmark(currentProgram, currentPage);
+              }
+              else{
+                print("Deleting");
+                HandleBookmark.deleteBookmark(currentProgram);
+              }
             },
             )
           ]

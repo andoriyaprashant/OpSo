@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:opso/modals/book_mark_model.dart';
 
 
-class OutReachy extends StatefulWidget {
-  const OutReachy({super.key});
+class MajorLeagueHackingFellowship extends StatefulWidget {
+  const MajorLeagueHackingFellowship({super.key});
 
   @override
-  State<OutReachy> createState() => _OutReachyState();
+  State<MajorLeagueHackingFellowship> createState() => _MajorLeagueHackingFellowshipState();
 }
 
-class _OutReachyState extends State<OutReachy> {
+class _MajorLeagueHackingFellowshipState extends State<MajorLeagueHackingFellowship> {
   bool isBookmarked = true;
-  String currectPage = "/outreachy";
-  String currentProject = "Outreachy";
+  String currectPage = "/major_league_hacking_fellowship";
+  String currentProject = "MajorLeagueHackingFellowship";
 
   @override
   void initState() {
@@ -63,7 +63,7 @@ class _OutReachyState extends State<OutReachy> {
         ),
 
       body: const Center(
-        child: Text('Outreachy'),
+        child: Text('MajorLeagueHackingFellowship'),
       ),
     );
   }
