@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:opso/modals/book_mark_model.dart';
 
 
-class OutReachy extends StatefulWidget {
-  const OutReachy({super.key});
+class LinuxFoundation extends StatefulWidget {
+  const LinuxFoundation({super.key});
 
   @override
-  State<OutReachy> createState() => _OutReachyState();
+  State<LinuxFoundation> createState() => _LinuxFoundationState();
 }
 
-class _OutReachyState extends State<OutReachy> {
+class _LinuxFoundationState extends State<LinuxFoundation> {
   bool isBookmarked = true;
-  String currectPage = "/outreachy";
-  String currentProject = "Outreachy";
+  String currectPage = "/linux_foundation";
+  String currentProject = "inuxFoundation";
 
   @override
   void initState() {
@@ -63,7 +63,7 @@ class _OutReachyState extends State<OutReachy> {
         ),
 
       body: const Center(
-        child: Text('Outreachy'),
+        child: Text('LinuxFoundation'),
       ),
     );
   }
