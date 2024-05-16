@@ -1,38 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:opso/modals/book_mark_model.dart';
 
 class GoogleSummerOfCodeScreen extends StatefulWidget {
+  const GoogleSummerOfCodeScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _GoogleSummerOfCodeScreenState createState() => _GoogleSummerOfCodeScreenState();
 }
 
 class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   bool flag = true;
+  String currectPage = "/google_summer_of_code";
+  String currentProject = "Google Summer of Code";
+  bool isBookmarked = true;
 
+
+@override
+  void initState() {
+    super.initState();
+    _checkBookmarkStatus();
+  }
+
+  Future<void> _checkBookmarkStatus() async {
+    bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProject);
+    setState(() {
+      isBookmarked = bookmarkStatus;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         title: const Text('OpSo'),
-        actions: <Widget>[
-          IconButton(
-            icon: (flag)
-                ? const Icon(Icons.bookmark_add)
-                : const Icon(Icons.bookmark_added),
+          actions: <Widget>[
+            IconButton(
+            icon: (isBookmarked)
+                ? const Icon(Icons.bookmark_add_rounded)
+                : const Icon(Icons.bookmark_add_outlined),
             onPressed: () {
               setState(() {
-                flag = !flag;
-                ScaffoldMessenger.of(context).showSnackBar(
+                isBookmarked = !isBookmarked;
+              });
+              ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text(flag ? 'Bookmark removed' : 'Bookmark added'),
-                    duration: const Duration(seconds: 2),
+                    content: Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                    duration: const Duration(seconds: 1), // Adjust the duration as needed
                   ),
                 );
-              });
+              if(isBookmarked){
+                print("Adding");
+                HandleBookmark.addBookmark(currentProject, currectPage);
+              }
+              else{
+                print("Deleting");
+                HandleBookmark.deleteBookmark(currentProject);
+              }
             },
-          )
-        ],
-      ),
+            )
+          ]
+        ),
+
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -116,10 +145,4 @@ class YearButton extends StatelessWidget {
       child: Text(year),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: GoogleSummerOfCodeScreen(),
-  ));
 }
