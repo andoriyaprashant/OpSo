@@ -12,7 +12,7 @@ class LinuxFoundation extends StatefulWidget {
 class _LinuxFoundationState extends State<LinuxFoundation> {
   bool isBookmarked = true;
   String currectPage = "/linux_foundation";
-  String currentProject = "inuxFoundation";
+  String currentProject = "LinuxFoundation";
 
   @override
   void initState() {
