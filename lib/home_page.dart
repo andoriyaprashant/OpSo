@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
+import 'package:opso/programs%20screen/linux_foundation.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
-import 'package:opso/programs%20screen/mlh.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/services/notificationService.dart';
+import 'package:opso/widgets/book_mark_screen.dart';
 
 import 'about.dart';
-import 'bar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,6 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
   void initState() {
     showNotification();
     super.initState();
@@ -98,16 +99,16 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(255, 183, 77, 1),
+              ),
               child: Text(
                 'Menu',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
                 ),
-              ),
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(255, 183, 77, 1),
               ),
             ),
             ListTile(
@@ -121,9 +122,9 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             ListTile(
-              title: Text('Add Bookmark'),
+              title: Text('Bookmark'),
               onTap: () {
-                // Add functionality for item 2
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BookMarkScreen()));
               },
             ),
             // Add more list tiles for additional menu items
@@ -196,10 +197,12 @@ class _HomePageState extends State<HomePage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => SummerOfBitcoin(),
+            builder: (context) => BitcoinSummer(),
           ),
         );
         
+      case 'Linux Foundation' :
+        Navigator.push(context, MaterialPageRoute(builder: (context) => LinuxFoundation()));
       default:
         break;
     }
@@ -240,7 +243,7 @@ class ProgramOption extends StatelessWidget {
                 Expanded(
                   child: Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -357,6 +360,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           ),
         );
         break;
+
       case 'Major League Hacking Fellowship':
         Navigator.push(
           context,
@@ -365,6 +369,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           ),
         );
         break;
+
       case 'GirlScript Summer of Code':
         Navigator.push(
           context,
@@ -373,6 +378,11 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           ),
         );
         break;
+        
+      case 'Linux Foundation' :
+        Navigator.push(context, MaterialPageRoute(builder: (context) => LinuxFoundation()));
+        break;
+
       default:
         break;
     }
