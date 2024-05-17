@@ -1,151 +1,119 @@
 class Gsoc {
-  int? year;
-  String? archiveUrl;
-  List<Organizations>? organizations;
+  final int year;
+  final String archiveUrl;
+  final List<Organization> organizations;
 
-  Gsoc({this.year, this.archiveUrl, this.organizations});
 
-  Gsoc.fromJson(Map<String, dynamic> json) {
-    year = json['year'];
-    archiveUrl = json['archive_url'];
-    if (json['organizations'] != null) {
-      organizations = <Organizations>[];
-      json['organizations'].forEach((v) {
-        organizations!.add(Organizations.fromJson(v));
-      });
-    }
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['year'] = year;
-    data['archive_url'] = archiveUrl;
-    if (organizations != null) {
-      data['organizations'] = organizations!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
-}
-
-class Organizations {
-  String? name;
-  String? imageUrl;
-  String? imageBackgroundColor;
-  String? description;
-  String? url;
-  String? category;
-  String? projectsUrl;
-  String? ideasUrl;
-  String? guideUrl;
-  List<String>? topics;
-  List<String>? technologies;
-  String? ircChannel;
-  String? contactEmail;
-  String? mailingList;
-  String? twitterUrl;
-  String? blogUrl;
-  String? facebookUrl;
-  int? numProjects;
-  List<Project>? projects;
-
-  Organizations({
-    this.name,
-    this.imageUrl,
-    this.imageBackgroundColor,
-    this.description,
-    this.url,
-    this.category,
-    this.projectsUrl,
-    this.ideasUrl,
-    this.guideUrl,
-    this.topics,
-    this.technologies,
-    this.ircChannel,
-    this.contactEmail,
-    this.mailingList,
-    this.twitterUrl,
-    this.blogUrl,
-    this.facebookUrl,
-    this.numProjects,
-    this.projects,
+  Gsoc({
+    required this.year,
+    required this.archiveUrl,
+    required this.organizations,
   });
 
-  Organizations.fromJson(Map<String, dynamic> json) {
-    name = json['name'];
-    imageUrl = json['image_url'];
-    imageBackgroundColor = json['image_background_color'];
-    description = json['description'];
-    url = json['url'];
-    category = json['category'];
-    projectsUrl = json['projects_url'];
-    ideasUrl = json['ideas_url'];
-    guideUrl = json['guide_url'];
-    topics = List<String>.from(json['topics'] ?? []);
-    technologies = List<String>.from(json['technologies'] ?? []);
-    ircChannel = json['irc_channel'];
-    contactEmail = json['contact_email'];
-    mailingList = json['mailing_list'];
-    twitterUrl = json['twitter_url'];
-    blogUrl = json['blog_url'];
-    facebookUrl = json['facebook_url'];
-    numProjects = json['num_projects'];
-    if (json['projects'] != null) {
-      projects = <Project>[];
-      json['projects'].forEach((v) {
-        projects!.add(Project.fromJson(v));
-      });
-    }
-  }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['name'] = name;
-    data['image_url'] = imageUrl;
-    data['image_background_color'] = imageBackgroundColor;
-    data['description'] = description;
-    data['url'] = url;
-    data['category'] = category;
-    data['projects_url'] = projectsUrl;
-    data['ideas_url'] = ideasUrl;
-    data['guide_url'] = guideUrl;
-    data['topics'] = topics;
-    data['technologies'] = technologies;
-    data['irc_channel'] = ircChannel;
-    data['contact_email'] = contactEmail;
-    data['mailing_list'] = mailingList;
-    data['twitter_url'] = twitterUrl;
-    data['blog_url'] = blogUrl;
-    data['facebook_url'] = facebookUrl;
-    data['num_projects'] = numProjects;
-    if (projects != null) {
-      data['projects'] = projects!.map((v) => v.toJson()).toList();
-    }
-    return data;
+  factory Gsoc.fromJson(Map<String, dynamic> json) {
+    return Gsoc(
+      year: json['year'],
+      archiveUrl: json['archive_url'],
+      organizations: (json['organizations'] as List)
+          .map((org) => Organization.fromJson(org))
+          .toList(),
+    );
   }
 }
+
+
+class Organization {
+  final String name;
+  final String imageUrl;
+  final String imageBackgroundColor;
+  final String description;
+  final String url;
+  final int numProjects;
+  final String category;
+  final String projectsUrl;
+  final String ircChannel;
+  final String contactEmail;
+  final String mailingList;
+  final String twitterUrl;
+  final String blogUrl;
+  final List<String> topics;
+  final List<String> technologies;
+  final List<Project> projects;
+
+
+  Organization({
+    required this.name,
+    required this.imageUrl,
+    required this.imageBackgroundColor,
+    required this.description,
+    required this.url,
+    required this.numProjects,
+    required this.category,
+    required this.projectsUrl,
+    required this.ircChannel,
+    required this.contactEmail,
+    required this.mailingList,
+    required this.twitterUrl,
+    required this.blogUrl,
+    required this.topics,
+    required this.technologies,
+    required this.projects,
+  });
+
+
+  factory Organization.fromJson(Map<String, dynamic> json) {
+    return Organization(
+      name: json['name'],
+      imageUrl: json['image_url'],
+      imageBackgroundColor: json['image_background_color'],
+      description: json['description'],
+      url: json['url'],
+      numProjects: json['num_projects'],
+      category: json['category'],
+      projectsUrl: json['projects_url'],
+      ircChannel: json['irc_channel'],
+      contactEmail: json['contact_email'],
+      mailingList: json['mailing_list'],
+      twitterUrl: json['twitter_url'],
+      blogUrl: json['blog_url'],
+      topics: List<String>.from(json['topics']),
+      technologies: List<String>.from(json['technologies']),
+      projects: (json['projects'] as List)
+          .map((project) => Project.fromJson(project))
+          .toList(),
+    );
+  }
+}
+
 
 class Project {
-  String? name;
-  String? description;
-  String? url;
+  final String title;
+  final String shortDescription;
+  final String description;
+  final String studentName;
+  final String codeUrl;
+  final String projectUrl;
+
 
   Project({
-    this.name,
-    this.description,
-    this.url,
+    required this.title,
+    required this.shortDescription,
+    required this.description,
+    required this.studentName,
+    required this.codeUrl,
+    required this.projectUrl,
   });
 
-  Project.fromJson(Map<String, dynamic> json) {
-    name = json['name'];
-    description = json['description'];
-    url = json['url'];
-  }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['name'] = name;
-    data['description'] = description;
-    data['url'] = url;
-    return data;
+  factory Project.fromJson(Map<String, dynamic> json) {
+    return Project(
+      title: json['title'],
+      shortDescription: json['short_description'],
+      description: json['description'],
+      studentName: json['student_name'],
+      codeUrl: json['code_url'],
+      projectUrl: json['project_url'],
+    );
   }
 }
