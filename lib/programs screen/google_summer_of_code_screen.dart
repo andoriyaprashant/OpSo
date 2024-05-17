@@ -1,7 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class GoogleSummerOfCodeScreen extends StatelessWidget {
+import '../modals/GSoC/Gsoc.dart';
+import '../services/ApiService.dart';
+
+class GoogleSummerOfCodeScreen extends StatefulWidget {
+  @override
+  State<GoogleSummerOfCodeScreen> createState() => _GoogleSummerOfCodeScreenState();
+}
+
+class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
+  @override
+  void initState() {
+    getProjectData();
+    super.initState();
+  }
+  void getProjectData() async{
+    ApiService apiService = ApiService();
+    try {
+      Gsoc orgData = await apiService.getOrgByYear('2021');
+      print("org data $orgData");
+    } catch (e) {
+      print('Error: $e');
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
