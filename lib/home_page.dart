@@ -1,8 +1,12 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
 import 'package:opso/programs%20screen/mlh.dart';
+import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/services/notificationService.dart';
 
 import 'about.dart';
@@ -18,23 +22,22 @@ class _HomePageState extends State<HomePage> {
     showNotification();
     super.initState();
   }
+
 //show various notification from here
-  void showNotification() async{
+  void showNotification() async {
     await NotificationService.showNotification(
       title: "OpSo",
       body: "Explore various Open-Source Programs",
     );
   }
 
-
 //used to show the notification every 5 ms
-  void showScheduleNotification() async{
+  void showScheduleNotification() async {
     await NotificationService.showNotification(
         title: "OpSo",
         body: "Explore various Open-Source Programs",
         scheduled: true,
-        interval: 5
-    );
+        interval: 5);
   }
 
   final List<Program> programs = [
@@ -70,6 +73,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -93,39 +97,86 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
+        backgroundColor: Colors.transparent,
+        width: MediaQuery.of(context).size.width,
+        child: BackdropFilter(
+          filter: ImageFilter.blur(
+            sigmaX: 5.0,
+            sigmaY: 5,
+          ),
+          child: Stack(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.70,
+                decoration: BoxDecoration(color: Colors.white),
+                child: SafeArea(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 30, right: 30, top: 30),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: kTextTabBarHeight,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Icon(FontAwesomeIcons.bars),
+                              SizedBox(width: 10),
+                              Text(
+                                'Menu',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        const Divider(
+                          color: Colors.black26,
+                          height: 1,
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(height: 15),
+                              ListTile(
+                                leading: Icon(FontAwesomeIcons.bookmark),
+                                title: Text('Add Bookmark'),
+                                onTap: () {},
+                              ),
+                              const SizedBox(height: 15),
+                              ListTile(
+                                leading: Icon(FontAwesomeIcons.circleInfo),
+                                title: Text('About'),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => AboutScreen(),
+                                    ),
+                                  );
+                                },
+                              ),
+                              const SizedBox(height: 15),
+                            ],
+                          ),
+                        ),
+                        const Divider(
+                          color: Colors.black26,
+                          height: 1,
+                        ),
+                        const SizedBox(height: 15),
+                      ],
+                    ),
+                  ),
                 ),
               ),
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(255, 183, 77, 1),
-              ),
-            ),
-            ListTile(
-              title: Text('About'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AboutScreen()),
-                );
-                // Add functionality for item 1
-              },
-            ),
-            ListTile(
-              title: Text('Add Bookmark'),
-              onTap: () {
-                // Add functionality for item 2
-              },
-            ),
-            // Add more list tiles for additional menu items
-          ],
+            ],
+          ),
         ),
       ),
       body: Padding(
@@ -144,7 +195,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
 
   void navigateToScreen(BuildContext context, Program program) {
     switch (program.title) {
@@ -180,6 +230,13 @@ class _HomePageState extends State<HomePage> {
           ),
         );
         break;
+      case 'Summer of Bitcoin':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SummerOfBitcoin(),
+          ),
+        );
       default:
         break;
     }
@@ -236,7 +293,6 @@ class ProgramOption extends StatelessWidget {
     );
   }
 }
-
 
 class ProgramSearchDelegate extends SearchDelegate<String> {
   final List<Program> programs = [
@@ -302,9 +358,10 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     final List<String> suggestionList = query.isEmpty
         ? []
         : programs
-        .where((program) => program.title.toLowerCase().contains(query.toLowerCase()))
-        .map((program) => program.title)
-        .toList();
+            .where((program) =>
+                program.title.toLowerCase().contains(query.toLowerCase()))
+            .map((program) => program.title)
+            .toList();
 
     return ListView.builder(
       itemCount: suggestionList.length,
@@ -318,7 +375,8 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
   }
 
   void navigateToScreen(BuildContext context, String title) {
-    final Program selectedProgram = programs.firstWhere((program) => program.title == title);
+    final Program selectedProgram =
+        programs.firstWhere((program) => program.title == title);
     switch (selectedProgram.title) {
       case 'Google Summer of Code':
         Navigator.push(
