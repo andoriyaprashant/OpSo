@@ -36,7 +36,7 @@ dependencies:
   http: ^1.2.1
   url_launcher: ^6.2.6
   shared_preferences: ^2.0.11
-
+  dio: ^5.4.3+1
 dev_dependencies:
 
   flutter_launcher_icons: ^0.13.1
