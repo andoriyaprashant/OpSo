@@ -28,7 +28,7 @@ class OpSoApp extends StatelessWidget {
         "/girl_script_summer_of_code" : (context) => const GSSOCScreen(),
         "/google_summer_of_code" : (context) => const GoogleSummerOfCodeScreen(),
         "/google_season_of_docs" : (context) => GoogleSeasonOfDocsScreen(),
-        "/summer_of_bitcoin" : (context) => const BitcoinSummer(),
+        "/summer_of_bitcoin" : (context) => const SummerOfBitcoin(),
         "/outreachy" : (context) => const OutReachy(),
         "/major_league_hacking_fellowship" : (context) => const MajorLeagueHackingFellowship(),
         "/linux_foundation" : (context) => const LinuxFoundation(),
