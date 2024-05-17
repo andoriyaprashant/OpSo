@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
@@ -73,6 +76,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -96,39 +100,87 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(255, 183, 77, 1),
-              ),
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
+
+        backgroundColor: Colors.transparent,
+        width: MediaQuery.of(context).size.width,
+        child: BackdropFilter(
+          filter: ImageFilter.blur(
+            sigmaX: 5.0,
+            sigmaY: 5,
+          ),
+          child: Stack(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.70,
+                decoration: BoxDecoration(color: Colors.white),
+                child: SafeArea(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 30, right: 30, top: 30),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: kTextTabBarHeight,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Icon(FontAwesomeIcons.bars),
+                              SizedBox(width: 10),
+                              Text(
+                                'Menu',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        const Divider(
+                          color: Colors.black26,
+                          height: 1,
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(height: 15),
+                              ListTile(
+                                leading: Icon(FontAwesomeIcons.bookmark),
+                                title: Text('Add Bookmark'),
+                                onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context) => BookMarkScreen()));},
+                              ),
+                              const SizedBox(height: 15),
+                              ListTile(
+                                leading: Icon(FontAwesomeIcons.circleInfo),
+                                title: Text('About'),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => AboutScreen(),
+                                    ),
+                                  );
+                                },
+                              ),
+                              const SizedBox(height: 15),
+                            ],
+                          ),
+                        ),
+                        const Divider(
+                          color: Colors.black26,
+                          height: 1,
+                        ),
+                        const SizedBox(height: 15),
+                      ],
+                    ),
+                  ),
                 ),
               ),
-            ),
-            ListTile(
-              title: Text('About'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AboutScreen()),
-                );
-                // Add functionality for item 1
-              },
-            ),
-            ListTile(
-              title: Text('Bookmark'),
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => BookMarkScreen()));
-              },
-            ),
-            // Add more list tiles for additional menu items
-          ],
+            ],
+          ),
         ),
       ),
       body: Padding(
