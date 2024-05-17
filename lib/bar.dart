@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:opso/about.dart';
+import 'package:url_launcher/link.dart';
+import 'package:opso/widgets/book_mark_screen.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget({Key? key}) : super(key: key);
@@ -17,24 +19,50 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             icon: const Icon(Icons.search),
             onPressed: () {
               showSearch(context: context, delegate: CustomSearchDelegate());
-            },
-          ),
-        ],
+             },
+           ),
+         ],
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(16.0),
-        children: [
-          MenuOption(
-            title: 'About',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AboutScreen()),
-              );
-            },
+      body: Material(
+        color: Colors.transparent,
+        child: Ink(
+          decoration: const BoxDecoration(
+            color: Colors.white,
           ),
-        ],
+          child: InkWell(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ListView(
+                children: [
+
+                  MenuOption(
+                    title: 'Bookmarks',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const BookMarkScreen()),
+                      );
+                    },
+                  ),
+
+                  const Padding(padding: EdgeInsets.only(top: 40)),
+
+                  MenuOption(
+                    title: 'About',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AboutScreen()),
+                      );
+                    },
+                  ),
+
+                ],
+              ),
+            ),       
+          ),
       ),
+    )
     );
   }
 
@@ -68,28 +96,45 @@ class _MenuOptionState extends State<MenuOption> {
         });
         widget.onTap();
       },
-      child: Container(
-        decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 237, 237, 239),
-          borderRadius: BorderRadius.circular(25),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Row(
-            children: [
-              Text(
-                widget.title,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+      child: Material(
+        child: Ink(
+          decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 237, 237, 239),
+            borderRadius: BorderRadius.circular(25),
+          ),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(20),
+            onTap: () {
+              setState(() {
+                _isClicked = !_isClicked;
+              });
+              widget.onTap();
+            },
+            child: Container(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        widget.title,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  
+                    const Icon(Icons.arrow_forward_ios),
+                  ],
                 ),
               ),
-              const Spacer(),
-              const Icon(Icons.arrow_forward_ios),
-            ],
           ),
         ),
       ),
+    )
     );
   }
 }
