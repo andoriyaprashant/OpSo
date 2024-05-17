@@ -1,7 +1,7 @@
 [
   {
     "name": "Adidev Bhattacharya",
-    "orgaization": "Rust miniscript",
+    "organization": "Rust miniscript",
     "description": "Implement FSChaCha20 in rust bitcoin",
     "mentor": "Sanket Kanjalkar, stratospher",
     "university": "Indian Institute of Technology, Kharagpur",
@@ -16,7 +16,7 @@
   },
   {
     "name": "Aditya Sharma",
-    "orgaization": "Core Lightning",
+    "organization": "Core Lightning",
     "description": "Automated and Reliable Peer Backups for Lightning Channels",
     "mentor": "Rusty Russell",
     "university": "IIT-BHU",
@@ -29,7 +29,7 @@
   },
   {
     "name": "Aditya Gupta",
-    "orgaization": "Eye of Satoshi",
+    "organization": "Eye of Satoshi",
     "description": "Generalize rust-teos to run in accountable and non-accountable modes",
     "mentor": "Sergi Delgado",
     "university": "Indian Institute of Technology(IIT) Roorkee",
@@ -39,7 +39,7 @@
   },
   {
     "name": "Alec Chen",
-    "orgaization": "LDK",
+    "organization": "LDK",
     "description": "Custom HTLC TLVs + LDK-TEOS ChannelMonitor Integration",
     "mentor": "Conor Okus, Jeff Czyz",
     "university": "University of Illinois at Urbana-Champaign",
@@ -59,7 +59,7 @@
   },
   {
     "name": "Ayush Singh",
-    "orgaization": "Bitcoin Core",
+    "organization": "Bitcoin Core",
     "description": "Increasing coverage of wallet codebase in Bitcoin Core",
     "mentor": "Bruno Gracia",
     "university": "Jabalpur Engineering College",
@@ -74,7 +74,7 @@
   },
   {
     "name": "Ayush Varshney",
-    "orgaization": "Alby",
+    "organization": "Alby",
     "description": "UI design for the Alby browser extension and services",
     "mentor": "Michael Bumann, Roland Bewick",
     "university": "Indian Institute of Technology Roorkee",
@@ -88,7 +88,7 @@
   },
   {
     "name": "Ayush Saxena",
-    "orgaization": "Eye of Satoshi",
+    "organization": "Eye of Satoshi",
     "description": "Create a web-based GUI for teosd",
     "mentor": "Sergi Delgado",
     "university": "Indian Institute of Information Technology, Jabalpur",
@@ -102,7 +102,7 @@
   },
   {
     "name": "Bryan Elee",
-    "orgaization": "Ledger Bitcoin App",
+    "organization": "Ledger Bitcoin App",
     "description": "General purpose hot signing service for miniscript policies ",
     "mentor": "Salvatore Ingala",
     "university": "University of Port Harcourt",
@@ -112,7 +112,7 @@
   },
   {
     "name": "Eshan Vaid",
-    "orgaization": "Galoy",
+    "organization": "Galoy",
     "description": "CLI client for Galoy Backend in Rust - Galoy CLI",
     "mentor": "Sam Peters, Sandipan",
     "university": "Indian Institute of Information Technology, Allahabad",
@@ -124,7 +124,7 @@
   },
   {
     "name": "Harshil Jani",
-    "orgaization": "Rust miniscript",
+    "organization": "Rust miniscript",
     "description": "Key availability-based spend planning in rust-miniscript",
     "mentor": "Sanket Kanjalkar, stratospher",
     "university": "NIT Surat",
@@ -139,7 +139,7 @@
   },
   {
     "name": "Harshit Harshit",
-    "orgaization": "Core Lightning Toolkit",
+    "organization": "Core Lightning Toolkit",
     "description": "New actions for CLNAPP: a cross-platform app for Core Lightning",
     "mentor": "Vincenzo Palazzo",
     "university": "Delhi Technological University",
@@ -153,7 +153,7 @@
   },
   {
     "name": "Joscha Osthoff",
-    "orgaization": "Fedimint",
+    "organization": "Fedimint",
     "description": "Explore improvements or alternatives to HBBFT consensus algorithm",
     "mentor": "Eric Sirion, Justin Moon",
     "university": "Technische Universität Berlin",
@@ -168,7 +168,7 @@
   },
   {
     "name": "Lakshya Singh",
-    "orgaization": "VLS",
+    "organization": "VLS",
     "description": "VLS Performance Tuning",
     "mentor": "Devrandom, Ken Sedgwic",
     "university": "Indian Institute of Technology BHU Varanasi",
@@ -191,7 +191,7 @@
   },
   {
     "name": "Leonardo Souza",
-    "orgaization": "Fedimint",
+    "organization": "Fedimint",
     "description": "Federate all the things!",
     "mentor": "Eric Sirion, Justin Moon",
     "university": "University of Campinas - UNICAMP",
@@ -206,7 +206,7 @@
   },
   {
     "name": "Lorenzo Bottelli",
-    "orgaization": "StratumV2",
+    "organization": "StratumV2",
     "description": "Add Sv1 support to message-generator",
     "mentor": "Fi3",
     "university": "Politecnico di Milano",
@@ -222,7 +222,7 @@
   },
   {
     "name": "Manav Desai",
-    "orgaization": "bcoin",
+    "organization": "bcoin",
     "description": "Building a neutrino client",
     "mentor": "Anmol Sharma, Shaswat Gupta",
     "university": "Indian Institute of Information Technology Jabalpur",
@@ -236,7 +236,7 @@
   },
   {
     "name": "Maureen Ononiwu",
-    "orgaization": "LND",
+    "organization": "LND",
     "description": "Optimized Neutrino Sync",
     "mentor": "Lucas Ferreira",
     "university": "Federal University of Technology, Owerri",
@@ -249,7 +249,7 @@
   },
   {
     "name": "Mohit Kumar",
-    "orgaization": "Eclair",
+    "organization": "Eclair",
     "description": "Make eclair-cli awesome",
     "mentor": "Bastien Teinturier",
     "university": "Indian Institute of Information Technology, Nagpur",
@@ -270,7 +270,7 @@
   },
   {
     "name": "Omer Yacine",
-    "orgaization": "Eye of Satoshi",
+    "organization": "Eye of Satoshi",
     "description": "Generalize rust-teos to support different SQL engines",
     "mentor": "Sergi Delgado",
     "university": "Cairo University",
@@ -283,7 +283,7 @@
   },
   {
     "name": "Pavan Joshi",
-    "orgaization": "Alby",
+    "organization": "Alby",
     "description": "Develop tools and standards to attach payment metadata to lightning payments",
     "mentor": "Michael Bumann, Roland Bewick",
     "university": "Government College Of Engineering,Yavatmal",
@@ -296,7 +296,7 @@
   },
   {
     "name": "Prakhar Agarwal",
-    "orgaization": "Padawan wallet",
+    "organization": "Padawan wallet",
     "description": "Advanced bitcoin features on Padawan Wallet",
     "mentor": "thunderbiscuit",
     "university": "IIT BHU",
@@ -321,7 +321,7 @@
   },
   {
     "name": "Prakhar Saxena",
-    "orgaization": "LDK",
+    "organization": "LDK",
     "description": "Integrate LDK into lnprototest",
     "mentor": "Conor Okus, Jeff Czyz",
     "university": "IIT(BHU) Varanasi",
@@ -340,7 +340,7 @@
   },
   {
     "name": "Prisca Maduka",
-    "orgaization": "StratumV2",
+    "organization": "StratumV2",
     "description": "Add benchmarks",
     "mentor": "Fi3",
     "university": "University of Benin, Benin city ",
@@ -350,7 +350,7 @@
   },
   {
     "name": "Rahul Roy",
-    "orgaization": "LDK",
+    "organization": "LDK",
     "description": "LDK iOS Sample Wallet (Swift)",
     "mentor": "Conor Okus, Jeff Czyz",
     "university": "Kalinga Institute of Industrial Technology",
@@ -363,7 +363,7 @@
   },
   {
     "name": "Raihan Khan",
-    "orgaization": "Bitcoin Tribe",
+    "organization": "Bitcoin Tribe",
     "description": "Mobile UI automation for a bitcoin social wallet - Bitcoin Tribe",
     "mentor": "Prasad Prabhakaran",
     "university": "Institute of Engineering & Management",
@@ -376,7 +376,7 @@
   },
   {
     "name": "Sarthak Gupta",
-    "orgaization": "Breez",
+    "organization": "Breez",
     "description": "nostr integration in Breez",
     "mentor": "Roy Sheinfeld",
     "university": "IIT ROORKEE",
@@ -389,7 +389,7 @@
   },
   {
     "name": "Satyam Shukla",
-    "orgaization": "Bitcoin Design",
+    "organization": "Bitcoin Design",
     "description": "A Lightning wallet for people with visual disabilities",
     "mentor": "Stephen DeLorme, Mogashni",
     "university": "Abdul Kalam technical University",
@@ -403,7 +403,7 @@
   },
   {
     "name": "Shantanu Gaikwad",
-    "orgaization": "LDK",
+    "organization": "LDK",
     "description": "LSP Integration for LDK Node",
     "mentor": "Conor Okus, Jeff Czyz",
     "university": "College of Engineering Pune",
@@ -415,7 +415,7 @@
   },
   {
     "name": "Siddharth Tiwari",
-    "orgaization": "Galoy",
+    "organization": "Galoy",
     "description": "LNURL-Withdraw LN Service",
     "mentor": "Sam Peters, Sandipan",
     "university": "shri vaishnav vidyapeeth vishwavidyalaya",
@@ -425,7 +425,7 @@
   },
   {
     "name": "Subhradeep Chakraborty",
-    "orgaization": "Rust miniscript",
+    "organization": "Rust miniscript",
     "description": "Implementation of BIP370(psbtv2) in rust-bitcoin",
     "mentor": "Sanket Kanjalkar, stratospher",
     "university": "Jalpaiguri Government Engineering College",
@@ -439,7 +439,7 @@
   },
   {
     "name": "tanishka Sharma",
-    "orgaization": "Bitcoin Design",
+    "organization": "Bitcoin Design",
     "description": "uMlando Wallet UI Design",
     "mentor": "Stephen DeLorme, Mogashni",
     "university": "Indian Institute of Technology, Madras",
@@ -458,7 +458,7 @@
   },
   {
     "name": "Tarek Elsayed",
-    "orgaization": "Core Lightning Toolkit",
+    "organization": "Core Lightning Toolkit",
     "description": "New commands for a plugin manager in Core Lightning",
     "mentor": "Vincenzo Palazzo",
     "university": "Mansoura University",
@@ -470,7 +470,7 @@
   },
   {
     "name": "Temiloluwa Yusuf",
-    "orgaization": "BDK",
+    "organization": "BDK",
     "description": "Create Swift iOS Demo Wallet",
     "mentor": "Steve Myers",
     "university": "Ahmadu Bello University",
@@ -487,7 +487,7 @@
   },
   {
     "name": "Vasu Maheshwari",
-    "orgaization": "bcoin",
+    "organization": "bcoin",
     "description": "Add support for output script descriptors",
     "mentor": "Anmol Sharma, Shaswat Gupta",
     "university": "Indian Institute of Information Technology, Design and Manufacturing, Jabalpur",
@@ -501,7 +501,7 @@
   },
   {
     "name": "Will Owens",
-    "orgaization": "BDK",
+    "organization": "BDK",
     "description": "Add Payjoin support ",
     "mentor": "Steve Myers",
     "university": "Vanderbilt University",
@@ -511,7 +511,7 @@
   },
   {
     "name": "Zhe Pang",
-    "orgaization": "libsecp256k1",
+    "organization": "libsecp256k1",
     "description": "BIP 340 Adaptor Signatures Module for libsecp256k1-zkp",
     "mentor": "Jonas Nick, Sivaram",
     "university": "Columbia University",
