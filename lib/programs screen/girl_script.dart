@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/gssoc_project_modal.dart';
 
 import 'package:opso/widgets/gssoc_project_widget.dart';
@@ -17,8 +18,11 @@ class GSSOCScreen extends StatefulWidget {
 }
 
 class _GSSOCScreenState extends State<GSSOCScreen> {
+  String currectPage = "/girl_script_summer_of_code";
+  String currentProject = "Girl Script Summer of Code";
   List<GssocProjectModal> gssoc2024 = [];
   List<GssocProjectModal> gssoc2023 = [];
+  bool isBookmarked = true;
   List<GssocProjectModal> gssoc2022 = [];
   List<GssocProjectModal> gssoc2021 = [];
   int selectedYear = 2024;
@@ -58,6 +62,14 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
   void initState() {
     getProjectFunction = initializeProjectLists();
     super.initState();
+    _checkBookmarkStatus();
+  }
+
+  Future<void> _checkBookmarkStatus() async {
+    bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProject);
+    setState(() {
+      isBookmarked = bookmarkStatus;
+    });
   }
 
   void searchTag(String searchTag) {
@@ -119,10 +131,38 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
       'Dart'
     ];
     return Scaffold(
+
       appBar: AppBar(
-        title: const Text('Girl Script Summer of Code'),
-      ),
-      body: FutureBuilder<void>(
+        title: const Text('OpSo'),
+          actions: <Widget>[
+            IconButton(
+            icon: (isBookmarked)
+                ? const Icon(Icons.bookmark_add_rounded)
+                : const Icon(Icons.bookmark_add_outlined),
+            onPressed: () {
+              setState(() {
+                isBookmarked = !isBookmarked;
+              });
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                    duration: const Duration(seconds: 2), // Adjust the duration as needed
+                  ),
+                );
+              if(isBookmarked){
+                print("Adding");
+                HandleBookmark.addBookmark(currentProject, currectPage);
+              }
+              else{
+                print("Deleting");
+                HandleBookmark.deleteBookmark(currentProject);
+              }
+            },
+            )
+          ]
+        ),
+
+        body: FutureBuilder<void>(
           future: getProjectFunction,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {

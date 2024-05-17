@@ -1,56 +1,88 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-import '../modals/GSoC/Gsoc.dart';
-import '../services/ApiService.dart';
+import 'package:opso/modals/book_mark_model.dart';
 
 class GoogleSummerOfCodeScreen extends StatefulWidget {
+  const GoogleSummerOfCodeScreen({super.key});
+
   @override
-  State<GoogleSummerOfCodeScreen> createState() => _GoogleSummerOfCodeScreenState();
+  // ignore: library_private_types_in_public_api
+  _GoogleSummerOfCodeScreenState createState() => _GoogleSummerOfCodeScreenState();
 }
 
 class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
-  @override
+  bool flag = true;
+  String currectPage = "/google_summer_of_code";
+  String currentProject = "Google Summer of Code";
+  bool isBookmarked = true;
+
+
+@override
   void initState() {
-    getProjectData();
     super.initState();
+    _checkBookmarkStatus();
   }
-  void getProjectData() async{
-    ApiService apiService = ApiService();
-    try {
-      Gsoc orgData = await apiService.getOrgByYear('2021');
-      print("org data $orgData");
-    } catch (e) {
-      print('Error: $e');
-    }
+
+  Future<void> _checkBookmarkStatus() async {
+    bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProject);
+    setState(() {
+      isBookmarked = bookmarkStatus;
+    });
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
-        title: Text('Google Summer of Code'),
-      ),
+        title: const Text('OpSo'),
+          actions: <Widget>[
+            IconButton(
+            icon: (isBookmarked)
+                ? const Icon(Icons.bookmark_add_rounded)
+                : const Icon(Icons.bookmark_add_outlined),
+            onPressed: () {
+              setState(() {
+                isBookmarked = !isBookmarked;
+              });
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                    duration: const Duration(seconds: 1), // Adjust the duration as needed
+                  ),
+                );
+              if(isBookmarked){
+                print("Adding");
+                HandleBookmark.addBookmark(currentProject, currectPage);
+              }
+              else{
+                print("Deleting");
+                HandleBookmark.deleteBookmark(currentProject);
+              }
+            },
+            )
+          ]
+        ),
+
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Search',
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
-                contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+                contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
               ),
               onChanged: (value) {
                 // Handle search input
               },
             ),
           ),
-          SizedBox(height: 20),
-          Row(
+          const SizedBox(height: 20),
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               YearButton(
@@ -63,8 +95,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
               ),
             ],
           ),
-          SizedBox(height: 20),
-          Row(
+          const SizedBox(height: 20),
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               YearButton(
@@ -77,16 +109,16 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
               // launch('https://example.com/projects'); // Replace with actual URL
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color.fromARGB(255, 226, 230, 120), // Set button color
-              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+              backgroundColor: const Color.fromARGB(255, 226, 230, 120), // Set button color
+              padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
             ),
-            child: Text('View Projects'),
+            child: const Text('View Projects'),
           ),
         ],
       ),
@@ -108,15 +140,9 @@ class YearButton extends StatelessWidget {
         // launch(url);
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: Color.fromARGB(255, 172, 207, 236), // Set button color
+        backgroundColor: const Color.fromARGB(255, 172, 207, 236), // Set button color
       ),
       child: Text(year),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: GoogleSummerOfCodeScreen(),
-  ));
 }
