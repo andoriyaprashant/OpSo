@@ -15,7 +15,7 @@ class AboutScreen extends StatelessWidget {
           children: [
             // Image
             Image.asset(
-              'assets/girlscript_logo.png',
+              'assets/logo.png',
               width: 300,
               height: 300,
               fit: BoxFit.contain,
