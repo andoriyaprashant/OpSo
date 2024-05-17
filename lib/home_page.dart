@@ -16,13 +16,20 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   void initState() {
-    showNotification();
     super.initState();
+    showNotification();
+  }
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _passwordController.dispose();
+    super.dispose();
   }
 
   void showNotification() async {
@@ -88,11 +95,20 @@ class _HomePageState extends State<HomePage> {
               showSearch(context: context, delegate: ProgramSearchDelegate());
             },
           ),
+          // Uncomment the following lines if you want to include the menu icon
+          /*
+          IconButton(
+            icon: Icon(FontAwesomeIcons.bars),
+            onPressed: () {
+              // Add your code here
+            },
+          ),
+          */
         ],
       ),
       drawer: Drawer(
         backgroundColor: Colors.transparent,
-        width: MediaQuery.of(context).size.width,
+        width: media.width,
         child: BackdropFilter(
           filter: ImageFilter.blur(
             sigmaX: 5.0,
@@ -101,7 +117,7 @@ class _HomePageState extends State<HomePage> {
           child: Stack(
             children: [
               Container(
-                width: MediaQuery.of(context).size.width * 0.70,
+                width: media.width * 0.70,
                 decoration: BoxDecoration(color: Colors.white),
                 child: SafeArea(
                   child: Padding(
