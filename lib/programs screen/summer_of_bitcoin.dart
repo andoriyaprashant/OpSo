@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:opso/modals/sob_project_modal.dart';
+import 'package:opso/programs%20screen/articles_page.dart';
 import 'package:opso/widgets/sob_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
@@ -84,6 +85,9 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Summer of Bitcoin'),
+        actions: [
+          ArticleButton(3, context),
+        ],
       ),
       body: FutureBuilder<void>(
           future: getProjectFunction,

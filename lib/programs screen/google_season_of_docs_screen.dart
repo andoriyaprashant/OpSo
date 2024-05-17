@@ -5,10 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/gsod/gsod_modal_new.dart';
 import 'package:opso/modals/gsod/gsod_modal_old.dart';
+import 'package:opso/programs%20screen/articles_page.dart';
 import 'package:opso/widgets/gsod/gsod_project_widget_new.dart';
 import 'package:opso/widgets/gsod/gsod_project_widget_old.dart';
 import 'package:opso/widgets/year_button.dart';
-
 
 class GoogleSeasonOfDocsScreen extends StatefulWidget {
   @override
@@ -91,7 +91,7 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     super.initState();
   }
 
-   Future<void> _checkBookmarkStatus() async {
+  Future<void> _checkBookmarkStatus() async {
     bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProgram);
     setState(() {
       isBookmarked = bookmarkStatus;
@@ -173,36 +173,34 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     var height = MediaQuery.sizeOf(context).height;
     var width = MediaQuery.sizeOf(context).width;
     return Scaffold(
-        appBar : AppBar(
-        title: const Text('OpSo'),
-          actions: <Widget>[
-            IconButton(
-            icon: (isBookmarked)
-                ? const Icon(Icons.bookmark_add_rounded)
-                : const Icon(Icons.bookmark_add_outlined),
-            onPressed: () {
-              setState(() {
-                isBookmarked = !isBookmarked;
-              });
-              ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
-                    duration: const Duration(seconds: 2), // Adjust the duration as needed
-                  ),
-                );
-              if(isBookmarked){
-                print("Adding");
-                HandleBookmark.addBookmark(currentProgram, currentPage);
-              }
-              else{
-                print("Deleting");
-                HandleBookmark.deleteBookmark(currentProgram);
-              }
-            },
-            )
-          ]
-        ),
-
+      appBar: AppBar(title: const Text('OpSo'), actions: <Widget>[
+        ArticleButton(1, context),
+        IconButton(
+          icon: (isBookmarked)
+              ? const Icon(Icons.bookmark_add_rounded)
+              : const Icon(Icons.bookmark_add_outlined),
+          onPressed: () {
+            setState(() {
+              isBookmarked = !isBookmarked;
+            });
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content:
+                    Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                duration:
+                    const Duration(seconds: 2), // Adjust the duration as needed
+              ),
+            );
+            if (isBookmarked) {
+              print("Adding");
+              HandleBookmark.addBookmark(currentProgram, currentPage);
+            } else {
+              print("Deleting");
+              HandleBookmark.deleteBookmark(currentProgram);
+            }
+          },
+        )
+      ]),
       body: FutureBuilder<void>(
           future: getProjectFunction,
           builder: (context, snapshot) {
