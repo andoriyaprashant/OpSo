@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:opso/landing_page.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
@@ -21,7 +22,7 @@ class OpSoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',
+      initialRoute: '/landing_page',
       routes: {
         "/progarm_page" : (context) => HomePage(),
         "/girl_script_summer_of_code" : (context) => const GSSOCScreen(),
@@ -31,6 +32,7 @@ class OpSoApp extends StatelessWidget {
         "/outreachy" : (context) => const OutReachy(),
         "/major_league_hacking_fellowship" : (context) => const MajorLeagueHackingFellowship(),
         "/linux_foundation" : (context) => const LinuxFoundation(),
+        "/landing_page" : (context) => const LandingPage(),
       },
       title: 'OpSo',
       debugShowCheckedModeBanner: false,
