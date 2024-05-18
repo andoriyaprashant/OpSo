@@ -19,6 +19,7 @@ class GsodProjectWidgetNew extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Container(
       constraints: BoxConstraints(
         minHeight: height,
@@ -26,6 +27,11 @@ class GsodProjectWidgetNew extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         color: primaryColor.withOpacity(0.05),
+        border: Border.all(
+          color: isDarkMode ? Colors.orange.shade100 : Colors.orange.shade300,
+          width: 1,
+        ),
+        borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),

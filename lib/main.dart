@@ -9,41 +9,47 @@ import 'package:opso/programs%20screen/outreachy.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/services/notificationService.dart';
 import 'home_page.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 
-
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await NotificationService.initialNotification();
-  runApp(OpSoApp());
+  runApp(const OpSoApp());
 }
 
-
 class OpSoApp extends StatelessWidget {
+  const OpSoApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: '/landing_page',
-      routes: {
-        "/progarm_page" : (context) => HomePage(),
-        "/girl_script_summer_of_code" : (context) => const GSSOCScreen(),
-        "/google_summer_of_code" : (context) =>  GoogleSummerOfCodeScreen(),
-        "/google_season_of_docs" : (context) => GoogleSeasonOfDocsScreen(),
-        "/summer_of_bitcoin" : (context) => const SummerOfBitcoin(),
-        "/outreachy" : (context) => const OutReachy(),
-        "/major_league_hacking_fellowship" : (context) => const MajorLeagueHackingFellowship(),
-        "/linux_foundation" : (context) => const LinuxFoundation(),
-        "/landing_page" : (context) => const LandingPage(),
-      },
-      title: 'OpSo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-
+    return AdaptiveTheme(
+      light: ThemeData.light(),
+      dark: ThemeData.dark(),
+      initial: AdaptiveThemeMode.system,
+      builder: (theme, darkTheme) => MaterialApp(
+        initialRoute: '/landing_page',
+        routes: {
+          "/progarm_page": (context) => const HomePage(),
+          "/girl_script_summer_of_code": (context) => const GSSOCScreen(),
+          "/google_summer_of_code": (context) => GoogleSummerOfCodeScreen(),
+          "/google_season_of_docs": (context) => GoogleSeasonOfDocsScreen(),
+          "/summer_of_bitcoin": (context) => const SummerOfBitcoin(),
+          "/outreachy": (context) => const OutReachy(),
+          "/major_league_hacking_fellowship": (context) =>
+              const MajorLeagueHackingFellowship(),
+          "/linux_foundation": (context) => const LinuxFoundation(),
+          "/landing_page": (context) => const LandingPage(),
+        },
+        title: 'OpSo',
+        debugShowCheckedModeBanner: false,
+        theme: theme,
+        darkTheme: darkTheme,
+        // theme: ThemeData(
+        //   primarySwatch: Colors.blue,
+        //   visualDensity: VisualDensity.adaptivePlatformDensity,
+        // ),
+        home: const HomePage(),
       ),
-      home: HomePage(),
     );
   }
 }
-
-

@@ -5,7 +5,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../modals/GSoC/Gsoc.dart';
 
-
 class GsocProjectWidget extends StatelessWidget {
   final Organization modal;
   final double height;
@@ -13,14 +12,14 @@ class GsocProjectWidget extends StatelessWidget {
   final int index;
   const GsocProjectWidget(
       {super.key,
-        required this.modal,
-        required this.index,
-        this.height = 100,
-        this.width = 100});
-
+      required this.modal,
+      required this.index,
+      this.height = 100,
+      this.width = 100});
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return GestureDetector(
       onTap: () async {
         Uri uri = Uri.parse(modal.url);
@@ -33,7 +32,12 @@ class GsocProjectWidget extends StatelessWidget {
         width: width,
         constraints: BoxConstraints(minHeight: height),
         decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 251, 248, 246),
+            // color: const Color.fromARGB(255, 251, 248, 246),
+            border: Border.all(
+              color:
+                  isDarkMode ? Colors.orange.shade100 : Colors.orange.shade300,
+              width: 1,
+            ),
             borderRadius: BorderRadius.circular(20)),
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -60,7 +64,7 @@ class GsocProjectWidget extends StatelessWidget {
                   runSpacing: 10,
                   children: List.generate(
                     modal.technologies.length,
-                        (index) => Container(
+                    (index) => Container(
                       margin: const EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 249, 241, 226),
