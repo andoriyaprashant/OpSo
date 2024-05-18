@@ -11,10 +11,13 @@ import 'package:opso/programs%20screen/outreachy.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/services/notificationService.dart';
 import 'package:opso/widgets/book_mark_screen.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 
 import 'about.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -24,6 +27,21 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     showNotification();
     super.initState();
+    _getInitialThemeMode();
+  }
+
+  int _initialLabelIndex = 0;
+  void _getInitialThemeMode() async {
+    final savedThemeMode = await AdaptiveTheme.getThemeMode();
+    setState(() {
+      if (savedThemeMode == AdaptiveThemeMode.light) {
+        _initialLabelIndex = 0;
+      } else if (savedThemeMode == AdaptiveThemeMode.dark) {
+        _initialLabelIndex = 1;
+      } else {
+        _initialLabelIndex = 0;
+      }
+    });
   }
 
 //show various notification from here
@@ -77,15 +95,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
+    Color backgroundColor = Theme.of(context).brightness == Brightness.dark
+        ? Colors.black.withOpacity(0.6) // Example dark mode color
+        : Colors.white.withOpacity(0.6); // Example light mode color
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'OpSo',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.search_sharp),
+            icon: const Icon(Icons.search_sharp),
             onPressed: () {
               showSearch(context: context, delegate: ProgramSearchDelegate());
             },
@@ -100,7 +121,6 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: Drawer(
-
         backgroundColor: Colors.transparent,
         width: MediaQuery.of(context).size.width,
         child: BackdropFilter(
@@ -112,14 +132,16 @@ class _HomePageState extends State<HomePage> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width * 0.70,
-                decoration: BoxDecoration(color: Colors.white),
+                color: backgroundColor,
+                // decoration: const BoxDecoration(color: Colors.white),
                 child: SafeArea(
                   child: Padding(
-                    padding: EdgeInsets.only(left: 30, right: 30, top: 30),
+                    padding:
+                        const EdgeInsets.only(left: 30, right: 30, top: 30),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
+                        const SizedBox(
                           height: kTextTabBarHeight,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -130,14 +152,14 @@ class _HomePageState extends State<HomePage> {
                                 'Menu',
                                 style: TextStyle(
                                   fontSize: 20,
-                                  color: Colors.black,
+                                  // color: Colors.black,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        SizedBox(height: 15),
+                        const SizedBox(height: 15),
                         const Divider(
                           color: Colors.black26,
                           height: 1,
@@ -147,15 +169,45 @@ class _HomePageState extends State<HomePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const SizedBox(height: 15),
-                              ListTile(
-                                leading: Icon(FontAwesomeIcons.bookmark),
-                                title: Text('Add Bookmark'),
-                                onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context) => BookMarkScreen()));},
+                              InkWell(
+                                onTap: () {},
+                                child: ListTile(
+                                  leading: Icon(
+                                    _initialLabelIndex == 0
+                                        ? FontAwesomeIcons.solidSun
+                                        : FontAwesomeIcons.solidMoon,
+                                  ),
+                                  title: const Text('Switch Theme'),
+                                  onTap: () {
+                                    setState(() {
+                                      if (_initialLabelIndex == 0) {
+                                        _initialLabelIndex = 1;
+                                        AdaptiveTheme.of(context).setDark();
+                                      } else {
+                                        _initialLabelIndex = 0;
+                                        AdaptiveTheme.of(context).setLight();
+                                      }
+                                    });
+                                  },
+                                ),
                               ),
                               const SizedBox(height: 15),
                               ListTile(
-                                leading: Icon(FontAwesomeIcons.circleInfo),
-                                title: Text('About'),
+                                leading: const Icon(FontAwesomeIcons.bookmark),
+                                title: const Text('Add Bookmark'),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const BookMarkScreen()));
+                                },
+                              ),
+                              const SizedBox(height: 15),
+                              ListTile(
+                                leading:
+                                    const Icon(FontAwesomeIcons.circleInfo),
+                                title: const Text('About'),
                                 onTap: () {
                                   Navigator.push(
                                     context,
@@ -202,7 +254,6 @@ class _HomePageState extends State<HomePage> {
 
   void navigateToScreen(BuildContext context, Program program) {
     switch (program.title) {
-
       case 'Google Summer of Code':
         Navigator.push(
           context,
@@ -225,8 +276,7 @@ class _HomePageState extends State<HomePage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => MajorLeagueHackingFellowship()
-          ),
+              builder: (context) => const MajorLeagueHackingFellowship()),
         );
         break;
 
@@ -234,27 +284,29 @@ class _HomePageState extends State<HomePage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => GSSOCScreen(),
+            builder: (context) => const GSSOCScreen(),
           ),
         );
         break;
 
-        case 'Outreachy':
-          Navigator.push(context, MaterialPageRoute(builder: (context) => OutReachy()));
+      case 'Outreachy':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const OutReachy()));
 
-        case 'Summer of Bitcoin' :
-          Navigator.pushNamed(context, "/summer_of_bitcoin");
+      case 'Summer of Bitcoin':
+        Navigator.pushNamed(context, "/summer_of_bitcoin");
 
       case 'Summer of Bitcoin':
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => SummerOfBitcoin(),
+            builder: (context) => const SummerOfBitcoin(),
           ),
         );
-        
-      case 'Linux Foundation' :
-        Navigator.push(context, MaterialPageRoute(builder: (context) => LinuxFoundation()));
+
+      case 'Linux Foundation':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const LinuxFoundation()));
       default:
         break;
     }
@@ -267,6 +319,7 @@ class ProgramOption extends StatelessWidget {
   final VoidCallback onTap;
 
   const ProgramOption({
+    super.key,
     required this.title,
     required this.imageAssetPath,
     required this.onTap,
@@ -279,9 +332,9 @@ class ProgramOption extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 237, 237, 239),
+              // color: const Color.fromARGB(255, 237, 237, 239),
               borderRadius: BorderRadius.circular(15),
             ),
             child: Row(
@@ -291,7 +344,7 @@ class ProgramOption extends StatelessWidget {
                   width: 50,
                   height: 50,
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 Expanded(
                   child: Text(
                     title,
@@ -301,12 +354,12 @@ class ProgramOption extends StatelessWidget {
                     ),
                   ),
                 ),
-                Icon(Icons.arrow_forward),
+                const Icon(Icons.arrow_forward),
               ],
             ),
           ),
         ),
-        SizedBox(height: 20), // Adding SizedBox between each button
+        const SizedBox(height: 20), // Adding SizedBox between each button
       ],
     );
   }
@@ -348,7 +401,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
   List<Widget> buildActions(BuildContext context) {
     return [
       IconButton(
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
         onPressed: () {
           query = '';
         },
@@ -359,7 +412,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
       onPressed: () {
         close(context, '');
       },
@@ -417,7 +470,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => MajorLeagueHackingFellowship(),
+            builder: (context) => const MajorLeagueHackingFellowship(),
           ),
         );
         break;
@@ -426,13 +479,14 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => GSSOCScreen(),
+            builder: (context) => const GSSOCScreen(),
           ),
         );
         break;
-        
-      case 'Linux Foundation' :
-        Navigator.push(context, MaterialPageRoute(builder: (context) => LinuxFoundation()));
+
+      case 'Linux Foundation':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const LinuxFoundation()));
         break;
 
       default:
