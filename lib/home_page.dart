@@ -1,13 +1,19 @@
+
 import 'dart:async';
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
-import 'package:opso/programs%20screen/mlh.dart';
+import 'package:opso/programs%20screen/linux_foundation.dart';
+import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
+import 'package:opso/programs%20screen/outreachy.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/services/notificationService.dart';
+import 'package:opso/widgets/book_mark_screen.dart';
+
 import 'about.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,10 +22,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
   @override
   void initState() {
     super.initState();
@@ -28,13 +30,7 @@ class _HomePageState extends State<HomePage> {
     showScheduleNotification();
   }
 
-  @override
-  void dispose() {
-    _usernameController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
-
+//show various notification from here
   void showNotification() async {
     await NotificationService.showNotification(
       title: "OpSo",
@@ -42,11 +38,13 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+//used to show the notification every 5 ms
   void showScheduleNotification() async {
-    // Schedule a notification every 24 hours
-    Timer.periodic(Duration(hours: 24), (timer) {
-      showNotification();
-    });
+    await NotificationService.showNotification(
+        title: "OpSo",
+        body: "Explore various Open-Source Programs",
+        scheduled: true,
+        interval: 5);
   }
 
   final List<Program> programs = [
@@ -106,16 +104,16 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: Drawer(
         backgroundColor: Colors.transparent,
-        width: media.width,
+        width: MediaQuery.of(context).size.width,
         child: BackdropFilter(
           filter: ImageFilter.blur(
             sigmaX: 5.0,
-            sigmaY: 5.0,
+            sigmaY: 5,
           ),
           child: Stack(
             children: [
               Container(
-                width: media.width * 0.70,
+                width: MediaQuery.of(context).size.width * 0.70,
                 decoration: BoxDecoration(color: Colors.white),
                 child: SafeArea(
                   child: Padding(
@@ -154,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                               ListTile(
                                 leading: Icon(FontAwesomeIcons.bookmark),
                                 title: Text('Add Bookmark'),
-                                onTap: () {},
+                                onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context) => BookMarkScreen()));},
                               ),
                               const SizedBox(height: 15),
                               ListTile(
@@ -206,6 +204,7 @@ class _HomePageState extends State<HomePage> {
 
   void navigateToScreen(BuildContext context, Program program) {
     switch (program.title) {
+
       case 'Google Summer of Code':
         Navigator.push(
           context,
@@ -214,6 +213,7 @@ class _HomePageState extends State<HomePage> {
           ),
         );
         break;
+
       case 'Google Season of Docs':
         Navigator.push(
           context,
@@ -222,14 +222,16 @@ class _HomePageState extends State<HomePage> {
           ),
         );
         break;
+
       case 'Major League Hacking Fellowship':
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => mlhfellow(),
+            builder: (context) => MajorLeagueHackingFellowship()
           ),
         );
         break;
+
       case 'GirlScript Summer of Code':
         Navigator.push(
           context,
@@ -238,6 +240,13 @@ class _HomePageState extends State<HomePage> {
           ),
         );
         break;
+
+      case 'Outreachy':
+        Navigator.push(context, MaterialPageRoute(builder: (context) => OutReachy()));
+
+      case 'Summer of Bitcoin' :
+        Navigator.pushNamed(context, "/summer_of_bitcoin");
+
       case 'Summer of Bitcoin':
         Navigator.push(
           context,
@@ -245,7 +254,9 @@ class _HomePageState extends State<HomePage> {
             builder: (context) => SummerOfBitcoin(),
           ),
         );
-        break;
+        
+      case 'Linux Foundation' :
+        Navigator.push(context, MaterialPageRoute(builder: (context) => LinuxFoundation()));
       default:
         break;
     }
@@ -259,25 +270,4 @@ class ProgramOption extends StatelessWidget {
 
   const ProgramOption({
     required this.title,
-    required this.imageAssetPath,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        GestureDetector(
-          onTap: onTap,
-          child: Container(
-            padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 237, 237, 239),
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: Row(
-              children: [
-                Image.asset(
-                  imageAssetPath,
-                  width: 50,
-                 
+    required this.image
