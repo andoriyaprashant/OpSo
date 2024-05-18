@@ -37,8 +37,10 @@ dependencies:
   url_launcher: ^6.2.6
   shared_preferences: ^2.0.11
   dio: ^5.4.3+1
-dev_dependencies:
+  animated_text_kit: ^4.2.2
 
+dev_dependencies:
+  awesome_notifications: ^0.9.3+1
   flutter_launcher_icons: ^0.13.1
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -47,10 +49,15 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
-  awesome_notifications: ^0.9.3+1
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
   # The following line ensures that the Material Icons font is
@@ -72,13 +79,11 @@ flutter:
     - assets/
     - assets/projects/gssoc/
     - assets/projects/gsod/
-
+    - assets/projects/sob/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
