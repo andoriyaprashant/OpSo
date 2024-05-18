@@ -16,6 +16,7 @@ class GssocProjectWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return GestureDetector(
       onTap: () async {
         Uri uri = Uri.parse(modal.githubUrl);
@@ -28,7 +29,12 @@ class GssocProjectWidget extends StatelessWidget {
         width: width,
         constraints: BoxConstraints(minHeight: height),
         decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 251, 248, 246),
+            // color: const Color.fromARGB(255, 251, 248, 246),
+            border: Border.all(
+              color:
+                  isDarkMode ? Colors.orange.shade100 : Colors.orange.shade300,
+              width: 1,
+            ),
             borderRadius: BorderRadius.circular(20)),
         child: Padding(
           padding: const EdgeInsets.all(15.0),

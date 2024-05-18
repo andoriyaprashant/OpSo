@@ -177,7 +177,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                     TextFormField(
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: const Color(0xFFEEEEEE),
+                        // fillColor: const Color(0xFFEEEEEE),
                         hintText: 'Search',
                         suffixIcon: const Icon(Icons.search),
                         enabledBorder: OutlineInputBorder(
