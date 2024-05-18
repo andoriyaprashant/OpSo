@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:opso/modals/gsod/gsod_modal_new.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 class GsodProjectWidgetNew extends StatelessWidget {
   final GsodModalNew modal;
   final double height;
@@ -20,6 +19,7 @@ class GsodProjectWidgetNew extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Container(
       constraints: BoxConstraints(
         minHeight: height,
@@ -27,6 +27,11 @@ class GsodProjectWidgetNew extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         color: primaryColor.withOpacity(0.05),
+        border: Border.all(
+          color: isDarkMode ? Colors.orange.shade100 : Colors.orange.shade300,
+          width: 1,
+        ),
+        borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -55,95 +60,79 @@ class GsodProjectWidgetNew extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Row(
-              children: [
-                GestureDetector(
-                  child: Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 249, 241, 226),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const IntrinsicWidth(
-                      stepWidth: 35,
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Center(
-                          child: Text(
-                            "Docs Page",
-                            // modal.techstack[index],
-                            style: TextStyle(
-                              color: Colors.orange,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
+            GestureDetector(
+              child: Wrap(
+                children: [
+                  const Text(
+                    "Docs Page : ",
+                    style: TextStyle(
+                      color: Colors.deepPurple,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  onTap: () {
-                    launchUrl(Uri.parse(modal.docsPageUrl));
-                  },
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.1,
-                ),
-                GestureDetector(
-                  child: Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 249, 241, 226),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const IntrinsicWidth(
-                      stepWidth: 30,
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Center(
-                          child: Text(
-                            "Budget",
-                            // modal.techstack[index],
-                            style: TextStyle(
-                              color: Colors.orange,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
+                  Text(
+                    modal.docsPage,
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: primaryColor,
+                      color: primaryColor,
                     ),
                   ),
-                  onTap: () {
-                    launchUrl(Uri.parse(modal.budgetUrl));
-                  },
-                ),
-              ],
+                ],
+              ),
+              onTap: () {
+                launchUrl(Uri.parse(modal.docsPageUrl));
+              },
             ),
             const SizedBox(
               height: 10,
             ),
             GestureDetector(
-              child: Container(
-                margin: const EdgeInsets.only(right: 10),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 249, 241, 226),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: const IntrinsicWidth(
-                  stepWidth: 30,
-                  child: Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Center(
-                      child: Text(
-                        "Accecpted Proposal",
-                        // modal.techstack[index],
-                        style: TextStyle(
-                          color: Colors.orange,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+              child: Wrap(
+                children: [
+                  const Text(
+                    "Budget : ",
+                    style: TextStyle(
+                      color: Colors.deepPurple,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
+                  Text(
+                    modal.budget,
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: primaryColor,
+                      color: primaryColor,
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                launchUrl(Uri.parse(modal.budgetUrl));
+              },
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            GestureDetector(
+              child: Wrap(
+                children: [
+                  const Text(
+                    "Accecpted Proposal : ",
+                    style: TextStyle(
+                      color: Colors.deepPurple,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    modal.acceptedProjectProposal,
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: primaryColor,
+                      color: primaryColor,
+                    ),
+                  ),
+                ],
               ),
               onTap: () {
                 launchUrl(Uri.parse(modal.acceptedProjectProposalUrl));
@@ -153,35 +142,28 @@ class GsodProjectWidgetNew extends StatelessWidget {
               height: 10,
             ),
             GestureDetector(
-              child: Container(
-                margin: const EdgeInsets.only(right: 10),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 249, 241, 226),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: const IntrinsicWidth(
-                  stepWidth: 30,
-                  child: Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Center(
-                      child: Text(
-                        "Case Study",
-                        // modal.techstack[index],
-                        style: TextStyle(
-                          color: Colors.orange,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+              child: Wrap(
+                children: [
+                  const Text(
+                    "Case Study: ",
+                    style: TextStyle(
+                      color: Colors.deepPurple,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
+                  Text(
+                    modal.caseStudy,
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: primaryColor,
+                      color: primaryColor,
+                    ),
+                  ),
+                ],
               ),
               onTap: () {
                 launchUrl(Uri.parse(modal.caseStudyUrl));
               },
-            ),
-            const SizedBox(
-              height: 10,
             ),
           ],
         ),
