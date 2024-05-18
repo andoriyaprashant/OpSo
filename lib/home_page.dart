@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:ui';
 
@@ -204,7 +203,6 @@ class _HomePageState extends State<HomePage> {
 
   void navigateToScreen(BuildContext context, Program program) {
     switch (program.title) {
-
       case 'Google Summer of Code':
         Navigator.push(
           context,
@@ -213,7 +211,6 @@ class _HomePageState extends State<HomePage> {
           ),
         );
         break;
-
       case 'Google Season of Docs':
         Navigator.push(
           context,
@@ -222,16 +219,14 @@ class _HomePageState extends State<HomePage> {
           ),
         );
         break;
-
       case 'Major League Hacking Fellowship':
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => MajorLeagueHackingFellowship()
+            builder: (context) => MajorLeagueHackingFellowship(),
           ),
         );
         break;
-
       case 'GirlScript Summer of Code':
         Navigator.push(
           context,
@@ -240,23 +235,15 @@ class _HomePageState extends State<HomePage> {
           ),
         );
         break;
-
       case 'Outreachy':
         Navigator.push(context, MaterialPageRoute(builder: (context) => OutReachy()));
-
-      case 'Summer of Bitcoin' :
-        Navigator.pushNamed(context, "/summer_of_bitcoin");
-
+        break;
       case 'Summer of Bitcoin':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => SummerOfBitcoin(),
-          ),
-        );
-        
+        Navigator.pushNamed(context, "/summer_of_bitcoin");
+        break;
       case 'Linux Foundation' :
         Navigator.push(context, MaterialPageRoute(builder: (context) => LinuxFoundation()));
+        break;
       default:
         break;
     }
@@ -270,4 +257,14 @@ class ProgramOption extends StatelessWidget {
 
   const ProgramOption({
     required this.title,
-    required this.image
+    required this.imageAssetPath,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: onTap,
+         
