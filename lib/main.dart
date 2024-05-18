@@ -26,7 +26,7 @@ class OpSoApp extends StatelessWidget {
       routes: {
         "/progarm_page" : (context) => HomePage(),
         "/girl_script_summer_of_code" : (context) => const GSSOCScreen(),
-        "/google_summer_of_code" : (context) => const GoogleSummerOfCodeScreen(),
+        "/google_summer_of_code" : (context) =>  GoogleSummerOfCodeScreen(),
         "/google_season_of_docs" : (context) => GoogleSeasonOfDocsScreen(),
         "/summer_of_bitcoin" : (context) => const SummerOfBitcoin(),
         "/outreachy" : (context) => const OutReachy(),
