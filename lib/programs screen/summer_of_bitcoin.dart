@@ -6,6 +6,8 @@ import 'package:opso/modals/sob_project_modal.dart';
 import 'package:opso/widgets/sob_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
+import '../widgets/SearchandFilterWidget.dart';
+
 class SummerOfBitcoin extends StatefulWidget {
   const SummerOfBitcoin({super.key});
 
@@ -24,7 +26,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
 
   Future<void> initializeProjectLists() async {
     String response =
-        await rootBundle.loadString('assets/projects/sob/sob2023.json');
+    await rootBundle.loadString('assets/projects/sob/sob2023.json');
     var jsonList = await json.decode(response);
     for (var data in jsonList) {
       sob2023.add(SobProjectModal.fromMap(data));
@@ -49,6 +51,14 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
     super.initState();
   }
 
+  void searchTag(String searchTag) {
+    projectList = projectList
+        .where((SobProjectModal element) =>
+        element.organization.contains(searchTag))
+        .toList();
+    setState(() {});
+  }
+
   void search(String searchText) {
     if (searchText.isEmpty) {
       switch (selectedYear) {
@@ -68,14 +78,30 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
     searchText = searchText.toLowerCase();
     projectList = projectList
         .where((SobProjectModal element) =>
-            element.name.toLowerCase().contains(searchText) ||
-            element.mentor.toLowerCase().contains(searchText) ||
-            element.organization.toLowerCase().contains(searchText) ||
-            element.description.toLowerCase().contains(searchText) ||
-            element.university.toLowerCase().contains(searchText))
+    element.name.toLowerCase().contains(searchText) ||
+        element.mentor.toLowerCase().contains(searchText) ||
+        element.organization.toLowerCase().contains(searchText) ||
+        element.description.toLowerCase().contains(searchText) ||
+        element.university.toLowerCase().contains(searchText))
         .toList();
     setState(() {});
   }
+  List<String> languages = [
+    'Rust miniscript',
+    'Core Lightning',
+    'LDK',
+    'Bitcoin Core',
+    'Alby',
+    'Eye of Satoshi',
+    'Ledger Bitcoin App',
+    'Galoy',
+    'Fedimint',
+    'VLS',
+    'StratumV2',
+    'bcoin',
+    'LND',
+    'Eclair'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -93,14 +119,14 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
             } else if (snapshot.connectionState == ConnectionState.done) {
               return Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
+                const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
                         filled: true,
-                        // fillColor: const Color(0xFFEEEEEE),
+                        fillColor: const Color(0xFFEEEEEE),
                         hintText: 'Search',
                         suffixIcon: const Icon(Icons.search),
                         enabledBorder: OutlineInputBorder(
@@ -147,7 +173,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                       child: GridView(
                         physics: const NeverScrollableScrollPhysics(),
                         gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           childAspectRatio: 1.5 / 0.6,
                           crossAxisSpacing: 15,
@@ -195,6 +221,49 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                           ),
                         ],
                       ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Text(
+                          'Filter by Org:',
+                          style: TextStyle(fontWeight: FontWeight.w400),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              DropdownWidget(
+                                items: languages,
+                                hintText: 'Org',
+                                onChanged: (newValue) {
+                                  setState(() {
+                                    switch (selectedYear) {
+                                      case 2021:
+                                        projectList = sob2021;
+                                        break;
+                                      case 2022:
+                                        projectList = sob2022;
+                                        break;
+                                      case 2023:
+                                        projectList = sob2023;
+                                        break;
+                                    }
+                                    searchTag(newValue);
+                                  });
+                                  // Perform filtering based on selectedLanguage
+                                },
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
                     ),
                     const SizedBox(
                       height: 20,
