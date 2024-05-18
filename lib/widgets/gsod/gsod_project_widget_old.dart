@@ -16,7 +16,6 @@ class GsodProjectWidgetOld extends StatelessWidget {
     required this.modal,
     this.primaryColor = const Color.fromRGBO(249, 171, 0, 1),
   });
-
   /* 
     String organization;
   String organizationUrl;
@@ -29,9 +28,9 @@ class GsodProjectWidgetOld extends StatelessWidget {
   String originalProjectProposal;
   String originalProjectProposalUrl;
   */
-
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Container(
       constraints: BoxConstraints(
         minHeight: height,
@@ -39,6 +38,11 @@ class GsodProjectWidgetOld extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         color: primaryColor.withOpacity(0.05),
+        border: Border.all(
+          color: isDarkMode ? Colors.orange.shade100 : Colors.orange.shade300,
+          width: 1,
+        ),
+        borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -109,99 +113,83 @@ class GsodProjectWidgetOld extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Row(
-              children: [
-                GestureDetector(
-                  child: Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 249, 241, 226),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const IntrinsicWidth(
-                      stepWidth: 30,
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Center(
-                          child: Text(
-                            "Project",
-                            style: TextStyle(
-                              color: Colors.orange,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
+            GestureDetector(
+              child: Wrap(
+                children: [
+                  const Text(
+                    "Project : ",
+                    style: TextStyle(
+                      color: Colors.deepPurple,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  onTap: () {
-                    launchUrl(Uri.parse(modal.projectUrl));
-                  },
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.1,
-                ),
-                GestureDetector(
-                  child: Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 249, 241, 226),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const IntrinsicWidth(
-                      stepWidth: 30,
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Center(
-                          child: Text(
-                            "Report",
-                            style: TextStyle(
-                              color: Colors.orange,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
+                  Text(
+                    modal.project,
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: primaryColor,
+                      color: primaryColor,
                     ),
                   ),
-                  onTap: () {
-                    launchUrl(Uri.parse(modal.reportUrl));
-                  },
-                ),
-              ],
+                ],
+              ),
+              onTap: () {
+                launchUrl(Uri.parse(modal.projectUrl));
+              },
             ),
             const SizedBox(
               height: 10,
             ),
             GestureDetector(
-              child: Container(
-                margin: const EdgeInsets.only(right: 10),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 249, 241, 226),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: const IntrinsicWidth(
-                  stepWidth: 30,
-                  child: Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Center(
-                      child: Text(
-                        "Original project proposal",
-                        style: TextStyle(
-                          color: Colors.orange,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+              child: Wrap(
+                children: [
+                  const Text(
+                    "Report : ",
+                    style: TextStyle(
+                      color: Colors.deepPurple,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
+                  Text(
+                    modal.report,
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: primaryColor,
+                      color: primaryColor,
+                    ),
+                  ),
+                ],
               ),
               onTap: () {
-                launchUrl(Uri.parse(modal.originalProjectProposalUrl));
+                launchUrl(Uri.parse(modal.reportUrl));
               },
             ),
             const SizedBox(
               height: 10,
+            ),
+            GestureDetector(
+              child: Wrap(
+                children: [
+                  const Text(
+                    "Original project proposal : ",
+                    style: TextStyle(
+                      color: Colors.deepPurple,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    modal.originalProjectProposal,
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: primaryColor,
+                      color: primaryColor,
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                launchUrl(Uri.parse(modal.originalProjectProposalUrl));
+              },
             ),
           ],
         ),
