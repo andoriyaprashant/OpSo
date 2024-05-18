@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
+import 'package:opso/programs%20screen/gsoc_screen.dart';
 import 'package:opso/services/notificationService.dart';
 import 'home_page.dart';
 

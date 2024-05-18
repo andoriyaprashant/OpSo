@@ -79,6 +79,11 @@ flutter:
     - assets/
     - assets/projects/gssoc/
     - assets/projects/gsod/
+    - assets/projects/gsoc/gsoc2024.json
+    - assets/projects/gsoc/gsoc2023.json
+    - assets/projects/gsoc/gsoc2022.json
+    - assets/projects/gsoc/gsoc2021.json
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

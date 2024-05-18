@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
-import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
+import 'package:opso/programs%20screen/gsoc_screen.dart';
 import 'package:opso/programs%20screen/mlh.dart';
 import 'package:opso/services/notificationService.dart';
 
@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => GoogleSummerOfCodeScreen(),
+            builder: (context) => GsocScreen(),
           ),
         );
         break;
@@ -324,7 +324,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => GoogleSummerOfCodeScreen(),
+            builder: (context) => GsocScreen(),
           ),
         );
         break;
