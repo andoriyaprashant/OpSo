@@ -19,9 +19,9 @@ class LinuxFoundationWidget extends StatelessWidget {
           minHeight: height,
         ),
         width: width,
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 153, 152, 152),
-        ),
+        decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 153, 152, 152),
+            borderRadius: BorderRadius.circular(20)),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -40,8 +40,10 @@ class LinuxFoundationWidget extends StatelessWidget {
                 modal.name,
                 style: const TextStyle(
                   fontSize: 18,
+                  color: Color.fromARGB(255, 190, 200, 221),
                   fontWeight: FontWeight.bold,
                   decoration: TextDecoration.underline,
+                  decorationColor: Color.fromARGB(255, 190, 200, 221),
                 ),
                 textAlign: TextAlign.center,
               ),
