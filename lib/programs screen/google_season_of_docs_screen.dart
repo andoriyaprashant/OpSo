@@ -9,7 +9,6 @@ import 'package:opso/widgets/gsod/gsod_project_widget_new.dart';
 import 'package:opso/widgets/gsod/gsod_project_widget_old.dart';
 import 'package:opso/widgets/year_button.dart';
 
-
 class GoogleSeasonOfDocsScreen extends StatefulWidget {
   @override
   State<GoogleSeasonOfDocsScreen> createState() =>
@@ -34,20 +33,6 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
   Future<void> initializeProjectLists() async {
     String response =
         await rootBundle.loadString('assets/projects/gsod/gsod2023.json');
-    /*
-         organizationName: map['organization_name'] as String,
-      organizationUrl: map['organization_url'] as String,
-      docsPage: map['docs_page'] as String,
-      docsPageUrl: map['docs_page_url'] as String,
-      budget: map['budget'] as String,
-      budgetUrl: map['budget_url'] as String,
-      acceptedProjectProposal: map['accepted_project_proposal'] as String,
-      acceptedProjectProposalUrl:
-          map['accepted_project_proposal_url'] as String,
-      caseStudy: map['case_study'] as String,
-      caseStudyUrl: map['case_study_url'] as String,
-      year: map['year'] as String,
-    */
     var jsonList = await json.decode(response);
     for (var data in jsonList) {
       gsod2023.add(GsodModalNew.fromMap(data));
@@ -91,7 +76,7 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     super.initState();
   }
 
-   Future<void> _checkBookmarkStatus() async {
+  Future<void> _checkBookmarkStatus() async {
     bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProgram);
     setState(() {
       isBookmarked = bookmarkStatus;
@@ -173,36 +158,33 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     var height = MediaQuery.sizeOf(context).height;
     var width = MediaQuery.sizeOf(context).width;
     return Scaffold(
-        appBar : AppBar(
-        title: const Text('OpSo'),
-          actions: <Widget>[
-            IconButton(
-            icon: (isBookmarked)
-                ? const Icon(Icons.bookmark_add_rounded)
-                : const Icon(Icons.bookmark_add_outlined),
-            onPressed: () {
-              setState(() {
-                isBookmarked = !isBookmarked;
-              });
-              ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
-                    duration: const Duration(seconds: 2), // Adjust the duration as needed
-                  ),
-                );
-              if(isBookmarked){
-                print("Adding");
-                HandleBookmark.addBookmark(currentProgram, currentPage);
-              }
-              else{
-                print("Deleting");
-                HandleBookmark.deleteBookmark(currentProgram);
-              }
-            },
-            )
-          ]
-        ),
-
+      appBar: AppBar(title: const Text('OpSo'), actions: <Widget>[
+        IconButton(
+          icon: (isBookmarked)
+              ? const Icon(Icons.bookmark_add_rounded)
+              : const Icon(Icons.bookmark_add_outlined),
+          onPressed: () {
+            setState(() {
+              isBookmarked = !isBookmarked;
+            });
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content:
+                    Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                duration:
+                    const Duration(seconds: 2), // Adjust the duration as needed
+              ),
+            );
+            if (isBookmarked) {
+              print("Adding");
+              HandleBookmark.addBookmark(currentProgram, currentPage);
+            } else {
+              print("Deleting");
+              HandleBookmark.deleteBookmark(currentProgram);
+            }
+          },
+        )
+      ]),
       body: FutureBuilder<void>(
           future: getProjectFunction,
           builder: (context, snapshot) {
