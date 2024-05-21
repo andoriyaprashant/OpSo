@@ -1,7 +1,4 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-import 'package:opso/modals/gssoc_project_modal.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../modals/GSoC/Gsoc.dart';
@@ -20,13 +17,22 @@ class GsocProjectWidget extends StatelessWidget {
     this.width = 100,
   }) : super(key: key);
 
+  Future<void> _launchUrl(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (!await launchUrl(uri)) {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final textColor = isDarkMode ? Colors.white : Colors.black;
+    final cardColor = isDarkMode ? Colors.grey.shade800 : Colors.white;
+
     return GestureDetector(
       onTap: () async {
-        Uri uri = Uri.parse(modal.url);
-        launchUrl(uri);
+        await _launchUrl(modal.url);
       },
       child: Container(
         width: width,
@@ -37,6 +43,7 @@ class GsocProjectWidget extends StatelessWidget {
             width: 1,
           ),
           borderRadius: BorderRadius.circular(20),
+          color: cardColor,
         ),
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -45,7 +52,7 @@ class GsocProjectWidget extends StatelessWidget {
             children: [
               Text(
                 "$index. ${modal.name}",
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.orange,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -53,86 +60,44 @@ class GsocProjectWidget extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
-                child: Text("By ${modal.description}"),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: modal.contactEmail.isNotEmpty
-                    ? RichText(
-                  text: TextSpan(
-                    text: "Contact Mail: ",
-                    style: TextStyle(color: Colors.black), // style for "Contact Mail: "
-                    children: [
-                      TextSpan(
-                        text: modal.contactEmail,
-                        style: TextStyle(
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline,
-                        ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            launchUrl(Uri.parse('mailto:${modal.contactEmail}'));
-                          },
-                      ),
-                    ],
+                child: Text(
+                  "By ${modal.description}",
+                  style: TextStyle(
+                    color: textColor,
                   ),
-                )
-                    : SizedBox.shrink(), // Use SizedBox.shrink() to render an empty widget if the condition is false
-              ),
-
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: modal.blogUrl.isNotEmpty
-                    ? RichText(
-                  text: TextSpan(
-                    text: "Blog Url: ",
-                    style: TextStyle(color: Colors.black), // style for "Blog Url: "
-                    children: [
-                      TextSpan(
-                        text: modal.blogUrl,
-                        style: TextStyle(
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline,
-                        ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            launchUrl(Uri.parse(modal.blogUrl));
-                          },
-                      ),
-                    ],
-                  ),
-                )
-                    : SizedBox.shrink(), // Use SizedBox.shrink() to render an empty widget if the condition is false
+                ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: modal.category.isNotEmpty
-                    ? RichText(
-                  text: TextSpan(
-                    text: "Category: ",
-                    style: TextStyle(color: Colors.black), // style for "Contact Mail: "
-                    children: [
-                      TextSpan(
-                        text: modal.category,
-                        style: TextStyle(
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline,
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Wrap(
+                  spacing: 10,
+                  runSpacing: 10,
+                  children: [
+                    if (modal.contactEmail.isNotEmpty)
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          _launchUrl('mailto:${modal.contactEmail}');
+                        },
+                        icon: Icon(Icons.email, color: Colors.white),
+                        label: Text("Email"),
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white, backgroundColor: Colors.orange,
                         ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            launchUrl(Uri.parse('category :${modal.category}'));
-                          },
                       ),
-                    ],
-                  ),
-                )
-                    : SizedBox.shrink(), // Use SizedBox.shrink() to render an empty widget if the condition is false
+                    if (modal.blogUrl.isNotEmpty)
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          _launchUrl(modal.blogUrl);
+                        },
+                        icon: Icon(Icons.web, color: Colors.white),
+                        label: Text("Blog"),
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white, backgroundColor: Colors.orange,
+                        ),
+                      ),
+                  ],
+                ),
               ),
-
-
-
-              // Add more Text widgets for other properties if needed
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: Wrap(
@@ -153,7 +118,7 @@ class GsocProjectWidget extends StatelessWidget {
                           child: Center(
                             child: Text(
                               modal.technologies[index],
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.orange,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -164,7 +129,7 @@ class GsocProjectWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
