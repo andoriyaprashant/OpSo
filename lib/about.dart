@@ -36,7 +36,7 @@ class AboutScreen extends StatelessWidget {
             SizedBox(height: 20),
             // GitHub Button
             Link(
-              uri: Uri.parse('https://github.com/andoriyaprashant/'),
+              uri: Uri.parse('https://github.com/andoriyaprashant/OpSo'),
               target: LinkTarget.self,
               builder: (context, followlink) => ElevatedButton.icon(
                 onPressed: followlink,
