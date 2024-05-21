@@ -66,6 +66,16 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     }
   }
 
+  void _clearAnimatedList() {
+    for (var i = orgList.length - 1; i >= 0; i--) {
+      _listKey.currentState?.removeItem(
+        i,
+            (context, animation) => SizedBox.shrink(),
+        duration: Duration.zero,
+      );
+    }
+  }
+
   void _populateAnimatedList(List<Organization> organizations) {
     for (var i = 0; i < organizations.length; i++) {
       _listKey.currentState?.insertItem(i);
@@ -74,6 +84,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
 
   void searchTag(String searchTag) {
     setState(() {
+      _clearAnimatedList();
       orgList = _getOrganizationsByYear(selectedYear)
           .where((element) => element.technologies?.contains(searchTag) == true || element.topics?.contains(searchTag) == true)
           .toList();
@@ -83,6 +94,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
 
   void search(String searchText) {
     setState(() {
+      _clearAnimatedList();
       if (searchText.isEmpty) {
         orgList = _getOrganizationsByYear(selectedYear);
       } else {
@@ -192,6 +204,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                           onTap: () {
                             setState(() {
                               selectedYear = 2021;
+                              _clearAnimatedList();
                               orgList = gsoc2021;
                             });
                             _populateAnimatedList(gsoc2021);
@@ -206,6 +219,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                           onTap: () {
                             setState(() {
                               selectedYear = 2022;
+                              _clearAnimatedList();
                               orgList = gsoc2022;
                             });
                             _populateAnimatedList(gsoc2022);
@@ -220,6 +234,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                           onTap: () {
                             setState(() {
                               selectedYear = 2023;
+                              _clearAnimatedList();
                               orgList = gsoc2023;
                             });
                             _populateAnimatedList(gsoc2023);
@@ -234,6 +249,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                           onTap: () {
                             setState(() {
                               selectedYear = 2024;
+                              _clearAnimatedList();
                               orgList = gsoc2024;
                             });
                             _populateAnimatedList(gsoc2024);
