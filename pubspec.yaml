@@ -39,6 +39,7 @@ dependencies:
   dio: ^5.4.3+1
   animated_text_kit: ^4.2.2
   adaptive_theme: ^3.6.0
+  timeline_tile: ^2.0.0
 
 dev_dependencies:
   awesome_notifications: ^0.9.3+1
