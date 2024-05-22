@@ -126,7 +126,6 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                     TextFormField(
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: const Color(0xFFEEEEEE),
                         hintText: 'Search',
                         suffixIcon: const Icon(Icons.search),
                         enabledBorder: OutlineInputBorder(
@@ -157,7 +156,6 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                             vertical: 12.0, horizontal: 20.0),
                       ),
                       onFieldSubmitted: (value) {
-                        print("value is $value");
                         search(value.trim());
                       },
                       onChanged: (value) {
