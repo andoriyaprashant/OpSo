@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:opso/widgets/gsoc/GsocProjectWidget.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../modals/GSoC/Gsoc.dart';
 import '../services/ApiService.dart';
 import '../widgets/SearchandFilterWidget.dart';
@@ -39,6 +37,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   ];
   List<Organization> orgList = [];
   late Future<void> _dataFetchFuture;
+  final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
 
   @override
   void initState() {
@@ -61,21 +60,41 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
         gsoc2024 = orgData2024.organizations ?? [];
         orgList = gsoc2024; // Default to the latest year
       });
+      _populateAnimatedList(orgList);
     } catch (e) {
       print('Error: $e');
     }
   }
 
+  void _clearAnimatedList() {
+    for (var i = orgList.length - 1; i >= 0; i--) {
+      _listKey.currentState?.removeItem(
+        i,
+            (context, animation) => SizedBox.shrink(),
+        duration: Duration.zero,
+      );
+    }
+  }
+
+  void _populateAnimatedList(List<Organization> organizations) {
+    for (var i = 0; i < organizations.length; i++) {
+      _listKey.currentState?.insertItem(i);
+    }
+  }
+
   void searchTag(String searchTag) {
     setState(() {
+      _clearAnimatedList();
       orgList = _getOrganizationsByYear(selectedYear)
           .where((element) => element.technologies?.contains(searchTag) == true || element.topics?.contains(searchTag) == true)
           .toList();
+      _populateAnimatedList(orgList);
     });
   }
 
   void search(String searchText) {
     setState(() {
+      _clearAnimatedList();
       if (searchText.isEmpty) {
         orgList = _getOrganizationsByYear(selectedYear);
       } else {
@@ -83,6 +102,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
             .where((element) => element.name?.toLowerCase().contains(searchText.toLowerCase()) == true)
             .toList();
       }
+      _populateAnimatedList(orgList);
     });
   }
 
@@ -126,7 +146,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                   TextFormField(
                     decoration: InputDecoration(
                       filled: true,
-                      // fillColor: const Color(0xFFEEEEEE),
                       hintText: 'Search',
                       suffixIcon: const Icon(Icons.search),
                       enabledBorder: OutlineInputBorder(
@@ -185,8 +204,10 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                           onTap: () {
                             setState(() {
                               selectedYear = 2021;
+                              _clearAnimatedList();
                               orgList = gsoc2021;
                             });
+                            _populateAnimatedList(gsoc2021);
                           },
                           backgroundColor: selectedYear == 2021
                               ? Colors.white
@@ -198,8 +219,10 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                           onTap: () {
                             setState(() {
                               selectedYear = 2022;
+                              _clearAnimatedList();
                               orgList = gsoc2022;
                             });
+                            _populateAnimatedList(gsoc2022);
                           },
                           backgroundColor: selectedYear == 2022
                               ? Colors.white
@@ -211,8 +234,10 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                           onTap: () {
                             setState(() {
                               selectedYear = 2023;
+                              _clearAnimatedList();
                               orgList = gsoc2023;
                             });
+                            _populateAnimatedList(gsoc2023);
                           },
                           backgroundColor: selectedYear == 2023
                               ? Colors.white
@@ -224,8 +249,10 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                           onTap: () {
                             setState(() {
                               selectedYear = 2024;
+                              _clearAnimatedList();
                               orgList = gsoc2024;
                             });
+                            _populateAnimatedList(gsoc2024);
                           },
                           backgroundColor: selectedYear == 2024
                               ? Colors.white
@@ -261,22 +288,11 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                     ],
                   ),
                   Expanded(
-                    child: ListView.builder(
-                      itemCount: orgList.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: Column(
-                            children: [
-                              GsocProjectWidget(
-                                index: index + 1,
-                                modal: orgList[index],
-                                height: height * 0.2,
-                                width: width,
-                              ),
-                            ],
-                          ),
-                        );
+                    child: AnimatedList(
+                      key: _listKey,
+                      initialItemCount: orgList.length,
+                      itemBuilder: (context, index, animation) {
+                        return _buildAnimatedItem(context, index, animation, height, width);
                       },
                     ),
                   ),
@@ -285,6 +301,40 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
             );
           }
         },
+      ),
+    );
+  }
+
+  Widget _buildAnimatedItem(BuildContext context, int index, Animation<double> animation, double height, double width) {
+    return SizeTransition(
+      sizeFactor: animation,
+      axis: Axis.vertical,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 2,
+                blurRadius: 5,
+                offset: Offset(0, 3), // changes position of shadow
+              ),
+            ],
+          ),
+          child: Column(
+            children: [
+              GsocProjectWidget(
+                index: index + 1,
+                modal: orgList[index],
+                height: height * 0.2,
+                width: width,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
