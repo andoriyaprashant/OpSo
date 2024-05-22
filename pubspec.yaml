@@ -40,6 +40,7 @@ dependencies:
   animated_text_kit: ^4.2.2
   adaptive_theme: ^3.6.0
   timeline_tile: ^2.0.0
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   awesome_notifications: ^0.9.3+1
@@ -82,6 +83,7 @@ flutter:
     - assets/projects/gssoc/
     - assets/projects/gsod/
     - assets/projects/sob/
+    - assets/projects/linux_foundation/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
