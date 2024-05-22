@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:opso/opso_timeline.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
@@ -12,6 +13,7 @@ import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/services/notificationService.dart';
 import 'package:opso/widgets/book_mark_screen.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'dart:math' as math;
 
 import 'about.dart';
 
@@ -201,6 +203,24 @@ class _HomePageState extends State<HomePage> {
                                       MaterialPageRoute(
                                           builder: (context) =>
                                               const BookMarkScreen()));
+                                },
+                              ),
+                              const SizedBox(height: 15),
+                              ListTile(
+                                leading: Transform.rotate(
+                                  angle: 90 * math.pi/180,
+                                  child: const Icon(
+                                    FontAwesomeIcons.timeline,
+                                  ),
+                                ),
+                                title: const Text('Program Timeline'),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const OpsoTimeLineScreen(),
+                                    ),
+                                  );
                                 },
                               ),
                               const SizedBox(height: 15),
