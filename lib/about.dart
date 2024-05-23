@@ -46,15 +46,15 @@ class AboutScreen extends StatelessWidget {
             ),
             SizedBox(height: 10),
 
-            Link(
-              uri: Uri.parse('https://gssoc.girlscript.tech/'),
-              target: LinkTarget.self,
-              builder: (context, followlink) => ElevatedButton.icon(
-                onPressed: followlink,
-                icon: Icon(Icons.link),
-                label: Text('Gssoc Website'),
-              ),
-            ),
+            // Link(
+            //   uri: Uri.parse('https://gssoc.girlscript.tech/'),
+            //   target: LinkTarget.self,
+            //   builder: (context, followlink) => ElevatedButton.icon(
+            //     onPressed: followlink,
+            //     icon: Icon(Icons.link),
+            //     label: Text('Gssoc Website'),
+            //   ),
+            // ),
           ],
         ),
       ),
