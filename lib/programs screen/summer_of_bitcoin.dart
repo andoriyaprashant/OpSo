@@ -265,9 +265,6 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                         )
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
                     Expanded(
                       // width: width,
                       child: ListView.builder(

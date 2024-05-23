@@ -73,7 +73,7 @@ class SobProjectWidget extends StatelessWidget {
             style: TextStyle(color: Colors.grey, fontSize: 14),
           ),
           Text(
-            modal.mentor,
+            modal.mentor, 
             style: const TextStyle(fontSize: 16),
           ),
           const SizedBox(height: 10),
