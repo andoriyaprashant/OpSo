@@ -112,22 +112,22 @@ class NotificationService {
       String description, DateTime startDate, DateTime endDate) async {
     await _scheduleNotification(
       description,
-      'Event starts in one week!',
+      'Application Period starts in one week!',
       startDate.subtract(const Duration(days: 7)),
     );
     await _scheduleNotification(
       description,
-      'Event starts tomorrow!',
+      'Application Period starts tomorrow!',
       startDate.subtract(const Duration(days: 1)),
     );
     await _scheduleNotification(
       description,
-      'Event ends in one week!',
+      'Application Period ends in one week!',
       endDate.subtract(const Duration(days: 7)),
     );
     await _scheduleNotification(
       description,
-      'Event ends tomorrow!',
+      'Application Period ends tomorrow!',
       endDate.subtract(const Duration(days: 1)),
     );
   }
