@@ -1,14 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:opso/modals/gsod/gsod_modal_new.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 class GsodProjectWidgetNew extends StatelessWidget {
   final GsodModalNew modal;
   final double height;
   final double width;
   final int index;
   final Color primaryColor;
+  final Color secondaryColor = Colors.white;
+  final Color tertiaryColor = Colors.black87;
+  final Color linkColor = const Color(0xff0000FF);
+  final Color linkColorDark = const Color(0xff3f84e4);
+
   const GsodProjectWidgetNew({
     super.key,
     this.height = 100,
@@ -17,157 +21,133 @@ class GsodProjectWidgetNew extends StatelessWidget {
     required this.modal,
     this.primaryColor = const Color.fromRGBO(249, 171, 0, 1),
   });
+
+  Future<void> _launchUrl(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (!await launchUrl(uri)) {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final textColor = isDarkMode ? Colors.white : Colors.black;
+    final cardColor = isDarkMode ? Colors.grey.shade800 : Colors.white;
+    final linkColor = isDarkMode ? Colors.white : primaryColor;
+
     return Container(
-      constraints: BoxConstraints(
-        minHeight: height,
-      ),
       width: width,
+      constraints: BoxConstraints(minHeight: height),
       decoration: BoxDecoration(
-        color: primaryColor.withOpacity(0.05),
         border: Border.all(
           color: isDarkMode ? Colors.orange.shade100 : Colors.orange.shade300,
           width: 1,
         ),
         borderRadius: BorderRadius.circular(20),
+        color: cardColor,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(15.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 10,
-            ),
             GestureDetector(
+              onTap: () {
+                _launchUrl(modal.organizationUrl);
+              },
               child: Text(
                 modal.organizationName,
                 style: TextStyle(
-                  decoration: TextDecoration.underline,
                   decorationColor: primaryColor,
                   color: primaryColor,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onTap: () {
-                launchUrl(Uri.parse(modal.organizationUrl));
-              },
             ),
-            const SizedBox(
-              height: 10,
+            const SizedBox(height: 10),
+            _buildLinkTile(
+              context,
+              title: 'Docs Page',
+              value: modal.docsPage,
+              url: modal.docsPageUrl,
+              isDarkMode: isDarkMode,
             ),
-            GestureDetector(
-              child: Wrap(
-                children: [
-                  const Text(
-                    "Docs Page : ",
-                    style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    modal.docsPage,
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationColor: primaryColor,
-                      color: primaryColor,
-                    ),
-                  ),
-                ],
-              ),
-              onTap: () {
-                launchUrl(Uri.parse(modal.docsPageUrl));
-              },
+            const SizedBox(height: 10),
+            _buildLinkTile(
+              context,
+              title: 'Budget',
+              value: modal.budget,
+              url: modal.budgetUrl,
+              isDarkMode: isDarkMode,
             ),
-            const SizedBox(
-              height: 10,
+            const SizedBox(height: 10),
+            _buildLinkTile(
+              context,
+              title: 'Accepted Proposal',
+              value: modal.acceptedProjectProposal,
+              url: modal.acceptedProjectProposalUrl,
+              isDarkMode: isDarkMode,
             ),
-            GestureDetector(
-              child: Wrap(
-                children: [
-                  const Text(
-                    "Budget : ",
-                    style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    modal.budget,
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationColor: primaryColor,
-                      color: primaryColor,
-                    ),
-                  ),
-                ],
-              ),
-              onTap: () {
-                launchUrl(Uri.parse(modal.budgetUrl));
-              },
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            GestureDetector(
-              child: Wrap(
-                children: [
-                  const Text(
-                    "Accecpted Proposal : ",
-                    style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    modal.acceptedProjectProposal,
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationColor: primaryColor,
-                      color: primaryColor,
-                    ),
-                  ),
-                ],
-              ),
-              onTap: () {
-                launchUrl(Uri.parse(modal.acceptedProjectProposalUrl));
-              },
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            GestureDetector(
-              child: Wrap(
-                children: [
-                  const Text(
-                    "Case Study: ",
-                    style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    modal.caseStudy,
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationColor: primaryColor,
-                      color: primaryColor,
-                    ),
-                  ),
-                ],
-              ),
-              onTap: () {
-                launchUrl(Uri.parse(modal.caseStudyUrl));
-              },
+            const SizedBox(height: 10),
+            _buildLinkTile(
+              context,
+              title: 'Case Study',
+              value: modal.caseStudy,
+              url: modal.caseStudyUrl,
+              isDarkMode: isDarkMode,
             ),
           ],
         ),
       ),
     );
   }
+
+  Widget _buildLinkTile(BuildContext context, {required String title, required String value, required String url, required bool isDarkMode}) {
+    return GestureDetector(
+      onTap: () {
+        _launchUrl(url);
+      },
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  Text(
+                    value,
+                    maxLines: 1, // Limiting to one line
+                    overflow: TextOverflow.ellipsis, // Adding ellipsis if text overflows
+                    style: TextStyle(
+                      color: isDarkMode ? secondaryColor : tertiaryColor,
+                      fontSize: 16,
+                      decoration: TextDecoration.none, // Removing underline
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Icon(
+              Icons.link,
+              color: isDarkMode ? linkColorDark : linkColor,
+              size: 16,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
 }

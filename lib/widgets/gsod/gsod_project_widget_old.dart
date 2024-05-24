@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:opso/modals/gsod/gsod_modal_old.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../modals/gsod/gsod_modal_old.dart';
 
 class GsodProjectWidgetOld extends StatelessWidget {
   final GsodModalOld modal;
@@ -8,189 +9,152 @@ class GsodProjectWidgetOld extends StatelessWidget {
   final double width;
   final int index;
   final Color primaryColor;
+  final Color linkColor = const Color(0xff0000FF);
+  final Color linkColorDark = const Color(0xff3f84e4);
+
   const GsodProjectWidgetOld({
-    super.key,
+    Key? key,
     this.height = 100,
     this.width = 100,
     required this.index,
     required this.modal,
     this.primaryColor = const Color.fromRGBO(249, 171, 0, 1),
-  });
-  /* 
-    String organization;
-  String organizationUrl;
-  String technicalWriter;
-  String mentor;
-  String project;
-  String projectUrl;
-  String report;
-  String reportUrl;
-  String originalProjectProposal;
-  String originalProjectProposalUrl;
-  */
+  }) : super(key: key);
+
+  Future<void> _launchUrl(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (!await canLaunch(uri.toString())) {
+      throw 'Could not launch $url';
+    }
+    await launch(uri.toString());
+  }
+
   @override
   Widget build(BuildContext context) {
-    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final textColor = isDarkMode ? Colors.white : Colors.black;
+    final cardColor = isDarkMode ? Colors.grey.shade800 : Colors.white;
+    final linkColor = isDarkMode ? Colors.white : primaryColor;
+
     return Container(
-      constraints: BoxConstraints(
-        minHeight: height,
-      ),
       width: width,
+      constraints: BoxConstraints(minHeight: height),
       decoration: BoxDecoration(
-        color: primaryColor.withOpacity(0.05),
         border: Border.all(
           color: isDarkMode ? Colors.orange.shade100 : Colors.orange.shade300,
           width: 1,
         ),
         borderRadius: BorderRadius.circular(20),
+        color: cardColor,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(15.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 10,
-            ),
             GestureDetector(
+              onTap: () {
+                _launchUrl(modal.organizationUrl);
+              },
               child: Text(
                 modal.organization,
                 style: TextStyle(
-                  decoration: TextDecoration.underline,
                   decorationColor: primaryColor,
                   color: primaryColor,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onTap: () {
-                launchUrl(Uri.parse(modal.organizationUrl));
-              },
             ),
-            const SizedBox(
-              height: 10,
+            const SizedBox(height: 10),
+            _buildLinkTile(
+              context,
+              title: 'Technical Writer',
+              value: modal.technicalWriter,
+              url: '', // You didn't provide a URL for technical writer
+              isDarkMode: isDarkMode,
             ),
-            Wrap(
-              children: [
-                const Text(
-                  "Technical Writer: ",
-                  style: TextStyle(
-                    color: Colors.deepPurple,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  modal.technicalWriter,
-                  style: TextStyle(
-                    decorationColor: primaryColor,
-                    color: primaryColor,
-                  ),
-                ),
-              ],
+            const SizedBox(height: 10),
+            _buildLinkTile(
+              context,
+              title: 'Mentor',
+              value: modal.mentor,
+              url: '', // You didn't provide a URL for mentor
+              isDarkMode: isDarkMode,
             ),
-            const SizedBox(
-              height: 10,
+            const SizedBox(height: 10),
+            _buildLinkTile(
+              context,
+              title: 'Project',
+              value: modal.project,
+              url: modal.projectUrl,
+              isDarkMode: isDarkMode,
             ),
-            Wrap(
-              children: [
-                const Text(
-                  "Mentor : ",
-                  style: TextStyle(
-                    color: Colors.deepPurple,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  modal.mentor,
-                  style: TextStyle(
-                    decorationColor: primaryColor,
-                    color: primaryColor,
-                  ),
-                ),
-              ],
+            const SizedBox(height: 10),
+            _buildLinkTile(
+              context,
+              title: 'Report',
+              value: modal.report,
+              url: modal.reportUrl,
+              isDarkMode: isDarkMode,
             ),
-            const SizedBox(
-              height: 10,
+            const SizedBox(height: 10),
+            _buildLinkTile(
+              context,
+              title: 'Original Project Proposal',
+              value: modal.originalProjectProposal,
+              url: modal.originalProjectProposalUrl,
+              isDarkMode: isDarkMode,
             ),
-            GestureDetector(
-              child: Wrap(
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLinkTile(BuildContext context, {required String title, required String value, required String url, required bool isDarkMode}) {
+    return GestureDetector(
+      onTap: () {
+        if (url.isNotEmpty) {
+          _launchUrl(url);
+        }
+      },
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Project : ",
+                  Text(
+                    title,
                     style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
                     ),
                   ),
                   Text(
-                    modal.project,
+                    value,
+                    maxLines: 1, // Limiting to one line
+                    overflow: TextOverflow.ellipsis, // Adding ellipsis if text overflows
                     style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationColor: primaryColor,
-                      color: primaryColor,
+                      color: isDarkMode ? Colors.white : Colors.black,
+                      fontSize: 16,
+                      decoration: TextDecoration.none, // Removing underline
                     ),
                   ),
                 ],
               ),
-              onTap: () {
-                launchUrl(Uri.parse(modal.projectUrl));
-              },
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            GestureDetector(
-              child: Wrap(
-                children: [
-                  const Text(
-                    "Report : ",
-                    style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    modal.report,
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationColor: primaryColor,
-                      color: primaryColor,
-                    ),
-                  ),
-                ],
+            if (url.isNotEmpty)
+              Icon(
+                Icons.link,
+                color: isDarkMode ? linkColorDark : linkColor,
+                size: 16,
               ),
-              onTap: () {
-                launchUrl(Uri.parse(modal.reportUrl));
-              },
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            GestureDetector(
-              child: Wrap(
-                children: [
-                  const Text(
-                    "Original project proposal : ",
-                    style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    modal.originalProjectProposal,
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationColor: primaryColor,
-                      color: primaryColor,
-                    ),
-                  ),
-                ],
-              ),
-              onTap: () {
-                launchUrl(Uri.parse(modal.originalProjectProposalUrl));
-              },
-            ),
           ],
         ),
       ),
