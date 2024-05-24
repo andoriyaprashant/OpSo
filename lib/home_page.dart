@@ -347,6 +347,8 @@ class ProgramOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final borderColor = isDarkMode ? Colors.white : Colors.black45;
     return Column(
       children: [
         GestureDetector(
@@ -355,7 +357,11 @@ class ProgramOption extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               // color: const Color.fromARGB(255, 237, 237, 239),
-              borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(15),
+              border: Border.all(
+                width: 1,
+                color: borderColor,
+              ),
             ),
             child: Row(
               children: [
