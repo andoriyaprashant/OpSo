@@ -1,9 +1,15 @@
-# OpSo - Open Source Programs App
+<div align="center">
+  <h1>OpSo - Open Source Programs App</h1>
+</div>
+
 
 OpSo is a Flutter app that provides comprehensive information about various open-source programs, including Google Summer of Code, Summer of Bitcoin, Linux Foundation, and more. It allows users to explore different open-source opportunities, learn about their eligibility criteria, and access important resources.
 
+<br>
+
 ![Opso Project Ui](https://github.com/andoriyaprashant/OpSo/assets/121665385/01ee0bec-bed4-4ced-98e0-bc01f68cc134)
 
+<hr>
 
 ## Contributing to OpSo
 
@@ -60,6 +66,7 @@ flutter doctor
 flutter run
 ```
 
+<hr>
 
 ### Adding New Open Source Programs
 
@@ -74,19 +81,46 @@ If you would like to add information about a new open-source program to OpSo, yo
 
 Good documentation is essential for the success of any open-source project. If you notice any areas where the documentation can be improved, feel free to make updates or additions.
 
-## Code of Conduct
+<hr>
 
-Please note that by contributing to OpSo, you agree to abide by the [code of conduct](CODE_OF_CONDUCT.md). We expect all contributors to uphold the principles of respect, inclusivity, and collaboration.
+<!-- Open Source Programs -->
+  <div>
+    <h2><img src="https://github.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/blob/master/Emojis/Hand%20gestures/Flexed%20Biceps.png?raw=true" width="35" height="35" > Open Source Programs</h2>
+  </div>
 
+  <table border="1" cellpadding="10">
+        <tr>
+            <td rowspan="2">
+                <img src="https://github.com/Meetjain1/wanderlust/assets/133582566/21b2bc42-bdd5-487a-a083-1b262c2f6d9b" alt="GSSOC Logo" width="100" height="55">
+            </td>
+            <td>
+                <strong>GSSOC 2024</strong>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                This project is part of GirlScript Summer of Code. We enthusiastically welcome community contributions to enhance OpSo.
+            </td>
+        </tr>
+    </table>
 
- 
-<h2 align = "center">Our Contributors ❤️</h2>
-<div align = "center">
+<hr>
+
+<!-- Code of conduct -->
+<div>
+<h2><img src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" width="35" height="35"> Code of Conduct</h2>
+</div>
+
+Please note that by contributing to OpSo, you agree to abide by the [code of conduct](Code_of_Conduct.md). We expect all contributors to uphold the principles of respect, inclusivity, and collaboration.
+
+<hr>
+
+ <!-- Cotributors -->
+<div>
+  <h2 align = "center"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35"> Our Contributors</h2>
+ <div align = "center">
  <h3>Thank you for contributing to our repository</h3>
 
 ![Contributors](https://contrib.rocks/image?repo=andoriyaprashant/OpSo)
 
 </div>
-
-💙 Thank You !!! 💙
-
