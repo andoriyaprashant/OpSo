@@ -19,6 +19,8 @@ class GoogleSeasonOfDocsScreen extends StatefulWidget {
 
 
 class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
+  String selectedOrganization = 'All';
+  String selectedProposal = 'All';
   String currentProgram = "Google Season of Docs";
   bool isBookmarked = true;
   String currentPage = "/google_season_of_docs";
@@ -96,24 +98,7 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
 
   void search(String searchText) {
     if (searchText.isEmpty) {
-      switch (selectedYear) {
-        case 2021:
-          projectList = gsod2021;
-          break;
-        case 2022:
-          projectList = gsod2022;
-          break;
-        case 2023:
-          projectList = gsod2023;
-          break;
-        case 20202:
-          projectList = gsod2020;
-          break;
-        case 2019:
-          projectList = gsod2019;
-          break;
-      }
-      setState(() {});
+      resetProjectsByLanguage();
       return;
     }
     if (selectedYear > 2020) {
@@ -162,16 +147,84 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     }
 
 
-    setState(() {});
+    setState(() {
+      _resetValueIfNotValid();
+    });
   }
+
+
   Future<void> _refresh() async {
     // Fetch data for the next year based on the currently selected year
     setState(() {
       initializeProjectLists();
+      selectedOrganization = 'All';
+      selectedProposal = 'All';
       selectedYear = 2023;
       if (selectedYear > 2023) selectedYear = 2019; // Reset to the beginning if it exceeds 2023
     });
   }
+
+
+  void resetProjectsByLanguage() {
+    switch (selectedYear) {
+      case 2019:
+        projectList = gsod2019;
+        break;
+      case 2020:
+        projectList = gsod2020;
+        break;
+      case 2021:
+        projectList = gsod2021;
+        break;
+      case 2022:
+        projectList = gsod2022;
+        break;
+      case 2023:
+        projectList = gsod2023;
+        break;
+      case 2024:
+        projectList = gsod2023;
+        break;
+    }
+    if (selectedOrganization != 'All') {
+      filterProjectsByTag(selectedOrganization);
+    }
+    setState(() {
+      _resetValueIfNotValid();
+    });
+  }
+
+
+  void filterProjectsByTag(String tag) {
+    projectList = projectList
+        .where((element) => element.tags.contains(tag))
+        .toList();
+    setState(() {
+      _resetValueIfNotValid();
+    });
+  }
+
+
+  void _resetValueIfNotValid() {
+    // Reset selectedOrganization if it is not valid
+    var validOrganizations = projectList
+        .map((project) => project.organizationName)
+        .toSet(); // Use a Set to ensure uniqueness
+    if (!validOrganizations.contains(selectedOrganization)) {
+      selectedOrganization = 'All';
+    }
+
+
+    // Reset selectedProposal if it is not valid
+    var validProposals = projectList
+        .map((project) => project.acceptedProjectProposal)
+        .toSet(); // Use a Set to ensure uniqueness
+    if (!validProposals.contains(selectedProposal)) {
+      selectedProposal = 'All';
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.sizeOf(context).height;
@@ -190,10 +243,9 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
               });
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content:
-                  Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
-                  duration:
-                  const Duration(seconds: 2), // Adjust the duration as needed
+                  content: Text(
+                      isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                  duration: const Duration(seconds: 2), // Adjust the duration as needed
                 ),
               );
               if (isBookmarked) {
@@ -207,200 +259,261 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
           )
         ]),
         body: FutureBuilder<void>(
-            future: getProjectFunction,
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(child: CircularProgressIndicator());
-              } else if (snapshot.connectionState == ConnectionState.done) {
-                return Padding(
-                  padding:
-                  const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      TextFormField(
-                        decoration: InputDecoration(
-                          filled: true,
-                          // fillColor: const Color(0xFFEEEEEE),
-                          hintText: 'Search',
-                          suffixIcon: const Icon(Icons.search),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFEEEEEE),
-                            ),
+          future: getProjectFunction,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            } else if (snapshot.connectionState == ConnectionState.done) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    TextFormField(
+                      decoration: InputDecoration(
+                        filled: true,
+                        // fillColor: const Color(0xFFEEEEEE),
+                        hintText: 'Search',
+                        suffixIcon: const Icon(Icons.search),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(
+                            color: Color(0xFFEEEEEE),
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFEEEEEE),
-                            ),
-                          ),
-                          disabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFEEEEEE),
-                            ),
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFEEEEEE),
-                            ),
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 12.0, horizontal: 20.0),
                         ),
-                        onFieldSubmitted: (value) {
-                          print("value is $value");
-                          search(value.trim());
-                        },
-                        onChanged: (value) {
-                          if (value.isEmpty) {
-                            search(value);
-                          }
-                        },
-                      ),
-                      const SizedBox(height: 20),
-                      Container(
-                        constraints: BoxConstraints(
-                          maxHeight: height * 0.3,
-                        ),
-                        width: width,
-                        child: GridView(
-                          physics: const NeverScrollableScrollPhysics(),
-                          gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: 1.5 / 0.6,
-                            crossAxisSpacing: 15,
-                            mainAxisSpacing: 15,
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(
+                            color: Color(0xFFEEEEEE),
                           ),
-                          children: [
-                            YearButton(
-                              year: "2019",
-                              isEnabled: selectedYear == 2019 ? true : false,
-                              onTap: () {
-                                setState(() {
-                                  projectList = gsod2019;
-                                  selectedYear = 2019;
-                                });
-                              },
-                              backgroundColor: selectedYear == 2019
-                                  ? Colors.white
-                                  : const Color.fromRGBO(249, 171, 0, 1),
-                            ),
-                            YearButton(
-                              year: "2020",
-                              isEnabled: selectedYear == 2020 ? true : false,
-                              onTap: () {
-                                setState(() {
-                                  projectList = gsod2020;
-                                  selectedYear = 2020;
-                                });
-                              },
-                              backgroundColor: selectedYear == 2020
-                                  ? Colors.white
-                                  : const Color.fromRGBO(249, 171, 0, 1),
-                            ),
-                            YearButton(
-                              year: "2021",
-                              isEnabled: selectedYear == 2021 ? true : false,
-                              onTap: () {
-                                setState(() {
-                                  projectList = gsod2021;
-                                  selectedYear = 2021;
-                                });
-                              },
-                              backgroundColor: selectedYear == 2021
-                                  ? Colors.white
-                                  : const Color.fromRGBO(249, 171, 0, 1),
-                            ),
-                            YearButton(
-                              year: "2022",
-                              isEnabled: selectedYear == 2022 ? true : false,
-                              onTap: () {
-                                setState(() {
-                                  projectList = gsod2022;
-                                  selectedYear = 2022;
-                                });
-                              },
-                              backgroundColor: selectedYear == 2022
-                                  ? Colors.white
-                                  : const Color.fromRGBO(249, 171, 0, 1),
-                            ),
-                            YearButton(
-                              year: "2023",
-                              isEnabled: selectedYear == 2023 ? true : false,
-                              onTap: () {
-                                setState(() {
-                                  projectList = gsod2023;
-                                  selectedYear = 2023;
-                                });
-                              },
-                              backgroundColor: selectedYear == 2023
-                                  ? Colors.white
-                                  : const Color.fromRGBO(249, 171, 0, 1),
-                            ),
-                          ],
                         ),
+                        disabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(
+                            color: Color(0xFFEEEEEE),
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(
+                            color: Color(0xFFEEEEEE),
+                          ),
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 12.0, horizontal: 20.0),
                       ),
-                      // const SizedBox(height: 20),
-                      // SizedBox(
-                      //   height: 50,
-                      //   child: ElevatedButton(
-                      //     onPressed: () {},
-                      //     style: ElevatedButton.styleFrom(
-                      //       shape: const RoundedRectangleBorder(
-                      //         borderRadius: BorderRadius.zero,
-                      //       ),
-                      //       backgroundColor: const Color.fromARGB(
-                      //           255, 253, 214, 115), // Set button color
-                      //       padding: const EdgeInsets.symmetric(
-                      //           vertical: 10.0, horizontal: 20.0),
-                      //     ),
-                      //     child: const Text(
-                      //       'View Projects',
-                      //       style: TextStyle(color: Colors.white, fontSize: 18),
-                      //     ),
-                      //   ),
-                      // ),
-                      const SizedBox(
-                        height: 20,
+                      onFieldSubmitted: (value) {
+                        print("value is $value");
+                        search(value.trim());
+                      },
+                      onChanged: (value) {
+                        if (value.isEmpty) {
+                          search(value);
+                        }
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    Container(
+                      constraints: BoxConstraints(
+                        maxHeight: height * 0.3,
                       ),
-
-
-                      Expanded(
-                        // width: width,
-                        child: ListView.builder(
-                          itemCount: projectList.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: selectedYear <= 2020
-                                  ? GsodProjectWidgetOld(
-                                index: index + 1,
-                                modal: projectList[index],
-                                height: height * 0.2,
-                                width: width,
-                              )
-                                  : GsodProjectWidgetNew(
-                                index: index + 1,
-                                modal: projectList[index],
-                                height: height * 0.2,
-                                width: width,
+                      width: width,
+                      child: GridView(
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          childAspectRatio: 1.5 / 0.6,
+                          crossAxisSpacing: 15,
+                          mainAxisSpacing: 15,
+                        ),
+                        children: [
+                          YearButton(
+                            year: "2019",
+                            isEnabled: selectedYear == 2019 ? true : false,
+                            onTap: () {
+                              setState(() {
+                                projectList = gsod2019;
+                                selectedYear = 2019;
+                                _resetValueIfNotValid();
+                              });
+                            },
+                            backgroundColor: selectedYear == 2019
+                                ? Colors.white
+                                : const Color.fromRGBO(249, 171, 0, 1),
+                          ),
+                          YearButton(
+                            year: "2020",
+                            isEnabled: selectedYear == 2020 ? true : false,
+                            onTap: () {
+                              setState(() {
+                                projectList = gsod2020;
+                                selectedYear = 2020;
+                                _resetValueIfNotValid();
+                              });
+                            },
+                            backgroundColor: selectedYear == 2020
+                                ? Colors.white
+                                : const Color.fromRGBO(249, 171, 0, 1),
+                          ),
+                          YearButton(
+                            year: "2021",
+                            isEnabled: selectedYear == 2021 ? true : false,
+                            onTap: () {
+                              setState(() {
+                                projectList = gsod2021;
+                                selectedYear = 2021;
+                                _resetValueIfNotValid();
+                              });
+                            },
+                            backgroundColor: selectedYear == 2021
+                                ? Colors.white
+                                : const Color.fromRGBO(249, 171, 0, 1),
+                          ),
+                          YearButton(
+                            year: "2022",
+                            isEnabled: selectedYear == 2022 ? true : false,
+                            onTap: () {
+                              setState(() {
+                                projectList = gsod2022;
+                                selectedYear = 2022;
+                                _resetValueIfNotValid();
+                              });
+                            },
+                            backgroundColor: selectedYear == 2022
+                                ? Colors.white
+                                : const Color.fromRGBO(249, 171, 0, 1),
+                          ),
+                          YearButton(
+                            year: "2023",
+                            isEnabled: selectedYear == 2023 ? true : false,
+                            onTap: () {
+                              setState(() {
+                                projectList = gsod2023;
+                                selectedYear = 2023;
+                                _resetValueIfNotValid();
+                              });
+                            },
+                            backgroundColor: selectedYear == 2023
+                                ? Colors.white
+                                : const Color.fromRGBO(249, 171, 0, 1),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Filter by Organization:',
+                          style: TextStyle(fontWeight: FontWeight.w400),
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: DropdownButton<String>(
+                            value: selectedOrganization,
+                            hint: const Text('Organization'),
+                            isExpanded: true,
+                            items: [
+                              DropdownMenuItem<String>(
+                                value: 'All', // Unique value for "All"
+                                child: const Text('All'),
                               ),
-                            );
-                          },
+                              ...projectList
+                                  .map((project) => project.organizationName)
+                                  .toSet() // Use a Set to ensure uniqueness
+                                  .map((organization) {
+                                return DropdownMenuItem<String>(
+                                  value: organization,
+                                  child: Text(organization),
+                                );
+                              }).toList(),
+                            ],
+                            onChanged: (newValue) {
+                              setState(() {
+                                selectedOrganization = newValue!;
+                                search(newValue);
+                              });
+                            },
+                          ),
                         ),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Filter by Accepted Proposal:',
+                          style: TextStyle(fontWeight: FontWeight.w400),
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: DropdownButton<String>(
+                            value: selectedProposal,
+                            hint: const Text('Proposal'),
+                            isExpanded: true,
+                            items: [
+                              DropdownMenuItem<String>(
+                                value: 'All', // Unique value for "All"
+                                child: const Text('All'),
+                              ),
+                              ...projectList
+                                  .map((project) =>
+                              project.acceptedProjectProposal)
+                                  .toSet() // Use a Set to ensure uniqueness
+                                  .toList()
+                                  .map((proposal) {
+                                return DropdownMenuItem<String>(
+                                  value: proposal,
+                                  child: Text(proposal),
+                                );
+                              }).toList(),
+                            ],
+                            onChanged: (newValue) {
+                              setState(() {
+                                selectedProposal = newValue!;
+                                search(newValue);
+                              });
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: projectList.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            child: selectedYear <= 2020
+                                ? GsodProjectWidgetOld(
+                              index: index + 1,
+                              modal: projectList[index],
+                              height: height * 0.2,
+                              width: width,
+                            )
+                                : GsodProjectWidgetNew(
+                              index: index + 1,
+                              modal: projectList[index],
+                              height: height * 0.2,
+                              width: width,
+                            ),
+                          );
+                        },
                       ),
-                    ],
-                  ),
-                );
-              } else {
-                return const Center(child: Text("Some error occured"));
-              }
-            }),
+                    ),
+                  ],
+                ),
+              );
+            } else {
+              return const Center(child: Text("Some error occurred"));
+            }
+          },
+        ),
       ),
     );
   }
