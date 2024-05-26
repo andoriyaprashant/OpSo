@@ -15,7 +15,7 @@ class AboutScreen extends StatelessWidget {
           children: [
             // Image
             Image.asset(
-              'assets/girlscript_logo.png',
+              'assets/logo.png',
               width: 300,
               height: 300,
               fit: BoxFit.contain,
@@ -36,7 +36,7 @@ class AboutScreen extends StatelessWidget {
             SizedBox(height: 20),
             // GitHub Button
             Link(
-              uri: Uri.parse('https://github.com/andoriyaprashant/'),
+              uri: Uri.parse('https://github.com/andoriyaprashant/OpSo'),
               target: LinkTarget.self,
               builder: (context, followlink) => ElevatedButton.icon(
                 onPressed: followlink,
@@ -46,15 +46,15 @@ class AboutScreen extends StatelessWidget {
             ),
             SizedBox(height: 10),
 
-            Link(
-              uri: Uri.parse('https://gssoc.girlscript.tech/'),
-              target: LinkTarget.self,
-              builder: (context, followlink) => ElevatedButton.icon(
-                onPressed: followlink,
-                icon: Icon(Icons.link),
-                label: Text('Gssoc Website'),
-              ),
-            ),
+            // Link(
+            //   uri: Uri.parse('https://gssoc.girlscript.tech/'),
+            //   target: LinkTarget.self,
+            //   builder: (context, followlink) => ElevatedButton.icon(
+            //     onPressed: followlink,
+            //     icon: Icon(Icons.link),
+            //     label: Text('Gssoc Website'),
+            //   ),
+            // ),
           ],
         ),
       ),
