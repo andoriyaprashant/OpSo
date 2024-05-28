@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:opso/widgets/gsoc/GsocProjectWidget.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:multi_select_flutter/multi_select_flutter.dart';
 import '../modals/GSoC/Gsoc.dart';
 import '../services/ApiService.dart';
 import '../widgets/SearchandFilterWidget.dart';
@@ -15,7 +16,7 @@ class GoogleSummerOfCodeScreen extends StatefulWidget {
 
 
 class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
-  String selectedOrg = 'All';
+  String selectedOrg = 'All'; // Ensure this is defined
   List<Organization> gsoc2024 = [];
   List<Organization> gsoc2023 = [];
   List<Organization> gsoc2022 = [];
@@ -39,6 +40,9 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     'Dart'
   ];
   List<Organization> orgList = [];
+  List<String> selectedLanguages = ['All'];
+  List<String> allOrganizations = [];
+  List<String> selectedOrganizations = ['All'];
   late Future<void> _dataFetchFuture;
 
 
@@ -64,6 +68,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
         gsoc2023 = orgData2023.organizations ?? [];
         gsoc2024 = orgData2024.organizations ?? [];
         orgList = gsoc2024; // Default to the latest year
+        allOrganizations = ['All', ...orgList.map((org) => org.name!).toSet()];
       });
     } catch (e) {
       print('Error: $e');
@@ -71,27 +76,31 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   }
 
 
-  void searchTag(String searchTag) {
-    setState(() {
-      selectedOrg = 'All'; // Reset selectedOrg to avoid mismatch
-      orgList = _getOrganizationsByYear(selectedYear)
-          .where((element) => element.technologies?.contains(searchTag) == true || element.topics?.contains(searchTag) == true)
-          .toList();
-    });
-  }
+  void filterProjects() {
+    orgList = _getOrganizationsByYear(selectedYear);
 
 
-  void search(String searchText) {
-    setState(() {
-      selectedOrg = 'All'; // Reset selectedOrg to avoid mismatch
-      if (searchText.isEmpty) {
-        orgList = _getOrganizationsByYear(selectedYear);
-      } else {
-        orgList = _getOrganizationsByYear(selectedYear)
-            .where((element) => element.name?.toLowerCase().contains(searchText.toLowerCase()) == true)
-            .toList();
-      }
-    });
+    if (!selectedLanguages.contains('All')) {
+      orgList = orgList.where((project) => project.technologies?.any(selectedLanguages.contains) == true).toList();
+    }
+
+
+    if (!selectedOrganizations.contains('All')) {
+      orgList = orgList.where((project) => selectedOrganizations.contains(project.name)).toList();
+    }
+
+
+    // Update organization filter based on selected languages
+    allOrganizations = [
+      'All',
+      ..._getOrganizationsByYear(selectedYear)
+          .where((org) => selectedLanguages.contains('All') || org.technologies?.any(selectedLanguages.contains) == true)
+          .map((org) => org.name!)
+          .toSet()
+    ];
+
+
+    setState(() {});
   }
 
 
@@ -112,21 +121,25 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
 
 
   Future<void> _refresh() async {
+    await getProjectData();
     setState(() {
-      _dataFetchFuture = getProjectData();
       selectedYear = 2024;
-      selectedOrg = 'All'; // Reset selectedOrg to avoid mismatch
+      selectedLanguages = ['All'];
+      selectedOrganizations = ['All'];
+      filterProjects();
     });
   }
 
 
-  void resetProjectsByOrganization() {
+  // Add this method to the _GoogleSummerOfCodeScreenState class
+  void search(String searchText) {
     setState(() {
-      if (selectedOrg == 'All') {
+      selectedOrg = 'All'; // Reset selectedOrg to avoid mismatch
+      if (searchText.isEmpty) {
         orgList = _getOrganizationsByYear(selectedYear);
       } else {
         orgList = _getOrganizationsByYear(selectedYear)
-            .where((element) => element.name == selectedOrg)
+            .where((element) => element.name?.toLowerCase().contains(searchText.toLowerCase()) == true)
             .toList();
       }
     });
@@ -219,8 +232,9 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                             onTap: () {
                               setState(() {
                                 selectedYear = 2021;
-                                selectedOrg = 'All'; // Reset selectedOrg to avoid mismatch
-                                orgList = gsoc2021;
+                                selectedLanguages = ['All'];
+                                selectedOrganizations = ['All'];
+                                filterProjects();
                               });
                             },
                             backgroundColor: selectedYear == 2021
@@ -233,8 +247,9 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                             onTap: () {
                               setState(() {
                                 selectedYear = 2022;
-                                selectedOrg = 'All'; // Reset selectedOrg to avoid mismatch
-                                orgList = gsoc2022;
+                                selectedLanguages = ['All'];
+                                selectedOrganizations = ['All'];
+                                filterProjects();
                               });
                             },
                             backgroundColor: selectedYear == 2022
@@ -247,8 +262,9 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                             onTap: () {
                               setState(() {
                                 selectedYear = 2023;
-                                selectedOrg = 'All'; // Reset selectedOrg to avoid mismatch
-                                orgList = gsoc2023;
+                                selectedLanguages = ['All'];
+                                selectedOrganizations = ['All'];
+                                filterProjects();
                               });
                             },
                             backgroundColor: selectedYear == 2023
@@ -261,8 +277,9 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                             onTap: () {
                               setState(() {
                                 selectedYear = 2024;
-                                selectedOrg = 'All'; // Reset selectedOrg to avoid mismatch
-                                orgList = gsoc2024;
+                                selectedLanguages = ['All'];
+                                selectedOrganizations = ['All'];
+                                filterProjects();
                               });
                             },
                             backgroundColor: selectedYear == 2024
@@ -272,64 +289,31 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                         ],
                       ),
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const Text(
-                          'Filter by Language:',
-                          style: TextStyle(fontWeight: FontWeight.w400),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              DropdownWidget(
-                                items: languages,
-                                hintText: 'Language',
-                                onChanged: (newValue) {
-                                  searchTag(newValue);
-                                },
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
+                    const SizedBox(height: 20),
+                    _buildMultiSelectField(
+                      items: languages,
+                      selectedValues: selectedLanguages,
+                      title: "Select Languages",
+                      buttonText: "Filter by Language",
+                      onConfirm: (results) {
+                        setState(() {
+                          selectedLanguages = results.isNotEmpty ? results : ['All'];
+                          filterProjects();
+                        });
+                      },
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Filter by Organization:',
-                          style: TextStyle(fontWeight: FontWeight.w400),
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: DropdownButton<String>(
-                            value: selectedOrg,
-                            hint: const Text('Organization'),
-                            isExpanded: true,
-                            items: [
-                              'All',
-                              if (orgList.isNotEmpty)
-                                ...orgList.map((org) => org.name!).toList()
-                            ].map((String value) {
-                              return DropdownMenuItem<String>(
-                                value: value,
-                                child: Text(value),
-                              );
-                            }).toList(),
-                            onChanged: (newValue) {
-                              setState(() {
-                                selectedOrg = newValue!;
-                                resetProjectsByOrganization();
-                              });
-                            },
-                          ),
-                        ),
-                      ],
+                    const SizedBox(height: 20),
+                    _buildMultiSelectField(
+                      items: allOrganizations,
+                      selectedValues: selectedOrganizations,
+                      title: "Select Organizations",
+                      buttonText: "Filter by Organization",
+                      onConfirm: (results) {
+                        setState(() {
+                          selectedOrganizations = results.isNotEmpty ? results : ['All'];
+                          filterProjects();
+                        });
+                      },
                     ),
                     const SizedBox(height: 20),
                     Expanded(
@@ -368,6 +352,29 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
             }
           },
         ),
+      ),
+    );
+  }
+
+
+  Widget _buildMultiSelectField({
+    required List<String> items,
+    required List<String> selectedValues,
+    required String title,
+    required String buttonText,
+    required void Function(List<String>) onConfirm,
+  }) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    return MultiSelectDialogField(
+      backgroundColor: isDarkMode ? Colors.grey.shade100 : Colors.white,
+      items: items.map((e) => MultiSelectItem<String>(e, e)).toList(),
+      initialValue: selectedValues,
+      title: Text(title, style: TextStyle(color: isDarkMode ? Colors.black : Colors.black)),
+      buttonText: Text(buttonText),
+      onConfirm: onConfirm,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(10),
       ),
     );
   }
