@@ -41,6 +41,7 @@ dependencies:
   adaptive_theme: ^3.6.0
   timeline_tile: ^2.0.0
   flutter_svg: ^2.0.10+1
+  flutter_screenutil: ^5.9.1
 
 dev_dependencies:
   awesome_notifications: ^0.9.3+1
