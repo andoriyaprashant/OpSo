@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:opso/services/notificationService.dart';
@@ -77,12 +79,17 @@ class OpsoTimeLineScreen extends StatelessWidget {
       },
     ];
 
+    final DateTime now = DateTime.now();
+    final List<Map<String, dynamic>> pastEvents = events.where((event) => event['endDate'].isAfter(now)).toList();
+
     for (var event in events) {
       NotificationService.scheduleNotificationsForEvent(
         event['description']!,
         event['startDate']!,
         event['endDate']!,
       );
+      print(now);
+      print("Past programs $pastEvents");
     }
 
     return Scaffold(

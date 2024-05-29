@@ -205,7 +205,9 @@ class _HomePageState extends State<HomePage> {
                                               const BookMarkScreen()));
                                 },
                               ),
+
                               const SizedBox(height: 15),
+
                               ListTile(
                                 leading: Transform.rotate(
                                   angle: 90 * math.pi/180,
@@ -223,7 +225,25 @@ class _HomePageState extends State<HomePage> {
                                   );
                                 },
                               ),
+
                               const SizedBox(height: 15),
+
+                              ListTile(
+                                leading:
+                                    const Icon(FontAwesomeIcons.circleInfo),
+                                title: const Text('Past programs'),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => AboutScreen(),
+                                    ),
+                                  );
+                                },
+                              ),
+
+                              const SizedBox(height: 15),
+
                               ListTile(
                                 leading:
                                     const Icon(FontAwesomeIcons.circleInfo),
