@@ -4,22 +4,18 @@ import 'package:flutter/services.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/gssoc_project_modal.dart';
 
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:opso/widgets/gssoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
-
 import '../widgets/SearchandFilterWidget.dart';
-
 
 class GSSOCScreen extends StatefulWidget {
   const GSSOCScreen({super.key});
 
-
   @override
   State<GSSOCScreen> createState() => _GSSOCScreenState();
 }
-
 
 class _GSSOCScreenState extends State<GSSOCScreen> {
   String currectPage = "/girl_script_summer_of_code";
@@ -34,35 +30,33 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
   List<GssocProjectModal> projectList = [];
   Future<void>? getProjectFunction;
 
-
   Future<void> initializeProjectLists() async {
     String response =
-    await rootBundle.loadString('assets/projects/gssoc/gssoc2024.json');
+        await rootBundle.loadString('assets/projects/gssoc/gssoc2024.json');
     var jsonList = await json.decode(response);
     for (var data in jsonList) {
       gssoc2024.add(GssocProjectModal.getDataFromJson(data));
     }
     projectList = List.from(gssoc2024);
     response =
-    await rootBundle.loadString('assets/projects/gssoc/gssoc2023.json');
+        await rootBundle.loadString('assets/projects/gssoc/gssoc2023.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gssoc2023.add(GssocProjectModal.getDataFromJson(data));
     }
     response =
-    await rootBundle.loadString('assets/projects/gssoc/gssoc2022.json');
+        await rootBundle.loadString('assets/projects/gssoc/gssoc2022.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gssoc2022.add(GssocProjectModal.getDataFromJson(data));
     }
     response =
-    await rootBundle.loadString('assets/projects/gssoc/gssoc2021.json');
+        await rootBundle.loadString('assets/projects/gssoc/gssoc2021.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gssoc2021.add(GssocProjectModal.getDataFromJson(data));
     }
   }
-
 
   @override
   void initState() {
@@ -71,7 +65,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     _checkBookmarkStatus();
   }
 
-
   Future<void> _checkBookmarkStatus() async {
     bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProject);
     setState(() {
@@ -79,14 +72,12 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     });
   }
 
-
   void searchTag(String searchTag) {
     projectList = projectList
         .where((element) => element.techstack.contains(searchTag))
         .toList();
     setState(() {});
   }
-
 
   void search(String searchText) {
     if (searchText.isEmpty) {
@@ -110,14 +101,13 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     projectList = projectList
         .where(
           (element) =>
-      element.name.toLowerCase().contains(searchText.toLowerCase()) ||
-          element.techstack.contains(searchText) ||
-          element.hostedBy.toLowerCase().contains(searchText.toLowerCase()),
-    )
+              element.name.toLowerCase().contains(searchText.toLowerCase()) ||
+              element.techstack.contains(searchText) ||
+              element.hostedBy.toLowerCase().contains(searchText.toLowerCase()),
+        )
         .toList();
     setState(() {});
   }
-
 
   Future<void> _refresh() async {
     setState(() {
@@ -126,11 +116,11 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.sizeOf(context).height;
-    var width = MediaQuery.sizeOf(context).width;
+    ScreenUtil.init(context);
+    // var height = MediaQuery.sizeOf(context).height;
+    // var width = MediaQuery.sizeOf(context).width;
     List<String> languages = [
       'All',
       'Js',
@@ -186,8 +176,9 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                   return const Center(child: CircularProgressIndicator());
                 } else if (snapshot.connectionState == ConnectionState.done) {
                   return Padding(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: ScreenUtil().setWidth(46),
+                        vertical: ScreenUtil().setHeight(16)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
@@ -221,8 +212,9 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                                 color: Color(0xFFEEEEEE),
                               ),
                             ),
-                            contentPadding: const EdgeInsets.symmetric(
-                                vertical: 12.0, horizontal: 20.0),
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: ScreenUtil().setHeight(12),
+                                horizontal: ScreenUtil().setWidth(20)),
                           ),
                           onFieldSubmitted: (value) {
                             print("value is $value");
@@ -236,12 +228,12 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                         ),
                         const SizedBox(height: 20),
                         SizedBox(
-                          height: height * 0.2,
-                          width: width,
+                          height: ScreenUtil().screenHeight * 0.2,
+                          width: ScreenUtil().screenWidth,
                           child: GridView(
                             physics: const NeverScrollableScrollPhysics(),
                             gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
                               childAspectRatio: 1.5 / 0.6,
                               crossAxisSpacing: 15,
@@ -323,24 +315,27 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                         //     ),
                         //   ),
                         // ),
-                        const SizedBox(
-                          height: 20,
+                        SizedBox(
+                          height: ScreenUtil().setHeight(20),
                         ),
-
 
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            const Text(
+                            Text(
                               'Filter by Language:',
-                              style: TextStyle(fontWeight: FontWeight.w400),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: ScreenUtil().setSp(14)),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding:
+                                  EdgeInsets.all(ScreenUtil().setHeight(8)),
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   DropdownWidget(
                                     items: languages,
@@ -372,19 +367,19 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                           ],
                         ),
 
-
                         Expanded(
                           // width: width,
                           child: ListView.builder(
                             itemCount: projectList.length,
                             itemBuilder: (BuildContext context, int index) {
                               return Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 10),
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10),
                                 child: GssocProjectWidget(
                                   index: index + 1,
                                   modal: projectList[index],
-                                  height: height * 0.2,
-                                  width: width,
+                                  height: ScreenUtil().screenHeight * 0.2,
+                                  width: ScreenUtil().screenWidth,
                                 ),
                               );
                             },
@@ -397,10 +392,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                   return const Center(child: Text("Some error occured"));
                 }
               }),
-        )
-    );
+        ));
   }
 }
-
-
-
