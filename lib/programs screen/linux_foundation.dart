@@ -1,21 +1,17 @@
 import 'dart:convert';
-
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/linux_foundation_modal.dart';
 import 'package:opso/widgets/linux_foundation_widget.dart';
 
-
 class LinuxFoundation extends StatefulWidget {
   const LinuxFoundation({super.key});
-
 
   @override
   State<LinuxFoundation> createState() => _LinuxFoundationState();
 }
-
 
 class _LinuxFoundationState extends State<LinuxFoundation> {
   bool isBookmarked = true;
@@ -25,11 +21,9 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
   List<LinuxFoundationModal> projectList = [];
   Future<void>? getProjectListFunction;
 
-
   Future<void> initializeProjectLists() async {
     String response = await rootBundle
         .loadString('assets/projects/linux_foundation/linux_foundation.json');
-
 
     var jsonList = await json.decode(response);
     for (var data in jsonList) {
@@ -39,7 +33,6 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
     // setState(() {});
   }
 
-
   @override
   void initState() {
     super.initState();
@@ -47,14 +40,12 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
     _checkBookmarkStatus();
   }
 
-
   Future<void> _checkBookmarkStatus() async {
     bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProject);
     setState(() {
       isBookmarked = bookmarkStatus;
     });
   }
-
 
   void search(String searchText) {
     if (searchText.isEmpty) {
@@ -65,22 +56,21 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
     }
     projectList = projectList
         .where((LinuxFoundationModal element) =>
-        element.name.toLowerCase().contains(searchText.toLowerCase()))
+            element.name.toLowerCase().contains(searchText.toLowerCase()))
         .toList();
     setState(() {});
   }
-
 
   Future<void> _refresh() async {
     await initializeProjectLists();
     setState(() {});
   }
 
-
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.sizeOf(context).height;
-    var width = MediaQuery.sizeOf(context).width;
+    // var height = MediaQuery.sizeOf(context).height;
+    // var width = MediaQuery.sizeOf(context).width;
+    ScreenUtil.init(context, designSize: Size(360, 690));
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
@@ -97,10 +87,10 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
               });
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content:
-                  Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
-                  duration:
-                  const Duration(seconds: 2), // Adjust the duration as needed
+                  content: Text(
+                      isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                  duration: const Duration(
+                      seconds: 2), // Adjust the duration as needed
                 ),
               );
               if (isBookmarked) {
@@ -120,7 +110,9 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
               return const Center(child: CircularProgressIndicator());
             } else if (snapshot.connectionState == ConnectionState.done) {
               return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
+                padding: EdgeInsets.symmetric(
+                    horizontal: ScreenUtil().setWidth(46),
+                    vertical: ScreenUtil().setHeight(16)),
                 child: Column(
                   children: [
                     TextFormField(
@@ -153,8 +145,9 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
                             color: Color(0xFFEEEEEE),
                           ),
                         ),
-                        contentPadding: const EdgeInsets.symmetric(
-                            vertical: 12.0, horizontal: 20.0),
+                        contentPadding: EdgeInsets.symmetric(
+                            vertical: ScreenUtil().setHeight(12),
+                            horizontal: ScreenUtil().setWidth(40)),
                       ),
                       onFieldSubmitted: (value) {
                         print("value is $value");
@@ -166,19 +159,20 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
                         }
                       },
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: ScreenUtil().setHeight(20)),
                     Expanded(
                       // width: width,
                       child: ListView.builder(
                         itemCount: projectList.length,
                         itemBuilder: (BuildContext context, int index) {
                           return Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            padding: EdgeInsets.symmetric(
+                                vertical: ScreenUtil().setHeight(10)),
                             child: LinuxFoundationWidget(
                               // index: index + 1,
                               modal: projectList[index],
-                              height: height * 0.2,
-                              width: width,
+                              height: ScreenUtil().screenHeight * 0.2,
+                              width: ScreenUtil().screenWidth,
                             ),
                           );
                         },
@@ -195,4 +189,3 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
     );
   }
 }
-

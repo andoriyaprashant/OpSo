@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -97,15 +98,23 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
+    // var media = MediaQuery.of(context).size;
     Color backgroundColor = Theme.of(context).brightness == Brightness.dark
         ? Colors.black.withOpacity(0.6) // Example dark mode color
         : Colors.white.withOpacity(0.6); // Example light mode color
+
+    ScreenUtil.init(
+      context,
+    );
+    final double appBarFontSize = ScreenUtil().setSp(18);
+    final double appTextFontSize = ScreenUtil().setSp(20);
+    final double SizedSize = ScreenUtil().setHeight(20);
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'OpSo',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style:
+              TextStyle(fontWeight: FontWeight.bold, fontSize: appBarFontSize),
         ),
         actions: [
           IconButton(
@@ -144,17 +153,19 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           height: kTextTabBarHeight,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Icon(FontAwesomeIcons.bars),
-                              SizedBox(width: 10),
+                              SizedBox(
+                                width: ScreenUtil().setWidth(100),
+                              ),
                               Text(
                                 'Menu',
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: appTextFontSize,
                                   // color: Colors.black,
                                   fontWeight: FontWeight.w700,
                                 ),
@@ -162,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                         ),
-                        const SizedBox(height: 15),
+                        SizedBox(height: ScreenUtil().setHeight(15)),
                         const Divider(
                           color: Colors.black26,
                           height: 1,
@@ -171,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const SizedBox(height: 15),
+                              SizedBox(height: ScreenUtil().setHeight(15)),
                               InkWell(
                                 onTap: () {},
                                 child: ListTile(
@@ -211,7 +222,7 @@ class _HomePageState extends State<HomePage> {
 
                               ListTile(
                                 leading: Transform.rotate(
-                                  angle: 90 * math.pi/180,
+                                  angle: 90 * math.pi / 180,
                                   child: const Icon(
                                     FontAwesomeIcons.timeline,
                                   ),
@@ -221,7 +232,8 @@ class _HomePageState extends State<HomePage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const OpsoTimeLineScreen(),
+                                      builder: (context) =>
+                                          const OpsoTimeLineScreen(),
                                     ),
                                   );
                                 },
@@ -245,6 +257,7 @@ class _HomePageState extends State<HomePage> {
 
                               const SizedBox(height: 15),
 
+                              SizedBox(height: ScreenUtil().setHeight(15)),
                               ListTile(
                                 leading:
                                     const Icon(FontAwesomeIcons.circleInfo),
@@ -258,7 +271,7 @@ class _HomePageState extends State<HomePage> {
                                   );
                                 },
                               ),
-                              const SizedBox(height: 15),
+                              SizedBox(height: ScreenUtil().setHeight(15)),
                             ],
                           ),
                         ),
@@ -266,7 +279,7 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.black26,
                           height: 1,
                         ),
-                        const SizedBox(height: 15),
+                        SizedBox(height: ScreenUtil().setHeight(15)),
                       ],
                     ),
                   ),
@@ -375,10 +388,10 @@ class ProgramOption extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: Container(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(ScreenUtil().setWidth(20)),
             decoration: BoxDecoration(
               // color: const Color.fromARGB(255, 237, 237, 239),
-                borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(15),
               border: Border.all(
                 width: 1,
                 color: borderColor,
@@ -388,15 +401,15 @@ class ProgramOption extends StatelessWidget {
               children: [
                 Image.asset(
                   imageAssetPath,
-                  width: 50,
-                  height: 50,
+                  width: ScreenUtil().setWidth(50),
+                  height: ScreenUtil().setHeight(50),
                 ),
-                const SizedBox(width: 20),
+                SizedBox(width: ScreenUtil().setWidth(20)),
                 Expanded(
                   child: Text(
                     title,
-                    style: const TextStyle(
-                      fontSize: 18,
+                    style: TextStyle(
+                      fontSize: ScreenUtil().setSp(18),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -406,7 +419,7 @@ class ProgramOption extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 20), // Adding SizedBox between each button
+        SizedBox(height: ScreenUtil().setHeight(20)),
       ],
     );
   }

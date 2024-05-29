@@ -174,6 +174,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
+  flutter_screenutil:
+    dependency: "direct main"
+    description:
+      name: flutter_screenutil
+      sha256: b372c35a772a1dc84142a3b9c5ee89a390834bd258e5e6a450d9b975b985d1c9
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.9.1"
   flutter_svg:
     dependency: "direct main"
     description:

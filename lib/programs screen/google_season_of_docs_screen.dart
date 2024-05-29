@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:opso/modals/book_mark_model.dart';
@@ -10,13 +10,11 @@ import 'package:opso/widgets/gsod/gsod_project_widget_new.dart';
 import 'package:opso/widgets/gsod/gsod_project_widget_old.dart';
 import 'package:opso/widgets/year_button.dart';
 
-
 class GoogleSeasonOfDocsScreen extends StatefulWidget {
   @override
   State<GoogleSeasonOfDocsScreen> createState() =>
       _GoogleSeasonOfDocsScreenState();
 }
-
 
 class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
   String currentProgram = "Google Season of Docs";
@@ -30,14 +28,12 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
   bool flag = true;
   int selectedYear = 2023;
 
-
   List projectList = [];
   Future<void>? getProjectFunction;
 
-
   Future<void> initializeProjectLists() async {
     String response =
-    await rootBundle.loadString('assets/projects/gsod/gsod2023.json');
+        await rootBundle.loadString('assets/projects/gsod/gsod2023.json');
     var jsonList = await json.decode(response);
     for (var data in jsonList) {
       gsod2023.add(GsodModalNew.fromMap(data));
@@ -45,38 +41,34 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     print(gsod2023.length);
     projectList = List.from(gsod2023);
     response =
-    await rootBundle.loadString('assets/projects/gsod/gsod2022.json');
+        await rootBundle.loadString('assets/projects/gsod/gsod2022.json');
     jsonList = await json.decode(response);
-
 
     for (var data in jsonList) {
       print(data["organization_name"]);
       gsod2022.add(GsodModalNew.fromMap(data));
     }
 
-
     response =
-    await rootBundle.loadString('assets/projects/gsod/gsod2021.json');
+        await rootBundle.loadString('assets/projects/gsod/gsod2021.json');
     jsonList = await json.decode(response);
-
 
     for (var data in jsonList) {
       gsod2021.add(GsodModalNew.fromMap(data));
     }
     response =
-    await rootBundle.loadString('assets/projects/gsod/gsod2020.json');
+        await rootBundle.loadString('assets/projects/gsod/gsod2020.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gsod2020.add(GsodModalOld.fromMap(data));
     }
     response =
-    await rootBundle.loadString('assets/projects/gsod/gsod2019.json');
+        await rootBundle.loadString('assets/projects/gsod/gsod2019.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gsod2019.add(GsodModalOld.fromMap(data));
     }
   }
-
 
   @override
   void initState() {
@@ -85,14 +77,12 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     super.initState();
   }
 
-
   Future<void> _checkBookmarkStatus() async {
     bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProgram);
     setState(() {
       isBookmarked = bookmarkStatus;
     });
   }
-
 
   void search(String searchText) {
     if (searchText.isEmpty) {
@@ -120,62 +110,65 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
       projectList = projectList
           .where(
             (element) =>
-        element.organizationName
-            .toLowerCase()
-            .contains(searchText.toLowerCase()) ||
-            element.budget
-                .toLowerCase()
-                .contains(searchText.toLowerCase()) ||
-            element.acceptedProjectProposal
-                .toLowerCase()
-                .contains(searchText.toLowerCase()) ||
-            element.caseStudy
-                .toLowerCase()
-                .contains(searchText.toLowerCase()) ||
-            element.docsPage
-                .toLowerCase()
-                .contains(searchText.toLowerCase()),
-      )
+                element.organizationName
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.budget
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.acceptedProjectProposal
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.caseStudy
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.docsPage
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()),
+          )
           .toList();
     } else {
       projectList = projectList
           .where(
             (element) =>
-        element.organization
-            .toLowerCase()
-            .contains(searchText.toLowerCase()) ||
-            element.technicalWriter
-                .toLowerCase()
-                .contains(searchText.toLowerCase()) ||
-            element.mentor
-                .toLowerCase()
-                .contains(searchText.toLowerCase()) ||
-            element.project
-                .toLowerCase()
-                .contains(searchText.toLowerCase()) ||
-            element.originalProjectProposal
-                .toLowerCase()
-                .contains(searchText.toLowerCase()) ||
-            element.report.toLowerCase().contains(searchText.toLowerCase()),
-      )
+                element.organization
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.technicalWriter
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.mentor
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.project
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.originalProjectProposal
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.report.toLowerCase().contains(searchText.toLowerCase()),
+          )
           .toList();
     }
 
-
     setState(() {});
   }
+
   Future<void> _refresh() async {
     // Fetch data for the next year based on the currently selected year
     setState(() {
       initializeProjectLists();
       selectedYear = 2023;
-      if (selectedYear > 2023) selectedYear = 2019; // Reset to the beginning if it exceeds 2023
+      if (selectedYear > 2023)
+        selectedYear = 2019; // Reset to the beginning if it exceeds 2023
     });
   }
+
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.sizeOf(context).height;
-    var width = MediaQuery.sizeOf(context).width;
+    // var height = MediaQuery.sizeOf(context).height;
+    // var width = MediaQuery.sizeOf(context).width;
+    ScreenUtil.init(context);
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
@@ -190,10 +183,10 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
               });
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content:
-                  Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
-                  duration:
-                  const Duration(seconds: 2), // Adjust the duration as needed
+                  content: Text(
+                      isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                  duration: const Duration(
+                      seconds: 2), // Adjust the duration as needed
                 ),
               );
               if (isBookmarked) {
@@ -213,8 +206,9 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                 return const Center(child: CircularProgressIndicator());
               } else if (snapshot.connectionState == ConnectionState.done) {
                 return Padding(
-                  padding:
-                  const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: ScreenUtil().setWidth(46),
+                      vertical: ScreenUtil().setHeight(16)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -248,8 +242,9 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                               color: Color(0xFFEEEEEE),
                             ),
                           ),
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 12.0, horizontal: 20.0),
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: ScreenUtil().setHeight(12),
+                              horizontal: ScreenUtil().setWidth(40)),
                         ),
                         onFieldSubmitted: (value) {
                           print("value is $value");
@@ -261,16 +256,16 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                           }
                         },
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: ScreenUtil().setHeight(20)),
                       Container(
                         constraints: BoxConstraints(
-                          maxHeight: height * 0.3,
+                          maxHeight: ScreenUtil().screenHeight * 0.3,
                         ),
-                        width: width,
+                        width: ScreenUtil().screenWidth,
                         child: GridView(
                           physics: const NeverScrollableScrollPhysics(),
                           gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             childAspectRatio: 1.5 / 0.6,
                             crossAxisSpacing: 15,
@@ -369,7 +364,6 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                         height: 20,
                       ),
 
-
                       Expanded(
                         // width: width,
                         child: ListView.builder(
@@ -379,17 +373,17 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                               padding: const EdgeInsets.symmetric(vertical: 10),
                               child: selectedYear <= 2020
                                   ? GsodProjectWidgetOld(
-                                index: index + 1,
-                                modal: projectList[index],
-                                height: height * 0.2,
-                                width: width,
-                              )
+                                      index: index + 1,
+                                      modal: projectList[index],
+                                      height: ScreenUtil().screenHeight * 0.2,
+                                      width: ScreenUtil().screenWidth,
+                                    )
                                   : GsodProjectWidgetNew(
-                                index: index + 1,
-                                modal: projectList[index],
-                                height: height * 0.2,
-                                width: width,
-                              ),
+                                      index: index + 1,
+                                      modal: projectList[index],
+                                      height: ScreenUtil().screenHeight * 0.2,
+                                      width: ScreenUtil().screenWidth,
+                                    ),
                             );
                           },
                         ),
@@ -405,4 +399,3 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     );
   }
 }
-
