@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../modals/GSoC/Gsoc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../modals/book_mark_model.dart';
 import '../services/ApiService.dart';
 import '../widgets/SearchandFilterWidget.dart';
 import '../widgets/year_button.dart';
@@ -20,7 +21,11 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   List<Organization> gsoc2023 = [];
   List<Organization> gsoc2022 = [];
   List<Organization> gsoc2021 = [];
+  String currectPage = "/google_summer_of_code";
+  String currentProject = "Google Summer of Code";
+  bool isBookmarked = true;
   int selectedYear = 2024;
+
   List<String> languages = [
     'js',
     'python',
@@ -46,6 +51,14 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   void initState() {
     super.initState();
     _dataFetchFuture = getProjectData();
+    _checkBookmarkStatus();
+  }
+
+  Future<void> _checkBookmarkStatus() async {
+    bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProject);
+    setState(() {
+      isBookmarked = bookmarkStatus;
+    });
   }
 
   Future<void> getProjectData() async {
@@ -149,9 +162,33 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('Google Summer of Code'),
-        ),
+        appBar: AppBar(title: const Text('Google Summer of Code'), actions: <Widget>[
+          IconButton(
+            icon: (isBookmarked)
+                ? const Icon(Icons.bookmark_add_rounded)
+                : const Icon(Icons.bookmark_add_outlined),
+            onPressed: () {
+              setState(() {
+                isBookmarked = !isBookmarked;
+              });
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                      isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                  duration: const Duration(
+                      seconds: 2), // Adjust the duration as needed
+                ),
+              );
+              if (isBookmarked) {
+                print("Adding");
+                HandleBookmark.addBookmark(currentProject, currectPage);
+              } else {
+                print("Deleting");
+                HandleBookmark.deleteBookmark(currentProject);
+              }
+            },
+          )
+        ]),
         body: FutureBuilder<void>(
           future: _dataFetchFuture,
           builder: (context, snapshot) {
