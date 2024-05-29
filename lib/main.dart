@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:opso/landing_page.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
@@ -22,34 +23,42 @@ class OpSoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AdaptiveTheme(
-      light: ThemeData.light(),
-      dark: ThemeData.dark(),
-      initial: AdaptiveThemeMode.system,
-      builder: (theme, darkTheme) => MaterialApp(
-        initialRoute: '/landing_page',
-        routes: {
-          "/progarm_page": (context) => const HomePage(),
-          "/girl_script_summer_of_code": (context) => const GSSOCScreen(),
-          "/google_summer_of_code": (context) => GoogleSummerOfCodeScreen(),
-          "/google_season_of_docs": (context) => GoogleSeasonOfDocsScreen(),
-          "/summer_of_bitcoin": (context) => const SummerOfBitcoin(),
-          "/outreachy": (context) => const OutReachy(),
-          "/major_league_hacking_fellowship": (context) =>
-              const MajorLeagueHackingFellowship(),
-          "/linux_foundation": (context) => const LinuxFoundation(),
-          "/landing_page": (context) => const LandingPage(),
-        },
-        title: 'OpSo',
-        debugShowCheckedModeBanner: false,
-        theme: theme,
-        darkTheme: darkTheme,
-        // theme: ThemeData(
-        //   primarySwatch: Colors.blue,
-        //   visualDensity: VisualDensity.adaptivePlatformDensity,
-        // ),
-        home: const HomePage(),
-      ),
-    );
+    return ScreenUtilInit(
+        designSize: const Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: false,
+        builder: (_, child) {
+          return AdaptiveTheme(
+            light: ThemeData.light(),
+            dark: ThemeData.dark(),
+            initial: AdaptiveThemeMode.system,
+            builder: (theme, darkTheme) => MaterialApp(
+              initialRoute: '/landing_page',
+              routes: {
+                "/progarm_page": (context) => const HomePage(),
+                "/girl_script_summer_of_code": (context) => const GSSOCScreen(),
+                "/google_summer_of_code": (context) =>
+                    GoogleSummerOfCodeScreen(),
+                "/google_season_of_docs": (context) =>
+                    GoogleSeasonOfDocsScreen(),
+                "/summer_of_bitcoin": (context) => const SummerOfBitcoin(),
+                "/outreachy": (context) => const OutReachy(),
+                "/major_league_hacking_fellowship": (context) =>
+                    const MajorLeagueHackingFellowship(),
+                "/linux_foundation": (context) => const LinuxFoundation(),
+                "/landing_page": (context) => const LandingPage(),
+              },
+              title: 'OpSo',
+              debugShowCheckedModeBanner: false,
+              theme: theme,
+              darkTheme: darkTheme,
+              // theme: ThemeData(
+              //   primarySwatch: Colors.blue,
+              //   visualDensity: VisualDensity.adaptivePlatformDensity,
+              // ),
+              home: const HomePage(),
+            ),
+          );
+        });
   }
 }

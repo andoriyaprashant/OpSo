@@ -3,16 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:opso/widgets/gsoc/GsocProjectWidget.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../modals/GSoC/Gsoc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../services/ApiService.dart';
 import '../widgets/SearchandFilterWidget.dart';
 import '../widgets/year_button.dart';
 
-
 class GoogleSummerOfCodeScreen extends StatefulWidget {
   @override
-  State<GoogleSummerOfCodeScreen> createState() => _GoogleSummerOfCodeScreenState();
+  State<GoogleSummerOfCodeScreen> createState() =>
+      _GoogleSummerOfCodeScreenState();
 }
-
 
 class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   List<Organization> gsoc2024 = [];
@@ -41,13 +42,11 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   late Future<void> _dataFetchFuture;
   final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
 
-
   @override
   void initState() {
     super.initState();
     _dataFetchFuture = getProjectData();
   }
-
 
   Future<void> getProjectData() async {
     ApiService apiService = ApiService();
@@ -56,7 +55,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       Gsoc orgData2022 = await apiService.getOrgByYear('2022');
       Gsoc orgData2023 = await apiService.getOrgByYear('2023');
       Gsoc orgData2024 = await apiService.getOrgByYear('2024');
-
 
       setState(() {
         gsoc2021 = orgData2021.organizations ?? [];
@@ -71,17 +69,15 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     }
   }
 
-
   void _clearAnimatedList() {
     for (var i = orgList.length - 1; i >= 0; i--) {
       _listKey.currentState?.removeItem(
         i,
-            (context, animation) => SizedBox.shrink(),
+        (context, animation) => SizedBox.shrink(),
         duration: Duration.zero,
       );
     }
   }
-
 
   void _populateAnimatedList(List<Organization> organizations) {
     for (var i = 0; i < organizations.length; i++) {
@@ -89,17 +85,17 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     }
   }
 
-
   void searchTag(String searchTag) {
     setState(() {
       _clearAnimatedList();
       orgList = _getOrganizationsByYear(selectedYear)
-          .where((element) => element.technologies?.contains(searchTag) == true || element.topics?.contains(searchTag) == true)
+          .where((element) =>
+              element.technologies?.contains(searchTag) == true ||
+              element.topics?.contains(searchTag) == true)
           .toList();
       _populateAnimatedList(orgList);
     });
   }
-
 
   void search(String searchText) {
     setState(() {
@@ -108,13 +104,16 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
         orgList = _getOrganizationsByYear(selectedYear);
       } else {
         orgList = _getOrganizationsByYear(selectedYear)
-            .where((element) => element.name?.toLowerCase().contains(searchText.toLowerCase()) == true)
+            .where((element) =>
+                element.name
+                    ?.toLowerCase()
+                    .contains(searchText.toLowerCase()) ==
+                true)
             .toList();
       }
       _populateAnimatedList(orgList);
     });
   }
-
 
   List<Organization> _getOrganizationsByYear(int year) {
     switch (year) {
@@ -131,7 +130,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     }
   }
 
-
   Future<void> _refresh() async {
     setState(() {
       _dataFetchFuture = getProjectData();
@@ -139,12 +137,14 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
+    // var height = MediaQuery.of(context).size.height;
+    // var width = MediaQuery.of(context).size.width;
 
+    ScreenUtil.init(
+      context,
+    );
 
     return RefreshIndicator(
       onRefresh: _refresh,
@@ -161,7 +161,9 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
               return Center(child: Text('Error: ${snapshot.error}'));
             } else {
               return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
+                padding: EdgeInsets.symmetric(
+                    horizontal: ScreenUtil().setWidth(46),
+                    vertical: ScreenUtil().setHeight(16)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -194,8 +196,9 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                             color: Color(0xFFEEEEEE),
                           ),
                         ),
-                        contentPadding: const EdgeInsets.symmetric(
-                            vertical: 12.0, horizontal: 20.0),
+                        contentPadding: EdgeInsets.symmetric(
+                            vertical: ScreenUtil().setWidth(12),
+                            horizontal: ScreenUtil().setHeight(20)),
                       ),
                       onFieldSubmitted: (value) {
                         search(value.trim());
@@ -206,14 +209,14 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                         }
                       },
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: ScreenUtil().setHeight(20)),
                     SizedBox(
-                      height: height * 0.2,
-                      width: width,
+                      height: ScreenUtil().screenHeight * 0.2,
+                      width: ScreenUtil().screenWidth,
                       child: GridView(
                         physics: const NeverScrollableScrollPhysics(),
                         gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           childAspectRatio: 1.5 / 0.6,
                           crossAxisSpacing: 15,
@@ -292,7 +295,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                           style: TextStyle(fontWeight: FontWeight.w400),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(ScreenUtil().setWidth(8)),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -314,7 +317,12 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                         key: _listKey,
                         initialItemCount: orgList.length,
                         itemBuilder: (context, index, animation) {
-                          return _buildAnimatedItem(context, index, animation, height, width);
+                          return _buildAnimatedItem(
+                              context,
+                              index,
+                              animation,
+                              ScreenUtil().screenHeight,
+                              ScreenUtil().screenWidth);
                         },
                       ),
                     ),
@@ -328,8 +336,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     );
   }
 
-
-  Widget _buildAnimatedItem(BuildContext context, int index, Animation<double> animation, double height, double width) {
+  Widget _buildAnimatedItem(BuildContext context, int index,
+      Animation<double> animation, double height, double width) {
     return SizeTransition(
       sizeFactor: animation,
       axis: Axis.vertical,
@@ -364,10 +372,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   }
 }
 
-
 void main() {
   runApp(MaterialApp(
     home: GoogleSummerOfCodeScreen(),
   ));
 }
-
