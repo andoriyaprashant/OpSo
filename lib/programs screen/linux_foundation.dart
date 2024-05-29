@@ -84,7 +84,9 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar: AppBar(title: const Text('OpSo'), actions: <Widget>[
+        appBar: AppBar(
+          title: const Text('OpSo'), 
+          actions: <Widget>[
           IconButton(
             icon: (isBookmarked)
                 ? const Icon(Icons.bookmark_add_rounded)

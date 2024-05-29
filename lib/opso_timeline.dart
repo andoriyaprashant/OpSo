@@ -7,71 +7,79 @@ import 'widgets/event_card.dart';
 
 class OpsoTimeLineScreen extends StatelessWidget {
   const OpsoTimeLineScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final List<Map<String, dynamic>> events = [
+  static List<Map<String, dynamic>> events = [
       {
+        'title' : "Outreachy",
         'description':
             "Outreachy(May Internships)\nApplication Period - 15/01/2024 to 31/01/2024",
         'startDate': DateTime.utc(2024, 1, 15),
         'endDate': DateTime.utc(2024, 1, 31),
       },
       {
+        'title' : "Linux Foundation Mentorship",
         'description':
             "Linux Foundation Mentorship(Spring Term)\nApplication Period - 15/01/2024 to 15/02/2024",
         'startDate': DateTime.utc(2024, 1, 15),
         'endDate': DateTime.utc(2024, 2, 15),
       },
       {
+        'title' : "Summer of Bitcoin", 
         'description':
             "Summer of Bitcoin\nApplication Period - 01/02/2024 to 19/02/2024",
         'startDate': DateTime.utc(2024, 2, 1),
         'endDate': DateTime.utc(2024, 2, 19),
       },
       {
+        'title' : "Google Season of Docs",
         'description':
             "Google Season of Docs\nApplication Period - 22/02/2024 to 02/04/2024",
         'startDate': DateTime.utc(2024, 2, 22),
         'endDate': DateTime.utc(2024, 4, 2),
       },
       {
+        'title' : "Google Summer of Code",
         'description':
             "Google Summer of Code\nApplication Period - 18/03/2024 to 02/04/2024",
         'startDate': DateTime.utc(2024, 3, 18),
         'endDate': DateTime.utc(2024, 4, 2),
       },
       {
+        'title' : "MLH Fellowship(Summer Term-B)",
         'description':
             "MLH Fellowship(Summer Term-B)\nApplication Period - 31/03/2024 to 15/04/2024",
         'startDate': DateTime.utc(2024, 3, 31),
         'endDate': DateTime.utc(2024, 4, 15),
       },
       {
+        'title' : "MLH Fellowship(Fall Term)",
         'description':
             "MLH Fellowship(Fall Term)\nApplication Period - 15/04/2024 to 31/05/2024",
         'startDate': DateTime.utc(2024, 4, 15),
         'endDate': DateTime.utc(2024, 5, 31),
       },
       {
+        'title' : "Linux Foundation Mentorship(Summer Term)",
         'description':
             "Linux Foundation Mentorship(Summer Term)\nApplication Period - 15/04/2024 to 15/05/2024",
         'startDate': DateTime.utc(2024, 4, 15),
         'endDate': DateTime.utc(2024, 5, 15),
       },
       {
-        'description':
+        'title' : "GirlScript Summer of Code",
+        'description': 
             "GirlScript Summer of Code\nApplication Period - 01/05/2024 to 10/05/2024",
         'startDate': DateTime.utc(2024, 5, 1),
         'endDate': DateTime.utc(2024, 5, 10),
       },
       {
-        'description':
-            "Linux Foundation Mentorship(Fall Term)\nApplication Period - 15/07/2024 to 15/08/2024",
+        'title' : "Linux Foundation Mentorship(Fall Term)",
+        'description': 
+            "Linux Foundation Mentorship(Fall Term)\c Period - 15/07/2024 to 15/08/2024",
         'startDate': DateTime.utc(2024, 7, 15),
         'endDate': DateTime.utc(2024, 8, 15),
       },
       {
+        'title' : "Outreachy",
         'description':
             "Outreachy(December Internships)\nApplication Period - 01/08/2024 to 31/08/2024",
         'startDate': DateTime.utc(2024, 8, 1),
@@ -79,8 +87,10 @@ class OpsoTimeLineScreen extends StatelessWidget {
       },
     ];
 
+  @override
+  Widget build(BuildContext context) {
+
     final DateTime now = DateTime.now();
-    final List<Map<String, dynamic>> pastEvents = events.where((event) => event['endDate'].isAfter(now)).toList();
 
     for (var event in events) {
       NotificationService.scheduleNotificationsForEvent(
@@ -88,8 +98,6 @@ class OpsoTimeLineScreen extends StatelessWidget {
         event['startDate']!,
         event['endDate']!,
       );
-      print(now);
-      print("Past programs $pastEvents");
     }
 
     return Scaffold(

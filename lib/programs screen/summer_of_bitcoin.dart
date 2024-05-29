@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/sob_project_modal.dart';
 import 'package:opso/widgets/sob_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
@@ -21,6 +22,9 @@ class SummerOfBitcoin extends StatefulWidget {
 
 
 class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
+  String currectPage = "/summer_of_bitcoin";
+  String currentProject = "Summer Of Bitcoin";
+  bool isBookmarked = true;
   List<SobProjectModal> sob2023 = [];
   List<SobProjectModal> sob2022 = [];
   List<SobProjectModal> sob2021 = [];
@@ -58,6 +62,15 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
   void initState() {
     getProjectFunction = initializeProjectLists();
     super.initState();
+    _checkBookmarkStatus();
+  }
+
+
+  Future<void> _checkBookmarkStatus() async {
+    bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProject);
+    setState(() {
+      isBookmarked = bookmarkStatus;
+    });
   }
 
 
@@ -127,8 +140,34 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Summer of Bitcoin'),
-        ),
+          title: const Text('OpSo'), 
+          actions: <Widget>[
+          IconButton(
+            icon: (isBookmarked)
+                ? const Icon(Icons.bookmark_add_rounded)
+                : const Icon(Icons.bookmark_add_outlined),
+            onPressed: () {
+              setState(() {
+                isBookmarked = !isBookmarked;
+              });
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content:
+                  Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                  duration:
+                  const Duration(seconds: 2), // Adjust the duration as needed
+                ),
+              );
+              if (isBookmarked) {
+                print("Adding");
+                HandleBookmark.addBookmark(currentProject, currectPage);
+              } else {
+                print("Deleting");
+                HandleBookmark.deleteBookmark(currentProject);
+              }
+            },
+          )
+        ]),
         body: FutureBuilder<void>(
             future: getProjectFunction,
             builder: (context, snapshot) {
