@@ -207,7 +207,7 @@ class _HomePageState extends State<HomePage> {
                               const SizedBox(height: 15),
                               ListTile(
                                 leading: const Icon(FontAwesomeIcons.bookmark),
-                                title: const Text('Add Bookmark'),
+                                title: const Text('Bookmarks'),
                                 onTap: () {
                                   Navigator.push(
                                       context,
