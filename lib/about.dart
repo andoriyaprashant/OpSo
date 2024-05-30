@@ -1,39 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(
+      context,
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text('About App'),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(50, 0, 40, 70),
+        padding: EdgeInsets.fromLTRB(
+          ScreenUtil().setWidth(50),
+          ScreenUtil().setWidth(0),
+          ScreenUtil().setWidth(40),
+          ScreenUtil().setWidth(70),
+        ),
+        // const EdgeInsets.fromLTRB(50, 0, 40, 70),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Image
             Image.asset(
               'assets/logo.png',
-              width: 300,
-              height: 300,
+              width: ScreenUtil().setWidth(250),
+              height: ScreenUtil().setHeight(250),
               fit: BoxFit.contain,
             ),
-            SizedBox(height: 5),
+            SizedBox(height: ScreenUtil().setHeight(05)),
             // Version
             Text(
               'Version 1.0.0',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: ScreenUtil().setSp(16)),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: ScreenUtil().setHeight(10)),
             // App Description
             Text(
               'OpSo',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: ScreenUtil().setSp(16)),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: ScreenUtil().setHeight(20)),
             // GitHub Button
             Link(
               uri: Uri.parse('https://github.com/andoriyaprashant/OpSo'),
@@ -44,7 +54,7 @@ class AboutScreen extends StatelessWidget {
                 label: Text('GitHub'),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: ScreenUtil().setHeight(10)),
 
             // Link(
             //   uri: Uri.parse('https://gssoc.girlscript.tech/'),

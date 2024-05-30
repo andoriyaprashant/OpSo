@@ -1,45 +1,41 @@
 import 'dart:convert';
-
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:opso/modals/sob_project_modal.dart';
 import 'package:opso/widgets/sob_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
-
+import '../modals/book_mark_model.dart';
 import '../widgets/SearchandFilterWidget.dart';
-
 
 class SummerOfBitcoin extends StatefulWidget {
   const SummerOfBitcoin({super.key});
-
 
   @override
   State<SummerOfBitcoin> createState() => _SummerOfBitcoinState();
 }
 
-
 class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
   List<SobProjectModal> sob2023 = [];
   List<SobProjectModal> sob2022 = [];
   List<SobProjectModal> sob2021 = [];
+  String currectPage = "/summer_of_bitcoin";
+  String currentProject = "Summer of Bitcoin";
+  bool isBookmarked = true;
   int selectedYear = 2023;
-
 
   List<SobProjectModal> projectList = [];
   Future<void>? getProjectFunction;
 
-
   Future<void> initializeProjectLists() async {
     String response =
-    await rootBundle.loadString('assets/projects/sob/sob2023.json');
+        await rootBundle.loadString('assets/projects/sob/sob2023.json');
     var jsonList = await json.decode(response);
     for (var data in jsonList) {
       sob2023.add(SobProjectModal.fromMap(data));
     }
     projectList = sob2023;
-
 
     response = await rootBundle.loadString('assets/projects/sob/sob2022.json');
     jsonList = await json.decode(response);
@@ -53,22 +49,27 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
     }
   }
 
-
   @override
   void initState() {
     getProjectFunction = initializeProjectLists();
     super.initState();
+    _checkBookmarkStatus();
   }
 
+  Future<void> _checkBookmarkStatus() async {
+    bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProject);
+    setState(() {
+      isBookmarked = bookmarkStatus;
+    });
+  }
 
   void searchTag(String searchTag) {
     projectList = projectList
         .where((SobProjectModal element) =>
-        element.organization.contains(searchTag))
+            element.organization.contains(searchTag))
         .toList();
     setState(() {});
   }
-
 
   void search(String searchText) {
     if (searchText.isEmpty) {
@@ -89,14 +90,15 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
     searchText = searchText.toLowerCase();
     projectList = projectList
         .where((SobProjectModal element) =>
-    element.name.toLowerCase().contains(searchText) ||
-        element.mentor.toLowerCase().contains(searchText) ||
-        element.organization.toLowerCase().contains(searchText) ||
-        element.description.toLowerCase().contains(searchText) ||
-        element.university.toLowerCase().contains(searchText))
+            element.name.toLowerCase().contains(searchText) ||
+            element.mentor.toLowerCase().contains(searchText) ||
+            element.organization.toLowerCase().contains(searchText) ||
+            element.description.toLowerCase().contains(searchText) ||
+            element.university.toLowerCase().contains(searchText))
         .toList();
     setState(() {});
   }
+
   List<String> languages = [
     'Rust miniscript',
     'Core Lightning',
@@ -119,16 +121,44 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
       selectedYear = 2023;
     });
   }
+
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.sizeOf(context).height;
-    var width = MediaQuery.sizeOf(context).width;
+    // var height = MediaQuery.sizeOf(context).height;
+    // var width = MediaQuery.sizeOf(context).width;
+    ScreenUtilInit(
+      designSize: Size(360, 690),
+    );
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Summer of Bitcoin'),
-        ),
+        appBar: AppBar(title: const Text('Summer of Bitcoin'), actions: <Widget>[
+          IconButton(
+            icon: (isBookmarked)
+                ? const Icon(Icons.bookmark_add_rounded)
+                : const Icon(Icons.bookmark_add_outlined),
+            onPressed: () {
+              setState(() {
+                isBookmarked = !isBookmarked;
+              });
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                      isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                  duration: const Duration(
+                      seconds: 2), // Adjust the duration as needed
+                ),
+              );
+              if (isBookmarked) {
+                print("Adding");
+                HandleBookmark.addBookmark(currentProject, currectPage);
+              } else {
+                print("Deleting");
+                HandleBookmark.deleteBookmark(currentProject);
+              }
+            },
+          )
+        ]),
         body: FutureBuilder<void>(
             future: getProjectFunction,
             builder: (context, snapshot) {
@@ -136,8 +166,9 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                 return const Center(child: CircularProgressIndicator());
               } else if (snapshot.connectionState == ConnectionState.done) {
                 return Padding(
-                  padding:
-                  const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: ScreenUtil().setWidth(46),
+                      vertical: ScreenUtil().setHeight(16)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -170,8 +201,9 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                               color: Color(0xFFEEEEEE),
                             ),
                           ),
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 12.0, horizontal: 20.0),
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: ScreenUtil().setHeight(12),
+                              horizontal: ScreenUtil().setWidth(20)),
                         ),
                         onFieldSubmitted: (value) {
                           search(value.trim());
@@ -182,14 +214,14 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                           }
                         },
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: ScreenUtil().setHeight(20)),
                       SizedBox(
-                        height: height * 0.2,
-                        width: width,
+                        height: ScreenUtil().setHeight(50),
+                        width: ScreenUtil().setWidth(360),
                         child: GridView(
                           physics: const NeverScrollableScrollPhysics(),
                           gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             childAspectRatio: 1.5 / 0.6,
                             crossAxisSpacing: 15,
@@ -238,8 +270,8 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                           ],
                         ),
                       ),
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: ScreenUtil().setHeight(20),
                       ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -250,7 +282,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                             style: TextStyle(fontWeight: FontWeight.w400),
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(ScreenUtil().setHeight(8)),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -281,8 +313,8 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                           )
                         ],
                       ),
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: ScreenUtil().setHeight(20),
                       ),
                       Expanded(
                         // width: width,
@@ -293,8 +325,8 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                               padding: const EdgeInsets.symmetric(vertical: 10),
                               child: SobProjectWidget(
                                 modal: projectList[index],
-                                height: height * 0.2,
-                                width: width,
+                                height: ScreenUtil().screenHeight * 0.2,
+                                width: ScreenUtil().screenWidth,
                               ),
                             );
                           },
@@ -311,4 +343,3 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
     );
   }
 }
-

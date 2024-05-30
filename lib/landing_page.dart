@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:opso/home_page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -12,8 +13,11 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+    ScreenUtilInit(
+      designSize: Size(360, 690),
+    );
+    // double width = MediaQuery.of(context).size.width;
+    // double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -23,8 +27,8 @@ class _LandingPageState extends State<LandingPage> {
               children: [
                 Center(
                   child: Container(
-                    width: width,
-                    height: height / 2,
+                    width: 360.w,
+                    height: (690.h) / 2,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage("assets/landing.webp"),
@@ -36,15 +40,14 @@ class _LandingPageState extends State<LandingPage> {
                   child: SizedBox(
                     child: DefaultTextStyle(
                       style: TextStyle(
-                        fontSize: width / 19,
+                        fontSize: 50.sp,
                       ),
                       child: AnimatedTextKit(
                         animatedTexts: [
                           ColorizeAnimatedText(
                             'Unlock your potential',
                             textStyle: TextStyle(
-                                fontSize: width / 12,
-                                fontWeight: FontWeight.w900),
+                                fontSize: 20.sp, fontWeight: FontWeight.w700),
                             colors: [
                               const Color.fromRGBO(255, 183, 77, 1),
                               const Color.fromARGB(255, 231, 225, 208)
@@ -62,15 +65,15 @@ class _LandingPageState extends State<LandingPage> {
                     child: Text(
                       "Contribute to Open Source",
                       style: TextStyle(
-                          fontWeight: FontWeight.w400, fontSize: width / 18),
+                          fontWeight: FontWeight.w400, fontSize: 20.sp),
                     ),
                   ),
                 ),
                 const Padding(padding: EdgeInsets.only(top: 30)),
                 Center(
                   child: SizedBox(
-                    width: width / 1.5,
-                    height: height / 10,
+                    width: 250.w,
+                    height: 60.h,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor:
@@ -88,8 +91,10 @@ class _LandingPageState extends State<LandingPage> {
                         "Get started",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize:
-                                (width < height) ? width / 19 : height / 19),
+                            fontSize: (MediaQuery.of(context).size.width <
+                                    MediaQuery.of(context).size.height)
+                                ? 19.sp
+                                : 19.sh),
                       ),
                     ),
                   ),
