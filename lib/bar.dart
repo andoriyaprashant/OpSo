@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:opso/about.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
+  const AppBarWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text('OpSa - Open Source Programs'),
+      title: const Text('OpSa - Open Source Programs'),
       actions: [
         GestureDetector(
           onTap: () {
@@ -14,7 +16,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
               MaterialPageRoute(builder: (context) => AboutScreen()),
             );
           },
-          child: Padding(
+          child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
               'About',
@@ -27,5 +29,5 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

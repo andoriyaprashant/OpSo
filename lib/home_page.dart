@@ -10,7 +10,6 @@ import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
 import 'package:opso/programs%20screen/linux_foundation.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
-import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/services/notificationService.dart';
 import 'package:opso/widgets/book_mark_screen.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
@@ -157,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(FontAwesomeIcons.bars),
+                              const Icon(FontAwesomeIcons.bars),
                               SizedBox(
                                 width: ScreenUtil().setWidth(100),
                               ),
@@ -327,14 +326,6 @@ class _HomePageState extends State<HomePage> {
 
       case 'Summer of Bitcoin':
         Navigator.pushNamed(context, "/summer_of_bitcoin");
-
-      case 'Summer of Bitcoin':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const SummerOfBitcoin(),
-          ),
-        );
 
       case 'Linux Foundation':
         Navigator.push(context,
