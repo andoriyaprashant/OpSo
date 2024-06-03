@@ -1,10 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.NOTIFICATION_POLICY_ACCESS" />
+
+
     <application
-        android:label="opso"
+        android:label="OpSo"
         android:enableOnBackInvokedCallback="true"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-    
+
 
         <activity
             android:name=".MainActivity"

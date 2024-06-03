@@ -1,0 +1,526 @@
+[
+  {
+    "name": "Adidev Bhattacharya",
+    "organization": "Rust miniscript",
+    "description": "Implement FSChaCha20 in rust bitcoin",
+    "mentor": "Sanket Kanjalkar, stratospher",
+    "university": "Indian Institute of Technology, Kharagpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/Adidev-KGP/rust-bip324/pull/1_x000D_",
+      "https://github.com/rust-bitcoin/rust-bitcoin/discussions/1691#discussioncomment-6355799_x000D_",
+      "https://github.com/rust-bitcoin/rust-secp256k1/pull/627#discussion_r1292847647_x000D_",
+      "https://github.com/rust-bitcoin/rust-secp256k1/pull/627#discussion_r1292961680_x000D_"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Aditya Sharma",
+    "organization": "Core Lightning",
+    "description": "Automated and Reliable Peer Backups for Lightning Channels",
+    "mentor": "Rusty Russell",
+    "university": "IIT-BHU",
+    "country": "India",
+    "project_links": [
+      "https://github.com/ElementsProject/lightning/pull/6576_x000D_",
+      "https://github.com/ElementsProject/lightning/issues/6544"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Aditya Gupta",
+    "organization": "Eye of Satoshi",
+    "description": "Generalize rust-teos to run in accountable and non-accountable modes",
+    "mentor": "Sergi Delgado",
+    "university": "Indian Institute of Technology(IIT) Roorkee",
+    "country": "India",
+    "project_links": ["https://github.com/talaia-labs/rust-teos/pull/222"],
+    "year": 2023
+  },
+  {
+    "name": "Alec Chen",
+    "organization": "LDK",
+    "description": "Custom HTLC TLVs + LDK-TEOS ChannelMonitor Integration",
+    "mentor": "Conor Okus, Jeff Czyz",
+    "university": "University of Illinois at Urbana-Champaign",
+    "country": "United States",
+    "project_links": [
+      "https://github.com/lightningdevkit/rust-lightning/pull/2308_x000D_",
+      "https://github.com/lightningdevkit/rust-lightning/pull/2504_x000D_",
+      "https://github.com/lightningdevkit/rust-lightning/pull/2337_x000D_",
+      "https://github.com/lightningdevkit/rust-lightning/pull/2465_x000D_",
+      "https://github.com/lightningdevkit/rust-lightning/pull/2475_x000D_",
+      "https://github.com/lightningdevkit/rust-lightning/pull/2354_x000D_",
+      "https://github.com/lightningdevkit/rust-lightning/pull/2457_x000D_",
+      "https://github.com/alecchendev/onion-fun_x000D_",
+      "https://github.com/alecchendev/saturday-wallet"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Ayush Singh",
+    "organization": "Bitcoin Core",
+    "description": "Increasing coverage of wallet codebase in Bitcoin Core",
+    "mentor": "Bruno Gracia",
+    "university": "Jabalpur Engineering College",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bitcoin/bitcoin/pull/27902_x000D_",
+      "https://github.com/bitcoin/bitcoin/pull/28074_x000D_",
+      "https://github.com/bitcoin/bitcoin/pull/28236_x000D_",
+      "https://github.com/brunoerg/bitcoin/tree/2023-07-fuzz-improve-wallet-notifications"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Ayush Varshney",
+    "organization": "Alby",
+    "description": "UI design for the Alby browser extension and services",
+    "mentor": "Michael Bumann, Roland Bewick",
+    "university": "Indian Institute of Technology Roorkee",
+    "country": "India",
+    "project_links": [
+      "https://www.figma.com/file/6hzmGse5lUn6GO1cI9iEgw/Summer-of-Bitcoin?type=design&node-id=0%3A1&mode=design&t=pO5a3Z16OWqJnfWI-1_x000D_",
+      "https://github.com/getAlby/lightning-browser-extension/issues/2573_x000D_",
+      "https://github.com/getAlby/lightning-browser-extension/issues/1971_x000D_"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Ayush Saxena",
+    "organization": "Eye of Satoshi",
+    "description": "Create a web-based GUI for teosd",
+    "mentor": "Sergi Delgado",
+    "university": "Indian Institute of Information Technology, Jabalpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/optimm/teosd-gui_x000D_",
+      "https://github.com/talaia-labs/rust-teos/pull/225_x000D_",
+      "https://www.figma.com/file/trgSB2fHCQd0WWtjBcD4l1/Teosd-GUi?type=design&node-id=0%3A1&mode=design&t=AjZXa4wUgvNOJxjf-1_x000D_"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Bryan Elee",
+    "organization": "Ledger Bitcoin App",
+    "description": "General purpose hot signing service for miniscript policies ",
+    "mentor": "Salvatore Ingala",
+    "university": "University of Port Harcourt",
+    "country": "Nigeria",
+    "project_links": ["https://github.com/LedgerHQ/resigner"],
+    "year": 2023
+  },
+  {
+    "name": "Eshan Vaid",
+    "organization": "Galoy",
+    "description": "CLI client for Galoy Backend in Rust - Galoy CLI",
+    "mentor": "Sam Peters, Sandipan",
+    "university": "Indian Institute of Information Technology, Allahabad",
+    "country": "India",
+    "project_links": [
+      "https://github.com/GaloyMoney/galoy-cli/pulls?q=is%3Apr+author%3Aeshanvaid"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Harshil Jani",
+    "organization": "Rust miniscript",
+    "description": "Key availability-based spend planning in rust-miniscript",
+    "mentor": "Sanket Kanjalkar, stratospher",
+    "university": "NIT Surat",
+    "country": "India",
+    "project_links": [
+      "https://github.com/rust-bitcoin/rust-miniscript/pull/557_x000D_",
+      "https://github.com/rust-bitcoin/rust-miniscript/pull/559_x000D_",
+      "https://github.com/rust-bitcoin/rust-miniscript/pull/589_x000D_",
+      "https://github.com/Harshil-Jani/rust-miniscript/pull/1"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Harshit Harshit",
+    "organization": "Core Lightning Toolkit",
+    "description": "New actions for CLNAPP: a cross-platform app for Core Lightning",
+    "mentor": "Vincenzo Palazzo",
+    "university": "Delhi Technological University",
+    "country": "India",
+    "project_links": [
+      "https://github.com/dart-lightning/lndart.clnapp/pulls?q=is%3Apr+is%3Aclosed+author%3AHarshit933_x000D_",
+      "https://github.com/vincenzopalazzo/trash/pulls?q=is%3Apr+is%3Aclosed+author%3AHarshit933_x000D_",
+      "https://github.com/ElementsProject/lightning/issues/6059_x000D_"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Joscha Osthoff",
+    "organization": "Fedimint",
+    "description": "Explore improvements or alternatives to HBBFT consensus algorithm",
+    "mentor": "Eric Sirion, Justin Moon",
+    "university": "Technische Universität Berlin",
+    "country": "Germany",
+    "project_links": [
+      "https://github.com/fedimint/fedimint/issues/2638_x000D_",
+      "https://github.com/fedimint/fedimint/pull/2936_x000D_",
+      "https://github.com/joschisan/threshold_encryption_x000D_",
+      "https://github.com/fedimint/fedimint/pull/2936"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Lakshya Singh",
+    "organization": "VLS",
+    "description": "VLS Performance Tuning",
+    "mentor": "Devrandom, Ken Sedgwic",
+    "university": "Indian Institute of Technology BHU Varanasi",
+    "country": "India",
+    "project_links": [
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/merge_requests/487_x000D_",
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/merge_requests/435_x000D_",
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/merge_requests/442_x000D_",
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/merge_requests/474_x000D_",
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/merge_requests/507_x000D_",
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/issues/322_x000D_",
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/merge_requests/487_x000D_",
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/merge_requests/492_x000D_",
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/merge_requests/508_x000D_",
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/merge_requests/444_x000D_",
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/issues/339_x000D_",
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/issues/355"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Leonardo Souza",
+    "organization": "Fedimint",
+    "description": "Federate all the things!",
+    "mentor": "Eric Sirion, Justin Moon",
+    "university": "University of Campinas - UNICAMP",
+    "country": "Brazil",
+    "project_links": [
+      "https://github.com/paritytech/jsonrpsee/issues/1162_x000D_",
+      "https://github.com/paritytech/jsonrpsee/pull/1168_x000D_",
+      "https://github.com/fedimint/fedimint/issues/2610_x000D_",
+      "https://hackmd.io/B6z9ejC4RaOOY89fhL6jzAhttps://github.com/fedimint/fedimint/pull/2046,"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Lorenzo Bottelli",
+    "organization": "StratumV2",
+    "description": "Add Sv1 support to message-generator",
+    "mentor": "Fi3",
+    "university": "Politecnico di Milano",
+    "country": "Italy",
+    "project_links": [
+      "https://gist.github.com/lobarrel/359cdf505cc21acd853f55077768d989_x000D_",
+      "https://gist.github.com/lobarrel/a8dc88112038c1eb77099a6116b75d47_x000D_",
+      "https://docs.google.com/document/d/1yjsr04PIZNtZAqLbraeUzBGIEAgJ5jjV09PN4mdNesE/edit#heading=h.xx0gcej3dyxw_x000D_",
+      "https://github.com/stratum-mining/stratum/pull/602_x000D_",
+      "https://github.com/stratum-mining/stratum/pull/606"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Manav Desai",
+    "organization": "bcoin",
+    "description": "Building a neutrino client",
+    "mentor": "Anmol Sharma, Shaswat Gupta",
+    "university": "Indian Institute of Information Technology Jabalpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bcoin-org/bcoin/pull/1168_x000D_",
+      "https://github.com/bcoin-org/bcoin/pull/1167_x000D_",
+      "https://github.com/bcoin-org/bcoin/pull/1166"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Maureen Ononiwu",
+    "organization": "LND",
+    "description": "Optimized Neutrino Sync",
+    "mentor": "Lucas Ferreira",
+    "university": "Federal University of Technology, Owerri",
+    "country": "Nigeria",
+    "project_links": [
+      "https://github.com/lightninglabs/neutrino/pull/282_x000D_",
+      "https://github.com/lightninglabs/neutrino/pull/285"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Mohit Kumar",
+    "organization": "Eclair",
+    "description": "Make eclair-cli awesome",
+    "mentor": "Bastien Teinturier",
+    "university": "Indian Institute of Information Technology, Nagpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/ACINQ/eclair-cli/pull/10_x000D_",
+      "https://github.com/ACINQ/eclair-cli/pull/12_x000D_",
+      "https://github.com/ACINQ/eclair-cli/pull/13_x000D_",
+      "https://github.com/ACINQ/eclair-cli/pull/15_x000D_",
+      "https://github.com/ACINQ/eclair-cli/pull/16_x000D_",
+      "https://github.com/ACINQ/eclair-cli/pull/17_x000D_",
+      "https://github.com/ACINQ/eclair-cli/pull/19_x000D_",
+      "https://github.com/ACINQ/eclair-cli/pull/20_x000D_",
+      "https://github.com/ACINQ/eclair-cli/pull/21_x000D_",
+      "https://github.com/claddyk/MempoolCLI"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Omer Yacine",
+    "organization": "Eye of Satoshi",
+    "description": "Generalize rust-teos to support different SQL engines",
+    "mentor": "Sergi Delgado",
+    "university": "Cairo University",
+    "country": "Egypt",
+    "project_links": [
+      "https://github.com/talaia-labs/rust-teos/pull/190_x000D_",
+      "https://github.com/mariocynicys/rust-teos/tree/general-sql-engines-with-mem-opts"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Pavan Joshi",
+    "organization": "Alby",
+    "description": "Develop tools and standards to attach payment metadata to lightning payments",
+    "mentor": "Michael Bumann, Roland Bewick",
+    "university": "Government College Of Engineering,Yavatmal",
+    "country": "India",
+    "project_links": [
+      "https://drive.google.com/file/d/1vLApRIqpR38LanN9jX9HXetSRMINFMCv/view?usp=sharing_x000D_",
+      "https://docs.google.com/document/d/15ptEX15xl1TImQWRfjzdUYPj0qOR8dh-VL83Lqr03YA/edit?usp=sharing"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Prakhar Agarwal",
+    "organization": "Padawan wallet",
+    "description": "Advanced bitcoin features on Padawan Wallet",
+    "mentor": "thunderbiscuit",
+    "university": "IIT BHU",
+    "country": "India",
+    "project_links": [
+      "https://github.com/thunderbiscuit/devkit-wallet/pull/37_x000D_",
+      "https://github.com/thunderbiscuit/devkit-wallet/pull/36_x000D_",
+      "https://github.com/thunderbiscuit/devkit-wallet/pull/35_x000D_",
+      "https://github.com/thunderbiscuit/devkit-wallet/pull/34_x000D_",
+      "https://github.com/thunderbiscuit/padawan-wallet/pull/324_x000D_",
+      "https://github.com/thunderbiscuit/padawan-wallet/pull/323_x000D_",
+      "https://github.com/thunderbiscuit/padawan-wallet/pull/322_x000D_",
+      "https://github.com/thunderbiscuit/padawan-wallet/pull/321_x000D_",
+      "https://github.com/thunderbiscuit/padawan-wallet/pull/320_x000D_",
+      "https://github.com/thunderbiscuit/padawan-wallet/pull/319_x000D_",
+      "https://github.com/thunderbiscuit/padawan-wallet/pull/318_x000D_",
+      "https://github.com/thunderbiscuit/padawan-wallet/pull/311_x000D_",
+      "https://github.com/thunderbiscuit/padawan-wallet/pull/310_x000D_",
+      "https://github.com/thunderbiscuit/padawan-wallet/pull/309"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Prakhar Saxena",
+    "organization": "LDK",
+    "description": "Integrate LDK into lnprototest",
+    "mentor": "Conor Okus, Jeff Czyz",
+    "university": "IIT(BHU) Varanasi",
+    "country": "India",
+    "project_links": [
+      "https://github.com/Psycho-Pirate/lnprototest/tree/test_with_script_x000D_",
+      "https://github.com/Psycho-Pirate/ldk-sample/tree/sob_x000D_",
+      "https://github.com/rustyrussell/lnprototest/pull/89_x000D_",
+      "https://github.com/rustyrussell/lnprototest/pull/90_x000D_",
+      "https://github.com/rustyrussell/lnprototest/pull/92_x000D_",
+      "https://github.com/rustyrussell/lnprototest/pull/93_x000D_",
+      "https://github.com/rustyrussell/lnprototest/pull/94_x000D_",
+      "https://github.com/rustyrussell/lnprototest/pull/99"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Prisca Maduka",
+    "organization": "StratumV2",
+    "description": "Add benchmarks",
+    "mentor": "Fi3",
+    "university": "University of Benin, Benin city ",
+    "country": "Nigeria",
+    "project_links": ["https://github.com/stratum-mining/stratum/pull/582"],
+    "year": 2023
+  },
+  {
+    "name": "Rahul Roy",
+    "organization": "LDK",
+    "description": "LDK iOS Sample Wallet (Swift)",
+    "mentor": "Conor Okus, Jeff Czyz",
+    "university": "Kalinga Institute of Industrial Technology",
+    "country": "India",
+    "project_links": [
+      "https://github.com/Roy0Anonymous/Vajra-Wallet_x000D_",
+      "https://github.com/Roy0Anonymous/lightningdevkit.org/tree/tutorialUpdate"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Raihan Khan",
+    "organization": "Bitcoin Tribe",
+    "description": "Mobile UI automation for a bitcoin social wallet - Bitcoin Tribe",
+    "mentor": "Prasad Prabhakaran",
+    "university": "Institute of Engineering & Management",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bithyve/bitcointribe/tree/ai-bot,_x000D_",
+      "https://github.com/bithyve/bitcointribe/pull/6571"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Sarthak Gupta",
+    "organization": "Breez",
+    "description": "nostr integration in Breez",
+    "mentor": "Roy Sheinfeld",
+    "university": "IIT ROORKEE",
+    "country": "India",
+    "project_links": [
+      "https://drive.google.com/drive/folders/1hzLMA5je1nLW9eyzYRTXzVCyiCXNnrSH?usp=drive_link_x000D_",
+      "https://github.com/breez/breezmobile/pull/1166https://github.com/breez/breezmobile/pull/1186https://github.com/breez/breezmobile/pull/1177https://github.com/breez/breez/pull/219https://github.com/breez/anytime_podcast_player/pull/48"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Satyam Shukla",
+    "organization": "Bitcoin Design",
+    "description": "A Lightning wallet for people with visual disabilities",
+    "mentor": "Stephen DeLorme, Mogashni",
+    "university": "Abdul Kalam technical University",
+    "country": "India",
+    "project_links": [
+      "https://www.figma.com/file/7NbE5tcPdoP4rUwkgODt6Q/Lightening-Wallet---Userflow?type=whiteboard&node-id=0%3A1&t=O9o3Tg4v63uFPKvP-1_x000D_",
+      "https://www.figma.com/file/4VfewZ4pUCWb79YHZmSSJt/Lightning-Wallet?type=design&node-id=0%3A1&mode=design&t=RWybPFubj5S9EMFk-1_x000D_",
+      "https://www.figma.com/file/8dTw1r0SmRW0KZPsN6gWpP/BitWallet?type=design&node-id=0%3A1&mode=design&t=70PvygJYQ96nRNJg-1"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Shantanu Gaikwad",
+    "organization": "LDK",
+    "description": "LSP Integration for LDK Node",
+    "mentor": "Conor Okus, Jeff Czyz",
+    "university": "College of Engineering Pune",
+    "country": "India",
+    "project_links": [
+      "https://github.com/lightningdevkit/ldk-lsp-client/pull/8"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Siddharth Tiwari",
+    "organization": "Galoy",
+    "description": "LNURL-Withdraw LN Service",
+    "mentor": "Sam Peters, Sandipan",
+    "university": "shri vaishnav vidyapeeth vishwavidyalaya",
+    "country": "India",
+    "project_links": ["https://github.com/GaloyMoney/galoy-voucher"],
+    "year": 2023
+  },
+  {
+    "name": "Subhradeep Chakraborty",
+    "organization": "Rust miniscript",
+    "description": "Implementation of BIP370(psbtv2) in rust-bitcoin",
+    "mentor": "Sanket Kanjalkar, stratospher",
+    "university": "Jalpaiguri Government Engineering College",
+    "country": "India",
+    "project_links": [
+      "https://github.com/Subhra264/psbt_poc_x000D_",
+      "https://github.com/rust-bitcoin/rust-bitcoin/discussions/1921_x000D_",
+      "https://github.com/rust-bitcoin/rust-bitcoin/pull/1924"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "tanishka Sharma",
+    "organization": "Bitcoin Design",
+    "description": "uMlando Wallet UI Design",
+    "mentor": "Stephen DeLorme, Mogashni",
+    "university": "Indian Institute of Technology, Madras",
+    "country": "India",
+    "project_links": [
+      "https://www.figma.com/file/deuG0QxcNDjQMYDrubRlH6/screenshots?type=design&t=XYcQ5ZVPTUwHJG2P-6_x000D_",
+      "https://www.figma.com/file/QZ2ZWub74YCp20hD689bmQ/uMlando_user_persona?type=whiteboard&t=XYcQ5ZVPTUwHJG2P-6_x000D_",
+      "https://www.figma.com/file/TOim6AlMI1rgq91PYurkct/uMlando_userflow?type=whiteboard&t=XYcQ5ZVPTUwHJG2P-6_x000D_",
+      "https://www.figma.com/file/ubqHUtP3tGB4ZfsIHAbSO0/uMlando_wallet_wireframes?type=design&t=XYcQ5ZVPTUwHJG2P-6_x000D_",
+      "https://www.figma.com/file/UKcJeId0DRbkdrNB775sCx/umlando-branding-jam-(Copy)?type=whiteboard&t=XYcQ5ZVPTUwHJG2P-6_x000D_",
+      "https://www.figma.com/file/gyWtol5idYRlPIAIPLoUW9/UMLANDO-ideation?type=design&t=XYcQ5ZVPTUwHJG2P-6_x000D_",
+      "https://www.figma.com/file/8wNOBA3JK5WfUYURkrakBQ/uMlando_design_%26_component?type=design&t=XYcQ5ZVPTUwHJG2P-6_x000D_",
+      "https://www.figma.com/file/155RWdR3i20f5y3s8FBUuh/uMlando_UI_FILE-(Copy)?type=design&t=XYcQ5ZVPTUwHJG2P-6_x000D_"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Tarek Elsayed",
+    "organization": "Core Lightning Toolkit",
+    "description": "New commands for a plugin manager in Core Lightning",
+    "mentor": "Vincenzo Palazzo",
+    "university": "Mansoura University",
+    "country": "Egypt",
+    "project_links": [
+      "https://github.com/coffee-tools/coffee/pulls?q=author%3Atareknaser"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Temiloluwa Yusuf",
+    "organization": "BDK",
+    "description": "Create Swift iOS Demo Wallet",
+    "mentor": "Steve Myers",
+    "university": "Ahmadu Bello University",
+    "country": "Nigeria",
+    "project_links": [
+      "https://github.com/reez/BDKSwiftExampleWallet/pull/41_x000D_",
+      "https://github.com/reez/BDKSwiftExampleWallet/pull/38_x000D_",
+      "https://github.com/reez/BDKSwiftExampleWallet/pull/33_x000D_",
+      "https://github.com/reez/BDKSwiftExampleWallet/pull/25_x000D_",
+      "https://github.com/reez/BDKSwiftExampleWallet/pull/19_x000D_",
+      "https://github.com/reez/BDKSwiftExampleWallet/pull/18_x000D_"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Vasu Maheshwari",
+    "organization": "bcoin",
+    "description": "Add support for output script descriptors",
+    "mentor": "Anmol Sharma, Shaswat Gupta",
+    "university": "Indian Institute of Information Technology, Design and Manufacturing, Jabalpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bcoin-org/bcoin/pull/1152_x000D_",
+      "https://github.com/bcoin-org/bcoin/pull/1162_x000D_",
+      "https://github.com/bcoin-org/bcoin/pull/1171"
+    ],
+    "year": 2023
+  },
+  {
+    "name": "Will Owens",
+    "organization": "BDK",
+    "description": "Add Payjoin support ",
+    "mentor": "Steve Myers",
+    "university": "Vanderbilt University",
+    "country": "United States",
+    "project_links": ["https://github.com/bitcoindevkit/bdk-cli/pull/156"],
+    "year": 2023
+  },
+  {
+    "name": "Zhe Pang",
+    "organization": "libsecp256k1",
+    "description": "BIP 340 Adaptor Signatures Module for libsecp256k1-zkp",
+    "mentor": "Jonas Nick, Sivaram",
+    "university": "Columbia University",
+    "country": "United States",
+    "project_links": [
+      "https://github.com/ZhePang/secp256k1-zkp/tree/schnorr-adaptor-signature_x000D_",
+      "https://github.com/ZhePang/Python_Specification_for_Schnorr_Adaptor_x000D_",
+      "https://github.com/BlockstreamResearch/secp256k1-zkp/pull/268"
+    ],
+    "year": 2023
+  }
+]

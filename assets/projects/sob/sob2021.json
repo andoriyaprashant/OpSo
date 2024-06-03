@@ -1,0 +1,538 @@
+[
+  {
+    "name": "Aarush Bhat",
+    "organization": "Utreexo",
+    "description": "Improvements to utreexo.",
+    "mentor": "Calvin Kim",
+    "university": "Vellore Institute of Technology",
+    "country": "India",
+    "project_links": [
+      "https://github.com/mit-dci/utreexo/commits?author=r-ush"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Aastha Joshi",
+    "organization": "Bitcoin Core",
+    "description": "Improvements to Bitcoin core by code refactoring, performance optimization and benchmarking.",
+    "mentor": "Jeremy Rubin",
+    "university": "KJ Somaiya College of Engineering",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Abhik Banerjee",
+    "organization": "LDK",
+    "description": "Enable Last Hop Hints in routing from Payer to Payee based on Lightning Invoice (Bolt 11).",
+    "mentor": "Jeffrey Czyz",
+    "university": "Netaji Subhash Engineering College",
+    "country": "India",
+    "project_links": [
+      "https://github.com/rust-bitcoin/rust-lightning/pull/1040"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Abhishek Anantharam",
+    "organization": "JoinMarket",
+    "description": "Build an interactive interface for JoinMarket to enable end-users make Coinjoin transactions easily, using Flask and react.js.",
+    "mentor": "Adam Gibson",
+    "university": "Vellore Institute of Technology",
+    "country": "India",
+    "project_links": [
+      "https://github.com/shobhitaa/Joinmarket-SOB/commits/main"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Aditee Singh",
+    "organization": "LND",
+    "description": "Implement keysend in LDK to allow lightning payments without invoices.",
+    "mentor": "Jamal James",
+    "university": "J.S.S. Academy of Technical Education",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Aditya Sharma",
+    "organization": "Core Lightning",
+    "description": "Implementing a web socket in native JavaScript for communicating with LN nodes, decoding/creating messages and BOLT12 offers/invoice_request/invoices.",
+    "mentor": "Rusty Russell",
+    "university": "IIT BHU",
+    "country": "India",
+    "project_links": [
+      "https://github.com/rustyrussell/bolt12/commits?author=adi2011&since=2021-07-31&until=2021-08-23"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Aman Gupta",
+    "organization": "Photon-SDK",
+    "description": "Implement a react native library in Photon-SDK based on Bitcoin-Wallet-UI kit.",
+    "mentor": "Tankred Hase",
+    "university": "IIIT Sonepat",
+    "country": "India",
+    "project_links": ["https://github.com/Aman035/wallet-ui-react"],
+    "year": 2021
+  },
+  {
+    "name": "Aman Rojjha",
+    "organization": "Rust miniscript",
+    "description": "Add support for Taproot in rust-miniscript library.",
+    "mentor": "Sanket Kanjalkar",
+    "university": "IIIT Hyderabad",
+    "country": "India",
+    "project_links": [
+      "https://github.com/rust-bitcoin/rust-miniscript/commits?author=SarcasticNastik"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Arnab Sen",
+    "organization": "Bitcoin Core",
+    "description": "Improve support for User Statically Defined Tracing (USDT) in Bitcoin core by adding new tracepoints and scripts and leveraging eBPF (extended Berkeley Packet Filter) technology.",
+    "mentor": "0xb10c",
+    "university": "IIEST Shibpur",
+    "country": "India",
+    "project_links": ["https://github.com/0xB10C/bitcoin/pull/1"],
+    "year": 2021
+  },
+  {
+    "name": "D Sivaram",
+    "organization": "libsecp256k1",
+    "description": "Improvements to test coverage for the chacha20 streamcipher and SchnorrSig implementation in bitcoin core. Work on human-readable error messages and CSV benchmark outputs for the secp256k1 library used by Bitcoin core.",
+    "mentor": "Jesse Posner",
+    "university": "IIT Kharagpur",
+    "country": "India",
+    "project_links": ["https://github.com/bitcoin-core/secp256k1"],
+    "year": 2021
+  },
+  {
+    "name": "Dhruv Joshi",
+    "organization": "Electrum Wallet",
+    "description": "Implement various SIGHASH methods in Electrum wallet.",
+    "mentor": "ghost43",
+    "university": "College of Engineering Pune",
+    "country": "India",
+    "project_links": [
+      "https://github.com/spesmilo/electrum/commits?author=dhruv-joshi-7"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Dipto Chakrabarty",
+    "organization": "Utreexo ",
+    "description": "Reviewing, testing and fixing issues in Utreexo project.",
+    "mentor": "Calvin Kim",
+    "university": "Vellore Institute of Technology",
+    "country": "India",
+    "project_links": [
+      "https://github.com/mit-dci/utreexo/commits?author=DiptoChakrabarty"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Hani Mohammed",
+    "organization": "Specter Desktop",
+    "description": "CLI improvements for Specter Desktop.",
+    "mentor": "Ben Kaufman",
+    "university": "IIIT Sri City",
+    "country": "India",
+    "project_links": [
+      "https://github.com/cryptoadvance/specter-desktop/commits?author=thehanimo"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Harsh Ghodkar",
+    "organization": "Bitcoin Core",
+    "description": "Reviewing, testing and fixing issues in Bitcoin core.",
+    "mentor": "James O'Beirne",
+    "university": "Dr. Jivraj Mehta Institute of Technology Gujarat",
+    "country": "India",
+    "project_links": ["https://github.com/bitcoin/bitcoin/pull/22617"],
+    "year": 2021
+  },
+  {
+    "name": "Harshit Goyal",
+    "organization": "Bitcoin Core",
+    "description": "Reviewing, testing and fixing issues in Bitcoin core.",
+    "mentor": " James O'Beirne",
+    "university": "Delhi Technological University",
+    "country": "India",
+    "project_links": [
+      "https://github.com/search?q=org%3Abitcoin-core+hg333&type=commits"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Hemanth Krishna",
+    "organization": "LND",
+    "description": "Contributing to v14.0-beta release for LND and improvements in watchtowers.",
+    "mentor": "Carla-Kirk Cohen",
+    "university": "Vellore Institute of Technology",
+    "country": "India",
+    "project_links": [
+      "https://github.com/search?q=org%3Abitcoindevkit+DarthBenro008&type=commits"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Kirandevraj",
+    "organization": "Bitcoin Core",
+    "description": "Optimizing performance of descriptor wallets in Bitcoin core.",
+    "mentor": "Sjors Provoost",
+    "university": "IIIT Hyderabad",
+    "country": "India",
+    "project_links": ["https://bitcoincore.org/"],
+    "year": 2021
+  },
+  {
+    "name": "Manan Sharma",
+    "organization": "BTCPayServer & NBXplorer",
+    "description": "Improvements to BTCPayServer & NBXplorer.",
+    "mentor": "rockstardev",
+    "university": "IIIT Hyderabad",
+    "country": "India",
+    "project_links": [
+      "https://github.com/dgarage/NBXplorer/pull/329",
+      "https://github.com/dgarage/NBXplorer/pull/323",
+      "https://github.com/dgarage/NBXplorer/pull/330",
+      "https://github.com/dgarage/NBXplorer/pull/324"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Mohit Bhat",
+    "organization": "Padawan Wallet",
+    "description": "Improvements to Padawan wallet.",
+    "mentor": "Thunderbiscuit",
+    "university": "Bennett University",
+    "country": "India",
+    "project_links": ["https://github.com/thunderbiscuit/tatooine/pull/6"],
+    "year": 2021
+  },
+  {
+    "name": "Naiza Singla",
+    "organization": "Bitcoin Core",
+    "description": "Improvements to mempool and package relay in Bitcoin core.",
+    "mentor": "Gloria Zhao",
+    "university": "IIT Kanpur",
+    "country": "India",
+    "project_links": ["https://github.com/bitcoin/bitcoin/pull/22532"],
+    "year": 2021
+  },
+  {
+    "name": "Neha Kumari",
+    "organization": "LND",
+    "description": "Lightning application to send and receive payments using LND nodes.",
+    "mentor": "Jamal James",
+    "university": "Netaji Subhas Institute of Technology, Patna",
+    "country": "India",
+    "project_links": ["https://github.com/lightningnetwork/lnd"],
+    "year": 2021
+  },
+  {
+    "name": "Nikhil Bartwal",
+    "organization": "Bitcoin Core",
+    "description": "Add block re-org capability to the signet network, fix faucet's incompatibility with custom signet and improve documentation.",
+    "mentor": "0xb10c",
+    "university": "Amity University",
+    "country": "India",
+    "project_links": ["https://github.com/bitcoin/bitcoin/pull/22565"],
+    "year": 2021
+  },
+  {
+    "name": "Pradyuman Verma",
+    "organization": "bcoin",
+    "description": "Improvements to bcoin project in areas of test coverage, prune node services, compact block filters and BIP49 and BIP84 implementation.",
+    "mentor": "Matthew Zipkin",
+    "university": "IIT Roorkee",
+    "country": "India",
+    "project_links": ["https://github.com/bcoin-org/bcoin"],
+    "year": 2021
+  },
+  {
+    "name": "Prakash Choudhary",
+    "organization": "Bitcoin Core",
+    "description": "Developing fuzz test to prove that the Bitcoin core implementation of streamcipher chacha20 is the same as the reference implementation by D.J. Bernstein and improvements to BIP324.",
+    "mentor": "Dhruv Mehta",
+    "university": "IIT Kanpur",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Pranab Pandey",
+    "organization": "Bitcoin Core",
+    "description": "Improvements to wallet RPC for accurate fee estimation.",
+    "mentor": "Gregory Sanders",
+    "university": "IIT Kanpur",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Prateek Sancheti",
+    "organization": "Bitcoin Core",
+    "description": "Improvements to bitcoin-core GUI i.e., bitcoin-qt. ",
+    "mentor": "Hennadii Stepanov",
+    "university": "IIIT Hyderabad",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Priyansh Rastogi",
+    "organization": "Mempool.space",
+    "description": "Reviewing, testing and fixing issues in Mempool.space. Developing and integrating a Lightning Network Explorer.",
+    "mentor": "Softsimon, Wiz",
+    "university": "IIIT Hyderabad",
+    "country": "India",
+    "project_links": [
+      "https://github.com/priyanshiiit/mempool/commits?author=priyanshiiit"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Purva Chaudhari",
+    "organization": "Bitcoin Core",
+    "description": "Develop functional tests for Test Feeler Connections in Bitcoin core.",
+    "mentor": "Amiti Uttarwar",
+    "university": "VIT Pune",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Raj Maheshwari",
+    "organization": "bcoin",
+    "description": "Improving the test coverage for bcoin, and updating it to be at par with the latest improvements in Bitcoin core such as bech32m addresses, BIP49, BIP84, pruned node services and other taproot features.",
+    "mentor": "Matthew Zipkin",
+    "university": "IIIT Hyderabad",
+    "country": "India",
+    "project_links": ["https://github.com/bcoin-org/bcoin"],
+    "year": 2021
+  },
+  {
+    "name": "Rishabh",
+    "organization": "Mempool.space",
+    "description": "Add a Lightning Network explorer to Mempool.space.",
+    "mentor": "Wiz",
+    "university": "BITS Pilani",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Ritick Goenka",
+    "organization": "Bitcoin Core",
+    "description": "Reviewing, testing and fixing issues in Bitcoin core. Developing tests for mempool ancestor/descendant limits.",
+    "mentor": "Russel Yanofsky",
+    "university": "IIT Roorkee",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Rohit Ranjan",
+    "organization": "Bitcoin Core",
+    "description": "Profile Guided Optimization (PGO) i.e., using profiling and instrumentation techniques to analyze run time statistics and integrate it in Bitcoin core.",
+    "mentor": "Michael Ford",
+    "university": "IIT Kanpur",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Ruhi Elizabeth Thomas",
+    "organization": "Bitcoin Core",
+    "description": "Fuzz testing improvements to Bitcoin core.",
+    "mentor": "Dhruv Mehta",
+    "university": "College of Engineering Trivandrum",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Sandipan Dey",
+    "organization": "Bitcoin Dev Kit",
+    "description": "Add support for Bech32 address and Taproot in Bitcoin Dev Kit.",
+    "mentor": "Steve Myers",
+    "university": "Academy of Technology - West Bengal",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Shashank Karmakar",
+    "organization": "RTL",
+    "description": "Adding enhanced logger, supporting CPFP (child-pays-for-parent) feature and BOLT12 in RTL.",
+    "mentor": "Shahana Farooqui",
+    "university": "Bharati Vidyapeeth Pune",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Shashwat Vangani",
+    "organization": "Bitcoin Core",
+    "description": "Improvements to bitcoin-core GUI i.e., bitcoin-qt. ",
+    "mentor": "Jarol Rodriguez",
+    "university": "IIT Roorkee",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Shobhitaa Barik",
+    "organization": "JoinMarket",
+    "description": "Developing a JavaScript webapp to remotely control a JoinMarket instance.",
+    "mentor": "Adam Gibson",
+    "university": "Bennett University",
+    "country": "India",
+    "project_links": ["https://github.com/JoinMarket-Org"],
+    "year": 2021
+  },
+  {
+    "name": "Shorya Kumar",
+    "organization": "Bitcoin Core",
+    "description": "Improvements to Bitcoin core by code refactoring, performance optimization and benchmarking.",
+    "mentor": "Jeremy Rubin",
+    "university": "IIT Kanpur",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Shreyansh Yadav",
+    "organization": "Bitcoin-S",
+    "description": "Add support for multiple peer-to-peer connections in bitcoin-s.",
+    "mentor": "Chris Stewart",
+    "university": "IIT BHU",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Shruthii RG",
+    "organization": "Bitcoin-S",
+    "description": "Implement mempool for Bitcoin-S to enable a robust and fault tolerant p2p network.",
+    "mentor": "Chris Stewart",
+    "university": "Dayananda Sagar College of Engineering",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Shubham Kumar",
+    "organization": "LDK",
+    "description": "Improvements to Zeus.",
+    "mentor": "Evan Kaloudis",
+    "university": "IIT Roorkee",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Shubham Samrat",
+    "organization": "Revault",
+    "description": "Rust implementation of the Revault protocol.",
+    "mentor": " Antoine Poinsot",
+    "university": "IIT BHU",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Shubhankar Gambhir",
+    "organization": "Bitcoin Core",
+    "description": "Reviewing, testing and fixing issues in Bitcoin core.",
+    "mentor": "Vasil Dimov",
+    "university": "IIT Kanpur",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Siddhant Chawla",
+    "organization": "Electrum Wallet",
+    "description": "GUI improvements to Electrum wallet.",
+    "mentor": "ghost43",
+    "university": "NIT Warangal",
+    "country": "India",
+    "project_links": [
+      "https://github.com/spesmilo/electrum/commits?author=siddhantchawla",
+      "https://github.com/spesmilo/electrum/pulls/siddhantchawla"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Sriram Devata",
+    "organization": "Bitcoin Core",
+    "description": "Introduce a -nomempool runtime option to run a Bitcoin node without the mempool, and add a fuzz target for orphan transaction handling to detect potential security issues.",
+    "mentor": "Marco Falke",
+    "university": "IIIT Hyderabad",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Sunidhi Sharma",
+    "organization": "Padawan Wallet",
+    "description": "Improvements to Padawan wallet.",
+    "mentor": "Thunderbiscuit",
+    "university": "LNMIIT Jaipur",
+    "country": "India",
+    "project_links": ["NA"],
+    "year": 2021
+  },
+  {
+    "name": "Tushar Singla",
+    "organization": "Specter Desktop",
+    "description": "CLI improvements for Specter Desktop.",
+    "mentor": "Ben Kaufman",
+    "university": "IIT Kanpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/cryptoadvance/specter-desktop/commits?author=singlatushar07"
+    ],
+    "year": 2021
+  },
+  {
+    "name": "Vaibhav Garg",
+    "organization": "Revault",
+    "description": "Rust implementation of the Revault protocol.",
+    "mentor": "Antoine Poinsot (Darosior)",
+    "university": "Delhi Technological University",
+    "country": "India",
+    "project_links": ["https://github.com/revault/"],
+    "year": 2021
+  },
+  {
+    "name": "Vibhav Sharma",
+    "organization": "node-lightning",
+    "description": "Node.js implementation of LN.",
+    "mentor": "Brian Mancini",
+    "university": "Bennett University",
+    "country": "India",
+    "project_links": ["https://github.com/altangent/node-lightning"],
+    "year": 2021
+  },
+  {
+    "name": "Ayush Jain",
+    "organization": "BTCPayServer & NBXplorer",
+    "description": "Improve support for file upload and management in BTCPayServer",
+    "mentor": "rockstar",
+    "university": "IIT Kanpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/btcpayserver/btcpayserver/pull/2764",
+      "https://github.com/btcpayserver/btcpayserver/pull/2735",
+      "https://github.com/btcpayserver/btcpayserver/pull/2705"
+    ],
+    "year": 2021
+  }
+]

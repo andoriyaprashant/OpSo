@@ -1,0 +1,1155 @@
+[
+  {
+    "name": "Adithya Vardhan",
+    "organization": "Alby",
+    "description": "Fix frontend-related issues and improve the overall design",
+    "mentor": "Michael Bumann",
+    "university": "Birla Institute of Technology and Science Pilani, Pilani Campus",
+    "country": "India",
+    "project_links": [
+      "https://github.com/getAlby/lightning-browser-extension/pulls?q=is%3Apr+author%3Aim-adithya"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Aditya Gite",
+    "organization": "Utreexo",
+    "description": "Visualize Utreexo Algorithms",
+    "mentor": "Calvin Kim",
+    "university": "IIT Roorkee",
+    "country": "India",
+    "project_links": [
+      "https://drive.google.com/drive/folders/1tqqvfI3a7nll60jz_kv8awuR9ZD5ptpn?usp=sharing",
+      "https://drive.google.com/file/d/1kv0oj8yBcBcycNnlM4n_8C-EM1TvfPSG/view?usp=sharingb",
+      "https://drive.google.com/file/d/1d9e5pG6YCkEJZm8nlkXSlF0R-RF9hFtx/view?usp=sharingc",
+      "https://drive.google.com/file/d/1dDBk8Qu0LWbDyrbLHXy8r2nrgtPceOBc/view?usp=sharingd",
+      "https://drive.google.com/file/d/1EURi9_gHJAoPdg4sUdsY3feBZNNXtd-W/view?usp=sharing-",
+      "https://drive.google.com/drive/folders/1TSAFOWd2FHdbYWDwE6N8N0Cn8xMaKvP4?usp=sharing"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Aditya Sharma",
+    "organization": "Core Lightning",
+    "description": "Static channel backups for c-lightning",
+    "mentor": "Rusty Russell",
+    "university": "IIT-BHU",
+    "country": "India",
+    "project_links": [
+      "https://github.com/ElementsProject/lightning/pull/5422",
+      "https://github.com/ElementsProject/lightning/pull/5537",
+      "https://github.com/ElementsProject/lightning/pull/5361",
+      "https://github.com/ElementsProject/lightning/pull/5440"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Akanksha Kashyap",
+    "organization": "Bitcoin Core",
+    "description": "Bitcoin Core - Functional test for coin selection, Bitcoin Core - Functional test for coin selection, Hexa Wallet - Improving UTXO selection ",
+    "mentor": "Bruno Gracia",
+    "university": "Indian Institute of Information Technology Allahabad",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bitcoin/bitcoin/pull/24820",
+      "https://github.com/bitcoin/bitcoin/pull/25291",
+      "https://gist.github.com/akankshakashyap/18c000c664c074172a349ccb2fef26be"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Aman Kumar Kashyap",
+    "organization": "Rust miniscript",
+    "description": "Bitcoin-s multipeer neutrino, Price of Anarchy in Selfish Routing on the Lightning Network, Access tokens for the REST API, Tapscript Compiler in miniscript",
+    "mentor": "Sanket Kanjalkar",
+    "university": "IIIT Hyderabad",
+    "country": "India",
+    "project_links": [
+      "https://github.com/rust-bitcoin/rust-miniscript/pull/4072",
+      "https://github.com/rust-bitcoin/rust-miniscript/pull/4173.",
+      "https://github.com/rust-bitcoin/rust-miniscript/pull/4394",
+      "https://github.com/rust-bitcoin/rust-miniscript/pull/4435",
+      "https://github.com/rust-bitcoin/rust-miniscript/pull/4566",
+      "https://github.com/rust-bitcoin/rust-miniscript/pull/457"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Andreas Kouloumos",
+    "organization": "Utreexo",
+    "description": "Transaction Conflicts in simulaterawtransaction, Add Benchmarks to the libutreexo library",
+    "mentor": "Calvin Kim",
+    "university": "National Technical University of Athens",
+    "country": "Greece",
+    "project_links": [
+      "https://github.com/mit-dci/libutreexo/pull/14",
+      "https://github.com/mit-dci/libutreexo/pull/16",
+      "https://github.com/mit-dci/libutreexo/pull/17",
+      "https://gist.github.com/kouloumos/66426d4eb5b6f264be168864e2b177e4",
+      "https://github.com/bitcoin/bitcoin/pull/25379",
+      "https://github.com/bitcoin/bitcoin/pull/25541",
+      "https://github.com/bitcoin/bitcoin/issues/18625",
+      "https://github.com/bitcoin/bitcoin/issues/5299",
+      "https://github.com/bitcoin/bitcoin/issues/10468",
+      "https://github.com/bitcoin/bitcoin/issues/9874",
+      "https://github.com/bitcoin/bitcoin/issues/2265",
+      "https://github.com/bitcoin/bitcoin/issues/11703",
+      "https://github.com/bitcoin/bitcoin/issues/18620"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Aniket Rochwani",
+    "organization": "Hexawallet",
+    "description": "Use the hash of phone number to uniquely identify a wallet owner ",
+    "mentor": "Anant Tapadia",
+    "university": "Indian Institute of Information Technology, Design and Manufacturing, Kancheepuram",
+    "country": "India",
+    "project_links": [
+      "https://docs.google.com/document/d/1uPsfPl3tKDq1QO5niOOQHJHX6D7lAClbAlw0Hzx9H-U/edit?usp=sharing",
+      "https://drive.google.com/file/d/1QuJq0-ezh3xZTUZPhwU8zx1T_XC8BB1b/view?usp=sharing",
+      "https://github.com/bithyve/hexa/issues/5729",
+      "https://github.com/bithyve/hexa/issues/5746",
+      "https://github.com/bithyve/hexa/issues/5860",
+      "https://github.com/bithyve/hexa/issues/5863",
+      "https://github.com/bithyve/hexa/issues/5883",
+      "https://github.com/bithyve/hexa/issues/5935",
+      "https://github.com/bithyve/hexa/issues/5940",
+      "https://github.com/bithyve/hexa/issues/5960",
+      "https://github.com/bithyve/hexa-pay/commit/9c1cdb21a7499fbe78e9ae73a23e4594bec674b9",
+      "https://github.com/bithyve/hexa/issues/5966",
+      "https://github.com/aniketrochwani/hexapay-backend",
+      "https://github.com/bithyve/hexa-pay/commit/2e74c7475854b06a3965e610b5ccee7186b96e2d",
+      "https://github.com/bithyve/hexa-pay/commit/85a47ea229c59e63cf7b5feaa62352d7ee408ece"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Animesh Bilthare",
+    "organization": "Bitcoin Core",
+    "description": "Transaction Conflicts in simulaterawtransaction",
+    "mentor": "Andrew Chow",
+    "university": "Bits pilani",
+    "country": "India",
+    "project_links": ["https://github.com/bitcoin/bitcoin/pull/25621"],
+    "year": 2022
+  },
+  {
+    "name": "Ankur Patil",
+    "organization": "Specter Desktop",
+    "description": "Unit test automation framework for Bitcoin wallet  , Test Automation, Test Automation, Exploring the Lightning Network, Make payment transactions smart with structured metadata, Access tokens for the REST API, Fix frontend-related issues and improve the overall design, Access tokens for the REST API",
+    "mentor": "Kim Neunert",
+    "university": "IIT BHU Varanasi",
+    "country": "India",
+    "project_links": [
+      "https://my-blog.ankurrev.tech/specter-sob-1",
+      "https://github.com/cryptoadvance/specter-desktop/pull/1785"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Anmol Sharma",
+    "organization": "bcoin",
+    "description": "Implement branch-and-bound coin selection in bcoin wallet",
+    "mentor": "Matthew Zipkin",
+    "university": "PDPM Indian Institute of Information Technology, Design and Manufacturing, Jabalpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bcoin-org/bcoin/pull/1073",
+      "https://github.com/bcoin-org/bcoin/pull/1059",
+      "https://github.com/bcoin-org/bcoin/pull/1053",
+      "https://github.com/bcoin-org/bcoin/pull/1075",
+      "https://github.com/bcoin-org/bcoin/pull/1088",
+      "https://github.com/theanmolsharma/coin-selection-simulation"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Arsalan Thoker",
+    "organization": "The Eye of Satoshi",
+    "description": "Memory outsourcing for hardware wallets, Plugin Support for lndart.clightning, Plugin Support for lndart.clightning, Plugin Support for rust-clightnining-rpc, Generalize rust-teos to support different SQL engines, Plugin Support for lndart.clightning, Use LND as a PayJoin client, Use LND as a PayJoin client, Generalize rust-teos to support different SQL engines",
+    "mentor": "Sergi Delgado",
+    "university": "NIT Srinagar",
+    "country": "India",
+    "project_links": [
+      "https://github.com/SpoonBuoy/rust-teos/blob/dbm1/teos/src/dbm.rs",
+      "https://github.com/SpoonBuoy/rust-teos/blob/dbm1/teos-common/src/dbm.rs"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Atharva  Sharad Amritkar",
+    "organization": "Fedimint",
+    "description": "Building a nix module for MiniMint",
+    "mentor": "Elsirion",
+    "university": "IIT Kharagpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/fedimint/nix-bitcoin",
+      "https://github.com/fort-nix/nix-bitcoin/compare/master…fedimint:nix-bitcoin:master",
+      "https://github.com/fedimint/nix-bitcoin/pull/6",
+      "https://github.com/fedimint/hbbft/pull/6",
+      "https://github.com/fedimint/fedimint/pull/210",
+      "https://github.com/fedimint/fedimint/pull/214",
+      "https://github.com/fedimint/fedimint/pull/202",
+      "https://github.com/fedimint/fedimint/issues/184",
+      "https://github.com/fedimint/fedimint/pull/170",
+      "https://github.com/fedimint/fedimint/issues/169",
+      "https://github.com/fedimint/fedimint/pull/164",
+      "https://github.com/fedimint/fedimint/pull/154",
+      "https://github.com/fedimint/fedimint/pull/147",
+      "https://github.com/fedimint/fedimint/issues/138",
+      "https://github.com/fedimint/fedimint/pull/136",
+      "https://github.com/fedimint/nix-bitcoin/pull/1",
+      "https://github.com/fedimint/minimint-docker",
+      "https://github.com/fedimint/fedimint/pull/135",
+      "https://github.com/fedimint/fedimint/pull/110",
+      "https://github.com/fedimint/fedimint/pull/111",
+      "https://github.com/fedimint/fedimint/pull/108",
+      "https://github.com/fedimint/fedimint/pull/98",
+      "https://github.com/fedimint/fedimint/pull/92",
+      "https://github.com/fedimint/fedimint/pull/91",
+      "https://github.com/fedimint/fedimint/pull/83",
+      "https://github.com/fedimint/fedimint/pull/73",
+      "https://github.com/fedimint/fedimint/pull/60",
+      "https://github.com/fedimint/fedimint/pull/45",
+      "https://github.com/fedimint/minimint/issues/67",
+      "https://github.com/fedimint/minimint/issues/78",
+      "https://github.com/fedimint/minimint/issues/90",
+      "https://github.com/fedimint/minimint/issues/103",
+      "https://github.com/fedimint/minimint/issues/105",
+      "https://github.com/fedimint/minimint/issues/138",
+      "https://github.com/fedimint/minimint/issues/169",
+      "https://github.com/nix-community/naersk/issues/244",
+      "https://github.com/cargo2nix/cargo2nix/issues/277"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Autumn Domingo",
+    "organization": "Padawan Wallet",
+    "description": "Designing Padawan Wallet | Design",
+    "mentor": "Stephen DeLorme",
+    "university": "NA",
+    "country": "United States",
+    "project_links": [
+      "https://www.figma.com/file/hjF5gRFZlRzv4a9BZgpeJ6/Personal-Padawan-Design%2FIdeas?node-id=0%3A1",
+      "https://www.figma.com/file/EvG1sbc8wsantbEMqqYdpV/Padawan?node-id=0%3A1",
+      "https://github.com/thunderbiscuit/padawan-wallet/issues",
+      "https://docs.google.com/presentation/d/1lyLc-hC8LxuNO_Doc4x2GHXN7k8Hixx8tGKrDnFB-zs/edit?usp=sharing",
+      "https://docs.google.com/presentation/d/1Qs81LOMuQ0Vld_o22MQ5lM47pY7OkdW1hAct3wBUIN4/edit?usp=sharing"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Ayomide Yusuf ",
+    "organization": "Hexawallet",
+    "description": "Bitcoin and Friends – Secure chat like interface for the interaction between wallets | Design",
+    "mentor": "Sumaiah Khan",
+    "university": "University of Lagos",
+    "country": "Nigeria",
+    "project_links": [
+      "https://xd.adobe.com/view/a79eb90d-0840-4cb7-93c2-1957a5449d83-f2cd/",
+      "https://xd.adobe.com/view/393ac9be-7ab3-4f66-8e35-d3052fee7fbe-6c69/",
+      "https://xd.adobe.com/view/221d7da9-a4c1-49a6-85d0-b3fc0af06f21-774e/",
+      "https://docs.google.com/document/d/1Ny7Kb4Attu_hDZrKlVDIxTdS4hn9fsXACDdJiLNprus/edit?usp=sharing"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Ayush Anand",
+    "organization": "bcoin",
+    "description": "Update bcoin networking protocol: pruning and compact blocks, Implement compact block filter service and Neutrino client in bcoin",
+    "mentor": "Matthew Zipkin",
+    "university": "Indian Institute of Technology Jodhpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bcoin-org/bcoin/pull/1057",
+      "https://github.com/bcoin-org/bcoin/pull/1051",
+      "https://github.com/bcoin-org/bcoin/pull/1087"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "César Alvarez Vallero",
+    "organization": "Bitcoin Dev Kit",
+    "description": "Improving Coinselection in BDK, Real-Time Stream of Blocks API, lnprototest in LDK, Foundations of Open Source Development",
+    "mentor": "Daniela Brozzoni",
+    "university": "Universidad Nacional de Córdoba",
+    "country": "Argentina",
+    "project_links": [
+      "https://github.com/bitcoindevkit/bdk/pull/662",
+      "https://github.com/bitcoindevkit/bdk/pull/630",
+      "https://github.com/bitcoindevkit/bdk/pull/727",
+      "https://github.com/bitcoindevkit/bdk/pull/558",
+      "https://github.com/csralvall/bdk/blob/7301212fc1640fc539476f970567b0e2bec23287/src/wallet/coin_selection.rs)"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Davison Souza",
+    "organization": "Utreexo",
+    "description": "Bitcoin Core - Functional test for coin selection, Batch Verification Interface in libsecp256k1, Rust Utreexo library",
+    "mentor": "Calvin Kim",
+    "university": "Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de Minas Gerais",
+    "country": "Brazil",
+    "project_links": [
+      "https://github.com/mit-dci/rustreexo/pull/1",
+      "https://github.com/mit-dci/rustreexo/pull/2",
+      "https://github.com/mit-dci/rustreexo/pull/5",
+      "https://github.com/mit-dci/rustreexo/pull/4"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Dhananjay Purohit",
+    "organization": "Alby",
+    "description": "Content distribution proxy implementing the LSATs spec",
+    "mentor": "Michael Bumann, Kwinten De Backer",
+    "university": "Institute of Engineering and Technology, Devi Ahilya Vishwavidyalaya, Indore (M.P.)",
+    "country": "India",
+    "project_links": [
+      "https://github.com/getAlby/gin-lsat/pulls?q=author%3ADhananjayPurohit)",
+      "https://github.com/getAlby/echo-lsat/issues?q=author%3ADhananjayPurohit)",
+      "https://github.com/getAlby/lsat-proxy/commits/main)"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Dhruv Baliyan",
+    "organization": "Bitcoin Dev Kit",
+    "description": "Add api to generate child keys from master key ",
+    "mentor": "notmandatory, artfuldev",
+    "university": "AKTU",
+    "country": "India",
+    "project_links": ["https://github.com/bitcoindevkit/bdk-ffi/pull/154"],
+    "year": 2022
+  },
+  {
+    "name": "Eduardo Quintana Miranda",
+    "organization": "Lightning Network",
+    "description": "Cross testing in libsecp256k1, Batch Verification Interface in libsecp256k1, Efficient Min Convex Cost Flow Solver for Lightning Network Payment Delivery",
+    "mentor": "Rene Pickhardt",
+    "university": "University of Trieste",
+    "country": "Italy",
+    "project_links": [
+      "https://github.com/Lagrang3/mincostflow",
+      "https://github.com/renepickhardt/pickhardtpayments/pull/29"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Gautam Jajoo",
+    "organization": "Core Lightning",
+    "description": "Plugin Support for rust-clightnining-rpc",
+    "mentor": "Vincenzo Palazzo",
+    "university": "Birla Institute of Technology and Science, Pilani ",
+    "country": "India",
+    "project_links": [
+      "https://github.com/clightning4j/ln-dashboard/commits?author=gautamjajoo"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Goutam Verma Verma",
+    "organization": "Eclair",
+    "description": "Breez Podcast Player Enhancements, Eclair Node Monitoring",
+    "mentor": "Bastien Teinturier",
+    "university": "Devi Ahiliya University ",
+    "country": "India",
+    "project_links": [
+      "https://github.com/ACINQ/eclair/pull/2321",
+      "https://github.com/ACINQ/eclair/pull/2334",
+      "https://github.com/ACINQ/eclair/pull/2347",
+      "https://github.com/ACINQ/eclair/pull/2343"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Harsh Singhal",
+    "organization": "LN Capital",
+    "description": "Designing Padawan Wallet | Design, Design System for Torq | Design, Rethink Payment Transaction Lists | Design, Rethinking the digital presence of Bitcoin Core | Design, Design System for Torq | Design",
+    "mentor": "Henrik Skogstrøm",
+    "university": "Vellore Institute of Technology, Vellore",
+    "country": "India",
+    "project_links": [
+      "https://www.figma.com/file/9HWyLJ07qFLJ4dnATuqvSf/Work-at-LN-Capital-%5BSummer-of-Bitcoin%5D?node-id=3549%3A44844"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Harshit Varma",
+    "organization": "Specter Desktop",
+    "description": "Spotbit Specter plugin",
+    "mentor": "Kim, Manolis",
+    "university": "Amrita Vishwa Vidyapeetham",
+    "country": "India",
+    "project_links": [
+      "https://github.com/ahv15/spotbit/pull/1",
+      "https://github.com/cryptoadvance/specter-desktop/pull/1744"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Himanshu Goel",
+    "organization": "Padawan Wallet",
+    "description": "Designing Padawan Wallet | Design",
+    "mentor": "Stephen DeLorme",
+    "university": "Maharaja Surajmal Institute of Technology",
+    "country": "India",
+    "project_links": [
+      "https://www.figma.com/file/DmYMU0gvQfeMwH4XXAWkQV/Padawan-Final-UI?node-id=923%3A7158"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Jatin Gupta",
+    "organization": "bcoin",
+    "description": "Update bcoin RPC API and add tests, Update bcoin networking protocol: pruning and compact blocks, Implement compact block filter service and Neutrino client in bcoin",
+    "mentor": "Matthew Zipkin",
+    "university": "Indian Institute of Information Technology, Vadodara",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bcoin-org/bcoin/pull/1049",
+      "https://github.com/bcoin-org/bcoin/pull/1069",
+      "https://github.com/bcoin-org/bcoin/pull/1085"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Jessica Alexandra Jide",
+    "organization": "Hexawallet",
+    "description": "Bitcoin and Friends – Secure chat like interface for the interaction between wallets | Design",
+    "mentor": "Sumaiah Khan",
+    "university": "Federal university of technology Owerri ",
+    "country": "Nigeria",
+    "project_links": [
+      "https://xd.adobe.com/view/a79eb90d-0840-4cb7-93c2-1957a5449d83-f2cd/",
+      "https://xd.adobe.com/view/a74a7838-17d3-45aa-8c81-fe82bece4846-f219/",
+      "https://xd.adobe.com/view/3c65958a-a4a3-44d6-9112-3185c3024d6f-6936/"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Jing Liu",
+    "organization": "Bitcoin Core",
+    "description": "Add fuzz target for txorphanage",
+    "mentor": "Marco Falke",
+    "university": "Shanghai University",
+    "country": "China",
+    "project_links": [
+      "https://github.com/bitcoin/bitcoin/pull/24841",
+      "https://github.com/bitcoin/bitcoin/pull/25447",
+      "https://github.com/bitcoin/bitcoin/pull/25624",
+      "https://github.com/bitcoin/bitcoin/pull/25683",
+      "https://github.com/bitcoin/bitcoin/pull/25778"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Juhie Chandra",
+    "organization": "Hexawallet",
+    "description": "Bitcoin and Friends – Secure chat like interface for the interaction between wallets | Design, A wallet that teaches bitcoin as you use them | Design , A wallet that teaches bitcoin as you use them | Design ",
+    "mentor": "Sumaiah Khan",
+    "university": "Dr. B. R. Ambedkar National Institute of Technology",
+    "country": "India",
+    "project_links": [
+      "https://xd.adobe.com/view/bed2c428-b2f7-450c-ba91-0d1f5b00a276-eb81/flow",
+      "https://xd.adobe.com/view/bb770507-31f2-4cd8-9d49-d224c383f064-ee24/grid/",
+      "https://www.figma.com/file/tZlshRMAFchrSZZB0SCZ6N/SoB?node-id=10%3A221",
+      "https://drive.google.com/file/d/1TgMr0k1K2OtHWbX5ZPcHGiQZ9Aqnb4eH/view?usp=sharing"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Jurvis Tan",
+    "organization": "LDK",
+    "description": "Improve Payment Routing",
+    "mentor": "Jeff Czyz",
+    "university": "University of Southern California",
+    "country": "Singapore",
+    "project_links": [
+      "https://github.com/lightningdevkit/rust-lightning/pull/1643",
+      "https://github.com/lightningdevkit/rust-lightning/pull/1596",
+      "https://github.com/lightningdevkit/rust-lightning/pull/1416",
+      "https://github.com/lightningdevkit/rust-lightning/pull/1403",
+      "https://github.com/lightningdevkit/rust-lightning/pull/1376",
+      "https://github.com/lightningdevkit/rust-lightning/pull/1318",
+      "https://github.com/lightningdevkit/ldk-swift/pull/64",
+      "https://github.com/lightningdevkit/ldk-swift/pull/63",
+      "https://github.com/lightningdevkit/ldk-swift/pull/46",
+      "https://github.com/lightningdevkit/ldk-swift/pull/43"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Kavan Desai",
+    "organization": "Core Lightning",
+    "description": "Implement a GUI for Importing to the Wallet, Convert non-wallet tests to use Python MiniWallet, Tor Support, Plugin Support for lndart.clightning, Breez Point-of-Sale Enhancements, Breez Podcast Player Enhancements, Plugin Support for lndart.clightning",
+    "mentor": "Vincenzo Palazzo",
+    "university": "Ahmedabad University",
+    "country": "India",
+    "project_links": [
+      "https://github.com/dart-lightning/lndart.clnapp",
+      "https://github.com/dart-lightning/lndart.cln_grpc",
+      "https://github.com/dart-lightning/lndart.clnapp/issues?q=user%3A%40KAVAN-DESAI+is%3Aclosed+",
+      "https://github.com/dart-lightning/lndart.cln_grpc/pulls?q=user%3A%40KAVAN-DESAI+is%3Aclosed+",
+      "https://dart-lightning.github.io/lndart.clnapp"
+    ],
+    "year": 2022
+  },
+
+  {
+    "name": "Khaled Emara",
+    "organization": "Electrs",
+    "description": "Choosing a better DB for electrs",
+    "mentor": "Roman Zeyde",
+    "university": "Ain Shams University",
+    "country": "Egypt",
+    "project_links": [
+      "https://github.com/romanz/electrs/pull/765",
+      "https://github.com/romanz/electrs/pull/740"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "kolby moroz Liebl",
+    "organization": "Bitcoin Core",
+    "description": "Implement a GUI for Importing to the Wallet",
+    "mentor": "Andrew Chow",
+    "university": "University of Alberta",
+    "country": "Canada",
+    "project_links": ["https://github.com/bitcoin-core/gui/pull/650"],
+    "year": 2022
+  },
+  {
+    "name": "Krystal A Maughan Maughan",
+    "organization": "Lightning Network",
+    "description": "Price of Anarchy in Selfish Routing on the Lightning Network",
+    "mentor": "René Pickhardt",
+    "university": "University of Vermont",
+    "country": "United States",
+    "project_links": [
+      "https://docs.google.com/document/d/1KSIIyxbDtWqIr4Y4KotRePqrQa2djbYiBgo9W5WWug0/edit?usp=sharing",
+      "https://docs.google.com/document/d/1W7dm-HKm3j53AQV5lomYLD0LhfwEExGfxn_wAeDN5Ls/edit?usp=sharing",
+      "https://docs.google.com/document/d/14NIh-wR6P6n6FOws8weyGIC1ZvoSAJDu4inHOEclZd4/edit?usp=sharing",
+      "https://docs.google.com/document/d/1qspnpz0ntZaxvUYgVzyKdODfKJYCUM5uJmvo5uCg2es/edit?usp=sharing",
+      "https://www.overleaf.com/project/627e736cdc560744be4babf6",
+      "https://github.com/kammitama5/LN_Price_Of_Anarchy",
+      "https://docs.google.com/document/d/14NIh-wR6P6n6FOws8weyGIC1ZvoSAJDu4inHOEclZd4/edit?usp=sharing",
+      "https://github.com/kammitama5/Price-Of-Anarchy-in-Selfish-Routing",
+      "https://github.com/kammitama5/Price-Of-Anarchy-in-Selfish-Routing/blob/main/DeMoivre_Martingale%20Simulation.ipynb",
+      "https://linear.app/sebulino/team/SUM/active",
+      "https://docs.google.com/presentation/d/1LvHglFyIpr-Amg5l_zILiaCxNkE2g5IiEfyYSslOJbk/edit?usp=sharing",
+      "https://docs.google.com/document/d/1tCb8ugHeWfwAw0yoVISfdVSRzWRLe7AufktPQzlykBI/edit?usp=sharing",
+      "https://docs.google.com/document/d/1_f89ioqoRIYgUvpM5ImsmkNF3vzJlPgYQXvBWVu1viM/edit?usp=sharing",
+      "https://docs.google.com/document/d/1X39lsr1lZhsSNnLskC-jfO37fIsAn7yIep5eJ-zKp8g/edit?usp=sharing",
+      "https://docs.google.com/document/d/1Qina_FoemW6_xasLwhhrUksKpi8oxtaVijgvREdPTyM/edit?usp=sharing",
+      "https://docs.google.com/document/d/1qspnpz0ntZaxvUYgVzyKdODfKJYCUM5uJmvo5uCg2es/edit?usp=sharing"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Kunal Jain",
+    "organization": "Bitcoin Dev Kit",
+    "description": "Price of Anarchy in Selfish Routing on the Lightning Network, Implement PrunedBlockchain backend: RPC on pruned node",
+    "mentor": "Alexos Felini",
+    "university": "International Institute of Information Technology, Hyderabad",
+    "country": "India",
+    "project_links": ["https://github.com/kjain1810/bdk"],
+    "year": 2022
+  },
+  {
+    "name": "Leonardo Cumplido",
+    "organization": "LN Capital",
+    "description": "Convert non-wallet tests to use Python MiniWallet, Routing Node research and automation, Add a cool Specter plugin",
+    "mentor": "Henrik Skogstrøm",
+    "university": "Monterrey Institute of Technology and Higher Education",
+    "country": "Mexico",
+    "project_links": [
+      "https://github.com/LeoCumpli21/LNAnalysis/blob/main/Channels_first_analysis_1.ipynb",
+      "https://github.com/LeoCumpli21/LNAnalysis/blob/main/Channels_second_analysis_2.ipynb",
+      "https://github.com/LeoCumpli21/LNAnalysis/blob/main/Channels_third_analysis_3.ipynb",
+      "https://github.com/LeoCumpli21/LNAnalysis/blob/main/Payment_attempts_visualization_1.ipynb",
+      "https://github.com/LeoCumpli21/LNAnalysis/blob/main/Payment_attempts_visualization_2.ipynb",
+      "https://github.com/LeoCumpli21/LNAnalysis/blob/main/Payments%20Interactive%20Visualization.ipynb",
+      "https://github.com/LeoCumpli21/LNAnalysis/blob/main/Potential_paths_interactive_visualization.ipynb"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Leonardo Souza",
+    "organization": "Bitcoin Dev Kit",
+    "description": "Real-Time Stream of Blocks API,  Mempool.space integration in BDK",
+    "mentor": "Lloyd Fournier",
+    "university": "University of Campinas - UNICAMP",
+    "country": "Brazil",
+    "project_links": [
+      "https://github.com/oleonardolima/block-events",
+      "https://github.com/oleonardolima/block-events/pull/3)",
+      "https://github.com/oleonardolima/block-events/pull/8)",
+      "https://github.com/oleonardolima/block-events/pull/10)",
+      "http://mempool.space)",
+      "https://github.com/mempool/mempool/issues/1916)",
+      "https://github.com/mempool/mempool/issues/2180)",
+      "https://github.com/mempool/mempool/pull/2181)",
+      "https://github.com/RCasatta/bitcoind/issues/68)",
+      "https://github.com/oleonardolima/bitcoind/commit/b522d5ec1c42584b81c3b6595e36b9df0b2517f6)",
+      "https://github.com/RCasatta/bitcoind/pull/72)"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Lorenzo Bonazzi",
+    "organization": "Stratum Mining",
+    "description": "Improve examples and documentation, General codebase improvement, Explore Coinbase Negotiator role",
+    "mentor": "Fi3",
+    "university": "Università degli Sutdi di Firenze",
+    "country": "Italy",
+    "project_links": [
+      "https://github.com/lorbax",
+      "https://docs.google.com/document/d/1qiOOSOT7epX658_nhjz-jj0DlnSRvytemOv_u_OtMcc/"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Manmeet Singh",
+    "organization": "Fedimint",
+    "description": "Graphical Wallet for MiniMint using WASM",
+    "mentor": "Elsirion",
+    "university": "National Institute of Technology, Kurukshetra",
+    "country": "India",
+    "project_links": [
+      "https://github.com/fedimint/fedimint/pull/273",
+      "https://github.com/fedimint/fedimint/pull/203",
+      "https://github.com/fedimint/fedimint/pull/195",
+      "https://github.com/fedimint/fedimint/pull/140",
+      "https://github.com/fedimint/fedimint/pull/107",
+      "https://github.com/fedimint/fedimint/pull/93",
+      "https://github.com/futurepaul/fluttermint/pull/26",
+      "https://github.com/futurepaul/fluttermint/pull/20"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Mayank Modi",
+    "organization": "Galoy",
+    "description": "rust-hwi improvements, Get Galoy instance running on Azure or AWS",
+    "mentor": "Sandipan Dey",
+    "university": "IIIT Hyderabad",
+    "country": "India",
+    "project_links": [
+      "https://github.com/GaloyMoney/galoy-infra/pull/85",
+      "https://github.com/GaloyMoney/galoy-infra/pull/78",
+      "https://github.com/GaloyMoney/galoy-infra/pull/61",
+      "https://github.com/GaloyMoney/galoy-infra/pull/43"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Micky Yun Chan",
+    "organization": "Lightning Network",
+    "description": "LN spec tests for lnprototest, lnprototest in LDK",
+    "mentor": "Vincenzo Palazzo",
+    "university": "Lappeenranta-Lahti University of Technology",
+    "country": "Finland",
+    "project_links": [
+      "https://github.com/lnspec-tools/lnspec.py/pull/1",
+      "https://github.com/lnspec-tools/lnspec.py/pull/7",
+      "https://github.com/lnspec-tools/lnspec.py/pull/9",
+      "https://github.com/lnspec-tools/lncodegen.rs/pull/1",
+      "https://github.com/lnspec-tools/lncodegen.rs/pull/2",
+      "https://github.com/lnspec-tools/lncodegen.rs/pull/4",
+      "https://github.com/lnspec-tools/lncodegen.rs/pull/12"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Mohammad Warid",
+    "organization": "bcoin",
+    "description": "Update bcoin networking protocol: pruning and compact blocks",
+    "mentor": "Matthew Zipkin",
+    "university": "Delhi Technological University",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bcoin-org/bcoin/pull/1072",
+      "https://github.com/bcoin-org/bcoin/pull/1086",
+      "https://github.com/bcoin-org/bcoin/pull/1092"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "omer yacine Yacine",
+    "organization": "The Eye of Satoshi",
+    "description": "Manual CPFP for Revault managers, Improve Payment Routing, Add Lightning as transport for rust-teos",
+    "mentor": "Sergi Delgado",
+    "university": "Cairo University",
+    "country": "Egypt",
+    "project_links": [
+      "https://github.com/talaia-labs/rust-teos/pull/85",
+      "https://github.com/meryacine/rust-teos/tree/lightning-server"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Pavan Joshi",
+    "organization": "Alby",
+    "description": "Make payment transactions smart with structured metadata, WebLN Support, WebLN Support",
+    "mentor": "Michael Bumann",
+    "university": "Government College of Engineering, Yavatmal",
+    "country": "India",
+    "project_links": [
+      "https://docs.google.com/document/d/1OcbppA1NHDKhutekk4k1FKgsfRorap-mdCy8iaNhjSw/edit?usp=sharing"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Pedro Felix",
+    "organization": "Bitcoin Dev Kit",
+    "description": "BDK descriptor improvements: Add a generic descriptor trait, Implement PrunedBlockchain backend: RPC on pruned node, rust-hwi improvements, Implement basic spending policy APIs",
+    "mentor": "Steve Myers",
+    "university": "CSUSB",
+    "country": "United States",
+    "project_links": [
+      "https://github.com/bitcoindevkit/bdk/pull/602",
+      "https://github.com/bitcoindevkit/bdk-ffi/pull/163",
+      "https://github.com/bitcoindevkit/bdk-cli/pull/105",
+      "https://github.com/bitcoindevkit/bdk-ffi/pull/186",
+      "https://github.com/bitcoindevkit/bdk-cli/pull/102"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Piyush Kumar",
+    "organization": "Bitcoin Dev Kit",
+    "description": "rust-hwi improvements",
+    "mentor": "Daniela Brozzoni",
+    "university": "Indian Institute of Technology Kharagpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bitcoindevkit/rust-hwi/pulls?q=is%3Apr+author%3Awszdexdrf",
+      "https://github.com/bitcoindevkit/bdk/pulls?q=is%3Apr+author%3Awszdexdrf"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Prakhar Saxena",
+    "organization": "LDK",
+    "description": "General codebase improvement, lnprototest in LDK",
+    "mentor": "Conor Okus",
+    "university": "Indian Institute of Technology (BHU) Varanasi",
+    "country": "India",
+    "project_links": [
+      "https://github.com/Psycho-Pirate/lnprototest/tree/sob",
+      "https://github.com/Psycho-Pirate/ldk-sample/tree/sob",
+      "https://github.com/rustyrussell/lnprototest/issues/57"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Pranshu Kumar Agrawal",
+    "organization": "bcoin",
+    "description": "Review and test bcoin PR#811 Replace-by-fee, add feature to wallet",
+    "mentor": "Matthew Zipkin",
+    "university": "Veer Surendra Sai University of Technology",
+    "country": "India",
+    "project_links": [
+      "https://github.com/pinheadmz/bcoin/pull/14",
+      "https://github.com/bcoin-org/bcoin-org.github.io/pull/201",
+      "https://github.com/bcoin-org/bcoin/pull/1080",
+      "https://github.com/bcoin-org/bcoin/pull/1050",
+      "https://github.com/bcoin-org/bcoin/pull/1061#event-6809092711",
+      "https://github.com/bcoin-org/bcoin/pull/1084",
+      "https://github.com/bcoin-org/bcoin-org.github.io/pull/202"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Precious Enyi",
+    "organization": "Padawan Wallet",
+    "description": "Designing Padawan Wallet | Design, Designing Padawan Wallet | Design",
+    "mentor": "Stephen DeLorme, Christoph Ono",
+    "university": "Federal University of Technology, Owerri",
+    "country": "Nigeria",
+    "project_links": [
+      "https://www.figma.com/proto/DmYMU0gvQfeMwH4XXAWkQV/Padawan-Final-UI?page-id=923%3A7158&node-id=923%3A9396&viewport=1155%2C-1942%2C0.19&scaling=scale-down&starting-point-node-id=923%3A9396&show-proto-sidebar=1",
+      "https://www.figma.com/file/DmYMU0gvQfeMwH4XXAWkQV/Padawan-Final-UI?node-id=923%3A7158",
+      "https://www.figma.com/file/EvG1sbc8wsantbEMqqYdpV/Padawan?node-id=13%3A2",
+      "https://youtu.be/oByUUv_6iSk"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Precious Ndubueze Ndubueze",
+    "organization": "Core Lightning",
+    "description": "Plugin Support for lndart.clightning",
+    "mentor": "Vincenzo Palazzo ",
+    "university": "Silesian University of Technology ",
+    "country": "Poland",
+    "project_links": [
+      "https://github.com/cln-reckless/cln4go.plugin/pull/2",
+      "https://github.com/vincenzopalazzo/bender/pull/1",
+      "https://github.com/vincenzopalazzo/cln4go/pull/6",
+      "https://github.com/vincenzopalazzo/cln4go/pull/7",
+      "https://github.com/vincenzopalazzo/cln4go/pull/10",
+      "https://github.com/vincenzopalazzo/cln4go/pull/15",
+      "https://github.com/vincenzopalazzo/cln4go/pull/21",
+      "https://github.com/vincenzopalazzo/cln4go/pull/24",
+      "https://github.com/vincenzopalazzo/cln4go/pull/26",
+      "https://github.com/vincenzopalazzo/cln4go/pull/27",
+      "https://github.com/vincenzopalazzo/cln4go/pull/29",
+      "https://github.com/gabbyprecious/demo-cln-plugin"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Priyansh Rastogi",
+    "organization": "LND",
+    "description": "Improve the LND wallet kit , Batch chain backend requests in lnd ",
+    "mentor": "Oliver Gugger",
+    "university": "IIIT Gwalior",
+    "country": "India",
+    "project_links": [
+      "https://github.com/priyanshiiit/mempool/commits?author=priyanshiiit"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Raj Maheshwari",
+    "organization": "bcoin",
+    "description": "Add full Taproot validation to bcoin full node and wallet",
+    "mentor": "Matthew Zipkins",
+    "university": "IIIT Hyderabad",
+    "country": "India",
+    "project_links": ["https://github.com/bcoin-org/bcoin/pull/1081"],
+    "year": 2022
+  },
+  {
+    "name": "SAI KRISHNA KISHORE CHALLAPALLI",
+    "organization": "Bitcoin Dev Kit",
+    "description": "Update bcoin networking protocol: pruning and compact blocks, Better address setup , Proof of ownership of bitcoin funds, Access tokens for the REST API, Refactor BDK Integration tests",
+    "mentor": "Rajarshi Maitra",
+    "university": "Rajiv Gandhi University of Knowledge Technologies,Nuzvid",
+    "country": "India",
+    "project_links": [
+      "https://github.com/rajarshimaitra/bdk/pull/6",
+      "https://github.com/rajarshimaitra/bdk/pull/7"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Samay Kothari",
+    "organization": "Utreexo",
+    "description": "Implement downloading blocks from multiple peers in utreexod/btcd, Improve Payment Routing,  Mempool.space integration in BDK",
+    "mentor": "Calvin Kim",
+    "university": "International Institute of Information Technology, Hyderabad",
+    "country": "India",
+    "project_links": [
+      "https://github.com/utreexo/utreexod/pull/22",
+      "https://github.com/utreexo/utreexod/pull/25",
+      "https://github.com/utreexo/utreexod/pull/23",
+      "https://github.com/utreexo/utreexod/pull/24"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Sanjay Singh Rajpoot",
+    "organization": "RTL",
+    "description": "RTL-Quickpay Browser extension, Review and test bcoin PR#811 Replace-by-fee, add feature to wallet, WebLN Support, RTL-Quickpay Browser extension, Test Automation",
+    "mentor": "Shahana Farooqui",
+    "university": "Institute of Engineering & Technology, DAVV",
+    "country": "India",
+    "project_links": [
+      "https://github.com/Ride-The-Lightning/RTL-Quickpay/pull/19",
+      "https://github.com/Ride-The-Lightning/RTL-Quickpay/pull/20"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Santhosh Anguluri",
+    "organization": "Bitcoin Dev Kit",
+    "description": "Refactor BDK Integration tests",
+    "mentor": "Rajarshi Maitra",
+    "university": "MANIT Bhopal",
+    "country": "India",
+    "project_links": [
+      "https://github.com/rajarshimaitra/bdk/pull/6",
+      "https://github.com/rajarshimaitra/bdk/pull/7"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Saranya Satheesh",
+    "organization": "Alby",
+    "description": "Rethink Payment Transaction Lists | Design, A wallet that teaches bitcoin as you use them | Design , Bitcoin and Friends – Secure chat like interface for the interaction between wallets | Design",
+    "mentor": "Michael Bumann",
+    "university": "Indian Institute of Technology",
+    "country": "India",
+    "project_links": [
+      "https://docs.google.com/document/d/1nYfLvijOUj0iOYiB3WsR0VptN_0aUT4Vro1Upkp3Jyo/edit?usp=sharing",
+      "https://docs.google.com/spreadsheets/d/1wo6PsWdwaL6iqXCWA0QfLZ4DKmsfxGGv3qS2qQ1xzOE/edit?usp=sharing",
+      "https://www.figma.com/file/3yujDmUarYRd7Gdk9bkYhr/Transaction-list?node-id=114%3A574",
+      "https://docs.google.com/presentation/d/1BfUnqbCkFexDu-JyIaS5I4jZlk9HPlK9ftCm2AjGQiw/edit?usp=sharing",
+      "https://www.figma.com/file/HXIxAFG9OUCcr2EJMJ6JMm/1-Click-Pay?node-id=332%3A5031",
+      "https://www.loom.com/share/eb118e50ca7747348ab06f399d1c9ba4",
+      "https://www.figma.com/file/paCSm1Y7aUjylGUAn7dF4N/mockups?node-id=0%3A1"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Sebastian Alscher",
+    "organization": "Lightning Network",
+    "description": "Price of Anarchy in Selfish Routing on the Lightning Network",
+    "mentor": "Rene Pickhardt",
+    "university": "Ruhr-Universität Bochum",
+    "country": "Germany",
+    "project_links": [
+      "https://github.com/renepickhardt/pickhardtpayments/pull/24)",
+      "https://github.com/renepickhardt/pickhardtpayments/pull/18)",
+      "https://pickhardtpayments.readthedocs.io).",
+      "https://github.com/sebulino/pickhardtpayments/blob/simulation/examples/simulation_example.py",
+      "https://sebulino.com/what-can-we-learn-about-liquidity-from-send_onion)"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Shantanu Gaikwad",
+    "organization": "VLS",
+    "description": "Embedded Validating Lightning Signer Demo, UTXO Set Oracle",
+    "mentor": "Ken Sedgwic, Devrandom",
+    "university": "College of Engineering Pune",
+    "country": "India",
+    "project_links": [
+      "https://github.com/Srg213/ft6x06",
+      "https://crates.io/crates/ft6x06",
+      "https://github.com/ryankurte/stm32-base/issues/2",
+      "https://github.com/stm32-rs/stm32f4xx-hal/issues/509",
+      "https://gitlab.com/lightning-signer/validating-lightning-signer/-/merge_requests/256"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Shaswat Gupta Gupta",
+    "organization": "bcoin",
+    "description": "Use PGP keys to prove an address belongs to you , Use the hash of phone number to uniquely identify a wallet owner , Build advanced bitcoin features on Padawan Wallet, Implement compact block filter service and Neutrino client in bcoin, Access tokens for the REST API, Build advanced bitcoin features on Padawan Wallet",
+    "mentor": "Matthew Zipkin",
+    "university": "Indian Institute of Information Technology, Design and Manufacturing, Jabalpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bcoin-org/bcoin/pull/1068",
+      "https://github.com/bcoin-org/bcoin/pull/1067",
+      "https://github.com/bcoin-org/bcoin/pull/1062",
+      "https://github.com/bcoin-org/bcoin/pull/1057"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Shlok Pandey",
+    "organization": "Specter Desktop",
+    "description": "Access tokens for the REST API, Make payment transactions smart with structured metadata, Bring the Alby Browser Wallet to Mobile, Bring the Alby Browser Wallet to Mobile, Foundations of Open Source Development, Hexa Wallet – Split bill, split expenses, Bring the Alby Browser Wallet to Mobile, Hexa Wallet – Split bill, split expenses, Packaging new applications into CADR, Loans plugin, Loans plugin, Loans plugin, Access tokens for the REST API, Add a cool Specter plugin",
+    "mentor": "Kim, Manolis",
+    "university": "International Institute of Information Technology, Hyderabad",
+    "country": "India",
+    "project_links": [
+      "https://github.com/b30wulffz/specterext-loans",
+      "https://github.com/cryptoadvance/specter-desktop/pull/1683",
+      "https://github.com/cryptoadvance/specter-desktop/pull/1752",
+      "https://github.com/cryptoadvance/specter-desktop/pull/1758",
+      "https://github.com/cryptoadvance/specter-desktop/pull/1746",
+      "https://github.com/cryptoadvance/specter-desktop/issues/1759",
+      "https://github.com/cryptoadvance/specter-desktop/pull/1567",
+      "https://github.com/cryptoadvance/specter-desktop/pull/1776",
+      "https://github.com/cryptoadvance/specter-desktop/pull/1804"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Shreyansh Yadav",
+    "organization": "Bitcoin-S",
+    "description": "Bitcoin-s multipeer neutrino",
+    "mentor": "Chris Stewart",
+    "university": "IIT (BHU), Varanasi",
+    "country": "India",
+    "project_links": [
+      "https://github.com/shreyanshyad/android-build-test",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4356",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4368",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4408",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4412",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4441",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4456",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4463",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4468",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4509",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4522",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4558",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4585",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4646",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4654",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4667",
+      "https://github.com/bitcoin-s/bitcoin-s/pull/4674"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Sivaram Dhakshinamoorthy",
+    "organization": "libsecp256k1",
+    "description": "Batch Verification Interface in libsecp256k1",
+    "mentor": "Jonas Nick",
+    "university": "Indian Institute of Technology, Kharagpur",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bitcoin-core/secp256k1/pull/1134",
+      "https://github.com/bitcoin-core/secp256k1/pull/1114"
+    ],
+    "year": 2022
+  },
+
+  {
+    "name": "Songlin Jiang",
+    "organization": "Cryptoanarchy Debian",
+    "description": "Polishing CADR-guide, CI for CADR, Packaging new applications into CADR",
+    "mentor": "Kixunil (Martin Habovštiak)",
+    "university": "Lanzhou University",
+    "country": "China",
+    "project_links": [
+      "https://github.com/debian-cryptoanarchy/cryptoanarchy-deb-repo-builder/pull/198",
+      "https://github.com/Kixunil/debcrafter/pull/52",
+      "https://github.com/debian-cryptoanarchy/cryptoanarchy-deb-repo-builder/pull/200",
+      "https://github.com/debian-cryptoanarchy/cryptoanarchy-deb-repo-builder/pull/201",
+      "https://github.com/debian-cryptoanarchy/cryptoanarchy-deb-repo-builder/pull/203",
+      "https://github.com/debian-cryptoanarchy/cryptoanarchy-deb-repo-builder/pull/196",
+      "https://github.com/debian-cryptoanarchy/cryptoanarchy-deb-repo-builder/pull/197",
+      "https://github.com/debian-cryptoanarchy/cryptoanarchy-deb-repo-builder/issues/202",
+      "https://github.com/debian-cryptoanarchy/cryptoanarchy-deb-repo-builder/pull/204",
+      "https://github.com/debian-cryptoanarchy/cryptoanarchy-deb-repo-builder/pull/205",
+      "https://github.com/Kixunil/debcrafter/pull/53",
+      "https://github.com/debian-cryptoanarchy/cadr-guide/pull/14"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Swapnil Tripathi",
+    "organization": "Core Lightning",
+    "description": "Improve examples and documentation, Plugin Support for lndart.clightning",
+    "mentor": "Vincenzo Palazzo",
+    "university": "KIIT University, Bhubaneswar, Orissa, India",
+    "country": "India",
+    "project_links": [
+      "https://github.com/dart-lightning/lndart.cln/pulls?q=is%3Apr+is%3Aclosed+author%3Aswaptr",
+      "https://github.com/dart-lightning/kraken/pulls?q=is%3Apr+author%3Aswaptr+is%3Aclosed",
+      "https://github.com/dart-lightning/lndart.cln_plugin/pulls?q=is%3Apr+author%3Aswaptr+is%3Aclosed"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Utkarsh Shendge",
+    "organization": "Breez",
+    "description": "Breez Podcast Player Enhancements",
+    "mentor": "Roy Sheinfeld, Roei Erez",
+    "university": "Vishwakarma Institute of Technology",
+    "country": "India",
+    "project_links": [
+      "https://github.com/breez/breezmobile/pull/922",
+      "https://github.com/breez/breezmobile/pull/967",
+      "https://github.com/breez/breezmobile/pulls?q=is%3Apr+author%3Autkarshshendge+is%3Aclosed"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Vaibhav Dixit",
+    "organization": "Galoy",
+    "description": "Handle database migrations, Improving Coinselection in BDK, Refactor BDK Integration tests, Access tokens for the REST API, Review and test bcoin PR#811 Replace-by-fee, add feature to wallet, Proof of Reserves for Open Source Bitcoin Banking",
+    "mentor": "Sam Peters ",
+    "university": "IIITDM  Jabalpur ",
+    "country": "India",
+    "project_links": [
+      "https://github.com/thevaibhav-dixit/proof-of-liabilities",
+      "https://github.com/thevaibhav-dixit/galoy-plugin-proof-of-liabilities",
+      "https://github.com/GaloyMoney/galoy/pull/1464",
+      "https://github.com/GaloyMoney/web-wallet/pull/111",
+      "https://github.com/GaloyMoney/galoy-client/compare/main…thevaibhav-dixit:galoy-client:pol"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Vatsal Mehta",
+    "organization": "Hexawallet",
+    "description": "Use the hash of phone number to uniquely identify a wallet owner ",
+    "mentor": "Pawan Paliwal",
+    "university": "The LNM Institute of Information Technology",
+    "country": "India",
+    "project_links": [
+      "https://github.com/bithyve/hexa-pay/pull/30",
+      "https://github.com/bithyve/hexa-pay/pull/44",
+      "https://drive.google.com/file/d/1h3FcJdA08UJd-zdrN8YMMeVcw7JzL8MV/view?usp=sharing",
+      "https://github.com/bithyve/hexa/pull/5865",
+      "https://github.com/bithyve/hexa/pull/5872",
+      "https://github.com/bithyve/hexa/pull/5879",
+      "https://github.com/bithyve/hexa/pull/5884",
+      "https://github.com/bithyve/hexa/pull/5899",
+      "https://github.com/bithyve/hexa/pull/5905",
+      "https://github.com/bithyve/hexa/pull/5975"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Vibhav Sharma",
+    "organization": "LND",
+    "description": "Watchtower insights , Batch chain backend requests in lnd , Improve the LND wallet kit ",
+    "mentor": "Andras Banki-Horvath",
+    "university": "Bennett University",
+    "country": "India",
+    "project_links": [
+      "https://github.com/btcsuite/btcwallet/pull/807",
+      "https://github.com/lightningnetwork/lnd/pull/6811",
+      "https://github.com/Vib-UX/lnd/pull/1",
+      "https://github.com/Vib-UX/btcwallet/pull/1"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Vinayak Sharma",
+    "organization": "Esplora Block Explorer",
+    "description": "Exploring the Lightning Network",
+    "mentor": "Christian Decker",
+    "university": "Shri Mata Vaishno Devi University",
+    "country": "India",
+    "project_links": [
+      "https://github.com/Blockstream/esplora/pull/397",
+      "https://github.com/Blockstream/esplora/pull/398",
+      "https://github.com/Blockstream/esplora/pull/405",
+      "https://github.com/Blockstream/esplora/pull/407"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "Yetong Tang Tang",
+    "organization": "Padawan Wallet",
+    "description": "Build advanced bitcoin features on Padawan Wallet",
+    "mentor": "thunderbiscuit",
+    "university": "NUS",
+    "country": "Singapore",
+    "project_links": [
+      "https://github.com/thunderbiscuit/padawan-wallet",
+      "https://github.com/thunderbiscuit/devkit-wallet",
+      "https://github.com/bitcoindevkit/bdk-kotlin/pull/60"
+    ],
+    "year": 2022
+  },
+  {
+    "name": "yogendra sankhla Sankhla",
+    "organization": "Specter Desktop",
+    "description": "Access tokens for the REST API, Loans plugin, Warden Specter plugin",
+    "mentor": "K9ert and Manolis",
+    "university": "BITS-PILANI goa campus",
+    "country": "India",
+    "project_links": [
+      "https://github.com/yogendra-17/specterext-warden",
+      "https://github.com/cryptoadvance/specter-desktop/pull/1779#issuecomment-1170374596",
+      "https://github.com/cryptoadvance/specter-desktop/pull/1764",
+      "https://github.com/yogendra-17/specter-ext"
+    ],
+    "year": 2022
+  }
+]
