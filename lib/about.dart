@@ -1,12 +1,15 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
 class AboutScreen extends StatelessWidget {
+  const AboutScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('About App'),
+        title: const Text('About App'),
       ),
       body: Center(
         child: Padding(
@@ -16,41 +19,41 @@ class AboutScreen extends StatelessWidget {
             children: [
               // Image
               Image.asset(
-                'assets/girlscript_logo.png', 
+                'assets/girlscript_logo.png',
                 width: 300,
                 height: 300,
                 fit: BoxFit.contain,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Version
-              Text(
-                'Version 1.0.0', 
+              const Text(
+                'Version 1.0.0',
                 style: TextStyle(fontSize: 18),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               // App Description
-              Text(
+              const Text(
                 'OpSo',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               // GitHub Button
               ElevatedButton.icon(
                 onPressed: () {
                   _launchURL('https://github.com/andoriyaprashant/');
                 },
-                icon: Icon(Icons.code),
-                label: Text('GitHub'),
+                icon: const Icon(Icons.code),
+                label: const Text('GitHub'),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               // Liquid Galaxy Website Link
               ElevatedButton.icon(
                 onPressed: () {
                   _launchURL('https://gssoc.girlscript.tech/');
                 },
-                icon: Icon(Icons.link),
-                label: Text('Gssoc Website'),
+                icon: const Icon(Icons.link),
+                label: const Text('Gssoc Website'),
               ),
             ],
           ),
@@ -64,7 +67,9 @@ class AboutScreen extends StatelessWidget {
     if (await UrlLauncher.canLaunch(url)) {
       await UrlLauncher.launch(url);
     } else {
-      print('Could not launch $url');
+      if (kDebugMode) {
+        print('Could not launch $url');
+      }
     }
   }
 }

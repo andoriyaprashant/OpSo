@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-class mlhfellow extends StatelessWidget {
+class Mlhfellow extends StatelessWidget {
+  const Mlhfellow({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('lfx'),
+        title: const Text('lfx'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('lfx'),
       ),
     );

@@ -1,30 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
-import 'package:opso/programs%20screen/mlh.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
+import 'package:opso/programs%20screen/lfx.dart';
 
 import 'bar.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('OpSa'),
+        title: const Text('OpSo'),
         actions: [
           IconButton(
-            icon: Icon(Icons.search_sharp),
+            icon: const Icon(Icons.search_sharp),
             onPressed: () {
               showSearch(context: context, delegate: ProgramSearchDelegate());
             },
           ),
           IconButton(
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AppBarWidget()),
+                MaterialPageRoute(builder: (context) => const AppBarWidget()),
               );
             },
           ),
@@ -41,12 +43,12 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => GoogleSummerOfCodeScreen(),
+                    builder: (context) => const GoogleSummerOfCodeScreen(),
                   ),
                 );
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ProgramOption(
               title: 'Google Season of Docs',
               imageAssetPath: 'assets/Google_season_of_docs.png',
@@ -54,41 +56,41 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => GoogleSeasonOfDocsScreen(),
+                    builder: (context) => const GoogleSeasonOfDocsScreen(),
                   ),
                 );
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ProgramOption(
               title: 'Major League Hacking Fellowship',
               imageAssetPath: 'assets/mlh_logo.jpg',
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => mlhfellow()),
+                  MaterialPageRoute(builder: (context) => const Mlhfellow()),
                 );
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ProgramOption(
               title: 'Summer of Bitcoin',
               imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
               onTap: () {},
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ProgramOption(
               title: 'Linux Foundation',
               imageAssetPath: 'assets/linux_foundation_logo.png',
               onTap: () {},
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ProgramOption(
               title: 'Outreachy',
               imageAssetPath: 'assets/outreachy.png',
               onTap: () {},
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ProgramOption(
               title: 'GirlScript Summer of Code',
               imageAssetPath: 'assets/girlscript_logo.png',
@@ -96,7 +98,7 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => GSSOCScreen(),
+                    builder: (context) => const GSSOCScreen(),
                   ),
                 );
               },
@@ -113,7 +115,7 @@ class ProgramOption extends StatelessWidget {
   final String imageAssetPath;
   final VoidCallback onTap;
 
-  const ProgramOption({
+  const ProgramOption({super.key,
     required this.title,
     required this.imageAssetPath,
     required this.onTap,
@@ -124,9 +126,9 @@ class ProgramOption extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 237, 237, 239),
+          color: const Color.fromARGB(255, 237, 237, 239),
           borderRadius: BorderRadius.circular(15),
         ),
         child: Row(
@@ -136,17 +138,17 @@ class ProgramOption extends StatelessWidget {
               width: 50,
               height: 50,
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             Expanded(
               child: Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            Icon(Icons.arrow_forward),
+            const Icon(Icons.arrow_forward),
           ],
         ),
       ),
@@ -169,7 +171,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
   List<Widget> buildActions(BuildContext context) {
     return [
       IconButton(
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
         onPressed: () {
           query = '';
         },
@@ -180,7 +182,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
       onPressed: () {
         close(context, '');
       },
@@ -197,8 +199,8 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     final List<String> suggestionList = query.isEmpty
         ? []
         : orgTitles
-            .where((title) => title.toLowerCase().contains(query.toLowerCase()))
-            .toList();
+        .where((title) => title.toLowerCase().contains(query.toLowerCase()))
+        .toList();
 
     return ListView.builder(
       itemCount: suggestionList.length,
@@ -217,7 +219,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => GoogleSummerOfCodeScreen(),
+            builder: (context) => const GoogleSummerOfCodeScreen(),
           ),
         );
         break;
@@ -225,7 +227,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => GoogleSeasonOfDocsScreen(),
+            builder: (context) => const GoogleSeasonOfDocsScreen(),
           ),
         );
         break;
@@ -233,7 +235,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => mlhfellow(),
+            builder: (context) => const Mlhfellow(),
           ),
         );
         break;
@@ -241,7 +243,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => GSSOCScreen(),
+              builder: (context) => const GSSOCScreen(),
             ));
         break;
 
