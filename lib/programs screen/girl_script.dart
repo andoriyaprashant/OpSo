@@ -1,14 +1,13 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
+import 'package:multi_select_flutter/util/multi_select_item.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/gssoc_project_modal.dart';
 import 'package:opso/widgets/gssoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 import '../widgets/SearchandFilterWidget.dart';
-
-
-import 'package:multi_select_flutter/multi_select_flutter.dart';
 
 
 class GSSOCScreen extends StatefulWidget {
@@ -117,13 +116,15 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
 
 
   void filterProjects() {
-    // Filter projects by year first (if applicable)
+    // Filter projects by year first
     projectList = _getProjectsByYear();
 
 
     // Filter projects by selected languages
     if (!selectedLanguages.contains('All')) {
-      projectList = projectList.where((project) => project.techstack.any(selectedLanguages.contains)).toList();
+      projectList = projectList.where((project) =>
+          selectedLanguages.every((language) => project.techstack.contains(language))
+      ).toList();
     }
 
 
@@ -140,6 +141,10 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     // Ensure state is updated to reflect changes
     setState(() {});
   }
+
+
+
+
   void _updateOrganizationList() {
     allOrganizations = _extractUniqueValues((project) => project.hostedBy)
         .where((organization) => projectList.any((project) => project.hostedBy == organization))
@@ -230,24 +235,12 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                         onConfirm: (results) {
                           setState(() {
                             selectedLanguages = results.isNotEmpty ? results : ['All'];
+                            print(selectedLanguages);
                             filterProjects();
                           });
                         },
                       ),
                       const SizedBox(height: 20),
-                      _buildMultiSelectField(
-                        items: allOrganizations,
-                        selectedValues: selectedOrganizations,
-                        title: "Select Organizations",
-                        buttonText: "Filter by Name",
-                        onConfirm: (results) {
-                          setState(() {
-                            selectedOrganizations = results.isNotEmpty ? results : ['All'];
-                            print("Selected Organizations: $selectedOrganizations");
-                            filterProjects();
-                          });
-                        },
-                      ),
                       const SizedBox(height: 20),
                       _buildProjectList(height, width),
                     ],
@@ -410,7 +403,5 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
       ),
     );
   }
-
-
 }
 

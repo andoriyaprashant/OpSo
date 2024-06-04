@@ -10,6 +10,8 @@ import 'package:opso/widgets/gsod/gsod_project_widget_old.dart';
 import 'package:opso/widgets/year_button.dart';
 
 
+
+
 class GoogleSeasonOfDocsScreen extends StatefulWidget {
   @override
   State<GoogleSeasonOfDocsScreen> createState() =>
@@ -17,8 +19,10 @@ class GoogleSeasonOfDocsScreen extends StatefulWidget {
 }
 
 
+
+
 class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
-  List<String> selectedOrganizations = ['All'];
+  List<String> selectedOrganizations = [];
   List<String> selectedProposals = ['All'];
   String currentProgram = "Google Season of Docs";
   bool isBookmarked = true;
@@ -31,8 +35,13 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
   int selectedYear = 2023;
 
 
+
+
   List projectList = [];
+  List allProjectList =[];
   Future<void>? getProjectFunction;
+
+
 
 
   Future<void> initializeProjectLists() async {
@@ -43,6 +52,7 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
       gsod2023.add(GsodModalNew.fromMap(data));
     }
     projectList = List.from(gsod2023);
+    allProjectList = List.from(gsod2023);
 
 
     response =
@@ -53,6 +63,8 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     }
 
 
+
+
     response =
     await rootBundle.loadString('assets/projects/gsod/gsod2021.json');
     jsonList = await json.decode(response);
@@ -61,12 +73,16 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     }
 
 
+
+
     response =
     await rootBundle.loadString('assets/projects/gsod/gsod2020.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gsod2020.add(GsodModalOld.fromMap(data));
     }
+
+
 
 
     response =
@@ -78,6 +94,8 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
   }
 
 
+
+
   @override
   void initState() {
     getProjectFunction = initializeProjectLists();
@@ -86,12 +104,16 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
   }
 
 
+
+
   Future<void> _checkBookmarkStatus() async {
     bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProgram);
     setState(() {
       isBookmarked = bookmarkStatus;
     });
   }
+
+
 
 
   void search(String searchText) {
@@ -133,10 +155,14 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     }
 
 
+
+
     setState(() {
       _resetValueIfNotValid();
     });
   }
+
+
 
 
   Future<void> _refresh() async {
@@ -150,29 +176,39 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
   }
 
 
+
+
   void resetProjectsByLanguage() {
     switch (selectedYear) {
       case 2019:
         projectList = gsod2019;
+        allProjectList = gsod2019;
         break;
       case 2020:
         projectList = gsod2020;
+        allProjectList = gsod2020;
         break;
       case 2021:
         projectList = gsod2021;
+        allProjectList = gsod2021;
         break;
       case 2022:
         projectList = gsod2022;
+        allProjectList = gsod2022;
         break;
       case 2023:
         projectList = gsod2023;
+        allProjectList = gsod2023;
         break;
       case 2024:
         projectList = gsod2023;
+        allProjectList = gsod2023;
         break;
     }
     filterProjects();
   }
+
+
 
 
   void filterProjects() {
@@ -180,15 +216,17 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     print("!@# $selectedOrganizations");
 
 
+    // Filter by organizations
     if (!selectedOrganizations.contains('All')) {
       filteredProjects = filteredProjects.where((project) {
-        return selectedOrganizations.contains(project.organizationName);
+        return selectedOrganizations.every((org) => project.organizationName.contains(org));
       }).toList();
-    }else{
+    } else {
       filteredProjects = gsod2023;
     }
 
 
+    // Filter by proposals
     if (!selectedProposals.contains('All')) {
       filteredProjects = filteredProjects.where((project) {
         return selectedProposals.contains(project.acceptedProjectProposal);
@@ -196,33 +234,31 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     }
 
 
-
-
-
-
     setState(() {
       projectList = filteredProjects;
-      _resetValueIfNotValid();
+      /*_resetValueIfNotValid();*/
     });
   }
+
+
+
+
 
 
   void _resetValueIfNotValid() {
     // Reset selectedOrganizations if they are not valid
     var validOrganizations = projectList.map((project) => project.organizationName).toSet();
     selectedOrganizations = selectedOrganizations.where((org) => validOrganizations.contains(org) || org == 'All').toList();
-    if (selectedOrganizations.isEmpty) {
-      selectedOrganizations = ['All'];
-    }
+    /* if (selectedOrganizations.isEmpty) {
+     selectedOrganizations = ['All'];
+   }*/
 
 
-    // Reset selectedProposals if they are not valid
-    var validProposals = projectList.map((project) => project.acceptedProjectProposal).toSet();
-    selectedProposals = selectedProposals.where((proposal) => validProposals.contains(proposal) || proposal == 'All').toList();
-    if (selectedProposals.isEmpty) {
-      selectedProposals = ['All'];
-    }
+
+
   }
+
+
 
 
   @override
@@ -399,79 +435,30 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      MultiSelectDialogField(
-                        backgroundColor: isDarkMode ? Colors.grey.shade100 : Colors.white,
+                      _buildMultiSelectField(
                         items: [
-                          MultiSelectItem<String>('All', 'All'),
+                          'All',
                           ...projectList
                               .map((project) => project.organizationName)
-                              .toSet()
-                              .map((organization) {
-                            return MultiSelectItem<String>(organization, organization);
-                          }).toList(),
+                              .toSet(),
                         ],
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        title:  Text("Select Organizations", style: TextStyle(color: isDarkMode ? Colors.black : Colors.black)),
-                        buttonText: const Text("Filter by Organization"),
+                        selectedValues: selectedOrganizations,
+                        title: "Select Organizations",
+                        buttonText: "Filter by Organization",
                         onConfirm: (results) {
                           setState(() {
-                            print("results are $results");
-                            if (results.contains('All')) {
-                              selectedOrganizations = ['All'];
-                            } else {
-                              selectedOrganizations = results.isNotEmpty ? results : ['All'];
-                            }
-
-
+                            selectedOrganizations = results.isNotEmpty ? results : ['All'];
                             print("this is selected organization $selectedOrganizations");
                             filterProjects();
                           });
                         },
-                        initialValue: selectedOrganizations,
                       ),
 
 
                       const SizedBox(height: 20),
-                      MultiSelectDialogField(
-                        backgroundColor: isDarkMode ? Colors.grey.shade100 : Colors.white,
-                        items: [
-                          MultiSelectItem<String>('All', 'All'),
-                          ...projectList
-                              .map((project) => project.acceptedProjectProposal)
-                              .toSet()
-                              .map((proposal) {
-                            return MultiSelectItem<String>(proposal, proposal);
-                          }).toList(),
-                        ],
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        title:  Text("Select Proposals", style: TextStyle(color: isDarkMode ? Colors.black : Colors.black)),
-                        buttonText: const Text("Filter by Accepted Proposal"),
-                        onConfirm: (results) {
-                          setState(() {
-                            print("results are $results");
-                            if (results.contains('All')) {
-                              selectedProposals = ['All'];
-                            } else {
-                              selectedProposals = results.isNotEmpty ? results : ['All'];
-                            }
-
-
-                            print("this is selected proposal $selectedProposals");
-                            filterProjects();
-                          });
-                        },
-                        initialValue: selectedProposals,
-                      ),
-
-
                       const SizedBox(height: 20),
-                      ListView.builder(
+                      projectList.isNotEmpty
+                          ? ListView.builder(
                         shrinkWrap: true,
                         physics: NeverScrollableScrollPhysics(),
                         itemCount: projectList.length,
@@ -493,7 +480,25 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                             ),
                           );
                         },
+                      )
+                          : Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('No projects available.'),
+                            SizedBox(height: 20),
+                            ElevatedButton(
+                              onPressed: () {
+                                // Call the refresh function
+                                _refresh();
+                              },
+                              child: Text('Refresh'),
+                            ),
+                          ],
+                        ),
                       ),
+
+
                     ],
                   ),
                 ),
@@ -506,5 +511,33 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
       ),
     );
   }
+  Widget _buildMultiSelectField({
+    required List<String> items,
+    required List<String> selectedValues,
+    required String title,
+    required String buttonText,
+    required void Function(List<String>) onConfirm,
+  }) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    return MultiSelectDialogField(
+      backgroundColor: isDarkMode ? Colors.grey.shade100 : Colors.white,
+      items: items.map((e) => MultiSelectItem<String>(e, e)).toList(),
+      initialValue: selectedValues,
+      title: Text(
+        title,
+        style: TextStyle(color: isDarkMode ? Colors.black : Colors.black),
+      ),
+      buttonText: Text(buttonText),
+      onConfirm: onConfirm,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(10),
+      ),
+    );
+  }
+
+
 }
+
+
 

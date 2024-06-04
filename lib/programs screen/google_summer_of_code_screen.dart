@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:opso/widgets/gsoc/GsocProjectWidget.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
@@ -10,6 +9,8 @@ import '../widgets/SearchandFilterWidget.dart';
 import '../widgets/year_button.dart';
 
 
+
+
 class GoogleSummerOfCodeScreen extends StatefulWidget {
   @override
   State<GoogleSummerOfCodeScreen> createState() =>
@@ -17,7 +18,10 @@ class GoogleSummerOfCodeScreen extends StatefulWidget {
 }
 
 
+
+
 class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
+  bool _isRefreshing = false;
   String selectedOrg = ''; // Ensure this is defined
   List<Organization> gsoc2024 = [];
   List<Organization> gsoc2023 = [];
@@ -27,7 +31,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   List<String> languages = [
     'js',
     'python',
-    'React',
+    'django',
     'Angular',
     'Bootstrap',
     'Firebase',
@@ -37,7 +41,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     'Next',
     'css',
     'html',
-    'javaScript',
+    'javascript',
     'flutter',
     'Dart'
   ];
@@ -48,12 +52,16 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   late Future<void> _dataFetchFuture;
 
 
+
+
   @override
   void initState() {
     super.initState();
     _refresh();
     _dataFetchFuture = getProjectData();
   }
+
+
 
 
   Future<void> getProjectData() async {
@@ -63,6 +71,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       Gsoc orgData2022 = await apiService.getOrgByYear('2022');
       Gsoc orgData2023 = await apiService.getOrgByYear('2023');
       Gsoc orgData2024 = await apiService.getOrgByYear('2024');
+
+
 
 
       setState(() {
@@ -79,6 +89,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   }
 
 
+
+
   void filterProjects() {
     orgList = _getOrganizationsByYear(selectedYear);
     if(selectedLanguages.length>=2){
@@ -88,11 +100,14 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       selectedOrganizations.removeAt(0);
     }
     if (!selectedLanguages.contains('All')) {
-      orgList = orgList
-          .where((project) =>
-      project.technologies?.any(selectedLanguages.contains) == true)
-          .toList();
+      orgList = orgList.where((project) =>
+          selectedLanguages.every((language) => project.technologies?.contains(language) == true)
+      ).toList();
     }
+
+
+
+
 
 
     if (!selectedOrganizations.contains('All')) {
@@ -100,6 +115,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
           .where((project) => selectedOrganizations.contains(project.name))
           .toList();
     }
+
+
 
 
     // Update organization filter based on selected languages
@@ -113,8 +130,12 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     ];
 
 
+
+
     setState(() {});
   }
+
+
 
 
   List<Organization> _getOrganizationsByYear(int year) {
@@ -133,15 +154,23 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   }
 
 
+
+
   Future<void> _refresh() async {
+    setState(() {
+      _isRefreshing = true;
+    });
     await getProjectData();
     setState(() {
       selectedYear = 2024;
       selectedLanguages = ['All'];
       selectedOrganizations = ['All'];
       filterProjects();
+      _isRefreshing = false;
     });
   }
+
+
 
 
   // Add this method to the _GoogleSummerOfCodeScreenState class
@@ -163,10 +192,14 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   }
 
 
+
+
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
+
+
 
 
     return RefreshIndicator(
@@ -324,28 +357,30 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                         },
                       ),
                       const SizedBox(height: 20),
-                      _buildMultiSelectField(
-                        items: allOrganizations,
-                        selectedValues: selectedOrganizations,
-                        title: "Select Organizations",
-                        buttonText: "Filter by Organization",
-                        onConfirm: (results) {
-                          setState(() {
-                            selectedOrganizations =
-                            results.isNotEmpty ? results : [];
-                            print(selectedOrganizations);
-                            filterProjects();
-                          });
-                        },
-                      ),
-                      const SizedBox(height: 20),
                       orgList.isEmpty
+                          ? _isRefreshing
                           ? Column(
+                        children: const [
+                          Center(
+                              child: Column(
+                                children: [
+                                  CircularProgressIndicator(),
+                                  SizedBox(height: 10),
+                                  Text('Refreshing...'),
+                                ],
+                              )
+                          ),
+                          SizedBox(height: 20),
+                        ],
+                      )
+                          : Column(
                         children: [
                           const Center(child: Text('No projects found')),
                           const SizedBox(height: 20),
                           TextButton(
-                            onPressed: _refresh,
+                            onPressed: () {
+                              _refresh();
+                            },
                             child: const Text('Refresh'),
                           ),
                         ],
@@ -381,6 +416,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                           },
                         ),
                       ),
+
+
                     ],
                   ),
                 ),
@@ -391,6 +428,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       ),
     );
   }
+
+
 
 
   Widget _buildMultiSelectField({
@@ -418,9 +457,13 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
 }
 
 
+
+
 void main() {
   runApp(MaterialApp(
     home: GoogleSummerOfCodeScreen(),
   ));
 }
+
+
 
