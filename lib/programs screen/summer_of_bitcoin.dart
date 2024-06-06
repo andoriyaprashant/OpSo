@@ -124,8 +124,8 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
 
   @override
   Widget build(BuildContext context) {
-    // var height = MediaQuery.sizeOf(context).height;
-    // var width = MediaQuery.sizeOf(context).width;
+    var height = MediaQuery.sizeOf(context).height;
+    var width = MediaQuery.sizeOf(context).width;
     ScreenUtilInit(
       designSize: Size(360, 690),
     );
@@ -216,8 +216,8 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                       ),
                       SizedBox(height: ScreenUtil().setHeight(20)),
                       SizedBox(
-                        height: ScreenUtil().setHeight(50),
-                        width: ScreenUtil().setWidth(360),
+                        height: height * 0.2,
+                        width: width,
                         child: GridView(
                           physics: const NeverScrollableScrollPhysics(),
                           gridDelegate:
@@ -269,9 +269,6 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                             ),
                           ],
                         ),
-                      ),
-                      SizedBox(
-                        height: ScreenUtil().setHeight(20),
                       ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
