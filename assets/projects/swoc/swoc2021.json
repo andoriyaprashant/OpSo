@@ -12,7 +12,8 @@
             "NodeJS",
             "bootstrap5",
             "ExpressJS"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Doc2Pen",
@@ -26,7 +27,8 @@
             "CSS",
             "Javascript",
             "React"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Face Mask Detection",
@@ -39,7 +41,8 @@
             "Python",
             "Deep Learning",
             "Computer Vision"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "ArtCV",
@@ -55,7 +58,8 @@
             "StreamLit",
             "Image Processing",
             "Computer Vision"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "img_ai_app boilerplate",
@@ -71,7 +75,8 @@
             "CSS",
             "TensorFlow",
             "TensorFlow.JS"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "FantomsAR-shopping-app",
@@ -80,7 +85,8 @@
         "github": "https://github.com/som23ya",
         "linkedin": "https://www.linkedin.com/in/somya-upadhyay-5b2028166/",
         "Description": "Our intention is to give shoppers of our storefront the option of AR features with an android application. A complete virtual store that gives users the chance to experience the masks, clothing, and other commodities in AR. As of this year, Google has recently announced many more ARCore features to be made available over the web(which is currently pending public release) and Android. Having implemented ARkit and Arcore, we felt it’s time to get the word out there on the true capabilities of these features.",
-        "TechStack": []
+        "TechStack": [],
+        "Year": "2021"
     },
     {
         "Name": "Lane Detection using OpenCV",
@@ -92,7 +98,8 @@
         "TechStack": [
             "Python",
             "OpenCV"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Face-X",
@@ -106,7 +113,8 @@
             "OpenCV",
             "CNN",
             "ANN"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "QP-Generator",
@@ -118,7 +126,8 @@
         "TechStack": [
             "React",
             "Flask"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "PyDataStructs",
@@ -130,7 +139,8 @@
         "TechStack": [
             "Python",
             "Git"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Water Monitoring System",
@@ -142,7 +152,8 @@
         "TechStack": [
             "React",
             "Node.js"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Port Scanner",
@@ -154,7 +165,8 @@
         "TechStack": [
             "Python",
             "Flask"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "eduAlgo",
@@ -166,7 +178,8 @@
         "TechStack": [
             "Python",
             "Algorithms"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Dolos",
@@ -179,7 +192,8 @@
             "Javascript",
             "MySQL Database",
             "Data Mocking"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Algorithmic Treasure",
@@ -195,7 +209,8 @@
             "Algorithms",
             "Python",
             "C++"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "AapKaVaidya",
@@ -207,7 +222,8 @@
         "TechStack": [
             "Flutter",
             "Firebase"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Canvasboard",
@@ -223,7 +239,8 @@
             "React",
             "Express",
             "NodeJS"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Amazing-Python-Scripts",
@@ -239,7 +256,8 @@
             "Javascript",
             "Flask",
             "Markdown"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Scrum-Management",
@@ -254,7 +272,8 @@
             "Javascript",
             "MongoDB",
             "Nodejs"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Snippet Share",
@@ -269,7 +288,8 @@
             "CSS",
             "Javascript",
             "Bulma CSS"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Friday",
@@ -286,7 +306,8 @@
             "Javascript",
             "UI/UX",
             "Firebase"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "sim-C",
@@ -299,7 +320,8 @@
             "C",
             "Python",
             "Compiler Design"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Spotify Recommendation Engine",
@@ -312,7 +334,8 @@
             "Python",
             "ML",
             "Fluttter"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Community-website",
@@ -323,7 +346,8 @@
         "Description": "Being from tier-2 and tier-3 colleges, you often face the problem of knowledge gap in our college days. But once you begin walking in the path of tech, you discover a place where people are just like you. 😇✨ We are a group of HITK students trying to fill the knowledge gap and help you find your place of discovery by sharing you the opportunities and resources at the right time!⏱️ This project aims to build the official site for the community page so that any student can use the resources shared by us.",
         "TechStack": [
             "Monstack"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Rotten Scripts",
@@ -337,7 +361,8 @@
             "Javascript",
             "BASH",
             "Golang"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Rajappan",
@@ -346,7 +371,8 @@
         "github": "https://github.com/kaiiyer",
         "linkedin": "https://www.linkedin.com/in/anoop-krishnan47/",
         "Description": "The All in one Security project for Digital Privacy. A step towards a better & secure Internet",
-        "TechStack": []
+        "TechStack": [],
+        "Year": "2021"
     },
     {
         "Name": "Github Spy",
@@ -359,7 +385,8 @@
             "Javascript",
             "MySQL Database",
             "Data Mocking"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Friday",
@@ -371,7 +398,8 @@
         "TechStack": [
             "Flutter",
             "Firebase"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Breast Cancer Predictor",
@@ -384,7 +412,8 @@
             "Python",
             "ML",
             "flask"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "HackStation",
@@ -401,7 +430,8 @@
             "MongoDB",
             "GraphQL",
             "Nodejs"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "ChessJS",
@@ -415,7 +445,8 @@
             "Vanilla JS",
             "Web Dev",
             "GOFAI"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Realate",
@@ -433,7 +464,8 @@
             "Computer Vision",
             "OpenCV",
             "GANs"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "ModernBanking-Management-System",
@@ -444,7 +476,8 @@
         "Description": "This is a modern banking project that has the facility to provide all services on a single platform such as internet banking, wealth management, loan facility, and get information about money transfer updates.",
         "TechStack": [
             "Kotlin"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "CityonBikes",
@@ -459,7 +492,8 @@
             "Javascript",
             "python",
             "django"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "StarBook",
@@ -468,7 +502,8 @@
         "github": "https://github.com/hashirshoaeb",
         "linkedin": "https://www.linkedin.com/in/hashirshoaeb/",
         "Description": "“StarBook” is a digital diary, and a mood tracking app. The user will be able to rate his mood for each day and write a short story for him, like how his day was. Color is given to each mood, let’s say, green for a happy mood, red for angry and yellow for a sad mood. The statistics of users will be visualized in a methodical structure. For this the app will form a graph, calendar, each date box is colored with the color of users aura lets say green for positive spirits. StarBook will cooperate with users to boost their positive energy and train healthy thinking, correspondingly moving towards calmer and patient personality. StarBook will use positive psychology and cognitive behavioral therapy for you to better understand yourself, overcoming stress, anxiety, and depressions. The app is all in all focused to give personalized experience to every individual user, increasing their productivity, objectivity, and emotional health.",
-        "TechStack": []
+        "TechStack": [],
+        "Year": "2021"
     },
     {
         "Name": "Sampark",
@@ -479,7 +514,8 @@
         "Description": "This is a free and open source team chat collaboration platform that allows user to communicate securely in Realtime ,Share File, Location and code snippet as well as create private rooms.",
         "TechStack": [
             "MERN"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Review My Project",
@@ -497,7 +533,8 @@
             "MySql Database",
             "React",
             "NODE JS"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "PortfolioFy",
@@ -513,7 +550,8 @@
             "Javascript",
             "GitHub Actions",
             "API"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Hacking-Scripts",
@@ -527,7 +565,8 @@
             "Javascript",
             "Nodejs",
             "Java"
-        ]
+        ],
+        "Year": "2021"
     },
     {
         "Name": "Netra",
@@ -541,6 +580,7 @@
             "OpenCV",
             "Google vision API",
             "MaterialUI"
-        ]
+        ],
+        "Year": "2021"
     }
 ]

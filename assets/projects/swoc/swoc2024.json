@@ -6,7 +6,7 @@
         "github": "https://github.com/abhisheks008",
         "linkedin": "https://www.linkedin.com/in/abhishek-sharma-aa06a9183/",
         "Description": "Deep Learning Simplified is an Open-source repository, containing beginner to advance level deep learning projects for the contributors, who are willing to start their journey in Deep Learning.",
-        "TeckStack": [
+        "TechStack": [
             "Deep Learning",
             "Machine Learning",
             "Artificial Intelligence",
@@ -17,7 +17,8 @@
             "NLP",
             "Image Processing",
             "Computer Vision"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Resonate",
@@ -26,12 +27,13 @@
         "github": "https://github.com/chandansgowda",
         "linkedin": "https://www.linkedin.com/in/chandan-s-gowda-4b2913183/",
         "Description": "With the rising popularity of social voice platforms such as Clubhouse and Twitter Spaces, it is high time for an Open Source alternative. A platform like this would not only enhance credibility within the open-source community but also attract more users and foster growth. An engagement platform that is Open Source has the potential to drive significant traction and help establish a strong presence.",
-        "TeckStack": [
+        "TechStack": [
             "flutter",
             "nodejs",
             "appwrite",
             "livekit"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "EuphoriaCheck",
@@ -40,12 +42,13 @@
         "github": "https://github.com/Aryainguz",
         "linkedin": "https://www.linkedin.com/in/aryan-inguz-b73150254/",
         "Description": "A powerful tool to help you assess and improve your well-being! This web application, built using Express and Node.js, measures your happiness and life satisfaction based on the PERMA model of well-being by psychologist Dr Martin Seligman. With personalized insights, users gain a comprehensive breakdown of their PERMA scores, identifying areas for personal growth and well-being enhancement.",
-        "TeckStack": [
+        "TechStack": [
             "nodejs",
             "expressjs",
             "ejs",
             "rest APIs (javascript)"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Minglr - Social Networking Website",
@@ -54,14 +57,15 @@
         "github": "https://github.com/Mayuresh-22",
         "linkedin": "https://www.linkedin.com/in/mayureshchoudhary",
         "Description": "Minglr is a secure and feature-rich social networking site that enables users to connect, interact, and share content with others. Built with PHP for the backend and HTML5, CSS, and JavaScript for the front end, Minglr provides a seamless and enjoyable user experience. Contributions to Minglr are welcome!",
-        "TeckStack": [
+        "TechStack": [
             "PHP",
             "HTML5",
             "CSS",
             "javascript",
             "MySql",
             "DiceBear HTTP API"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Demon Connect",
@@ -70,10 +74,11 @@
         "github": "https://github.com/anupammaurya6767",
         "linkedin": "https://www.linkedin.com/in/anupam-maurya-b9a04a225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         "Description": "Welcome to Demon Connect - WhatsApp API, your powerful tool for unleashing the potential of WhatsApp in your applications. This API allows you to integrate WhatsApp messaging into your projects with ease.",
-        "TeckStack": [
+        "TechStack": [
             "python",
             "selenium"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "digitomize",
@@ -82,7 +87,7 @@
         "github": "https://github.com/pranshugupta54",
         "linkedin": "https://www.linkedin.com/in/pranshu54/",
         "Description": "Platform for exploring coding contests and creating dynamic portfolios that showcase their coding skills and achievements.",
-        "TeckStack": [
+        "TechStack": [
             "reactjs",
             "vite",
             "tailwind",
@@ -91,7 +96,8 @@
             "npm",
             "mongoDB",
             "firebase"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Virtuo Learn",
@@ -100,13 +106,14 @@
         "github": "https://github.com/JAYESHBATRA",
         "linkedin": "https://www.linkedin.com/in/jayesh-batra-in/",
         "Description": "Virtuo Learn is a platform that provides immersive learning experiences like never before. It offers simulations, 3D visualizations, customized quizzes, doubt engine, and videos, all in one place.",
-        "TeckStack": [
+        "TechStack": [
             "html",
             "css",
             "javascript",
             "matterjs",
             "threejs"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "stabo",
@@ -115,14 +122,15 @@
         "github": "https://github.com/ratuladhikary21",
         "linkedin": "https://www.linkedin.com/in/ratul-adhikary-829716240/",
         "Description": "Ai Image Generator App",
-        "TeckStack": [
+        "TechStack": [
             "java",
             "typescript",
             "objective-c",
             "ruby",
             "javascript",
             "objective-c++"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "MindSpace",
@@ -131,11 +139,12 @@
         "github": "https://github.com/TeeWrath",
         "linkedin": "https://www.linkedin.com/in/subroto-banerjee-70983b214/",
         "Description": "MindSpace is a web app that aims to improve access to mental health resources and support, particularly for those who may not have the means or ability to attend in-person appointments. The app includes functionality for mental health resources such as support groups, therapy options, and crisis hotlines.",
-        "TeckStack": [
+        "TechStack": [
             "html",
             "css",
             "javascript"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "GenAI-Projects",
@@ -144,7 +153,7 @@
         "github": "https://github.com/yagyesh-bobde",
         "linkedin": "https://www.linkedin.com/in/bobde-yagyesh/",
         "Description": "A wide curration of open-source projects and applications in the emerging field of generative AI. It will also be a curation of resources to start learning about generative AI.",
-        "TeckStack": [
+        "TechStack": [
             "html",
             "javascript",
             "python",
@@ -154,7 +163,8 @@
             "reactjs",
             "nodejs",
             "APIs"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "GPT-3.5-ON-STEROIDS",
@@ -163,12 +173,13 @@
         "github": "https://github.com/programmingninjas",
         "linkedin": "https://www.linkedin.com/in/ayankhan3105/",
         "Description": "GPT-3.5-ON-STEROIDS combines GPT with Python tools, empowering dynamic web scraping, language processing, and data retrieval. Contribute to advancing text generation with AI. 🚀",
-        "TeckStack": [
+        "TechStack": [
             "openAI",
             "python",
             "bs4",
             "streamlit"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "MealMatters",
@@ -177,14 +188,15 @@
         "github": "https://github.com/AnupK1234",
         "linkedin": "https://www.linkedin.com/in/anup-khismatrao-729520221/",
         "Description": "MealMatters is a webapp designed to overcome student food insecurity by connecting students with nearby restaurants that provide free meals. The webapp facilitates student registration, enabling them to view a list of nearby restaurants offering free meals and request coupons from the organization. Donors can also register for an account and make donations to the organization, which utilizes these funds to reimburse restaurants for meals provided to students. MealMatters aims to increase student access to free meals, alleviate the financial burden of food insecurity, raise awareness of the issue, and encourage support for student food insecurity initiatives.",
-        "TeckStack": [
+        "TechStack": [
             "reactjs",
             "nodejs",
             "expressjs",
             "mongoDB",
             "tailwindCSS",
             "javascript"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Brighter-Beginnings ",
@@ -193,12 +205,13 @@
         "github": "https://github.com/dakshsinghrathore",
         "linkedin": "https://www.linkedin.com/in/daksh-singh-rathore-%F0%9F%87%AE%F0%9F%87%B3-84aa981aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         "Description": "Discover coding for beginners in our GitHub repo! Enjoy a free three-module course, an interactive learning experience, and a supportive community. Your journey to a brighter future starts now! Join us!",
-        "TeckStack": [
+        "TechStack": [
             "html",
             "tailwindCSS",
             "javascript",
             "firebase"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "School Management System EMS",
@@ -207,12 +220,13 @@
         "github": "http://github.com/ihrex",
         "linkedin": "http://linkedin.com/in/ihrex",
         "Description": "A one stop, free and open sourced solution for educational institutions. School or College Management System (ERP) wordpress based plugin. Supports features such as- Admission, Fee Management, ID Card Generator, mPDF, Attendance etc.",
-        "TeckStack": [
+        "TechStack": [
             "PHP",
             "javascript",
             "CSS",
             "wordpress"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Python gamez arena",
@@ -221,9 +235,10 @@
         "github": "https://github.com/pinak22dhir",
         "linkedin": "https://www.linkedin.com/in/pinak-dhir-b03621265",
         "Description": "Python game",
-        "TeckStack": [
+        "TechStack": [
             "python"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "COMPLETE-Fullstack-ecommerce-Responsive-MERN-App ",
@@ -232,12 +247,13 @@
         "github": "https://github.com/Souvikparua",
         "linkedin": "https://www.linkedin.com/in/souvik-parua-bb031a230/",
         "Description": "A COMPLETE Fullstack ecommerce Responsive MERN App using React, Redux, Nodejs, and MongoDB. A working ecommerce site from scratch, using React, Redux, Nodejs, and MongoDB.",
-        "TeckStack": [
+        "TechStack": [
             "reactjs",
             "redux",
             "nodejs",
             "mongoDB"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Palettegram",
@@ -246,12 +262,13 @@
         "github": "https://github.com/Sanchitbajaj02",
         "linkedin": "https://www.linkedin.com/in/sanchitbajaj02",
         "Description": "Palettegram is a social media application dedicated to professionals like graphic designers, UI/UX designers, Developers, etc. to leverage UI designs, design ideas, UX approaches and color palettes.",
-        "TeckStack": [
+        "TechStack": [
             "typescript",
             "nextjs",
             "tailwindCSS",
             "appwrite"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "SQL Dev Tools",
@@ -260,12 +277,13 @@
         "github": "https://github.com/PranabKumarSahoo",
         "linkedin": "https://www.linkedin.com/in/pranabks/",
         "Description": "So basically, this is a tools for SQL Developers, a React-based application empowering SQL developers with versatile functionalities and make their daily tasks easy.",
-        "TeckStack": [
+        "TechStack": [
             "reactjs",
             "javascript",
             "css",
             "firebase"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Click-The-Edible-Game",
@@ -274,12 +292,13 @@
         "github": "https://github.com/Rakesh9100",
         "linkedin": "https://www.linkedin.com/in/rakesh-roshan-9100/",
         "Description": "A well-designed interesting game made using HTML, CSS, and JS where you can play with your favourite edible and click it to get the most scores.",
-        "TeckStack": [
+        "TechStack": [
             "html",
             "css",
             "javascript",
             "jQuery"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Beautiify",
@@ -288,12 +307,13 @@
         "github": "https://github.com/Rakesh9100",
         "linkedin": "https://www.linkedin.com/in/rakesh-roshan-9100/",
         "Description": "Beautiify comprises a curated selection of beautifully designed components and animations that can be seamlessly incorporated into any website, elevating its overall UI experience.",
-        "TeckStack": [
+        "TechStack": [
             "html",
             "css",
             "javascript",
             "jQuery"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "CalcDiverse",
@@ -302,12 +322,13 @@
         "github": "https://github.com/Rakesh9100",
         "linkedin": "https://www.linkedin.com/in/rakesh-roshan-9100/",
         "Description": "CalcDiverse is a customized collection of calculators for various aspects of mathematics. Individuals with basic web development knowledge can create distinctive calculators and submit pull requests.",
-        "TeckStack": [
+        "TechStack": [
             "html",
             "css",
             "javascript",
             "jQuery"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "FlavorFleet",
@@ -316,12 +337,13 @@
         "github": "https://github.com/sagnik3788/",
         "linkedin": "https://www.linkedin.com/in/sagnik-das-b550ab224/",
         "Description": "Initiated and contributed to the development of FlavorFleet, an open-source food website built with Node.js, and MongoDB. Designed and implemented features showcasing international foods, leveraging the skills of various cooks within the community. Implemented a user-friendly cart facility for users to easily select and order their favorite dishes.",
-        "TeckStack": [
+        "TechStack": [
             "html",
             "css",
             "javascript",
             "nodejs"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Flutter Event App",
@@ -330,10 +352,11 @@
         "github": "https://www.github.com/LegendSumeet",
         "linkedin": "https://www.linkedin.com/in/sumeetvishwakarma/",
         "Description": "An open-source Flutter-based Event Planning App to simplify the process of organizing and managing various types of events.",
-        "TeckStack": [
+        "TechStack": [
             "flutter",
             "firebase"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "GameSphere3.0",
@@ -342,7 +365,7 @@
         "github": "https://github.com/Aman1-coder",
         "linkedin": "https://www.linkedin.com/in/aman-singh-026141222/",
         "Description": "Our website's goal is to create a website where two or more friends can gather and play games online (such as multiplayer) without having to download any software or tools to their computers or mobile devices.",
-        "TeckStack": [
+        "TechStack": [
             "html",
             "css",
             "javascript",
@@ -351,7 +374,8 @@
             "PHP",
             "laravel",
             "MySQl"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "GeetaGPT",
@@ -360,13 +384,14 @@
         "github": "https://github.com/subh05sus",
         "linkedin": "https://www.linkedin.com/in/subhadipsahaofficial",
         "Description": "GeetaGPT is a chatbot built with Flask that embodies the persona of Lord Krishna, possessing extensive knowledge from Shrimadvagwat Geeta. The bot is powered by the OpenAI GPT-3.5 model, capable of answering life problems, providing advice, and offering motivation.",
-        "TeckStack": [
+        "TechStack": [
             "python",
             "flask",
             "html",
             "css",
             "javascript"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "BlockRush Game",
@@ -375,11 +400,12 @@
         "github": "https://github.com/subh05sus/",
         "linkedin": "https://www.linkedin.com/in/subhadipsahaofficial",
         "Description": "Block Rush is an exciting endless game where players control a nimble block, dodging obstacles and dashing through an ever-changing course. This repository contains the source code for the game, providing an open-source platform for collaboration, improvement, and community contribution.",
-        "TeckStack": [
+        "TechStack": [
             "unity",
             "blender",
             "C#"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Python Voice Assistant",
@@ -388,9 +414,10 @@
         "github": "https://github.com/subh05sus/",
         "linkedin": "https://linkedin.com/subhadipsahaofficial",
         "Description": "A Python-based voice assistant that can greet you and perform a variety of tasks, including searching the web, opening social media, and creating a to-do list and much more to play with the amazing features.",
-        "TeckStack": [
+        "TechStack": [
             "python"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Thala For Reason",
@@ -399,14 +426,15 @@
         "github": "https://github.com/subh05sus/",
         "linkedin": "https://linkedin.com/subhadipsahaofficial",
         "Description": "Thala For Reason is a fun project inspired by the legendary MS Dhoni, also known as Thala. The project allows users to check if they are Thala in a humorous way, following the famous meme trend.",
-        "TeckStack": [
+        "TechStack": [
             "nodejs",
             "expressjs",
             "html",
             "css",
             "javascript",
             "gemini pro"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "ecosim-client",
@@ -415,12 +443,13 @@
         "github": "https://github.com/fliptrail",
         "linkedin": "https://www.linkedin.com/in/amishmittal/",
         "Description": "Client app for AI Economy Simulator. Using AI program synthesis to predict macroeconomic factors in the form of a video game.",
-        "TeckStack": [
+        "TechStack": [
             "nextjs",
             "reactjs",
             "fluent UI",
             "colyseus"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "ecosim-server",
@@ -429,11 +458,12 @@
         "github": "https://github.com/fliptrail",
         "linkedin": "https://www.linkedin.com/in/amishmittal/",
         "Description": "Game Server for AI Economy Simulator. Using AI program synthesis to predict macroeconomic factors in the form of a video game.",
-        "TeckStack": [
+        "TechStack": [
             "javascript",
             "colyseus",
             "mongoDB"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "ecosim-ai",
@@ -442,12 +472,13 @@
         "github": "https://github.com/fliptrail",
         "linkedin": "https://www.linkedin.com/in/amishmittal/",
         "Description": "AI Engine for AI Economy Simulator. Using AI program synthesis to predict macroeconomic factors in the form of a video game.",
-        "TeckStack": [
+        "TechStack": [
             "openAI",
             "GPT-4",
             "fastAPI",
             "economics"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Brewtopia",
@@ -456,13 +487,14 @@
         "github": "https://github.com/Varinder-Dhillon0",
         "linkedin": "https://www.linkedin.com/in/varinder-dhillon-5b8420263/",
         "Description": "Brewtopia, a MERN stack-powered cafe management platform. Seamlessly add coffee and tea blends to your cart, with secure checkout and swift delivery. Join a tech-savvy community, leverage personalized recommendations, and elevate your cafe experience with our cutting-edge MERN architecture. Explore, code, and brew with Brewtopia!",
-        "TeckStack": [
+        "TechStack": [
             "reactjs",
             "mongoDB",
             "nodejs",
             "expressjs",
             "razorpay"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "IGNYTE WEBSITE",
@@ -471,11 +503,12 @@
         "github": "https://github.com/charu1603",
         "linkedin": "https://www.linkedin.com/in/chaitralikakde",
         "Description": "We're a tight-knit community of developers, coders, and designers who are here to learn and teach, with a mission to spread the fire of knowledge and empower each other without any bounds!Get ready to join forces with other like-minded individuals in a fun, supportive environment! Let's set the tech world ablaze together!",
-        "TeckStack": [
+        "TechStack": [
             "reactjs",
             "tailwindCSS",
             "GSAP"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Vprofile",
@@ -484,7 +517,7 @@
         "github": "https://github.com/Bhuvan028",
         "linkedin": "https://www.linkedin.com/in/bhuvanesh-p-147251211/",
         "Description": "VProfile is a sophisticated full stack web application designed to streamline and enhance the process of managing user profiles. This project leverages various Amazon Web Services (AWS) components to ensure scalability, security, and reliability. VProfile incorporates AWS RDS, EC2, security groups, Elastic Beanstalk, Elastic Cache, and Amazon MQ to deliver a seamless user experience while adhering to industry best practices for web application development",
-        "TeckStack": [
+        "TechStack": [
             "linux",
             "git",
             "github",
@@ -494,7 +527,8 @@
             "elastic beanstalk",
             "elastic cache",
             "Amazon MQ"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "RECB-Outii-Streamlining-Student-Tracking-with-QR-Technology",
@@ -503,11 +537,12 @@
         "github": "https://github.com/arpitvermaofficial/",
         "linkedin": "https://www.linkedin.com/in/arpit-verma1/",
         "Description": "Addressed record-keeping challenges by creating RECB_OUTII. Utilized QR codes to efficiently track student movements, capturing destination, timestamp, and crucial details. Implemented real-time SMS and Gmail alerts to notify wardens and parents instantly",
-        "TeckStack": [
+        "TechStack": [
             "flutter",
             "firebase",
             "dart"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "GitAlert",
@@ -516,7 +551,7 @@
         "github": "https://github.com/arpitvermaofficial/",
         "linkedin": "https://www.linkedin.com/in/gargrhythm",
         "Description": "This app allows a user to subscribe to a github repo and then get emails whenever a new issue is raised in that repo under the label good first issue.",
-        "TeckStack": [
+        "TechStack": [
             "nodejs",
             "reactjs",
             "javascript",
@@ -524,7 +559,8 @@
             "expressjs",
             "AWS EB",
             "resendAPI"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Community-Website",
@@ -533,12 +569,13 @@
         "github": "https://github.com/Kajol-Kumari",
         "linkedin": "https://www.linkedin.com/in/kajol-kumari-73245b166/",
         "Description": "We are a group of HITK students trying to fill the knowledge gap and help you find your place of discovery by sharing you the opportunities and resources at the right time!",
-        "TeckStack": [
+        "TechStack": [
             "reactjs",
             "nodejs",
             "mongoDB",
             "expressjs"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Sigma Events",
@@ -547,13 +584,14 @@
         "github": "https://github.com/abhideepkumar",
         "linkedin": "https://www.linkedin.com/in/abhideepkumar/",
         "Description": "Sigma Events is a website that connects students and clubs for convenient event planning and participation. Instead of dealing with inconsistent event information in WhatsApp groups and repeating the same details for each event in Google Forms, this platform simplifies the process. ",
-        "TeckStack": [
+        "TechStack": [
             "nextjs",
             "html",
             "css",
             "tailwindCSS",
             "mongoDB"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "AR-Webstore",
@@ -562,13 +600,14 @@
         "github": "https://github.com/ShwetKhatri2001",
         "linkedin": "https://www.linkedin.com/in/shwet-khatri-4ab216196/",
         "Description": "AR-Webstore is an e-commerce platform where a list of 3D products can be visualized in your own environment ( AR ) and can be ordered smoothly. ",
-        "TeckStack": [
+        "TechStack": [
             "reactjs",
             "javascript",
             "html",
             "css",
             "google's 3D model viewer"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Swetify-Music",
@@ -577,12 +616,13 @@
         "github": "https://github.com/ShwetKhatri2001",
         "linkedin": "https://www.linkedin.com/in/shwet-khatri-4ab216196/",
         "Description": "Swetify-music is a web application to find and play your favourite music.It's is the golden opportunity to take the first step towards mastering web technologies and contributing to a real-world project via open-source! We have developed simply using HTML, CSS, and JavaScript which serve as the foundation for web development and provide an accessible entry point for newcomers to start their journey.",
-        "TeckStack": [
+        "TechStack": [
             "html",
             "css",
             "javascript",
             "jQuery"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "FirstSpot",
@@ -591,12 +631,13 @@
         "github": "https://github.com/jaysomani",
         "linkedin": "https://www.linkedin.com/in/jayesh-somani/",
         "Description": "Our website named, First spot is designed for the same, tourists can now explore new destinations where a guide will always be there to help you explore new paths and you can create your own paths as well. Planning a multi-city trip that not only helps you relax but also stirs in an extra element of excitement since you get to explore new destinations on the go.",
-        "TeckStack": [
+        "TechStack": [
             "html",
             "css",
             "javascript",
             "firebase"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Project Studio ",
@@ -605,11 +646,12 @@
         "github": "https://github.com/BasirKhan418",
         "linkedin": "https://www.linkedin.com/in/basir-khan-5aa62b258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         "Description": "Project Studio: The ultimate project management and developer collaboration tool for streamlining workflows, enhancing team productivity, and delivering outstanding results. Manage tasks, track code changes, and communicate seamlessly with your team, all in one place.",
-        "TeckStack": [
+        "TechStack": [
             "nextjs",
             "soket.io",
             "webrtc"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "3D Artist",
@@ -618,13 +660,14 @@
         "github": "https://github.com/sumeetghumare4",
         "linkedin": "https://www.linkedin.com/in/sumeet-ghumare24/",
         "Description": "In the dynamic realm of 3D art creation, efficiency and precision are paramount. Our innovative project revolutionizes the traditional collaboration process between clients and 3D artists, addressing time-consuming iterations and potential misunderstandings. By leveraging state-of-the-art technologies, we've crafted a solution that redefines the industry standard.",
-        "TeckStack": [
+        "TechStack": [
             "openAI",
             "javascript",
             "python",
             "blender",
             "docker"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Enigma",
@@ -633,14 +676,15 @@
         "github": "https://github.com/Arbtrage",
         "linkedin": "https://www.linkedin.com/in/sayantan-naskar/",
         "Description": "A Github App that executes and comments the code present in the Pull Request's diff .",
-        "TeckStack": [
+        "TechStack": [
             "nodejs",
             "webhooks",
             "probot",
             "github REST API",
             "Judge0 API",
             "rapid API"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Moksh",
@@ -649,13 +693,14 @@
         "github": "https://github.com/akshitagupta15june",
         "linkedin": "https://www.linkedin.com/in/akshita-gupta-a4a895187",
         "Description": "Moksh is a spiritual productivity tool designed for individuals who want to unlock their potential and achieve true balance in life. Our customized spiritual features help you take control of your work, focus on what truly matters, and rejuvenate your mind and spirit. By reading Bhagavad Gita, we become soul conscious and gain the strength to fight life's challenges. With Moksh, you can overcome the mental problems that arise from our body consciousness and find true happiness.",
-        "TeckStack": [
+        "TechStack": [
             "html",
             "css",
             "javascript",
             "maps API",
             "echo 3D"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "Face-X",
@@ -664,13 +709,14 @@
         "github": "https://github.com/akshitagupta15june",
         "linkedin": "https://www.linkedin.com/in/akshita-gupta-a4a895187",
         "Description": "Face-X is a comprehensive repository of algorithms and operations related to facial recognition, which includes a range of functionalities from facial filters, image processing, face mask detection, and facial attendance systems to animated emotions and facial cartoonification. It encompasses all the possible operations that can be performed on the frontal human face, making it a versatile platform for facial-related tasks.",
-        "TeckStack": [
+        "TechStack": [
             "ML",
             "ANN",
             "CNN",
             "openCV",
             "python"
-        ]
+        ],
+        "Year": "2024"
     },
     {
         "Name": "PetMe",
@@ -679,30 +725,13 @@
         "github": "https://github.com/akshitagupta15june",
         "linkedin": "https://www.linkedin.com/in/akshita-gupta-a4a895187",
         "Description": "PetMe is an all-in-one platform that allows animals to be adopted, donated to pet lovers, and provides emergency medical care to stray animals in need.",
-        "TeckStack": [
+        "TechStack": [
             "reactjs",
             "nodejs",
             "html",
             "css",
             "javascript"
-        ]
-    },
-    {
-        "Name": "Sangnet",
-        "Repo": "",
-        "Owner": "Sayak Saha",
-        "github": "https://github.com/sayakongit",
-        "linkedin": "https://linkedin.com/in/sayaksaha10",
-        "Description": "Sangnet swiftly connects compatible blood donors with recipients, prioritizing privacy and security. We simplify the process, enabling donors to help during emergencies and medical procedures, ultimately saving lives in our communities.",
-        "TeckStack": [
-            "Django",
-            "Django rest framework",
-            "reactjs",
-            "nextjs",
-            "sqlite",
-            "mapbox",
-            "SDK",
-            "auth0"
-        ]
+        ],
+        "Year": "2024"
     }
 ]

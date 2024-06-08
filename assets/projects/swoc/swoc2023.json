@@ -11,7 +11,8 @@
             "Google Chrome",
             "VSCode",
             "Git"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "User-Auth-Microservice",
@@ -25,7 +26,8 @@
             "Node.js",
             "MongoDB",
             "AUTH"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Web3.0.World",
@@ -37,7 +39,8 @@
         "TechStack": [
             "Web3",
             "Blockchain"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "solidity -Pathshala",
@@ -49,7 +52,8 @@
         "TechStack": [
             "Solidity",
             "Blockchain"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Face-X",
@@ -63,7 +67,8 @@
             "ANN",
             "Web",
             "IoT"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Css.Effects-Designs",
@@ -77,7 +82,8 @@
             "HTML",
             "Javascript",
             "Documentation skills"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Docbook",
@@ -91,7 +97,8 @@
             "HTML",
             "Javascript",
             "Documentation skills"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "TechOS Bell",
@@ -105,7 +112,8 @@
             "CSS",
             "JavaScript",
             "ReactJS"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Dino",
@@ -118,7 +126,8 @@
             "HTML",
             "CSS",
             "JavaScript"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Deep Learning Simplified",
@@ -133,7 +142,8 @@
             "Tensorflow",
             "Neural Networks",
             "Keras"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Task Management Application ",
@@ -142,7 +152,8 @@
         "github": "https://github.com/swarnavopramanik",
         "linkedin": "",
         "Description": "Coming soon, Stay tuned...",
-        "TechStack": []
+        "TechStack": [],
+        "Year": "2023"
     },
     {
         "Name": "Terminal Portfolio",
@@ -155,7 +166,8 @@
             "HTML",
             "CSS",
             "JavaScript"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Front-End-Projects",
@@ -168,7 +180,8 @@
             "HTML5",
             "CSS3",
             "JavaScript"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Vritaant",
@@ -180,7 +193,8 @@
         "TechStack": [
             "Flutter",
             "AR"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Attack Vectors Suite",
@@ -194,7 +208,8 @@
             "Javascript",
             "Solidity",
             "React"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Are you bombed",
@@ -208,7 +223,8 @@
             "Javascript",
             "Solidity",
             "React"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "HODL",
@@ -222,7 +238,8 @@
             "Javascript",
             "Solidity",
             "React"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "SeamLess UI",
@@ -236,7 +253,8 @@
             "CSS",
             "Tailwind CSS",
             "React"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Clueless Official Website",
@@ -252,7 +270,8 @@
             "NextJS",
             "Tailwind",
             "Material UI"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "FinTech API",
@@ -264,7 +283,8 @@
         "TechStack": [
             "Python",
             "Fast API"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Rapton - Resume Builder for Developers",
@@ -280,7 +300,8 @@
             "Node",
             "Express",
             "MongoDB"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "ARTIST BANK",
@@ -296,7 +317,8 @@
             "Tailwindcss",
             "Ganache",
             "Truffle"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Codeless Builder",
@@ -314,7 +336,8 @@
             "MongoDB",
             "NodeJS",
             "ExpressJS"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "TerraForge3D",
@@ -328,7 +351,8 @@
             "OpenGL",
             "GLSL",
             "Vulkan"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Blog App Backend",
@@ -341,7 +365,8 @@
             "MongoDB",
             "NodeJS",
             "ExpressJS"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Algorithms",
@@ -355,7 +380,8 @@
             "C++",
             "Python",
             "Java"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Python Voice Assistant",
@@ -366,7 +392,8 @@
         "Description": "This Voice assistant can greet you, can search items in google, youtube, wikipedia, can open twitter, instagram, facebook, can create todo list.        ",
         "TechStack": [
             "Python"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "DeStore",
@@ -381,7 +408,8 @@
             "ReactJS",
             "React-native",
             "The graph"
-        ]
+        ],
+        "Year": "2023"
     },
     {
         "Name": "Project-Guidance",
@@ -390,7 +418,8 @@
         "github": "https://github.com/Kushal997-das",
         "linkedin": "",
         "Description": "The Ultimate resources for beginner to advance level projects all at one place",
-        "TechStack": []
+        "TechStack": [],
+        "Year": "2023"
     },
     {
         "Name": "Driver snoozing system",
@@ -403,6 +432,7 @@
             "Python",
             "dlib",
             "fac_utils"
-        ]
+        ],
+        "Year": "2023"
     }
 ]
