@@ -11,6 +11,7 @@ import 'package:opso/programs%20screen/linux_foundation.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
+import 'package:opso/programs%20screen/social_winter_of_code.dart';
 import 'package:opso/services/notificationService.dart';
 import 'package:opso/widgets/book_mark_screen.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
@@ -92,6 +93,10 @@ class _HomePageState extends State<HomePage> {
     Program(
       title: 'GirlScript Summer of Code',
       imageAssetPath: 'assets/girlscript_logo.png',
+    ),
+    Program(
+      title: 'Social Winter of Code',
+      imageAssetPath: 'assets/swoc.png',
     ),
   ];
 
@@ -321,6 +326,15 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
+      case 'Social Winter of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SWOCScreen(),
+          ),
+        );
+        break;
+
       case 'Outreachy':
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const OutReachy()));
@@ -433,6 +447,10 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
       title: 'GirlScript Summer of Code',
       imageAssetPath: 'assets/girlscript_logo.png',
     ),
+    Program(
+      title: 'Social Winter of Code',
+      imageAssetPath: 'assets/swoc.png',
+    ),
   ];
 
   @override
@@ -518,6 +536,15 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           context,
           MaterialPageRoute(
             builder: (context) => const GSSOCScreen(),
+          ),
+        );
+        break;
+
+      case 'Social Winter of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SWOCScreen(),
           ),
         );
         break;
