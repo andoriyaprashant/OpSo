@@ -15,6 +15,7 @@ import 'package:opso/programs%20screen/social_winter_of_code.dart';
 import 'package:opso/services/notificationService.dart';
 import 'package:opso/widgets/book_mark_screen.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:opso/widgets/faq.dart';
 import 'dart:math' as math;
 
 import 'about.dart';
@@ -236,6 +237,21 @@ class _HomePageState extends State<HomePage> {
                                     MaterialPageRoute(
                                       builder: (context) =>
                                           const OpsoTimeLineScreen(),
+                                    ),
+                                  );
+                                },
+                              ),
+                              const SizedBox(height: 15),
+                              ListTile(
+                                leading: const Icon(
+                                    FontAwesomeIcons.solidCircleQuestion),
+                                title: const Text('Freuently Asked Questions'),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          FAQPage(),
                                     ),
                                   );
                                 },
