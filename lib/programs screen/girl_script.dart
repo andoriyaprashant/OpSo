@@ -222,6 +222,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       _buildSearchBar(),
                       const SizedBox(height: 20),
@@ -301,7 +302,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
 
   Widget _buildYearButtons() {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * 0.2,
+      height: MediaQuery.of(context).size.height*0.25,
       child: GridView(
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -388,6 +389,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     return Container(
       height: height, // Set a specific height here
       child: ListView.builder(
+        physics: NeverScrollableScrollPhysics(),
         itemCount: projectList.length,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
