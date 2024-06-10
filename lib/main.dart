@@ -8,6 +8,7 @@ import 'package:opso/programs%20screen/linux_foundation.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
+import 'package:opso/programs%20screen/social_winter_of_code.dart';
 import 'package:opso/services/notificationService.dart';
 import 'home_page.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
@@ -38,6 +39,7 @@ class OpSoApp extends StatelessWidget {
               routes: {
                 "/progarm_page": (context) => const HomePage(),
                 "/girl_script_summer_of_code": (context) => const GSSOCScreen(),
+                "/social_winter_of_code": (context) => const SWOCScreen(),
                 "/google_summer_of_code": (context) =>
                     GoogleSummerOfCodeScreen(),
                 "/google_season_of_docs": (context) =>

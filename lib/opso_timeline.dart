@@ -71,6 +71,12 @@ class OpsoTimeLineScreen extends StatelessWidget {
       },
       {
         'description':
+            "Social Winter of Code\nApplication Period - 15/07/2024 to 20/12/2024",
+        'startDate': DateTime.utc(2024, 7, 15),
+        'endDate': DateTime.utc(2024, 12, 20),
+      },
+      {
+        'description':
             "Outreachy(December Internships)\nApplication Period - 01/08/2024 to 31/08/2024",
         'startDate': DateTime.utc(2024, 8, 1),
         'endDate': DateTime.utc(2024, 8, 31),

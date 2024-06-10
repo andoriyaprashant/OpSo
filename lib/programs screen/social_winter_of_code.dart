@@ -4,49 +4,48 @@ import 'package:flutter/services.dart';
 import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
 import 'package:multi_select_flutter/util/multi_select_item.dart';
 import 'package:opso/modals/book_mark_model.dart';
-import 'package:opso/modals/gssoc_project_modal.dart';
-import 'package:opso/widgets/gssoc_project_widget.dart';
+import 'package:opso/modals/swoc_project_modal.dart';
+import 'package:opso/widgets/swoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
-import '../widgets/SearchandFilterWidget.dart';
 
 
-class GSSOCScreen extends StatefulWidget {
-  const GSSOCScreen({super.key});
+class SWOCScreen extends StatefulWidget {
+  const SWOCScreen({super.key});
 
 
   @override
-  State<GSSOCScreen> createState() => _GSSOCScreenState();
+  State<SWOCScreen> createState() => _SWOCScreenState();
 }
 
 
-class _GSSOCScreenState extends State<GSSOCScreen> {
-  String currentPage = "/girl_script_summer_of_code";
-  String currentProject = "Girl Script Summer of Code";
-  List<GssocProjectModal> gssoc2024 = [];
-  List<GssocProjectModal> gssoc2023 = [];
-  List<GssocProjectModal> gssoc2022 = [];
-  List<GssocProjectModal> gssoc2021 = [];
+class _SWOCScreenState extends State<SWOCScreen> {
+  String currentPage = "/social_winter_of_code";
+  String currentProject = "Social Winter of Code";
+  List<SwocProjectModal> swoc2024 = [];
+  List<SwocProjectModal> swoc2023 = [];
+  List<SwocProjectModal> swoc2021 = [];
+  List<SwocProjectModal> swoc2020 = [];
   List<String> allOrganizations = [];
   List<String> allLanguages = [];
   List<String> selectedOrganizations = ['All'];
   List<String> selectedLanguages = ['All'];
-  int selectedYear = 2024;
+  int selectedYear = 2020;
   bool isBookmarked = true;
-  List<GssocProjectModal> projectList = [];
+  List<SwocProjectModal> projectList = [];
   Future<void>? getProjectFunction;
 
 
   Future<void> initializeProjectLists() async {
-    await _loadProjects('assets/projects/gssoc/gssoc2024.json', gssoc2024);
-    await _loadProjects('assets/projects/gssoc/gssoc2023.json', gssoc2023);
-    await _loadProjects('assets/projects/gssoc/gssoc2022.json', gssoc2022);
-    await _loadProjects('assets/projects/gssoc/gssoc2021.json', gssoc2021);
+    await _loadProjects('assets/projects/swoc/swoc2024.json', swoc2024);
+    await _loadProjects('assets/projects/swoc/swoc2023.json', swoc2023);
+    await _loadProjects('assets/projects/swoc/swoc2021.json', swoc2021);
+    await _loadProjects('assets/projects/swoc/swoc2020.json', swoc2020);
 
 
     // Populate all unique organizations and languages
-    allOrganizations = _extractUniqueValues((project) => project.hostedBy);
+    allOrganizations = _extractUniqueValues((project) => project.owner);
     allLanguages = languages;
-    projectList = List.from(gssoc2024); // Default year
+    projectList = List.from(swoc2024); // Default year
   }
 
 
@@ -70,30 +69,42 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
   ];
 
 
-  Future<void> _loadProjects(String path, List<GssocProjectModal> list) async {
-    String response = await rootBundle.loadString(path);
-    var jsonList = json.decode(response) as List;
-    list.addAll(jsonList.map((data) => GssocProjectModal.getDataFromJson(data)).toList());
+  Future<void> _loadProjects(String path, List<SwocProjectModal> list) async {
+    try {
+      String response = await rootBundle.loadString(path);
+      if (response.isNotEmpty) {
+        var jsonList = json.decode(response) as List;
+        list.addAll(jsonList.map((data) => SwocProjectModal.getDataFromJson(data)).toList());
+        print('Loaded projects from $path: ${list.length}');
+      } else {
+        print('Error: JSON data is null or empty in $path');
+      }
+    } catch (e) {
+      print('Error loading projects from $path: $e');
+    }
   }
 
 
-  List<String> _extractUniqueValues(String Function(GssocProjectModal) extractor) {
+
+
+
+  List<String> _extractUniqueValues(String Function(SwocProjectModal) extractor) {
     return {
       'All',
-      ...gssoc2024.map(extractor),
-      ...gssoc2023.map(extractor),
-      ...gssoc2022.map(extractor),
-      ...gssoc2021.map(extractor),
+      ...swoc2024.map(extractor),
+      ...swoc2023.map(extractor),
+      ...swoc2021.map(extractor),
+      ...swoc2020.map(extractor),
     }.toList();
   }
 
 
-  List<String> _extractUniqueLanguages(List<String> Function(GssocProjectModal) extractor) {
+  List<String> _extractUniqueLanguages(List<String> Function(SwocProjectModal) extractor) {
     final allLanguages = [
-      for (var project in gssoc2024) ...extractor(project),
-      for (var project in gssoc2023) ...extractor(project),
-      for (var project in gssoc2022) ...extractor(project),
-      for (var project in gssoc2021) ...extractor(project),
+      for (var project in swoc2024) ...extractor(project),
+      for (var project in swoc2023) ...extractor(project),
+      for (var project in swoc2021) ...extractor(project),
+      for (var project in swoc2020) ...extractor(project),
     ];
     return ['All', ...allLanguages.toSet()];
   }
@@ -134,7 +145,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
 
     // Filter projects by selected organizations
     if (!selectedOrganizations.contains('All')) {
-      projectList = projectList.where((project) => selectedOrganizations.contains(project.hostedBy)).toList();
+      projectList = projectList.where((project) => selectedOrganizations.contains(project.owner)).toList();
     }
 
 
@@ -146,23 +157,23 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
 
 
   void _updateOrganizationList() {
-    allOrganizations = _extractUniqueValues((project) => project.hostedBy)
-        .where((organization) => projectList.any((project) => project.hostedBy == organization))
+    allOrganizations = _extractUniqueValues((project) => project.owner)
+        .where((organization) => projectList.any((project) => project.owner == organization))
         .toList();
     allOrganizations.insert(0, 'All');
   }
 
 
-  List<GssocProjectModal> _getProjectsByYear() {
+  List<SwocProjectModal> _getProjectsByYear() {
     switch (selectedYear) {
+      case 2020:
+        return swoc2020;
       case 2021:
-        return gssoc2021;
-      case 2022:
-        return gssoc2022;
+        return swoc2021;
       case 2023:
-        return gssoc2023;
+        return swoc2023;
       case 2024:
-        return gssoc2024;
+        return swoc2024;
       default:
         return [];
     }
@@ -172,7 +183,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
   Future<void> _refresh() async {
     await initializeProjectLists();
     setState(() {
-      selectedYear = 2024;
+      selectedYear = 2020;
       selectedOrganizations = ['All'];
       selectedLanguages = ['All'];
     });
@@ -188,7 +199,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar: AppBar(title: const Text('GSSoC'), actions: <Widget>[
+        appBar: AppBar(title: const Text('SWoC'), actions: <Widget>[
           IconButton(
             icon: (isBookmarked)
                 ? const Icon(Icons.bookmark_add_rounded)
@@ -222,7 +233,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       _buildSearchBar(),
                       const SizedBox(height: 20),
@@ -236,7 +246,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                         onConfirm: (results) {
                           setState(() {
                             selectedLanguages = results.isNotEmpty ? results : ['All'];
-                            print(selectedLanguages);
                             filterProjects();
                           });
                         },
@@ -302,7 +311,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
 
   Widget _buildYearButtons() {
     return SizedBox(
-      height: MediaQuery.of(context).size.height*0.25,
+      height: MediaQuery.sizeOf(context).height * 0.2,
       child: GridView(
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -313,6 +322,17 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
         ),
         children: [
           YearButton(
+            year: "2020",
+            isEnabled: selectedYear == 2020,
+            onTap: () {
+              setState(() {
+                selectedYear = 2020;
+                filterProjects();
+              });
+            },
+            backgroundColor: selectedYear == 2020 ? Colors.white : const Color.fromRGBO(255, 183, 77, 1),
+          ),
+          YearButton(
             year: "2021",
             isEnabled: selectedYear == 2021,
             onTap: () {
@@ -322,17 +342,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
               });
             },
             backgroundColor: selectedYear == 2021 ? Colors.white : const Color.fromRGBO(255, 183, 77, 1),
-          ),
-          YearButton(
-            year: "2022",
-            isEnabled: selectedYear == 2022,
-            onTap: () {
-              setState(() {
-                selectedYear = 2022;
-                filterProjects();
-              });
-            },
-            backgroundColor: selectedYear == 2022 ? Colors.white : const Color.fromRGBO(255, 183, 77, 1),
           ),
           YearButton(
             year: "2023",
@@ -386,15 +395,14 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
 
 
   Widget _buildProjectList(double height, double width) {
-    return Container(
-      height: height, // Set a specific height here
+    return SizedBox(
+      height: height,
       child: ListView.builder(
-        physics: NeverScrollableScrollPhysics(),
         itemCount: projectList.length,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
-            child: GssocProjectWidget(
+            child: SwocProjectWidget(
               index: index + 1,
               modal: projectList[index],
               height: height * 0.2,
