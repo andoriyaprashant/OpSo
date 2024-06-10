@@ -115,6 +115,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
     'LND',
     'Eclair'
   ];
+ 
   Future<void> _refresh() async {
     setState(() {
       initializeProjectLists();
@@ -319,6 +320,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                       Expanded(
                         // width: width,
                         child: ListView.builder(
+                          physics: NeverScrollableScrollPhysics(),
                           itemCount: projectList.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Padding(

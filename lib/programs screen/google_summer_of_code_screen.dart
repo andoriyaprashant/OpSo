@@ -9,15 +9,11 @@ import '../widgets/SearchandFilterWidget.dart';
 import '../widgets/year_button.dart';
 
 
-
-
 class GoogleSummerOfCodeScreen extends StatefulWidget {
   @override
   State<GoogleSummerOfCodeScreen> createState() =>
       _GoogleSummerOfCodeScreenState();
 }
-
-
 
 
 class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
