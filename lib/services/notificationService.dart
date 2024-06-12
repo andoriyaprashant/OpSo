@@ -29,10 +29,10 @@ class NotificationService {
       debug: true,
     );
 
-    bool isAllowed = await AwesomeNotifications().isNotificationAllowed();
-    if (!isAllowed) {
-      await AwesomeNotifications().requestPermissionToSendNotifications();
-    }
+    // bool isAllowed = await AwesomeNotifications().isNotificationAllowed();
+    // if (!isAllowed) {
+    //   await AwesomeNotifications().requestPermissionToSendNotifications();
+    // }
 
     await AwesomeNotifications().setListeners(
       onActionReceivedMethod: onActionReceivedMethod,
@@ -70,7 +70,7 @@ class NotificationService {
     }
   }
 
-  static Future<void> showNotification(
+  static Future<bool> showNotification(
       {required final String title,
       required final String body,
       final String? summary,
@@ -83,29 +83,61 @@ class NotificationService {
       final bool scheduled = false,
       final int? interval}) async {
     assert(!scheduled || (scheduled && interval != null));
-    await AwesomeNotifications().createNotification(
-      content: NotificationContent(
-        id: -1,
-        channelKey: 'high_importance_channel',
-        title: title,
-        body: body,
-        actionType: actionType,
-        notificationLayout: notificationLayout,
-        summary: summary,
-        category: category,
-        payload: payload,
-        bigPicture: bigPicture,
-      ),
-      actionButtons: actionButtons,
-      schedule: scheduled
-          ? NotificationInterval(
-              interval: interval,
-              timeZone:
-                  await AwesomeNotifications().getLocalTimeZoneIdentifier(),
-              preciseAlarm: true,
-            )
-          : null,
-    );
+    bool allowed =
+        await AwesomeNotifications().requestPermissionToSendNotifications();
+    if (allowed) {
+      await AwesomeNotifications().createNotification(
+        content: NotificationContent(
+          id: -1,
+          channelKey: 'high_importance_channel',
+          title: title,
+          body: body,
+          actionType: actionType,
+          notificationLayout: notificationLayout,
+          summary: summary,
+          category: category,
+          payload: payload,
+          bigPicture: bigPicture,
+        ),
+        actionButtons: actionButtons,
+        schedule: scheduled
+            ? NotificationInterval(
+                interval: interval,
+                timeZone:
+                    await AwesomeNotifications().getLocalTimeZoneIdentifier(),
+                preciseAlarm: true,
+              )
+            : null,
+      );
+    } else {
+      allowed = await AwesomeNotifications().isNotificationAllowed();
+      if (allowed) {
+        await AwesomeNotifications().createNotification(
+          content: NotificationContent(
+            id: -1,
+            channelKey: 'high_importance_channel',
+            title: title,
+            body: body,
+            actionType: actionType,
+            notificationLayout: notificationLayout,
+            summary: summary,
+            category: category,
+            payload: payload,
+            bigPicture: bigPicture,
+          ),
+          actionButtons: actionButtons,
+          schedule: scheduled
+              ? NotificationInterval(
+                  interval: interval,
+                  timeZone:
+                      await AwesomeNotifications().getLocalTimeZoneIdentifier(),
+                  preciseAlarm: true,
+                )
+              : null,
+        );
+      }
+    }
+    return allowed;
   }
 
   static Future<void> scheduleNotificationsForEvent(
@@ -132,17 +164,35 @@ class NotificationService {
     );
   }
 
-  static Future<void> _scheduleNotification(
+  static Future<bool> _scheduleNotification(
       String description, String body, DateTime dateTime) async {
-    await AwesomeNotifications().createNotification(
-      content: NotificationContent(
-        id: DateTime.now().millisecondsSinceEpoch.remainder(100000),
-        channelKey: 'high_importance_channel',
-        title: description,
-        body: body,
-        notificationLayout: NotificationLayout.Default,
-      ),
-      schedule: NotificationCalendar.fromDate(date: dateTime),
-    );
+    if (await AwesomeNotifications().isNotificationAllowed()) {
+      await AwesomeNotifications().createNotification(
+        content: NotificationContent(
+          id: DateTime.now().millisecondsSinceEpoch.remainder(100000),
+          channelKey: 'high_importance_channel',
+          title: description,
+          body: body,
+          notificationLayout: NotificationLayout.Default,
+        ),
+        schedule: NotificationCalendar.fromDate(date: dateTime),
+      );
+      return true;
+    } else {
+      bool allowed = await AwesomeNotifications().isNotificationAllowed();
+      if (allowed) {
+        await AwesomeNotifications().createNotification(
+          content: NotificationContent(
+            id: DateTime.now().millisecondsSinceEpoch.remainder(100000),
+            channelKey: 'high_importance_channel',
+            title: description,
+            body: body,
+            notificationLayout: NotificationLayout.Default,
+          ),
+          schedule: NotificationCalendar.fromDate(date: dateTime),
+        );
+      }
+      return allowed;
+    }
   }
 }
