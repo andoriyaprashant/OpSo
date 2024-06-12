@@ -1,6 +1,5 @@
 import 'dart:ui';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:opso/opso_timeline.dart';
@@ -17,7 +16,7 @@ import 'package:opso/widgets/book_mark_screen.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:opso/widgets/faq.dart';
 import 'dart:math' as math;
-
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'about.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,7 +29,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    showNotification();
+    // showNotification();
     super.initState();
     _getInitialThemeMode();
   }
@@ -250,8 +249,7 @@ class _HomePageState extends State<HomePage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          FAQPage(),
+                                      builder: (context) => FAQPage(),
                                     ),
                                   );
                                 },
