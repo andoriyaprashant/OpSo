@@ -5,6 +5,7 @@ import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
 import 'package:multi_select_flutter/util/multi_select_item.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/gssoc_project_modal.dart';
+import 'package:opso/programs_info_pages/gssoc_info.dart';
 import 'package:opso/widgets/gssoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 import '../widgets/SearchandFilterWidget.dart';
@@ -209,7 +210,16 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                 HandleBookmark.deleteBookmark(currentProject);
               }
             },
-          )
+          ),
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const GSSOCInfo()),
+              );
+            },
+          ),
         ]),
         body: FutureBuilder<void>(
           future: getProjectFunction,
