@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
 
-const apiKey = 'Your Api Key';
+const apiKey = 'put-gemini-api-key';
 
 
 class ChatBotPage extends StatefulWidget {
@@ -39,12 +39,14 @@ class _ChatBotPageState extends State<ChatBotPage> {
     if (_controller.text.isEmpty) return;
 
 
+
+
     setState(() {
-      _messages.add({"sender": "user", "text": _controller.text});
+      _messages.add({"sender": "user", "text": "${_controller.text}"});
     });
 
 
-    final prompt = _controller.text;
+    final prompt = _controller.text + "don't give answer in markdown format";
     _controller.clear();
 
 
@@ -85,12 +87,17 @@ class _ChatBotPageState extends State<ChatBotPage> {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: Row(
-                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         if (!isUser) const CircleAvatar(child: Icon(Icons.android)),
                         if (!isUser) const SizedBox(width: 5.0),
-                        Flexible(
-                          child: Text(message["text"] ?? ''),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(message["text"] ?? ''),
+                            ],
+                          ),
                         ),
                         if (isUser) const SizedBox(width: 5.0),
                         if (isUser) const CircleAvatar(child: Icon(Icons.person)),
