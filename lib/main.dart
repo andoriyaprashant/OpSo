@@ -12,7 +12,7 @@ import 'package:opso/programs%20screen/social_winter_of_code.dart';
 import 'package:opso/services/notificationService.dart';
 import 'home_page.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'splash_screen.dart'; 
+import 'splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +35,7 @@ class OpSoApp extends StatelessWidget {
             dark: ThemeData.dark(),
             initial: AdaptiveThemeMode.system,
             builder: (theme, darkTheme) => MaterialApp(
-              initialRoute: '/splash_screen', 
+              initialRoute: '/splash_screen',
               routes: {
                 "/progarm_page": (context) => const HomePage(),
                 "/girl_script_summer_of_code": (context) => const GSSOCScreen(),
@@ -50,7 +50,7 @@ class OpSoApp extends StatelessWidget {
                     const MajorLeagueHackingFellowship(),
                 "/linux_foundation": (context) => const LinuxFoundation(),
                 "/landing_page": (context) => const LandingPage(),
-                '/splash_screen': (context) => SplashScreen(), 
+                '/splash_screen': (context) => SplashScreen(),
               },
               title: 'OpSo',
               debugShowCheckedModeBanner: false,
@@ -60,8 +60,7 @@ class OpSoApp extends StatelessWidget {
               //   primarySwatch: Colors.blue,
               //   visualDensity: VisualDensity.adaptivePlatformDensity,
               // ),
-              home: const HomePage(),
-              
+              // home: const HomePage(),
             ),
           );
         });
