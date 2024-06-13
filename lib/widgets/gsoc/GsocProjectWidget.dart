@@ -4,7 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../modals/GSoC/Gsoc.dart';
 
 class GsocProjectWidget extends StatelessWidget {
-  final Organization modal;
+  final GsocModel modal;
   final double height;
   final double width;
   final int index;
@@ -32,7 +32,9 @@ class GsocProjectWidget extends StatelessWidget {
 
     return GestureDetector(
       onTap: () async {
-        await _launchUrl(modal.url);
+        if (modal.projectUrl != null) {
+          await _launchUrl(modal.projectUrl!);
+        }
       },
       child: Container(
         width: width,
@@ -51,83 +53,91 @@ class GsocProjectWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "$index. ${modal.name}",
+                "$index. ${modal.organization}",
                 style: TextStyle(
                   color: Colors.orange,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: Text(
-                  "By ${modal.description}",
-                  style: TextStyle(
-                    color: textColor,
+              if (modal.originalProjectProposal != null) ...[
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: Text(
+                    "Description : ${modal.originalProjectProposal}",
+                    style: TextStyle(
+                      color: textColor,
+                    ),
                   ),
                 ),
-              ),
+              ],
+              if (modal.mentor != null) ...[
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: Text(
+                    "Mentor: ${modal.mentor}",
+                    style: TextStyle(
+                      color: textColor,
+                    ),
+                  ),
+                ),
+              ],
+              if (modal.technicalWriter != null) ...[
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: Text(
+                    "Technical Writer: ${modal.technicalWriter}",
+                    style: TextStyle(
+                      color: textColor,
+                    ),
+                  ),
+                ),
+              ],
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: Wrap(
                   spacing: 10,
                   runSpacing: 10,
                   children: [
-                    if (modal.contactEmail.isNotEmpty)
+                    if (modal.organizationUrl != null &&
+                        modal.organizationUrl!.isNotEmpty)
                       ElevatedButton.icon(
                         onPressed: () {
-                          _launchUrl('mailto:${modal.contactEmail}');
-                        },
-                        icon: Icon(Icons.email, color: Colors.white),
-                        label: Text("Email"),
-                        style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white, backgroundColor: Colors.orange,
-                        ),
-                      ),
-                    if (modal.blogUrl.isNotEmpty)
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          _launchUrl(modal.blogUrl);
+                          _launchUrl(modal.organizationUrl!);
                         },
                         icon: Icon(Icons.web, color: Colors.white),
-                        label: Text("Blog"),
+                        label: Text("Org Website"),
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white, backgroundColor: Colors.orange,
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colors.orange,
+                        ),
+                      ),
+                    if (modal.reportUrl != null && modal.reportUrl!.isNotEmpty)
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          _launchUrl(modal.reportUrl!);
+                        },
+                        icon: Icon(Icons.description, color: Colors.white),
+                        label: Text("Report"),
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colors.orange,
+                        ),
+                      ),
+                    if (modal.acceptedProjectProposalUrl != null &&
+                        modal.acceptedProjectProposalUrl!.isNotEmpty)
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          _launchUrl(modal.acceptedProjectProposalUrl!);
+                        },
+                        icon: Icon(Icons.file_present, color: Colors.white),
+                        label: Text("Proposal"),
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colors.orange,
                         ),
                       ),
                   ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Wrap(
-                  alignment: WrapAlignment.start,
-                  runSpacing: 10,
-                  children: List.generate(
-                    modal.technologies.length,
-                        (index) => Container(
-                      margin: const EdgeInsets.only(right: 10),
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 249, 241, 226),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: IntrinsicWidth(
-                        stepWidth: 30,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Center(
-                            child: Text(
-                              modal.technologies[index],
-                              style: TextStyle(
-                                color: Colors.orange,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
                 ),
               ),
             ],
