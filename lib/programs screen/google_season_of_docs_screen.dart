@@ -8,6 +8,7 @@ import 'package:opso/modals/gsod/gsod_modal_old.dart';
 import 'package:opso/widgets/gsod/gsod_project_widget_new.dart';
 import 'package:opso/widgets/gsod/gsod_project_widget_old.dart';
 import 'package:opso/widgets/year_button.dart';
+import 'package:opso/programs_info_pages/gsod_info.dart';
 
 
 
@@ -290,7 +291,16 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                 HandleBookmark.deleteBookmark(currentProgram);
               }
             },
-          )
+          ),
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const GSODInfo()),
+              );
+            },
+          ),
         ]),
         body: FutureBuilder<void>(
           future: getProjectFunction,
