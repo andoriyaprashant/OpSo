@@ -92,6 +92,7 @@ flutter:
     - assets/xyz_domain.png
     - assets/participation_certificate.png
     - assets/coding_ninja_swag.png
+    - assets/projects/osoc/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

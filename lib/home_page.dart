@@ -8,6 +8,7 @@ import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
 import 'package:opso/programs%20screen/linux_foundation.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
+import 'package:opso/programs%20screen/open_summer_of_code.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/programs%20screen/social_winter_of_code.dart';
@@ -97,6 +98,10 @@ class _HomePageState extends State<HomePage> {
     Program(
       title: 'Social Winter of Code',
       imageAssetPath: 'assets/swoc.png',
+    ),
+    Program(
+      title: 'Open Summer of Code',
+      imageAssetPath: 'assets/open_summer_of_code.png',
     ),
   ];
 
@@ -356,17 +361,18 @@ class _HomePageState extends State<HomePage> {
       case 'Summer of Bitcoin':
         Navigator.pushNamed(context, "/summer_of_bitcoin");
 
-      case 'Summer of Bitcoin':
+      case 'Open Summer of Code':
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const SummerOfBitcoin(),
+            builder: (context) => const OpenSummerOfCode(),
           ),
         );
 
       case 'Linux Foundation':
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const LinuxFoundation()));
+
       default:
         break;
     }
@@ -464,6 +470,10 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     Program(
       title: 'Social Winter of Code',
       imageAssetPath: 'assets/swoc.png',
+    ),
+    Program(
+      title: 'Open Summer of Code',
+      imageAssetPath: 'assets/open_summer_of_code.png',
     ),
   ];
 
