@@ -4,11 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
 import 'package:multi_select_flutter/util/multi_select_item.dart';
 import 'package:opso/modals/book_mark_model.dart';
-import 'package:opso/modals/gssoc_project_modal.dart';
-import 'package:opso/widgets/gssoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 import '../modals/GSoC/Gsoc.dart';
-import '../widgets/SearchandFilterWidget.dart';
 import '../widgets/gsoc/GsocProjectWidget.dart';
 
 
@@ -22,8 +19,8 @@ class GoogleSummerOfCodeScreen extends StatefulWidget {
 
 
 class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
-  String currentPage = "/girl_script_summer_of_code";
-  String currentProject = "Girl Script Summer of Code";
+  String currentPage = "/Google_summer_of_code";
+  String currentProject = "Google Summer of Code";
   List<GsocModel> gsoc2023 = [];
   List<GsocModel> gsoc2022 = [];
   List<GsocModel> gsoc2021 = [];
@@ -196,7 +193,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar: AppBar(title: const Text('Gsoc'), actions: <Widget>[
+        appBar: AppBar(title: const Text('Google Summer of Code'), actions: <Widget>[
           IconButton(
             icon: (isBookmarked)
                 ? const Icon(Icons.bookmark_add_rounded)
