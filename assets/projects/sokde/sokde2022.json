@@ -1,0 +1,46 @@
+{
+    "projects": [
+      {
+        "title": "Adding new Activity to GCompris",
+        "link": "https://community.kde.org/SoK/2022/StatusReport/Samarth_Raj",
+        "mentors": ["Emmanuel Charruau", "Harsh Kumar"],
+        "mentee": "Samarth Raj"
+      },
+      {
+        "title": "Rust Wrapper of KConfig",
+        "link": "https://community.kde.org/SoK/2022/StatusReport/Ayush_Singh",
+        "mentors": "Jos van den Oever",
+        "mentee": "Ayush Singh"
+      },
+      {
+        "title": "Adding Perspective Ellipse Assistant Tool in Krita",
+        "link": "https://community.kde.org/SoK/2022/StatusReport/Srirupa_Datta",
+        "mentors": "Halla Rempt",
+        "mentee": "Srirupa Datta"
+      },
+      {
+        "title": "Improving UX for KDE Connect iOS Internal Error and Alerts",
+        "link": "https://community.kde.org/SoK/2022/StatusReport/Stefan_Kowalczyk",
+        "mentors": ["Lucas Wang", "Apollo Zhu"],
+        "mentee": "Stefan Kowalczyk"
+      },
+      {
+        "title": "Packaging KDE Applications for Flathub",
+        "link": "https://community.kde.org/SoK/2022/StatusReport/Snehit_Sah",
+        "mentors": "Timothée Ravier",
+        "mentees": "Snehit Sah"
+      },
+      {
+        "title": "Permission Management for Flatpak Apps in Discover",
+        "link": "https://community.kde.org/SoK/2022/StatusReport/Suhaas_Joshi",
+        "mentors": ["Timothée Ravier", "Aleix Pol"],
+        "mentee": "Suhaas Joshi"
+      },
+      {
+        "title": "Preparing Standard Usage Scenarios for Energy Consumption Measurements",
+        "link": "https://community.kde.org/SoK/2022/StatusReport/Karanjot_Singh",
+        "mentor": "Joseph P. De Veaugh-Geiss",
+        "mentees": "Karanjot Singh"
+      }
+    ]
+  }
