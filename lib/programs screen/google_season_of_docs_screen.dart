@@ -347,13 +347,9 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                         },
                       ),
                       const SizedBox(height: 20),
-                      Container(
-                        constraints: BoxConstraints(
-                          maxHeight: height * 0.3,
-                        ),
-                        width: width,
-                        child: GridView(
+                      GridView(
                           physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
                           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             childAspectRatio: 1.5 / 0.6,
@@ -433,7 +429,6 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                             ),
                           ],
                         ),
-                      ),
                       const SizedBox(height: 20),
                       _buildMultiSelectField(
                         items: [

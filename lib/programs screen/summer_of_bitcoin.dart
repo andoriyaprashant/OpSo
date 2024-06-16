@@ -166,12 +166,15 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: CircularProgressIndicator());
               } else if (snapshot.connectionState == ConnectionState.done) {
-                return Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: ScreenUtil().setWidth(46),
-                      vertical: ScreenUtil().setHeight(16)),
-                  child: Column(
+                return 
+                SingleChildScrollView(
+                child:
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
+                  child:
+                   Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       TextFormField(
                         decoration: InputDecoration(
@@ -216,11 +219,9 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                         },
                       ),
                       SizedBox(height: ScreenUtil().setHeight(20)),
-                      SizedBox(
-                        height: ScreenUtil().setHeight(50),
-                        width: ScreenUtil().setWidth(360),
-                        child: GridView(
+                      GridView(
                           physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
@@ -270,7 +271,6 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                             ),
                           ],
                         ),
-                      ),
                       SizedBox(
                         height: ScreenUtil().setHeight(20),
                       ),
@@ -317,10 +317,10 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                       SizedBox(
                         height: ScreenUtil().setHeight(20),
                       ),
-                      Expanded(
-                        // width: width,
-                        child: ListView.builder(
+            
+                      ListView.builder(
                           physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
                           itemCount: projectList.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Padding(
@@ -332,11 +332,14 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                               ),
                             );
                           },
-                        ),
                       ),
+                      
                     ],
                   ),
+                
+                )
                 );
+              
               } else {
                 return const Center(child: Text("Some error occured"));
               }

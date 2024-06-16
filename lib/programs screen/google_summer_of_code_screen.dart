@@ -48,17 +48,12 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   late Future<void> _dataFetchFuture;
 
 
-
-
   @override
   void initState() {
     super.initState();
     _refresh();
     _dataFetchFuture = getProjectData();
   }
-
-
-
 
   Future<void> getProjectData() async {
     ApiService apiService = ApiService();
@@ -83,9 +78,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       print('Error: $e');
     }
   }
-
-
-
 
   void filterProjects() {
     orgList = _getOrganizationsByYear(selectedYear);
@@ -131,9 +123,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     setState(() {});
   }
 
-
-
-
   List<Organization> _getOrganizationsByYear(int year) {
     switch (year) {
       case 2021:
@@ -149,9 +138,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     }
   }
 
-
-
-
   Future<void> _refresh() async {
     setState(() {
       _isRefreshing = true;
@@ -165,9 +151,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       _isRefreshing = false;
     });
   }
-
-
-
 
   // Add this method to the _GoogleSummerOfCodeScreenState class
   void search(String searchText) {
@@ -188,21 +171,16 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   }
 
 
-
-
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
 
-
-
-
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Google Summer of Code'),
+          title: const Text('Google Summer of Code'),
         ),
         body: FutureBuilder<void>(
           future: _dataFetchFuture,
@@ -261,11 +239,10 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                         },
                       ),
                       const SizedBox(height: 20),
-                      SizedBox(
-                        height: height * 0.2,
-                        width: width,
-                        child: GridView(
+                      // I have removed the sized box and set shrinkWrap:true in gridview
+                      GridView(
                           physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
                           gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
@@ -336,7 +313,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                             ),
                           ],
                         ),
-                      ),
+                      // ),
+                      
                       const SizedBox(height: 20),
                       _buildMultiSelectField(
                         items: languages,

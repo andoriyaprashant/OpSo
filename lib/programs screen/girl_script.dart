@@ -49,7 +49,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     projectList = List.from(gssoc2024); // Default year
   }
 
-
   List<String> languages = [
     'All',
     'Js',
@@ -69,13 +68,11 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     'Dart'
   ];
 
-
   Future<void> _loadProjects(String path, List<GssocProjectModal> list) async {
     String response = await rootBundle.loadString(path);
     var jsonList = json.decode(response) as List;
     list.addAll(jsonList.map((data) => GssocProjectModal.getDataFromJson(data)).toList());
   }
-
 
   List<String> _extractUniqueValues(String Function(GssocProjectModal) extractor) {
     return {
@@ -87,7 +84,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     }.toList();
   }
 
-
   List<String> _extractUniqueLanguages(List<String> Function(GssocProjectModal) extractor) {
     final allLanguages = [
       for (var project in gssoc2024) ...extractor(project),
@@ -98,7 +94,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     return ['All', ...allLanguages.toSet()];
   }
 
-
   @override
   void initState() {
     super.initState();
@@ -106,14 +101,12 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     _checkBookmarkStatus();
   }
 
-
   Future<void> _checkBookmarkStatus() async {
     bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProject);
     setState(() {
       isBookmarked = bookmarkStatus;
     });
   }
-
 
   void filterProjects() {
     // Filter projects by year first
@@ -142,16 +135,12 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     setState(() {});
   }
 
-
-
-
   void _updateOrganizationList() {
     allOrganizations = _extractUniqueValues((project) => project.hostedBy)
         .where((organization) => projectList.any((project) => project.hostedBy == organization))
         .toList();
     allOrganizations.insert(0, 'All');
   }
-
 
   List<GssocProjectModal> _getProjectsByYear() {
     switch (selectedYear) {
@@ -168,7 +157,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     }
   }
 
-
   Future<void> _refresh() async {
     await initializeProjectLists();
     setState(() {
@@ -177,7 +165,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
       selectedLanguages = ['All'];
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -304,6 +291,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     return SizedBox(
       height: MediaQuery.of(context).size.height*0.25,
       child: GridView(
+        shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 1.5 / 0.6,
