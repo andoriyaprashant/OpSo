@@ -37,12 +37,14 @@ class _MajorLeagueHackingFellowshipState
     });
   }
 
-  // Size constants
-  double pad = 16.0;
-  double gap = 20.0;
-
   @override
   Widget build(BuildContext context) {
+    // Size constants
+    double screenWidth = MediaQuery.of(context).size.width;
+    double gap = screenWidth * 0.05;
+    double pad = screenWidth * 0.04;
+    double titleSize = screenWidth * 0.05;
+    double contentSize = screenWidth * 0.04;
     return RefreshIndicator(
         onRefresh: _refresh,
         child: Scaffold(
@@ -78,11 +80,23 @@ class _MajorLeagueHackingFellowshipState
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildSectionTitle(
-                    'Learn Software Engineering through Open Source Projects'),
-                _buildSectionContent(
-                  'A fully remote, 12-week internship alternative where participants earn a stipend '
-                  'and learn to collaborate on real open source projects with peers and engineers from top companies.',
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: pad),
+                  child: Text(
+                    'Learn Software Engineering through Open Source Projects',
+                    style: TextStyle(
+                        fontSize: titleSize, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: pad),
+                  child: Text(
+                    'A fully remote, 12-week internship alternative where participants earn a stipend '
+                    'and learn to collaborate on real open source projects with peers and engineers from top companies.',
+                    style: TextStyle(
+                      fontSize: contentSize,
+                    ),
+                  ),
                 ),
                 Row(
                   children: [
@@ -105,7 +119,14 @@ class _MajorLeagueHackingFellowshipState
                   ],
                 ),
                 SizedBox(height: gap),
-                _buildSectionTitle('Explore Fellowship Tracks'),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: pad),
+                  child: Text(
+                    'Explore Fellowship Tracks',
+                    style: TextStyle(
+                        fontSize: titleSize, fontWeight: FontWeight.bold),
+                  ),
+                ),
                 _buildTrackTile('Software Engineering',
                     'For aspiring Software Engineers who want to experience what it\'s like to collaborate on real-world projects from our partners.',
                     () {
@@ -113,9 +134,9 @@ class _MajorLeagueHackingFellowshipState
                       context,
                       MaterialPageRoute(
                           builder: (context) => const TrackDetailsScreen(
-                                track:
+                                title:
                                     'What exactly is the Software Engineering Fellowship?',
-                                desc:
+                                description:
                                     "Software Engineering is one of the most in-demand skills that tech companies are hiring for. As an MLH Fellow on the Software Engineering Track, you'll be matched to a real project from one of our partners. You'll experience what it's like to work on a real software engineering team first-hand, working on either open- or closed-source projects that tech companies depend on every day. ",
                                 url:
                                     "https://fellowship.mlh.io/programs/software-engineering",
@@ -128,9 +149,9 @@ class _MajorLeagueHackingFellowshipState
                       context,
                       MaterialPageRoute(
                           builder: (context) => const TrackDetailsScreen(
-                                track:
+                                title:
                                     "What exactly is the Site Reliability Engineering Track?",
-                                desc:
+                                description:
                                     "Site Reliability Engineering, also known as DevOps, is one of the most in-demand skills that tech companies are hiring for. It's a hybrid between software & systems engineering that works across product & infrastructure to make sure services are reliable & scalable.\nIn the Site Reliability Engineering Track of the MLH Fellowship, you'll learn the skills needed to keep products running. You'll write code and debug hard problems. By the end of the program, you will gain valuable technical skills and the experience needed for a career in Site Reliability Engineering.\nProgram participants will gain practical skills thanks to educational content from Linux Foundation Training & Certification's LFS201 – Essentials of System Administration training course, which covers how to administer, configure and upgrade Linux systems, along with the tools and concepts necessary to efficiently build and manage a production Linux infrastructure.",
                                 url:
                                     "https://fellowship.mlh.io/programs/site-reliability-engineering",
@@ -143,17 +164,31 @@ class _MajorLeagueHackingFellowshipState
                       context,
                       MaterialPageRoute(
                           builder: (context) => const TrackDetailsScreen(
-                                track: 'Web3 Track',
-                                desc:
+                                title: 'Web3 Track',
+                                description:
                                     "Web3 is the name given to internet services that are built using decentralized blockchains — the distributed ledger systems used by cryptocurrencies like Bitcoin and Ether. This underlying technology has broad applications, though, and Web3 has grown to encompass gaming, social platforms, crowdfunding, CRMs and more.\nIn the Web3 track of the MLH Fellowship, you'll learn the skills needed to build on this quickly evolving part of the web and contribute to cutting-edge Web3 applications. Through expert mentorship, you’ll learn how to code on blockchains like Solana, collaborate on a team, and debug hard problems. By the end of the program, you will gain valuable technical skills and the experience needed for a career in Web3 and beyond.",
                                 url:
                                     "https://fellowship.mlh.io/programs/web3-engineering",
                               )));
                 }),
                 SizedBox(height: gap),
-                _buildSectionTitle("Sample Schedule"),
-                _buildSectionContent(
-                    "Here's what a typical day in the fellowship might look like. The program runs Monday - Friday in most major timezones."),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: pad),
+                  child: Text(
+                    "Sample Schedule",
+                    style: TextStyle(
+                        fontSize: titleSize, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: pad),
+                  child: Text(
+                    "Here's what a typical day in the fellowship might look like. The program runs Monday - Friday in most major timezones.",
+                    style: TextStyle(
+                      fontSize: contentSize,
+                    ),
+                  ),
+                ),
                 SizedBox(height: gap),
                 _buildTimeline(),
                 SizedBox(height: gap),
@@ -275,27 +310,46 @@ class _MajorLeagueHackingFellowshipState
 }
 
 class TrackDetailsScreen extends StatelessWidget {
-  final String track, desc;
+  final String title, description;
   final String? url;
 
   const TrackDetailsScreen(
-      {super.key, required this.track, required this.desc, this.url});
+      {super.key, required this.title, required this.description, this.url});
 
   @override
   Widget build(BuildContext context) {
-    double gap = 20;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double gap = screenWidth * 0.05;
+    double pad = screenWidth * 0.04;
+    double titleSize = screenWidth * 0.05;
+    double contentSize = screenWidth * 0.04;
     return Scaffold(
       appBar: AppBar(
-        title: Text(track),
+        title: Text(title),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(pad),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildSectionTitle(track),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: pad),
+              child: Text(
+                title,
+                style:
+                    TextStyle(fontSize: titleSize, fontWeight: FontWeight.bold),
+              ),
+            ),
             SizedBox(height: gap),
-            _buildSectionContent(desc),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: pad),
+              child: Text(
+                description,
+                style: TextStyle(
+                  fontSize: contentSize,
+                ),
+              ),
+            ),
             SizedBox(height: gap),
             (url != null && url!.isNotEmpty)
                 ? Center(
@@ -312,28 +366,6 @@ class TrackDetailsScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-Widget _buildSectionTitle(String title) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(vertical: 8.0),
-    child: Text(
-      title,
-      style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-    ),
-  );
-}
-
-Widget _buildSectionContent(String content) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(vertical: 4.0),
-    child: Text(
-      content,
-      style: const TextStyle(
-        fontSize: 20,
-      ),
-    ),
-  );
 }
 
 Future<void> _launchUrl(String url) async {
