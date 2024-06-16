@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:opso/programs_info_pages/gsoc_info.dart';
 import 'package:opso/widgets/gsoc/GsocProjectWidget.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
@@ -181,6 +182,16 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Google Summer of Code'),
+
+          actions: <Widget>[IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const GSOCInfo()),                );
+            },
+          ),],
+
         ),
         body: FutureBuilder<void>(
           future: _dataFetchFuture,

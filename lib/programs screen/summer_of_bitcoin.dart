@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:opso/modals/sob_project_modal.dart';
+import 'package:opso/programs_info_pages/sob_info.dart';
 import 'package:opso/widgets/sob_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
@@ -125,8 +126,8 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
 
   @override
   Widget build(BuildContext context) {
-    // var height = MediaQuery.sizeOf(context).height;
-    // var width = MediaQuery.sizeOf(context).width;
+    var height = MediaQuery.sizeOf(context).height;
+    var width = MediaQuery.sizeOf(context).width;
     ScreenUtilInit(
       designSize: Size(360, 690),
     );
@@ -158,7 +159,16 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                 HandleBookmark.deleteBookmark(currentProject);
               }
             },
-          )
+          ),
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SOBInfo()),
+              );
+            },
+          ),
         ]),
         body: FutureBuilder<void>(
             future: getProjectFunction,
@@ -219,7 +229,14 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                         },
                       ),
                       SizedBox(height: ScreenUtil().setHeight(20)),
+
                       GridView(
+
+                      SizedBox(
+                        height: height * 0.2,
+                        width: width,
+                        child: GridView(
+
                           physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           gridDelegate:

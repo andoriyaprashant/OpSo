@@ -77,6 +77,7 @@ flutter:
   #      - assets\gsoc_logo.png
   #      - assets\mlh_logo.jpg
   #      - assets\outreachy.png
+  #      - assets\swoc_logo.png
   #      - assets\Google_season_of_docs.png
   #  #   - images/a_dot_ham.jpeg
   assets:
@@ -84,8 +85,14 @@ flutter:
     - assets/projects/gssoc/
     - assets/projects/gsod/
     - assets/projects/sob/
+    - assets/projects/swoc/
     - assets/projects/linux_foundation/
     - assets/splash screen.png
+    - assets/github_swag.png
+    - assets/xyz_domain.png
+    - assets/participation_certificate.png
+    - assets/coding_ninja_swag.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
