@@ -1,0 +1,79 @@
+[
+  {
+    "title": "Preparation of KDE apps for Blue Angel eco-certification",
+    "link": "https://community.kde.org/SoK/Ideas/2023#Sustainability_1:_Preparation_of_KDE_apps_for_Blue_Angel_eco-certification",
+    "mentors": ["Joseph P. De Veaugh-Geiss"],
+    "mentees": ["Rudraksh Karpe"],
+    "year": 2023
+  },
+  {
+    "title": "Improve KDE Eco Test emulation tool",
+    "link": "https://community.kde.org/SoK/Ideas/2023#Sustainability_2:_Improve_KDE_Eco_Test_emulation_tool",
+    "mentors": ["Karanjot Singh", "Emmanuel Charruau", "Joseph P. De Veaugh-Geiss"],
+    "mentees": ["Mohammed Ibrahim"],
+    "year": 2023
+  },
+  {
+    "title": "Measurement of energy consumption with Selenium",
+    "link": "https://community.kde.org/SoK/Ideas/2023#Sustainability_3:_Measurement_of_energy_consumption_with_Selenium",
+    "mentors": ["Emmanuel Charruau", "Harald Sitter"],
+    "mentees": ["Nitin Tejuja"],
+    "year": 2023
+  },
+  {
+    "title": "Accessibility and UI testing of Tokodon",
+    "link": "https://community.kde.org/SoK/Ideas/2023#Accessibility_and_UI_testing_of_Tokodon",
+    "mentors": ["Carl Schwan"],
+    "mentees": ["Rishi Kumar"],
+    "year": 2023
+  },
+  {
+    "title": "Improving the accessibility of KDE’s websites",
+    "link": "https://community.kde.org/SoK/Ideas/2023#Improving_the_accessibility_of_KDE.E2.80.99s_websites",
+    "mentors": ["Paul Brown", "Aniqa Khokhar"],
+    "mentees": ["Victoria Chen"],
+    "year": 2023
+  },
+  {
+    "title": "Plasma accessibility widget",
+    "link": "https://community.kde.org/SoK/Ideas/2023#Plasma_accessibility_widget",
+    "mentors": ["Fushan Wen"],
+    "mentees": ["Brent Mackey"],
+    "year": 2023
+  },
+  {
+    "title": "Automate Flatpak checks in GitLab Invent CI",
+    "link": "https://community.kde.org/SoK/Ideas/2023#Automate_Flatpak_checks_in_GitLab_Invent_CI",
+    "mentors": ["Timothée Ravier", "Aleix Pol"],
+    "mentees": ["Neelaksh Singh"],
+    "year": 2023
+  },
+  {
+    "title": "Spectacle: Improving the annotation tools",
+    "link": "https://community.kde.org/SoK/Ideas/2023#Spectacle:_Improving_the_annotation_tools",
+    "mentors": ["Bharadwaj Raju"],
+    "mentees": ["Brannon Aw"],
+    "year": 2023
+  },
+  {
+    "title": "Plasma: Better holiday support in the digital clock widget",
+    "link": "https://community.kde.org/SoK/Ideas/2023#Plasma:_Better_holiday_support_in_the_digital_clock_widget",
+    "mentors": ["Fushan Wen"],
+    "mentees": ["Ruoqing He"],
+    "year": 2023
+  },
+  {
+    "title": "Improving Audiotube",
+    "link": "https://community.kde.org/SoK/Ideas/2023#Improving_Audiotube",
+    "mentors": ["Carl Schwan", "Devin Lin", "Jonah Brüchert"],
+    "mentees": ["Théophile Gilgien"],
+    "year": 2023
+  },
+  {
+    "title": "New epub reader, Arianna",
+    "link": "https://community.kde.org/SoK/Ideas/2023#New_epub_reader.2C_Arianna",
+    "mentors": ["Carl Schwan"],
+    "mentees": ["Arpit Jain"],
+    "year": 2023
+  }
+]
