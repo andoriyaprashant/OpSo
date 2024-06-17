@@ -172,7 +172,10 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(FontAwesomeIcons.bars),
+                              IconButton(
+                                icon: Icon(Icons.close),
+                                onPressed: () => Navigator.pop(context),
+                              ),
                               SizedBox(
                                 width: ScreenUtil().setWidth(100),
                               ),
