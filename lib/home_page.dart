@@ -31,21 +31,6 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // showNotification();
     super.initState();
-    _getInitialThemeMode();
-  }
-
-  int _initialLabelIndex = 0;
-  void _getInitialThemeMode() async {
-    final savedThemeMode = await AdaptiveTheme.getThemeMode();
-    setState(() {
-      if (savedThemeMode == AdaptiveThemeMode.light) {
-        _initialLabelIndex = 0;
-      } else if (savedThemeMode == AdaptiveThemeMode.dark) {
-        _initialLabelIndex = 1;
-      } else {
-        _initialLabelIndex = 0;
-      }
-    });
   }
 
 //show various notification from here
@@ -191,20 +176,15 @@ class _HomePageState extends State<HomePage> {
                                 onTap: () {},
                                 child: ListTile(
                                   leading: Icon(
-                                    _initialLabelIndex == 0
+                                    AdaptiveTheme.of(context).mode.isDark
                                         ? FontAwesomeIcons.solidSun
                                         : FontAwesomeIcons.solidMoon,
                                   ),
                                   title: const Text('Switch Theme'),
                                   onTap: () {
                                     setState(() {
-                                      if (_initialLabelIndex == 0) {
-                                        _initialLabelIndex = 1;
-                                        AdaptiveTheme.of(context).setDark();
-                                      } else {
-                                        _initialLabelIndex = 0;
-                                        AdaptiveTheme.of(context).setLight();
-                                      }
+                                      AdaptiveTheme.of(context)
+                                          .toggleThemeMode(useSystem: false);
                                     });
                                   },
                                 ),
