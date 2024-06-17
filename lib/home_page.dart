@@ -10,6 +10,7 @@ import 'package:opso/programs%20screen/linux_foundation.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
 import 'package:opso/programs%20screen/open_summer_of_code.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
+import 'package:opso/programs%20screen/season_of_kde.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/programs%20screen/social_winter_of_code.dart';
 import 'package:opso/services/notificationService.dart';
@@ -98,6 +99,10 @@ class _HomePageState extends State<HomePage> {
     Program(
       title: 'Social Winter of Code',
       imageAssetPath: 'assets/swoc.png',
+    ),
+    Program(
+      title: 'Season of KDE',
+      imageAssetPath: 'assets/sokde.png',
     ),
     Program(
       title: 'Open Summer of Code',
@@ -354,6 +359,15 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
+      case 'Season of KDE':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SeasonOfKDE(),
+          ),
+        );
+        break;
+
       case 'Outreachy':
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const OutReachy()));
@@ -472,6 +486,10 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
       imageAssetPath: 'assets/swoc.png',
     ),
     Program(
+      title: 'Season of KDE',
+      imageAssetPath: 'assets/sokde.png',
+    ),
+    Program(
       title: 'Open Summer of Code',
       imageAssetPath: 'assets/open_summer_of_code.png',
     ),
@@ -569,6 +587,15 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           context,
           MaterialPageRoute(
             builder: (context) => const SWOCScreen(),
+          ),
+        );
+        break;
+
+      case 'Season of KDE':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SeasonOfKDE(),
           ),
         );
         break;
