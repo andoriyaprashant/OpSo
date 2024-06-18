@@ -53,6 +53,12 @@ class OpsoTimeLineScreen extends StatelessWidget {
       },
       {
         'description':
+            "Open Summer of Code\nApplication Period - 1/04/2024 to 29/04/2024",
+        'startDate': DateTime.utc(2024, 4, 1),
+        'endDate': DateTime.utc(2024, 4, 29),
+      },
+      {
+        'description':
             "MLH Fellowship(Fall Term)\nApplication Period - 15/04/2024 to 31/05/2024",
         'startDate': DateTime.utc(2024, 4, 15),
         'endDate': DateTime.utc(2024, 5, 31),
