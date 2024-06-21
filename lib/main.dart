@@ -18,12 +18,14 @@ import 'splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  final savedThemeMode = await AdaptiveTheme.getThemeMode();
   await NotificationService.initialNotification();
-  runApp(const OpSoApp());
+  runApp(OpSoApp(savedThemeMode: savedThemeMode));
 }
 
 class OpSoApp extends StatelessWidget {
-  const OpSoApp({super.key});
+  final AdaptiveThemeMode? savedThemeMode;
+  const OpSoApp({super.key, this.savedThemeMode});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class OpSoApp extends StatelessWidget {
           return AdaptiveTheme(
             light: ThemeData.light(),
             dark: ThemeData.dark(),
-            initial: AdaptiveThemeMode.system,
+            initial: savedThemeMode ?? AdaptiveThemeMode.light,
             builder: (theme, darkTheme) => MaterialApp(
               initialRoute: '/splash_screen',
               routes: {
