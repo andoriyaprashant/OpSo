@@ -4,12 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:opso/modals/osoc_modal.dart';
-import 'package:opso/modals/sob_project_modal.dart';
-import 'package:opso/programs_info_pages/sob_info.dart';
 import 'package:opso/widgets/osoc_widget.dart';
-import 'package:opso/widgets/sob_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
-
+import 'package:opso/programs_info_pages/osoc_info.dart';
 import '../modals/book_mark_model.dart';
 import '../widgets/SearchandFilterWidget.dart';
 
@@ -128,7 +125,7 @@ class _OpenSummerOfCodeState extends State<OpenSummerOfCode> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar:
-            AppBar(title: const Text('Summer of Bitcoin'), actions: <Widget>[
+            AppBar(title: const Text('Open Summer of Code'), actions: <Widget>[
           IconButton(
             icon: (isBookmarked)
                 ? const Icon(Icons.bookmark_add_rounded)
@@ -152,6 +149,15 @@ class _OpenSummerOfCodeState extends State<OpenSummerOfCode> {
                 print("Deleting");
                 HandleBookmark.deleteBookmark(currentProject);
               }
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const OSOCInfo()),
+              );
             },
           ),
         ]),
