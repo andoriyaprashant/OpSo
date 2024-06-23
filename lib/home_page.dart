@@ -1,7 +1,10 @@
 import 'dart:ui';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:opso/ChatBotpage.dart';
 import 'package:opso/opso_timeline.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
@@ -18,22 +21,45 @@ import 'package:opso/widgets/book_mark_screen.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:opso/widgets/faq.dart';
 import 'dart:math' as math;
-import 'package:awesome_notifications/awesome_notifications.dart';
+
+
 import 'about.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
+
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    // showNotification();
+    showNotification();
     super.initState();
+
+    _getInitialThemeMode();
   }
+
+
+  int _initialLabelIndex = 0;
+  void _getInitialThemeMode() async {
+    final savedThemeMode = await AdaptiveTheme.getThemeMode();
+    setState(() {
+      if (savedThemeMode == AdaptiveThemeMode.light) {
+        _initialLabelIndex = 0;
+      } else if (savedThemeMode == AdaptiveThemeMode.dark) {
+        _initialLabelIndex = 1;
+      } else {
+        _initialLabelIndex = 0;
+      }
+    });
+
+  }
+
 
 //show various notification from here
   void showNotification() async {
@@ -43,6 +69,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+
 //used to show the notification every 5 ms
   void showScheduleNotification() async {
     await NotificationService.showNotification(
@@ -51,6 +78,7 @@ class _HomePageState extends State<HomePage> {
         scheduled: true,
         interval: 5);
   }
+
 
   final List<Program> programs = [
     Program(
@@ -95,12 +123,14 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
+
   @override
   Widget build(BuildContext context) {
     // var media = MediaQuery.of(context).size;
     Color backgroundColor = Theme.of(context).brightness == Brightness.dark
         ? Colors.black.withOpacity(0.6) // Example dark mode color
         : Colors.white.withOpacity(0.6); // Example light mode color
+
 
     ScreenUtil.init(
       context,
@@ -113,7 +143,7 @@ class _HomePageState extends State<HomePage> {
         title: Text(
           'OpSo',
           style:
-              TextStyle(fontWeight: FontWeight.bold, fontSize: appBarFontSize),
+          TextStyle(fontWeight: FontWeight.bold, fontSize: appBarFontSize),
         ),
         actions: [
           IconButton(
@@ -123,13 +153,24 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           /*IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {
-              // Open drawer when the menu icon is clicked
-              Scaffold.of(context).openDrawer();
-            },
-          ),*/
+           icon: Icon(Icons.menu),
+           onPressed: () {
+             // Open drawer when the menu icon is clicked
+             Scaffold.of(context).openDrawer();
+           },
+         ),*/
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ChatBotPage(),
+            ),
+          );
+        },
+        child: const Icon(Icons.chat_bubble_outline),
       ),
       drawer: Drawer(
         backgroundColor: Colors.transparent,
@@ -148,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                 child: SafeArea(
                   child: Padding(
                     padding:
-                        const EdgeInsets.only(left: 30, right: 30, top: 30),
+                    const EdgeInsets.only(left: 30, right: 30, top: 30),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -211,7 +252,7 @@ class _HomePageState extends State<HomePage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const BookMarkScreen()));
+                                          const BookMarkScreen()));
                                 },
                               ),
                               const SizedBox(height: 15),
@@ -228,7 +269,7 @@ class _HomePageState extends State<HomePage> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                          const OpsoTimeLineScreen(),
+                                      const OpsoTimeLineScreen(),
                                     ),
                                   );
                                 },
@@ -242,7 +283,8 @@ class _HomePageState extends State<HomePage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => FAQPage(),
+                                      builder: (context) =>
+                                          FAQPage(),
                                     ),
                                   );
                                 },
@@ -250,7 +292,7 @@ class _HomePageState extends State<HomePage> {
                               SizedBox(height: ScreenUtil().setHeight(15)),
                               ListTile(
                                 leading:
-                                    const Icon(FontAwesomeIcons.circleInfo),
+                                const Icon(FontAwesomeIcons.circleInfo),
                                 title: const Text('About'),
                                 onTap: () {
                                   Navigator.push(
@@ -296,6 +338,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+
   void navigateToScreen(BuildContext context, Program program) {
     switch (program.title) {
       case 'Google Summer of Code':
@@ -307,6 +350,7 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
+
       case 'Google Season of Docs':
         Navigator.push(
           context,
@@ -316,6 +360,7 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
+
       case 'Major League Hacking Fellowship':
         Navigator.push(
           context,
@@ -323,6 +368,7 @@ class _HomePageState extends State<HomePage> {
               builder: (context) => const MajorLeagueHackingFellowship()),
         );
         break;
+
 
       case 'GirlScript Summer of Code':
         Navigator.push(
@@ -332,6 +378,7 @@ class _HomePageState extends State<HomePage> {
           ),
         );
         break;
+
 
       case 'Social Winter of Code':
         Navigator.push(
@@ -351,20 +398,24 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
+
       case 'Outreachy':
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const OutReachy()));
+
 
       case 'Summer of Bitcoin':
         Navigator.pushNamed(context, "/summer_of_bitcoin");
 
       case 'Open Summer of Code':
+
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => const OpenSummerOfCode(),
           ),
         );
+
 
       case 'Linux Foundation':
         Navigator.push(context,
@@ -376,10 +427,12 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+
 class ProgramOption extends StatelessWidget {
   final String title;
   final String imageAssetPath;
   final VoidCallback onTap;
+
 
   const ProgramOption({
     super.key,
@@ -387,6 +440,7 @@ class ProgramOption extends StatelessWidget {
     required this.imageAssetPath,
     required this.onTap,
   });
+
 
   @override
   Widget build(BuildContext context) {
@@ -434,6 +488,7 @@ class ProgramOption extends StatelessWidget {
   }
 }
 
+
 class ProgramSearchDelegate extends SearchDelegate<String> {
   final List<Program> programs = [
     Program(
@@ -478,6 +533,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     ),
   ];
 
+
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -490,6 +546,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     ];
   }
 
+
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
@@ -500,20 +557,23 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     );
   }
 
+
   @override
   Widget buildResults(BuildContext context) {
     return Container();
   }
+
 
   @override
   Widget buildSuggestions(BuildContext context) {
     final List<String> suggestionList = query.isEmpty
         ? []
         : programs
-            .where((program) =>
-                program.title.toLowerCase().contains(query.toLowerCase()))
-            .map((program) => program.title)
-            .toList();
+        .where((program) =>
+        program.title.toLowerCase().contains(query.toLowerCase()))
+        .map((program) => program.title)
+        .toList();
+
 
     return ListView.builder(
       itemCount: suggestionList.length,
@@ -526,9 +586,10 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     );
   }
 
+
   void navigateToScreen(BuildContext context, String title) {
     final Program selectedProgram =
-        programs.firstWhere((program) => program.title == title);
+    programs.firstWhere((program) => program.title == title);
     switch (selectedProgram.title) {
       case 'Google Summer of Code':
         Navigator.push(
@@ -547,6 +608,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
+
       case 'Major League Hacking Fellowship':
         Navigator.push(
           context,
@@ -556,6 +618,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
+
       case 'GirlScript Summer of Code':
         Navigator.push(
           context,
@@ -564,6 +627,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           ),
         );
         break;
+
 
       case 'Social Winter of Code':
         Navigator.push(
@@ -583,10 +647,12 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
+
       case 'Linux Foundation':
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const LinuxFoundation()));
         break;
+
 
       default:
         break;
@@ -594,12 +660,15 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
   }
 }
 
+
 class Program {
   final String title;
   final String imageAssetPath;
+
 
   Program({
     required this.title,
     required this.imageAssetPath,
   });
 }
+
