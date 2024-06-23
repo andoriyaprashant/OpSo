@@ -6,7 +6,9 @@ import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
 import 'package:opso/programs%20screen/linux_foundation.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
+import 'package:opso/programs%20screen/open_summer_of_code.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
+import 'package:opso/programs%20screen/season_of_kde.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/programs%20screen/social_winter_of_code.dart';
 import 'package:opso/services/notificationService.dart';
@@ -16,12 +18,14 @@ import 'splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  final savedThemeMode = await AdaptiveTheme.getThemeMode();
   await NotificationService.initialNotification();
-  runApp(const OpSoApp());
+  runApp(OpSoApp(savedThemeMode: savedThemeMode));
 }
 
 class OpSoApp extends StatelessWidget {
-  const OpSoApp({super.key});
+  final AdaptiveThemeMode? savedThemeMode;
+  const OpSoApp({super.key, this.savedThemeMode});
 
   @override
   Widget build(BuildContext context) {
@@ -33,18 +37,20 @@ class OpSoApp extends StatelessWidget {
           return AdaptiveTheme(
             light: ThemeData.light(),
             dark: ThemeData.dark(),
-            initial: AdaptiveThemeMode.system,
+            initial: savedThemeMode ?? AdaptiveThemeMode.light,
             builder: (theme, darkTheme) => MaterialApp(
               initialRoute: '/splash_screen',
               routes: {
                 "/progarm_page": (context) => const HomePage(),
                 "/girl_script_summer_of_code": (context) => const GSSOCScreen(),
                 "/social_winter_of_code": (context) => const SWOCScreen(),
+                "/season_of_sokde":(context) => const SeasonOfKDE(),
                 "/google_summer_of_code": (context) =>
                     GoogleSummerOfCodeScreen(),
                 "/google_season_of_docs": (context) =>
                     GoogleSeasonOfDocsScreen(),
                 "/summer_of_bitcoin": (context) => const SummerOfBitcoin(),
+                "/open_summer_of_code": (context) => const OpenSummerOfCode(),
                 "/outreachy": (context) => const OutReachy(),
                 "/major_league_hacking_fellowship": (context) =>
                     const MajorLeagueHackingFellowship(),

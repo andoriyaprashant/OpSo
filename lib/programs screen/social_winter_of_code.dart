@@ -5,6 +5,7 @@ import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
 import 'package:multi_select_flutter/util/multi_select_item.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/swoc_project_modal.dart';
+import 'package:opso/programs_info_pages/swoc_info.dart';
 import 'package:opso/widgets/swoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
@@ -220,7 +221,15 @@ class _SWOCScreenState extends State<SWOCScreen> {
                 HandleBookmark.deleteBookmark(currentProject);
               }
             },
-          )
+          ),
+          IconButton(
+            icon: Icon(Icons.info_outline),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SWOCInfo()),                );
+            },
+          ),
         ]),
         body: FutureBuilder<void>(
           future: getProjectFunction,

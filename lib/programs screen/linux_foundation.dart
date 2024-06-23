@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/linux_foundation_modal.dart';
+import 'package:opso/programs_info_pages/linux_info.dart';
 import 'package:opso/widgets/linux_foundation_widget.dart';
 
 class LinuxFoundation extends StatefulWidget {
@@ -99,7 +100,16 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
                 HandleBookmark.deleteBookmark(currentProject);
               }
             },
-          )
+          ),
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const LINUXInfo()),
+              );
+            },
+          ),
         ]),
         body: FutureBuilder<void>(
           future: getProjectListFunction,

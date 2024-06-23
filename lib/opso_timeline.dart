@@ -11,6 +11,12 @@ class OpsoTimeLineScreen extends StatelessWidget {
     final List<Map<String, dynamic>> events = [
       {
         'description':
+            "Season of KDE-Mentorship\nApplication Period - 15/12/2023 to 08/01/2024",
+        'startDate': DateTime.utc(2024, 12, 15),
+        'endDate': DateTime.utc(2024, 1, 8),
+      },
+      {
+        'description':
             "Outreachy(May Internships)\nApplication Period - 15/01/2024 to 31/01/2024",
         'startDate': DateTime.utc(2024, 1, 15),
         'endDate': DateTime.utc(2024, 1, 31),
@@ -44,6 +50,12 @@ class OpsoTimeLineScreen extends StatelessWidget {
             "MLH Fellowship(Summer Term-B)\nApplication Period - 31/03/2024 to 15/04/2024",
         'startDate': DateTime.utc(2024, 3, 31),
         'endDate': DateTime.utc(2024, 4, 15),
+      },
+      {
+        'description':
+            "Open Summer of Code\nApplication Period - 1/04/2024 to 29/04/2024",
+        'startDate': DateTime.utc(2024, 4, 1),
+        'endDate': DateTime.utc(2024, 4, 29),
       },
       {
         'description':

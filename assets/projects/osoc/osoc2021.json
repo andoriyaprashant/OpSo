@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Reclaim your data",
+    "image_url": "https://osoc.be/editions/2021/projects/reclaim-your-data.svg",
+    "description": "Remember this nice picture your friend shared of you cliff jumping? So does your insurer - and he just raised your premium. WePod is creating a web application that allows you to get back control. Choose who gets to see which pictures and keep the ownership over your data.",
+    "project_url": "https://osoc.be/editions/2021/reclaim-your-data",
+    "year": 2021
+  },
+  {
+    "name": "Crowdy",
+    "image_url": "https://osoc.be/editions/2021/projects/crowdy.svg",
+    "description": "We will build a user-friendly web-app \"crowdedness meter\" to help students meet safely in Ghent hotspots. Our ultimate goal is to offer students the opportunity to reclaim the ownership of their reputation, by demonstrating that it is possible to have a social life while respecting government measures. For students, by students.",
+    "project_url": "https://osoc.be/editions/2021/crowdy",
+    "year": 2021
+  },
+  {
+    "name": "Open Talks",
+    "image_url": "https://osoc.be/editions/2021/projects/open-talks.svg",
+    "description": "Creating, organising and optimising the internal and external communication strategy for #osoc21. The goal is to document and share the experiences of all #osoc21 participants to the world and future students, coaches, sponsors and partners in a successful creative communication campaign on different media platforms.",
+    "project_url": "https://osoc.be/editions/2021/open-talks",
+    "year": 2021
+  },
+  {
+    "name": "Future of Work",
+    "image_url": "https://osoc.be/editions/2021/projects/future-of-work.svg",
+    "description": "Our goal is to create an application that analyzes the inflow and outflow of personnel and creates fancy, useful visualizations.",
+    "project_url": "https://osoc.be/editions/2021/future-of-work",
+    "year": 2021
+  },
+  {
+    "name": "Edubadges (Belgium)",
+    "image_url": "https://osoc.be/editions/2021/projects/edubadges-be.svg",
+    "description": "We will be creating a campaign to successfully bring Edubadges to the Belgian public in the future. The communication plan will inform the viewer about Edubadges and its advantages.",
+    "project_url": "https://osoc.be/editions/2021/edubadges-be",
+    "year": 2021
+  },
+  {
+    "name": "selection-tool",
+    "image_url": "https://osoc.be/editions/2021/projects/selection-tool.svg",
+    "description": "Creating a selection tool for recruiters giving them the opportunity to collaborate in real time while having an overview of all the candidates, resulting in diverse, innovative teams for all orgranisations. Giving orgranisations the opportunity to find the best candidates and match them to the preferred team.",
+    "project_url": "https://osoc.be/editions/2021/selection-tool",
+    "year": 2021
+  },
+  {
+    "name": "Arvesta's Digital Innovation Hackathon",
+    "image_url": "https://osoc.be/editions/2021/projects/arvesta-s-digital-innovation-hackathon.svg",
+    "description": "How to connect the different stakeholders of Arvesta, the largest full-service partner for Belgian farmers and market gardeners? Sharing their knowledge to become more aware, so they can improve their skills and attitudes.",
+    "project_url": "https://osoc.be/editions/2021/arvesta-s-digital-innovation-hackathon",
+    "year": 2021
+  },
+  {
+    "name": "Final Improved String pHarser (FISH)",
+    "image_url": "https://osoc.be/editions/2021/projects/fish.svg",
+    "description": "extract data from scientific references and store it in a usable format. We split strings, containing citations and references, into the correct author, year, journal and publication.",
+    "project_url": "https://osoc.be/editions/2021/fish",
+    "year": 2021
+  },
+  {
+    "name": "Nature moves",
+    "image_url": "https://osoc.be/editions/2021/projects/nature-moves.svg",
+    "description": "Our goal is to build a map visualisation and editing tool to enrich and integrate the Natuurpunt’s nature reserves data into the OSM database, making it both accessible, maintainable, and mobile-friendly.",
+    "project_url": "https://osoc.be/editions/2021/nature-moves",
+    "year": 2021
+  },
+  {
+    "name": "Safe Crossing",
+    "image_url": "https://osoc.be/editions/2021/projects/safe-crossing.svg",
+    "description": "This project is about determining which crosswalk a pedestrian is about to cross with a mobile phone and optionally hardware devices installed on the intersection.  Pedestrians and specially blind people are the target audiance for this project.",
+    "project_url": "https://osoc.be/editions/2021/safe-crossing",
+    "year": 2021
+  },
+  {
+    "name": "RoadBase",
+    "image_url": "https://osoc.be/editions/2021/projects/roadbase.svg",
+    "description": "Crowd-sourcing information about road marks in linked open data structure to enable (local) governments, companies & citizens to use and reuse this data,  build new applications and create new roads to safety.",
+    "project_url": "https://osoc.be/editions/2021/roadbase",
+    "year": 2021
+  },
+  {
+    "name": "Linked Data Event Streams",
+    "image_url": "https://osoc.be/editions/2021/projects/ldes.svg",
+    "description": "Our goal is to build an SDK to make it easier for Data Publisher/Developers to publish their datasets as Linked Data Event Streams (LDES) and showcase its potential by creating a use-case for public transport services",
+    "project_url": "https://osoc.be/editions/2021/ldes",
+    "year": 2021
+  },
+  {
+    "name": "BikeInfrastructure",
+    "image_url": "https://osoc.be/editions/2021/projects/bikeinfrastructure.svg",
+    "description": "We will build a user-friendly and visually attractive tool to visualize and promote the Open Street Maps data on cycling infrastructure in the province of East-Flanders.",
+    "project_url": "https://osoc.be/editions/2021/bikeinfrastructure",
+    "year": 2021
+  }
+]

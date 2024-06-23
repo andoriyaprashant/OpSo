@@ -2,51 +2,46 @@ import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:opso/modals/sob_project_modal.dart';
-import 'package:opso/programs_info_pages/sob_info.dart';
-import 'package:opso/widgets/sob_project_widget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:opso/modals/osoc_modal.dart';
+import 'package:opso/widgets/osoc_widget.dart';
 import 'package:opso/widgets/year_button.dart';
-
+import 'package:opso/programs_info_pages/osoc_info.dart';
 import '../modals/book_mark_model.dart';
 import '../widgets/SearchandFilterWidget.dart';
 
-class SummerOfBitcoin extends StatefulWidget {
-  const SummerOfBitcoin({super.key});
+class OpenSummerOfCode extends StatefulWidget {
+  const OpenSummerOfCode({super.key});
 
   @override
-  State<SummerOfBitcoin> createState() => _SummerOfBitcoinState();
+  State<OpenSummerOfCode> createState() => _OpenSummerOfCodeState();
 }
 
-class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
-  List<SobProjectModal> sob2023 = [];
-  List<SobProjectModal> sob2022 = [];
-  List<SobProjectModal> sob2021 = [];
-  String currectPage = "/summer_of_bitcoin";
-  String currentProject = "Summer of Bitcoin";
+class _OpenSummerOfCodeState extends State<OpenSummerOfCode> {
+  List<OsocModal> osoc2022 = [];
+  List<OsocModal> osoc2021 = [];
+  String currectPage = "/open_summer_of_code";
+  String currentProject = "Open Summer of Code";
   bool isBookmarked = true;
-  int selectedYear = 2023;
+  int selectedYear = 2022;
 
-  List<SobProjectModal> projectList = [];
+  List<OsocModal> projectList = [];
   Future<void>? getProjectFunction;
 
   Future<void> initializeProjectLists() async {
-    String response =
-        await rootBundle.loadString('assets/projects/sob/sob2023.json');
+    var response =
+        await rootBundle.loadString('assets/projects/osoc/osoc2022.json');
     var jsonList = await json.decode(response);
     for (var data in jsonList) {
-      sob2023.add(SobProjectModal.fromMap(data));
+      osoc2022.add(OsocModal.fromMap(data));
     }
-    projectList = sob2023;
-
-    response = await rootBundle.loadString('assets/projects/sob/sob2022.json');
+    projectList = osoc2022;
+    print(projectList);
+    response =
+        await rootBundle.loadString('assets/projects/osoc/osoc2021.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
-      sob2022.add(SobProjectModal.fromMap(data));
-    }
-    response = await rootBundle.loadString('assets/projects/sob/sob2021.json');
-    jsonList = await json.decode(response);
-    for (var data in jsonList) {
-      sob2021.add(SobProjectModal.fromMap(data));
+      osoc2021.add(OsocModal.fromMap(data));
     }
   }
 
@@ -66,8 +61,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
 
   void searchTag(String searchTag) {
     projectList = projectList
-        .where((SobProjectModal element) =>
-            element.organization.contains(searchTag))
+        .where((OsocModal element) => element.name.contains(searchTag))
         .toList();
     setState(() {});
   }
@@ -76,13 +70,10 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
     if (searchText.isEmpty) {
       switch (selectedYear) {
         case 2021:
-          projectList = sob2021;
+          projectList = osoc2021;
           break;
         case 2022:
-          projectList = sob2022;
-          break;
-        case 2023:
-          projectList = sob2023;
+          projectList = osoc2022;
           break;
       }
       setState(() {});
@@ -90,51 +81,51 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
     }
     searchText = searchText.toLowerCase();
     projectList = projectList
-        .where((SobProjectModal element) =>
+        .where((OsocModal element) =>
             element.name.toLowerCase().contains(searchText) ||
-            element.mentor.toLowerCase().contains(searchText) ||
-            element.organization.toLowerCase().contains(searchText) ||
-            element.description.toLowerCase().contains(searchText) ||
-            element.university.toLowerCase().contains(searchText))
+            element.description.toLowerCase().contains(searchText))
         .toList();
     setState(() {});
   }
 
-  List<String> languages = [
-    'Rust miniscript',
-    'Core Lightning',
-    'LDK',
-    'Bitcoin Core',
-    'Alby',
-    'Eye of Satoshi',
-    'Ledger Bitcoin App',
-    'Galoy',
-    'Fedimint',
-    'VLS',
-    'StratumV2',
-    'bcoin',
-    'LND',
-    'Eclair'
-  ];
- 
+  // List<String> languages = [
+  //   'Rust miniscript',
+  //   'Core Lightning',
+  //   'LDK',
+  //   'Bitcoin Core',
+  //   'Alby',
+  //   'Eye of Satoshi',
+  //   'Ledger Bitcoin App',
+  //   'Galoy',
+  //   'Fedimint',
+  //   'VLS',
+  //   'StratumV2',
+  //   'bcoin',
+  //   'LND',
+  //   'Eclair'
+  // ];
+
   Future<void> _refresh() async {
-    setState(() {
-      initializeProjectLists();
-      selectedYear = 2023;
-    });
+    osoc2021.clear();
+    osoc2022.clear();
+    await initializeProjectLists();
+
+    selectedYear = 2022;
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.sizeOf(context).height;
     var width = MediaQuery.sizeOf(context).width;
-    ScreenUtilInit(
+    const ScreenUtilInit(
       designSize: Size(360, 690),
     );
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar: AppBar(title: const Text('Summer of Bitcoin'), actions: <Widget>[
+        appBar:
+            AppBar(title: const Text('Open Summer of Code'), actions: <Widget>[
           IconButton(
             icon: (isBookmarked)
                 ? const Icon(Icons.bookmark_add_rounded)
@@ -165,7 +156,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const SOBInfo()),
+                MaterialPageRoute(builder: (context) => const OSOCInfo()),
               );
             },
           ),
@@ -227,7 +218,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                       ),
                       SizedBox(height: ScreenUtil().setHeight(20)),
                       SizedBox(
-                        height: height * 0.2,
+                        height: height * 0.1,
                         width: width,
                         child: GridView(
                           physics: const NeverScrollableScrollPhysics(),
@@ -244,7 +235,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                               isEnabled: selectedYear == 2021 ? true : false,
                               onTap: () {
                                 setState(() {
-                                  projectList = sob2021;
+                                  projectList = osoc2021;
                                   selectedYear = 2021;
                                 });
                               },
@@ -257,7 +248,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                               isEnabled: selectedYear == 2022 ? true : false,
                               onTap: () {
                                 setState(() {
-                                  projectList = sob2022;
+                                  projectList = osoc2022;
                                   selectedYear = 2022;
                                 });
                               },
@@ -265,77 +256,61 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                                   ? Colors.white
                                   : const Color.fromRGBO(255, 183, 77, 1),
                             ),
-                            YearButton(
-                              year: "2023",
-                              isEnabled: selectedYear == 2023 ? true : false,
-                              onTap: () {
-                                setState(() {
-                                  projectList = sob2023;
-                                  selectedYear = 2023;
-                                });
-                              },
-                              backgroundColor: selectedYear == 2023
-                                  ? Colors.white
-                                  : const Color.fromRGBO(255, 183, 77, 1),
-                            ),
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: ScreenUtil().setHeight(20),
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          const Text(
-                            'Filter by Org:',
-                            style: TextStyle(fontWeight: FontWeight.w400),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(ScreenUtil().setHeight(8)),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                DropdownWidget(
-                                  items: languages,
-                                  hintText: 'Org',
-                                  onChanged: (newValue) {
-                                    setState(() {
-                                      switch (selectedYear) {
-                                        case 2021:
-                                          projectList = sob2021;
-                                          break;
-                                        case 2022:
-                                          projectList = sob2022;
-                                          break;
-                                        case 2023:
-                                          projectList = sob2023;
-                                          break;
-                                      }
-                                      searchTag(newValue);
-                                    });
-                                    // Perform filtering based on selectedLanguage
-                                  },
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: ScreenUtil().setHeight(20),
-                      ),
+
+                      // Row(
+                      //   crossAxisAlignment: CrossAxisAlignment.center,
+                      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //   children: [
+                      //     const Text(
+                      //       'Filter by Org:',
+                      //       style: TextStyle(fontWeight: FontWeight.w400),
+                      //     ),
+                      //     Padding(
+                      //       padding: EdgeInsets.all(ScreenUtil().setHeight(8)),
+                      //       child: Row(
+                      //         crossAxisAlignment: CrossAxisAlignment.center,
+                      //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //         children: [
+                      //           DropdownWidget(
+                      //             items: languages,
+                      //             hintText: 'Org',
+                      //             onChanged: (newValue) {
+                      //               setState(() {
+                      //                 switch (selectedYear) {
+                      //                   case 2021:
+                      //                     projectList = sob2021;
+                      //                     break;
+                      //                   case 2022:
+                      //                     projectList = sob2022;
+                      //                     break;
+                      //                   case 2023:
+                      //                     projectList = sob2023;
+                      //                     break;
+                      //                 }
+                      //                 searchTag(newValue);
+                      //               });
+                      //               // Perform filtering based on selectedLanguage
+                      //             },
+                      //           ),
+                      //         ],
+                      //       ),
+                      //     )
+                      //   ],
+                      // ),
+                      // SizedBox(
+                      //   height: ScreenUtil().setHeight(20),
+                      // ),
                       Expanded(
                         // width: width,
                         child: ListView.builder(
-                          physics: NeverScrollableScrollPhysics(),
                           itemCount: projectList.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Padding(
                               padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: SobProjectWidget(
+                              child: OsocWidget(
                                 modal: projectList[index],
                                 height: ScreenUtil().screenHeight * 0.2,
                                 width: ScreenUtil().screenWidth,

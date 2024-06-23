@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Removing Obstacles with Open Data",
+    "image_url": "https://osoc.be/editions/2022/projects/removing-obstacles-with-open-data.svg",
+    "description": "We strive to make the world more accessible for people with a physical disability by creating a web application where public places and data about accessibility will be mapped, so that it will become available to consult, add and analyze.",
+    "project_url": "https://osoc.be/editions/2022/removing-obstacles-with-open-data",
+    "year": 2022
+  },
+  {
+    "name": "The Impact of Sharing Knowledge",
+    "image_url": "https://osoc.be/editions/2022/projects/the-impact-of-sharing-knowledge.svg",
+    "description": "Motivate and inspire researchers to keep sharing their research output and knowledge on knowledge portals such as FRIS and Biblio in a durable, qualitative, sustainable & enthusiastic way.",
+    "project_url": "https://osoc.be/editions/2022/the-impact-of-sharing-knowledge",
+    "year": 2022
+  },
+  {
+    "name": "We spice up your osoc",
+    "image_url": "https://osoc.be/editions/2022/projects/we-spice-up-your-osoc.svg",
+    "description": "We manage internal and external communications of #osoc22 and set up a new branding strategy for #osoc23. We promote this summer programme to future participants and partners.",
+    "project_url": "https://osoc.be/editions/2022/we-spice-up-your-osoc",
+    "year": 2022
+  },
+  {
+    "name": "Powerful Personal Data",
+    "image_url": "https://osoc.be/editions/2022/projects/powerful-personal-data.svg",
+    "description": "We're a team researching and coding to demonstrate how \"taking back control of your personal data\" can really empower everyone in their daily lives.",
+    "project_url": "https://osoc.be/editions/2022/powerful-personal-data",
+    "year": 2022
+  },
+  {
+    "name": "Paradar",
+    "image_url": "https://osoc.be/editions/2022/projects/paradar.svg",
+    "description": "Developing a proof of concept for a tracking app based on physical trackers and smartphones to allow NCCN to track useful resources (VIP, assets, ...) in their internal tools (crisis management, emergency planning, ...)",
+    "project_url": "https://osoc.be/editions/2022/paradar",
+    "year": 2022
+  },
+  {
+    "name": "VAC - Voice Assistant Confidentiality",
+    "image_url": "https://osoc.be/editions/2022/projects/vac-voice-assistant-confidentiality.svg",
+    "description": "VAC - Voice Assistant Confidentiality project aims to deliver offline voice assistant and research use cases with a focus on sexual harassment.",
+    "project_url": "https://osoc.be/editions/2022/vac-voice-assistant-confidentiality",
+    "year": 2022
+  },
+  {
+    "name": "LYNX - Local Linked Taxes",
+    "image_url": "https://osoc.be/editions/2022/projects/lynx-local-linked-taxes.svg",
+    "description": "Informing & involving citizens, organizations, companies and governments with Linked Open Data. With this project, we aim to increase the quality of data about municipal taxes and to open it up.",
+    "project_url": "https://osoc.be/editions/2022/lynx-local-linked-taxes",
+    "year": 2022
+  },
+  {
+    "name": "Pleasant Procedures",
+    "image_url": "https://osoc.be/editions/2022/projects/pleasant-procedures.svg",
+    "description": "We want to develop an easy-to-use web tool for government administrators, with which they can design data-gathering flows for citizens (procedures). For example, a flow for requesting a new identity card.",
+    "project_url": "https://osoc.be/editions/2022/pleasant-procedures",
+    "year": 2022
+  },
+  {
+    "name": "Inspector Widget",
+    "image_url": "https://osoc.be/editions/2022/projects/inspector-widget.svg",
+    "description": "We will make sure that fraud during sales periods won't happen anymore! Our aim is to help FOD Economie inspectors providing them an app that makes sure that prices advertised online are correct based on rules and regulations.",
+    "project_url": "https://osoc.be/editions/2022/inspector-widget",
+    "year": 2022
+  },
+  {
+    "name": "Sphere",
+    "image_url": "https://osoc.be/editions/2022/projects/sphere.svg",
+    "description": "We help first-time home-builders imagine and configure their dream house by providing 3D visualisations.",
+    "project_url": "https://osoc.be/editions/2022/sphere",
+    "year": 2022
+  }
+]
