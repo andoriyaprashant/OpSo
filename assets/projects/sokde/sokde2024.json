@@ -1,0 +1,100 @@
+[
+  {
+    "title": "Adding multi-format rendering to Kdenlive",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/5",
+    "mentors": ["Julius Künzel", "Jean-Baptiste Mardelle"],
+    "mentees": ["Ajay Chauhan"],
+    "year": 2024
+  },
+  {
+    "title": "Enabling editing of keyframe curves and advanced keyframe types in Kdenlive",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/4",
+    "mentors": ["Julius Künzel", "Jean-Baptiste Mardelle"],
+    "mentees": ["Iceneko"],
+    "year": 2024
+  },
+  {
+    "title": "Improving KdeEcoTest tool using kwin scripting API and uinput",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/13",
+    "mentors": ["Karanjot Singh", "Emmanuel Charruau"],
+    "mentees": ["Athul Raj Kollareth"],
+    "year": 2024
+  },
+  {
+    "title": "Adding support for Windows in KdeEcoTest",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/17",
+    "mentors": ["Karanjot Singh", "Emmanuel Charruau"],
+    "mentees": ["Amartya Chakraborty"],
+    "year": 2024
+  },
+  {
+    "title": "Testing and development of KEcoLab",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/19",
+    "mentors": ["Nitin Tejuja"],
+    "mentees": ["Sarthak Negi", "Aakarsh MJ"],
+    "year": 2024
+  },
+  {
+    "title": "Selenium automation of energy measurements / accessibility tests for KDE applications",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/14",
+    "mentors": ["Rishi Kumar", "Joseph P. De Veaugh-Geiss"],
+    "mentees": ["Pradyot Ranjan"],
+    "year": 2024
+  },
+  {
+    "title": "Extending embedded documentation for supported Computer Algebra Systems Project",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/6",
+    "mentors": ["Alexander Semke"],
+    "mentees": ["Dhairya Majmudar", "Saksham Gupta"],
+    "year": 2024
+  },
+  {
+    "title": "Enhancing Cantor's and LabPlot's documentation by adding QtHelp Conversion and User Accessibility",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/11",
+    "mentors": ["Alexander Semke"],
+    "mentees": ["Mahfuza Humayra Mohona"],
+    "year": 2024
+  },
+  {
+    "title": "Integrating KTextEditor into Cantor",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/23",
+    "mentors": ["Alexander Semke"],
+    "mentees": ["Anshul Dalal"],
+    "year": 2024
+  },
+  {
+    "title": "Enhancing Cantor with package management capabilities",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/25",
+    "mentors": ["Alexander Semke"],
+    "mentees": ["Krish Jain"],
+    "year": 2024
+  },
+  {
+    "title": "Downloading/importing of data sets from kaggle.com",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/9",
+    "mentors": ["Alexander Semke"],
+    "mentees": ["Israel Galadima"],
+    "year": 2024
+  },
+  {
+    "title": "Integrating TSDB support to LabPlot",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/29",
+    "mentors": ["Alexander Semke"],
+    "mentees": ["Mihir Kumar Singh"],
+    "year": 2024
+  },
+  {
+    "title": "MCAP Support for LabPlot",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/30",
+    "mentors": ["Alexander Semke"],
+    "mentees": ["Raphael Wirth"],
+    "year": 2024
+  },
+  {
+    "title": "Moving brightness control to KWin and adding per-screen brightness control",
+    "link": "https://invent.kde.org/teams/mentor-programs/2024/-/issues/20",
+    "mentors": ["Xaver Hugl"],
+    "mentees": ["Anurag Thakur"],
+    "year": 2024
+  }
+]

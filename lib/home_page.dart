@@ -11,7 +11,9 @@ import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
 import 'package:opso/programs%20screen/linux_foundation.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
+import 'package:opso/programs%20screen/open_summer_of_code.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
+import 'package:opso/programs%20screen/season_of_kde.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/programs%20screen/social_winter_of_code.dart';
 import 'package:opso/services/notificationService.dart';
@@ -38,6 +40,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     showNotification();
     super.initState();
+
     _getInitialThemeMode();
   }
 
@@ -54,6 +57,7 @@ class _HomePageState extends State<HomePage> {
         _initialLabelIndex = 0;
       }
     });
+
   }
 
 
@@ -108,6 +112,14 @@ class _HomePageState extends State<HomePage> {
     Program(
       title: 'Social Winter of Code',
       imageAssetPath: 'assets/swoc.png',
+    ),
+    Program(
+      title: 'Season of KDE',
+      imageAssetPath: 'assets/sokde.png',
+    ),
+    Program(
+      title: 'Open Summer of Code',
+      imageAssetPath: 'assets/open_summer_of_code.png',
     ),
   ];
 
@@ -186,7 +198,10 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(FontAwesomeIcons.bars),
+                              IconButton(
+                                icon: Icon(Icons.close),
+                                onPressed: () => Navigator.pop(context),
+                              ),
                               SizedBox(
                                 width: ScreenUtil().setWidth(100),
                               ),
@@ -215,20 +230,15 @@ class _HomePageState extends State<HomePage> {
                                 onTap: () {},
                                 child: ListTile(
                                   leading: Icon(
-                                    _initialLabelIndex == 0
+                                    AdaptiveTheme.of(context).mode.isDark
                                         ? FontAwesomeIcons.solidSun
                                         : FontAwesomeIcons.solidMoon,
                                   ),
                                   title: const Text('Switch Theme'),
                                   onTap: () {
                                     setState(() {
-                                      if (_initialLabelIndex == 0) {
-                                        _initialLabelIndex = 1;
-                                        AdaptiveTheme.of(context).setDark();
-                                      } else {
-                                        _initialLabelIndex = 0;
-                                        AdaptiveTheme.of(context).setLight();
-                                      }
+                                      AdaptiveTheme.of(context)
+                                          .toggleThemeMode(useSystem: false);
                                     });
                                   },
                                 ),
@@ -379,6 +389,15 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
+      case 'Season of KDE':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SeasonOfKDE(),
+          ),
+        );
+        break;
+
 
       case 'Outreachy':
         Navigator.push(context,
@@ -388,12 +407,12 @@ class _HomePageState extends State<HomePage> {
       case 'Summer of Bitcoin':
         Navigator.pushNamed(context, "/summer_of_bitcoin");
 
+      case 'Open Summer of Code':
 
-      case 'Summer of Bitcoin':
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const SummerOfBitcoin(),
+            builder: (context) => const OpenSummerOfCode(),
           ),
         );
 
@@ -401,6 +420,7 @@ class _HomePageState extends State<HomePage> {
       case 'Linux Foundation':
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const LinuxFoundation()));
+
       default:
         break;
     }
@@ -502,6 +522,14 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     Program(
       title: 'Social Winter of Code',
       imageAssetPath: 'assets/swoc.png',
+    ),
+    Program(
+      title: 'Season of KDE',
+      imageAssetPath: 'assets/sokde.png',
+    ),
+    Program(
+      title: 'Open Summer of Code',
+      imageAssetPath: 'assets/open_summer_of_code.png',
     ),
   ];
 
@@ -606,6 +634,15 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           context,
           MaterialPageRoute(
             builder: (context) => const SWOCScreen(),
+          ),
+        );
+        break;
+
+      case 'Season of KDE':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SeasonOfKDE(),
           ),
         );
         break;
