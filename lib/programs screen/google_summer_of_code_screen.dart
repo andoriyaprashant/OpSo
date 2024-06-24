@@ -50,7 +50,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     // Populate all unique GsocModels and languages
     allGsocModels = _extractUniqueValues((project) => project.organization!);
     allLanguages = languages;
-    projectList = List.from(gsoc2023); // Default
+    projectList = List.from(gsoc2023);
   }
 
 
