@@ -57,7 +57,7 @@ class GsodProjectWidgetOld extends StatelessWidget {
                 _launchUrl(modal.organizationUrl);
               },
               child: Text(
-                modal.organization,
+                modal.organizationName,
                 style: TextStyle(
                   decorationColor: primaryColor,
                   color: primaryColor,
@@ -112,7 +112,11 @@ class GsodProjectWidgetOld extends StatelessWidget {
     );
   }
 
-  Widget _buildLinkTile(BuildContext context, {required String title, required String value, required String url, required bool isDarkMode}) {
+  Widget _buildLinkTile(BuildContext context,
+      {required String title,
+      required String value,
+      required String url,
+      required bool isDarkMode}) {
     return GestureDetector(
       onTap: () {
         if (url.isNotEmpty) {
@@ -139,7 +143,8 @@ class GsodProjectWidgetOld extends StatelessWidget {
                   Text(
                     value,
                     maxLines: 1, // Limiting to one line
-                    overflow: TextOverflow.ellipsis, // Adding ellipsis if text overflows
+                    overflow: TextOverflow
+                        .ellipsis, // Adding ellipsis if text overflows
                     style: TextStyle(
                       color: isDarkMode ? Colors.white : Colors.black,
                       fontSize: 16,

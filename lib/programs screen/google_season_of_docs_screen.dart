@@ -10,17 +10,11 @@ import 'package:opso/widgets/gsod/gsod_project_widget_old.dart';
 import 'package:opso/widgets/year_button.dart';
 import 'package:opso/programs_info_pages/gsod_info.dart';
 
-
-
-
 class GoogleSeasonOfDocsScreen extends StatefulWidget {
   @override
   State<GoogleSeasonOfDocsScreen> createState() =>
       _GoogleSeasonOfDocsScreenState();
 }
-
-
-
 
 class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
   List<String> selectedOrganizations = [];
@@ -35,19 +29,13 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
   List<GsodModalOld> gsod2019 = [];
   int selectedYear = 2023;
 
-
-
-
   List projectList = [];
-  List allProjectList =[];
+  List allProjectList = [];
   Future<void>? getProjectFunction;
-
-
-
 
   Future<void> initializeProjectLists() async {
     String response =
-    await rootBundle.loadString('assets/projects/gsod/gsod2023.json');
+        await rootBundle.loadString('assets/projects/gsod/gsod2023.json');
     var jsonList = await json.decode(response);
     for (var data in jsonList) {
       gsod2023.add(GsodModalNew.fromMap(data));
@@ -55,47 +43,34 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     projectList = List.from(gsod2023);
     allProjectList = List.from(gsod2023);
 
-
     response =
-    await rootBundle.loadString('assets/projects/gsod/gsod2022.json');
+        await rootBundle.loadString('assets/projects/gsod/gsod2022.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gsod2022.add(GsodModalNew.fromMap(data));
     }
 
-
-
-
     response =
-    await rootBundle.loadString('assets/projects/gsod/gsod2021.json');
+        await rootBundle.loadString('assets/projects/gsod/gsod2021.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gsod2021.add(GsodModalNew.fromMap(data));
     }
 
-
-
-
     response =
-    await rootBundle.loadString('assets/projects/gsod/gsod2020.json');
+        await rootBundle.loadString('assets/projects/gsod/gsod2020.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gsod2020.add(GsodModalOld.fromMap(data));
     }
 
-
-
-
     response =
-    await rootBundle.loadString('assets/projects/gsod/gsod2019.json');
+        await rootBundle.loadString('assets/projects/gsod/gsod2019.json');
     jsonList = await json.decode(response);
     for (var data in jsonList) {
       gsod2019.add(GsodModalOld.fromMap(data));
     }
   }
-
-
-
 
   @override
   void initState() {
@@ -104,18 +79,12 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     super.initState();
   }
 
-
-
-
   Future<void> _checkBookmarkStatus() async {
     bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProgram);
     setState(() {
       isBookmarked = bookmarkStatus;
     });
   }
-
-
-
 
   void search(String searchText) {
     if (searchText.isEmpty) {
@@ -126,45 +95,51 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
       projectList = projectList
           .where(
             (element) =>
-        element.organizationName
-            .toLowerCase()
-            .contains(searchText.toLowerCase()) ||
-            element.budget
-                .toLowerCase()
-                .contains(searchText.toLowerCase()) ||
-            element.acceptedProjectProposal
-                .toLowerCase()
-                .contains(searchText.toLowerCase()) ||
-            element.caseStudy
-                .toLowerCase()
-                .contains(searchText.toLowerCase()) ||
-            element.docsPage.toLowerCase().contains(searchText.toLowerCase()),
-      )
+                element.organizationName
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.budget
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.acceptedProjectProposal
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.caseStudy
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.docsPage
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()),
+          )
           .toList();
     } else {
       projectList = projectList
           .where(
             (element) =>
-        element.organization.toLowerCase().contains(searchText.toLowerCase()) ||
-            element.technicalWriter.toLowerCase().contains(searchText.toLowerCase()) ||
-            element.mentor.toLowerCase().contains(searchText.toLowerCase()) ||
-            element.project.toLowerCase().contains(searchText.toLowerCase()) ||
-            element.originalProjectProposal.toLowerCase().contains(searchText.toLowerCase()) ||
-            element.report.toLowerCase().contains(searchText.toLowerCase()),
-      )
+                element.organization
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.technicalWriter
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.mentor
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.project
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.originalProjectProposal
+                    .toLowerCase()
+                    .contains(searchText.toLowerCase()) ||
+                element.report.toLowerCase().contains(searchText.toLowerCase()),
+          )
           .toList();
     }
-
-
-
 
     setState(() {
       _resetValueIfNotValid();
     });
   }
-
-
-
 
   Future<void> _refresh() async {
     setState(() {
@@ -172,12 +147,10 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
       selectedOrganizations = ['All'];
       selectedProposals = ['All'];
       selectedYear = 2023;
-      if (selectedYear > 2023) selectedYear = 2019; // Reset to the beginning if it exceeds 2023
+      if (selectedYear > 2023)
+        selectedYear = 2019; // Reset to the beginning if it exceeds 2023
     });
   }
-
-
-
 
   void resetProjectsByLanguage() {
     switch (selectedYear) {
@@ -209,23 +182,19 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     filterProjects();
   }
 
-
-
-
   void filterProjects() {
     var filteredProjects = List.from(projectList);
     print("!@# $selectedOrganizations");
 
-
     // Filter by organizations
     if (!selectedOrganizations.contains('All')) {
       filteredProjects = filteredProjects.where((project) {
-        return selectedOrganizations.every((org) => project.organizationName.contains(org));
+        return selectedOrganizations
+            .every((org) => project.organizationName.contains(org));
       }).toList();
     } else {
       filteredProjects = gsod2023;
     }
-
 
     // Filter by proposals
     if (!selectedProposals.contains('All')) {
@@ -234,33 +203,23 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
       }).toList();
     }
 
-
     setState(() {
       projectList = filteredProjects;
       /*_resetValueIfNotValid();*/
     });
   }
 
-
-
-
-
-
   void _resetValueIfNotValid() {
     // Reset selectedOrganizations if they are not valid
-    var validOrganizations = projectList.map((project) => project.organizationName).toSet();
-    selectedOrganizations = selectedOrganizations.where((org) => validOrganizations.contains(org) || org == 'All').toList();
+    var validOrganizations =
+        projectList.map((project) => project.organizationName).toSet();
+    selectedOrganizations = selectedOrganizations
+        .where((org) => validOrganizations.contains(org) || org == 'All')
+        .toList();
     /* if (selectedOrganizations.isEmpty) {
      selectedOrganizations = ['All'];
    }*/
-
-
-
-
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -281,8 +240,10 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
               });
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
-                  duration: const Duration(seconds: 2), // Adjust the duration as needed
+                  content: Text(
+                      isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                  duration: const Duration(
+                      seconds: 2), // Adjust the duration as needed
                 ),
               );
               if (isBookmarked) {
@@ -310,7 +271,8 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
             } else if (snapshot.connectionState == ConnectionState.done) {
               return SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisSize: MainAxisSize.min,
@@ -364,7 +326,8 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                         width: width,
                         child: GridView(
                           physics: const NeverScrollableScrollPhysics(),
-                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             childAspectRatio: 1.5 / 0.6,
                             crossAxisSpacing: 15,
@@ -457,58 +420,57 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                         buttonText: "Filter by Organization",
                         onConfirm: (results) {
                           setState(() {
-                            selectedOrganizations = results.isNotEmpty ? results : ['All'];
-                            print("this is selected organization $selectedOrganizations");
+                            selectedOrganizations =
+                                results.isNotEmpty ? results : ['All'];
+                            print(
+                                "this is selected organization $selectedOrganizations");
                             filterProjects();
                           });
                         },
                       ),
-
-
                       const SizedBox(height: 20),
                       const SizedBox(height: 20),
                       projectList.isNotEmpty
                           ? ListView.builder(
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        itemCount: projectList.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: selectedYear <= 2020
-                                ? GsodProjectWidgetOld(
-                              index: index + 1,
-                              modal: projectList[index],
-                              height: height * 0.2,
-                              width: width,
-                            )
-                                : GsodProjectWidgetNew(
-                              index: index + 1,
-                              modal: projectList[index],
-                              height: height * 0.2,
-                              width: width,
-                            ),
-                          );
-                        },
-                      )
-                          : Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('No projects available.'),
-                            SizedBox(height: 20),
-                            ElevatedButton(
-                              onPressed: () {
-                                // Call the refresh function
-                                _refresh();
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              itemCount: projectList.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                return Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 10),
+                                  child: selectedYear <= 2020
+                                      ? GsodProjectWidgetOld(
+                                          index: index + 1,
+                                          modal: projectList[index],
+                                          height: height * 0.2,
+                                          width: width,
+                                        )
+                                      : GsodProjectWidgetNew(
+                                          index: index + 1,
+                                          modal: projectList[index],
+                                          height: height * 0.2,
+                                          width: width,
+                                        ),
+                                );
                               },
-                              child: Text('Refresh'),
+                            )
+                          : Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text('No projects available.'),
+                                  SizedBox(height: 20),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      // Call the refresh function
+                                      _refresh();
+                                    },
+                                    child: Text('Refresh'),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ],
-                        ),
-                      ),
-
-
                     ],
                   ),
                 ),
@@ -521,6 +483,7 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
       ),
     );
   }
+
   Widget _buildMultiSelectField({
     required List<String> items,
     required List<String> selectedValues,
@@ -545,9 +508,4 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
       ),
     );
   }
-
-
 }
-
-
-
