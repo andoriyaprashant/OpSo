@@ -1,0 +1,477 @@
+[
+    {
+        "name": "ASF Projects",
+        "description": "Apache Software Foundation projects for various open source contributions.",
+        "skills": [
+            "Golang",
+            "Kubernetes",
+            "Apache Maven",
+            "S3 object storage",
+            "Linux",
+            "HTML",
+            "JavaScript",
+            "Python programming",
+            "Docker",
+            "Pytest unit-test"
+        ],
+        "spots": 3,
+        "year": 2022
+    },
+    {
+        "name": "Ceph Projects",
+        "description": "Ceph distributed storage system for object, block, and file storage.",
+        "skills": [
+            "S3 object storage",
+            "Linux",
+            "Golang",
+            "HTML",
+            "JavaScript",
+            "Python programming",
+            "Docker",
+            "Pytest unit-test"
+        ],
+        "spots": 3,
+        "year": 2022
+    },
+    {
+        "name": "CHAOSS Projects",
+        "description": "CHAOSS projects for open source project health metrics and practices.",
+        "skills": [
+            "Technical writing",
+            "C Programming",
+            "Linux",
+            "Rust Programming",
+            "Git",
+            "WebAssembly",
+            "JavaScript",
+            "Rust",
+            "C++"
+        ],
+        "spots": 2,
+        "year": 2022
+    },
+    {
+        "name": "ChRIS Projects",
+        "description": "ChRIS projects for medical data analysis and workflow automation.",
+        "skills": [
+            "HTML CSS",
+            "React",
+            "Typescript"
+        ],
+        "spots": 3,
+        "year": 2022
+    },
+    {
+        "name": "conda-forge Projects",
+        "description": "Community-led conda package manager ecosystem.",
+        "skills": [
+            "GitHub workflow: fork-branch-PR",
+            "Python"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "Confidential Computing Consortium Projects",
+        "description": "Projects advancing Trusted Execution Environment (TEE) technologies.",
+        "skills": [
+            "C Programming",
+            "Linux",
+            "Rust Programming",
+            "Git",
+            "WebAssembly",
+            "JavaScript",
+            "Rust",
+            "C++"
+        ],
+        "spots": 2,
+        "year": 2022
+    },
+    {
+        "name": "Debian Projects",
+        "description": "Debian projects for the universal operating system and package integration.",
+        "skills": [
+            "JavaScript",
+            "NodeJS",
+            "Debian Packaging",
+            "Background in Bioinformatics"
+        ],
+        "spots": 2,
+        "year": 2022
+    },
+    {
+        "name": "Fedora Projects",
+        "description": "Fedora projects for Linux-based editions and community contributions.",
+        "skills": [
+            "Python 3",
+            "Django",
+            "network services",
+            "Computer proficiency",
+            "Experience using design software",
+            "Knowledge of design theory",
+            "Interpersonal communication skills",
+            "Technical writing",
+            "Information cataloging - library science",
+            "UI UX design"
+        ],
+        "spots": 4,
+        "year": 2022
+    },
+    {
+        "name": "Firefox Projects",
+        "description": "Firefox projects for web browser improvements.",
+        "skills": [
+            "Javascript",
+            "Version control",
+            "Frontend web development"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "Galaxy Community Projects",
+        "description": "Galaxy Community projects for accessible data-intensive science.",
+        "skills": [
+            "Communication in English",
+            "GitHub",
+            "Interpersonal skills",
+            "SQL",
+            "Data analysis",
+            "climate",
+            "Github workflow"
+        ],
+        "spots": 3,
+        "year": 2022
+    },
+    {
+        "name": "GNOME Projects",
+        "description": "GNOME projects for free software desktop environment.",
+        "skills": [
+            "Rust",
+            "C Programming",
+            "Gtk"
+        ],
+        "spots": 2,
+        "year": 2022
+    },
+    {
+        "name": "Irdest Projects",
+        "description": "Irdest projects for decentralised internet tools.",
+        "skills": [
+            "Android app development",
+            "Building networking applications"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "Linux Kernel Projects",
+        "description": "Linux Kernel projects for core operating system development.",
+        "skills": [
+            "C Programming",
+            "Makefile",
+            "Operating Systems",
+            "bash-programming",
+            "Networking",
+            "Linux system knowledge",
+            "git source control",
+            "Build linux kernel"
+        ],
+        "spots": 3,
+        "year": 2022
+    },
+    {
+        "name": "LLVM Projects",
+        "description": "LLVM projects for modular compiler and toolchain technologies.",
+        "skills": [
+            "C++ programming language",
+            "Assembly language",
+            "Compiler optimizations"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "Matrix Projects",
+        "description": "Matrix projects for secure, decentralised, real-time communication.",
+        "skills": [
+            "TypeScript",
+            "CSS"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "Mboalab Projects",
+        "description": "Mboalab projects for open science tools in Cameroon.",
+        "skills": [
+            "Web Development",
+            "Python",
+            "ML",
+            "DL",
+            "Databases"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "MDAnalysis Projects",
+        "description": "MDAnalysis projects for molecular dynamics simulations.",
+        "skills": [
+            "Python programming",
+            "Chemistry",
+            "Science-Communication"
+        ],
+        "spots": 2,
+        "year": 2022
+    },
+    {
+        "name": "ModECI Projects",
+        "description": "ModECI projects for model exchange across neuroscience and AI.",
+        "skills": [
+            "Python programming",
+            "Jupyter notebooks",
+            "ML"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "moja global Projects",
+        "description": "moja global projects for monitoring greenhouse gas emissions.",
+        "skills": [
+            "Research",
+            "Geospatial analysis",
+            "Python"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "NetworkX Projects",
+        "description": "NetworkX projects for complex network analysis.",
+        "skills": [
+            "Python",
+            "Jupyter Notebooks",
+            "Git"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "OCaml Projects",
+        "description": "OCaml projects for functional programming language and tooling.",
+        "skills": [
+            "Git",
+            "Command Line",
+            "Functional Programming",
+            "OCaml",
+            "Parallel Programming",
+            "Knowledge about ASTs",
+            "Meta-programming",
+            "Geospatial"
+        ],
+        "spots": 4,
+        "year": 2022
+    },
+    {
+        "name": "ODK-X",
+        "description": "ODK-X lets you build custom apps to gather, manage, and visualize your data just as well in the field as you do in the office. From cold chain management to longitudinal patient tracking to geographic data collection on mosquito releases, ODK-X helps you build your custom data management app.",
+        "skills": [
+            "Docker",
+            "Java",
+            "Android",
+            "Python",
+            "Command line interface",
+            "Github",
+            "User interface design",
+            "Android studio"
+        ],
+        "spots": 3,
+        "year": 2022
+    },
+    {
+        "name": "OpenRefine",
+        "description": "OpenRefine is a power tool to clean messy data. We have a vibrant community of users and contributors, with many training workshops organized around the world all the time.",
+        "skills": [
+            "Java",
+            "JavaScript",
+            "SPARQL"
+        ],
+        "spots": 3,
+        "year": 2022
+    },
+    {
+        "name": "Open Science Community Saudi Arabia (OSCSA)",
+        "description": "Open Science community Saudi Arabia (OSCSA) aims to provide a place where newcomers and experienced peers interact, inspire each other to embed open science practices and values in their workflows and provide feedback on policies, infrastructures and support services. Our community is part of the International Network of Open Science & Scholarship Communities (INOSC).",
+        "skills": [
+            "Arabic",
+            "Markdown",
+            "Knowledge of Github Workflow"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "OpenStack",
+        "description": "OpenStack is an open source software for building public and private clouds. With OpenStack, you can control large pools of compute, storage, and networking resources throughout a data center, all managed through a dashboard that gives administrators control while empowering their users to provision resources through a web interface.",
+        "skills": [
+            "Python programming",
+            "Linux",
+            "Virtualization",
+            "git",
+            "mypy"
+        ],
+        "spots": 4,
+        "year": 2022
+    },
+    {
+        "name": "Oppia",
+        "description": "By creating tools to enable the creation/distribution of high-quality scalable online lessons, Oppia works to make high-quality education available to those who lack access to it. The Oppia codebase is written using Python and AngularJS/Angular, and is built on top of Google App Engine.",
+        "skills": [
+            "Written communication in English",
+            "Analytical Thinking",
+            "UX Design",
+            "Research"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "Perl & Raku",
+        "description": "Perl is a highly capable, feature-rich programming language with over 28 years of development, making it one of the longest standing FOSS projects. Raku is a member of the Perl family of programming languages, formerly known as Perl 6.",
+        "skills": [
+            "Linux",
+            "Perl"
+        ],
+        "spots": 3,
+        "year": 2022
+    },
+    {
+        "name": "Public Lab",
+        "description": "Public Lab is a community where you can learn how to investigate environmental concerns. Using inexpensive DIY techniques, we seek to change how people see the world in environmental, social, and political terms. We are an open network of community organizers, educators, technologists and researchers working to create low cost solutions for monitoring air, water and land.",
+        "skills": [
+            "HTML",
+            "JavaScript",
+            "UI design",
+            "Ruby on Rails"
+        ],
+        "spots": 2,
+        "year": 2022
+    },
+    {
+        "name": "QEMU",
+        "description": "QEMU is a machine emulator and virtualizer that can run operating systems and programs made for one machine (e.g. an ARM board) on a different machine (e.g. your own PC).",
+        "skills": [
+            "C programming",
+            "Linux"
+        ],
+        "spots": 2,
+        "year": 2022
+    },
+    {
+        "name": "Software Heritage",
+        "description": "The universal source code archive",
+        "skills": [
+            "Git",
+            "JavaScript",
+            "Python 3",
+            "web development",
+            "UI UX",
+            "Sphinx",
+            "Django",
+            "source code metadata",
+            "software metadata",
+            "technical writing"
+        ],
+        "spots": 6,
+        "year": 2022
+    },
+    {
+        "name": "systemd",
+        "description": "A System and Service Manager for Linux",
+        "skills": [
+            "C programming",
+            "Running Linux as a user"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "UNICEF Innovation",
+        "description": "Innovation at UNICEF is about doing new things to solve problems and improve the lives of children around the world. It is about matching today’s challenges with tomorrow’s solutions.",
+        "skills": [
+            "HTML & CSS",
+            "JavaScript",
+            "Hugo"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "Unstructured Studio",
+        "description": "Creating learning for all",
+        "skills": [
+            "ReactJS",
+            "Python",
+            "PostgreSQL",
+            "React Native",
+            "Android App Development"
+        ],
+        "spots": 3,
+        "year": 2022
+    },
+    {
+        "name": "Ushahidi",
+        "description": "Ushahidi empowers people through citizen-generated data to develop solutions that strengthen their communities in response to 4 key thematic areas: Good governance, human rights protection, humanitarian and disaster relief, and climate action.",
+        "skills": [
+            "PHP",
+            "HTTP API",
+            "Systems design"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "Wikimedia",
+        "description": "Wikimedia is a global movement whose mission is to bring free educational content to the world, via Wikipedia and other projects. Help improve our technical backstage!",
+        "skills": [
+            "JavaScript",
+            "Ruby",
+            "Python 3",
+            "Jupyter notebooks",
+            "HTML",
+            "Frontend web development",
+            "Backend web development",
+            "User interface design"
+        ],
+        "spots": 4,
+        "year": 2022
+    },
+    {
+        "name": "Yocto Project",
+        "description": "Yocto Project is an open source project whose goal is to create and provide templates, tools, and methods to make it easy to create embedded Linux distributions. The project works heavily with upstream providers and downstream participants, cooperatively manages software packages with the OpenEmbedded Project, and is developed by hundreds of people worldwide. It is mostly written in Python and C, but the most important skill to bring is the willingness to work with others.",
+        "skills": [
+            "Knowledge of FreeBSD",
+            "Python"
+        ],
+        "spots": 1,
+        "year": 2022
+    },
+    {
+        "name": "Zulip",
+        "description": "Zulip is a 100% open-source modern team chat app that is designed for both live and asynchronous conversations. We value engaged, responsive mentorship, and you can expect to receive disciplined code reviews by highly experienced engineers. Since Zulip is a team chat product, your internship experience with the Zulip project will be highly interactive.",
+        "skills": [
+            "HTML & CSS",
+            "JavaScript",
+            "Visual design",
+            "Python development",
+            "OpenAPI",
+            "React",
+            "React Native",
+            "Android development"
+        ],
+        "spots": 4,
+        "year": 2022
+    }
+]

@@ -1,0 +1,388 @@
+[
+    {
+        "name": "Bioconductor",
+        "description": "Open source software for bioinformatics.",
+        "skills": [
+            "Literature review skills",
+            "Microbiome knowledge"
+        ],
+        "spots": 3,
+        "year": 2023
+    },
+    {
+        "name": "Bokeh",
+        "description": "Python library for creating interactive data visualizations.",
+        "skills": [
+            "Python for data science",
+            "Technical writing",
+            "Data visualization"
+        ],
+        "spots": 3,
+        "year": 2023
+    },
+    {
+        "name": "Ceph",
+        "description": "Distributed, software-defined storage.",
+        "skills": [
+            "Python",
+            "Docker",
+            "Fast API"
+        ],
+        "spots": 3,
+        "year": 2023
+    },
+    {
+        "name": "ChRIS Project",
+        "description": "Open source distributed data and computation platform.",
+        "skills": [
+            "Implement container images",
+            "Containers",
+            "Kubernetes"
+        ],
+        "spots": 2,
+        "year": 2023
+    },
+    {
+        "name": "Confidential Computing Consortium",
+        "description": "Advancing Trusted Execution Environment (TEE) technologies.",
+        "skills": [
+            "Security",
+            "Programming"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "Ersilia Open Source Initiative",
+        "description": "Developing AI/ML tools for biomedical research.",
+        "skills": [
+            "Python",
+            "Conda"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "Fedora",
+        "description": "Linux-based operating system.",
+        "skills": [
+            "Experience using design software",
+            "Knowledge of design theory",
+            "Illustration"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "Firefox",
+        "description": "Free web browser focused on internet health and privacy.",
+        "skills": [
+            "Python",
+            "Modern JavaScript including promises",
+            "Version Control Systems like Git"
+        ],
+        "spots": 5,
+        "year": 2023
+    },
+    {
+        "name": "GNOME",
+        "description": "Free software desktop environment.",
+        "skills": [
+            "JavaScript",
+            "Git",
+            "GTK"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "Humanitarian OpenStreetMap Team",
+        "description": "Humanitarian action through open mapping.",
+        "skills": [
+            "Github",
+            "Python"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "KernelCI",
+        "description": "Community-led test system for the upstream Linux kernel.",
+        "skills": [
+            "Python",
+            "Git",
+            "Bash"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "Linux Kernel",
+        "description": "Basic layer of the Linux operating system.",
+        "skills": [
+            "Operating Systems",
+            "C programming",
+            "Build Linux kernel"
+        ],
+        "spots": 4,
+        "year": 2023
+    },
+    {
+        "name": "LLVM",
+        "description": "Modular compiler and toolchain technologies.",
+        "skills": [
+            "C++ programming language",
+            "Command line usage",
+            "Compiler knowledge"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "Mboalab",
+        "description": "Open and collaborative space in Cameroon.",
+        "skills": [
+            "Git & github",
+            "Flutter",
+            "ML"
+        ],
+        "spots": 3,
+        "year": 2023
+    },
+    {
+        "name": "Metal3",
+        "description": "Software for managing bare metal servers.",
+        "skills": [
+            "English",
+            "Technical Writing",
+            "HTML",
+            "Markdown",
+            "Git",
+            "Linux command line",
+            "Kubernetes"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "ModECI",
+        "description": "Standardizing model exchange across neuroscience and AI applications.",
+        "skills": [
+            "Python",
+            "Jupyter notebooks",
+            "ML"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "moja global",
+        "description": "Software for monitoring greenhouse gas emissions and removals.",
+        "skills": [
+            "Data Version Control - DVC",
+            "Data processing",
+            "Python"
+        ],
+        "spots": 2,
+        "year": 2023
+    },
+    {
+        "name": "NetworkX",
+        "description": "Python package for complex network analysis.",
+        "skills": [
+            "Python",
+            "Jupyter",
+            "Git"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "NumFOCUS",
+        "description": "The mission of NumFOCUS is to promote open practices in research, data, and scientific computing by serving as a fiscal sponsor for open source projects and organizing community-driven educational programs.",
+        "skills": [
+            "Documentation",
+            "Analysis",
+            "Online research",
+            "Data gathering"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "OCaml",
+        "description": "OCaml is a (high-level, typed, functional) programming language. The OCaml community contributes to the implementation of the language, as well as the surrounding ecosystem of tools and libraries.",
+        "skills": [
+            "Git",
+            "Networking",
+            "Functional Programming",
+            "Linux",
+            "OCaml",
+            "HTML CSS",
+            "Vector Graphics",
+            "MIDI",
+            "RTP",
+            "Functional Programming",
+            "Network Programming",
+            "Git",
+            "OCaml",
+            "MirageOS",
+            "Music"
+        ],
+        "spots": 4,
+        "year": 2023
+    },
+    {
+        "name": "ODK-X",
+        "description": "ODK-X lets you build custom apps to gather, manage, and visualize your data just as well in the field as you do in the office. From cold chain management to longitudinal patient tracking to geographic data collection on mosquito releases, ODK-X helps you build your custom data management app.",
+        "skills": [
+            "Docker",
+            "Github",
+            "CircleCI"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "OpenRefine",
+        "description": "OpenRefine is a power tool to clean messy data. We have a vibrant community of users and contributors, with many training workshops organized around the world all the time.",
+        "skills": [
+            "UI UX design",
+            "Frontend web development",
+            "Rapid prototyping",
+            "JavaScript",
+            "Java",
+            "CSS",
+            "Frontend Development in Javascript",
+            "jQuery",
+            "Regular expressions"
+        ],
+        "spots": 3,
+        "year": 2023
+    },
+    {
+        "name": "OpenStack",
+        "description": "OpenStack is an open source software for building public and private clouds. What does that mean? We're a collection of open source projects that integrate to help organizations deploy and run clouds for computing, networking, and storage (both block storage for providing volumes to VMs and object storage for storing objects such as images or music files). With OpenStack, you can control large pools of compute, storage, and networking resources throughout a data center, all managed through a dashboard that gives administrators control while empowering their users to provision resources through a web interface.",
+        "skills": [
+            "Python 3",
+            "RESTful API design",
+            "Bash",
+            "Python",
+            "Linux",
+            "Git"
+        ],
+        "spots": 2,
+        "year": 2023
+    },
+    {
+        "name": "Oppia",
+        "description": "By creating tools to enable the creation/distribution of high-quality scalable online lessons, Oppia works to make high-quality education available to those who lack access to it. The Oppia codebase is written using Python and AngularJS/Angular, and is built on top of Google App Engine.",
+        "skills": [
+            "Attention to Detail",
+            "Clear Written Communication",
+            "Teaching Experience",
+            "User Research",
+            "Graphic Design",
+            "Translating Lessons",
+            "Effective Storytelling",
+            "Report Writing",
+            "Communication Skills",
+            "Measuring Impact"
+        ],
+        "spots": 2,
+        "year": 2023
+    },
+    {
+        "name": "Palisadoes Foundation",
+        "description": "The Palisadoes Foundation is focused on providing equitable access to life opportunities for STEM education recipients.",
+        "skills": [
+            "Frontend web development",
+            "Version Control",
+            "Backend web development",
+            "Git",
+            "Github"
+        ],
+        "spots": 2,
+        "year": 2023
+    },
+    {
+        "name": "Perl & Raku",
+        "description": "Perl is a highly capable, feature-rich programming language with over 28 years of development, making it one of the longest standing FOSS projects. Raku is a member of the Perl family of programming languages, formerly known as Perl 6.",
+        "skills": [
+            "Perl"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "QEMU",
+        "description": "QEMU is a machine emulator and virtualizer that can run operating systems and programs made for one machine (e.g. an ARM board) on a different machine (e.g. your own PC).",
+        "skills": [
+            "C programming",
+            "Rust programming",
+            "git version control system",
+            "Library ABIs"
+        ],
+        "spots": 2,
+        "year": 2023
+    },
+    {
+        "name": "scikit-image",
+        "description": "scikit-image is a popular Python library for scientific image processing and analysis. It has been used in applications ranging from atomic force microscopy, to deciphering ancient scrolls, satellite imagery, and astronomy. We pride ourselves on high-quality, readable code, written and reviewed by an active community of volunteers.",
+        "skills": [
+            "Python programming",
+            "Array programming",
+            "Image processing",
+            "Writing in scientific English"
+        ],
+        "spots": 2,
+        "year": 2023
+    },
+    {
+        "name": "systemd",
+        "description": "A System and Service Manager for Linux.",
+        "skills": [
+            "C programming language",
+            "Running Linux as a user"
+        ],
+        "spots": 1,
+        "year": 2023
+    },
+    {
+        "name": "Unstructured Studio",
+        "description": "Creating learning for all.",
+        "skills": [
+            "Wireframing & Rapid Prototyping",
+            "User Research",
+            "Design tools",
+            "Python development",
+            "Django",
+            "React"
+        ],
+        "spots": 3,
+        "year": 2023
+    },
+    {
+        "name": "Wikimedia",
+        "description": "Wikimedia is a global movement whose mission is to bring free educational content to the world, via Wikipedia and other projects. Help improve our technical backstage!",
+        "skills": [
+            "Software Development",
+            "UX Research",
+            "Data Analysis",
+            "Ruby",
+            "Wikidata"
+        ],
+        "spots": 2,
+        "year": 2023
+    },
+    {
+        "name": "xarray",
+        "description": "Xarray is an open source project and Python package that introduces labels in the form of dimensions, coordinates, and attributes on top of raw NumPy-like arrays, which allows for more intuitive, more concise, and less error-prone user experience. Xarray includes a large and growing library of domain-agnostic functions for advanced analytics and visualization with these data structures.",
+        "skills": [
+            "Python programming",
+            "Scientific data analysis"
+        ],
+        "spots": 2,
+        "year": 2023
+    }
+]
