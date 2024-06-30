@@ -1,0 +1,419 @@
+[
+    {
+        "name": "ASF Projects",
+        "description": "Apache Software Foundation projects for various open source contributions.",
+        "skills": [
+            "Network programming",
+            "C++ programming language",
+            "Reading protocol specifications"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "Ceph Projects",
+        "description": "Ceph distributed storage system for object, block, and file storage.",
+        "skills": [
+            "S3 object storage",
+            "Linux",
+            "Golang",
+            "Angular",
+            "JavaScript",
+            "Python programming",
+            "Docker",
+            "Selenium"
+        ],
+        "spots": 3,
+        "year": 2021
+    },
+    {
+        "name": "ChRIS Project",
+        "description": "ChRIS is a general-purpose, open source distributed data and computation platform for medical data analysis.",
+        "skills": [
+            "HTML CSS",
+            "React",
+            "Typescript"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "CNCF OpenTelemetry",
+        "description": "Performance comparison between OpenTelemetry and OpenTracing instrumentation libraries.",
+        "skills": [
+            "Java",
+            "JavaScript"
+        ],
+        "spots": 2,
+        "year": 2021
+    },
+    {
+        "name": "Common Workflow Language",
+        "description": "Open standard for describing analysis workflows and tools.",
+        "skills": [
+            "Python programming",
+            "Parsing",
+            "Workflows"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "conda-forge",
+        "description": "Community-led collection of recipes, build infrastructure, and distributions for the conda package manager.",
+        "skills": [
+            "GitHub workflow: fork-branch-PR",
+            "Python"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "Debian",
+        "description": "Volunteer-driven project building 'the Universal Operating System'.",
+        "skills": [
+            "Node.js",
+            "Debian Packaging"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "Eclipse Adoptium",
+        "description": "Set of open-source projects that build, test, and distribute high-quality OpenJDK-based binaries.",
+        "skills": [
+            "Good communication skills",
+            "Curiosity",
+            "Python"
+        ],
+        "spots": 2,
+        "year": 2021
+    },
+    {
+        "name": "EDAM Ontology",
+        "description": "Domain ontology of data analysis and data management in bio- and other sciences.",
+        "skills": [
+            "JavaScript",
+            "D3.js",
+            "User interface design"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "F4PGA",
+        "description": "FOSS flow for developing FPGA IP/gateware.",
+        "skills": [
+            "C++",
+            "Python",
+            "FPGA"
+        ],
+        "spots": 4,
+        "year": 2021
+    },
+    {
+        "name": "Fedora",
+        "description": "Linux-based operating system offering Editions focused on workstation, server, and cloud uses.",
+        "skills": [
+            "Graphic Design",
+            "Python",
+            "Data Visualization"
+        ],
+        "spots": 4,
+        "year": 2021
+    },
+    {
+        "name": "Firefox",
+        "description": "Free web browser dedicated to internet health and privacy.",
+        "skills": [
+            "Python programming",
+            "VCS",
+            "Documentation"
+        ],
+        "spots": 6,
+        "year": 2021
+    },
+    {
+        "name": "Firefox Data Team",
+        "description": "Building sustainable, global, and independent Firefox that ethically leverages data.",
+        "skills": [
+            "Python",
+            "Data Manipulation"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "GNOME",
+        "description": "Innovative free software desktop environment.",
+        "skills": [
+            "Rust",
+            "SVG"
+        ],
+        "spots": 2,
+        "year": 2021
+    },
+    {
+        "name": "GNU Guix",
+        "description": "Functional package manager written in Guile Scheme.",
+        "skills": [
+            "Software development in general",
+            "Guile Scheme"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "Inkscape",
+        "description": "Vector Image Editor Software.",
+        "skills": [
+            "C++ programming language",
+            "Gtk+"
+        ],
+        "spots": 2,
+        "year": 2021
+    },
+    {
+        "name": "InterMine",
+        "description": "Integrates biological data sources for querying, visualizing, and analyzing data.",
+        "skills": [
+            "Front-end web development",
+            "React.js",
+            "Python"
+        ],
+        "spots": 3,
+        "year": 2021
+    },
+    {
+        "name": "Linux Kernel",
+        "description": "Most basic layer of the Linux operating system, involving hardware drivers, file systems, security, and more.",
+        "skills": [
+            "C programming",
+            "Operating Systems"
+        ],
+        "spots": 4,
+        "year": 2021
+    },
+    {
+        "name": "LLVM Projects",
+        "description": "LLVM projects for modular compiler and toolchain technologies.",
+        "skills": [
+            "C++ programming language",
+            "Assembly language",
+            "Compiler optimizations"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "Matrix Projects",
+        "description": "Matrix projects for secure, decentralised, real-time communication.",
+        "skills": [
+            "TypeScript",
+            "CSS"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "moja global",
+        "description": "Help fight climate change from your keyboard!",
+        "skills": [
+            "C++",
+            "OCaml"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "ODK-X",
+        "description": "Build custom apps for data management.",
+        "skills": [
+            "Strong writing skills",
+            "Java",
+            "Python",
+            "Code editor",
+            "Technical writing",
+            "Java Swing GUI",
+            "Docker",
+            "Javascript",
+            "CSS",
+            "HTML",
+            "JSON"
+        ],
+        "spots": 4,
+        "year": 2021
+    },
+    {
+        "name": "OpenArchive",
+        "description": "Improve transparency and freedom of information.",
+        "skills": [
+            "Graphic Design",
+            "Social Media Management",
+            "HTML & CSS"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "OpenStack",
+        "description": "Build public and private clouds.",
+        "skills": [
+            "Python programming",
+            "GNU + Linux system administration",
+            "Django",
+            "Shell"
+        ],
+        "spots": 4,
+        "year": 2021
+    },
+    {
+        "name": "Oppia",
+        "description": "Create scalable online lessons.",
+        "skills": [
+            "Written communication in English",
+            "Analytical thinking",
+            "Report Writing",
+            "Graphic Design",
+            "Angular",
+            "Jasmine"
+        ],
+        "spots": 3,
+        "year": 2021
+    },
+    {
+        "name": "Perl & Raku",
+        "description": "Develop Perl and Raku programming languages.",
+        "skills": [
+            "Linux",
+            "Perl"
+        ],
+        "spots": 2,
+        "year": 2021
+    },
+    {
+        "name": "Public Lab",
+        "description": "Investigate environmental concerns with DIY techniques.",
+        "skills": [
+            "Ruby on Rails",
+            "JavaScript"
+        ],
+        "spots": 2,
+        "year": 2021
+    },
+    {
+        "name": "PyMC",
+        "description": "Bayesian statistical modeling and Probabilistic Machine Learning.",
+        "skills": [
+            "GitHub workflow: fork-branch-PR",
+            "PyMC3",
+            "JAX-functional programming",
+            "Sampling algorithms",
+            "Bayesian statistics",
+            "Matlab"
+        ],
+        "spots": 3,
+        "year": 2021
+    },
+    {
+        "name": "QEMU",
+        "description": "Machine emulator and virtualizer.",
+        "skills": [
+            "Python",
+            "Asynchronous Programming",
+            "User Interface Design",
+            "Rust language",
+            "Go language",
+            "Kubernetes",
+            "Compilation techniques"
+        ],
+        "spots": 3,
+        "year": 2021
+    },
+    {
+        "name": "Rook",
+        "description": "Management for File, Block, and Object Storage in Kubernetes.",
+        "skills": [
+            "Kubernetes",
+            "Helm"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "sktime",
+        "description": "Unified framework for machine learning with time series.",
+        "skills": [
+            "Python programming",
+            "Time series analysis"
+        ],
+        "spots": 2,
+        "year": 2021
+    },
+    {
+        "name": "TensorFlow",
+        "description": "Open-source machine learning framework.",
+        "skills": [
+            "Software engineering",
+            "ML",
+            "Python",
+            "C++",
+            "Apache Beam",
+            "JAX",
+            "Kubernetes",
+            "Matlab"
+        ],
+        "spots": 7,
+        "year": 2021
+    },
+    {
+        "name": "Tor Project",
+        "description": "Privacy and freedom online with the Tor network.",
+        "skills": [
+            "GitHub workflow: fork-branch-PR",
+            "Written communication in English",
+            "Technical Writer"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "UNICEF Innovation",
+        "description": "Innovation to solve global challenges for children.",
+        "skills": [
+            "Javascript",
+            "JSON",
+            "React",
+            "Node JS",
+            "Web development",
+            "Solidity"
+        ],
+        "spots": 2,
+        "year": 2021
+    },
+    {
+        "name": "Ushahidi",
+        "description": "Empower communities through citizen-generated data.",
+        "skills": [
+            "JavaScript",
+            "Webpack",
+            "AngularJs"
+        ],
+        "spots": 1,
+        "year": 2021
+    },
+    {
+        "name": "Wikimedia",
+        "description": "Bring free educational content to the world.",
+        "skills": [
+            "Python programming",
+            "Jupyter notebooks",
+            "HTML",
+            "SQL",
+            "Research",
+            "Technical documentation"
+        ],
+        "spots": 3,
+        "year": 2021
+    }
+]

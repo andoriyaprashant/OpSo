@@ -1,0 +1,751 @@
+[
+    {
+        "name": "Bioconductor",
+        "description": "Open source software for bioinformatics.",
+        "skills": [
+            "Literature review skills",
+            "Microbiome knowledge"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "CNCF OpenTelemetry",
+        "description": "A collection of tools, APIs, and SDKs to instrument, generate, collect, and export telemetry data.",
+        "skills": [
+            "GitHub workflow",
+            "Security"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "CNCF OpenTelemetry",
+        "description": "A collection of tools, APIs, and SDKs to instrument, generate, collect, and export telemetry data.",
+        "skills": [
+            "Golang",
+            "Web development",
+            "UX"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Debian",
+        "description": "The Universal Operating System, a 100% free and open source distribution.",
+        "skills": [
+            "Python Programming",
+            "System administration"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Debian",
+        "description": "The Universal Operating System, a 100% free and open source distribution.",
+        "skills": [
+            "NodeJS",
+            "Git",
+            "Shell Scripting"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Debian",
+        "description": "The Universal Operating System, a 100% free and open source distribution.",
+        "skills": [
+            "Reading documentation",
+            "Debian packaging"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Ersilia Open Source Initiative",
+        "description": "UK-based charity focused on AI/ML tools for biomedical research.",
+        "skills": [
+            "Python Programming",
+            "Conda",
+            "Docker",
+            "Bash"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Firefox",
+        "description": "Free web browser dedicated to internet health and privacy.",
+        "skills": [
+            "Python",
+            "ML",
+            "Git version control"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Firefox",
+        "description": "Free web browser dedicated to internet health and privacy.",
+        "skills": [
+            "Baseline working knowledge of generative AI development"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Firefox",
+        "description": "Free web browser dedicated to internet health and privacy.",
+        "skills": [
+            "JavaScript",
+            "Git",
+            "Python",
+            "ReactJS",
+            "Flask",
+            "Docker"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Firefox",
+        "description": "Free web browser dedicated to internet health and privacy.",
+        "skills": [
+            "JavaScript HTML CSS",
+            "Git",
+            "Integration Testing"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Firefox",
+        "description": "Free web browser dedicated to internet health and privacy.",
+        "skills": [
+            "C++",
+            "Javascript"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Git",
+        "description": "Free and open source distributed version control system.",
+        "skills": [
+            "git source control",
+            "C language",
+            "Shell scripting"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "GNOME",
+        "description": "Innovative free software desktop environment.",
+        "skills": [
+            "Programming",
+            "Linux",
+            "Automated testing",
+            "Virtualization"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Humanitarian OpenStreetMap Team",
+        "description": "International team dedicated to humanitarian action through open mapping.",
+        "skills": [
+            "Github",
+            "Open Source Management",
+            "Communications"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "LibreOffice",
+        "description": "Full-featured cross-platform office suite.",
+        "skills": [
+            "C++ programming",
+            "UI toolkit experience"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "LibreOffice",
+        "description": "Full-featured cross-platform office suite.",
+        "skills": [
+            "C++ programming language"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Linux Kernel",
+        "description": "Most basic layer of the Linux operating system.",
+        "skills": [
+            "Git",
+            "bash"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Linux Kernel",
+        "description": "Most basic layer of the Linux operating system.",
+        "skills": [
+            "C programming",
+            "Linux tools"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Linux Kernel",
+        "description": "Most basic layer of the Linux operating system.",
+        "skills": [
+            "C language",
+            "Linux tools",
+            "Operating systems"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Linux Kernel",
+        "description": "Most basic layer of the Linux operating system.",
+        "skills": [
+            "C programming",
+            "Linux tools",
+            "C++ programming"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Linux Kernel",
+        "description": "Most basic layer of the Linux operating system.",
+        "skills": [
+            "C language",
+            "Git"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Mboalab",
+        "description": "Open and collaborative space in Cameroon focused on open science.",
+        "skills": [
+            "Github",
+            "Flutter",
+            "ML Data Modeling"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Mboalab",
+        "description": "Open and collaborative space in Cameroon focused on open science.",
+        "skills": [
+            "Flutter Development",
+            "Version control",
+            "Technical documentation writing"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "moja global",
+        "description": "Specializes in software for monitoring greenhouse gas emissions.",
+        "skills": [
+            "Documentation",
+            "python",
+            "Geospatial Analysis"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "moja global",
+        "description": "Specializes in software for monitoring greenhouse gas emissions.",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "git",
+            "Data Visualization Libraries"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "NetworkX",
+        "description": "Python package for the creation, manipulation, and study of complex networks.",
+        "skills": [
+            "python",
+            "Git"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "OCaml",
+        "description": "A high-level, typed, functional programming language.",
+        "skills": [
+            "Knowledge of a programming language",
+            "Functional Programming",
+            "OCaml"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "OCaml",
+        "description": "A high-level, typed, functional programming language.",
+        "skills": [
+            "HTML & CSS",
+            "Web Design",
+            "Git",
+            "OCaml",
+            "Tailwind",
+            "Javascript"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "ODK-X",
+        "description": "ODK-X lets you build custom apps to gather, manage, and visualize your data just as well in the field as you do in the office. From cold chain management to longitudinal patient tracking to geographic data collection on mosquito releases, ODK-X helps you build your custom data management app.",
+        "skills": [
+            "Java",
+            "Android",
+            "Testing",
+            "Frontend-Development",
+            "Android-Development",
+            "User Interface Design skills",
+            "Writing skills",
+            "Sphinx",
+            "GitHub"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "Open Information Security Foundation",
+        "description": "The Open Information Security Foundation is a non-profit organization created to build community and to support open source security technologies like Suricata, the world-class IDS/IPS network monitoring engine.",
+        "skills": [
+            "C",
+            "Git version control",
+            "Technical writing",
+            "Wireshark",
+            "Rust"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "OpenStack",
+        "description": "OpenStack is an open source software for building public and private clouds. It integrates open source projects to deploy and run clouds for computing, networking, and storage.",
+        "skills": [
+            "Linux Experience",
+            "Golang programming",
+            "Kubernetes",
+            "Networking",
+            "Docker",
+            "OpenStack",
+            "git"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "Oppia",
+        "description": "Oppia works to make high-quality education available to those who lack access to it by creating tools for scalable online lessons. The Oppia codebase is written using Python and AngularJS/Angular, and is built on Google App Engine.",
+        "skills": [
+            "Creating good practice questions on Mathematics",
+            "Clear communication",
+            "Teaching Experience",
+            "User research",
+            "Graphic design",
+            "Translating text into other languages"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "QEMU",
+        "description": "QEMU is a machine emulator and virtualizer that can run operating systems and programs made for one machine on a different machine.",
+        "skills": [
+            "Rust Programming",
+            "Linux User",
+            "Gstreamer",
+            "Git"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "Unstructured Studio",
+        "description": "Unstructured Studio focuses on creating learning for all through UX design and development of features.",
+        "skills": [
+            "Wireframing & Rapid Prototyping",
+            "Visual communication",
+            "Design tools such as Figma",
+            "Python Programming",
+            "Django",
+            "React"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "Ushahidi",
+        "description": "Ushahidi empowers communities through citizen-generated data to strengthen governance, human rights protection, humanitarian relief, and climate action.",
+        "skills": [
+            "Test Case Design",
+            "Test Environments",
+            "Technical Proficiency"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "Wagtail",
+        "description": "Wagtail is a Django content management system focused on flexibility and user experience.",
+        "skills": [
+            "Writing technical documentation",
+            "Accessibility",
+            "Written English language",
+            "Django"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "Wikimedia",
+        "description": "Wikimedia's global movement brings free educational content to the world through projects like Wikipedia. Help improve their technical backend!",
+        "skills": [
+            "Python",
+            "Javascript",
+            "HTML & CSS",
+            "Use of the MediaWiki software platform",
+            "Ruby",
+            "MediaWiki APIs",
+            "Redis"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "Zulip",
+        "description": "Zulip is a 100% open-source modern team chat app designed for both live and asynchronous conversations.",
+        "skills": [
+            "Python 3",
+            "Technical writing",
+            "CSS",
+            "JavaScript",
+            "Python #",
+            "TypeScript",
+            "HTML & CSS"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "Bioconductor",
+        "description": "Open source software for bioinformatics.",
+        "skills": [
+            "Literature review skills",
+            "Microbiome knowledge"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "caMicroscope",
+        "description": "An open-source platform for biomedical image and data analysis.",
+        "skills": [
+            "Writing Automated Tests",
+            "Accessibility",
+            "UX Design"
+        ],
+        "spots": 2,
+        "year": 2024
+    },
+    {
+        "name": "CNCF OpenTelemetry",
+        "description": "A collection of tools, APIs, and SDKs for instrumenting, generating, collecting, and exporting telemetry data.",
+        "skills": [
+            "Go"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Ersilia Open Source Initiative",
+        "description": "Focuses on strengthening research capacity for infectious and neglected diseases by developing AI/ML tools.",
+        "skills": [
+            "Python 3",
+            "Data Science",
+            "Docker",
+            "GitHub Actions"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Fedora",
+        "description": "A Linux-based operating system with editions focused on workstation, server, and cloud.",
+        "skills": [
+            "Python",
+            "Web development",
+            "JSON schemas",
+            "Social media",
+            "Office productivity software",
+            "WordPress",
+            "GitLab",
+            "Discourse",
+            "Managing a schedule",
+            "Graphic design",
+            "Linux",
+            "AI"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "GNOME",
+        "description": "An innovative free software desktop environment that is design-driven and easy to use.",
+        "skills": [
+            "Communication in English",
+            "User Research",
+            "Running Linux systems"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Humanitarian OpenStreetMap Team",
+        "description": "An international team dedicated to humanitarian action and community development through open mapping.",
+        "skills": [
+            "Python",
+            "UI Design",
+            "OpenStreetMap",
+            "Backend tests and API documentation"
+        ],
+        "spots": 2,
+        "year": 2024
+    },
+    {
+        "name": "Linux Kernel",
+        "description": "The most basic layer of the Linux operating system, encompassing hardware drivers, file systems, security, task scheduling, and more.",
+        "skills": [
+            "C programming",
+            "Operating systems",
+            "Git"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "LLVM",
+        "description": "A collection of modular and reusable compiler and toolchain technologies.",
+        "skills": [
+            "C++ programming",
+            "Command line usage",
+            "Compiler knowledge"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "MDAnalysis",
+        "description": "A Python library to analyze trajectories from molecular dynamics simulations.",
+        "skills": [
+            "Science Communication",
+            "User Research",
+            "Content Creation",
+            "Accessibility",
+            "Python"
+        ],
+        "spots": 2,
+        "year": 2024
+    },
+    {
+        "name": "ModECI",
+        "description": "A collaboration aiming to develop a standardized format for exchanging computational models.",
+        "skills": [
+            "Python",
+            "UI development",
+            "ML"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "moja global",
+        "description": "Specializes in software for monitoring greenhouse gas emissions and removals from land use and land use change.",
+        "skills": [
+            "Python",
+            "MongoDB",
+            "Data Science",
+            "Google Earth Engine",
+            "SQL",
+            "Geospatial analytics",
+            "C++",
+            "Shell scripting",
+            "CMake"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "OCaml",
+        "description": "A high-level, typed, functional programming language.",
+        "skills": [
+            "OCaml",
+            "git",
+            "Unix command line",
+            "Functional Programming"
+        ],
+        "spots": 3,
+        "year": 2024
+    },
+    {
+        "name": "ODK-X",
+        "description": "A suite of tools to build custom apps to gather, manage, and visualize data in the field.",
+        "skills": [
+            "Java",
+            "Android",
+            "Testing",
+            "Android Studio",
+            "JavaScript",
+            "User Interface Design skills"
+        ],
+        "spots": 2,
+        "year": 2024
+    },
+    {
+        "name": "OpenStack",
+        "description": "Open source software for building public and private clouds.",
+        "skills": [
+            "Python Programming",
+            "JavaScript",
+            "GitHub",
+            "Django",
+            "Linux"
+        ],
+        "spots": 2,
+        "year": 2024
+    },
+    {
+        "name": "Oppia",
+        "description": "Creating tools to enable the creation/distribution of high-quality scalable online lessons.",
+        "skills": [
+            "Teaching Experience",
+            "Proficiency in English Language",
+            "Clear communication",
+            "Writing skills",
+            "Research skills",
+            "Graphic design",
+            "User research",
+            "Understanding of various techniques for providing constructive feedback",
+            "Translating text into other languages",
+            "Content creation",
+            "Analytics",
+            "Design & Video editing",
+            "Communication",
+            "Report Writing",
+            "Copywriting"
+        ],
+        "spots": 2,
+        "year": 2024
+    },
+    {
+        "name": "Parsl",
+        "description": "A Python library for creating parallel programs composed of Python functions and external components.",
+        "skills": [
+            "Technical Writing",
+            "Python",
+            "HTML & CSS",
+            "Distributed Computing",
+            "GitHub",
+            "Concurrent–Multithreaded Programming"
+        ],
+        "spots": 2,
+        "year": 2024
+    },
+    {
+        "name": "Perl & Raku",
+        "description": "Perl is a highly capable, feature-rich programming language; Raku is a member of the Perl family of programming languages.",
+        "skills": [
+            "Perl",
+            "MySQL",
+            "Bootstrap"
+        ],
+        "spots": 2,
+        "year": 2024
+    },
+    {
+        "name": "QEMU",
+        "description": "A machine emulator and virtualizer.",
+        "skills": [
+            "Emulation"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Servo",
+        "description": "A web rendering engine written in Rust.",
+        "skills": [
+            "Rust",
+            "System-Level Programming Language",
+            "JavaScript",
+            "Python",
+            "HTML"
+        ],
+        "spots": 4,
+        "year": 2024
+    },
+    {
+        "name": "systemd",
+        "description": "A system and service manager for Linux.",
+        "skills": [
+            "C programming language",
+            "Running Linux as a user"
+        ],
+        "spots": 1,
+        "year": 2024
+    },
+    {
+        "name": "Ushahidi",
+        "description": "Empowers people through citizen-generated data to develop solutions that strengthen their communities.",
+        "skills": [
+            "Accessibility",
+            "HTML",
+            "Typescript",
+            "Loops",
+            "Functions",
+            "Data structures"
+        ],
+        "spots": 2,
+        "year": 2024
+    },
+    {
+        "name": "Wikimedia",
+        "description": "A global movement whose mission is to bring free educational content to the world.",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JS",
+            "Python3",
+            "Jupyter notebooks",
+            "MediaWiki APIs",
+            "Data Visualization Libraries"
+        ],
+        "spots": 2,
+        "year": 2024
+    }
+]
