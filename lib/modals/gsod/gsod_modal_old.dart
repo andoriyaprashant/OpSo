@@ -3,7 +3,7 @@ import 'dart:convert';
 
 // This file will modal the projects in Google Summer of docs for year 2019 to 2020
 class GsodModalOld {
-  String organization;
+  String organizationName;
   String organizationUrl;
   String technicalWriter;
   String mentor;
@@ -15,7 +15,7 @@ class GsodModalOld {
   String originalProjectProposalUrl;
   int year;
   GsodModalOld({
-    required this.organization,
+    required this.organizationName,
     required this.organizationUrl,
     required this.technicalWriter,
     required this.mentor,
@@ -42,7 +42,7 @@ class GsodModalOld {
     int? year,
   }) {
     return GsodModalOld(
-      organization: organization ?? this.organization,
+      organizationName: organization ?? this.organizationName,
       organizationUrl: organizationUrl ?? this.organizationUrl,
       technicalWriter: technicalWriter ?? this.technicalWriter,
       mentor: mentor ?? this.mentor,
@@ -60,7 +60,7 @@ class GsodModalOld {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'organization': organization,
+      'organization': organizationName,
       'organization_url': organizationUrl,
       'technical_writer': technicalWriter,
       'mentor': mentor,
@@ -76,7 +76,7 @@ class GsodModalOld {
 
   factory GsodModalOld.fromMap(Map<String, dynamic> map) {
     return GsodModalOld(
-      organization: map['organization'] ?? "",
+      organizationName: map['organization'] ?? "",
       organizationUrl: map['organization_url'] ?? "",
       technicalWriter: map['technical_writer'] ?? "",
       mentor: map['mentor'] ?? "",
@@ -97,14 +97,14 @@ class GsodModalOld {
 
   @override
   String toString() {
-    return 'GsodModalOld(organization: $organization, organizationUrl: $organizationUrl, technicalWriter: $technicalWriter, mentor: $mentor, project: $project, projectUrl: $projectUrl, report: $report, reportUrl: $reportUrl, originalProjectProposal: $originalProjectProposal, originalProjectProposalUrl: $originalProjectProposalUrl, year: $year)';
+    return 'GsodModalOld(organization: $organizationName, organizationUrl: $organizationUrl, technicalWriter: $technicalWriter, mentor: $mentor, project: $project, projectUrl: $projectUrl, report: $report, reportUrl: $reportUrl, originalProjectProposal: $originalProjectProposal, originalProjectProposalUrl: $originalProjectProposalUrl, year: $year)';
   }
 
   @override
   bool operator ==(covariant GsodModalOld other) {
     if (identical(this, other)) return true;
 
-    return other.organization == organization &&
+    return other.organizationName == organizationName &&
         other.organizationUrl == organizationUrl &&
         other.technicalWriter == technicalWriter &&
         other.mentor == mentor &&
@@ -119,7 +119,7 @@ class GsodModalOld {
 
   @override
   int get hashCode {
-    return organization.hashCode ^
+    return organizationName.hashCode ^
         organizationUrl.hashCode ^
         technicalWriter.hashCode ^
         mentor.hashCode ^
