@@ -82,10 +82,10 @@ class _LandingPageState extends State<LandingPage> {
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                           )),
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => HomePage()));
+                                builder: (context) => const HomePage()));
                       },
                       child: Text(
                         "Get started",
