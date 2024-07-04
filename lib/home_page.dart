@@ -401,7 +401,7 @@ class _HomePageState extends State<HomePage> {
 
       case 'Outreachy':
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const OutReachy()));
+            MaterialPageRoute(builder: (context) => const OutreachyScreen()));
 
 
       case 'Summer of Bitcoin':
@@ -614,6 +614,15 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           context,
           MaterialPageRoute(
             builder: (context) => const MajorLeagueHackingFellowship(),
+          ),
+        );
+        break;
+
+      case 'outreachy':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const OutreachyScreen(),
           ),
         );
         break;
