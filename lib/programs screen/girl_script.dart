@@ -10,15 +10,12 @@ import 'package:opso/widgets/gssoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 import '../widgets/SearchandFilterWidget.dart';
 
-
 class GSSOCScreen extends StatefulWidget {
   const GSSOCScreen({super.key});
-
 
   @override
   State<GSSOCScreen> createState() => _GSSOCScreenState();
 }
-
 
 class _GSSOCScreenState extends State<GSSOCScreen> {
   String currentPage = "/girl_script_summer_of_code";
@@ -36,20 +33,17 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
   List<GssocProjectModal> projectList = [];
   Future<void>? getProjectFunction;
 
-
   Future<void> initializeProjectLists() async {
     await _loadProjects('assets/projects/gssoc/gssoc2024.json', gssoc2024);
     await _loadProjects('assets/projects/gssoc/gssoc2023.json', gssoc2023);
     await _loadProjects('assets/projects/gssoc/gssoc2022.json', gssoc2022);
     await _loadProjects('assets/projects/gssoc/gssoc2021.json', gssoc2021);
 
-
     // Populate all unique organizations and languages
     allOrganizations = _extractUniqueValues((project) => project.hostedBy);
     allLanguages = languages;
     projectList = List.from(gssoc2024); // Default year
   }
-
 
   List<String> languages = [
     'All',
@@ -70,15 +64,16 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     'Dart'
   ];
 
-
   Future<void> _loadProjects(String path, List<GssocProjectModal> list) async {
     String response = await rootBundle.loadString(path);
     var jsonList = json.decode(response) as List;
-    list.addAll(jsonList.map((data) => GssocProjectModal.getDataFromJson(data)).toList());
+    list.addAll(jsonList
+        .map((data) => GssocProjectModal.getDataFromJson(data))
+        .toList());
   }
 
-
-  List<String> _extractUniqueValues(String Function(GssocProjectModal) extractor) {
+  List<String> _extractUniqueValues(
+      String Function(GssocProjectModal) extractor) {
     return {
       'All',
       ...gssoc2024.map(extractor),
@@ -88,8 +83,8 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     }.toList();
   }
 
-
-  List<String> _extractUniqueLanguages(List<String> Function(GssocProjectModal) extractor) {
+  List<String> _extractUniqueLanguages(
+      List<String> Function(GssocProjectModal) extractor) {
     final allLanguages = [
       for (var project in gssoc2024) ...extractor(project),
       for (var project in gssoc2023) ...extractor(project),
@@ -99,14 +94,12 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     return ['All', ...allLanguages.toSet()];
   }
 
-
   @override
   void initState() {
     super.initState();
     getProjectFunction = initializeProjectLists();
     _checkBookmarkStatus();
   }
-
 
   Future<void> _checkBookmarkStatus() async {
     bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProject);
@@ -115,44 +108,39 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     });
   }
 
-
   void filterProjects() {
     // Filter projects by year first
     projectList = _getProjectsByYear();
 
-
     // Filter projects by selected languages
     if (!selectedLanguages.contains('All')) {
-      projectList = projectList.where((project) =>
-          selectedLanguages.every((language) => project.techstack.contains(language))
-      ).toList();
+      projectList = projectList
+          .where((project) => selectedLanguages
+              .every((language) => project.techstack.contains(language)))
+          .toList();
     }
-
 
     // Update the list of organizations based on the filtered projects by language
     _updateOrganizationList();
 
-
     // Filter projects by selected organizations
     if (!selectedOrganizations.contains('All')) {
-      projectList = projectList.where((project) => selectedOrganizations.contains(project.hostedBy)).toList();
+      projectList = projectList
+          .where((project) => selectedOrganizations.contains(project.hostedBy))
+          .toList();
     }
-
 
     // Ensure state is updated to reflect changes
     setState(() {});
   }
 
-
-
-
   void _updateOrganizationList() {
     allOrganizations = _extractUniqueValues((project) => project.hostedBy)
-        .where((organization) => projectList.any((project) => project.hostedBy == organization))
+        .where((organization) =>
+            projectList.any((project) => project.hostedBy == organization))
         .toList();
     allOrganizations.insert(0, 'All');
   }
-
 
   List<GssocProjectModal> _getProjectsByYear() {
     switch (selectedYear) {
@@ -169,7 +157,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     }
   }
 
-
   Future<void> _refresh() async {
     await initializeProjectLists();
     setState(() {
@@ -179,12 +166,10 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-
 
     return RefreshIndicator(
       onRefresh: _refresh,
@@ -200,7 +185,8 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
               });
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                  content: Text(
+                      isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
                   duration: const Duration(seconds: 2),
                 ),
               );
@@ -229,7 +215,8 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
             } else if (snapshot.connectionState == ConnectionState.done) {
               return SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 48, vertical: 8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -245,7 +232,8 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                         buttonText: "Filter by Language",
                         onConfirm: (results) {
                           setState(() {
-                            selectedLanguages = results.isNotEmpty ? results : ['All'];
+                            selectedLanguages =
+                                results.isNotEmpty ? results : ['All'];
                             print(selectedLanguages);
                             filterProjects();
                           });
@@ -253,7 +241,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                       ),
                       const SizedBox(height: 20),
                       const SizedBox(height: 20),
-                      _buildProjectList(height, width),
+                      _buildProjectList(),
                     ],
                   ),
                 ),
@@ -266,7 +254,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
       ),
     );
   }
-
 
   Widget _buildSearchBar() {
     return TextFormField(
@@ -290,12 +277,14 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
         ),
-        contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
       ),
       onFieldSubmitted: (value) {
         setState(() {
           projectList = _getProjectsByYear()
-              .where((project) => project.name.toLowerCase().contains(value.toLowerCase()))
+              .where((project) =>
+                  project.name.toLowerCase().contains(value.toLowerCase()))
               .toList();
         });
       },
@@ -309,10 +298,9 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     );
   }
 
-
   Widget _buildYearButtons() {
     return SizedBox(
-      height: MediaQuery.of(context).size.height*0.25,
+      height: MediaQuery.of(context).size.height * 0.25,
       child: GridView(
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -331,7 +319,9 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2021 ? Colors.white : const Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2021
+                ? Colors.white
+                : const Color.fromRGBO(255, 183, 77, 1),
           ),
           YearButton(
             year: "2022",
@@ -342,7 +332,9 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2022 ? Colors.white : const Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2022
+                ? Colors.white
+                : const Color.fromRGBO(255, 183, 77, 1),
           ),
           YearButton(
             year: "2023",
@@ -353,7 +345,9 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2023 ? Colors.white : const Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2023
+                ? Colors.white
+                : const Color.fromRGBO(255, 183, 77, 1),
           ),
           YearButton(
             year: "2024",
@@ -364,13 +358,14 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2024 ? Colors.white : const Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2024
+                ? Colors.white
+                : const Color.fromRGBO(255, 183, 77, 1),
           ),
         ],
       ),
     );
   }
-
 
   Widget _buildMultiSelectField({
     required List<String> items,
@@ -384,7 +379,8 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
       backgroundColor: isDarkMode ? Colors.grey.shade100 : Colors.white,
       items: items.map((e) => MultiSelectItem<String>(e, e)).toList(),
       initialValue: selectedValues,
-      title: Text(title,style: TextStyle(color: isDarkMode ? Colors.black : Colors.black)),
+      title: Text(title,
+          style: TextStyle(color: isDarkMode ? Colors.black : Colors.black)),
       buttonText: Text(buttonText),
       onConfirm: onConfirm,
       decoration: BoxDecoration(
@@ -394,11 +390,10 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     );
   }
 
-
-  Widget _buildProjectList(double height, double width) {
+  Widget _buildProjectList() {
     return Container(
-      height: height, // Set a specific height here
       child: ListView.builder(
+        shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         itemCount: projectList.length,
         itemBuilder: (BuildContext context, int index) {
@@ -407,8 +402,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
             child: GssocProjectWidget(
               index: index + 1,
               modal: projectList[index],
-              height: height * 0.2,
-              width: width,
             ),
           );
         },
@@ -416,4 +409,3 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     );
   }
 }
-
