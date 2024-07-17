@@ -28,28 +28,27 @@ class _SeasonOfKDEState extends State<SeasonOfKDE> {
   late Future<void> getProjectFunction;
 
   Future<void> initializeProjectLists() async {
-  var response =
-      await rootBundle.loadString('assets/projects/sokde/sokde2024.json');
-  var jsonList = await json.decode(response);
-  for (var data in jsonList) {
-    sokde2024.add(SokdeProjectModal.fromJson(data));
+    var response =
+        await rootBundle.loadString('assets/projects/sokde/sokde2024.json');
+    var jsonList = await json.decode(response);
+    for (var data in jsonList) {
+      sokde2024.add(SokdeProjectModal.fromJson(data));
+    }
+    projectList = sokde2024;
+    print(projectList);
+    response =
+        await rootBundle.loadString('assets/projects/sokde/sokde2023.json');
+    jsonList = await json.decode(response);
+    for (var data in jsonList) {
+      sokde2023.add(SokdeProjectModal.fromJson(data));
+    }
+    response =
+        await rootBundle.loadString('assets/projects/sokde/sokde2022.json');
+    jsonList = await json.decode(response);
+    for (var data in jsonList) {
+      sokde2022.add(SokdeProjectModal.fromJson(data));
+    }
   }
-  projectList = sokde2024;
-  print(projectList);
-  response =
-      await rootBundle.loadString('assets/projects/sokde/sokde2023.json');
-  jsonList = await json.decode(response);
-  for (var data in jsonList) {
-    sokde2023.add(SokdeProjectModal.fromJson(data));
-  }
-  response =
-      await rootBundle.loadString('assets/projects/sokde/sokde2022.json');
-  jsonList = await json.decode(response);
-  for (var data in jsonList) {
-    sokde2022.add(SokdeProjectModal.fromJson(data));
-  }
-}
-
 
   @override
   void initState() {
@@ -92,7 +91,7 @@ class _SeasonOfKDEState extends State<SeasonOfKDE> {
     projectList = projectList
         .where((element) =>
             element.name.toLowerCase().contains(searchText) ||
-            element.mentors.contains(searchText)) 
+            element.mentors.contains(searchText))
         .toList();
     setState(() {});
   }
@@ -163,115 +162,119 @@ class _SeasonOfKDEState extends State<SeasonOfKDE> {
                   horizontal: ScreenUtil().setWidth(46),
                   vertical: ScreenUtil().setHeight(16),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    TextFormField(
-                      decoration: InputDecoration(
-                        filled: true,
-                        hintText: 'Search',
-                        suffixIcon: const Icon(Icons.search),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
-                        ),
-                        disabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
-                        ),
-                        contentPadding: EdgeInsets.symmetric(
-                          vertical: ScreenUtil().setHeight(12),
-                          horizontal: ScreenUtil().setWidth(20),
-                        ),
-                      ),
-                      onFieldSubmitted: (value) {
-                        search(value.trim());
-                      },
-                      onChanged: (value) {
-                        if (value.isEmpty) {
-                          search(value);
-                        }
-                      },
-                    ),
-                    SizedBox(height: ScreenUtil().setHeight(20)),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.1,
-                      child: GridView(
-                        physics: const NeverScrollableScrollPhysics(),
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          childAspectRatio: 3,
-                          crossAxisSpacing: 15,
-                          mainAxisSpacing: 15,
-                        ),
-                        children: [
-                          YearButton(
-                            year: "2024",
-                            isEnabled: selectedYear == 2024,
-                            onTap: () {
-                              setState(() {
-                                projectList = sokde2024;
-                                selectedYear = 2024;
-                              });
-                            },
-                            backgroundColor: selectedYear == 2024
-                                ? Colors.white
-                                : const Color.fromRGBO(255, 183, 77, 1),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      TextFormField(
+                        decoration: InputDecoration(
+                          filled: true,
+                          hintText: 'Search',
+                          suffixIcon: const Icon(Icons.search),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
-                          YearButton(
-                            year: "2023",
-                            isEnabled: selectedYear == 2023,
-                            onTap: () {
-                              setState(() {
-                                projectList = sokde2023;
-                                selectedYear = 2023;
-                              });
-                            },
-                            backgroundColor: selectedYear == 2023
-                                ? Colors.white
-                                : const Color.fromRGBO(255, 183, 77, 1),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
-                          YearButton(
-                            year: "2022",
-                            isEnabled: selectedYear == 2022,
-                            onTap: () {
-                              setState(() {
-                                projectList = sokde2022;
-                                selectedYear = 2022;
-                              });
-                            },
-                            backgroundColor: selectedYear == 2022
-                                ? Colors.white
-                                : const Color.fromRGBO(255, 183, 77, 1),
+                          disabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: projectList.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: SokdeProjectWidget(
-                              modal: projectList[index],
-                              height: ScreenUtil().screenHeight * 0.2,
-                              width: ScreenUtil().screenWidth,
-                              index: index, 
-                            ),
-                          );
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                          ),
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: ScreenUtil().setHeight(12),
+                            horizontal: ScreenUtil().setWidth(20),
+                          ),
+                        ),
+                        onFieldSubmitted: (value) {
+                          search(value.trim());
+                        },
+                        onChanged: (value) {
+                          if (value.isEmpty) {
+                            search(value);
+                          }
                         },
                       ),
-                    ),
-                  ],
+                      SizedBox(height: ScreenUtil().setHeight(20)),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.1,
+                        child: GridView(
+                          physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
+                            childAspectRatio: 1.3,
+                            crossAxisSpacing: 15,
+                            mainAxisSpacing: 15,
+                          ),
+                          children: [
+                            YearButton(
+                              year: "2024",
+                              isEnabled: selectedYear == 2024,
+                              onTap: () {
+                                setState(() {
+                                  projectList = sokde2024;
+                                  selectedYear = 2024;
+                                });
+                              },
+                              backgroundColor: selectedYear == 2024
+                                  ? Colors.white
+                                  : const Color.fromRGBO(255, 183, 77, 1),
+                            ),
+                            YearButton(
+                              year: "2023",
+                              isEnabled: selectedYear == 2023,
+                              onTap: () {
+                                setState(() {
+                                  projectList = sokde2023;
+                                  selectedYear = 2023;
+                                });
+                              },
+                              backgroundColor: selectedYear == 2023
+                                  ? Colors.white
+                                  : const Color.fromRGBO(255, 183, 77, 1),
+                            ),
+                            YearButton(
+                              year: "2022",
+                              isEnabled: selectedYear == 2022,
+                              onTap: () {
+                                setState(() {
+                                  projectList = sokde2022;
+                                  selectedYear = 2022;
+                                });
+                              },
+                              backgroundColor: selectedYear == 2022
+                                  ? Colors.white
+                                  : const Color.fromRGBO(255, 183, 77, 1),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: ScreenUtil().setHeight(20)),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.6,
+                        child: ListView.builder(
+                          itemCount: projectList.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              child: SokdeProjectWidget(
+                                modal: projectList[index],
+                                height: ScreenUtil().screenHeight * 0.2,
+                                width: ScreenUtil().screenWidth,
+                                index: index,
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               );
             } else {
