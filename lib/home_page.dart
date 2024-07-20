@@ -203,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                                 onPressed: () => Navigator.pop(context),
                               ),
                               SizedBox(
-                                width: ScreenUtil().setWidth(100),
+                                width: ScreenUtil().setWidth(10),
                               ),
                               Text(
                                 'Menu',
