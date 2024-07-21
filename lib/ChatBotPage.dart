@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
@@ -83,7 +84,9 @@ class _ChatBotPageState extends State<ChatBotPage> {
                     margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
                     padding: const EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
-                      color: isUser ? Colors.blue[100] : Colors.grey[300],
+                      color:isUser 
+                          ? (AdaptiveTheme.of(context).mode.isDark ? Color.fromARGB(255, 31, 49, 70) : Colors.blue[100])
+                          : (AdaptiveTheme.of(context).mode.isDark ? Colors.grey[700] : Colors.grey[300]),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: Row(
