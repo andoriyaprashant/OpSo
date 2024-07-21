@@ -9,6 +9,7 @@ import 'package:opso/opso_timeline.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
+import 'package:opso/programs%20screen/hacktoberfest_screen.dart';
 import 'package:opso/programs%20screen/linux_foundation.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
 import 'package:opso/programs%20screen/open_summer_of_code.dart';
@@ -100,6 +101,10 @@ class _HomePageState extends State<HomePage> {
     Program(
       title: 'Linux Foundation',
       imageAssetPath: 'assets/linux_foundation_logo.png',
+    ),
+     Program(
+      title: 'Hacktoberfest',
+      imageAssetPath: 'assets/hacktoberfest.png',
     ),
     Program(
       title: 'Outreachy',
@@ -406,6 +411,12 @@ class _HomePageState extends State<HomePage> {
 
       case 'Summer of Bitcoin':
         Navigator.pushNamed(context, "/summer_of_bitcoin");
+      
+
+      case 'Hacktoberfest':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const Hacktoberfest()));
+      
 
       case 'Open Summer of Code':
 
@@ -506,6 +517,10 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     Program(
       title: 'Summer of Bitcoin',
       imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
+    ),
+     Program(
+      title: 'Hacktoberfest',
+      imageAssetPath: 'assets/hacktoberfest.png',
     ),
     Program(
       title: 'Linux Foundation',
@@ -655,6 +670,15 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           ),
         );
         break;
+      
+      case 'Hacktoberfest':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const Hacktoberfest(),
+          ),
+        );
+        break;
 
 
       case 'Linux Foundation':
@@ -680,4 +704,3 @@ class Program {
     required this.imageAssetPath,
   });
 }
-
