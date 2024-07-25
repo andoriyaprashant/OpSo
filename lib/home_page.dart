@@ -5,6 +5,18 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:opso/ChatBotpage.dart';
 import 'package:opso/opso_timeline.dart';
+
+import 'package:opso/programs%20screen/girl_script.dart';
+import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
+import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
+import 'package:opso/programs%20screen/hacktoberfest_screen.dart';
+import 'package:opso/programs%20screen/linux_foundation.dart';
+import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
+import 'package:opso/programs%20screen/open_summer_of_code.dart';
+import 'package:opso/programs%20screen/outreachy.dart';
+import 'package:opso/programs%20screen/season_of_kde.dart';
+import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
+import 'package:opso/programs%20screen/social_winter_of_code.dart';
 import 'package:opso/services/notificationService.dart';
 import 'package:opso/widgets/book_mark_screen.dart';
 import 'package:opso/widgets/faq.dart';
@@ -41,7 +53,6 @@ class _HomePageState extends State<HomePage> {
       body: "Explore various Open-Source Programs",
     );
   }
-
   List<Program> programs = [
     Program(title: 'Google Summer of Code', imageAssetPath: 'assets/gsoc_logo.png'),
     Program(title: 'Google Season of Docs', imageAssetPath: 'assets/Google_season_of_docs.png'),
@@ -53,6 +64,63 @@ class _HomePageState extends State<HomePage> {
     Program(title: 'Social Winter of Code', imageAssetPath: 'assets/swoc.png'),
     Program(title: 'Season of KDE', imageAssetPath: 'assets/sokde.png'),
     Program(title: 'Open Summer of Code', imageAssetPath: 'assets/open_summer_of_code.png'),
+
+
+//used to show the notification every 5 ms
+  void showScheduleNotification() async {
+    await NotificationService.showNotification(
+        title: "OpSo",
+        body: "Explore various Open-Source Programs",
+        scheduled: true,
+        interval: 5);
+  }
+
+
+  final List<Program> programs = [
+    Program(
+      title: 'Google Summer of Code',
+      imageAssetPath: 'assets/gsoc_logo.png',
+    ),
+    Program(
+      title: 'Google Season of Docs',
+      imageAssetPath: 'assets/Google_season_of_docs.png',
+    ),
+    Program(
+      title: 'Major League Hacking Fellowship',
+      imageAssetPath: 'assets/mlh_logo.jpg',
+    ),
+    Program(
+      title: 'Summer of Bitcoin',
+      imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
+    ),
+    Program(
+      title: 'Linux Foundation',
+      imageAssetPath: 'assets/linux_foundation_logo.png',
+    ),
+     Program(
+      title: 'Hacktoberfest',
+      imageAssetPath: 'assets/hacktoberfest.png',
+    ),
+    Program(
+      title: 'Outreachy',
+      imageAssetPath: 'assets/outreachy.png',
+    ),
+    Program(
+      title: 'GirlScript Summer of Code',
+      imageAssetPath: 'assets/girlscript_logo.png',
+    ),
+    Program(
+      title: 'Social Winter of Code',
+      imageAssetPath: 'assets/swoc.png',
+    ),
+    Program(
+      title: 'Season of KDE',
+      imageAssetPath: 'assets/sokde.png',
+    ),
+    Program(
+      title: 'Open Summer of Code',
+      imageAssetPath: 'assets/open_summer_of_code.png',
+    ),
   ];
 
   void _onItemTapped(int index) {
@@ -162,6 +230,99 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  void navigateToScreen(BuildContext context, Program program) {
+    switch (program.title) {
+      case 'Google Summer of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => GoogleSummerOfCodeScreen(),
+          ),
+        );
+        break;
+
+
+      case 'Google Season of Docs':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => GoogleSeasonOfDocsScreen(),
+          ),
+        );
+        break;
+
+
+      case 'Major League Hacking Fellowship':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => const MajorLeagueHackingFellowship()),
+        );
+        break;
+
+
+      case 'GirlScript Summer of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const GSSOCScreen(),
+          ),
+        );
+        break;
+
+
+      case 'Social Winter of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SWOCScreen(),
+          ),
+        );
+        break;
+
+      case 'Season of KDE':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SeasonOfKDE(),
+          ),
+        );
+        break;
+
+
+      case 'Outreachy':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const OutreachyScreen()));
+
+
+      case 'Summer of Bitcoin':
+        Navigator.pushNamed(context, "/summer_of_bitcoin");
+      
+
+      case 'Hacktoberfest':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const Hacktoberfest()));
+      
+
+      case 'Open Summer of Code':
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const OpenSummerOfCode(),
+          ),
+        );
+
+
+      case 'Linux Foundation':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const LinuxFoundation()));
+
+      default:
+        break;
+    }
+  }
 }
 
 class Program {
@@ -192,6 +353,54 @@ class ProgramSearchDelegate extends SearchDelegate {
   final List<Program> programs;
 
   ProgramSearchDelegate({required this.programs});
+class ProgramSearchDelegate extends SearchDelegate<String> {
+  final List<Program> programs = [
+    Program(
+      title: 'Google Summer of Code',
+      imageAssetPath: 'assets/gsoc_logo.png',
+    ),
+    Program(
+      title: 'Google Season of Docs',
+      imageAssetPath: 'assets/Google_season_of_docs.png',
+    ),
+    Program(
+      title: 'Major League Hacking Fellowship',
+      imageAssetPath: 'assets/mlh_logo.jpg',
+    ),
+    Program(
+      title: 'Summer of Bitcoin',
+      imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
+    ),
+     Program(
+      title: 'Hacktoberfest',
+      imageAssetPath: 'assets/hacktoberfest.png',
+    ),
+    Program(
+      title: 'Linux Foundation',
+      imageAssetPath: 'assets/linux_foundation_logo.png',
+    ),
+    Program(
+      title: 'Outreachy',
+      imageAssetPath: 'assets/outreachy.png',
+    ),
+    Program(
+      title: 'GirlScript Summer of Code',
+      imageAssetPath: 'assets/girlscript_logo.png',
+    ),
+    Program(
+      title: 'Social Winter of Code',
+      imageAssetPath: 'assets/swoc.png',
+    ),
+    Program(
+      title: 'Season of KDE',
+      imageAssetPath: 'assets/sokde.png',
+    ),
+    Program(
+      title: 'Open Summer of Code',
+      imageAssetPath: 'assets/open_summer_of_code.png',
+    ),
+  ];
+
 
   @override
   List<Widget> buildActions(BuildContext context) {
@@ -238,4 +447,109 @@ class ProgramSearchDelegate extends SearchDelegate {
       )).toList(),
     );
   }
+
+}
+
+
+  void navigateToScreen(BuildContext context, String title) {
+    final Program selectedProgram =
+    programs.firstWhere((program) => program.title == title);
+    switch (selectedProgram.title) {
+      case 'Google Summer of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => GoogleSummerOfCodeScreen(),
+          ),
+        );
+        break;
+      case 'Google Season of Docs':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => GoogleSeasonOfDocsScreen(),
+          ),
+        );
+        break;
+
+
+      case 'Major League Hacking Fellowship':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const MajorLeagueHackingFellowship(),
+          ),
+        );
+        break;
+
+      case 'outreachy':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const OutreachyScreen(),
+          ),
+        );
+        break;
+
+
+      case 'GirlScript Summer of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const GSSOCScreen(),
+          ),
+        );
+        break;
+
+
+      case 'Social Winter of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SWOCScreen(),
+          ),
+        );
+        break;
+
+      case 'Season of KDE':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SeasonOfKDE(),
+          ),
+        );
+        break;
+      
+      case 'Hacktoberfest':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const Hacktoberfest(),
+          ),
+        );
+        break;
+
+
+      case 'Linux Foundation':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const LinuxFoundation()));
+        break;
+
+
+      default:
+        break;
+    }
+  }
+}
+
+
+class Program {
+  final String title;
+  final String imageAssetPath;
+
+
+  Program({
+    required this.title,
+    required this.imageAssetPath,
+  });
 }

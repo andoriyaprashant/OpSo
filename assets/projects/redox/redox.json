@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Porting tokio to Redox",
+        "contributor": "jD91mZM2",
+        "description": "Porting tokio to Redox, a Unix-like operating system written in Rust.",
+        "githubUrl": "https://www.redox-os.org/news/rsoc-porting-tokio-1"
+    },
+    {
+        "name": "RSoC: Implementing a FAT32 Filesystem",
+        "contributor": "Deepak Sirone",
+        "description": "PCurrently the Redox bootloader is purely written in assembly. The bootloader can either be assembled along with the filesystem image or a standalone kernel image. The -D FILESYSTEM and -D KERNEL options during assembly time take care of this. Extending the bootloader to read a filesystem is rather tedious using assembly and so it was decided that Rust is the way to go.",
+        "githubUrl": "https://www.redox-os.org/news/rsoc-fat32-1"
+    },
+    {
+        "name": "RSoC: Porting Redox to AArch64",
+        "contributor": "wizofe",
+        "description": "A first calendar entry to describe my attempt on ARM64 support in Redox OS. Specifically, looking into the Raspberry Pi2/3(B)/3+ (all of them having a Cortex-A53 ARMv8 64-bit microprocessor, although for all my experiments I am going to use the Raspberry Pi 3(B)).",
+        "githubUrl": "https://www.redox-os.org/news/rsoc-arm64-0x01"
+    },
+    {
+        "name": "RSoC: Relibc",
+        "contributor": " jD91mZM2",
+        "description": "Starting off, gcc_complete did not compile. Like usual, Jeremy was super quick with fixing a few things, but I managed to catch up when we got to scanf being missing, and told him I could implement that. My first relibc PR! After that, I added empty locale functions, copy pasted musl’s setjmp assembly code.",
+        "githubUrl": "https://www.redox-os.org/news/rsoc-relibc"
+    },
+    {
+        "name": "RSoC Project: Ion as a library",
+        "contributor": "AdminXVII",
+        "description": "Since builtins should not be threat actors, it should be safe to share file descriptors and memory with them. A builtin could thus simply read & write directly from a provided file descriptor, instead of the standard input, output and error. This would first allow to keep the normal level of safety guarantee provided by rust by removing unsafe forking.",
+        "githubUrl": "https://www.redox-os.org/news/rsoc-ion-lib-0"
+    },
+    {
+        "name": "RSoC: Implementing ptrace for Redox OS",
+        "contributor": "jD91mZM2",
+        "description": "Instead, I’ll be working on the ptrace system call for Redox. This is the very syscall that not only User Mode Linux uses to emulate Linux applications, but also what GDB uses to set breakpoints, as well as strace to list all system calls. I think it’s the most meta system call there is, and it’s an honour to get to implement it. Now you should be able to see how it can aid in the goal which I just set!",
+        "githubUrl": "https://www.redox-os.org/news/rsoc-ptrace-0"
+    },
+    {
+        "name": "Rsoc: Improving Ion's UX",
+        "contributor": "AdminXVII",
+        "description": "Userland plugins are great tools to make the user’s workflow faster with a near-zero onboarding involvment. They allow users to have commands tailored to their workflow without much involvement from the shell and without impacting the maintainability of the rest of the system. As such, it is really a must have for a pleasing interactive shell.",
+        "githubUrl": "https://www.redox-os.org/news/rsoc-ion-ux-1"
+    },
+    {
+        "name": "RSoC: GDB for Redox",
+        "contributor": "jD91mZM2",
+        "description": "It’s a powerful system where the tracing is done using a file handle. You can read all about the design over at the RFC. Thanks to this system I also got strace working, and then I started working on a simple gdbserver in Rust, for both Linux and Redox, but mainly Linux at that point, to lay the foundation for debugging on Redox using a Rust-based program.",
+        "githubUrl": "https://www.redox-os.org/news/rsoc-gdb-0"
+    },
+    {
+        "name": "RSoC: improving drivers and kernel (largely io_uring)",
+        "contributor": "4lDO2",
+        "description": "Implementing a more advanced syscall for allocating physical memory, namely physalloc3. Unlike the more basic physalloc which only takes a size as parameter, physalloc3 also takes a flags and minimal size; this allows a driver to request a large range and fall back to multiple small ranges, if the physical memory space were to be too fragmented, by using scatter-gather lists (a form of vectored I/O like preadv for hardware). It also adds support for 32-bit-only allocation for devices that do not support the entire 64-bit physical address space.",
+        "githubUrl": "https://www.redox-os.org/news/io_uring-0"
+    },
+    {
+        "name": "RSoC 2021: QEMU on Redox OS",
+        "contributor": "Enygmator",
+        "description": "QEMU: It is an emulator that is capable of emulating various hardware (like Intel or ARM processors) within a software environment (your OS) in order to help run software, that runs only on the above-mentioned hardware. It is capable of emulating entire machines, so that you can test your software in the emulator rather than using the actual machine.",
+        "githubUrl": "https://www.redox-os.org/news/rsoc-2021-qemu-1"
+    },
+    {
+        "name": "Revirt - Virtualization on Redox OS",
+        "contributor": "Enygmator",
+        "description": "I was working on porting QEMU to Redox OS (refer post - RSoC 2021: QEMU on Redox OS - Part 1). You can read the progress update on that in this post - Bochs on Redox OS (and QEMU - Part 2). While the QEMU port is nearing success, it felt prudent that the next step should be to enable Hardware-Assisted, Hardware-level virtualization on Redox, in order to be able to run virtual machines faster and more effectively.",
+        "githubUrl": "https://www.redox-os.org/news/revirt-1/"
+    },
+    {
+        "name": "RSoC: virtio drivers",
+        "contributor": "Andy-Python-Programmer",
+        "description": "Briefly, VirtIO is a standardized interface which allows the guest operating system to accesses simplified virtual devices such as block storage, networking adaptors and graphic cards. The VirtIO devices are minimal since they are implemented with the bare necessities to be able to send and recieve data.",
+        "githubUrl": "https://www.redox-os.org/news/rsoc-virtio-1/"
+    },
+    {
+        "name": "RSoC: on-demand paging",
+        "contributor": "4lDO2",
+        "description": "Usercopy, Yesterday, a huge (+2356 -1724) MR was merged, that fundamentally changed the way the kernel accessed user memory, mainly passed from of syscall arguments, but also to some extent when handling signals. Previously, the kernel relied on validate_* functions, e.g. (not the exact kernel code):",
+        "githubUrl": "https://www.redox-os.org/news/kernel-8/"
+    }
+]
