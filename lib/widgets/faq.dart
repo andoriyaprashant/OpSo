@@ -23,6 +23,7 @@ class FAQPage extends StatelessWidget {
     
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text('FAQ', style: TextStyle(fontSize: 22.sp)),
       ),
       body: SingleChildScrollView(

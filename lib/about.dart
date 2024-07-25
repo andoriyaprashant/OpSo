@@ -10,6 +10,7 @@ class AboutScreen extends StatelessWidget {
     );
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text('About App'),
       ),
       body: Padding(
