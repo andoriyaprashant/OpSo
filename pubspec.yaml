@@ -81,6 +81,7 @@ flutter:
   #      - assets\swoc_logo.png
   #      - assets\Google_season_of_docs.png
   #      - assets\sokde.png
+  #      - assets\redox.png
   #  #   - images/a_dot_ham.jpeg
   assets:
     - assets/
@@ -92,6 +93,7 @@ flutter:
     - assets/splash screen.png
     - assets/github_swag.png
     - assets/sokde.png
+    - assets/redox.png
     - assets/hacktoberfest.png
     - assets/xyz_domain.png
     - assets/participation_certificate.png
@@ -102,6 +104,7 @@ flutter:
     - assets/projects/outreachy/outreachy2022.json
     - assets/projects/outreachy/outreachy2023.json
     - assets/projects/outreachy/outreachy2024.json
+    - assets/projects/redox/redox.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
