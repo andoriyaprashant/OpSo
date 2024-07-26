@@ -14,6 +14,7 @@ import 'package:opso/programs%20screen/linux_foundation.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
 import 'package:opso/programs%20screen/open_summer_of_code.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
+import 'package:opso/programs%20screen/redox.dart';
 import 'package:opso/programs%20screen/season_of_kde.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/programs%20screen/social_winter_of_code.dart';
@@ -121,6 +122,10 @@ class _HomePageState extends State<HomePage> {
     Program(
       title: 'Season of KDE',
       imageAssetPath: 'assets/sokde.png',
+    ),
+    Program(
+      title: 'Redox OS Summer of Code',
+      imageAssetPath: 'assets/redox.png',
     ),
     Program(
       title: 'Open Summer of Code',
@@ -403,6 +408,15 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
+      case 'Redox OS Summer of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const RsocPage(),
+          ),
+        );
+        break;
+
 
       case 'Outreachy':
         Navigator.push(context,
@@ -523,6 +537,10 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
       imageAssetPath: 'assets/hacktoberfest.png',
     ),
     Program(
+      title: 'Redox OS Summer of Code',
+      imageAssetPath: 'assets/redox.png',
+    ),
+    Program(
       title: 'Linux Foundation',
       imageAssetPath: 'assets/linux_foundation_logo.png',
     ),
@@ -623,6 +641,14 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
+      case 'Redox OS Summer of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const RsocPage(),
+          ),
+        );
+        break;
 
       case 'Major League Hacking Fellowship':
         Navigator.push(
