@@ -77,6 +77,12 @@ class OpsoTimeLineScreen extends StatelessWidget {
       },
       {
         'description':
+            "Redox OS Summer of Code\nApplication Period - 01/05/2024 to 01/06/2024",
+        'startDate': DateTime.utc(2024, 5, 01),
+        'endDate': DateTime.utc(2024, 6, 01),
+      },
+      {
+        'description':
             "Linux Foundation Mentorship(Fall Term)\nApplication Period - 15/07/2024 to 15/08/2024",
         'startDate': DateTime.utc(2024, 7, 15),
         'endDate': DateTime.utc(2024, 8, 15),
