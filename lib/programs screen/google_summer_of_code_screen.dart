@@ -199,6 +199,30 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
         appBar: AppBar(
           title: const Text('Google Summer of Code'),
           actions: <Widget>[IconButton(
+              icon: (isBookmarked)
+                  ? const Icon(Icons.bookmark_add_rounded)
+                  : const Icon(Icons.bookmark_add_outlined),
+              onPressed: () {
+                setState(() {
+                  isBookmarked = !isBookmarked;
+                });
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                        isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                    duration: const Duration(seconds: 2),
+                  ),
+                );
+                if (isBookmarked) {
+                  print("Adding");
+                  HandleBookmark.addBookmark(currentProject, currentPage);
+                } else {
+                  print("Deleting");
+                  HandleBookmark.deleteBookmark(currentProject);
+                }
+              },
+            ),
+            IconButton(
             icon: const Icon(Icons.info_outline),
             onPressed: () {
               Navigator.push(
