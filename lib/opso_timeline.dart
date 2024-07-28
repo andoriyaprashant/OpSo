@@ -99,6 +99,12 @@ class OpsoTimeLineScreen extends StatelessWidget {
         'startDate': DateTime.utc(2024, 8, 1),
         'endDate': DateTime.utc(2024, 8, 31),
       },
+      {
+        'description':
+            "Hacktoberfest\nContribution Period - 01/10/2024 to 31/10/2024",
+        'startDate': DateTime.utc(2024, 10, 1),
+        'endDate': DateTime.utc(2024, 10, 31),
+      },
     ];
 
     for (var event in events) {
