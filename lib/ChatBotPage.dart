@@ -2,31 +2,25 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
-
 const apiKey = 'put-gemini-api-key';
-
 
 class ChatBotPage extends StatefulWidget {
   const ChatBotPage({Key? key}) : super(key: key);
 
-
   @override
   _ChatBotPageState createState() => _ChatBotPageState();
 }
-
 
 class _ChatBotPageState extends State<ChatBotPage> {
   final TextEditingController _controller = TextEditingController();
   final List<Map<String, String>> _messages = [];
   GenerativeModel? _model;
 
-
   @override
   void initState() {
     super.initState();
     _initializeModel();
   }
-
 
   void _initializeModel() async {
     _model = GenerativeModel(
@@ -35,31 +29,25 @@ class _ChatBotPageState extends State<ChatBotPage> {
     );
   }
 
-
   void _sendMessage() async {
     if (_controller.text.isEmpty) return;
 
-
-
-
     setState(() {
-      _messages.add({"sender": "user", "text": "${_controller.text}"});
+      _messages.add({"sender": "user", "text": _controller.text});
     });
 
-
-    final prompt = _controller.text + "don't give answer in markdown format";
+    final prompt = _controller.text + " don't give answer in markdown format";
     _controller.clear();
-
 
     if (_model != null) {
       final content = [Content.text(prompt)];
       final response = await _model!.generateContent(content);
       setState(() {
-        _messages.add({"sender": "bot", "text": response.text!});
+        final botText = response.text!.replaceAll('*', '');  // Remove asterisks
+        _messages.add({"sender": "bot", "text": botText});
       });
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +72,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
                     margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
                     padding: const EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
-                      color:isUser 
+                      color: isUser
                           ? (AdaptiveTheme.of(context).mode.isDark ? Color.fromARGB(255, 31, 49, 70) : Colors.blue[100])
                           : (AdaptiveTheme.of(context).mode.isDark ? Colors.grey[700] : Colors.grey[300]),
                       borderRadius: BorderRadius.circular(10.0),
@@ -136,7 +124,6 @@ class _ChatBotPageState extends State<ChatBotPage> {
     );
   }
 
-
   @override
   void dispose() {
     _controller.dispose();
@@ -144,10 +131,8 @@ class _ChatBotPageState extends State<ChatBotPage> {
   }
 }
 
-
 void main() {
   runApp(const MaterialApp(
     home: ChatBotPage(),
   ));
 }
-
