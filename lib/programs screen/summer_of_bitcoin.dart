@@ -180,157 +180,157 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                   padding: EdgeInsets.symmetric(
                       horizontal: ScreenUtil().setWidth(46),
                       vertical: ScreenUtil().setHeight(16)),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      TextFormField(
-                        decoration: InputDecoration(
-                          filled: true,
-                          hintText: 'Search',
-                          suffixIcon: const Icon(Icons.search),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFEEEEEE),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        TextFormField(
+                          decoration: InputDecoration(
+                            filled: true,
+                            hintText: 'Search',
+                            suffixIcon: const Icon(Icons.search),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: const BorderSide(
+                                color: Color(0xFFEEEEEE),
+                              ),
                             ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFEEEEEE),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: const BorderSide(
+                                color: Color(0xFFEEEEEE),
+                              ),
                             ),
-                          ),
-                          disabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFEEEEEE),
+                            disabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: const BorderSide(
+                                color: Color(0xFFEEEEEE),
+                              ),
                             ),
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFEEEEEE),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: const BorderSide(
+                                color: Color(0xFFEEEEEE),
+                              ),
                             ),
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: ScreenUtil().setHeight(12),
+                                horizontal: ScreenUtil().setWidth(20)),
                           ),
-                          contentPadding: EdgeInsets.symmetric(
-                              vertical: ScreenUtil().setHeight(12),
-                              horizontal: ScreenUtil().setWidth(20)),
+                          onFieldSubmitted: (value) {
+                            search(value.trim());
+                          },
+                          onChanged: (value) {
+                            if (value.isEmpty) {
+                              search(value);
+                            }
+                          },
                         ),
-                        onFieldSubmitted: (value) {
-                          search(value.trim());
-                        },
-                        onChanged: (value) {
-                          if (value.isEmpty) {
-                            search(value);
-                          }
-                        },
-                      ),
-                      SizedBox(height: ScreenUtil().setHeight(20)),
-                      SizedBox(
-                        height: height * 0.2,
-                        width: width,
-                        child: GridView(
-                          physics: const NeverScrollableScrollPhysics(),
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: 1.5 / 0.6,
-                            crossAxisSpacing: 15,
-                            mainAxisSpacing: 15,
+                        SizedBox(height: ScreenUtil().setHeight(20)),
+                        SizedBox(
+                          height: height * 0.2,
+                          width: width,
+                          child: GridView(
+                            physics: const NeverScrollableScrollPhysics(),
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              childAspectRatio: 1.5 / 0.6,
+                              crossAxisSpacing: 15,
+                              mainAxisSpacing: 15,
+                            ),
+                            children: [
+                              YearButton(
+                                year: "2021",
+                                isEnabled: selectedYear == 2021 ? true : false,
+                                onTap: () {
+                                  setState(() {
+                                    projectList = sob2021;
+                                    selectedYear = 2021;
+                                  });
+                                },
+                                backgroundColor: selectedYear == 2021
+                                    ? Colors.white
+                                    : const Color.fromRGBO(255, 183, 77, 1),
+                              ),
+                              YearButton(
+                                year: "2022",
+                                isEnabled: selectedYear == 2022 ? true : false,
+                                onTap: () {
+                                  setState(() {
+                                    projectList = sob2022;
+                                    selectedYear = 2022;
+                                  });
+                                },
+                                backgroundColor: selectedYear == 2022
+                                    ? Colors.white
+                                    : const Color.fromRGBO(255, 183, 77, 1),
+                              ),
+                              YearButton(
+                                year: "2023",
+                                isEnabled: selectedYear == 2023 ? true : false,
+                                onTap: () {
+                                  setState(() {
+                                    projectList = sob2023;
+                                    selectedYear = 2023;
+                                  });
+                                },
+                                backgroundColor: selectedYear == 2023
+                                    ? Colors.white
+                                    : const Color.fromRGBO(255, 183, 77, 1),
+                              ),
+                            ],
                           ),
+                        ),
+                        SizedBox(
+                          height: ScreenUtil().setHeight(20),
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            YearButton(
-                              year: "2021",
-                              isEnabled: selectedYear == 2021 ? true : false,
-                              onTap: () {
-                                setState(() {
-                                  projectList = sob2021;
-                                  selectedYear = 2021;
-                                });
-                              },
-                              backgroundColor: selectedYear == 2021
-                                  ? Colors.white
-                                  : const Color.fromRGBO(255, 183, 77, 1),
+                            const Text(
+                              'Filter by Org:',
+                              style: TextStyle(fontWeight: FontWeight.w400),
                             ),
-                            YearButton(
-                              year: "2022",
-                              isEnabled: selectedYear == 2022 ? true : false,
-                              onTap: () {
-                                setState(() {
-                                  projectList = sob2022;
-                                  selectedYear = 2022;
-                                });
-                              },
-                              backgroundColor: selectedYear == 2022
-                                  ? Colors.white
-                                  : const Color.fromRGBO(255, 183, 77, 1),
-                            ),
-                            YearButton(
-                              year: "2023",
-                              isEnabled: selectedYear == 2023 ? true : false,
-                              onTap: () {
-                                setState(() {
-                                  projectList = sob2023;
-                                  selectedYear = 2023;
-                                });
-                              },
-                              backgroundColor: selectedYear == 2023
-                                  ? Colors.white
-                                  : const Color.fromRGBO(255, 183, 77, 1),
-                            ),
+                            Padding(
+                              padding: EdgeInsets.all(ScreenUtil().setHeight(8)),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  DropdownWidget(
+                                    items: languages,
+                                    hintText: 'Org',
+                                    onChanged: (newValue) {
+                                      setState(() {
+                                        switch (selectedYear) {
+                                          case 2021:
+                                            projectList = sob2021;
+                                            break;
+                                          case 2022:
+                                            projectList = sob2022;
+                                            break;
+                                          case 2023:
+                                            projectList = sob2023;
+                                            break;
+                                        }
+                                        searchTag(newValue);
+                                      });
+                                      // Perform filtering based on selectedLanguage
+                                    },
+                                  ),
+                                ],
+                              ),
+                            )
                           ],
                         ),
-                      ),
-                      SizedBox(
-                        height: ScreenUtil().setHeight(20),
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          const Text(
-                            'Filter by Org:',
-                            style: TextStyle(fontWeight: FontWeight.w400),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(ScreenUtil().setHeight(8)),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                DropdownWidget(
-                                  items: languages,
-                                  hintText: 'Org',
-                                  onChanged: (newValue) {
-                                    setState(() {
-                                      switch (selectedYear) {
-                                        case 2021:
-                                          projectList = sob2021;
-                                          break;
-                                        case 2022:
-                                          projectList = sob2022;
-                                          break;
-                                        case 2023:
-                                          projectList = sob2023;
-                                          break;
-                                      }
-                                      searchTag(newValue);
-                                    });
-                                    // Perform filtering based on selectedLanguage
-                                  },
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: ScreenUtil().setHeight(20),
-                      ),
-                      Expanded(
-                        // width: width,
-                        child: ListView.builder(
-                          physics: NeverScrollableScrollPhysics(),
+                        SizedBox(
+                          height: ScreenUtil().setHeight(20),
+                        ),
+                        ListView.builder(
+                          shrinkWrap: true,
+                          physics: ClampingScrollPhysics(),
                           itemCount: projectList.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Padding(
@@ -343,12 +343,12 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                             );
                           },
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 );
               } else {
-                return const Center(child: Text("Some error occured"));
+                return const Center(child: Text("Some error occurred"));
               }
             }),
       ),
