@@ -81,7 +81,7 @@ class _HacktoberfestState extends State<Hacktoberfest> {
                 child: Text(
                   'Celebrate Open Source and Grow Your Skills with Hacktoberfest!',
                   style: TextStyle(
-                      fontSize: titleSize, fontWeight: FontWeight.bold, color: Colors.white),
+                      fontSize: titleSize, fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
@@ -90,7 +90,6 @@ class _HacktoberfestState extends State<Hacktoberfest> {
                   'Hacktoberfest is an annual event in October, organized by DigitalOcean and GitHub, to promote open-source contributions. Participants submit pull requests to GitHub repositories, fostering community, learning, and collaboration among developers worldwide.',
                   style: TextStyle(
                     fontSize: contentSize,
-                    color: Colors.white,
                   ),
                 ),
               ),
@@ -120,50 +119,21 @@ class _HacktoberfestState extends State<Hacktoberfest> {
                 child: Text(
                   'How to find issues in Hacktoberfest',
                   style: TextStyle(
-                      fontSize: titleSize, fontWeight: FontWeight.bold, color: Colors.white),
+                      fontSize: titleSize, fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: pad),
-                child: RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      fontSize: contentSize,
-                      color: Colors.white,
-                      height: 1.5, // Adjusts line spacing
+                child: Text(
+                      '1. First, go to GitHub.\n\n'
+                      '2. Click on "Issues.\n\n'
+                      '3. Use the filter: is:open is:issue archived:false label:hacktoberfest.\n\n'
+                      '4. Solve issues and make your contributions.\n\n',
+                      style: TextStyle(
+                        fontSize: contentSize,
+                        height: 1.5, // Adjusts line spacing
+                      ),
                     ),
-                    children: [
-                      TextSpan(
-                        text: '1. ',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      TextSpan(
-                        text: 'First, go to GitHub.\n',
-                      ),
-                      TextSpan(
-                        text: '2. ',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      TextSpan(
-                        text: 'Click on "Issues."\n',
-                      ),
-                      TextSpan(
-                        text: '3. ',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      TextSpan(
-                        text: 'Use the filter: is:open is:issue archived:false label:hacktoberfest\n',
-                      ),
-                      TextSpan(
-                        text: '4. ',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      TextSpan(
-                        text: 'Solve issues and make your contributions.',
-                      ),
-                    ],
-                  ),
-                ),
               ),
               
               Padding(
@@ -171,7 +141,7 @@ class _HacktoberfestState extends State<Hacktoberfest> {
                 child: Text(
                   'For Maintainers',
                   style: TextStyle(
-                      fontSize: titleSize, fontWeight: FontWeight.bold, color: Colors.white),
+                      fontSize: titleSize, fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
@@ -187,7 +157,6 @@ class _HacktoberfestState extends State<Hacktoberfest> {
                   '7. Reject any spammy requests you receive by labeling them as “spam,” and any other invalid contributions by closing them or labeling them as “invalid.”',
                   style: TextStyle(
                     fontSize: contentSize,
-                    color: Colors.white,
                     height: 1.5, // Adjusts line spacing
                   ),
                 ),
