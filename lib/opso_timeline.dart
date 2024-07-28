@@ -83,15 +83,15 @@ class OpsoTimeLineScreen extends StatelessWidget {
       },
       {
         'description':
-            "Linux Foundation Mentorship(Fall Term)\nApplication Period - 15/07/2024 to 15/08/2024",
-        'startDate': DateTime.utc(2024, 7, 15),
-        'endDate': DateTime.utc(2024, 8, 15),
-      },
-      {
-        'description':
             "Social Winter of Code\nApplication Period - 15/07/2024 to 20/12/2024",
         'startDate': DateTime.utc(2024, 7, 15),
         'endDate': DateTime.utc(2024, 12, 20),
+      },
+       {
+        'description':
+            "Linux Foundation Mentorship(Fall Term)\nApplication Period - 31/07/2024 to 27/08/2024",
+        'startDate': DateTime.utc(2024, 7, 31),
+        'endDate': DateTime.utc(2024, 8, 27),
       },
       {
         'description':
