@@ -126,8 +126,8 @@ class _RsocPageState extends State<RsocPage> {
             } else if (snapshot.connectionState == ConnectionState.done) {
               return Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: ScreenUtil().setWidth(46),
-                  vertical: ScreenUtil().setHeight(16),
+                  horizontal: ScreenUtil().setWidth(42), 
+                  vertical: ScreenUtil().setHeight(10), 
                 ),
                 child: SingleChildScrollView(
                   child: Column(
@@ -175,10 +175,10 @@ class _RsocPageState extends State<RsocPage> {
                           itemCount: projectList.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              padding: const EdgeInsets.symmetric(vertical: 8),
                               child: RsocProjectWidget(
                                 modal: projectList[index],
-                                height: ScreenUtil().screenHeight * 0.3,
+                                height: ScreenUtil().screenHeight * 0.10, 
                                 width: ScreenUtil().screenWidth,
                                 index: index,
                               ),
