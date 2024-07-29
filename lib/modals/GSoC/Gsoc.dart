@@ -1,56 +1,112 @@
-class GsocModel {
-  String? organization;
-  String? organizationUrl;
-  String? technicalWriter;
-  String? mentor;
-  String? project;
-  String? projectUrl;
-  String? report;
-  String? reportUrl;
-  String? originalProjectProposal;
-  String? acceptedProjectProposalUrl;
-  int? year;
+class Gsoc {
+  final int year;
+  final String archiveUrl;
+  final List<Organization> organizations;
 
-  GsocModel(
-      {this.organization,
-        this.organizationUrl,
-        this.technicalWriter,
-        this.mentor,
-        this.project,
-        this.projectUrl,
-        this.report,
-        this.reportUrl,
-        this.originalProjectProposal,
-        this.acceptedProjectProposalUrl,
-        this.year});
+  Gsoc({
+    required this.year,
+    required this.archiveUrl,
+    required this.organizations,
+  });
 
-  GsocModel.fromJson(Map<String, dynamic> json) {
-    organization = json['organization_name'];
-    organizationUrl = json['organization_url'];
-    technicalWriter = json['technical_writer'];
-    mentor = json['mentor'];
-    project = json['project'];
-    projectUrl = json['project_url'];
-    report = json['report'];
-    reportUrl = json['report_url'];
-    originalProjectProposal = json['accepted_project_proposal'];
-    acceptedProjectProposalUrl = json['accepted_project_proposal_url'];
-    year = json['year'];
+  factory Gsoc.fromJson(Map<String, dynamic> json) {
+    return Gsoc(
+      year: json['year'],
+      archiveUrl: json['archive_url'] ?? '',
+      organizations: (json['organizations'] as List)
+          .map((org) => Organization.fromJson(org))
+          .toList(),
+    );
   }
+}
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['organization_name'] = this.organization;
-    data['organization_url'] = this.organizationUrl;
-    data['technical_writer'] = this.technicalWriter;
-    data['mentor'] = this.mentor;
-    data['project'] = this.project;
-    data['project_url'] = this.projectUrl;
-    data['report'] = this.report;
-    data['report_url'] = this.reportUrl;
-    data['accepted_project_proposal'] = this.originalProjectProposal;
-    data['accepted_project_proposal_url'] = this.acceptedProjectProposalUrl;
-    data['year'] = this.year;
-    return data;
+class Organization {
+  final String name;
+  final String imageUrl;
+  final String imageBackgroundColor;
+  final String description;
+  final String url;
+  final int numProjects;
+  final String category;
+  final String projectsUrl;
+  final String ircChannel;
+  final String contactEmail;
+  final String mailingList;
+  final String twitterUrl;
+  final String blogUrl;
+  final List<String> topics;
+  final List<String> technologies;
+  final List<Project> projects;
+
+  Organization({
+    required this.name,
+    required this.imageUrl,
+    required this.imageBackgroundColor,
+    required this.description,
+    required this.url,
+    required this.numProjects,
+    required this.category,
+    required this.projectsUrl,
+    required this.ircChannel,
+    required this.contactEmail,
+    required this.mailingList,
+    required this.twitterUrl,
+    required this.blogUrl,
+    required this.topics,
+    required this.technologies,
+    required this.projects,
+  });
+
+  factory Organization.fromJson(Map<String, dynamic> json) {
+    return Organization(
+      name: json['name'] ?? '',
+      imageUrl: json['image_url'] ?? '',
+      imageBackgroundColor: json['image_background_color'] ?? '',
+      description: json['description'] ?? '',
+      url: json['url'] ?? '',
+      numProjects: json['num_projects'] ?? 0,
+      category: json['category'] ?? '',
+      projectsUrl: json['projects_url'] ?? '',
+      ircChannel: json['irc_channel'] ?? '',
+      contactEmail: json['contact_email'] ?? '',
+      mailingList: json['mailing_list'] ?? '',
+      twitterUrl: json['twitter_url'] ?? '',
+      blogUrl: json['blog_url'] ?? '',
+      topics: (json['topics'] as List?)?.map((item) => item as String).toList() ?? [],
+      technologies: (json['technologies'] as List?)?.map((item) => item as String).toList() ?? [],
+      projects: (json['projects'] as List?)
+          ?.map((project) => Project.fromJson(project))
+          .toList() ??
+          [],
+    );
+  }
+}
+
+class Project {
+  final String title;
+  final String shortDescription;
+  final String description;
+  final String studentName;
+  final String codeUrl;
+  final String projectUrl;
+
+  Project({
+    required this.title,
+    required this.shortDescription,
+    required this.description,
+    required this.studentName,
+    required this.codeUrl,
+    required this.projectUrl,
+  });
+
+  factory Project.fromJson(Map<String, dynamic> json) {
+    return Project(
+      title: json['title'] ?? '',
+      shortDescription: json['short_description'] ?? '',
+      description: json['description'] ?? '',
+      studentName: json['student_name'] ?? '',
+      codeUrl: json['code_url'] ?? '',
+      projectUrl: json['project_url'] ?? '',
+    );
   }
 }
