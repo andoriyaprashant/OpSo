@@ -100,6 +100,7 @@ flutter:
     - assets/coding_ninja_swag.png
     - assets/projects/osoc/
     - assets/projects/sokde/
+    - assets/git_campus_logo.png
     - assets/projects/outreachy/outreachy2021.json
     - assets/projects/outreachy/outreachy2022.json
     - assets/projects/outreachy/outreachy2023.json

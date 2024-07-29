@@ -7,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:opso/ChatBotpage.dart';
 import 'package:opso/opso_timeline.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
+import 'package:opso/programs%20screen/github_campus.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
 import 'package:opso/programs%20screen/hacktoberfest_screen.dart';
@@ -106,6 +107,10 @@ class _HomePageState extends State<HomePage> {
      Program(
       title: 'Hacktoberfest',
       imageAssetPath: 'assets/hacktoberfest.png',
+    ),
+    Program(
+      title: 'Github Campus Expert',
+      imageAssetPath: 'assets/git_campus_logo.png',
     ),
     Program(
       title: 'Outreachy',
@@ -431,6 +436,10 @@ class _HomePageState extends State<HomePage> {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const Hacktoberfest()));
       
+      case 'Github Campus Expert':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const GithubCampus()));
+      
 
       case 'Open Summer of Code':
 
@@ -535,6 +544,10 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
      Program(
       title: 'Hacktoberfest',
       imageAssetPath: 'assets/hacktoberfest.png',
+    ),
+     Program(
+      title: 'Github Campus Expert',
+      imageAssetPath: 'assets/git_campus_logo.png',
     ),
     Program(
       title: 'Redox OS Summer of Code',
@@ -702,6 +715,15 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           context,
           MaterialPageRoute(
             builder: (context) => const Hacktoberfest(),
+          ),
+        );
+        break;
+
+      case 'Github Campus Expert':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const GithubCampus(),
           ),
         );
         break;
