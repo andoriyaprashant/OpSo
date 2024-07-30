@@ -1,0 +1,98 @@
+[
+    {
+        "title": "An object-key-value mapper for Hyperledger Fabric",
+        "link": "https://wiki.hyperledger.org/display/INTERN/An+object-key-value+mapper+for+Hyperledger+Fabric",
+        "mentors": ["Attila Klenik","Imre Kocsis"],
+        "year": 2023
+    },
+    {
+        "title": "Cacti: Decentralized Identity Management for Trusted Interoperation",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Cacti%3A+Decentralized+Identity+Management+for+Trusted+Interoperation",
+        "mentors": ["Venkatraman Ramakrishna","Bishakh Chandra Ghosh","Sandeep Nishad","Sikhar Patranabis"],
+        "year": 2023
+    },
+    {
+        "title": "Implement an SSA intermediate representation for the Solang compiler",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Implement+an+SSA+intermediate+representation+for+the+Solang+compiler",
+        "mentors": ["Lucas Steuernagel"],
+        "year": 2023
+    },
+    {
+        "title": "Runtime-checked automated programming for chaincode development",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Runtime-checked+automated+programming+for+chaincode+development",
+        "mentors": ["Bertalan Zoltán Péter","Imre Kocsis"],
+        "year": 2023
+    },
+    {
+        "title": "Bevel: Documentation redesign",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Bevel%3A+Documentation+redesign",
+        "mentors": ["Suvajit Sarkar","Sownak Roy","Jagpreet Singh Sasan"],
+        "year": 2023
+    },
+    {
+        "title": "Cacti: Decentralized Identity Management for Trusted Interoperation",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Cacti%3A+Decentralized+Identity+Management+for+Trusted+Interoperation",
+        "mentors": ["Venkatraman Ramakrishna","Bishakh Chandra Ghosh","Sandeep Nishad"],
+        "year": 2023
+    },
+    {
+        "title": "Cacti: Implement Standardized Secure Asset Transfer Protocol",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Cacti%3A+Implement+Standardized+Secure+Asset+Transfer+Protocol",
+        "mentors": ["Venkatraman Ramakrishna","Rafael Belchior","Sandeep Nishad"],
+        "year": 2023
+    },
+    {
+        "title": "Cacti: Ledger Data Sharing with Proof in Besu and Ethereum",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Cacti%3A+Ledger+Data+Sharing+with+Proof+in+Besu+and+Ethereum",
+        "mentors": ["Venkatraman Ramakrishna","Sandeep Nishad"],
+        "year": 2023
+    },
+    {
+        "title": "Design/Development of a mini game to explore decentralized Identity & Payments in Gaming",
+        "link": "https://wiki.hyperledger.org/pages/viewpage.action?pageId=80778595",
+        "mentors": ["Sandy Aggarwal"],
+        "year": 2023
+    },
+    {
+        "title": "Enhance Blockchain Explorer to accommodate new features for Hyperledger Fabric",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Enhance+Blockchain+Explorer+to+accommodate+new+features+for+Hyperledger+Fabric",
+        "mentors": ["Satyanarayana","Archana"],
+        "year": 2023
+    },
+    {
+        "title": "Hyperledger Documentation Standards",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Hyperledger+Documentation+Standards",
+        "mentors": ["Bobbi Muscara"],
+        "year": 2023
+    },
+    {
+        "title": "Implement a CLI for node interactions in Hyperledger Solang",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Implement+a+CLI+for+node+interactions+in+Hyperledger+Solang",
+        "mentors": ["Cyrill Leutwiler"],
+        "year": 2023
+    },
+    {
+        "title": "Improve Kubernetes Operators support for Fablo",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Improve+Kubernetes+Operators+support+for+Fablo",
+        "mentors": ["Jakub Dzikowski"],
+        "year": 2023
+    },
+    {
+        "title": "Unifying Medical Records with Hyperledger Technology",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Unifying+Medical+Records+with+Hyperledger+Technology",
+        "mentors": ["Aleksandr Petrosyan","Marin Versic"],
+        "year": 2023
+    },
+    {
+        "title": "Telecom Decentralized Identities Network (TDIDN)",
+        "link": "https://wiki.hyperledger.org/pages/viewpage.action?pageId=80778712",
+        "mentors": ["Vipin Rathi"],
+        "year": 2023
+    },
+    {
+        "title": "Performance analysis and Benchmarking of Besu using Caliper with complex workloads",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Performance+analysis+and+Benchmarking+of+Besu+using+Caliper+with+complex+workloads",
+        "mentors": ["George Tebrean","Nischal Sharma"],
+        "year": 2023
+    }
+]
