@@ -1,0 +1,98 @@
+[
+    {
+        "title": "Automated Fault-Tolerant HTLC for Cross-Chain Atomic Asset Exchange",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Automated+Fault-Tolerant+HTLC+for+Cross-Chain+Atomic+Asset+Exchange",
+        "mentors": ["Venkatraman Ramakrishna","Krishnasuri Narayanam","Dhinakaran Vinayagamurthy"],
+        "year": 2022
+    },
+    {
+        "title": "Blockchain Network Operation in a Decentralized Way",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Blockchain+Network+Operation+in+a+Decentralized+Way",
+        "mentors": ["Baohua Yang","Yang Feng","Shihong Zhao","Qiang Xu"],
+        "year": 2022
+    },
+    {
+        "title": "Chia Connector for Hyperledger Cactus",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Chia+Connector+for+Hyperledger+Cactus",
+        "mentors": ["Peter Somogyvari"],
+        "year": 2022
+    },
+    {
+        "title": "Client Connector for Hyperledger Besu",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Client+Connector+for+Hyperledger+Besu",
+        "mentors": ["Kamlesh Nagware","Sownak Roy","Jagpreet Singh Sasan"],
+        "year": 2023
+    },
+    {
+        "title": "Demonstrate Interoperability using Hyperledger Bevel and Cactus",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Demonstrate+Interoperability+using+Hyperledger+Bevel+and+Cactus",
+        "mentors": ["Suvajit Sarkar","Sownak Roy","Jagpreet Singh Sasan"],
+        "year": 2023
+    },
+    {
+        "title": "Ecosystem Analyst",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Ecosystem+Analyst",
+        "mentors": ["Karen Ottoni","Tomaz Sedej"],
+        "year": 2023
+    },
+    {
+        "title": "Fabric-Ethereum token bridging",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Fabric-Ethereum+token+bridging",
+        "mentors": ["Imre Kocsis","László Gönczy"],
+        "year": 2023
+    },
+    {
+        "title": "GVCR: Secure Verifiable Credential Registries (VCR) for GitHub & GitLab",
+        "link": "https://wiki.hyperledger.org/pages/viewpage.action?pageId=62242656",
+        "mentors": ["Vinod Panicker","Arun Prakash Jothimani"],
+        "year": 2023
+    },
+    {
+        "title": "Hyperleger Cactus and Hedera Hashgraph Integration",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Hyperleger+Cactus+and+Hedera+Hashgraph+Integration",
+        "mentors": ["Peter Somogyvari","Danno Ferrin"],
+        "year": 2023
+    },
+    {
+        "title": "Identity Mixer Support for both Fabric Gateway SDK for Java and Fabric Gateway Client API for Java",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Identity+Mixer+Support+for+both+Fabric+Gateway+SDK+for+Java+and+Fabric+Gateway+Client+API+for+Java",
+        "mentors": ["Kamlesh Nagware"],
+        "year": 2023
+    },
+    {
+        "title": "Privacy-preserving federated learning framework based on Hyperledger Fabric and Hyperledger Aries.",
+        "link": "https://wiki.hyperledger.org/pages/viewpage.action?pageId=62242785",
+        "mentors": ["Sara Rouhani","Vahid Pourheidari","Rui Pan"],
+        "year": 2023
+    },
+    {
+        "title": "Solang Solidity Compiler optimizations and error handling",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Solang+Solidity+Compiler+optimizations+and+error+handling",
+        "mentors": ["Sean Young","Lucas Steuernagel"],
+        "year": 2023
+    },
+    {
+        "title": "Technical Deep Dive Workshop Content Creation for Hyperledger Cactus",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Technical+Deep+Dive+Workshop+Content+Creation+for+Hyperledger+Cactus",
+        "mentors": ["Rafael Belchior","Peter Somogyvari"],
+        "year": 2023
+    },
+    {
+        "title": "Upgrade Fabric network from 1.4.x to 2.2.x using Hyperledger Bevel",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Upgrade+Fabric+network+from+1.4.x+to+2.2.x+using+Hyperledger+Bevel",
+        "mentors": ["Sownak Roy","Jagpreet Singh Sasan"],
+        "year": 2023
+    },
+    {
+        "title": "Telecom Decentralized Identities Network (TDIDN)",
+        "link": "https://wiki.hyperledger.org/pages/viewpage.action?pageId=80778712",
+        "mentors": ["Vipin Rathi"],
+        "year": 2023
+    },
+    {
+        "title": "Visual Studio Code support for Hyperledger Caliper artifacts",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Visual+Studio+Code+support+for+Hyperledger+Caliper+artifacts",
+        "mentors": ["Attila Klenik"],
+        "year": 2023
+    }
+]

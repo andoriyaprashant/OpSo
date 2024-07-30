@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Automated Testing for Climate Emissions Ledger",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Automated+Testing+for+Climate+Emissions+Ledger",
+        "mentors": ["Si Chen","Robin Klemens","Kamlesh Nagware"],
+        "year": 2021
+    },
+    {
+        "title": "Blockchain Integration for Climate Emissions Data with Fabric and Cactus",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Blockchain+Integration+for+Climate+Emissions+Data+with+Fabric+and+Cactus",
+        "mentors": ["Si Chen","Peter Somogyvari","Kamlesh Nagware"],
+        "year": 2021
+    },
+    {
+        "title": "Cactus-samples - Business Logic Plugins for Hyperledger Cactus",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Cactus-samples+-+Business+Logic+Plugins+for+Hyperledger+Cactus",
+        "mentors": ["Tzu-Shen"],
+        "year": 2021
+    },
+    {
+        "title": "Extend HL Iroha queries with optional arguments",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Extend+HL+Iroha+queries+with+optional+arguments",
+        "mentors": ["Grzegorz Bazior"],
+        "year": 2021
+    },
+    {
+        "title": "HL Burrow and HL Iroha extend existing Solidity VM integration",
+        "link": "https://wiki.hyperledger.org/display/INTERN/HL+Burrow+and+HL+Iroha+extend+existing+Solidity+VM+integration",
+        "mentors": ["Grzegorz Bazior"],
+        "year": 2021
+    },
+    {
+        "title": "Hyperledger Fabric - Hyperledger Aries Integration to support Fabric as Blockchain ledger",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Hyperledger+Fabric+-+Hyperledger+Aries+Integration+to+support+Fabric+as+Blockchain+ledger",
+        "mentors": ["Kamlesh Nagware"],
+        "year": 2021
+    },
+    {
+        "title": "Implement two compiler passes for the Solang Solidity Compiler",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Implement+two+compiler+passes+for+the+Solang+Solidity+Compiler",
+        "mentors": ["Sean Young"],
+        "year": 2021
+    },
+    {
+        "title": "Operate Blockchain Network in an Efficient Way",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Operate+Blockchain+Network+in+an+Efficient+Way",
+        "mentors": ["Baohua Yang","Qiang Xu"],
+        "year": 2021
+    },
+    {
+        "title": "Support Clique for Besu on HL Labs BAF",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Support+Clique+for+Besu+on+HL+Labs+BAF",
+        "mentors": ["Roshan Raut"],
+        "year": 2021
+    },
+    {
+        "title": "The Giving Chain",
+        "link": "https://wiki.hyperledger.org/display/INTERN/The+Giving+Chain",
+        "mentors": ["Bobbi Muscara"],
+        "year": 2021
+    },
+    {
+        "title": "The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements",
+        "link": "https://wiki.hyperledger.org/display/INTERN/The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements",
+        "mentors": ["Ahmad Sghaier Omar","Mohamed Elshrif","Noureddin Sadawi"],
+        "year": 2021
+    },
+    {
+        "title": "Visualization and Analysis of Cross-chain Transactions",
+        "link": "https://wiki.hyperledger.org/display/INTERN/Visualization+and+Analysis+of+Cross-chain+Transactions",
+        "mentors": ["Nuno J. Nunes","Sabrina Scuri"],
+        "year": 2021
+    }
+]
