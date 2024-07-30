@@ -1,0 +1,101 @@
+[
+    {
+      "title": "Integrating Substrate Framework with Hyperledger Fabric for Enhanced Interoperability",
+      "link": "https://wiki.hyperledger.org/display/INTERN/Integrating+Substrate+Framework+with+Hyperledger+Fabric+for+Enhanced+Interoperability",
+      "mentors": ["Sara Rouhani"],
+      "mentees": ["Saeed Moradi"],
+      "year": 2024
+    },
+    {
+      "title": "Hyperledger Indy Read Replica Implementation",
+      "link": "https://wiki.hyperledger.org/display/INTERN/Hyperledger+Indy+Read+Replica+Implementation",
+      "mentors": ["Sam Curren", "Stephen Curran"],
+      "mentees": [""],
+      "year": 2024
+    },
+    {
+      "title": "VS Code Debugger Plugin for Hyperledger Fabric Chaincode",
+      "link": "https://wiki.hyperledger.org/display/INTERN/VS+Code+Debugger+Plugin+for+Hyperledger+Fabric+Chaincode",
+      "mentors": ["Arun S M"],
+      "mentees": [""],
+      "year": 2024
+    },
+    {
+      "title": "Support Hyperledger Fabric 3 in Fablo",
+      "link": "https://wiki.hyperledger.org/display/INTERN/Support+Hyperledger+Fabric+3+in+Fablo",
+      "mentors": ["Piotr Hejwowski","Jakub Dzikowski"],
+      "mentees": [""],
+      "year": 2024
+    },
+    {
+      "title": "Solang: LALRPOP Parser, Intermediate Code Representation (ICR), and Code Optimization",
+      "link": "https://wiki.hyperledger.org/display/INTERN/Solang%3A+LALRPOP+Parser%2C+Intermediate+Code+Representation+%28ICR%29%2C+and+Code+Optimization",
+      "mentors": ["Ramaguru Radhakrishnan", "Ambili K N"],
+      "mentees": [""],
+      "year": 2024
+    },
+    {
+      "title": "Learning Tokens for Hyperledger Community Building",
+      "link": "https://wiki.hyperledger.org/display/INTERN/Learning+Tokens+for+Hyperledger+Community+Building",
+      "mentors": ["Alfonso Govela","Tanjin Alam"],
+      "mentees": [""],
+      "year": 2024
+    },
+    {
+      "title": "Implementing DIDMan-Based Openwallet for Hyperledger Indy Ecosystem",
+      "link": "https://wiki.hyperledger.org/display/INTERN/Implementing+DIDMan-Based+Openwallet+for+Hyperledger+Indy+Ecosystem",
+      "mentors": ["Vinod Panicker", "Arun Prakash Jothimani","Wei Yao"],
+      "mentees": [""],
+      "year": 2024
+    },
+    {
+      "title": "Hyperledger Web3j: Enhancing Android Support with Updated web3j-android Integration",
+      "link": "https://wiki.hyperledger.org/display/INTERN/Hyperledger+Web3j%3A+Enhancing+Android+Support+with+Updated+web3j-android+Integration",
+      "mentors": ["Nischal Sharma","George Tebrean"],
+      "mentees": [""],
+      "year": 2024
+    },
+    {
+      "title": "Hyperledger Labs AI-FAQ: GUI implementation and prototype deployment",
+      "link": "https://wiki.hyperledger.org/display/INTERN/Hyperledger+Labs+AI-FAQ%3A+GUI+implementation+and+prototype+deployment",
+      "mentors": ["Gianluca Capuzzi"],
+      "mentees": [""],
+      "year": 2024
+    },
+    {
+      "title": "Formal Verification of Hyperledger Fabric Chaincode",
+      "link": "https://wiki.hyperledger.org/display/INTERN/Formal+Verification+of+Hyperledger+Fabric+Chaincode",
+      "mentors": ["Ramaguru Radhakrishnan"],
+      "mentees": [""],
+      "year": 2024
+    },
+    {
+      "title": "Enabling Enterprise Organizational Blockchain Interoperability",
+      "link": "https://wiki.hyperledger.org/display/INTERN/Enabling+Enterprise+Organizational+Blockchain+Interoperability",
+      "mentors": ["Rafael Belchior","André Augusto","Peter Somogyvari"],
+      "mentees": [""],
+      "year": 2024
+    },
+    {
+      "title": "Decentralized Blockchain Network Operation Dashboard",
+      "link": "https://wiki.hyperledger.org/display/INTERN/Decentralized+Blockchain+Network+Operation+Dashboard",
+      "mentors": ["Baohua Yang","Yang Feng","Yuanmao Zhu","Xichen Pan"],
+      "mentees": [""],
+      "year": 2024
+    },
+    {
+      "title": "Cacti: Core Operators Modules for DLTs",
+      "link": "https://wiki.hyperledger.org/display/INTERN/Cacti%3A+Core+Operators+Modules+for+DLTs",
+      "mentors": ["Venkatraman Ramakrishna","Peter Somogyvari","Izuru Sato"],
+      "mentees": [""],
+      "year": 2024
+    },
+    {
+      "title": "BiniBFT Implementation - The Optimized BFT on Fabric",
+      "link": "https://wiki.hyperledger.org/display/INTERN/BiniBFT+Implementation+-+The+Optimized+BFT+on+Fabric",
+      "mentors": ["Dr Anasuya"],
+      "mentees": [""],
+      "year": 2024
+    }
+  ]
+  
