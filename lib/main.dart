@@ -6,6 +6,7 @@ import 'package:opso/programs%20screen/github_campus.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
 import 'package:opso/programs%20screen/hacktoberfest_screen.dart';
+import 'package:opso/programs%20screen/hyperledger.dart';
 import 'package:opso/programs%20screen/linux_foundation.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
 import 'package:opso/programs%20screen/open_summer_of_code.dart';
@@ -55,6 +56,7 @@ class OpSoApp extends StatelessWidget {
                 "/summer_of_bitcoin": (context) => const SummerOfBitcoin(),
                 "/hacktoberfest_screen": (context) => const Hacktoberfest(),
                 "/open_summer_of_code": (context) => const OpenSummerOfCode(),
+                "/hyperledger": (context) => const Hyperledger(),
                 "/rsoc": (context) => const RsocPage(),
                 "/outreachy": (context) => const OutreachyScreen(),
                 "/major_league_hacking_fellowship": (context) =>

@@ -59,6 +59,12 @@ class OpsoTimeLineScreen extends StatelessWidget {
       },
       {
         'description':
+            "Hyperledger\nApplication Period - 04/04/2024 to 10/05/2024",
+        'startDate': DateTime.utc(2024, 4, 4),
+        'endDate': DateTime.utc(2024, 5, 10),
+      },
+      {
+        'description':
             "MLH Fellowship(Fall Term)\nApplication Period - 15/04/2024 to 31/05/2024",
         'startDate': DateTime.utc(2024, 4, 15),
         'endDate': DateTime.utc(2024, 5, 31),

@@ -76,6 +76,7 @@ flutter:
   #      - assets\girlscript_logo.png
   #      - assets\linux_foundation_logo.png
   #      - assets\gsoc_logo.png
+  #      - assets\hyperledger.png
   #      - assets\mlh_logo.jpg
   #      - assets\outreachy.png
   #      - assets\swoc_logo.png
@@ -89,12 +90,14 @@ flutter:
     - assets/projects/gsod/
     - assets/projects/sob/
     - assets/projects/swoc/
+    - assets/projects/hyperledger/
     - assets/projects/linux_foundation/
     - assets/splash screen.png
     - assets/github_swag.png
     - assets/sokde.png
     - assets/redox.png
     - assets/hacktoberfest.png
+    - assets/hyperledger.png
     - assets/xyz_domain.png
     - assets/participation_certificate.png
     - assets/coding_ninja_swag.png
