@@ -1,0 +1,151 @@
+[
+    {
+        "Name": "Open Event",
+        "Description": "Make Open Event useful for events and meetups and help to release a successful event management and ticketing tool for communities.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repositories",
+            "Android App",
+            "FOSSASIA Summit'17 App"
+        ],
+        "link": "https://2017.codeheat.org/",
+        "Year": "2017"
+    },
+    {
+        "Name": "SUSI.AI",
+        "Description": "Apart from progressing on the issues on the different SUSI.AI repositories, we want to focus on the development of the chat app and Skills editor. Another goal is to plugin SUSI to all kinds of web applications.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repositories",
+            "Android App"
+        ],
+        "link": "https://2017.codeheat.org/",
+        "Year": "2017"
+    },
+    {
+        "Name": "loklak",
+        "Description": "loklak is a social media search engine and message collector for Twitter and other networks. All loklak repositories are part of the coding contest.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Front-end Repositories",
+            "Backend Repositories",
+            "Android App"
+        ],
+        "link": "https://2017.codeheat.org/",
+        "Year": "2017"
+    },
+    {
+        "Name": "Phimp.me",
+        "Description": "Phimp.me is an image application for Android that does not miss out on features. Help to make the app more stable and support more social accounts in the app.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository",
+            "Organizer Android App"
+        ],
+        "link": "https://2017.codeheat.org/",
+        "Year": "2017"
+    },
+    {
+        "Name": "PSLab",
+        "Description": "The FOSSASIA Pocket Science Lab is a combination of an Open Source hardware and software applications for desktop and mobiles. The goal is to enable students and anyone interested in Citizen Science to conduct experiments.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repositories",
+            "Android App"
+        ],
+        "link": "https://2017.codeheat.org/",
+        "Year": "2017"
+    },
+    {
+        "Name": "Meilix",
+        "Description": "Meilix is a beautiful Linux distribution based on Debian and lubuntu using LXQT and other lightweight applications. With the Meilix generator, users can generate their own customized Meilix version for events, kiosk systems or home use.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repositories"
+        ],
+        "link": "https://2017.codeheat.org/",
+        "Year": "2017"
+    },
+    {
+        "Name": "Susper Search",
+        "Description": "Susper is a distributed Peer to Peer search engine using Yacy and Elastic Search. The front-end uses Angular JS and Material design.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2017.codeheat.org/",
+        "Year": "2017"
+    },
+    {
+        "Name": "Yaydoc",
+        "Description": "Yaydoc is a documentation generator for Git and GitHub projects generating a complete website with search capabilities and automatic deployment on each merged pull request.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2017.codeheat.org/",
+        "Year": "2017"
+    },
+    {
+        "Name": "Query Server",
+        "Description": "The query server can be used to search a keyword/phrase on a search engine (Google, Yahoo, Bing, DuckDuckGo) and get the results as JSON or XML. The tool also stores the searched query string in a MongoDB database for analytical purposes.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2017.codeheat.org/",
+        "Year": "2017"
+    },
+    {
+        "Name": "FOSSASIA Labs",
+        "Description": "FOSSASIA Labs provides a starting point for developers interested in new projects and additional components to existing projects. The issue tracker holds a number of project ideas to get started.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2017.codeheat.org/",
+        "Year": "2017"
+    },
+    {
+        "Name": "SUSI.AI for Magic Mirror",
+        "Description": "SUSI.AI modules for Magic Mirror. Apart from the SUSI.AI core repositories in this project, we integrate SUSI.AI into the Magic Mirror project. Join us developing the magic mirror!",
+        "TechStack": [
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2017.codeheat.org/",
+        "Year": "2017"
+    },
+    {
+        "Name": "Badgeyay",
+        "Description": "At every event, the same question comes up 'how to print out badges'. There are a number of proprietary websites out there, but why not create our own automatic badge generator for events?",
+        "TechStack": [
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2017.codeheat.org/",
+        "Year": "2017"
+    }
+]
