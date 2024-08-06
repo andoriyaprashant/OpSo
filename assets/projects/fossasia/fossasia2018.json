@@ -1,0 +1,113 @@
+[
+    {
+        "Name": "Open Event",
+        "Description": "Make Open Event useful for events and meetups and help to release a successful event management and ticketing tool for communities.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repositories",
+            "Eventyay Attendee App",
+            "Eventyay Organizer App"
+        ],
+        "link": "https://2018.codeheat.org/",
+        "Year": "2018"
+    },
+    {
+        "Name": "Phimp.me",
+        "Description": "Phimp.me is an image application for Android that does not miss out on features. Help to make the app more stable and support more social accounts in the app.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository",
+            "Organizer Android App"
+        ],
+        "link": "https://2018.codeheat.org/",
+        "Year": "2018"
+    },
+    {
+        "Name": "SUSI.AI",
+        "Description": "Apart from progressing on the issues on the different SUSI.AI repositories, we want to focus on the development of the chat app and Skills editor. Another goal is to plugin SUSI to all kinds of web applications.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repositories",
+            "Android App"
+        ],
+        "link": "https://2018.codeheat.org/",
+        "Year": "2018"
+    },
+    {
+        "Name": "Susper Search",
+        "Description": "Susper is a distributed Peer to Peer search engine using Yacy and Elastic Search. The front-end uses Angular JS and HTML as web technologies and Material UI as a design component. Our goal is to create a great standard UI for the web frontend.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2018.codeheat.org/",
+        "Year": "2018"
+    },
+    {
+        "Name": "Meilix",
+        "Description": "Meilix is a beautiful Linux distribution based on Debian and lubuntu using LXQT and other lightweight applications. With the Meilix generator, users can generate their own customized Meilix version for events, kiosk systems or home use.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repositories"
+        ],
+        "link": "https://2018.codeheat.org/",
+        "Year": "2018"
+    },
+    {
+        "Name": "PSLab",
+        "Description": "The goal of Pocket Science Lab is to miniaturize science equipment and make it accessible for everyone. The PSLab project includes Open Source hardware and software applications for desktop and mobiles. We want to enable students and anyone interested in Citizen Science to conduct experiments.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repositories",
+            "Android App"
+        ],
+        "link": "https://2018.codeheat.org/",
+        "Year": "2018"
+    },
+    {
+        "Name": "Yaydoc",
+        "Description": "Yaydoc is a documentation generator for Git and GitHub projects generating a complete website with search capabilities and automatic deployment on each merged pull request.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2018.codeheat.org/",
+        "Year": "2018"
+    },
+    {
+        "Name": "Badgeyay",
+        "Description": "At every event, the same question comes up 'how to print out badges'. There are a number of proprietary websites out there, but why not create our own automatic badge generator for events?",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2018.codeheat.org/",
+        "Year": "2018"
+    },
+    {
+        "Name": "Badge Magic",
+        "Description": "Badge Magic is an Android app to control LED name badges using a Bluetooth connection.",
+        "TechStack": [
+            "Chat",
+            "Repository"
+        ],
+        "link": "https://2018.codeheat.org/",
+        "Year": "2018"
+    }
+]

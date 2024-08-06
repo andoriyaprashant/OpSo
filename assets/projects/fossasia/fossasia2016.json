@@ -1,0 +1,36 @@
+[
+    {
+        "Name": "Open Event Server",
+        "Description": "Make Open Event useful for events and meetups and help to release a successful event management and ticketing tool for communities.",
+        "TechStack": [
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2016.codeheat.org/",
+        "Year": "2016"
+    },
+    {
+        "Name": "SUSI.AI",
+        "Description": "Develop a mobile app for SUSI.AI and plugin SUSI.AI to all kinds of chat applications.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repositories"
+        ],
+        "link": "https://2016.codeheat.org/",
+        "Year": "2016"
+    },
+    {
+        "Name": "loklak Search",
+        "Description": "All loklak repositories within the FOSSASIA org are part of the coding contest. A focus is the development of a mobile-ready Search Site for loklak.org/.net",
+        "TechStack": [
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2016.codeheat.org/",
+        "Year": "2016"
+    }
+]
