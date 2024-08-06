@@ -1,0 +1,259 @@
+[
+    {
+        "Name": "Open Event Web",
+        "Description": "The Open Event components run on the eventyay.com platform and help communities and organizations to sell tickets and organize their events and meetups.",
+        "TechStack": [
+            "Website",
+            "Server Chat",
+            "FrontEnd Chat",
+            "Mailing List",
+            "FrontEnd Repo",
+            "Server Repo"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "Open Event iOS Apps",
+        "Description": "The goal for the iOS apps for the Open Event project is to get them ready to work together with the Open Event hosted platform on eventyay.com and enable attendees to get tickets easily.",
+        "TechStack": [
+            "Chat",
+            "Mailing List",
+            "Organizer Repo",
+            "Attendee Repo"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "Open Event Android Apps",
+        "Description": "The Open Event Android apps for attendees and organizers work together with the eventyay.com website and make it easy to run events by letting them check-in easily.",
+        "TechStack": [
+            "Organizer App Playstore",
+            "Organizer App Fdroid",
+            "Attendee App Playstore",
+            "Attendee App Fdroid",
+            "Organizer Chat",
+            "Attendee Chat",
+            "Mailing List",
+            "Organizer Repo",
+            "Attendee Repo"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "Pocket Science Lab (PSLab)",
+        "Description": "PSLab is a small USB powered hardware extension for your Android phone or PC that lets you measure all kinds of things. PSLab comes with a built-in Oscilloscope, Multimeter, Wave Generator, Logic Analyzer, Power Source, and we are constantly adding more digital instruments.",
+        "TechStack": [
+            "Website",
+            "Get PSLab",
+            "Chat",
+            "Mailing List",
+            "Repositories",
+            "Android App"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "PSLab Android",
+        "Description": "The goal of Pocket Science Lab is to miniaturize science equipment and make it accessible for everyone using Open Source hardware. Using the computer power of an Android phone and connecting it to a Pocket Science Lab we can do lots of experiments and even control robots with up to four servos.",
+        "TechStack": [
+            "Website",
+            "Get PSLab",
+            "Playstore",
+            "Fdroid",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "PSLab iOS",
+        "Description": "With Pocket Science Lab connected to a phone we can do our own science experiments. It works without the need for programming. What experiments you do is just limited to your imagination! But, currently we don't have an iOS app yet. The goal is to match the feature set of the Android app. As Apple restricts external devices we can access the PSLab hardware only through Bluetooth or WiFi.",
+        "TechStack": [
+            "Website",
+            "Get PSLab",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "PSLab Desktop",
+        "Description": "Pocket Science Lab and a desktop computer is all you need to collect data around you and do lots of exciting experiments. Or, you can use it to control your own robot. Please join development of the desktop app using Electron, ReactJS and Python.",
+        "TechStack": [
+            "Website",
+            "Get PSLab",
+            "Chat",
+            "Mailing List",
+            "Repository",
+            "Download Installer"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "Badge Magic Android",
+        "Description": "The Badge Magic Android app lets you control LED name badges using a Bluetooth connection. The app provides options to portray names and cliparts. For the data transfer from the smartphone to the LED badge it uses Bluetooth. An upcoming feature is the conversion of images to cliparts that can be shown on the badge.",
+        "TechStack": [
+            "Get Badge",
+            "Playstore",
+            "Fdroid",
+            "Chat",
+            "Repository"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "Badge Magic iOS",
+        "Description": "The development on the Badge Magic iOS app is starting. Our goal is to match the functionalities and features of the Android app. We want to control LED name badges using a Bluetooth Low Energy connection and to be able to transfer text and clipart from the iOS app to the badge magic device. Additionally user should be able to draw cliparts or convert their images to cliparts that can be shown on the device.",
+        "TechStack": [
+            "Get Badge",
+            "Chat",
+            "Repository"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "Neurolab Hardware",
+        "Description": "We are developing an open hardware platform for neuro-devices that can do measurements of brain waves or provide brain data to control other devices or play games. The neurolab hardware can be plugged into a computer or smartphone. We are focusing on creating a device that collects as much data as possible through the forehead. The device could also be used for medical purposes or for meditation.",
+        "TechStack": [
+            "Chat",
+            "Mailing List",
+            "Repositories"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "Neurolab Android",
+        "Description": "The Neurolab Android app enables users to use an open hardware neuro-device with a smartphone and do measurements of brain waves or play games controlled by the activity of their brains. Feedback channels to develop the app further can be visual or through sound.",
+        "TechStack": [
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "Voicerepublic",
+        "Description": "Voicerepublic is Home to the Spoken Word. It is a platform to record and host audio talks of conferences and podcasts. It was released as an Open Source platform in 2020. The next goals are to update the web service, to enable it to run on latest Linux systems, and to implement new features and auto-deployments with continuous integration.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repositories"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "SUSI.AI Web Client",
+        "Description": "The SUSI.AI web client is built using ReactJS and HTML web technologies. It connects with the SUSI.AI server backend using JSON.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "SUSI.AI Server",
+        "Description": "The SUSI.AI server is built using Java. It provides a JSON file for the SUSI.AI clients via a JSON. The SUSI Server component provides the intelligence of the SUSI.AI platform.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "SUSI.AI Linux",
+        "Description": "The SUSI.AI Linux OS is a Debian based operating system that includes the SUSI.AI installer, SUSI Python and other components to enable SUSI.AI to run on smart devices using Raspberry PIs.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Installer Repo",
+            "Linux Repo"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "SUSI.AI Android",
+        "Description": "The SUSI.AI Android app lets users chat with SUSI.AI via text chat or voice. It is also possible to use it to configure the SUSI.AI smart speaker using the WiFi hotspot.",
+        "TechStack": [
+            "Website",
+            "Playstore",
+            "Fdroid",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "SUSI.AI iOS",
+        "Description": "Apart from progressing on the issues on the different SUSI.AI repositories, we want to focus on the development of the chat app and Skills editor. Another goal is to plugin SUSI to all kinds of web applications.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "Phimp.me Android",
+        "Description": "Phimp.me is an image application for Android that does not miss out on features. Help to make the app more stable and support more social accounts in the app.",
+        "TechStack": [
+            "Website",
+            "Playstore",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "Badgeyay",
+        "Description": "At every event the same question comes up 'how to print out badges'. There are a number of proprietary websites out there, by why not create our own automatic badge generator for events?",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    },
+    {
+        "Name": "Open Event Website App Generator",
+        "Description": "The web generator application can generate event websites by getting data from event JSON files and binary media files, that are stored in a compressed zip file.",
+        "TechStack": [
+            "Website",
+            "Chat",
+            "Mailing List",
+            "Repository"
+        ],
+        "link": "https://2020.codeheat.org/",
+        "Year": "2020"
+    }
+]
