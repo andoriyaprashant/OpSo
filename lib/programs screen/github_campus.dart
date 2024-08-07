@@ -103,18 +103,18 @@ class _GithubCampusState extends State<GithubCampus> {
             color: Colors.black.withOpacity(0.1),
             spreadRadius: 2,
             blurRadius: 8,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
-      padding: EdgeInsets.all(16.0),
-      child: Column(
+      padding: const EdgeInsets.all(16.0),
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Become a GitHub Campus Expert and lead the next generation of student developers',
             style: TextStyle(
-                fontSize: 20.0, fontWeight: FontWeight.bold),
+                fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           SizedBox(height: 8.0),
           Text(
@@ -167,7 +167,7 @@ class _GithubCampusState extends State<GithubCampus> {
             color: Colors.black.withOpacity(0.1),
             spreadRadius: 2,
             blurRadius: 8,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -178,7 +178,7 @@ class _GithubCampusState extends State<GithubCampus> {
           Text(
             'Benefits of Being a Campus Expert',
             style: TextStyle(
-                fontSize: titleSize, fontWeight: FontWeight.bold),
+                fontSize: titleSize, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           SizedBox(height: pad),
           _buildRichText([
@@ -202,7 +202,7 @@ class _GithubCampusState extends State<GithubCampus> {
             color: Colors.black.withOpacity(0.1),
             spreadRadius: 2,
             blurRadius: 8,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -213,7 +213,7 @@ class _GithubCampusState extends State<GithubCampus> {
           Text(
             'Requirements',
             style: TextStyle(
-                fontSize: titleSize, fontWeight: FontWeight.bold),
+                fontSize: titleSize, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           SizedBox(height: pad),
           _buildRichText([
@@ -238,7 +238,7 @@ class _GithubCampusState extends State<GithubCampus> {
             color: Colors.black.withOpacity(0.1),
             spreadRadius: 2,
             blurRadius: 8,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -249,7 +249,7 @@ class _GithubCampusState extends State<GithubCampus> {
           Text(
             'Application Process',
             style: TextStyle(
-                fontSize: titleSize, fontWeight: FontWeight.bold),
+                fontSize: titleSize, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           SizedBox(height: pad),
           Column(
@@ -322,8 +322,9 @@ class _GithubCampusState extends State<GithubCampus> {
       children: [
         TextSpan(
           text: title,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
+            color: Colors.black,
           ),
         ),
         TextSpan(text: content),
@@ -344,17 +345,17 @@ class _GithubCampusState extends State<GithubCampus> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Icon(icon, color: color, size: 24.0),
-          SizedBox(width: 8.0),
+          const SizedBox(width: 8.0),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   '$stepNumber. $title',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0, color: Colors.black),
                 ),
-                SizedBox(height: 4.0),
-                Text(description),
+                const SizedBox(height: 4.0),
+                Text(description, style: const TextStyle(color: Colors.black),),
               ],
             ),
           ),
