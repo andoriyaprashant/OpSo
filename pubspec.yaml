@@ -78,6 +78,7 @@ flutter:
   #      - assets\gsoc_logo.png
   #      - assets\hyperledger.png
   #      - assets\mlh_logo.jpg
+  #      - assets\fossasia.png
   #      - assets\outreachy.png
   #      - assets\swoc_logo.png
   #      - assets\Google_season_of_docs.png
@@ -87,6 +88,7 @@ flutter:
   assets:
     - assets/
     - assets/projects/gssoc/
+    - assets/projects/fossasia/
     - assets/projects/gsod/
     - assets/projects/sob/
     - assets/projects/swoc/
@@ -94,6 +96,7 @@ flutter:
     - assets/projects/linux_foundation/
     - assets/splash screen.png
     - assets/github_swag.png
+    - assets/fossasia.png
     - assets/sokde.png
     - assets/redox.png
     - assets/hacktoberfest.png
