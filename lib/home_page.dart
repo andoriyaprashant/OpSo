@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:opso/ChatBotpage.dart';
 import 'package:opso/opso_timeline.dart';
+import 'package:opso/programs%20screen/fossasia.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/github_campus.dart';
 import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
@@ -92,6 +93,10 @@ class _HomePageState extends State<HomePage> {
     Program(
       title: 'Google Season of Docs',
       imageAssetPath: 'assets/Google_season_of_docs.png',
+    ),
+    Program(
+      title: 'FOSSASIA Codeheat',
+      imageAssetPath: 'assets/fossasia.png',
     ),
     Program(
       title: 'Major League Hacking Fellowship',
@@ -380,6 +385,15 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
+      case 'FOSSASIA Codeheat':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => FOSSASIA(),
+          ),
+        );
+        break;
+
 
       case 'Major League Hacking Fellowship':
         Navigator.push(
@@ -548,6 +562,10 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
       imageAssetPath: 'assets/Google_season_of_docs.png',
     ),
     Program(
+      title: 'FOSSASIA Codeheat',
+      imageAssetPath: 'assets/fossasia.png',
+    ),
+    Program(
       title: 'Major League Hacking Fellowship',
       imageAssetPath: 'assets/mlh_logo.jpg',
     ),
@@ -668,6 +686,15 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           context,
           MaterialPageRoute(
             builder: (context) => GoogleSeasonOfDocsScreen(),
+          ),
+        );
+        break;
+
+      case 'FOSSASIA Codeheat':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const FOSSASIA(),
           ),
         );
         break;
