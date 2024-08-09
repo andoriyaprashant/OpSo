@@ -113,6 +113,12 @@ class OpsoTimeLineScreen extends StatelessWidget {
       },
       {
         'description':
+            "FOSSASIA Codeheat\nApplication Period - 01/09/2024 to 31/11/2024",
+        'startDate': DateTime.utc(2024, 9, 1),
+        'endDate': DateTime.utc(2024, 11, 31),
+      },
+      {
+        'description':
             "Hacktoberfest\nContribution Period - 01/10/2024 to 31/10/2024",
         'startDate': DateTime.utc(2024, 10, 1),
         'endDate': DateTime.utc(2024, 10, 31),
