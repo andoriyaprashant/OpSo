@@ -1,5 +1,8 @@
+import 'dart:ffi';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/programs_info_pages/gsoc_info.dart';
 import 'package:opso/widgets/gsoc/GsocProjectWidget.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -19,6 +22,9 @@ class GoogleSummerOfCodeScreen extends StatefulWidget {
 
 class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   bool _isRefreshing = false;
+  bool isBookmarked = true;
+  String currentPage = "/Google_summer_of_code";
+  String currentProject = "GoogleSummerOfCodeScreen";
   String selectedOrg = ''; // Ensure this is defined
   List<Organization> gsoc2024 = [];
   List<Organization> gsoc2023 = [];
@@ -56,8 +62,15 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     super.initState();
     _refresh();
     _dataFetchFuture = getProjectData();
+    _checkBookmarkStatus();
   }
 
+  Future<void> _checkBookmarkStatus() async {
+    bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProject);
+    setState(() {
+      isBookmarked = bookmarkStatus;
+    });
+  }
 
 
 
@@ -112,7 +125,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
           .where((project) => selectedOrganizations.contains(project.name))
           .toList();
     }
-
 
 
 
@@ -202,9 +214,33 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar: AppBar(
+               appBar: AppBar(
           title: const Text('Google Summer of Code'),
           actions: <Widget>[IconButton(
+              icon: (isBookmarked)
+                  ? const Icon(Icons.bookmark_add_rounded)
+                  : const Icon(Icons.bookmark_add_outlined),
+              onPressed: () {
+                setState(() {
+                  isBookmarked = !isBookmarked;
+                });
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                        isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                    duration: const Duration(seconds: 2),
+                  ),
+                );
+                if (isBookmarked) {
+                  print("Adding");
+                  HandleBookmark.addBookmark(currentProject, currentPage);
+                } else {
+                  print("Deleting");
+                  HandleBookmark.deleteBookmark(currentProject);
+                }
+              },
+            ),
+            IconButton(
             icon: const Icon(Icons.info_outline),
             onPressed: () {
               Navigator.push(
