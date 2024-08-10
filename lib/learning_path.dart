@@ -67,7 +67,7 @@ class LearningPathPage extends StatelessWidget {
             throw 'Could not launch $url';
           }
         },
-        child: const Icon(Icons.chat_bubble_outline),
+        child: const Icon(Icons.rocket_launch_sharp),
       ),
     );
   }
