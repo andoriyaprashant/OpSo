@@ -1,0 +1,346 @@
+[
+    {
+        "organization": "GDSC NSEC",
+        "projects": [
+            {
+                "id": 1,
+                "name": "Moksh",
+                "students": 5,
+                "codeLink": "https://github.com/akshitagupta15june/Moksh",
+                "techStack": ["OpenCV", "ML", "HTML", "CSS", "JS", "Reactjs"],
+                "description": "Moksh is a spiritual productivity tool designed for individuals who want to unlock their potential and achieve true balance in life. Our customized spiritual features help you take control of your work, focus on what truly matters, and rejuvenate your mind and spirit. By reading Bhagavad Gita, we become soul conscious and gain the strength to fight life's challenges. With Moksh, you can overcome the mental problems that arise from our body consciousness and find true happiness. This platform will help engineers, students, and office workers cope with stressful environments.",
+                "mentor": [
+                    {
+                        "name": "Akshita Gupta",
+                        "linkedin": "https://www.linkedin.com/in/akshita-gupta-a4a895187"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "face-X",
+                "students": 5,
+                "codeLink": "https://github.com/akshitagupta15june/Face-X",
+                "techStack": ["OpenCV", "ML", "HTML", "CSS", "JS", "Reactjs"],
+                "description": "Face-X is a comprehensive repository of algorithms and operations related to facial recognition, including functionalities such as facial filters, image processing, face mask detection, and facial attendance systems. It encompasses all possible operations on the frontal human face, making it a versatile platform for facial-related tasks.",
+                "mentor": [
+                    {
+                        "name": "Akshita Gupta",
+                        "linkedin": "https://www.linkedin.com/in/akshita-gupta-a4a895187"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "PetMe",
+                "students": 5,
+                "codeLink": "https://github.com/akshitagupta15june/PetMe",
+                "techStack": ["OpenCV", "ML", "HTML", "CSS", "JS", "Reactjs"],
+                "description": "PetMe is an all-in-one platform that allows animals to be adopted, donated to pet lovers, and provides emergency medical care to stray animals in need. Our mission is to connect animal lovers with pets in need of a forever home while providing emergency medical care for stray animals in distress.",
+                "mentor": [
+                    {
+                        "name": "Akshita Gupta",
+                        "linkedin": "https://www.linkedin.com/in/akshita-gupta-a4a895187"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Hedging of financial Derivatives",
+                "students": 5,
+                "codeLink": "https://github.com/Akshat111111/Hedging-of-Financial-Derivatives",
+                "techStack": ["Financial Programming", "Fintech", "Machine Learning", "Deep Learning"],
+                "description": "Hedging is a market-neutral trading strategy that enables traders to profit from virtually any market condition, whether it's uptrend, downtrend, or sideways movement. This strategy is categorized as a statistical arbitrage and convergence trading strategy.",
+                "mentor": [
+                    {
+                        "name": "Akshat Sharma",
+                        "linkedin": "https://www.linkedin.com/in/akshat-sharma11/"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "GeoWellAdvisor",
+                "students": 5,
+                "codeLink": "https://github.com/047pegasus/GeoWellAdvisor",
+                "techStack": ["React", "Vite", "Flutter", "Python", "LeafletJS"],
+                "description": "GeoWell Advisor is a powerful tool designed to help users determine the feasibility of digging a well at a specific location. It provides essential information and insights for making informed decisions about well placement.",
+                "mentor": [
+                    {
+                        "name": "Tanishq Agarwal",
+                        "linkedin": "https://www.linkedin.com/in/tanishq047/"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "DoodleCollab",
+                "students": 5,
+                "codeLink": "https://github.com/WikiPortal/DoodleCollab",
+                "techStack": ["Software Development"],
+                "description": "DoodleCollab is a cutting-edge application designed to transform collaboration, offering an unparalleled whiteboard and sharing experience. Developed using ReactJS, the app combines intuitive design with advanced functionalities to enhance collaborative efforts.",
+                "mentor": [
+                    {
+                        "name": "Jyotirmoy Roy",
+                        "linkedin": "https://www.linkedin.com/in/jyotirmoyroy69/"
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "name": "Acme Rockets",
+                "students": 7,
+                "codeLink": "https://github.com/Jagroop2001/AcmeRockets",
+                "techStack": ["HTML", "Tailwind CSS", "CSS", "JS", "Reactjs"],
+                "description": "AcmeRockets is a static website dedicated to showcasing the innovative rocket-powered products of Acme Rockets. The project delivers an immersive experience with dynamic content and responsive design.",
+                "mentor": [
+                    {
+                        "name": "Jagroop",
+                        "linkedin": "https://www.linkedin.com/in/jagroop-singh-3a2a401b4/"
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "name": "Pages: A book shop landing page",
+                "students": 7,
+                "codeLink": "https://github.com/Jagroop2001/Pages-A-Book-Shop-Website",
+                "techStack": ["HTML", "Bootstrap", "CSS"],
+                "description": "Pages-A-Book-Shop-Website is a stylish and user-friendly landing page for book enthusiasts. The site, crafted with HTML, Bootstrap, and CSS, offers a seamless browsing experience with a diverse book catalog and intuitive navigation.",
+                "mentor": [
+                    {
+                        "name": "Jagroop",
+                        "linkedin": "https://www.linkedin.com/in/jagroop-singh-3a2a401b4/"
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "name": "NASA Rocket project",
+                "students": 7,
+                "codeLink": "https://github.com/Jagroop2001/nasa-project-fullstack",
+                "techStack": ["Node", "MongoDb", "Express", "Reactjs"],
+                "description": "The NASA Rocket project is a full-stack application for controlling space missions and enabling seamless exploration beyond our planet. It combines Node.js and React for building dynamic and scalable web applications.",
+                "mentor": [
+                    {
+                        "name": "Jagroop",
+                        "linkedin": "https://www.linkedin.com/in/jagroop-singh-3a2a401b4/"
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "name": "Music Player App",
+                "students": 7,
+                "codeLink": "https://github.com/Jagroop2001/music-player",
+                "techStack": ["Vue js"],
+                "description": "The Music Player App is a simple frontend project created using Vue.js.",
+                "mentor": [
+                    {
+                        "name": "Jagroop",
+                        "linkedin": "https://www.linkedin.com/in/jagroop-singh-3a2a401b4/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "organization": "Presar",
+        "imageUrl": "https://presear.com/assets/img/logo.svg",
+        "projects": [
+            {
+                "id": 1,
+                "name": "eduAlgo",
+                "students": 5,
+                "codeLink": "https://github.com/edualgo/eduAlgo",
+                "techStack": ["AI", "ML", "Python", "Cloud Computing", "Computer Vision"],
+                "description": "This is a very simple python package made up with python script to study different algorithms for educational purposes.",
+                "mentor": [
+                    {
+                        "name": "Abhijit Tripathy",
+                        "linkedin": "https://www.linkedin.com/in/abhijit-tripathy/"
+                    },
+                    {
+                        "name": "ISHWAR",
+                        "linkedin": "https://www.linkedin.com/in/ishwar-ajgalley-7a86b3203"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Documentation",
+                "students": 5,
+                "codeLink": "https://github.com/edualgo/documentation",
+                "techStack": ["AI", "ML", "Python", "Cloud Computing", "Computer Vision"],
+                "description": "The documentation website for the python package 'eduAlgo'.",
+                "mentor": [
+                    {
+                        "name": "Abhijit Tripathy",
+                        "linkedin": "https://www.linkedin.com/in/abhijit-tripathy/"
+                    },
+                    {
+                        "name": "ISHWAR",
+                        "linkedin": "https://www.linkedin.com/in/ishwar-ajgalley-7a86b3203"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "interview-corner",
+                "students": 5,
+                "codeLink": "https://github.com/edualgo/interview-corner",
+                "techStack": ["AI", "ML", "Python", "Cloud Computing", "Computer Vision"],
+                "description": "This project aims to build a website containing codes along with techniques and explanations to help candidates prepare for interviews by practicing different algorithms in various programming languages.",
+                "mentor": [
+                    {
+                        "name": "Abhijit Tripathy",
+                        "linkedin": "https://www.linkedin.com/in/abhijit-tripathy/"
+                    },
+                    {
+                        "name": "ISHWAR",
+                        "linkedin": "https://www.linkedin.com/in/ishwar-ajgalley-7a86b3203"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Grokking-Machine-Learning",
+                "students": 5,
+                "codeLink": "https://github.com/edualgo/Grokking-Machine-Learning",
+                "techStack": ["AI", "ML", "Python", "Cloud Computing", "Computer Vision"],
+                "description": "This repository contains different machine learning use cases along with descriptions of the model architectures. This project is part of eduAlgo.",
+                "mentor": [
+                    {
+                        "name": "Abhijit Tripathy",
+                        "linkedin": "https://www.linkedin.com/in/abhijit-tripathy/"
+                    },
+                    {
+                        "name": "ISHWAR",
+                        "linkedin": "https://www.linkedin.com/in/ishwar-ajgalley-7a86b3203"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "organization": "Eduhub-Community",
+        "imageUrl": "https://eduhubcommunity.tech/src/images/eduhub/img.png",
+        "projects": [
+            {
+                "id": 1,
+                "name": "Eduhub-Community",
+                "students": 5,
+                "codeLink": "https://github.com/Eduhub-Community/Eduhub-Community.github.io",
+                "techStack": ["Blockchain", "Web Development"],
+                "description": "Eduhub is a community of the people, for the people, and by the people. Our vision is to create an environment where people can learn and apply technical knowledge together. Our mission is to build a strong technical community that is open-minded and has an intense desire for consistent learning from one another in the community. We have been conducting and organizing numerous Open Source Programs, Hackathons, Meetups, Conferences, and 1:1 Mentorships. This Open Source project website is built using HTML, CSS, JavaScript, Bootstrap, and PHP.",
+                "mentor": [
+                    {
+                        "name": "Sahitya Roy",
+                        "linkedin": "https://www.linkedin.com/in/sahitya-roy-244b941a2/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "organization": "Subhankar Mishra Lab",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/winterofcode-55d97.appspot.com/o/tirtha-logo-light.svg?alt=media&token=91567821-ade8-4f7b-bfdb-a578b7d83583",
+        "projects": [
+            {
+                "id": 1,
+                "name": "Automatically generate mesh poster images and add automated testing for the process",
+                "students": 4,
+                "codeLink": "https://github.com/smlab-niser/tirtha-public/issues/14",
+                "techStack": ["JavaScript", "Python"],
+                "description": "The goal of this project is to automate the generation of the poster images (or previews) for the meshes, after the orientation of the mesh (for a pipeline run) is changed (manually). Currently, we use the JavaScript code mentioned in the linked GH issue to create preview images manually and attach them to the mesh. This project would automate this. A supplementary task is adding Python tests to ensure that the posters are produced and saved correctly. Expected Outcome: For each new mesh created using the Tirtha pipeline, the poster image should be automatically generated after the mesh orientation has been updated. A few Python tests should also be added.",
+                "mentor": [
+                    {
+                        "name": "Jyotirmaya Shivottam",
+                        "linkedin": ""
+                    },
+                    {
+                        "name": "Dr. Subhankar Mishra",
+                        "linkedin": ""
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Improve the UI/UX of the Tirtha frontend",
+                "students": 4,
+                "codeLink": "https://github.com/smlab-niser/tirtha-public/issues?q=is%3Aissue+is%3Aopen+label%3Afrontend",
+                "techStack": ["JavaScript", "Python", "JQuery", "HTML", "CSS"],
+                "description": "This project aims to improve the UI/UX of the platform’s frontend. At the moment, we seek to overhaul the frontend aspects covered by the GitHub issues in the attached list. Some of these include: creation & addition of a dark theme with system-preference-based switching, more details on each run, such as contributor information, auto-update of poster images for each mesh to OpenGraph tags, etc. Based on the qualifications and interests of the candidate, we can work on further frontend improvements. Expected Outcome: Most of the GH issues in the list should be resolved.",
+                "mentor": [
+                    {
+                        "name": "Jyotirmaya Shivottam",
+                        "linkedin": ""
+                    },
+                    {
+                        "name": "Dr. Subhankar Mishra",
+                        "linkedin": ""
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Implement a more private authentication flow",
+                "students": 4,
+                "codeLink": "https://github.com/smlab-niser/tirtha-public/issues/34",
+                "techStack": ["JavaScript", "Python"],
+                "description": "We currently use Sign in with Google to tag user contributions (sets of images of heritage sites) and to store a minimal amount of user information (name, email), to attribute them in accordance with the CC BY-NC-SA 4.0 license for user contributions. However, this presents a privacy risk, as Google’s code completely controls the Sign-in button and includes cross-site trackers. We would like to avoid this. One solution is to use a library based on an open authentication standard and to interact with Google Sign-In via web tokens. This will also allow us to support authentication using other social platforms. Expected Outcome: Tirtha should move away from Google Auth, and the privacy issue should be resolved.",
+                "mentor": [
+                    {
+                        "name": "Jyotirmaya Shivottam",
+                        "linkedin": ""
+                    },
+                    {
+                        "name": "Dr. Subhankar Mishra",
+                        "linkedin": ""
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Make image content-safety checks run on client-side",
+                "students": 4,
+                "codeLink": "https://github.com/smlab-niser/tirtha-public/issues/15",
+                "techStack": ["JavaScript", "Tensorflow", "HTML", "CSS", "Python"],
+                "description": "Currently, we check images submitted by users on the server-side using GantMan/nsfw_model. This should be offloaded to the client-side for two primary reasons: (i) user privacy and (ii) saving bandwidth. This project aims to leverage nsfwjs’s small neural network models written in TensorflowJS to check the images on the client-side. Expected Outcome: Content safety checks should move to the client-side.",
+                "mentor": [
+                    {
+                        "name": "Jyotirmaya Shivottam",
+                        "linkedin": ""
+                    },
+                    {
+                        "name": "Dr. Subhankar Mishra",
+                        "linkedin": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "organization": "Cosaimosh",
+        "projects": [
+            {
+                "id": 1,
+                "name": "DataBot",
+                "students": 5,
+                "codeLink": "https://github.com/cos-ai-mosh/DataBot",
+                "techStack": ["Typescript", "Next.js", "Tailwind CSS", "Vector DB", "ML"],
+                "description": "The project motto is to develop low latency chatbot applications for any kind of data available. The implementation should/must use free open source tools.",
+                "mentor": [
+                    {
+                        "name": "Piyush Thakur",
+                        "linkedin": "https://www.linkedin.com/in/cosmo3769?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    },
+                    {
+                        "name": "Ayush Mishra",
+                        "linkedin": "https://www.linkedin.com/in/ayush-mishra-62586b190?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    }
+                ]
+            }
+        ]
+    }    
+ ]
