@@ -5,11 +5,23 @@
 
 OpSo is a Flutter app that provides comprehensive information about various open-source programs, including Google Summer of Code, Summer of Bitcoin, Linux Foundation, and more. It allows users to explore different open-source opportunities, learn about their eligibility criteria, and access important resources.
 
-<br>
-
-![Opso Project Ui](https://github.com/andoriyaprashant/OpSo/assets/121665385/01ee0bec-bed4-4ced-98e0-bc01f68cc134)
-
-<hr>
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/3356c768-fd24-4e10-a59c-6b6d4a0229d8" alt="Screenshot 1" width="300"/>
+  <img src="https://github.com/user-attachments/assets/02c3ce48-6d42-4108-8860-297b842687cf" alt="Screenshot 2" width="300"/>
+  <img src="https://github.com/user-attachments/assets/4089939f-b4b6-4926-bcfc-5640bc72a60e" alt="Screenshot 3" width="300"/>
+  <img src="https://github.com/user-attachments/assets/a703a897-4bde-4e2a-b92d-6adf55662a41" alt="Screenshot 4" width="300"/>
+  <img src="https://github.com/user-attachments/assets/0e6ede93-f0b6-485b-892d-c1227230216c" alt="Screenshot 5" width="300"/>
+  <img src="https://github.com/user-attachments/assets/0dddf5b0-8c32-4df2-8f10-07a74ec1caff" alt="Screenshot 6" width="300"/>
+  <img src="https://github.com/user-attachments/assets/202dcbf0-66de-4678-934e-919bf0805fa0" alt="Screenshot 7" width="300"/>
+  <img src="https://github.com/user-attachments/assets/e6882f24-596d-4da5-b1f3-4cceb28337f6" alt="Screenshot 8" width="300"/>
+  <img src="https://github.com/user-attachments/assets/0aa57bd2-6f60-414f-a93f-2a3a17f9db77" alt="Screenshot 9" width="300"/>
+  <img src="https://github.com/user-attachments/assets/613cb443-0b65-4ba1-bf49-1b29b1401431" alt="Screenshot 10" width="300"/>
+  <img src="https://github.com/user-attachments/assets/a0484dd7-169c-4c88-812b-afc30577d6e2" alt="Screenshot 11" width="300"/>
+  <img src="https://github.com/user-attachments/assets/7a82f4de-d0b7-4aec-8e7e-43ac4af26e78" alt="Screenshot 12" width="300"/>
+  <img src="https://github.com/user-attachments/assets/ed6f5bdc-d97c-4c7c-915b-4fb2c5517595" alt="Screenshot 13" width="300"/>
+  <img src="https://github.com/user-attachments/assets/1c2b1c05-12ae-4e4e-8028-3d4da1e4d003" alt="Screenshot 14" width="300"/>
+  <img src="https://github.com/user-attachments/assets/7c154317-3fef-4c6c-a897-43b10206f960" alt="Screenshot 15" width="300"/>
+</div>
 
 <!-- License -->
 <div>
@@ -124,12 +136,3 @@ Please note that by contributing to OpSo, you agree to abide by the [code of con
 
 <hr>
 
- <!-- Cotributors -->
-<div>
-  <h2 align = "center"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35"> Our Contributors</h2>
- <div align = "center">
- <h3>Thank you for contributing to our repository</h3>
-
-![Contributors](https://contrib.rocks/image?repo=andoriyaprashant/OpSo)
-
-</div>
