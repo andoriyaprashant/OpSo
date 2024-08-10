@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:opso/ChatBotpage.dart';
+import 'package:opso/learning_path.dart';
 import 'package:opso/opso_timeline.dart';
 import 'package:opso/programs%20screen/fossasia.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
@@ -278,6 +279,18 @@ class _HomePageState extends State<HomePage> {
                                       MaterialPageRoute(
                                           builder: (context) =>
                                           const BookMarkScreen()));
+                                },
+                              ),
+                              const SizedBox(height: 15),
+                              ListTile(
+                                leading: const Icon(FontAwesomeIcons.code),
+                                title: const Text('GitHub Workflow'),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                          LearningPathPage()));
                                 },
                               ),
                               const SizedBox(height: 15),
