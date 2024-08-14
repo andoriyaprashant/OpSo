@@ -23,7 +23,7 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
   List<OutreachyProjectModal> outreachy2023 = [];
   List<OutreachyProjectModal> outreachy2022 = [];
   List<OutreachyProjectModal> outreachy2021 = [];
-  bool isBookmarked = false; 
+  bool isBookmarked = false;
   bool isBookmarkEnabled = false;
   List<String> allSkills = [];
   List<String> selectedSkills = ['All'];
@@ -34,21 +34,28 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
   Future<void>? getProjectFunction;
 
   Future<void> initializeProjectLists() async {
-    await _loadProjects('assets/projects/outreachy/outreachy2024.json', outreachy2024);
-    await _loadProjects('assets/projects/outreachy/outreachy2023.json', outreachy2023);
-    await _loadProjects('assets/projects/outreachy/outreachy2022.json', outreachy2022);
-    await _loadProjects('assets/projects/outreachy/outreachy2021.json', outreachy2021);
+    await _loadProjects(
+        'assets/projects/outreachy/outreachy2024.json', outreachy2024);
+    await _loadProjects(
+        'assets/projects/outreachy/outreachy2023.json', outreachy2023);
+    await _loadProjects(
+        'assets/projects/outreachy/outreachy2022.json', outreachy2022);
+    await _loadProjects(
+        'assets/projects/outreachy/outreachy2021.json', outreachy2021);
 
     allSkills = _extractUniqueSkills();
     projectList = List.from(outreachy2021);
   }
 
-  Future<void> _loadProjects(String path, List<OutreachyProjectModal> list) async {
+  Future<void> _loadProjects(
+      String path, List<OutreachyProjectModal> list) async {
     try {
       String response = await rootBundle.loadString(path);
       if (response.isNotEmpty) {
         var jsonList = json.decode(response) as List;
-        list.addAll(jsonList.map((data) => OutreachyProjectModal.fromMap(data)).toList());
+        list.addAll(jsonList
+            .map((data) => OutreachyProjectModal.fromMap(data))
+            .toList());
         print('Loaded projects from $path: ${list.length}');
       } else {
         print('Error: JSON data is null or empty in $path');
@@ -67,8 +74,6 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
       ...outreachy2021.expand((project) => project.skills),
     }.toSet().toList();
   }
-
-  
 
   List<OutreachyProjectModal> _getProjectsByYear() {
     switch (selectedYear) {
@@ -89,8 +94,10 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
     projectList = _getProjectsByYear();
 
     if (!selectedSkills.contains('All')) {
-      projectList = projectList.where((project) =>
-          project.skills.any((skill) => selectedSkills.contains(skill))).toList();
+      projectList = projectList
+          .where((project) =>
+              project.skills.any((skill) => selectedSkills.contains(skill)))
+          .toList();
     }
 
     setState(() {});
@@ -142,7 +149,8 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
               });
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                  content: Text(
+                      isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
                   duration: const Duration(seconds: 2),
                 ),
               );
@@ -158,7 +166,8 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
             onPressed: () {
               Navigator.push(
                 context,
-              MaterialPageRoute(builder: (context) => OUTREACHYInfo()),                );
+                MaterialPageRoute(builder: (context) => OUTREACHYInfo()),
+              );
             },
           ),
         ]),
@@ -170,7 +179,8 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
             } else if (snapshot.connectionState == ConnectionState.done) {
               return SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -183,13 +193,14 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
                         buttonText: "Filter by Skill",
                         onConfirm: (results) {
                           setState(() {
-                            selectedSkills = results.isNotEmpty ? results : ['All'];
+                            selectedSkills =
+                                results.isNotEmpty ? results : ['All'];
                             filterProjects();
                           });
                         },
                       ),
                       const SizedBox(height: 20),
-                      _buildProjectList(height, width),
+                      ..._projectListItems(height, width),
                     ],
                   ),
                 ),
@@ -224,8 +235,9 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
                 filterProjects();
               });
             },
-            backgroundColor:
-                selectedYear == 2021 ? Colors.white : Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2021
+                ? Colors.white
+                : Color.fromRGBO(255, 183, 77, 1),
           ),
           YearButton(
             year: "2022",
@@ -236,8 +248,9 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
                 filterProjects();
               });
             },
-            backgroundColor:
-                selectedYear == 2022 ? Colors.white : Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2022
+                ? Colors.white
+                : Color.fromRGBO(255, 183, 77, 1),
           ),
           YearButton(
             year: "2023",
@@ -248,8 +261,9 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
                 filterProjects();
               });
             },
-            backgroundColor:
-                selectedYear == 2023 ? Colors.white : Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2023
+                ? Colors.white
+                : Color.fromRGBO(255, 183, 77, 1),
           ),
           YearButton(
             year: "2024",
@@ -260,8 +274,9 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
                 filterProjects();
               });
             },
-            backgroundColor:
-                selectedYear == 2024 ? Colors.white : Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2024
+                ? Colors.white
+                : Color.fromRGBO(255, 183, 77, 1),
           ),
         ],
       ),
@@ -290,22 +305,17 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
     );
   }
 
-  Widget _buildProjectList(double height, double width) {
-    return SizedBox(
-      height: height,
-      child: ListView.builder(
-        itemCount: projectList.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: OutreachyProjectWidget(
-              modal: projectList[index],
-              index: index + 1,
-              height: height * 0.2,
-              width: width,
-            ),
-          );
-        },
+  List _projectListItems(double height, double width) {
+    return List.generate(
+      projectList.length,
+      (index) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        child: OutreachyProjectWidget(
+          modal: projectList[index],
+          index: index + 1,
+          height: height * 0.2,
+          width: width,
+        ),
       ),
     );
   }
