@@ -2,7 +2,8 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
-const apiKey = 'put-gemini-api-key';
+// Replace with your actual Gemini API key
+const apiKey = 'api-key';
 
 class ChatBotPage extends StatefulWidget {
   const ChatBotPage({Key? key}) : super(key: key);
@@ -43,8 +44,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
       final content = [Content.text(prompt)];
       final response = await _model!.generateContent(content);
       setState(() {
-        final botText = response.text!.replaceAll('*', '');  // Remove asterisks
-        _messages.add({"sender": "bot", "text": botText});
+        _messages.add({"sender": "bot", "text": response.text!});
       });
     }
   }
@@ -124,12 +124,14 @@ class _ChatBotPageState extends State<ChatBotPage> {
     );
   }
 
+
   @override
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
 }
+
 
 void main() {
   runApp(const MaterialApp(

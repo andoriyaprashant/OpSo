@@ -60,7 +60,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/logo.png"
+  image_path: "assets/OpSo_main.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
@@ -94,7 +94,8 @@ flutter:
     - assets/projects/swoc/
     - assets/projects/hyperledger/
     - assets/projects/linux_foundation/
-    - assets/splash screen.png
+    - assets/splash_main.png
+    - assets/OpSo_about.png
     - assets/github_swag.png
     - assets/fossasia.png
     - assets/sokde.png

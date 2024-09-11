@@ -65,7 +65,7 @@ class OpSoApp extends StatelessWidget {
                     const MajorLeagueHackingFellowship(),
                 "/linux_foundation": (context) => const LinuxFoundation(),
                 "/GithubCampus": (context) => const GithubCampus(),
-                "/landing_page": (context) => const LandingPage(),
+                // "/landing_page": (context) => const LandingPage(),
                 '/splash_screen': (context) => SplashScreen(),
               },
               title: 'OpSo',
