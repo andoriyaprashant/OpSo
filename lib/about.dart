@@ -25,7 +25,7 @@ class AboutScreen extends StatelessWidget {
           children: [
             // Image
             Image.asset(
-              'assets/logo.png',
+              'assets/OpSo_about.png',
               width: ScreenUtil().setWidth(250),
               height: ScreenUtil().setHeight(250),
               fit: BoxFit.contain,

@@ -11,7 +11,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacementNamed('/landing_page');
+      Navigator.of(context).pushReplacementNamed('/progarm_page');
     });
   }
 
@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
           width: screenSize.width,
           height: screenSize.height,
           child: Image.asset(
-            'assets/splash screen.png',
+            'assets/splash_main.png',
             fit: BoxFit.cover,
           ),
         ),

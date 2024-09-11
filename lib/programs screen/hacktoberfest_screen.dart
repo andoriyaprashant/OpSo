@@ -125,13 +125,13 @@ class _HacktoberfestState extends State<Hacktoberfest> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: pad),
                 child: Text(
-                      '1. First, go to GitHub.\n\n'
-                      '2. Click on "Issues.\n\n'
-                      '3. Use the filter: is:open is:issue archived:false label:hacktoberfest.\n\n'
-                      '4. Solve issues and make your contributions.\n\n',
+                      '1. First, go to GitHub.\n'
+                      '2. Click on "Issues.\n'
+                      '3. Use the filter: is:open is:issue archived:false label:hacktoberfest.\n'
+                      '4. Solve issues and make your contributions.',
                       style: TextStyle(
                         fontSize: contentSize,
-                        height: 1.5, // Adjusts line spacing
+                        height: 2, // Adjusts line spacing
                       ),
                     ),
               ),
