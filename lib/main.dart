@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:opso/landing_page.dart';
 import 'package:opso/programs%20screen/fossasia.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/github_campus.dart';
@@ -51,7 +50,7 @@ class OpSoApp extends StatelessWidget {
                 "/social_winter_of_code": (context) => const SWOCScreen(),
                 "/season_of_sokde": (context) => const SeasonOfKDE(),
                 "/google_summer_of_code": (context) =>
-                    GoogleSummerOfCodeScreen(),
+                    const GoogleSummerOfCodeScreen(),
                 "/google_season_of_docs": (context) =>
                     GoogleSeasonOfDocsScreen(),
                 "/summer_of_bitcoin": (context) => const SummerOfBitcoin(),
