@@ -1,24 +1,20 @@
-import 'dart:ffi';
-
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/programs_info_pages/gsoc_info.dart';
 import 'package:opso/widgets/gsoc/GsocProjectWidget.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import '../modals/GSoC/Gsoc.dart';
 import '../services/ApiService.dart';
-import '../widgets/SearchandFilterWidget.dart';
 import '../widgets/year_button.dart';
 
-
 class GoogleSummerOfCodeScreen extends StatefulWidget {
+  const GoogleSummerOfCodeScreen({super.key});
+
   @override
   State<GoogleSummerOfCodeScreen> createState() =>
       _GoogleSummerOfCodeScreenState();
 }
-
 
 class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   bool _isRefreshing = false;
@@ -54,9 +50,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   List<String> selectedOrganizations = [];
   late Future<void> _dataFetchFuture;
 
-
-
-
   @override
   void initState() {
     super.initState();
@@ -72,8 +65,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     });
   }
 
-
-
   Future<void> getProjectData() async {
     ApiService apiService = ApiService();
     try {
@@ -81,9 +72,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       Gsoc orgData2022 = await apiService.getOrgByYear('2022');
       Gsoc orgData2023 = await apiService.getOrgByYear('2023');
       Gsoc orgData2024 = await apiService.getOrgByYear('2024');
-
-
-
 
       setState(() {
         gsoc2021 = orgData2021.organizations ?? [];
@@ -94,31 +82,26 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
         allOrganizations = [...orgList.map((org) => org.name!).toSet()];
       });
     } catch (e) {
-      print('Error: $e');
+      if (kDebugMode) {
+        print('Error: $e');
+      }
     }
   }
 
-
-
-
   void filterProjects() {
     orgList = _getOrganizationsByYear(selectedYear);
-    if(selectedLanguages.length>=2){
+    if (selectedLanguages.length >= 2) {
       selectedLanguages.removeAt(0);
     }
-    if(selectedOrganizations.length>=2){
+    if (selectedOrganizations.length >= 2) {
       selectedOrganizations.removeAt(0);
     }
     if (!selectedLanguages.contains('All')) {
-      orgList = orgList.where((project) =>
-          selectedLanguages.every((language) => project.technologies?.contains(language) == true)
-      ).toList();
+      orgList = orgList
+          .where((project) => selectedLanguages.every(
+              (language) => project.technologies.contains(language) == true))
+          .toList();
     }
-
-
-
-
-
 
     if (!selectedOrganizations.contains('All')) {
       orgList = orgList
@@ -126,26 +109,18 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
           .toList();
     }
 
-
-
     // Update organization filter based on selected languages
     allOrganizations = [
       ..._getOrganizationsByYear(selectedYear)
           .where((org) =>
-      selectedLanguages.contains('All') ||
-          org.technologies?.any(selectedLanguages.contains) == true)
-          .map((org) => org.name!)
+              selectedLanguages.contains('All') ||
+              org.technologies.any(selectedLanguages.contains) == true)
+          .map((org) => org.name)
           .toSet()
     ];
 
-
-
-
     setState(() {});
   }
-
-
-
 
   List<Organization> _getOrganizationsByYear(int year) {
     switch (year) {
@@ -162,9 +137,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     }
   }
 
-
-
-
   Future<void> _refresh() async {
     setState(() {
       _isRefreshing = true;
@@ -179,9 +151,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     });
   }
 
-
-
-
   // Add this method to the _GoogleSummerOfCodeScreenState class
   void search(String searchText) {
     setState(() {
@@ -191,32 +160,25 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       } else {
         orgList = _getOrganizationsByYear(selectedYear)
             .where((element) =>
-        element.name
-            ?.toLowerCase()
-            .contains(searchText.toLowerCase()) ==
-            true)
+                element.name.toLowerCase().contains(searchText.toLowerCase()) ==
+                true)
             .toList();
       }
     });
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
 
-
-
-
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-               appBar: AppBar(
+        appBar: AppBar(
           title: const Text('Google Summer of Code'),
-          actions: <Widget>[IconButton(
+          actions: <Widget>[
+            IconButton(
               icon: (isBookmarked)
                   ? const Icon(Icons.bookmark_add_rounded)
                   : const Icon(Icons.bookmark_add_outlined),
@@ -232,22 +194,28 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                   ),
                 );
                 if (isBookmarked) {
-                  print("Adding");
+                  if (kDebugMode) {
+                    print("Adding");
+                  }
                   HandleBookmark.addBookmark(currentProject, currentPage);
                 } else {
-                  print("Deleting");
+                  if (kDebugMode) {
+                    print("Deleting");
+                  }
                   HandleBookmark.deleteBookmark(currentProject);
                 }
               },
             ),
             IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const GSOCInfo()),                );
-            },
-          ),],
+              icon: const Icon(Icons.info_outline),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const GSOCInfo()),
+                );
+              },
+            ),
+          ],
         ),
         body: FutureBuilder<void>(
           future: _dataFetchFuture,
@@ -260,7 +228,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
               return SingleChildScrollView(
                 child: Padding(
                   padding:
-                  const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
+                      const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -312,7 +280,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                         child: GridView(
                           physics: const NeverScrollableScrollPhysics(),
                           gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             childAspectRatio: 1.5 / 0.6,
                             crossAxisSpacing: 15,
@@ -391,8 +359,10 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                         onConfirm: (results) {
                           setState(() {
                             selectedLanguages =
-                            results.isNotEmpty ? results : [];
-                            print(selectedLanguages);
+                                results.isNotEmpty ? results : [];
+                            if (kDebugMode) {
+                              print(selectedLanguages);
+                            }
                             filterProjects();
                           });
                         },
@@ -400,65 +370,64 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                       const SizedBox(height: 20),
                       orgList.isEmpty
                           ? _isRefreshing
-                          ? Column(
-                        children: const [
-                          Center(
-                              child: Column(
-                                children: [
-                                  CircularProgressIndicator(),
-                                  SizedBox(height: 10),
-                                  Text('Refreshing...'),
-                                ],
-                              )
-                          ),
-                          SizedBox(height: 20),
-                        ],
-                      )
-                          : Column(
-                        children: [
-                          const Center(child: Text('No projects found')),
-                          const SizedBox(height: 20),
-                          TextButton(
-                            onPressed: () {
-                              _refresh();
-                            },
-                            child: const Text('Refresh'),
-                          ),
-                        ],
-                      )
-                          : Container(
-                        height: height,
-                        child: ListView.builder(
-                          itemCount: orgList.length,
-                          itemBuilder: (context, index) {
-                            return Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 2,
-                                      blurRadius: 5,
-                                      offset: Offset(0, 3), // changes position of shadow
+                              ? const Column(
+                                  children: [
+                                    Center(
+                                        child: Column(
+                                      children: [
+                                        CircularProgressIndicator(),
+                                        SizedBox(height: 10),
+                                        Text('Refreshing...'),
+                                      ],
+                                    )),
+                                    SizedBox(height: 20),
+                                  ],
+                                )
+                              : Column(
+                                  children: [
+                                    const Center(
+                                        child: Text('No projects found')),
+                                    const SizedBox(height: 20),
+                                    TextButton(
+                                      onPressed: () {
+                                        _refresh();
+                                      },
+                                      child: const Text('Refresh'),
                                     ),
                                   ],
-                                ),
-                                child: GsocProjectWidget(
-                                  index: index + 1,
-                                  modal: orgList[index],
-                                  height: height * 0.2,
-                                  width: width,
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-
-
+                                )
+                          : ListView.builder(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: orgList.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 10),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.5),
+                                          spreadRadius: 2,
+                                          blurRadius: 5,
+                                          offset: const Offset(0,
+                                              3), // changes position of shadow
+                                        ),
+                                      ],
+                                    ),
+                                    child: GsocProjectWidget(
+                                      index: index + 1,
+                                      modal: orgList[index],
+                                      height: height * 0.2,
+                                      width: width,
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
                     ],
                   ),
                 ),
@@ -469,9 +438,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       ),
     );
   }
-
-
-
 
   Widget _buildMultiSelectField({
     required List<String> items,
@@ -495,13 +461,4 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       ),
     );
   }
-}
-
-
-
-
-void main() {
-  runApp(MaterialApp(
-    home: GoogleSummerOfCodeScreen(),
-  ));
 }
