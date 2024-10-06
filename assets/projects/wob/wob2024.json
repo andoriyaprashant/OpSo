@@ -1,0 +1,663 @@
+[
+    {
+        "name": "Winter Of Blockchain",
+        "title": "Winter of Blockchain Web3 Project",
+        "tags": [
+            "HTML5/CSS3",
+            "JavaScript",
+            "React.js",
+            "Web3.js",
+            "Solidity",
+            "IPFS",
+            "Ethereum",
+            "MetaMask",
+            "JSON Web Tokens"
+        ],
+        "description": "his project aims to create a decentralized platform that showcases event information, schedules, speakers, and participant interactions using blockchain technology.",
+        "projectUrl": "https://github.com/Girlscript-WOB/WoB-Website"
+    },
+    {
+        "name": "Prafull Anand",
+        "title": "Pay3",
+        "tags": [
+            "Next.js",
+            "TailwindCSS",
+            "Shadcn",
+            "Solana",
+            "PostgreSQL"
+        ],
+        "description": "Pay3 is a decentralized payment system that allows users to seamlessly transfer tokens using UPI IDs or QR codes.",
+        "projectUrl": "https://github.com/Anandprafull/Pay3"
+    },
+    {
+        "name": "Vansh chauhan ",
+        "title": "Crypto tracker",
+        "tags": [
+            "React js ",
+            "javascript",
+            "MERN STACK"
+        ],
+        "description": "Real time crypto tracker and exchange ",
+        "projectUrl": "https://github.com/vanshchauhan21/CryptoTracker"
+    },
+    {
+        "name": "Yogesh Agrawal",
+        "title": "web3-Dream11",
+        "tags": [
+            "solidity",
+            "javascript",
+            "tailwind css",
+            "docker"
+        ],
+        "description": "Fantasy sports have witnessed an astounding rise in India, attracting millions of players to various platforms. However, persistent issues such as data privacy, insider trading, and a lack of transparency prompted the development of web3-DREAM11. This project utilizes blockchain technology, oracles, and NFTs to elevate the security, transparency, and fairness of fantasy sports experiences.",
+        "projectUrl": "https://github.com/yogesh0509/web3-DREAM11"
+    },
+    {
+        "name": "Parshav Singla",
+        "title": "Fundraising app smart contract",
+        "tags": [
+            "Solidity",
+            "web3",
+            "blockchain",
+            "defis",
+            "full stack"
+        ],
+        "description": "Building Smart Contracts and my own Coin for smooth transaction to reduce fuel gas on Ethereum Blockchain with lightning support",
+        "projectUrl": "https://github.com/Parshav14/Web3_Blockchain"
+    },
+    {
+        "name": "Ayush Kumar Singh",
+        "title": "DesiNFT",
+        "tags": [
+            "Solidity",
+            "JavaScript",
+            "Next.js",
+            "Hardhat",
+            "Tailwind CSS"
+        ],
+        "description": "An NFT marketplace promoting Indian culture. Mint, buy and sell NFTs with a user-friendly, responsive interface. Celebrating India's heritage digitally.",
+        "projectUrl": "https://github.com/ayush-that/HackOn-Blocks-2024"
+    },
+    {
+        "name": "Manya Pandey ",
+        "title": "Weather Based Application ",
+        "tags": [
+            "Javascript",
+            "react",
+            "bootstrap"
+        ],
+        "description": "Api calling based project with showing temperature of various regions in the country.",
+        "projectUrl": "https://github.com/Manyap772/weather"
+    },
+    {
+        "name": "Adnan Mohsin ",
+        "title": "AI Autonomous Billing System ",
+        "tags": [
+            "Javascript",
+            "HTML",
+            "CSS",
+            "BOOTSTRAP",
+            "REACT",
+            "REDUX",
+            "MONGODB"
+        ],
+        "description": "The team is driven with AI based outcomes for projects that create an impact. ",
+        "projectUrl": "https://github.com/AdnanMohsin21/Enigma-_AMUHACKS3.0"
+    },
+    {
+        "name": "Anjali Gautam",
+        "title": "groovin",
+        "tags": [
+            "html",
+            "css",
+            "react.js",
+            "Web3",
+            "javascript",
+            "metamask"
+        ],
+        "description": "Grow Your Business is a comprehensive platform designed to help businesses expand their reach, attract new clients, and enhance their operations. Whether you're a small business, startup, or entrepreneur, this platform provides the tools and resources needed for growth and success.",
+        "projectUrl": "https://github.com/GautamAnjali569/grovvin"
+    },
+    {
+        "name": "Swarnendu ",
+        "title": "Adopt pet",
+        "tags": [
+            "Solidity",
+            "React",
+            "Typescript",
+            "Tailwind"
+        ],
+        "description": "A Blockchain Based pet adopting platform.",
+        "projectUrl": "https://github.com/Swarnendu0123/adopt-pet"
+    },
+    {
+        "name": "Sherhin pp",
+        "title": "Decentralised blockchain",
+        "tags": [
+            "Ethereum",
+            "solidity",
+            "javascript",
+            "react.js"
+        ],
+        "description": "D-Kudumbashree is a decentralized web3 project utilizing blockchain technology to enhance transparency, fairness, and accountability within one of Asia’s largest Self-Help Groups by enabling seamless financial transactions, democratic voting, and efficient data management ",
+        "projectUrl": "https://github.com/ashwincs12/Decentralized-Kudumbashree"
+    },
+    {
+        "name": "Ajay Deshmukh",
+        "title": "Maargdarshak",
+        "tags": [
+            "Solana",
+            "Google MAP API",
+            "WIX content management"
+        ],
+        "description": "Community Connect is a website where people can upload the location and type of resource available in any community and other users are able to see those resources (type, location, hours) that are available within a community.",
+        "projectUrl": "https://github.com/seohyeonlee2020/connecting-communities"
+    },
+    {
+        "name": "Lakshya",
+        "title": "CRYPTOANALYSIS",
+        "tags": [
+            "PYTHON with its libraries"
+        ],
+        "description": "It is an CRYPTO ANALYSIS Platform",
+        "projectUrl": "https://github.com/Lakshya1726/CRYPTOANALYSIS"
+    },
+    {
+        "name": "Meghna Malasi ",
+        "title": "LegaLInk ",
+        "tags": [
+            "Solidity",
+            "Ethereum",
+            "Hardhat/Ganache",
+            "Web3.js",
+            "React.js",
+            "Javascript"
+        ],
+        "description": "Implementing a platform for legal contracts and smart legal agreements on blockchain can revolutionize the way agreements are made and enforced. ",
+        "projectUrl": "https://github.com/Meghnagit20/LegaLINc"
+    },
+    {
+        "name": "Sanskriti Kadam",
+        "title": "Course Guard",
+        "tags": [
+            "Next.js",
+            "Node.js (with Express.js)",
+            "MongoDB (NoSQL)",
+            "JSON Web Tokens"
+        ],
+        "description": "Course Guard, an innovative project that transforms how people learn and teach online through decentralized technology 🌍. We aim to make education more accessible, secure, and engaging by utilizing blockchain, smart contracts, and AI ",
+        "projectUrl": "https://github.com/Sanskriti1102/CourseGuard"
+    },
+    {
+        "name": "Paramhans Singh",
+        "title": "GrubHub",
+        "tags": [
+            "MERN",
+            "Blockchain",
+            "React Js",
+            "Mongo DB"
+        ],
+        "description": "Welcome to Grub Hub, your ultimate online destination for ordering delicious food with ease. Built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and integrated with Stripe for secure payments, Grub Hub aims to provide a seamless and delightful food ordering experience.",
+        "projectUrl": "https://github.com/Paramhans-Singh/GrubHub"
+    },
+    {
+        "name": "Kushal Das",
+        "title": "Project-Guidance",
+        "tags": [
+            "Javascript",
+            "java",
+            "cpp",
+            "python etc."
+        ],
+        "description": "The Ultimate resources for beginner to advanced level projects all in one place 💻 🎯🚀 ",
+        "projectUrl": "https://github.com/Kushal997-das/Project-Guidance"
+    },
+    {
+        "name": "Arpan Chowdhury",
+        "title": "METAVERSE",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JS",
+            "EJS",
+            "SCSS",
+            "Pug"
+        ],
+        "description": "Welcome to the \"Metaverse Front-End Playground\" \u2013 your gateway to the future of web development in the metaverse! \ud83c\udf10\ud83d\ude80 Metaverse Front-End Playground is an open-source repository created to empower developers to explore, innovate, and collaborate in the metaverse space.",
+        "projectUrl": "https://github.com/apu52/METAVERSE"
+    },
+    {
+        "name": "Ethpreneur",
+        "title": "EthPreneur",
+        "tags": [
+            "Next JS",
+            "TypeScript",
+            "Solidity and ThirdWeb"
+        ],
+        "description": "A decentralized platform for listing the products and ideas of various nano and micro Entrepreneurs. ",
+        "projectUrl": "https://github.com/SpandanM110/Ethpreneur"
+    },
+    {
+        "name": "Ishita",
+        "title": "Blockchain based voting system ",
+        "tags": [
+            "Solidity",
+            "Ganache",
+            "Truffle"
+        ],
+        "description": "Voting system made using blockchain technology ",
+        "projectUrl": "https://github.com/ishita-43/Blockchain-Based-Voting-System"
+    },
+    {
+        "name": "Mukul | Dagar",
+        "title": "Gluon",
+        "tags": [
+            "Web3",
+            "Blockchain"
+        ],
+        "description": "Smart scientific publishing on blockchain new era of discovery and innovation|",
+        "projectUrl": "https://github.com/Makul0/gluon"
+    },
+    {
+        "name": "Sivaram",
+        "title": "BitOptimus",
+        "tags": [
+            "Python",
+            "Bitcoin",
+            "Blockchain",
+            "Mining",
+            "Cryptocurrency",
+            "Mempool"
+        ],
+        "description": "Our project focuses on creating Bitcoin blocks by selecting transactions in a way that optimizes the transaction fees. By implementing a sophisticated algorithm, we aim to maximize the profitability of each block while ensuring efficient and secure transaction processing. This approach helps miners earn higher rewards and contributes to the overall efficiency of the Bitcoin network.",
+        "projectUrl": "https://github.com/siv2r/bit-optimus"
+    },
+    {
+        "name": "Vansh Choudhary",
+        "title": "CRAIBOT",
+        "tags": [
+            "react",
+            "solidity"
+        ],
+        "description": "CRAIBOT is a revolutionary Web3 payment solution that enables users to perform seamless voice-activated transactions, efficient token swapping, and comprehensive portfolio management through natural language processing. It integrates with multiple blockchain networks, ensuring a versatile and secure transaction experience.",
+        "projectUrl": "https://github.com/Vansh-Choudhary/craibot-ai"
+    },
+    {
+        "name": "Apoorv Gupta",
+        "title": "Ether Wheels",
+        "tags": [
+            "Solidity",
+            "Next.js14",
+            "React",
+            "Rapid API",
+            "Ethereum",
+            "Polygon"
+        ],
+        "description": "This project implements a peer-to-peer carpooling system leveraging \nblockchain technology, specifically Ethereum, and smart contracts. By utilizing decentralized \napplications, the aim is to enable individuals to share their cars with others traveling in the same direction seamlessly. Through this platform, passengers can book rides and make payments directly to the drivers using cryptocurrency. This approach not only ensures secure and transparent transactions but also promotes efficiency and reliability, reducing the risk of system failures often associated with centralized systems. The utilization of blockchain and smart contracts offers the benefits of decentralization, faster transactions, and enhanced trust among users, fostering a sustainable and community-driven carpooling ecosystem.",
+        "projectUrl": "https://github.com/StephCurry07/Ether-Wheels"
+    },
+    {
+        "name": "Shantanu Swami",
+        "title": "wiki-3-dia",
+        "tags": [
+            "Solidity",
+            "CSS",
+            "HTML",
+            "JavaScript"
+        ],
+        "description": "Web3-Wikipedia: Decentralized Knowledge Sharing\n\nWeb3-Wikipedia is a decentralized version of Wikipedia, utilizing the DAO (Decentralized Autonomous Organization) design to enable more precise knowledge sharing. By integrating with MetaMask, users can contribute and share knowledge in a decentralized manner. The platform employs ERC20 token-based governance, allowing users to vote on contributions and earn tokens for submitting content and participating in the voting process. Contributions are evaluated using a Good/Bad voting system; if Good votes surpass Bad votes, the content is accepted and merged. This token-driven model not only ensures the quality of submissions but also offers individual profit opportunities, linking them to the operation of the wiki.",
+        "projectUrl": "https://github.com/jaibhedia/wiki-3-dia"
+    },
+    {
+        "name": "Akshat Sharma",
+        "title": "NexTrade",
+        "tags": [
+            "NexTrade is built using the following technologies:\n\nSolidity: The smart contract language used to implement the core trading logic on Ethereum.\nEthereum: The decentralized platform that hosts the NexTrade smart contract.\nFlask: A lightweight Python web framework for the backend server.\nWeb3.py: A Python library to interact with the Ethereum blockchain.\nHTML/CSS: Frontend of the application for a simple and usable interface."
+        ],
+        "description": "NexTrade is a decentralized stock trading application built on blockchain technology to provide a secure, transparent, and tamper-proof platform for trading stocks. This application leverages Ethereum smart contracts to enable peer-to-peer stock trading without the need for intermediaries.\n\nNexTrade offers a foundational framework for a decentralized trading platform, showcasing how blockchain can be applied to financial markets in India.",
+        "projectUrl": "https://github.com/Akshat111111/NexTrade"
+    },
+    {
+        "name": "Anuradha Adhikari",
+        "title": "College Fest Registration Website",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Python"
+        ],
+        "description": " This is a registration website for a college fest using HTML, CSS, Python Flask, mySQL databse. ",
+        "projectUrl": "https://github.com/Ramsey99/fest-registration"
+    },
+    {
+        "name": "Sibananda Swain",
+        "title": "Blockchain-Based  Security  Management System( Healthcare)",
+        "tags": [
+            "Blockchain Platform: Ethereum",
+            "Hyperledger Fabric",
+            "or other suitable options based on project requirements.\nSmart Contract Language: Solidity",
+            "Golang",
+            "or others.\nFace Recognition Library: OpenCV",
+            "TensorFlow",
+            "or specialized facial recognition APIs.\nDatabase: PostgreSQL",
+            "MySQL",
+            "or other relational databases for structured data.\nFront-end Development: React",
+            "Angular",
+            "or Vue.js for building the user interface.\nBack-end Development: Node.js",
+            "Python (Django or Flask)",
+            "or Java for server-side logic.\nCloud Platform: AWS",
+            "Azure",
+            "or GCP for hosting and deployment."
+        ],
+        "description": "Blockchain security is a comprehensive risk management system for a blockchain network. It uses cybersecurity frameworks, assurance services and best practices to reduce risks against attacks and fraud. Basic blockchain security. Blockchain technology produces a structure of data with inherent security qualities.",
+        "projectUrl": "https://github.com/sibananda0718/Blockchain-Based-Security-Management-System-"
+    },
+    {
+        "name": "Web3Sign",
+        "title": "Resources & Tools",
+        "tags": [
+            "Resources",
+            "Tools",
+            "Web3",
+            "Blockchain"
+        ],
+        "description": "Explore a comprehensive list of resources and tools to help you get started with Web3 development, blockchain, smart contracts, and decentralized applications (dApps).",
+        "projectUrl": "https://github.com/Web3-0-World/Resources-Tools"
+    },
+    {
+        "name": "Adarsh Maurya",
+        "title": "DecenTrade",
+        "tags": [
+            "React",
+            "Solidity",
+            "ethers.js",
+            "ipfs",
+            "hardhat",
+            "Nodejs",
+            "css",
+            "javascript"
+        ],
+        "description": "DecenTrade is a decentralized digital marketplace built on the Ethereum blockchain, enabling secure and transparent transactions for digital assets.\n\nFeatures:\n    Smart contract-powered listings and purchases\n    User-friendly interface for browsing and interacting\n    Secure wallet integration for transactions\n    Decentralized rating and review system\n    Support for various digital assets (art, collectables, domains, etc.)",
+        "projectUrl": "https://github.com/4darsh-Dev/DecenTrade"
+    },
+    {
+        "name": "Harish",
+        "title": "blockchain",
+        "tags": [
+            "html",
+            "css",
+            "js",
+            "Blockchain"
+        ],
+        "description": "This repo is a comprehensive resource dedicated to providing you with the latest in blockchain technology, NFT trends, and tools to monitor cryptocurrency prices. Whether you're a blockchain enthusiast, an NFT collector, or simply curious about the evolving crypto landscape, this repository is designed to be your go-to guide.",
+        "projectUrl": "https://github.com/OpenTekHub/blockchain"
+    },
+    {
+        "name": "Subhadeep Roy",
+        "title": "Brave",
+        "tags": [
+            "Next Js",
+            "Typescript",
+            "TailwindCss",
+            "NeonDb",
+            "Clerk",
+            "Prisma",
+            "Gemini"
+        ],
+        "description": "Welcome to Brave, the ultimate AI-powered interview preparation suite. Don't be afraid to ace that interview and crack the job! We've got you covered. Brave is designed to simplify the interview process with advanced AI technology. Our platform helps you generate, personalize, and share detailed interview forms. Prepare efficiently with access to tips, mock interviews, and expert insights. Create standout resumes that impress and pass applicant tracking systems (ATS) in minutes.",
+        "projectUrl": "https://github.com/edgexhq/brave"
+    },
+    {
+        "name": "Kartik mehta ",
+        "title": "SupplyChainManagement",
+        "tags": [
+            "next",
+            "solidity",
+            "polygon",
+            "ether.js",
+            "tailwindcss"
+        ],
+        "description": "Blockchain Supply chain management plays a critical role in ensuring efficient operations and maintaining consumer trust. This project focuses on developing and deploying a decentralized application (DApp) powered by blockchain technology to streamline supply chain management processes.\n\nOur DApp utilizes the inherent transparency and immutability of blockchain to provide a secure and transparent platform for tracking goods at every stage of the supply chain. Leveraging smart contracts, the DApp automates various tasks such as verifying product authenticity, recording transactions, and managing inventory in real-time.",
+        "projectUrl": "https://github.com/kartikmehta18/SupplyChainManagement"
+    },
+    {
+        "name": "Anjali Gautam",
+        "title": "Doctor-s-Care",
+        "tags": [
+            "html",
+            "css",
+            "react.js",
+            "javascript",
+            "metamask"
+        ],
+        "description": "This repository contains the code and documentation for a comprehensive website designed to serve the needs of a modern dental clinic. The website offers a range of features to streamline patient management, appointment scheduling, and information dissemination.",
+        "projectUrl": "https://github.com/GautamAnjali569/Doctor-s-Care"
+    },
+    {
+        "name": "Parth Sharma",
+        "title": "StakeFi",
+        "tags": [
+            "Solidity",
+            "Foundry",
+            "Ethereum"
+        ],
+        "description": "It is a decentralized trading solution on Ethereum network to make staker profitable and to make network secure. An staking smart contract on any EVM network that allows users to stake one token and earn reward tokens periodically. This contract will focus on depositing and withdrawing staked tokens and the reward tokens and calculation of staking rewards.",
+        "projectUrl": "https://github.com/Parth-Sharma-tonchi/StakeFi"
+    },
+    {
+        "name": "Vedant Anand ",
+        "title": "Web3 Wallet",
+        "tags": [
+            "CSS",
+            "JavaScript",
+            "React",
+            "(NodeJs",
+            "Express[will be used later in the project])"
+        ],
+        "description": "It is a web3 based HD (Hierarchical Deterministic) wallet which gives you different wallet addresses (example of Eth and Sol) from the same Seed Phrase.",
+        "projectUrl": "https://github.com/VedantAnand17/Web3-Wallet"
+    },
+    {
+        "name": "Durgesh",
+        "title": "CryptoX",
+        "tags": [
+            "html",
+            "css",
+            "react.js",
+            "javascript",
+            "metamask"
+        ],
+        "description": "Buy & Sell Digital Assets In The CryptoX Coin CryptoX is the easiest, safest, and fastest way to buy & sell crypto asset exchange.",
+        "projectUrl": "https://github.com/Durgesh4993/CryptoX"
+    },
+    {
+        "name": "RAJBIR BISWAS ",
+        "title": "Decentralised Voting Dapp ( ICP mainnet )",
+        "tags": [
+            "Solidity",
+            "Hardhat",
+            "Volta testnet",
+            "web3.js",
+            "node.js",
+            "ICP mainnet",
+            "ether.js",
+            "metamask",
+            "express.js   etc"
+        ],
+        "description": "Created this project under  \" Blockchain in  wellness - A Leap towards Trust and Transparency \" in SRM HACKATHON 8.0 \n\nKEY OBJECTIVES : \n\ni) Designing and implementing smart contracts on a blockchain platform (e.g., Ethereum) to manage the voting process, including voter registration, candidate registration, vote casting, and result tallying.\nii) Developing a user-friendly frontend interface (web or mobile) using modern frameworks like ReactJS to facilitate voter interaction with the decentralized voting system.\niii) Ensure the security and integrity of the voting process by implementing cryptographic techniques, such as encryption and digital signatures, to protect voter privacy and prevent tampering.\niv) Enable transparency and auditability by recording all voting transactions on the blockchain, allowing stakeholders or users to verify the integrity of the election results.\n",
+        "projectUrl": "https://github.com/ELiTE0005/Decentralized-Voting-System"
+    },
+    {
+        "name": "Chrome Gaming",
+        "title": "Gamesphere",
+        "tags": [
+            "html",
+            "css",
+            "javascript",
+            "Blockchain"
+        ],
+        "description": "In this platform we are here to play games with our friends at a same time without any interuption Our primary goal is to create a plateform where two or more friends can gather and play games online (such as multiplayer) without having to download any software or tools to their computers or mobile devices.",
+        "projectUrl": "https://github.com/ChromeGaming/GameSphere"
+    },
+    {
+        "name": "JANANATHAN",
+        "title": "SaveXross",
+        "tags": [
+            "React",
+            "Solidity",
+            "Hardhat",
+            "Sepolia"
+        ],
+        "description": "This project aims to reduce response times in animal rescue operations by leveraging Web3 technology to create a stake and reward system. By utilizing blockchain, we ensure transparency, efficiency, and accountability in the rescue process. ",
+        "projectUrl": "https://github.com/SendouD/saveXross"
+    },
+    {
+        "name": "Harish",
+        "title": "cryptobot",
+        "tags": [
+            "python",
+            "api(optional)"
+        ],
+        "description": "Crypto Bot is a simple yet powerful Telegram bot that allows users to get real-time cryptocurrency prices with the ease of clicking a button. Whether you're a trader or a crypto enthusiast, this bot provides you with up-to-date information about any cryptocurrency you're interested in.",
+        "projectUrl": "https://github.com/OpenTekHub/cryptobot"
+    },
+    {
+        "name": "Durgesh",
+        "title": "SNOWFLAKE-TEST",
+        "tags": [
+            "html",
+            "css",
+            "react.js",
+            "javascript",
+            "metamask"
+        ],
+        "description": "Snowflake is a system that allows people from all over the world to access censored websites and applications. Similar to how VPNs assist users in getting around Internet censorship, Snowflake helps you avoid being noticed by Internet censors by making your Internet activity appear as though you're using the Internet for a regular video or voice calls.",
+        "projectUrl": "https://github.com/Durgesh4993/SNOWFLAKE-TEST"
+    },
+    {
+        "name": "Adarsh Singh",
+        "title": "VaultChain",
+        "tags": [
+            "Dfinity",
+            "MOTOKO",
+            "Internet Computer",
+            "Blockchain",
+            "DAPP"
+        ],
+        "description": "VaultChain is a decentralized app that keeps your data secure and private. Using blockchain technology, it ensures your information is encrypted and tamper-proof, making it safe and easy to manage. Perfect for handling sensitive data with peace of mind.",
+        "projectUrl": "https://github.com/adarsh-singh01/VaultChain"
+    },
+    {
+        "name": "Web3Sign",
+        "title": "Community Page",
+        "tags": [
+            "React Js",
+            "Web3.js ",
+            "solidity",
+            "ether js",
+            "hardhat"
+        ],
+        "description": "Welcome to the community! We are excited to have you join us in building a decentralized future with blockchain-based quizzes. Whether you're here to contribute to the codebase, suggest improvements, or just connect with like-minded people, you're in the right place.",
+        "projectUrl": "https://github.com/Web3-0-World/Community-Page"
+    },
+    {
+        "name": "Abhishek Kumar ",
+        "title": "CryptoPurse",
+        "tags": [
+            "Web3",
+            "blockchain",
+            "nextjs",
+            "tailwind",
+            "solana",
+            "etherium",
+            "PostgreSQL",
+            "prisma",
+            "nodejs"
+        ],
+        "description": "CryptoPurse is Your Personal cryptoCurrency wallet. create your wallet . CryptoPurse introduced to for the transcation of cryptoCurrency with feature of sending and receiving cryptoCurrency.",
+        "projectUrl": "https://github.com/AbhiDiva96/CryptoPurse"
+    },
+    {
+        "name": "Sumit Kumar",
+        "title": "Cab Rentals",
+        "tags": [
+            "Node.js",
+            "Solidity",
+            "MetaMask",
+            "HTML",
+            "JS",
+            "CSS"
+        ],
+        "description": "The Cab Rental repository is a software platform that allows users to rent vehicles for transportation with ease and convenience. The system offers a seamless experience for booking rides, enhanced by integrating Web3 features.",
+        "projectUrl": "https://github.com/07sumit1002/CabRental"
+    },
+    {
+        "name": "Shikhar Agarwal",
+        "title": "Builder Buddy",
+        "tags": [
+            "Blockchain",
+            "Solidity",
+            "Hardhat",
+            "Javascript",
+            "Ethereum",
+            "Polygon",
+            "Openzeppelin"
+        ],
+        "description": "The Cab Rental repository is a software platform that allows users to rent vehicles for transportation with ease and convenience. The system offers a seamless experience for booking rides, enhanced by integrating Web3 features.",
+        "projectUrl": "https://github.com/shikhar229169/Builder-Buddy"
+    },
+    {
+        "name": "Mansi Ruhil",
+        "title": "livetracker",
+        "tags": [
+            "html",
+            "css",
+            "react.js",
+            "javascript",
+            "google api keys",
+            "python and for deployement github"
+        ],
+        "description": "this projects's application notifies patients of nearby hospitals and the estimated time of arrival of the ambulance.It provides the hospital as well as ambulance drivers with critical information such as the patient\u2019s location and enables effective GPS route management via real time traffic information on scheduled routes.",
+        "projectUrl": "https://github.com/mansiruhil13/Bobble-AI"
+    },
+    {
+        "name": "Utsav Singhal",
+        "title": "PyVerse",
+        "tags": [
+            "python",
+            "blockchain",
+            "algorithms",
+            "game development",
+            "cybersecurity",
+            "deep learning"
+        ],
+        "description": "PyVerse is a dynamic, open-source hub showcasing a diverse collection of Python projects, tools, libraries, and scripts. Designed to cater to all skill levels, PyVerse covers a broad range of domains, including machine learning, web development, automation, data science, game development, and more. Whether you're a beginner exploring foundational scripts or an expert delving into advanced tools, PyVerse offers a structured, community-driven platform for learning, collaboration, and innovation in the Python ecosystem.",
+        "projectUrl": "https://github.com/UTSAVS26/PyVerse"
+    },
+    {
+        "name": "Chrome Gaming",
+        "title": "Community-Page",
+        "tags": [
+            "html",
+            "css",
+            "react.js",
+            "javascript",
+            "metamask"
+        ],
+        "description": "A Chrome gaming community page is an online space within the Chrome browser where gamers connect, discuss games, share content, get updates, troubleshoot issues, join events, and interact with developers. It's a hub for all things gaming-related in the Chrome ecosystem.",
+        "projectUrl": "https://github.com/ChromeGaming/Community-Page"
+    },
+    {
+        "name": "Web3Sign",
+        "title": "Online Quiz Application",
+        "tags": [
+            "html",
+            "css",
+            "react.js",
+            "Web3.js ",
+            "metamask"
+        ],
+        "description": "The Web3 Online Quiz Application is a decentralized platform that allows users to participate in quizzes while earning rewards in the form of tokens or NFTs. Built on blockchain technology, it offers a secure and transparent environment for users to engage in fun and educational quizzes.",
+        "projectUrl": "https://github.com/Web3-0-World/Online-Qwiz-Application"
+    }
+]
