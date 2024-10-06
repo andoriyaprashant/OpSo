@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:opso/modals/book_mark_model.dart';
@@ -14,6 +12,8 @@ import '../widgets/year_button.dart';
 
 
 class GoogleSummerOfCodeScreen extends StatefulWidget {
+  const GoogleSummerOfCodeScreen({super.key});
+
   @override
   State<GoogleSummerOfCodeScreen> createState() =>
       _GoogleSummerOfCodeScreenState();
@@ -23,8 +23,8 @@ class GoogleSummerOfCodeScreen extends StatefulWidget {
 class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   bool _isRefreshing = false;
   bool isBookmarked = true;
-  String currentPage = "/Google_summer_of_code";
-  String currentProject = "GoogleSummerOfCodeScreen";
+  String currentPage = "/google_summer_of_code";
+  String currentProject = "Google Summer of Code";
   String selectedOrg = ''; // Ensure this is defined
   List<Organization> gsoc2024 = [];
   List<Organization> gsoc2023 = [];
@@ -91,7 +91,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
         gsoc2023 = orgData2023.organizations ?? [];
         gsoc2024 = orgData2024.organizations ?? [];
         orgList = gsoc2024; // Default to the latest year
-        allOrganizations = [...orgList.map((org) => org.name!).toSet()];
+        allOrganizations = [...orgList.map((org) => org.name).toSet()];
       });
     } catch (e) {
       print('Error: $e');
@@ -111,7 +111,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     }
     if (!selectedLanguages.contains('All')) {
       orgList = orgList.where((project) =>
-          selectedLanguages.every((language) => project.technologies?.contains(language) == true)
+          selectedLanguages.every((language) => project.technologies.contains(language) == true)
       ).toList();
     }
 
@@ -133,8 +133,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       ..._getOrganizationsByYear(selectedYear)
           .where((org) =>
       selectedLanguages.contains('All') ||
-          org.technologies?.any(selectedLanguages.contains) == true)
-          .map((org) => org.name!)
+          org.technologies.any(selectedLanguages.contains) == true)
+          .map((org) => org.name)
           .toSet()
     ];
 
@@ -192,7 +192,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
         orgList = _getOrganizationsByYear(selectedYear)
             .where((element) =>
         element.name
-            ?.toLowerCase()
+            .toLowerCase()
             .contains(searchText.toLowerCase()) ==
             true)
             .toList();
@@ -400,8 +400,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                       const SizedBox(height: 20),
                       orgList.isEmpty
                           ? _isRefreshing
-                          ? Column(
-                        children: const [
+                          ? const Column(
+                        children: [
                           Center(
                               child: Column(
                                 children: [
@@ -426,7 +426,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                           ),
                         ],
                       )
-                          : Container(
+                          : SizedBox(
                         height: height,
                         child: ListView.builder(
                           itemCount: orgList.length,
@@ -442,7 +442,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                                       color: Colors.grey.withOpacity(0.5),
                                       spreadRadius: 2,
                                       blurRadius: 5,
-                                      offset: Offset(0, 3), // changes position of shadow
+                                      offset: const Offset(0, 3), // changes position of shadow
                                     ),
                                   ],
                                 ),
