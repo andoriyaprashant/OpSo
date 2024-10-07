@@ -416,6 +416,16 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
+      case 'Summer of Bitcoin':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => const SummerOfBitcoin()),
+        );
+        break;
+
+        
+
 
       case 'GirlScript Summer of Code':
         Navigator.push(
@@ -466,20 +476,24 @@ class _HomePageState extends State<HomePage> {
 
       case 'Outreachy':
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const OutreachyScreen()));
+            MaterialPageRoute(builder: (context) => const OutreachyScreen(),
+            ),
+            );
 
 
-      case 'Summer of Bitcoin':
-        Navigator.pushNamed(context, "/summer_of_bitcoin");
       
 
       case 'Hacktoberfest':
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const Hacktoberfest()));
+            MaterialPageRoute(builder: (context) => const Hacktoberfest(),
+            ),
+            );
       
       case 'Github Campus Expert':
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const GithubCampus()));
+            MaterialPageRoute(builder: (context) => const GithubCampus(),
+            ),
+            );
       
 
       case 'Open Summer of Code':
@@ -494,7 +508,11 @@ class _HomePageState extends State<HomePage> {
 
       case 'Linux Foundation':
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const LinuxFoundation()));
+            MaterialPageRoute(builder: (context) => const LinuxFoundation(),
+            ),
+            );
+
+
 
       default:
         break;
