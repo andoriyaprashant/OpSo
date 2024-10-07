@@ -712,6 +712,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           ),
         );
         break;
+
       case 'Google Season of Docs':
         Navigator.push(
           context,
@@ -730,6 +731,33 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
+         case 'Major League Hacking Fellowship':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const MajorLeagueHackingFellowship(),
+          ),
+        );
+        break;
+
+         case 'Summer of Bitcoin':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SummerOfBitcoin(),
+          ),
+        );
+        break;
+
+        case 'Hyperledger':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const Hyperledger(),
+          ),
+        );
+        break;
+
       case 'Redox OS Summer of Code':
         Navigator.push(
           context,
@@ -739,25 +767,11 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-      case 'Hyperledger':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const Hyperledger(),
-          ),
-        );
-        break;
+      
 
-      case 'Major League Hacking Fellowship':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const MajorLeagueHackingFellowship(),
-          ),
-        );
-        break;
+     
 
-      case 'outreachy':
+      case 'Outreachy':
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -815,9 +829,23 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
 
 
       case 'Linux Foundation':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const LinuxFoundation()));
+        Navigator.push(
+          context,
+            MaterialPageRoute(
+              builder: (context) => const LinuxFoundation(),
+            ),
+            );
         break;
+
+        case 'Open Summer of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const OpenSummerOfCode(),
+          ),
+        );
+        break;
+
 
 
       default:
