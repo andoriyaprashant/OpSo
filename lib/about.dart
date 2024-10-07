@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AboutScreen extends StatelessWidget {
+class  extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(
       context,
-    );
+    );AboutScreen
     return Scaffold(
       appBar: AppBar(
         title: Text('About App'),
