@@ -88,6 +88,38 @@ flutter run
 ```
 
 <hr>
+## Troubleshooting
+
+This section addresses common issues users may encounter while using the OpSo app, along with their solutions. If you experience any problems, refer to the list below:
+
+### Common Issues
+
+#### 1. Search Functionality Not Working
+*Problem*: Users may find that the search function does not return any results.  
+*Solution*:
+- Ensure that you are entering the correct keywords related to the open-source programs.
+- Try clearing the app cache and restarting the app.
+- Check your internet connection as the search functionality relies on online resources.
+
+![Search Functionality Screenshot](https://github.com/user-attachments/assets/dc403e35-6af7-4004-b18b-436b38bb117f)
+
+
+#### 2. Filters Not Responding
+*Problem*: The filter options do not seem to apply as expected.  
+*Solution*:
+- Make sure you have selected at least one filter option before clicking apply.
+- If the app crashes or behaves unexpectedly, try reinstalling the app.
+- Confirm that you have the latest version of the app installed.
+
+![Filters Screenshot](https://github.com/user-attachments/assets/d4faa3e0-e137-4ef8-b6dc-eaedccbe89c8)
+
+
+### Known Limitations
+
+- *Limited Program Listings*: The app currently does not cover all available open-source programs. If you are looking for a specific program, check the official websites.
+- *Network Dependency*: The app relies on a stable internet connection for fetching program details and updates. Offline functionality is limited.
+
+If you encounter any issues not listed above, please [open an issue](https://github.com/yourusername/OpSo/issues) on GitHub for further assistance.
 
 ### Adding New Open Source Programs
 
