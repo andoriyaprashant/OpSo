@@ -110,6 +110,7 @@ This section addresses common issues users may encounter while using the OpSo ap
 - Make sure you have selected at least one filter option before clicking apply.
 - If the app crashes or behaves unexpectedly, try reinstalling the app.
 - Confirm that you have the latest version of the app installed.
+- An "all filters" option should be included to easily reset filters.
 
 ![Filters Screenshot](https://github.com/user-attachments/assets/d4faa3e0-e137-4ef8-b6dc-eaedccbe89c8)
 
