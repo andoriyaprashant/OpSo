@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:opso/utils/program_info_pages/build_out_lined_box.dart';
 
-class   RsocInfo extends StatelessWidget {
-  const   RsocInfo({super.key});
+class RsocInfo extends StatelessWidget {
+  const RsocInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Project Information'),
@@ -21,13 +21,14 @@ class   RsocInfo extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Overview',
-                content: 'Announcing Redox Summer of Code for 2024! This summer, we have a small number of positions open for students or recent graduates. To qualify, you must be a contributor to Redox or to a Redox-adjacent project, and be an experienced Rust programmer.',
+                content:
+                    'Announcing Redox Summer of Code for 2024! This summer, we have a small number of positions open for students or recent graduates. To qualify, you must be a contributor to Redox or to a Redox-adjacent project, and be an experienced Rust programmer.',
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Eligibility',
                 content: 'Is there any registration fees?\n'
@@ -37,7 +38,6 @@ class   RsocInfo extends StatelessWidget {
                     'Any age limit for participation?\n'
                     'No, there is no age limit for participation in Redox OS Summer of Code. It is open for all.',
               ),
-
               const SizedBox(height: 20),
               Text(
                 'Prizes and Rewards',
@@ -70,30 +70,6 @@ class   RsocInfo extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildOutlinedBox(BuildContext context, {required String title, required String content}) {
-    return Container(
-      padding: const EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.orange, width: 1.0),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          const SizedBox(height: 10),
-          Text(
-            content,
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-        ],
       ),
     );
   }

@@ -10,10 +10,10 @@ import 'package:opso/widgets/outreachy_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
 class OutreachyScreen extends StatefulWidget {
-  const OutreachyScreen({Key? key}) : super(key: key);
+  const OutreachyScreen({super.key});
 
   @override
-  _OutreachyScreenState createState() => _OutreachyScreenState();
+  State<OutreachyScreen> createState() => _OutreachyScreenState();
 }
 
 class _OutreachyScreenState extends State<OutreachyScreen> {
@@ -28,7 +28,7 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
   List<String> allSkills = [];
   List<String> selectedSkills = ['All'];
   int selectedYear = 2021;
-
+  final Color color = const Color.fromRGBO(255, 183, 77, 1);
   List<OutreachyProjectModal> projectList = [];
 
   Future<void>? getProjectFunction;
@@ -103,6 +103,7 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
     setState(() {});
   }
 
+  // redundant function , not used anywhere.
   void _updateSkillsList() {
     allSkills = _extractUniqueSkills();
     allSkills.insert(0, 'All');
@@ -162,11 +163,11 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
             },
           ),
           IconButton(
-            icon: Icon(Icons.info_outline),
+            icon: const Icon(Icons.info_outline),
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => OUTREACHYInfo()),
+                MaterialPageRoute(builder: (context) => const OUTREACHYInfo()),
               );
             },
           ),
@@ -235,9 +236,7 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2021
-                ? Colors.white
-                : Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2021 ? Colors.white : color,
           ),
           YearButton(
             year: "2022",
@@ -248,9 +247,7 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2022
-                ? Colors.white
-                : Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2022 ? Colors.white : color,
           ),
           YearButton(
             year: "2023",
@@ -261,9 +258,7 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2023
-                ? Colors.white
-                : Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2023 ? Colors.white : color,
           ),
           YearButton(
             year: "2024",
@@ -274,9 +269,7 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2024
-                ? Colors.white
-                : Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2024 ? Colors.white : color,
           ),
         ],
       ),

@@ -11,7 +11,7 @@ class RsocPage extends StatefulWidget {
   const RsocPage({super.key});
 
   @override
-  _RsocPageState createState() => _RsocPageState();
+  State<RsocPage> createState() => _RsocPageState();
 }
 
 class _RsocPageState extends State<RsocPage> {
@@ -126,8 +126,8 @@ class _RsocPageState extends State<RsocPage> {
             } else if (snapshot.connectionState == ConnectionState.done) {
               return Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: ScreenUtil().setWidth(42), 
-                  vertical: ScreenUtil().setHeight(10), 
+                  horizontal: ScreenUtil().setWidth(42),
+                  vertical: ScreenUtil().setHeight(10),
                 ),
                 child: SingleChildScrollView(
                   child: Column(
@@ -140,19 +140,23 @@ class _RsocPageState extends State<RsocPage> {
                           suffixIcon: const Icon(Icons.search),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                            borderSide:
+                                const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                            borderSide:
+                                const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
                           disabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                            borderSide:
+                                const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                            borderSide:
+                                const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
                           contentPadding: EdgeInsets.symmetric(
                             vertical: ScreenUtil().setHeight(12),
@@ -178,7 +182,7 @@ class _RsocPageState extends State<RsocPage> {
                               padding: const EdgeInsets.symmetric(vertical: 8),
                               child: RsocProjectWidget(
                                 modal: projectList[index],
-                                height: ScreenUtil().screenHeight * 0.10, 
+                                height: ScreenUtil().screenHeight * 0.10,
                                 width: ScreenUtil().screenWidth,
                                 index: index,
                               ),

@@ -71,7 +71,7 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
   Widget build(BuildContext context) {
     // var height = MediaQuery.sizeOf(context).height;
     // var width = MediaQuery.sizeOf(context).width;
-    ScreenUtil.init(context, designSize: Size(360, 690));
+    ScreenUtil.init(context, designSize: const Size(360, 690));
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(

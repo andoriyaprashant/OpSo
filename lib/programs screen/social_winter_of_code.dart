@@ -9,15 +9,12 @@ import 'package:opso/programs_info_pages/swoc_info.dart';
 import 'package:opso/widgets/swoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
-
 class SWOCScreen extends StatefulWidget {
   const SWOCScreen({super.key});
-
 
   @override
   State<SWOCScreen> createState() => _SWOCScreenState();
 }
-
 
 class _SWOCScreenState extends State<SWOCScreen> {
   String currentPage = "/social_winter_of_code";
@@ -35,20 +32,17 @@ class _SWOCScreenState extends State<SWOCScreen> {
   List<SwocProjectModal> projectList = [];
   Future<void>? getProjectFunction;
 
-
   Future<void> initializeProjectLists() async {
     await _loadProjects('assets/projects/swoc/swoc2024.json', swoc2024);
     await _loadProjects('assets/projects/swoc/swoc2023.json', swoc2023);
     await _loadProjects('assets/projects/swoc/swoc2021.json', swoc2021);
     await _loadProjects('assets/projects/swoc/swoc2020.json', swoc2020);
 
-
     // Populate all unique organizations and languages
     allOrganizations = _extractUniqueValues((project) => project.owner);
     allLanguages = languages;
     projectList = List.from(swoc2024); // Default year
   }
-
 
   List<String> languages = [
     'All',
@@ -69,13 +63,14 @@ class _SWOCScreenState extends State<SWOCScreen> {
     'Dart'
   ];
 
-
   Future<void> _loadProjects(String path, List<SwocProjectModal> list) async {
     try {
       String response = await rootBundle.loadString(path);
       if (response.isNotEmpty) {
         var jsonList = json.decode(response) as List;
-        list.addAll(jsonList.map((data) => SwocProjectModal.getDataFromJson(data)).toList());
+        list.addAll(jsonList
+            .map((data) => SwocProjectModal.getDataFromJson(data))
+            .toList());
         print('Loaded projects from $path: ${list.length}');
       } else {
         print('Error: JSON data is null or empty in $path');
@@ -85,11 +80,8 @@ class _SWOCScreenState extends State<SWOCScreen> {
     }
   }
 
-
-
-
-
-  List<String> _extractUniqueValues(String Function(SwocProjectModal) extractor) {
+  List<String> _extractUniqueValues(
+      String Function(SwocProjectModal) extractor) {
     return {
       'All',
       ...swoc2024.map(extractor),
@@ -99,8 +91,9 @@ class _SWOCScreenState extends State<SWOCScreen> {
     }.toList();
   }
 
-
-  List<String> _extractUniqueLanguages(List<String> Function(SwocProjectModal) extractor) {
+// redundant method, not used anywhere.
+  List<String> _extractUniqueLanguages(
+      List<String> Function(SwocProjectModal) extractor) {
     final allLanguages = [
       for (var project in swoc2024) ...extractor(project),
       for (var project in swoc2023) ...extractor(project),
@@ -110,14 +103,12 @@ class _SWOCScreenState extends State<SWOCScreen> {
     return ['All', ...allLanguages.toSet()];
   }
 
-
   @override
   void initState() {
     super.initState();
     getProjectFunction = initializeProjectLists();
     _checkBookmarkStatus();
   }
-
 
   Future<void> _checkBookmarkStatus() async {
     bool bookmarkStatus = await HandleBookmark.isBookmarked(currentProject);
@@ -126,44 +117,39 @@ class _SWOCScreenState extends State<SWOCScreen> {
     });
   }
 
-
   void filterProjects() {
     // Filter projects by year first
     projectList = _getProjectsByYear();
 
-
     // Filter projects by selected languages
     if (!selectedLanguages.contains('All')) {
-      projectList = projectList.where((project) =>
-          selectedLanguages.every((language) => project.techstack.contains(language))
-      ).toList();
+      projectList = projectList
+          .where((project) => selectedLanguages
+              .every((language) => project.techstack.contains(language)))
+          .toList();
     }
-
 
     // Update the list of organizations based on the filtered projects by language
     _updateOrganizationList();
 
-
     // Filter projects by selected organizations
     if (!selectedOrganizations.contains('All')) {
-      projectList = projectList.where((project) => selectedOrganizations.contains(project.owner)).toList();
+      projectList = projectList
+          .where((project) => selectedOrganizations.contains(project.owner))
+          .toList();
     }
-
 
     // Ensure state is updated to reflect changes
     setState(() {});
   }
 
-
-
-
   void _updateOrganizationList() {
     allOrganizations = _extractUniqueValues((project) => project.owner)
-        .where((organization) => projectList.any((project) => project.owner == organization))
+        .where((organization) =>
+            projectList.any((project) => project.owner == organization))
         .toList();
     allOrganizations.insert(0, 'All');
   }
-
 
   List<SwocProjectModal> _getProjectsByYear() {
     switch (selectedYear) {
@@ -180,7 +166,6 @@ class _SWOCScreenState extends State<SWOCScreen> {
     }
   }
 
-
   Future<void> _refresh() async {
     await initializeProjectLists();
     setState(() {
@@ -190,12 +175,10 @@ class _SWOCScreenState extends State<SWOCScreen> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-
 
     return RefreshIndicator(
       onRefresh: _refresh,
@@ -211,7 +194,8 @@ class _SWOCScreenState extends State<SWOCScreen> {
               });
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text(isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                  content: Text(
+                      isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
                   duration: const Duration(seconds: 2),
                 ),
               );
@@ -223,11 +207,12 @@ class _SWOCScreenState extends State<SWOCScreen> {
             },
           ),
           IconButton(
-            icon: Icon(Icons.info_outline),
+            icon: const Icon(Icons.info_outline),
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SWOCInfo()),                );
+                MaterialPageRoute(builder: (context) => const SWOCInfo()),
+              );
             },
           ),
         ]),
@@ -239,7 +224,8 @@ class _SWOCScreenState extends State<SWOCScreen> {
             } else if (snapshot.connectionState == ConnectionState.done) {
               return SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 48, vertical: 8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -254,7 +240,8 @@ class _SWOCScreenState extends State<SWOCScreen> {
                         buttonText: "Filter by Language",
                         onConfirm: (results) {
                           setState(() {
-                            selectedLanguages = results.isNotEmpty ? results : ['All'];
+                            selectedLanguages =
+                                results.isNotEmpty ? results : ['All'];
                             filterProjects();
                           });
                         },
@@ -274,7 +261,6 @@ class _SWOCScreenState extends State<SWOCScreen> {
       ),
     );
   }
-
 
   Widget _buildSearchBar() {
     return TextFormField(
@@ -298,12 +284,14 @@ class _SWOCScreenState extends State<SWOCScreen> {
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
         ),
-        contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
       ),
       onFieldSubmitted: (value) {
         setState(() {
           projectList = _getProjectsByYear()
-              .where((project) => project.name.toLowerCase().contains(value.toLowerCase()))
+              .where((project) =>
+                  project.name.toLowerCase().contains(value.toLowerCase()))
               .toList();
         });
       },
@@ -316,7 +304,6 @@ class _SWOCScreenState extends State<SWOCScreen> {
       },
     );
   }
-
 
   Widget _buildYearButtons() {
     return SizedBox(
@@ -339,7 +326,9 @@ class _SWOCScreenState extends State<SWOCScreen> {
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2020 ? Colors.white : const Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2020
+                ? Colors.white
+                : const Color.fromRGBO(255, 183, 77, 1),
           ),
           YearButton(
             year: "2021",
@@ -350,7 +339,9 @@ class _SWOCScreenState extends State<SWOCScreen> {
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2021 ? Colors.white : const Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2021
+                ? Colors.white
+                : const Color.fromRGBO(255, 183, 77, 1),
           ),
           YearButton(
             year: "2023",
@@ -361,7 +352,9 @@ class _SWOCScreenState extends State<SWOCScreen> {
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2023 ? Colors.white : const Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2023
+                ? Colors.white
+                : const Color.fromRGBO(255, 183, 77, 1),
           ),
           YearButton(
             year: "2024",
@@ -372,13 +365,14 @@ class _SWOCScreenState extends State<SWOCScreen> {
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2024 ? Colors.white : const Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor: selectedYear == 2024
+                ? Colors.white
+                : const Color.fromRGBO(255, 183, 77, 1),
           ),
         ],
       ),
     );
   }
-
 
   Widget _buildMultiSelectField({
     required List<String> items,
@@ -392,7 +386,8 @@ class _SWOCScreenState extends State<SWOCScreen> {
       backgroundColor: isDarkMode ? Colors.grey.shade100 : Colors.white,
       items: items.map((e) => MultiSelectItem<String>(e, e)).toList(),
       initialValue: selectedValues,
-      title: Text(title,style: TextStyle(color: isDarkMode ? Colors.black : Colors.black)),
+      title: Text(title,
+          style: TextStyle(color: isDarkMode ? Colors.black : Colors.black)),
       buttonText: Text(buttonText),
       onConfirm: onConfirm,
       decoration: BoxDecoration(
@@ -401,7 +396,6 @@ class _SWOCScreenState extends State<SWOCScreen> {
       ),
     );
   }
-
 
   Widget _buildProjectList(double height, double width) {
     return SizedBox(
@@ -423,4 +417,3 @@ class _SWOCScreenState extends State<SWOCScreen> {
     );
   }
 }
-

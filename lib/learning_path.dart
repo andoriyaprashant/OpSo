@@ -23,46 +23,53 @@ class LearningPathPage extends StatelessWidget {
             _buildTimelineItem(
               time: 'Step 2',
               title: 'Clone the Repository',
-              description: 'Clone your forked repository to your local machine.',
+              description:
+                  'Clone your forked repository to your local machine.',
             ),
             _buildTimelineItem(
               time: 'Step 3',
               title: 'Create a New Branch',
-              description: 'Create a new branch for your feature or bug fix: git checkout -b feature-name.',
+              description:
+                  'Create a new branch for your feature or bug fix: git checkout -b feature-name.',
             ),
             _buildTimelineItem(
               time: 'Step 4',
               title: 'Make Changes',
-              description: 'Make your changes and ensure that the code follows the Flutter style guide.',
+              description:
+                  'Make your changes and ensure that the code follows the Flutter style guide.',
             ),
             _buildTimelineItem(
               time: 'Step 5',
               title: 'Test Your Changes',
-              description: 'Test your changes locally to ensure they work as expected.',
+              description:
+                  'Test your changes locally to ensure they work as expected.',
             ),
             _buildTimelineItem(
               time: 'Step 6',
               title: 'Commit Your Changes',
-              description: 'Commit your changes with descriptive commit messages: git commit -m "Add feature XYZ".',
+              description:
+                  'Commit your changes with descriptive commit messages: git commit -m "Add feature XYZ".',
             ),
             _buildTimelineItem(
               time: 'Step 7',
               title: 'Push Your Changes',
-              description: 'Push your changes to your forked repository: git push origin feature-name.',
+              description:
+                  'Push your changes to your forked repository: git push origin feature-name.',
             ),
             _buildTimelineItem(
               time: 'Step 8',
               title: 'Create a Pull Request',
-              description: 'Create a pull request against the main branch of the original repository.',
+              description:
+                  'Create a pull request against the main branch of the original repository.',
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          const url = 'https://goodfirstissue.dev/';
-          if (await canLaunch(url)) {
-            await launch(url);
+          final url = Uri.parse('https://goodfirstissue.dev/');
+          if (await canLaunchUrl(url)) {
+            await launchUrl(url);
           } else {
             throw 'Could not launch $url';
           }

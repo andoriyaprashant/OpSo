@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:opso/utils/program_info_pages/build_out_lined_box.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
-class   GSSOCInfo extends StatelessWidget {
-  const   GSSOCInfo({super.key});
+class GSSOCInfo extends StatelessWidget {
+  const GSSOCInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +13,11 @@ class   GSSOCInfo extends StatelessWidget {
       {'date': '20th May', 'description': 'Community bonding period starts!'},
       {'date': '30th May', 'description': 'Leaderboard Opens.'},
       {'date': '30th July', 'description': 'Coding period ends.'},
-      {'date': '2nd week of August', 'description': 'Results will be declared.'},
-      ];
-
+      {
+        'date': '2nd week of August',
+        'description': 'Results will be declared.'
+      },
+    ];
 
     return Scaffold(
       appBar: AppBar(
@@ -31,13 +34,14 @@ class   GSSOCInfo extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Overview',
-                content: 'GirlScript Summer Of Code is a three-month-long Open-Source Program conducted every summer by the Girlscript Foundation. With constant efforts, participants contribute to numerous projects under the extreme guidance of skilled mentors over these months. With such exposure, students begin to contribute to real-world projects from the comfort of their homes.',
+                content:
+                    'GirlScript Summer Of Code is a three-month-long Open-Source Program conducted every summer by the Girlscript Foundation. With constant efforts, participants contribute to numerous projects under the extreme guidance of skilled mentors over these months. With such exposure, students begin to contribute to real-world projects from the comfort of their homes.',
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Eligibility',
                 content: 'Is there any registration fees?\n'
@@ -47,7 +51,6 @@ class   GSSOCInfo extends StatelessWidget {
                     'Any age limit for participation?\n'
                     'No, there is no age limit for participation in GSSoC. It is open for all.',
               ),
-
               const SizedBox(height: 20),
               Text(
                 'Program Timeline',
@@ -112,30 +115,6 @@ class   GSSOCInfo extends StatelessWidget {
     );
   }
 
-  Widget _buildOutlinedBox(BuildContext context, {required String title, required String content}) {
-    return Container(
-      padding: const EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.orange, width: 1.0),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          const SizedBox(height: 10),
-          Text(
-            content,
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _buildTimeline(List<Map<String, dynamic>> events) {
     return Column(
       children: events.asMap().entries.map((entry) {
@@ -180,9 +159,9 @@ class   GSSOCInfo extends StatelessWidget {
 
   Widget _buildEventChild(Map<String, dynamic> event) {
     return Container(
-      width: 150,  
-      margin: const EdgeInsets.all(10),  
-      padding: const EdgeInsets.all(10),  
+      width: 150,
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.orange,
         borderRadius: BorderRadius.circular(8),

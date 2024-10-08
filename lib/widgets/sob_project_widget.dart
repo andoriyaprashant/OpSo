@@ -45,7 +45,7 @@ class SobProjectWidget extends StatelessWidget {
           children: [
             Text(
               modal.name,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.orange,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -70,8 +70,8 @@ class SobProjectWidget extends StatelessWidget {
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 5, horizontal: 10),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                   child: Text(
                     modal.organization,
                     style: TextStyle(color: color),
@@ -120,7 +120,7 @@ class SobProjectWidget extends StatelessWidget {
                     runSpacing: 8,
                     children: List.generate(
                       modal.projects.length,
-                          (index) => GestureDetector(
+                      (index) => GestureDetector(
                         onTap: () {
                           if (modal.projects[index] != "NA") {
                             _launchUrl(modal.projects[index]);

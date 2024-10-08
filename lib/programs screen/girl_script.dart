@@ -8,7 +8,6 @@ import 'package:opso/modals/gssoc_project_modal.dart';
 import 'package:opso/programs_info_pages/gssoc_info.dart';
 import 'package:opso/widgets/gssoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
-import '../widgets/SearchandFilterWidget.dart';
 
 class GSSOCScreen extends StatefulWidget {
   const GSSOCScreen({super.key});
@@ -83,6 +82,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     }.toList();
   }
 
+// redundant method , not referenced anywhere.
   List<String> _extractUniqueLanguages(
       List<String> Function(GssocProjectModal) extractor) {
     final allLanguages = [
@@ -168,6 +168,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // values not used.
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
 
@@ -391,21 +392,19 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
   }
 
   Widget _buildProjectList() {
-    return Container(
-      child: ListView.builder(
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        itemCount: projectList.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: GssocProjectWidget(
-              index: index + 1,
-              modal: projectList[index],
-            ),
-          );
-        },
-      ),
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: projectList.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: GssocProjectWidget(
+            index: index + 1,
+            modal: projectList[index],
+          ),
+        );
+      },
     );
   }
 }

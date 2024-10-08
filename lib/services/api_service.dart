@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 
-
 import '../modals/GSoC/Gsoc.dart';
 
 class ApiService {
@@ -30,9 +29,9 @@ class ApiService {
         break;
     }
     final String allOrg = '$baseUrl$yearOrgUrl';
-    print("status is" + allOrg);
+    print("status is $allOrg");
     try {
-      Response response = await Dio().get(allOrg + ".json");
+      Response response = await Dio().get("$allOrg.json");
       if (response.statusCode == 200) {
         // Parse the JSON response into a Gsoc object
         return Gsoc.fromJson(response.data);

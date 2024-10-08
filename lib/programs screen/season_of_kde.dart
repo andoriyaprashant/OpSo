@@ -12,7 +12,7 @@ class SeasonOfKDE extends StatefulWidget {
   const SeasonOfKDE({super.key});
 
   @override
-  _SeasonOfKDEState createState() => _SeasonOfKDEState();
+  State<SeasonOfKDE> createState() => _SeasonOfKDEState();
 }
 
 class _SeasonOfKDEState extends State<SeasonOfKDE> {
@@ -173,19 +173,23 @@ class _SeasonOfKDEState extends State<SeasonOfKDE> {
                           suffixIcon: const Icon(Icons.search),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                            borderSide:
+                                const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                            borderSide:
+                                const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
                           disabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                            borderSide:
+                                const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                            borderSide:
+                                const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
                           contentPadding: EdgeInsets.symmetric(
                             vertical: ScreenUtil().setHeight(12),
@@ -206,7 +210,8 @@ class _SeasonOfKDEState extends State<SeasonOfKDE> {
                         height: MediaQuery.of(context).size.height * 0.1,
                         child: GridView(
                           physics: const NeverScrollableScrollPhysics(),
-                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3,
                             childAspectRatio: 1.3,
                             crossAxisSpacing: 15,

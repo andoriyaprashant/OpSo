@@ -1,45 +1,28 @@
 import 'dart:ui';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:opso/ChatBotpage.dart';
+import 'package:opso/utils/home_page/home_page_methods.dart';
+import 'chat_bot_page.dart';
 import 'package:opso/learning_path.dart';
 import 'package:opso/opso_timeline.dart';
-import 'package:opso/programs%20screen/fossasia.dart';
-import 'package:opso/programs%20screen/girl_script.dart';
-import 'package:opso/programs%20screen/github_campus.dart';
-import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
-import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
-import 'package:opso/programs%20screen/hacktoberfest_screen.dart';
-import 'package:opso/programs%20screen/hyperledger.dart';
-import 'package:opso/programs%20screen/linux_foundation.dart';
-import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
-import 'package:opso/programs%20screen/open_summer_of_code.dart';
-import 'package:opso/programs%20screen/outreachy.dart';
-import 'package:opso/programs%20screen/redox.dart';
-import 'package:opso/programs%20screen/season_of_kde.dart';
-import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
-import 'package:opso/programs%20screen/social_winter_of_code.dart';
-import 'package:opso/services/notificationService.dart';
-import 'package:opso/widgets/book_mark_screen.dart';
+
+import 'package:opso/services/notification_service.dart';
+import 'package:opso/widgets/home_page_widgets/book_mark_screen.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:opso/widgets/faq.dart';
+import 'package:opso/widgets/home_page_widgets/faq.dart';
+import 'package:opso/widgets/home_page_widgets/program_option.dart';
 import 'dart:math' as math;
 
-
 import 'about.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -49,7 +32,6 @@ class _HomePageState extends State<HomePage> {
 
     _getInitialThemeMode();
   }
-
 
   int _initialLabelIndex = 0;
   void _getInitialThemeMode() async {
@@ -63,9 +45,7 @@ class _HomePageState extends State<HomePage> {
         _initialLabelIndex = 0;
       }
     });
-
   }
-
 
 //show various notification from here
   void showNotification() async {
@@ -75,7 +55,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-
 //used to show the notification every 5 ms
   void showScheduleNotification() async {
     await NotificationService.showNotification(
@@ -84,7 +63,6 @@ class _HomePageState extends State<HomePage> {
         scheduled: true,
         interval: 5);
   }
-
 
   final List<Program> programs = [
     Program(
@@ -115,7 +93,7 @@ class _HomePageState extends State<HomePage> {
       title: 'Linux Foundation',
       imageAssetPath: 'assets/linux_foundation_logo.png',
     ),
-     Program(
+    Program(
       title: 'Hacktoberfest',
       imageAssetPath: 'assets/hacktoberfest.png',
     ),
@@ -149,7 +127,6 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
-
   @override
   Widget build(BuildContext context) {
     // var media = MediaQuery.of(context).size;
@@ -157,25 +134,26 @@ class _HomePageState extends State<HomePage> {
         ? Colors.black.withOpacity(0.6) // Example dark mode color
         : Colors.white.withOpacity(0.6); // Example light mode color
 
-
     ScreenUtil.init(
       context,
     );
     final double appBarFontSize = ScreenUtil().setSp(18);
     final double appTextFontSize = ScreenUtil().setSp(20);
-    final double SizedSize = ScreenUtil().setHeight(20);
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'OpSo',
           style:
-          TextStyle(fontWeight: FontWeight.bold, fontSize: appBarFontSize),
+              TextStyle(fontWeight: FontWeight.bold, fontSize: appBarFontSize),
         ),
         actions: [
           IconButton(
             icon: const Icon(Icons.search_sharp),
             onPressed: () {
-              showSearch(context: context, delegate: ProgramSearchDelegate(), );
+              showSearch(
+                context: context,
+                delegate: ProgramSearchDelegate(),
+              );
             },
           ),
           /*IconButton(
@@ -215,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                 child: SafeArea(
                   child: Padding(
                     padding:
-                    const EdgeInsets.only(left: 30, right: 30, top: 30),
+                        const EdgeInsets.only(left: 30, right: 30, top: 30),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -225,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               IconButton(
-                                icon: Icon(Icons.close),
+                                icon: const Icon(Icons.close),
                                 onPressed: () => Navigator.pop(context),
                               ),
                               SizedBox(
@@ -278,7 +256,7 @@ class _HomePageState extends State<HomePage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                          const BookMarkScreen()));
+                                              const BookMarkScreen()));
                                 },
                               ),
                               const SizedBox(height: 15),
@@ -290,7 +268,7 @@ class _HomePageState extends State<HomePage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                          LearningPathPage()));
+                                              const LearningPathPage()));
                                 },
                               ),
                               const SizedBox(height: 15),
@@ -307,7 +285,7 @@ class _HomePageState extends State<HomePage> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                      const OpsoTimeLineScreen(),
+                                          const OpsoTimeLineScreen(),
                                     ),
                                   );
                                 },
@@ -321,8 +299,7 @@ class _HomePageState extends State<HomePage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          FAQPage(),
+                                      builder: (context) => FAQPage(),
                                     ),
                                   );
                                 },
@@ -330,7 +307,7 @@ class _HomePageState extends State<HomePage> {
                               SizedBox(height: ScreenUtil().setHeight(15)),
                               ListTile(
                                 leading:
-                                const Icon(FontAwesomeIcons.circleInfo),
+                                    const Icon(FontAwesomeIcons.circleInfo),
                                 title: const Text('About'),
                                 onTap: () {
                                   Navigator.push(
@@ -375,194 +352,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-
-  void navigateToScreen(BuildContext context, Program program) {
-    switch (program.title) {
-      case 'Google Summer of Code':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => GoogleSummerOfCodeScreen(),
-          ),
-        );
-        break;
-
-
-      case 'Google Season of Docs':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => GoogleSeasonOfDocsScreen(),
-          ),
-        );
-        break;
-
-      case 'FOSSASIA Codeheat':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => FOSSASIA(),
-          ),
-        );
-        break;
-
-
-      case 'Major League Hacking Fellowship':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => const MajorLeagueHackingFellowship()),
-        );
-        break;
-
-
-      case 'GirlScript Summer of Code':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const GSSOCScreen(),
-          ),
-        );
-        break;
-
-
-      case 'Social Winter of Code':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const SWOCScreen(),
-          ),
-        );
-        break;
-
-      case 'Season of KDE':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const SeasonOfKDE(),
-          ),
-        );
-        break;
-
-      case 'Hyperledger':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const Hyperledger(),
-          ),
-        );
-        break;
-
-      case 'Redox OS Summer of Code':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const RsocPage(),
-          ),
-        );
-        break;
-
-
-      case 'Outreachy':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const OutreachyScreen()));
-
-
-      case 'Summer of Bitcoin':
-        Navigator.pushNamed(context, "/summer_of_bitcoin");
-      
-
-      case 'Hacktoberfest':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const Hacktoberfest()));
-      
-      case 'Github Campus Expert':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const GithubCampus()));
-      
-
-      case 'Open Summer of Code':
-
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const OpenSummerOfCode(),
-          ),
-        );
-
-
-      case 'Linux Foundation':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const LinuxFoundation()));
-
-      default:
-        break;
-    }
-  }
 }
-
-
-class ProgramOption extends StatelessWidget {
-  final String title;
-  final String imageAssetPath;
-  final VoidCallback onTap;
-
-
-  const ProgramOption({
-    super.key,
-    required this.title,
-    required this.imageAssetPath,
-    required this.onTap,
-  });
-
-
-  @override
-  Widget build(BuildContext context) {
-    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final borderColor = isDarkMode ? Colors.white : Colors.black45;
-    return Column(
-      children: [
-        GestureDetector(
-          onTap: onTap,
-          child: Container(
-            padding: EdgeInsets.all(ScreenUtil().setWidth(20)),
-            decoration: BoxDecoration(
-              // color: const Color.fromARGB(255, 237, 237, 239),
-              borderRadius: BorderRadius.circular(15),
-              border: Border.all(
-                width: 1,
-                color: borderColor,
-              ),
-            ),
-            child: Row(
-              children: [
-                Image.asset(
-                  imageAssetPath,
-                  width: ScreenUtil().setWidth(50),
-                  height: ScreenUtil().setHeight(50),
-                ),
-                SizedBox(width: ScreenUtil().setWidth(20)),
-                Expanded(
-                  child: Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: ScreenUtil().setSp(18),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                const Icon(Icons.arrow_forward),
-              ],
-            ),
-          ),
-        ),
-        SizedBox(height: ScreenUtil().setHeight(20)),
-      ],
-    );
-  }
-}
-
 
 class ProgramSearchDelegate extends SearchDelegate<String> {
   final List<Program> programs = [
@@ -590,11 +380,11 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
       title: 'Summer of Bitcoin',
       imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
     ),
-     Program(
+    Program(
       title: 'Hacktoberfest',
       imageAssetPath: 'assets/hacktoberfest.png',
     ),
-     Program(
+    Program(
       title: 'Github Campus Expert',
       imageAssetPath: 'assets/git_campus_logo.png',
     ),
@@ -628,7 +418,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     ),
   ];
 
-
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -641,7 +430,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     ];
   }
 
-
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
@@ -652,170 +440,34 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     );
   }
 
-
   @override
   Widget buildResults(BuildContext context) {
     return Container();
   }
-
 
   @override
   Widget buildSuggestions(BuildContext context) {
     final List<String> suggestionList = query.isEmpty
         ? ['']
         : programs
-        .where((program) =>
-        program.title.toLowerCase().contains(query.toLowerCase()))
-        .map((program) => program.title)
-        .toList();
+            .where((program) =>
+                program.title.toLowerCase().contains(query.toLowerCase()))
+            .map((program) => program.title)
+            .toList();
 
-
-    return suggestionList.isNotEmpty ? ListView.builder(
-      itemCount: suggestionList.length,
-      itemBuilder: (context, index) => suggestionList[0] == '' ? Container(): ListTile(
-        title: Text(suggestionList[index]),
-        onTap: () {
-          navigateToScreen(context, suggestionList[index]);
-        },
-      ),
-    ) : Image.asset('assets/no-results.png');
+    return suggestionList.isNotEmpty
+        ? ListView.builder(
+            itemCount: suggestionList.length,
+            itemBuilder: (context, index) => suggestionList[0] == ''
+                ? Container()
+                : ListTile(
+                    title: Text(suggestionList[index]),
+                    onTap: () {
+                      navigateToScreen2(
+                          context, suggestionList[index], programs);
+                    },
+                  ),
+          )
+        : Image.asset('assets/no-results.png');
   }
-
-
-  void navigateToScreen(BuildContext context, String title) {
-    final Program selectedProgram =
-    programs.firstWhere((program) => program.title == title);
-    switch (selectedProgram.title) {
-      case 'Google Summer of Code':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => GoogleSummerOfCodeScreen(),
-          ),
-        );
-        break;
-      case 'Google Season of Docs':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => GoogleSeasonOfDocsScreen(),
-          ),
-        );
-        break;
-
-      case 'FOSSASIA Codeheat':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const FOSSASIA(),
-          ),
-        );
-        break;
-
-      case 'Redox OS Summer of Code':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const RsocPage(),
-          ),
-        );
-        break;
-
-      case 'Hyperledger':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const Hyperledger(),
-          ),
-        );
-        break;
-
-      case 'Major League Hacking Fellowship':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const MajorLeagueHackingFellowship(),
-          ),
-        );
-        break;
-
-      case 'outreachy':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const OutreachyScreen(),
-          ),
-        );
-        break;
-
-
-      case 'GirlScript Summer of Code':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const GSSOCScreen(),
-          ),
-        );
-        break;
-
-
-      case 'Social Winter of Code':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const SWOCScreen(),
-          ),
-        );
-        break;
-
-      case 'Season of KDE':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const SeasonOfKDE(),
-          ),
-        );
-        break;
-      
-      case 'Hacktoberfest':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const Hacktoberfest(),
-          ),
-        );
-        break;
-
-      case 'Github Campus Expert':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const GithubCampus(),
-          ),
-        );
-        break;
-
-
-      case 'Linux Foundation':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const LinuxFoundation()));
-        break;
-
-
-      default:
-        break;
-    }
-  }
-}
-
-
-class Program {
-  final String title;
-  final String imageAssetPath;
-
-
-  Program({
-    required this.title,
-    required this.imageAssetPath,
-  });
 }

@@ -3,6 +3,8 @@ import 'package:url_launcher/link.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AboutScreen extends StatelessWidget {
+  const AboutScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(
@@ -10,7 +12,7 @@ class AboutScreen extends StatelessWidget {
     );
     return Scaffold(
       appBar: AppBar(
-        title: Text('About App'),
+        title: const Text('About App'),
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(
@@ -50,8 +52,8 @@ class AboutScreen extends StatelessWidget {
               target: LinkTarget.self,
               builder: (context, followlink) => ElevatedButton.icon(
                 onPressed: followlink,
-                icon: Icon(Icons.code),
-                label: Text('GitHub'),
+                icon: const Icon(Icons.code),
+                label: const Text('GitHub'),
               ),
             ),
             SizedBox(height: ScreenUtil().setHeight(10)),

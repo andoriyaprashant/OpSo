@@ -1,27 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:opso/utils/program_info_pages/build_out_lined_box.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
-class   HYPERLEDGERInfo extends StatelessWidget {
-  const   HYPERLEDGERInfo({super.key});
+class HYPERLEDGERInfo extends StatelessWidget {
+  const HYPERLEDGERInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> events = [
-      {'date': '2024-02-05', 'description': 'Community members submitting mentorship project proposals'},
-      {'date': '2024-03-18', 'description': 'Mentorship project proposal review by Technical Oversight Committee'},
+      {
+        'date': '2024-02-05',
+        'description':
+            'Community members submitting mentorship project proposals'
+      },
+      {
+        'date': '2024-03-18',
+        'description':
+            'Mentorship project proposal review by Technical Oversight Committee'
+      },
       {'date': '2024-04-04', 'description': 'Mentee application period'},
-      {'date': '2024-05-13', 'description': 'Mentee application review and applicant interview'},
-      {'date': '2024-05-27', 'description': 'Selected mentee notification and acceptance'},
+      {
+        'date': '2024-05-13',
+        'description': 'Mentee application review and applicant interview'
+      },
+      {
+        'date': '2024-05-27',
+        'description': 'Selected mentee notification and acceptance'
+      },
       {'date': '2024-06-03', 'description': 'Onboarding/orientation sessions'},
-      {'date': '2024-06-17', 'description': 'Mentee/mentor working period begins (mentees are expected to commit 15-20 hours a week on a consistent basis during this time)'},
+      {
+        'date': '2024-06-17',
+        'description':
+            'Mentee/mentor working period begins (mentees are expected to commit 15-20 hours a week on a consistent basis during this time)'
+      },
       {'date': '2024-07-22', 'description': '1st quarter mentee evaluation'},
-      {'date': '2024-09-02', 'description': 'Midterm mentee evaluation, and midterm stipend will be paid to eligible mentees if they are in good standing following the midterm evaluation'},
+      {
+        'date': '2024-09-02',
+        'description':
+            'Midterm mentee evaluation, and midterm stipend will be paid to eligible mentees if they are in good standing following the midterm evaluation'
+      },
       {'date': '2024-10-14', 'description': '3rd quarter mentee evaluation'},
-      {'date': '2024-11-25', 'description': 'Final mentee evaluation, and final stipend will be paid to eligible mentees if they are in good standing following the final evaluation and successful completion of deliverables as determined by the mentor and program staff'},
+      {
+        'date': '2024-11-25',
+        'description':
+            'Final mentee evaluation, and final stipend will be paid to eligible mentees if they are in good standing following the final evaluation and successful completion of deliverables as determined by the mentor and program staff'
+      },
     ];
-
-
-
 
     return Scaffold(
       appBar: AppBar(
@@ -38,16 +62,18 @@ class   HYPERLEDGERInfo extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Overview',
-                content: 'The Hyperledger Mentorship Program is aimed at creating a structured hands-on learning opportunity for new contributors who may otherwise lack the opportunity to gain exposure to or entry into the Hyperledger open source development community.',
+                content:
+                    'The Hyperledger Mentorship Program is aimed at creating a structured hands-on learning opportunity for new contributors who may otherwise lack the opportunity to gain exposure to or entry into the Hyperledger open source development community.',
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Mentee Applicant Eligibility',
-                content: 'You must be at least 18 years of age by end of May.\n\n'
+                content:
+                    'You must be at least 18 years of age by end of May.\n\n'
                     'The mentorship will be remote. However, you must be eligible to work in the country and jurisdiction where you reside in for the entire duration of the program.',
               ),
               const SizedBox(height: 20),
@@ -89,30 +115,6 @@ class   HYPERLEDGERInfo extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildOutlinedBox(BuildContext context, {required String title, required String content}) {
-    return Container(
-      padding: const EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.orange, width: 1.0),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          const SizedBox(height: 10),
-          Text(
-            content,
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-        ],
       ),
     );
   }
@@ -161,9 +163,9 @@ class   HYPERLEDGERInfo extends StatelessWidget {
 
   Widget _buildEventChild(Map<String, dynamic> event) {
     return Container(
-      width: 150,  
-      margin: const EdgeInsets.all(10),  
-      padding: const EdgeInsets.all(10),  
+      width: 150,
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.orange,
         borderRadius: BorderRadius.circular(8),

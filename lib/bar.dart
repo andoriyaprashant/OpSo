@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:opso/about.dart';
-import 'package:opso/widgets/book_mark_screen.dart';
+import 'package:opso/widgets/home_page_widgets/book_mark_screen.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarWidget({Key? key}) : super(key: key);
+  const AppBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       body: Material(
         color: Colors.transparent,
         child: Ink(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
           ),
           child: InkWell(
@@ -58,7 +58,8 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AboutScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const AboutScreen()),
                       );
                     },
                   ),
@@ -72,7 +73,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
 class MenuOption extends StatefulWidget {
@@ -80,13 +81,13 @@ class MenuOption extends StatefulWidget {
   final VoidCallback onTap;
 
   const MenuOption({
-    Key? key,
+    super.key,
     required this.title,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
-  _MenuOptionState createState() => _MenuOptionState();
+  State<MenuOption> createState() => _MenuOptionState();
 }
 
 class _MenuOptionState extends State<MenuOption> {
@@ -115,25 +116,23 @@ class _MenuOptionState extends State<MenuOption> {
               });
               widget.onTap();
             },
-            child: Container(
-              child: Padding(
-                padding: EdgeInsets.all(ScreenUtil().setWidth(10)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(ScreenUtil().setWidth(10)),
-                      child: Text(
-                        widget.title,
-                        style: TextStyle(
-                          fontSize: ScreenUtil().setSp(18),
-                          fontWeight: FontWeight.bold,
-                        ),
+            child: Padding(
+              padding: EdgeInsets.all(ScreenUtil().setWidth(10)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(ScreenUtil().setWidth(10)),
+                    child: Text(
+                      widget.title,
+                      style: TextStyle(
+                        fontSize: ScreenUtil().setSp(18),
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const Icon(Icons.arrow_forward_ios),
-                  ],
-                ),
+                  ),
+                  const Icon(Icons.arrow_forward_ios),
+                ],
               ),
             ),
           ),

@@ -22,8 +22,8 @@ class RsocProjectWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () async {
         Uri uri = Uri.parse(modal.githubUrl);
-        if (await canLaunch(uri.toString())) {
-          await launch(uri.toString());
+        if (await canLaunchUrl(uri)) {
+          await launchUrl(uri);
         } else {
           throw 'Could not launch $uri';
         }

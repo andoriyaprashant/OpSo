@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:opso/utils/program_info_pages/build_out_lined_box.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 class GSOCInfo extends StatelessWidget {
@@ -7,20 +8,66 @@ class GSOCInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> events = [
-      {'date': 'February 21 - 18:00 UTC', 'description': 'List of accepted mentoring organizations published'},
-      {'date': 'February 22 - March 18', 'description': 'Potential GSoC contributors discuss application ideas with mentoring organizations'},
-      {'date': 'March 18 - 18:00 UTC', 'description': 'GSoC contributor application period begins'},
-      {'date': 'April 2 - 18:00 UTC', 'description': 'GSoC contributor application deadline'},
-      {'date': 'April 24 - 18:00 UTC', 'description': 'GSoC contributor proposal rankings due from Org Admins'},
-      {'date': 'May 1 - 18:00 UTC', 'description': 'Accepted GSoC contributor projects announced'},
-      {'date': 'May 1 - 26', 'description': 'Community Bonding Period | GSoC contributors get to know mentors, read documentation, get up to speed to begin working on their projects'},
+      {
+        'date': 'February 21 - 18:00 UTC',
+        'description': 'List of accepted mentoring organizations published'
+      },
+      {
+        'date': 'February 22 - March 18',
+        'description':
+            'Potential GSoC contributors discuss application ideas with mentoring organizations'
+      },
+      {
+        'date': 'March 18 - 18:00 UTC',
+        'description': 'GSoC contributor application period begins'
+      },
+      {
+        'date': 'April 2 - 18:00 UTC',
+        'description': 'GSoC contributor application deadline'
+      },
+      {
+        'date': 'April 24 - 18:00 UTC',
+        'description': 'GSoC contributor proposal rankings due from Org Admins'
+      },
+      {
+        'date': 'May 1 - 18:00 UTC',
+        'description': 'Accepted GSoC contributor projects announced'
+      },
+      {
+        'date': 'May 1 - 26',
+        'description':
+            'Community Bonding Period | GSoC contributors get to know mentors, read documentation, get up to speed to begin working on their projects'
+      },
       {'date': 'May 27', 'description': 'Coding officially begins!'},
-      {'date': 'July 8 - 18:00 UTC', 'description': 'Mentors and GSoC contributors can begin submitting midterm evaluations'},
-      {'date': 'August 19 - 26 - 18:00 UTC', 'description': 'Final week: GSoC contributors submit their final work product and their final mentor evaluation (standard coding period)'},
-      {'date': 'August 26 - September 2 - 18:00 UTC', 'description': 'Mentors submit final GSoC contributor evaluations (standard coding period)'},
-      {'date': 'September 3', 'description': 'Initial results of Google Summer of Code 2024 announced'},
-      {'date': 'September 3 - November 4', 'description': 'GSoC contributors with extended timelines continue coding'},
-      {'date': 'November 4 - 18:00 UTC', 'description': 'Final date for all GSoC contributors to submit their final work product and final evaluation'},
+      {
+        'date': 'July 8 - 18:00 UTC',
+        'description':
+            'Mentors and GSoC contributors can begin submitting midterm evaluations'
+      },
+      {
+        'date': 'August 19 - 26 - 18:00 UTC',
+        'description':
+            'Final week: GSoC contributors submit their final work product and their final mentor evaluation (standard coding period)'
+      },
+      {
+        'date': 'August 26 - September 2 - 18:00 UTC',
+        'description':
+            'Mentors submit final GSoC contributor evaluations (standard coding period)'
+      },
+      {
+        'date': 'September 3',
+        'description': 'Initial results of Google Summer of Code 2024 announced'
+      },
+      {
+        'date': 'September 3 - November 4',
+        'description':
+            'GSoC contributors with extended timelines continue coding'
+      },
+      {
+        'date': 'November 4 - 18:00 UTC',
+        'description':
+            'Final date for all GSoC contributors to submit their final work product and final evaluation'
+      },
     ];
 
     return Scaffold(
@@ -38,16 +85,18 @@ class GSOCInfo extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Overview',
-                content: 'Google Summer of Code is a global, online program focused on bringing new contributors into open source software development. GSoC Contributors work with an open source organization on a 12+ week programming project under the guidance of mentors.',
+                content:
+                    'Google Summer of Code is a global, online program focused on bringing new contributors into open source software development. GSoC Contributors work with an open source organization on a 12+ week programming project under the guidance of mentors.',
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
-                title: 'Eligibility : What are the eligibility requirements for participation?',
-                content: 
+                title:
+                    'Eligibility : What are the eligibility requirements for participation?',
+                content:
                     '> You must be at least 18 years of age when you register.\n'
                     '> You must be eligible to work in the country you will reside in during the program.\n'
                     '> You must be an open source beginner or a student.\n'
@@ -83,30 +132,6 @@ class GSOCInfo extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildOutlinedBox(BuildContext context, {required String title, required String content}) {
-    return Container(
-      padding: const EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.orange, width: 1.0),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          const SizedBox(height: 10),
-          Text(
-            content,
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-        ],
       ),
     );
   }
@@ -156,8 +181,8 @@ class GSOCInfo extends StatelessWidget {
   Widget _buildEventChild(Map<String, dynamic> event) {
     return Container(
       width: 150,
-      margin: const EdgeInsets.all(10), 
-      padding: const EdgeInsets.all(10),  
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.orange,
         borderRadius: BorderRadius.circular(8),

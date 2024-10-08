@@ -11,6 +11,8 @@ import 'package:opso/widgets/year_button.dart';
 import 'package:opso/programs_info_pages/gsod_info.dart';
 
 class GoogleSeasonOfDocsScreen extends StatefulWidget {
+  const GoogleSeasonOfDocsScreen({super.key});
+
   @override
   State<GoogleSeasonOfDocsScreen> createState() =>
       _GoogleSeasonOfDocsScreenState();
@@ -433,7 +435,7 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                       projectList.isNotEmpty
                           ? ListView.builder(
                               shrinkWrap: true,
-                              physics: NeverScrollableScrollPhysics(),
+                              physics: const NeverScrollableScrollPhysics(),
                               itemCount: projectList.length,
                               itemBuilder: (BuildContext context, int index) {
                                 return Padding(
