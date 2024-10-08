@@ -32,9 +32,7 @@ class GsodProjectWidgetNew extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final textColor = isDarkMode ? Colors.white : Colors.black;
     final cardColor = isDarkMode ? Colors.grey.shade800 : Colors.white;
-    final linkColor = isDarkMode ? Colors.white : primaryColor;
 
     return Container(
       width: width,
@@ -104,7 +102,11 @@ class GsodProjectWidgetNew extends StatelessWidget {
     );
   }
 
-  Widget _buildLinkTile(BuildContext context, {required String title, required String value, required String url, required bool isDarkMode}) {
+  Widget _buildLinkTile(BuildContext context,
+      {required String title,
+      required String value,
+      required String url,
+      required bool isDarkMode}) {
     return GestureDetector(
       onTap: () {
         _launchUrl(url);
@@ -120,7 +122,7 @@ class GsodProjectWidgetNew extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 14,
                       fontWeight: FontWeight.normal,
@@ -129,7 +131,8 @@ class GsodProjectWidgetNew extends StatelessWidget {
                   Text(
                     value,
                     maxLines: 1, // Limiting to one line
-                    overflow: TextOverflow.ellipsis, // Adding ellipsis if text overflows
+                    overflow: TextOverflow
+                        .ellipsis, // Adding ellipsis if text overflows
                     style: TextStyle(
                       color: isDarkMode ? secondaryColor : tertiaryColor,
                       fontSize: 16,
@@ -149,5 +152,4 @@ class GsodProjectWidgetNew extends StatelessWidget {
       ),
     );
   }
-
 }

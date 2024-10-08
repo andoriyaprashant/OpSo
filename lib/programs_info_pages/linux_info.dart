@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:opso/utils/program_info_pages/build_out_lined_box.dart';
 
 class LINUXInfo extends StatelessWidget {
   const LINUXInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Project Information'),
@@ -22,16 +21,18 @@ class LINUXInfo extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Overview',
-                content: 'The Linux Foundation Mentorship Program is designed to help developers — many of whom are first-time open source contributors — with necessary skills and resources to learn, experiment, and contribute effectively to open source communities. By participating in a mentorship program, mentees have the opportunity to learn from experienced open source contributors as a segue to get internship and job opportunities upon graduation.',
+                content:
+                    'The Linux Foundation Mentorship Program is designed to help developers — many of whom are first-time open source contributors — with necessary skills and resources to learn, experiment, and contribute effectively to open source communities. By participating in a mentorship program, mentees have the opportunity to learn from experienced open source contributors as a segue to get internship and job opportunities upon graduation.',
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Eligibility Criteria',
-                content: 'The following eligibility rules apply to all mentee applicants:\n\n'
+                content:
+                    'The following eligibility rules apply to all mentee applicants:\n\n'
                     '1. Be at least 18 years old by the time the mentorship program starts.\n\n'
                     '2. Not be a prior or an active participant in another Linux Foundation mentorship program.\n\n'
                     '3. Be eligible to work in the country and jurisdiction where you will be participating in the Mentorship program.\n\n'
@@ -73,30 +74,6 @@ class LINUXInfo extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildOutlinedBox(BuildContext context, {required String title, required String content}) {
-    return Container(
-      padding: const EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.orange, width: 1.0),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          const SizedBox(height: 10),
-          Text(
-            content,
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-        ],
       ),
     );
   }

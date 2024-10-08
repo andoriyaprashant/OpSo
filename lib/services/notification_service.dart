@@ -11,7 +11,7 @@ class NotificationService {
           channelKey: 'high_importance_channel',
           channelName: 'Basic Notification',
           channelDescription: 'Notification channel for basic tests',
-          defaultColor: Color(0xFF9D50DD),
+          defaultColor: const Color(0xFF9D50DD),
           importance: NotificationImportance.High,
           channelShowBadge: true,
           playSound: true,

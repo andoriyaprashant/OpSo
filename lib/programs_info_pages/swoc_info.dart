@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:opso/utils/program_info_pages/build_out_lined_box.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 class SWOCInfo extends StatelessWidget {
@@ -8,9 +9,15 @@ class SWOCInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> events = [
       {'date': '15 Aug 2023', 'description': 'Participant Registration starts'},
-      {'date': '20 Aug 2023', 'description': 'Project and Mentor Registration Starts'},
+      {
+        'date': '20 Aug 2023',
+        'description': 'Project and Mentor Registration Starts'
+      },
       {'date': '15 Dec 2023', 'description': 'Project Registrations ends'},
-      {'date': '20 Dec 2023', 'description': 'Participants and mentors registrations ends'},
+      {
+        'date': '20 Dec 2023',
+        'description': 'Participants and mentors registrations ends'
+      },
       {'date': '22 Dec 2023', 'description': 'Acceptance Mails Sent'},
       {'date': '22 Dec 2023', 'description': 'Projects Announcement'},
       {'date': '1 Jan 2024', 'description': 'SWoC Begins'},
@@ -33,15 +40,16 @@ class SWOCInfo extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Overview',
-                content: 'Social Winter Of Code is a 2-month long open source program by Social India, with the aim to introduce more and more people to the world of Open Source. '
+                content:
+                    'Social Winter Of Code is a 2-month long open source program by Social India, with the aim to introduce more and more people to the world of Open Source. '
                     'In this program, all the selected participants will get a chance to work on various exciting projects under the guidance of experienced mentors.'
                     '\n\nParticipants can select the project based on their interest and tech stack, and can communicate with mentors and project admins to know the project better during the Community Bonding Period.',
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Eligibility',
                 content: 'Is there any registration fees?\n'
@@ -76,7 +84,7 @@ class SWOCInfo extends StatelessWidget {
                     ),
                     _buildPrizeBox(
                       context,
-                      'assets/xyz_domain.png', 
+                      'assets/xyz_domain.png',
                       '.xyz domains\nTop 40',
                     ),
                     _buildPrizeBox(
@@ -95,30 +103,6 @@ class SWOCInfo extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildOutlinedBox(BuildContext context, {required String title, required String content}) {
-    return Container(
-      padding: const EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.orange, width: 1.0),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          const SizedBox(height: 10),
-          Text(
-            content,
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-        ],
       ),
     );
   }
@@ -167,7 +151,7 @@ class SWOCInfo extends StatelessWidget {
 
   Widget _buildEventChild(Map<String, dynamic> event) {
     return Container(
-      width: 150,  
+      width: 150,
       margin: const EdgeInsets.all(25),
       padding: const EdgeInsets.all(25),
       decoration: BoxDecoration(
@@ -196,7 +180,8 @@ class SWOCInfo extends StatelessWidget {
     );
   }
 
-  Widget _buildPrizeBox(BuildContext context, String imagePath, String description) {
+  Widget _buildPrizeBox(
+      BuildContext context, String imagePath, String description) {
     return Column(
       children: [
         CircleAvatar(

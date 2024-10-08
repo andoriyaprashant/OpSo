@@ -2,13 +2,11 @@ import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:opso/modals/osoc_modal.dart';
 import 'package:opso/widgets/osoc_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 import 'package:opso/programs_info_pages/osoc_info.dart';
 import '../modals/book_mark_model.dart';
-import '../widgets/SearchandFilterWidget.dart';
 
 class OpenSummerOfCode extends StatefulWidget {
   const OpenSummerOfCode({super.key});

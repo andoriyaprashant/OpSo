@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:opso/utils/program_info_pages/build_out_lined_box.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
-class   SOKDEInfo extends StatelessWidget {
-  const   SOKDEInfo({super.key});
+class SOKDEInfo extends StatelessWidget {
+  const SOKDEInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> events = [
       {'date': '2023-12-15', 'description': 'START OF SEASON OF KDE 2024'},
-      {'date': '2024-01-08', 'description': 'DEADLINE FOR THE CONTRIBUTORS APPLICATIONS'},
+      {
+        'date': '2024-01-08',
+        'description': 'DEADLINE FOR THE CONTRIBUTORS APPLICATIONS'
+      },
       {'date': '2024-01-15', 'description': 'PROJECTS ANNOUNCED'},
       {'date': '2024-01-17', 'description': 'START OF WORK'},
       {'date': '2024-03-31', 'description': 'END OF WORK'},
       {'date': '2024-04-07', 'description': 'RESULTS ANNOUNCED'},
       {'date': '2024-05-20', 'description': 'CERTIFICATES ISSUED'},
-      {'date': 'After the end', 'description': 'MERCHANDISE AND SWAG SENT OUT BY COURIER'},
+      {
+        'date': 'After the end',
+        'description': 'MERCHANDISE AND SWAG SENT OUT BY COURIER'
+      },
     ];
-
-
 
     return Scaffold(
       appBar: AppBar(
@@ -34,13 +39,14 @@ class   SOKDEInfo extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Overview',
-                content: 'Season of KDE is an outreach program hosted by the KDE community. Every year since 2013, KDE has been running Season of KDE (SoK) as a program similar to, but not quite the same as Google Summer of Code. SoK offers everyone an opportunity to participate in both code and non-code projects which benefit the KDE ecosystem.',
+                content:
+                    'Season of KDE is an outreach program hosted by the KDE community. Every year since 2013, KDE has been running Season of KDE (SoK) as a program similar to, but not quite the same as Google Summer of Code. SoK offers everyone an opportunity to participate in both code and non-code projects which benefit the KDE ecosystem.',
               ),
               const SizedBox(height: 20),
-              _buildOutlinedBox(
+              buildOutlinedBox(
                 context,
                 title: 'Eligibility',
                 content: 'Is there any registration fees?\n'
@@ -50,7 +56,6 @@ class   SOKDEInfo extends StatelessWidget {
                     'Any age limit for participation?\n'
                     'No, there is no age limit for participation in Season of  KDE. It is open for all.',
               ),
-
               const SizedBox(height: 20),
               Text(
                 'Program Timeline',
@@ -90,30 +95,6 @@ class   SOKDEInfo extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildOutlinedBox(BuildContext context, {required String title, required String content}) {
-    return Container(
-      padding: const EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.orange, width: 1.0),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          const SizedBox(height: 10),
-          Text(
-            content,
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-        ],
       ),
     );
   }
@@ -162,9 +143,9 @@ class   SOKDEInfo extends StatelessWidget {
 
   Widget _buildEventChild(Map<String, dynamic> event) {
     return Container(
-      width: 150,  
-      margin: const EdgeInsets.all(10),  
-      padding: const EdgeInsets.all(10),  
+      width: 150,
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.orange,
         borderRadius: BorderRadius.circular(8),

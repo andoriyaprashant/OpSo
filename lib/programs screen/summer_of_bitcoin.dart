@@ -116,7 +116,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
     'LND',
     'Eclair'
   ];
- 
+
   Future<void> _refresh() async {
     setState(() {
       initializeProjectLists();
@@ -128,13 +128,14 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
   Widget build(BuildContext context) {
     var height = MediaQuery.sizeOf(context).height;
     var width = MediaQuery.sizeOf(context).width;
-    ScreenUtilInit(
+    const ScreenUtilInit(
       designSize: Size(360, 690),
     );
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar: AppBar(title: const Text('Summer of Bitcoin'), actions: <Widget>[
+        appBar:
+            AppBar(title: const Text('Summer of Bitcoin'), actions: <Widget>[
           IconButton(
             icon: (isBookmarked)
                 ? const Icon(Icons.bookmark_add_rounded)
@@ -294,10 +295,12 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                               style: TextStyle(fontWeight: FontWeight.w400),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(ScreenUtil().setHeight(8)),
+                              padding:
+                                  EdgeInsets.all(ScreenUtil().setHeight(8)),
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   DropdownWidget(
                                     items: languages,
@@ -330,7 +333,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                         ),
                         ListView.builder(
                           shrinkWrap: true,
-                          physics: ClampingScrollPhysics(),
+                          physics: const ClampingScrollPhysics(),
                           itemCount: projectList.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Padding(

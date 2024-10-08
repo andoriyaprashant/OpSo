@@ -13,28 +13,26 @@ class GsodProjectWidgetOld extends StatelessWidget {
   final Color linkColorDark = const Color(0xff3f84e4);
 
   const GsodProjectWidgetOld({
-    Key? key,
+    super.key,
     this.height = 100,
     this.width = 100,
     required this.index,
     required this.modal,
     this.primaryColor = const Color.fromRGBO(249, 171, 0, 1),
-  }) : super(key: key);
+  });
 
   Future<void> _launchUrl(String url) async {
     final Uri uri = Uri.parse(url);
-    if (!await canLaunch(uri.toString())) {
+    if (!await canLaunchUrl(uri)) {
       throw 'Could not launch $url';
     }
-    await launch(uri.toString());
+    await launchUrl(uri);
   }
 
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final textColor = isDarkMode ? Colors.white : Colors.black;
     final cardColor = isDarkMode ? Colors.grey.shade800 : Colors.white;
-    final linkColor = isDarkMode ? Colors.white : primaryColor;
 
     return Container(
       width: width,
@@ -134,7 +132,7 @@ class GsodProjectWidgetOld extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 14,
                       fontWeight: FontWeight.normal,

@@ -12,7 +12,7 @@ class FOSSASIA extends StatefulWidget {
   const FOSSASIA({super.key});
 
   @override
-  _FOSSASIAState createState() => _FOSSASIAState();
+  State<FOSSASIA> createState() => _FOSSASIAState();
 }
 
 class _FOSSASIAState extends State<FOSSASIA> {
@@ -66,7 +66,6 @@ class _FOSSASIAState extends State<FOSSASIA> {
       fossasia2016.add(FOSSASIAProjectModel.fromJson(data));
     }
   }
-
 
   @override
   void initState() {

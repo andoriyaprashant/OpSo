@@ -6,10 +6,10 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 const apiKey = 'api-key';
 
 class ChatBotPage extends StatefulWidget {
-  const ChatBotPage({Key? key}) : super(key: key);
+  const ChatBotPage({super.key});
 
   @override
-  _ChatBotPageState createState() => _ChatBotPageState();
+  State<ChatBotPage> createState() => _ChatBotPageState();
 }
 
 class _ChatBotPageState extends State<ChatBotPage> {
@@ -37,15 +37,27 @@ class _ChatBotPageState extends State<ChatBotPage> {
       _messages.add({"sender": "user", "text": _controller.text});
     });
 
-    final prompt = _controller.text + " don't give answer in markdown format";
+    final prompt = "${_controller.text} don't give answer in markdown format";
     _controller.clear();
 
     if (_model != null) {
       final content = [Content.text(prompt)];
-      final response = await _model!.generateContent(content);
-      setState(() {
-        _messages.add({"sender": "bot", "text": response.text!});
-      });
+      try {
+        final response = await _model!.generateContent(content);
+        setState(() {
+          if (response.text != null) {
+            _messages.add({"sender": "bot", "text": response.text!});
+          } else {
+            // when response.text == Null
+            _messages.add(
+                {"sender": "bot", "text": "Error: No response from the bot."});
+          }
+        });
+      } catch (e) {
+        setState(() {
+          _messages.add({"sender": "bot", "text": "Error: $e"});
+        });
+      }
     }
   }
 
@@ -64,23 +76,30 @@ class _ChatBotPageState extends State<ChatBotPage> {
                 final message = _messages[index];
                 final isUser = message["sender"] == "user";
                 return Align(
-                  alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
+                  alignment:
+                      isUser ? Alignment.centerRight : Alignment.centerLeft,
                   child: Container(
                     constraints: BoxConstraints(
                       maxWidth: MediaQuery.of(context).size.width * 0.75,
                     ),
-                    margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 5.0, horizontal: 10.0),
                     padding: const EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
                       color: isUser
-                          ? (AdaptiveTheme.of(context).mode.isDark ? Color.fromARGB(255, 31, 49, 70) : Colors.blue[100])
-                          : (AdaptiveTheme.of(context).mode.isDark ? Colors.grey[700] : Colors.grey[300]),
+                          ? (AdaptiveTheme.of(context).mode.isDark
+                              ? const Color.fromARGB(255, 31, 49, 70)
+                              : Colors.blue[100])
+                          : (AdaptiveTheme.of(context).mode.isDark
+                              ? Colors.grey[700]
+                              : Colors.grey[300]),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        if (!isUser) const CircleAvatar(child: Icon(Icons.android)),
+                        if (!isUser)
+                          const CircleAvatar(child: Icon(Icons.android)),
                         if (!isUser) const SizedBox(width: 5.0),
                         Expanded(
                           child: Column(
@@ -91,7 +110,8 @@ class _ChatBotPageState extends State<ChatBotPage> {
                           ),
                         ),
                         if (isUser) const SizedBox(width: 5.0),
-                        if (isUser) const CircleAvatar(child: Icon(Icons.person)),
+                        if (isUser)
+                          const CircleAvatar(child: Icon(Icons.person)),
                       ],
                     ),
                   ),
@@ -124,14 +144,12 @@ class _ChatBotPageState extends State<ChatBotPage> {
     );
   }
 
-
   @override
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
 }
-
 
 void main() {
   runApp(const MaterialApp(

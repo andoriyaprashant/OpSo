@@ -8,18 +8,19 @@ class GsocProjectWidget extends StatelessWidget {
   final double width;
   final int index;
   const GsocProjectWidget({
-    Key? key,
+    super.key,
     required this.modal,
     required this.index,
     this.height = 100,
     this.width = 100,
-  }) : super(key: key);
+  });
   Future<void> _launchUrl(String url) async {
     final Uri uri = Uri.parse(url);
     if (!await launchUrl(uri)) {
       throw 'Could not launch $url';
     }
   }
+
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
@@ -48,7 +49,7 @@ class GsocProjectWidget extends StatelessWidget {
             children: [
               Text(
                 "$index. ${modal.name}",
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.orange,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -74,10 +75,11 @@ class GsocProjectWidget extends StatelessWidget {
                         onPressed: () {
                           _launchUrl('mailto:${modal.contactEmail}');
                         },
-                        icon: Icon(Icons.email, color: Colors.white),
-                        label: Text("Email"),
+                        icon: const Icon(Icons.email, color: Colors.white),
+                        label: const Text("Email"),
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white, backgroundColor: Colors.orange,
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colors.orange,
                         ),
                       ),
                     if (modal.blogUrl.isNotEmpty)
@@ -85,10 +87,11 @@ class GsocProjectWidget extends StatelessWidget {
                         onPressed: () {
                           _launchUrl(modal.blogUrl);
                         },
-                        icon: Icon(Icons.web, color: Colors.white),
-                        label: Text("Blog"),
+                        icon: const Icon(Icons.web, color: Colors.white),
+                        label: const Text("Blog"),
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white, backgroundColor: Colors.orange,
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colors.orange,
                         ),
                       ),
                   ],
@@ -101,7 +104,7 @@ class GsocProjectWidget extends StatelessWidget {
                   runSpacing: 10,
                   children: List.generate(
                     modal.technologies.length,
-                        (index) => Container(
+                    (index) => Container(
                       margin: const EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 249, 241, 226),
@@ -114,7 +117,7 @@ class GsocProjectWidget extends StatelessWidget {
                           child: Center(
                             child: Text(
                               modal.technologies[index],
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.orange,
                                 fontWeight: FontWeight.bold,
                               ),

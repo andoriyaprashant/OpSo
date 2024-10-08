@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:timeline_tile/timeline_tile.dart';
-import 'package:opso/services/notificationService.dart';
-import 'widgets/event_card.dart';
+import 'package:opso/widgets/opso_timeline_tile.dart';
+import 'package:opso/services/notification_service.dart';
 
 class OpsoTimeLineScreen extends StatelessWidget {
   const OpsoTimeLineScreen({super.key});
@@ -93,7 +92,7 @@ class OpsoTimeLineScreen extends StatelessWidget {
         'startDate': DateTime.utc(2024, 7, 15),
         'endDate': DateTime.utc(2024, 12, 20),
       },
-       {
+      {
         'description':
             "Linux Foundation Mentorship(Fall Term)\nApplication Period - 31/07/2024 to 27/08/2024",
         'startDate': DateTime.utc(2024, 7, 31),
@@ -125,13 +124,13 @@ class OpsoTimeLineScreen extends StatelessWidget {
       },
       {
         'description':
-        "GirlScript Summer Of Code Extended\nApplication Period - 15/09/2024 to 10/10/2024",
+            "GirlScript Summer Of Code Extended\nApplication Period - 15/09/2024 to 10/10/2024",
         'startDate': DateTime.utc(2024, 9, 15),
         'endDate': DateTime.utc(2024, 10, 10),
       },
       {
         'description':
-        "GirlScript Summer Of Code Extended\nContribution Period - 01/10/2024 to 30/10/2024",
+            "GirlScript Summer Of Code Extended\nContribution Period - 01/10/2024 to 30/10/2024",
         'startDate': DateTime.utc(2024, 10, 1),
         'endDate': DateTime.utc(2024, 10, 30),
       },
@@ -165,70 +164,6 @@ class OpsoTimeLineScreen extends StatelessWidget {
               isComing: DateTime.now().isBefore(startDate),
             );
           }).toList(),
-        ),
-      ),
-    );
-  }
-}
-
-class OpSoTimeLineTile extends StatelessWidget {
-  final String eventDescription;
-  final bool isFirst;
-  final bool isLast;
-  final bool isPast; //true for DateTime.now().isAfter(endDate),
-  final bool isComing; // true for DateTime.now().isBefore(startDate),
-  final DateTime startDate;
-  final DateTime endDate;
-
-  const OpSoTimeLineTile({
-    super.key,
-    required this.eventDescription,
-    required this.isFirst,
-    required this.isLast,
-    required this.isPast,
-    required this.isComing,
-    required this.startDate,
-    required this.endDate,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TimelineTile(
-      isFirst: isFirst,
-      isLast: isLast,
-      beforeLineStyle: LineStyle(
-        color: isPast
-            ? Colors.grey
-            : isComing
-                ? Colors.orange.shade100
-                : Colors.orange,
-      ),
-      indicatorStyle: IndicatorStyle(
-        width: 40,
-        color: isPast
-            ? Colors.grey
-            : isComing
-                ? Colors.orange.shade100
-                : Colors.orange,
-        iconStyle: IconStyle(
-          iconData: isPast
-              ? Icons.verified
-              : isComing
-                  ? Icons.hourglass_top_rounded
-                  : Icons.notification_important_rounded,
-          color: isPast
-              ? Colors.white
-              : isComing
-                  ? Colors.orange
-                  : Colors.white,
-        ),
-      ),
-      endChild: EventCard(
-        isPast: isPast,
-        isComing: isComing,
-        child: Text(
-          eventDescription,
-          style: const TextStyle(color: Colors.black),
         ),
       ),
     );

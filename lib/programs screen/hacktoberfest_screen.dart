@@ -96,21 +96,20 @@ class _HacktoberfestState extends State<Hacktoberfest> {
               Row(
                 children: [
                   ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.orange,
-                      foregroundColor: Colors.black,
-                    ),
-                    onPressed: () async {
-                      await _launchUrl("https://hacktoberfest.com/");
-                    },
-                    child: const Text("Website")),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        foregroundColor: Colors.black,
+                      ),
+                      onPressed: () async {
+                        await _launchUrl("https://hacktoberfest.com/");
+                      },
+                      child: const Text("Website")),
                   SizedBox(width: gap),
                   ElevatedButton(
-                    onPressed: () async {
-                      await _launchUrl(
-                          "https://hacktoberfest.com/about/");
-                    },
-                    child: const Text("Learn More")),
+                      onPressed: () async {
+                        await _launchUrl("https://hacktoberfest.com/about/");
+                      },
+                      child: const Text("Learn More")),
                 ],
               ),
               SizedBox(height: gap),
@@ -125,17 +124,16 @@ class _HacktoberfestState extends State<Hacktoberfest> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: pad),
                 child: Text(
-                      '1. First, go to GitHub.\n'
-                      '2. Click on "Issues.\n'
-                      '3. Use the filter: is:open is:issue archived:false label:hacktoberfest.\n'
-                      '4. Solve issues and make your contributions.',
-                      style: TextStyle(
-                        fontSize: contentSize,
-                        height: 2, // Adjusts line spacing
-                      ),
-                    ),
+                  '1. First, go to GitHub.\n'
+                  '2. Click on "Issues.\n'
+                  '3. Use the filter: is:open is:issue archived:false label:hacktoberfest.\n'
+                  '4. Solve issues and make your contributions.',
+                  style: TextStyle(
+                    fontSize: contentSize,
+                    height: 2, // Adjusts line spacing
+                  ),
+                ),
               ),
-              
               Padding(
                 padding: EdgeInsets.symmetric(vertical: pad),
                 child: Text(
@@ -161,17 +159,17 @@ class _HacktoberfestState extends State<Hacktoberfest> {
                   ),
                 ),
               ),
-                SizedBox(height: gap),
-                _buildTimeline(),
-                SizedBox(height: gap),
-                Center(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      _launchUrl('https://hacktoberfest.com/participation/#faq');
-                    },
-                    child: const Text('Read the FAQ'),
-                  ),
+              SizedBox(height: gap),
+              _buildTimeline(),
+              SizedBox(height: gap),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    _launchUrl('https://hacktoberfest.com/participation/#faq');
+                  },
+                  child: const Text('Read the FAQ'),
                 ),
+              ),
             ],
           ),
         ),
@@ -179,6 +177,7 @@ class _HacktoberfestState extends State<Hacktoberfest> {
     );
   }
 
+  // redundant code, not referenced anywhere.
   Widget _buildTrackTile(String title, String description, VoidCallback onTap) {
     return InkWell(
       onTap: onTap,
@@ -204,105 +203,64 @@ class _HacktoberfestState extends State<Hacktoberfest> {
       ),
     );
   }
-
-  Widget _buildTimelineItem(
-      {required String time,
-      required String title,
-      required String description}) {
-    return TimelineTile(
-      alignment: TimelineAlign.start,
-      isFirst: true,
-      indicatorStyle: const IndicatorStyle(
-        width: 40.0,
-        color: Colors.orange,
-        padding: EdgeInsets.all(8.0),
-      ),
-      endChild: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              time,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8.0),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 4.0),
-            Text(description),
-          ],
-        ),
-      ),
-    );
-  }
 }
 
- Widget _buildTimeline() {
-    return Column(
-      children: [
-        _buildTimelineItem(
-          time: 'October 1, 2024',
-          title: 'Hacktoberfest Starts',
-          description: 'The event kicks off and repositories start receiving contributions.',
-        ),
-        _buildTimelineItem(
-          time: 'October 31, 2024',
-          title: 'Hacktoberfest Ends',
-          description: 'The event concludes and final contributions are counted.',
-        ),
-      ],
-    );
-  }
-
-
-
-  Widget _buildTimelineItem(
-      {required String time,
-      required String title,
-      required String description}) {
-    return TimelineTile(
-      alignment: TimelineAlign.start,
-      isFirst: true,
-      indicatorStyle: const IndicatorStyle(
-        width: 40.0,
-        color: Colors.orange,
-        padding: EdgeInsets.all(8.0),
+Widget _buildTimeline() {
+  return Column(
+    children: [
+      _buildTimelineItem(
+        time: 'October 1, 2024',
+        title: 'Hacktoberfest Starts',
+        description:
+            'The event kicks off and repositories start receiving contributions.',
       ),
-      endChild: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              time,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8.0),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 4.0),
-            Text(description),
-          ],
-        ),
+      _buildTimelineItem(
+        time: 'October 31, 2024',
+        title: 'Hacktoberfest Ends',
+        description: 'The event concludes and final contributions are counted.',
       ),
-    );
-  }
+    ],
+  );
+}
 
+Widget _buildTimelineItem(
+    {required String time,
+    required String title,
+    required String description}) {
+  return TimelineTile(
+    alignment: TimelineAlign.start,
+    isFirst: true,
+    indicatorStyle: const IndicatorStyle(
+      width: 40.0,
+      color: Colors.orange,
+      padding: EdgeInsets.all(8.0),
+    ),
+    endChild: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            time,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8.0),
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 4.0),
+          Text(description),
+        ],
+      ),
+    ),
+  );
+}
 
 class TrackDetailsScreen extends StatelessWidget {
   final String title, description;
@@ -331,8 +289,10 @@ class TrackDetailsScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: pad),
               child: Text(
                 title,
-                style:
-                    TextStyle(fontSize: titleSize, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(
+                    fontSize: titleSize,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
             ),
             SizedBox(height: gap),
