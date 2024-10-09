@@ -48,7 +48,14 @@ class _MajorLeagueHackingFellowshipState
     return RefreshIndicator(
         onRefresh: _refresh,
         child: Scaffold(
-          appBar: AppBar(title: const Text('MLH Fellowship'), actions: <Widget>[
+          appBar: AppBar(
+            leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        centerTitle: true,
+            title: const Text('MLH Fellowship'), actions: <Widget>[
             IconButton(
               icon: (isBookmarked)
                   ? const Icon(Icons.bookmark_add_rounded)

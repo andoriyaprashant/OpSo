@@ -166,6 +166,8 @@ class _HomePageState extends State<HomePage> {
     final double SizedSize = ScreenUtil().setHeight(20);
     return Scaffold(
       appBar: AppBar(
+          
+        centerTitle: true,
         title: Text(
           'OpSo',
           style:
