@@ -58,6 +58,7 @@ class _BookMarkScreenState extends State<BookMarkScreen> {
 
                   ),
                   onTap: () {
+                    Navigator.pushNamed(context, bookmark['screen']!);
                   },
                 );
               },
