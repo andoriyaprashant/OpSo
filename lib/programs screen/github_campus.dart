@@ -44,6 +44,12 @@ class _GithubCampusState extends State<GithubCampus> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
+           leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+         
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        centerTitle: true,
           title: const Text('Github Campus Expert'),
           actions: <Widget>[
             IconButton(
