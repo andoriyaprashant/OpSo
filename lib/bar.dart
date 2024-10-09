@@ -15,8 +15,6 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
     return Scaffold(
       appBar: AppBar(
-         
-        centerTitle: true,
         title: Text(
           'OpSo',
           style: TextStyle(
