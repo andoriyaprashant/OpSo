@@ -50,7 +50,7 @@ class OpSoApp extends StatelessWidget {
                 "/social_winter_of_code": (context) => const SWOCScreen(),
                 "/season_of_kde": (context) => const SeasonOfKDE(),
                 "/google_summer_of_code": (context) =>
-                    GoogleSummerOfCodeScreen(),
+                    const GoogleSummerOfCodeScreen(),
                 "/google_season_of_docs": (context) =>
                     GoogleSeasonOfDocsScreen(),
                 "/summer_of_bitcoin": (context) => const SummerOfBitcoin(),
