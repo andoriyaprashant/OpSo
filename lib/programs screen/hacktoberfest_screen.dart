@@ -43,6 +43,12 @@ class _HacktoberfestState extends State<Hacktoberfest> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
+           leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+         
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        centerTitle: true,
           title: const Text('Hacktoberfest'),
           actions: <Widget>[
             IconButton(

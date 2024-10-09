@@ -48,6 +48,12 @@ class FAQPage extends StatelessWidget {
     
     return Scaffold(
       appBar: AppBar(
+         leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+         
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        centerTitle: true,
         title: Text('FAQ', style: TextStyle(fontSize: 22.sp)),
       ),
       body: SingleChildScrollView(
