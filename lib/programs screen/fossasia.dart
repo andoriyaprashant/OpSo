@@ -136,6 +136,11 @@ class _FOSSASIAState extends State<FOSSASIA> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
+            leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        centerTitle: true,
           title: const Text('FOSSASIA Codeheat'),
           actions: <Widget>[
             IconButton(

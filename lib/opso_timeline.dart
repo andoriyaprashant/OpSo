@@ -147,6 +147,12 @@ class OpsoTimeLineScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+          leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+         
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        centerTitle: true,
         title: const Text('Open-Source Timeline of 2024'),
       ),
       body: Padding(
