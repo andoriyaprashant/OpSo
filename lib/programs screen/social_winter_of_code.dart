@@ -246,21 +246,6 @@ class _SWOCScreenState extends State<SWOCScreen> {
                       _buildSearchBar(),
                       const SizedBox(height: 20),
                       _buildYearButtons(),
-                      const SizedBox(height: 20),
-                      _buildMultiSelectField(
-                        items: allLanguages,
-                        selectedValues: selectedLanguages,
-                        title: "Select Languages",
-                        buttonText: "Filter by Language",
-                        onConfirm: (results) {
-                          setState(() {
-                            selectedLanguages = results.isNotEmpty ? results : ['All'];
-                            filterProjects();
-                          });
-                        },
-                      ),
-                      const SizedBox(height: 20),
-                      const SizedBox(height: 20),
                       _buildProjectList(height, width),
                     ],
                   ),
@@ -281,7 +266,71 @@ class _SWOCScreenState extends State<SWOCScreen> {
       decoration: InputDecoration(
         filled: true,
         hintText: 'Search',
-        suffixIcon: const Icon(Icons.search),
+        suffixIcon: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.filter_alt_outlined),
+              onPressed: () {
+                // Open the filter options (multi-select dialog)
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: const Text("Filter Options"),
+                      content: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          _buildMultiSelectField(
+                            items: allLanguages,
+                            selectedValues: selectedLanguages,
+                            title: "Select Languages",
+                            buttonText: "Filter by Language",
+                            onConfirm: (results) {
+                              setState(() {
+                                selectedLanguages =
+                                    results.isNotEmpty ? results : ['All'];
+                                filterProjects();
+                              });
+                            },
+                          ),
+                          const SizedBox(height: 20),
+                          _buildMultiSelectField(
+                            items: allOrganizations,
+                            selectedValues: selectedOrganizations,
+                            title: "Select Organizations",
+                            buttonText: "Filter by Organization",
+                            onConfirm: (results) {
+                              setState(() {
+                                selectedOrganizations =
+                                    results.isNotEmpty ? results : ['All'];
+                                filterProjects();
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Text("Close"),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: () {
+                // Trigger search functionality
+              },
+            ),
+          ],
+        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
@@ -298,12 +347,14 @@ class _SWOCScreenState extends State<SWOCScreen> {
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
         ),
-        contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
       ),
       onFieldSubmitted: (value) {
         setState(() {
           projectList = _getProjectsByYear()
-              .where((project) => project.name.toLowerCase().contains(value.toLowerCase()))
+              .where((project) =>
+                  project.name.toLowerCase().contains(value.toLowerCase()))
               .toList();
         });
       },
