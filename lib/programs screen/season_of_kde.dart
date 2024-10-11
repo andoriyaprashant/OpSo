@@ -267,7 +267,7 @@ class _SeasonOfKDEState extends State<SeasonOfKDE> {
                                 modal: projectList[index],
                                 height: ScreenUtil().screenHeight * 0.2,
                                 width: ScreenUtil().screenWidth,
-                                index: index,
+                                index: index+1,
                               ),
                             );
                           },

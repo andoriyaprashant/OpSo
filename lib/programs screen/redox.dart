@@ -180,7 +180,7 @@ class _RsocPageState extends State<RsocPage> {
                                 modal: projectList[index],
                                 height: ScreenUtil().screenHeight * 0.10, 
                                 width: ScreenUtil().screenWidth,
-                                index: index,
+                                index: index+1,
                               ),
                             );
                           },
