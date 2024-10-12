@@ -175,7 +175,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: const Icon(Icons.search_sharp),
             onPressed: () {
-              showSearch(context: context, delegate: ProgramSearchDelegate());
+              showSearch(context: context, delegate: ProgramSearchDelegate(), );
             },
           ),
           /*IconButton(
@@ -680,7 +680,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
   @override
   Widget buildSuggestions(BuildContext context) {
     final List<String> suggestionList = query.isEmpty
-        ? []
+        ? ['']
         : programs
         .where((program) =>
         program.title.toLowerCase().contains(query.toLowerCase()))
@@ -688,15 +688,15 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         .toList();
 
 
-    return ListView.builder(
+    return suggestionList.isNotEmpty ? ListView.builder(
       itemCount: suggestionList.length,
-      itemBuilder: (context, index) => ListTile(
+      itemBuilder: (context, index) => suggestionList[0] == '' ? Container(): ListTile(
         title: Text(suggestionList[index]),
         onTap: () {
           navigateToScreen(context, suggestionList[index]);
         },
       ),
-    );
+    ) : Image.asset('assets/no-results.png');
   }
 
 
