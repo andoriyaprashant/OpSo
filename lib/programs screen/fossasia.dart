@@ -323,7 +323,7 @@ class _FOSSASIAState extends State<FOSSASIA> {
                                 modal: projectList[index],
                                 height: ScreenUtil().screenHeight * 0.2,
                                 width: ScreenUtil().screenWidth,
-                                index: index,
+                                index: index+1,
                               ),
                             );
                           },
