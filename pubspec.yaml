@@ -114,6 +114,7 @@ flutter:
     - assets/projects/outreachy/outreachy2023.json
     - assets/projects/outreachy/outreachy2024.json
     - assets/projects/redox/redox.json
+    - assets/no-results.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
