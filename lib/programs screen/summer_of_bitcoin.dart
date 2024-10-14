@@ -18,6 +18,8 @@ class SummerOfBitcoin extends StatefulWidget {
 }
 
 class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
+    List<String> selectedOrganizations = [];
+  List<String> selectedProposals = ['All'];
   List<SobProjectModal> sob2023 = [];
   List<SobProjectModal> sob2022 = [];
   List<SobProjectModal> sob2021 = [];
@@ -101,6 +103,7 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
   }
 
   List<String> languages = [
+    'All',
     'Rust miniscript',
     'Core Lightning',
     'LDK',
