@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AboutScreen extends StatelessWidget {
+class AboutScreen  extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(
