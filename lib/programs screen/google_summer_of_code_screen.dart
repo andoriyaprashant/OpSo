@@ -22,12 +22,14 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   String currentPage = "/google_summer_of_code";
   String currentProject = "Google Summer of Code";
   String selectedOrg = ''; // Ensure this is defined
+  List<String> selectedProposals = ['All'];
   List<Organization> gsoc2024 = [];
   List<Organization> gsoc2023 = [];
   List<Organization> gsoc2022 = [];
   List<Organization> gsoc2021 = [];
   int selectedYear = 2024;
   List<String> languages = [
+    'All',
     'js',
     'python',
     'django',
@@ -143,6 +145,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     });
     await getProjectData();
     setState(() {
+      initializeProjectLists();
       selectedYear = 2024;
       selectedLanguages = ['All'];
       selectedOrganizations = ['All'];
@@ -461,4 +464,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       ),
     );
   }
+  
+  void initializeProjectLists() {}
 }
