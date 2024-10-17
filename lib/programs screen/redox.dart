@@ -15,7 +15,9 @@ class RsocPage extends StatefulWidget {
 }
 
 class _RsocPageState extends State<RsocPage> {
-  List<RsocProjectModal> projectList = [];
+  List<RsocProjectModal> projects = [];
+  List<RsocProjectModal> allProjects =[];
+
   String currectPage = "/rsoc";
   String currentProject = "RSoC";
   bool isBookmarked = true;
@@ -26,9 +28,10 @@ class _RsocPageState extends State<RsocPage> {
         await rootBundle.loadString('assets/projects/redox/redox.json');
     var jsonList = await json.decode(response);
     for (var data in jsonList) {
-      projectList.add(RsocProjectModal.fromJson(data));
+      allProjects.add(RsocProjectModal.fromJson(data));
     }
-    print(projectList);
+
+    projects = allProjects;
   }
 
   @override
@@ -45,20 +48,15 @@ class _RsocPageState extends State<RsocPage> {
     });
   }
 
-  void searchTag(String searchTag) {
-    projectList = projectList
-        .where((element) => element.name.toLowerCase().contains(searchTag))
-        .toList();
-    setState(() {});
-  }
-
   void search(String searchText) {
     if (searchText.isEmpty) {
+      projects = allProjects;
       setState(() {});
       return;
     }
+
     searchText = searchText.toLowerCase();
-    projectList = projectList
+    projects = allProjects
         .where((element) =>
             element.name.toLowerCase().contains(searchText) ||
             element.contributor.toLowerCase().contains(searchText))
@@ -67,7 +65,7 @@ class _RsocPageState extends State<RsocPage> {
   }
 
   Future<void> _refresh() async {
-    projectList.clear();
+    projects.clear();
     await initializeProjectLists();
     setState(() {});
   }
@@ -159,25 +157,20 @@ class _RsocPageState extends State<RsocPage> {
                             horizontal: ScreenUtil().setWidth(20),
                           ),
                         ),
-                        onFieldSubmitted: (value) {
-                          search(value.trim());
-                        },
                         onChanged: (value) {
-                          if (value.isEmpty) {
-                            search(value);
-                          }
+                          search(value.trim());
                         },
                       ),
                       SizedBox(height: ScreenUtil().setHeight(20)),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.8,
+                        height: MediaQuery.of(context).size.height * 0.9,
                         child: ListView.builder(
-                          itemCount: projectList.length,
+                          itemCount: projects.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Padding(
                               padding: const EdgeInsets.symmetric(vertical: 8),
                               child: RsocProjectWidget(
-                                modal: projectList[index],
+                                modal: projects[index],
                                 height: ScreenUtil().screenHeight * 0.10, 
                                 width: ScreenUtil().screenWidth,
                                 index: index+1,
