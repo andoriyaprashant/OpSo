@@ -8,7 +8,6 @@ import 'package:opso/modals/gssoc_project_modal.dart';
 import 'package:opso/programs_info_pages/gssoc_info.dart';
 import 'package:opso/widgets/gssoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
-import '../widgets/SearchandFilterWidget.dart';
 
 class GSSOCScreen extends StatefulWidget {
   const GSSOCScreen({super.key});
@@ -20,29 +19,33 @@ class GSSOCScreen extends StatefulWidget {
 class _GSSOCScreenState extends State<GSSOCScreen> {
   String currentPage = "/girl_script_summer_of_code";
   String currentProject = "Girl Script Summer of Code";
-  List<GssocProjectModal> gssoc2024 = [];
-  List<GssocProjectModal> gssoc2023 = [];
-  List<GssocProjectModal> gssoc2022 = [];
-  List<GssocProjectModal> gssoc2021 = [];
-  List<String> allOrganizations = [];
+
   List<String> allLanguages = [];
-  List<String> selectedOrganizations = ['All'];
   List<String> selectedLanguages = ['All'];
+
   int selectedYear = 2024;
   bool isBookmarked = true;
-  List<GssocProjectModal> projectList = [];
   Future<void>? getProjectFunction;
 
-  Future<void> initializeProjectLists() async {
-    await _loadProjects('assets/projects/gssoc/gssoc2024.json', gssoc2024);
-    await _loadProjects('assets/projects/gssoc/gssoc2023.json', gssoc2023);
-    await _loadProjects('assets/projects/gssoc/gssoc2022.json', gssoc2022);
-    await _loadProjects('assets/projects/gssoc/gssoc2021.json', gssoc2021);
+  /* List for each ear */
+  List<GssocProjectModal> gssoc2024 = [],
+      gssoc2023 = [],
+      gssoc2022 = [],
+      gssoc2021 = [];
+  /* actual list to show */
+  List<GssocProjectModal> projectList = [];
 
-    // Populate all unique organizations and languages
-    allOrganizations = _extractUniqueValues((project) => project.hostedBy);
+  /* for pagination */
+  int itemsPerPage = 50;
+  int pageNumber = 0;
+
+  ScrollController _scrollController = ScrollController();
+
+  Future<void> initializeProjectLists() async {
+    projectList = await _getProjectsByYear(selectedYear);
     allLanguages = languages;
-    projectList = List.from(gssoc2024); // Default year
+
+    setState(() {});
   }
 
   List<String> languages = [
@@ -64,34 +67,29 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     'Dart'
   ];
 
-  Future<void> _loadProjects(String path, List<GssocProjectModal> list) async {
+  Future<List<GssocProjectModal>> _getProjectsByYear(int year) async {
+    switch (year) {
+      case 2021:
+        return gssoc2021.isEmpty ? await loadProjects(2021) : gssoc2021;
+      case 2022:
+        return gssoc2022.isEmpty ? await loadProjects(2022) : gssoc2022;
+      case 2023:
+        return gssoc2023.isEmpty ? await loadProjects(2023) : gssoc2023;
+      case 2024:
+        return gssoc2024.isEmpty ? await loadProjects(2024) : gssoc2024;
+      default:
+        return [];
+    }
+  }
+
+  Future<List<GssocProjectModal>> loadProjects(int year) async {
+    String path = 'assets/projects/gssoc/gssoc${year}.json';
     String response = await rootBundle.loadString(path);
+
     var jsonList = json.decode(response) as List;
-    list.addAll(jsonList
+    return jsonList
         .map((data) => GssocProjectModal.getDataFromJson(data))
-        .toList());
-  }
-
-  List<String> _extractUniqueValues(
-      String Function(GssocProjectModal) extractor) {
-    return {
-      'All',
-      ...gssoc2024.map(extractor),
-      ...gssoc2023.map(extractor),
-      ...gssoc2022.map(extractor),
-      ...gssoc2021.map(extractor),
-    }.toList();
-  }
-
-  List<String> _extractUniqueLanguages(
-      List<String> Function(GssocProjectModal) extractor) {
-    final allLanguages = [
-      for (var project in gssoc2024) ...extractor(project),
-      for (var project in gssoc2023) ...extractor(project),
-      for (var project in gssoc2022) ...extractor(project),
-      for (var project in gssoc2021) ...extractor(project),
-    ];
-    return ['All', ...allLanguages.toSet()];
+        .toList();
   }
 
   @override
@@ -108,11 +106,9 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     });
   }
 
-  void filterProjects() {
-    // Filter projects by year first
-    projectList = _getProjectsByYear();
+  void filterProjects([String query = '']) async {
+    projectList = await _getProjectsByYear(selectedYear);
 
-    // Filter projects by selected languages
     if (!selectedLanguages.contains('All')) {
       projectList = projectList
           .where((project) => selectedLanguages
@@ -120,50 +116,60 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
           .toList();
     }
 
-    // Update the list of organizations based on the filtered projects by language
-    _updateOrganizationList();
-
-    // Filter projects by selected organizations
-    if (!selectedOrganizations.contains('All')) {
+    if (query.isNotEmpty) {
       projectList = projectList
-          .where((project) => selectedOrganizations.contains(project.hostedBy))
+          .where((project) =>
+              project.name.toLowerCase().contains(query.toLowerCase()))
           .toList();
     }
 
-    // Ensure state is updated to reflect changes
+    pageNumber = 0;
     setState(() {});
-  }
-
-  void _updateOrganizationList() {
-    allOrganizations = _extractUniqueValues((project) => project.hostedBy)
-        .where((organization) =>
-            projectList.any((project) => project.hostedBy == organization))
-        .toList();
-    allOrganizations.insert(0, 'All');
-  }
-
-  List<GssocProjectModal> _getProjectsByYear() {
-    switch (selectedYear) {
-      case 2021:
-        return gssoc2021;
-      case 2022:
-        return gssoc2022;
-      case 2023:
-        return gssoc2023;
-      case 2024:
-        return gssoc2024;
-      default:
-        return [];
-    }
   }
 
   Future<void> _refresh() async {
     await initializeProjectLists();
     setState(() {
       selectedYear = 2024;
-      selectedOrganizations = ['All'];
       selectedLanguages = ['All'];
     });
+  }
+
+  List<GssocProjectModal> _getPaginatedProjects() {
+    int startIndex = pageNumber * itemsPerPage;
+    int endIndex = startIndex + itemsPerPage;
+    return projectList.sublist(startIndex,
+        endIndex > projectList.length ? projectList.length : endIndex);
+  }
+
+  void _nextPage() {
+    if ((pageNumber + 1) * itemsPerPage < projectList.length) {
+      setState(() {
+        pageNumber++;
+      });
+      // Animate scrolling to the top of the list
+      _scrollController.animateTo(
+        0, // Scroll to the top
+        duration:
+            const Duration(milliseconds: 300), // Duration of the animation
+        curve: Curves.easeInOut, // Animation curve for smoothness
+      );
+    }
+  }
+
+  void _previousPage() {
+    if (pageNumber > 0) {
+      setState(() {
+        pageNumber--;
+      });
+      // Animate scrolling to the top of the list
+      _scrollController.animateTo(
+        0, // Scroll to the top
+        duration:
+            const Duration(milliseconds: 300), // Duration of the animation
+        curve: Curves.easeInOut, // Animation curve for smoothness
+      );
+    }
   }
 
   @override
@@ -214,6 +220,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
               return const Center(child: CircularProgressIndicator());
             } else if (snapshot.connectionState == ConnectionState.done) {
               return SingleChildScrollView(
+                controller: _scrollController, // Attach ScrollController
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 48, vertical: 8),
@@ -224,7 +231,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                       _buildSearchBar(),
                       const SizedBox(height: 20),
                       _buildYearButtons(),
-                      const SizedBox(height: 20),
                       _buildMultiSelectField(
                         items: allLanguages,
                         selectedValues: selectedLanguages,
@@ -234,14 +240,16 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
                           setState(() {
                             selectedLanguages =
                                 results.isNotEmpty ? results : ['All'];
-                            print(selectedLanguages);
+
                             filterProjects();
                           });
                         },
                       ),
                       const SizedBox(height: 20),
-                      const SizedBox(height: 20),
                       _buildProjectList(),
+                      const SizedBox(height: 10),
+                      _buildPaginationControls(),
+                      const SizedBox(height: 10),
                     ],
                   ),
                 ),
@@ -282,16 +290,13 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
       ),
       onFieldSubmitted: (value) {
         setState(() {
-          projectList = _getProjectsByYear()
-              .where((project) =>
-                  project.name.toLowerCase().contains(value.toLowerCase()))
-              .toList();
+          filterProjects(value);
         });
       },
       onChanged: (value) {
         if (value.isEmpty) {
           setState(() {
-            projectList = _getProjectsByYear();
+            filterProjects();
           });
         }
       },
@@ -395,17 +400,38 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
       child: ListView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        itemCount: projectList.length,
+        itemCount: _getPaginatedProjects().length,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: GssocProjectWidget(
-              index: index + 1,
-              modal: projectList[index],
+              index: index +
+                  1 +
+                  (pageNumber * itemsPerPage), // Adjust index for pagination
+              modal: _getPaginatedProjects()[index],
             ),
           );
         },
       ),
+    );
+  }
+
+  Widget _buildPaginationControls() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        ElevatedButton(
+          onPressed: pageNumber > 0 ? _previousPage : null,
+          child: const Text('Previous', style: TextStyle(color: Colors.orange)),
+        ),
+        Text('Page ${pageNumber + 1}'),
+        ElevatedButton(
+          onPressed: (pageNumber + 1) * itemsPerPage < projectList.length
+              ? _nextPage
+              : null,
+          child: const Text('Next', style: TextStyle(color: Colors.orange)),
+        ),
+      ],
     );
   }
 }
