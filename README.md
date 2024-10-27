@@ -44,6 +44,27 @@ OpSo is a Flutter app that provides comprehensive information about various open
   <img src="https://github.com/user-attachments/assets/7c154317-3fef-4c6c-a897-43b10206f960" alt="Screenshot 15" width="300"/>
 </div>
 
+<!--Project Structure -->
+## Project Structure
+```
+Android/
+|
+|──app/
+    |──src/
+        |──debug/
+            |──AndroidManifest.xml
+        |──main/
+            |──
+        |──profile/
+    |──build.gradle
+|──gradle/wrapper
+|──build.gradle
+|──gradle.properties
+|──settings.graddle
+```
+
+
+
 <!-- License -->
 <div>
 <h2><img src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Page%20with%20Curl.png" width="35" height="35"> License</h2>
