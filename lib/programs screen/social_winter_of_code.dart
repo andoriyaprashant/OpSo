@@ -200,7 +200,12 @@ class _SWOCScreenState extends State<SWOCScreen> {
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar: AppBar(title: const Text('SWoC'), actions: <Widget>[
+        appBar: AppBar(title: const Text('SWoC',
+                            style: TextStyle(
+              fontFamily: 'Outfit',
+                fontWeight: FontWeight.w500, 
+                ),
+        ), actions: <Widget>[
           IconButton(
             icon: (isBookmarked)
                 ? const Icon(Icons.bookmark_add_rounded)

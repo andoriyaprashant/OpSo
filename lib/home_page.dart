@@ -1,6 +1,8 @@
 import 'dart:ui';
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -28,18 +30,20 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:opso/widgets/faq.dart';
 import 'dart:math' as math;
 
-
 import 'about.dart';
 
+final List<String> imgList = [
+  'assets/banner-1.jpg',
+  'assets/banner-2.jpg',
+  'assets/banner-3.png',
+];
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -50,8 +54,12 @@ class _HomePageState extends State<HomePage> {
     _getInitialThemeMode();
   }
 
-
   int _initialLabelIndex = 0;
+
+  int _current = 0;
+  final CarouselSliderController _carouselcontroller = CarouselSliderController();
+  final verticalController = ScrollController();
+
   void _getInitialThemeMode() async {
     final savedThemeMode = await AdaptiveTheme.getThemeMode();
     setState(() {
@@ -63,9 +71,7 @@ class _HomePageState extends State<HomePage> {
         _initialLabelIndex = 0;
       }
     });
-
   }
-
 
 //show various notification from here
   void showNotification() async {
@@ -75,7 +81,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-
 //used to show the notification every 5 ms
   void showScheduleNotification() async {
     await NotificationService.showNotification(
@@ -84,7 +89,6 @@ class _HomePageState extends State<HomePage> {
         scheduled: true,
         interval: 5);
   }
-
 
   final List<Program> programs = [
     Program(
@@ -115,7 +119,7 @@ class _HomePageState extends State<HomePage> {
       title: 'Linux Foundation',
       imageAssetPath: 'assets/linux_foundation_logo.png',
     ),
-     Program(
+    Program(
       title: 'Hacktoberfest',
       imageAssetPath: 'assets/hacktoberfest.png',
     ),
@@ -149,233 +153,383 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     // var media = MediaQuery.of(context).size;
     Color backgroundColor = Theme.of(context).brightness == Brightness.dark
         ? Colors.black.withOpacity(0.6) // Example dark mode color
-        : Colors.white.withOpacity(0.6); // Example light mode color
-
+        : Color(0xFFFCFBF6); // Example light mode color
 
     ScreenUtil.init(
       context,
     );
-    final double appBarFontSize = ScreenUtil().setSp(18);
+    final double appBarFontSize = ScreenUtil().setSp(24);
     final double appTextFontSize = ScreenUtil().setSp(20);
-    final double SizedSize = ScreenUtil().setHeight(20);
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    final List<Widget> imageSliders = imgList
+        .map(
+          (item) => Container(
+              height: 0.4 * screenHeight,
+              margin: EdgeInsets.all(5.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                child: Image(image: AssetImage(item), fit: BoxFit.fill),
+              )),
+        )
+        .toList();
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'OpSo',
-          style:
-          TextStyle(fontWeight: FontWeight.bold, fontSize: appBarFontSize),
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search_sharp),
-            onPressed: () {
-              showSearch(context: context, delegate: ProgramSearchDelegate(), );
-            },
-          ),
-          /*IconButton(
-           icon: Icon(Icons.menu),
+       key: _scaffoldKey,
+        appBar: AppBar(
+          leading :            IconButton(
+           icon: Icon(Icons.menu,
+           size: screenHeight*0.04,
+           ),
            onPressed: () {
              // Open drawer when the menu icon is clicked
-             Scaffold.of(context).openDrawer();
+            _scaffoldKey.currentState?.openDrawer();
            },
-         ),*/
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const ChatBotPage(),
-            ),
-          );
-        },
-        child: const Icon(Icons.chat_bubble_outline),
-      ),
-      drawer: Drawer(
-        backgroundColor: Colors.transparent,
-        width: MediaQuery.of(context).size.width,
-        child: BackdropFilter(
-          filter: ImageFilter.blur(
-            sigmaX: 5.0,
-            sigmaY: 5,
+         ),
+          title: Text(
+            'OpSo',
+            style: TextStyle(
+              fontFamily: 'Outfit',
+                fontWeight: FontWeight.bold, 
+                fontSize: appBarFontSize),
           ),
-          child: Stack(
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width * 0.70,
-                color: backgroundColor,
-                // decoration: const BoxDecoration(color: Colors.white),
-                child: SafeArea(
-                  child: Padding(
-                    padding:
-                    const EdgeInsets.only(left: 30, right: 30, top: 30),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: kTextTabBarHeight,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              IconButton(
-                                icon: Icon(Icons.close),
-                                onPressed: () => Navigator.pop(context),
-                              ),
-                              SizedBox(
-                                width: ScreenUtil().setWidth(10),
-                              ),
-                              Text(
-                                'Menu',
-                                style: TextStyle(
-                                  fontSize: appTextFontSize,
-                                  // color: Colors.black,
-                                  fontWeight: FontWeight.w700,
+          actions: [
+            IconButton(
+              // icon: const ImageIcon(
+              //   AssetImage('assets/icons/search.png'),
+              //   size: 30,
+              // ),
+              icon: Icon(Icons.search,
+              size: 30,),
+              onPressed: () {
+                showSearch(
+                  context: context,
+                  delegate: ProgramSearchDelegate(),
+                );
+              },
+            ),
+
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ChatBotPage(),
+                ),
+              );
+            },
+            backgroundColor :Colors.grey[200],
+            
+            child: Image.asset(
+              "assets/icons/message.png",
+              height: screenHeight*0.04,
+              fit: BoxFit.fill)),
+        drawer: Drawer(
+          backgroundColor: Colors.transparent,
+          width: screenWidth,
+          child: BackdropFilter(
+            filter: ImageFilter.blur(
+              sigmaX: 5.0,
+              sigmaY: 5,
+            ),
+            child: Stack(
+              children: [
+                Container(
+                  width: screenWidth * 0.70,
+                  color: Theme.of(context).brightness ==
+                                            Brightness.dark
+
+                                        ?  Colors.black.withOpacity(0.6):Colors.grey[200],
+                  
+                  // decoration: const BoxDecoration(color: Colors.white),
+                  child: SafeArea(
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.only(left: 20, right: 24, top: 32),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: kTextTabBarHeight,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                IconButton(
+                                  icon: Icon(Icons.close),
+                                  onPressed: () => Navigator.pop(context),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: ScreenUtil().setHeight(15)),
-                        const Divider(
-                          color: Colors.black26,
-                          height: 1,
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: ScreenUtil().setHeight(15)),
-                              InkWell(
-                                onTap: () {},
-                                child: ListTile(
-                                  leading: Icon(
-                                    AdaptiveTheme.of(context).mode.isDark
-                                        ? FontAwesomeIcons.solidSun
-                                        : FontAwesomeIcons.solidMoon,
+                                   SizedBox(
+                            height: screenHeight*0.02
+                            ),
+                                Text(
+                                  'Menu',
+                                  style: TextStyle(
+                                    fontSize: appTextFontSize,
+                                    // color: Colors.black,
+                                    fontFamily: 'Mulish',
+                                    fontWeight: FontWeight.w800,
                                   ),
-                                  title: const Text('Switch Theme'),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: screenHeight*0.02
+                            ),
+                          const Divider(
+                            color: Colors.black26,
+                            height: 1,
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                          SizedBox(
+                            height: screenHeight*0.02
+                            ),
+                                InkWell(
+                                  onTap: () {},
+                                  child: ListTile(
+                                    leading: Icon(
+                                      AdaptiveTheme.of(context).mode.isDark
+                                          ? FontAwesomeIcons.solidSun
+                                          : FontAwesomeIcons.solidMoon,
+                                    ),
+                                    title: const Text(
+                                      'Switch Theme',
+                                      style: TextStyle(
+                                        fontFamily: 'Mulish'
+                                      ),
+                                      ),
+                                    onTap: () {
+                                      setState(() {
+                                        AdaptiveTheme.of(context)
+                                            .toggleThemeMode(useSystem: false);
+                                      });
+                                    },
+                                  ),
+                                ),
+                          SizedBox(
+                            height: screenHeight*0.02
+                            ),
+                                ListTile(
+                                  leading:
+                                      const Icon(FontAwesomeIcons.bookmark),
+                                  title: const Text('Bookmarks',
+                                        style: TextStyle(
+                                        fontFamily: 'Mulish'
+                                      ),
+                                  ),
                                   onTap: () {
-                                    setState(() {
-                                      AdaptiveTheme.of(context)
-                                          .toggleThemeMode(useSystem: false);
-                                    });
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const BookMarkScreen()));
                                   },
                                 ),
-                              ),
-                              const SizedBox(height: 15),
-                              ListTile(
-                                leading: const Icon(FontAwesomeIcons.bookmark),
-                                title: const Text('Bookmarks'),
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                          const BookMarkScreen()));
-                                },
-                              ),
-                              const SizedBox(height: 15),
-                              ListTile(
-                                leading: const Icon(FontAwesomeIcons.code),
-                                title: const Text('GitHub Workflow'),
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                          LearningPathPage()));
-                                },
-                              ),
-                              const SizedBox(height: 15),
-                              ListTile(
-                                leading: Transform.rotate(
-                                  angle: 90 * math.pi / 180,
-                                  child: const Icon(
-                                    FontAwesomeIcons.timeline,
+                          SizedBox(
+                            height: screenHeight*0.02
+                            ),
+                                ListTile(
+                                  leading: const Icon(FontAwesomeIcons.code),
+                                  title: const Text('GitHub Workflow',
+                                       style: TextStyle(
+                                        fontFamily: 'Mulish'
+                                  
                                   ),
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                LearningPathPage()));
+                                  },
                                 ),
-                                title: const Text('Program Timeline'),
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                      const OpsoTimeLineScreen(),
+                          SizedBox(
+                            height: screenHeight*0.02
+                            ),
+                                ListTile(
+                                  leading: Transform.rotate(
+                                    angle: 90 * math.pi / 180,
+                                    child: const Icon(
+                                      FontAwesomeIcons.timeline,
                                     ),
-                                  );
-                                },
-                              ),
-                              const SizedBox(height: 15),
-                              ListTile(
-                                leading: const Icon(
-                                    FontAwesomeIcons.solidCircleQuestion),
-                                title: const Text('Freuently Asked Questions'),
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          FAQPage(),
-                                    ),
-                                  );
-                                },
-                              ),
-                              SizedBox(height: ScreenUtil().setHeight(15)),
-                              ListTile(
-                                leading:
-                                const Icon(FontAwesomeIcons.circleInfo),
-                                title: const Text('About'),
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => AboutScreen(),
-                                    ),
-                                  );
-                                },
-                              ),
-                              SizedBox(height: ScreenUtil().setHeight(15)),
-                            ],
+                                  ),
+                                  title: const Text('Program Timeline',
+                                   style: TextStyle(
+                                        fontFamily: 'Mulish'
+                                  
+                                  ),),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const OpsoTimeLineScreen(),
+                                      ),
+                                    );
+                                  },
+                                ),
+                          SizedBox(
+                            height: screenHeight*0.02
+                            ),
+                                ListTile(
+                                  leading: const Icon(
+                                      FontAwesomeIcons.solidCircleQuestion),
+                                  title:
+                                      const Text('Freuently Asked Questions',
+                                       style: TextStyle(
+                                        fontFamily: 'Mulish'
+                                  
+                                  ),),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => FAQPage(),
+                                      ),
+                                    );
+                                  },
+                                ),
+                          SizedBox(
+                            height: screenHeight*0.02
+                            ),
+                                ListTile(
+                                  leading:
+                                      const Icon(FontAwesomeIcons.circleInfo),
+                                  title: const Text('About',
+                                   style: TextStyle(
+                                        fontFamily: 'Mulish'
+                                  
+                                  ),),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => AboutScreen(),
+                                      ),
+                                    );
+                                  },
+                                ),
+                          SizedBox(
+                            height: screenHeight*0.02
+                            ),
+                              ],
+                            ),
                           ),
-                        ),
-                        const Divider(
-                          color: Colors.black26,
-                          height: 1,
-                        ),
-                        SizedBox(height: ScreenUtil().setHeight(15)),
-                      ],
+                          const Divider(
+                            color: Colors.black26,
+                            height: 1,
+                          ),
+                          SizedBox(height: ScreenUtil().setHeight(15)),
+                        ],
+                      ),
                     ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        body: Container(
+          height: screenHeight,
+          width: screenWidth,
+          child: Column(
+            children: [
+              SizedBox(
+                height: 0.02 * screenHeight,
+              ),
+              Container(
+                height: screenHeight * 0.36,
+               
+                // color: Colors.amber,
+                child: Column(
+                  children: [
+                    CarouselSlider(
+                      
+                      items: imageSliders,
+                      carouselController: _carouselcontroller,
+                      options: CarouselOptions(
+
+                          height: screenHeight * 0.33,
+                          enlargeCenterPage: true,
+                          autoPlay: true,
+                          aspectRatio: 2.0,
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          enableInfiniteScroll: true,
+                          autoPlayAnimationDuration:
+                              Duration(milliseconds: 800),
+                          viewportFraction: 0.8,
+                          onPageChanged: (index, reason) {
+                            setState(() {
+                              _current = index;
+                            });
+                          }),
+                    ),
+                    
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,                      
+                      children: imgList.asMap().entries.map((entry) {
+                        return GestureDetector(
+                          onTap: () => _carouselcontroller.animateToPage(entry.key),
+                          child: Container(
+                            
+                            width: screenWidth * 0.02,
+                            height: screenWidth * 0.02,
+                            margin: EdgeInsets.symmetric(
+                                vertical: 8.0, horizontal: 4.0),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: (Theme.of(context).brightness ==
+                                            Brightness.dark
+                                        ? Colors.white
+                                        : Color(0xFFF48F42))
+                                    .withOpacity(
+                                        _current == entry.key ? 0.9 : 0.2)),
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  ],
+                ),
+              ),
+
+              SingleChildScrollView(
+                controller: verticalController,
+                scrollDirection: Axis.vertical,
+                child: Container(
+                  height: screenHeight * 0.5,
+                  
+                  padding: const EdgeInsets.all(16.0),
+                  child: ListView(
+                    children: programs.map((program) {
+                      return ProgramOption(
+                        title: program.title,
+                        imageAssetPath: program.imageAssetPath,
+                        onTap: () {
+                          navigateToScreen(context, program);
+                        },
+                        screenHeight : screenHeight,
+                        screenWidth : screenWidth
+                      );
+                    }).toList(),
                   ),
                 ),
               ),
             ],
           ),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView(
-          children: programs.map((program) {
-            return ProgramOption(
-              title: program.title,
-              imageAssetPath: program.imageAssetPath,
-              onTap: () {
-                navigateToScreen(context, program);
-              },
-            );
-          }).toList(),
-        ),
-      ),
-    );
+        ));
   }
-
 
   void navigateToScreen(BuildContext context, Program program) {
     switch (program.title) {
@@ -387,7 +541,6 @@ class _HomePageState extends State<HomePage> {
           ),
         );
         break;
-
 
       case 'Google Season of Docs':
         Navigator.push(
@@ -407,7 +560,6 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
-
       case 'Major League Hacking Fellowship':
         Navigator.push(
           context,
@@ -419,13 +571,9 @@ class _HomePageState extends State<HomePage> {
       case 'Summer of Bitcoin':
         Navigator.push(
           context,
-          MaterialPageRoute(
-              builder: (context) => const SummerOfBitcoin()),
+          MaterialPageRoute(builder: (context) => const SummerOfBitcoin()),
         );
         break;
-
-        
-
 
       case 'GirlScript Summer of Code':
         Navigator.push(
@@ -435,7 +583,6 @@ class _HomePageState extends State<HomePage> {
           ),
         );
         break;
-
 
       case 'Social Winter of Code':
         Navigator.push(
@@ -473,31 +620,31 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
-
       case 'Outreachy':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const OutreachyScreen(),
-            ),
-            );
-
-
-      
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const OutreachyScreen(),
+          ),
+        );
 
       case 'Hacktoberfest':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const Hacktoberfest(),
-            ),
-            );
-      
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const Hacktoberfest(),
+          ),
+        );
+
       case 'Github Campus Expert':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const GithubCampus(),
-            ),
-            );
-      
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const GithubCampus(),
+          ),
+        );
 
       case 'Open Summer of Code':
-
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -505,14 +652,13 @@ class _HomePageState extends State<HomePage> {
           ),
         );
 
-
       case 'Linux Foundation':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const LinuxFoundation(),
-            ),
-            );
-
-
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LinuxFoundation(),
+          ),
+        );
 
       default:
         break;
@@ -520,36 +666,38 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-
 class ProgramOption extends StatelessWidget {
   final String title;
   final String imageAssetPath;
   final VoidCallback onTap;
-
+  final double screenHeight;
+  final double screenWidth;
 
   const ProgramOption({
     super.key,
     required this.title,
     required this.imageAssetPath,
     required this.onTap,
+    required this.screenHeight,
+    required this.screenWidth,
   });
-
 
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final borderColor = isDarkMode ? Colors.white : Colors.black45;
+    final borderColor = isDarkMode ? Color.fromARGB(255, 255, 255, 255).withOpacity(0.4) : Color(0xFF3C3C3C).withOpacity(0.25);
     return Column(
       children: [
         GestureDetector(
           onTap: onTap,
           child: Container(
-            padding: EdgeInsets.all(ScreenUtil().setWidth(20)),
+            height: screenHeight*0.1,
+            padding: EdgeInsets.symmetric(vertical: 4, horizontal: 24),
             decoration: BoxDecoration(
               // color: const Color.fromARGB(255, 237, 237, 239),
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(8),
               border: Border.all(
-                width: 1,
+                width: 2,
                 color: borderColor,
               ),
             ),
@@ -557,30 +705,32 @@ class ProgramOption extends StatelessWidget {
               children: [
                 Image.asset(
                   imageAssetPath,
-                  width: ScreenUtil().setWidth(50),
-                  height: ScreenUtil().setHeight(50),
+                  width: screenWidth*0.15,
                 ),
-                SizedBox(width: ScreenUtil().setWidth(20)),
+                SizedBox(width: ScreenUtil().setWidth(16)),
                 Expanded(
                   child: Text(
                     title,
                     style: TextStyle(
-                      fontSize: ScreenUtil().setSp(18),
+                      fontFamily: 'Outfit',
+                      fontSize: ScreenUtil().setSp(16),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                const Icon(Icons.arrow_forward),
+                const Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Color.fromRGBO(60, 60, 60, 0.8)
+                  ),
               ],
             ),
           ),
         ),
-        SizedBox(height: ScreenUtil().setHeight(20)),
+        SizedBox(height: screenHeight*0.02,)
       ],
     );
   }
 }
-
 
 class ProgramSearchDelegate extends SearchDelegate<String> {
   final List<Program> programs = [
@@ -608,11 +758,11 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
       title: 'Summer of Bitcoin',
       imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
     ),
-     Program(
+    Program(
       title: 'Hacktoberfest',
       imageAssetPath: 'assets/hacktoberfest.png',
     ),
-     Program(
+    Program(
       title: 'Github Campus Expert',
       imageAssetPath: 'assets/git_campus_logo.png',
     ),
@@ -646,7 +796,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     ),
   ];
 
-
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -659,7 +808,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     ];
   }
 
-
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
@@ -670,39 +818,39 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     );
   }
 
-
   @override
   Widget buildResults(BuildContext context) {
     return Container();
   }
-
 
   @override
   Widget buildSuggestions(BuildContext context) {
     final List<String> suggestionList = query.isEmpty
         ? ['']
         : programs
-        .where((program) =>
-        program.title.toLowerCase().contains(query.toLowerCase()))
-        .map((program) => program.title)
-        .toList();
+            .where((program) =>
+                program.title.toLowerCase().contains(query.toLowerCase()))
+            .map((program) => program.title)
+            .toList();
 
-
-    return suggestionList.isNotEmpty ? ListView.builder(
-      itemCount: suggestionList.length,
-      itemBuilder: (context, index) => suggestionList[0] == '' ? Container(): ListTile(
-        title: Text(suggestionList[index]),
-        onTap: () {
-          navigateToScreen(context, suggestionList[index]);
-        },
-      ),
-    ) : Image.asset('assets/no-results.png');
+    return suggestionList.isNotEmpty
+        ? ListView.builder(
+            itemCount: suggestionList.length,
+            itemBuilder: (context, index) => suggestionList[0] == ''
+                ? Container()
+                : ListTile(
+                    title: Text(suggestionList[index],style: const TextStyle(fontFamily: 'Mulish',fontSize: 20,fontWeight: FontWeight.w400),),
+                    onTap: () {
+                      navigateToScreen(context, suggestionList[index]);
+                    },
+                  ),
+          )
+        : Image.asset('assets/no-results.png');
   }
-
 
   void navigateToScreen(BuildContext context, String title) {
     final Program selectedProgram =
-    programs.firstWhere((program) => program.title == title);
+        programs.firstWhere((program) => program.title == title);
     switch (selectedProgram.title) {
       case 'Google Summer of Code':
         Navigator.push(
@@ -731,7 +879,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-         case 'Major League Hacking Fellowship':
+      case 'Major League Hacking Fellowship':
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -740,7 +888,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-         case 'Summer of Bitcoin':
+      case 'Summer of Bitcoin':
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -749,7 +897,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-        case 'Hyperledger':
+      case 'Hyperledger':
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -767,10 +915,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-      
-
-     
-
       case 'Outreachy':
         Navigator.push(
           context,
@@ -780,7 +924,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-
       case 'GirlScript Summer of Code':
         Navigator.push(
           context,
@@ -789,7 +932,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           ),
         );
         break;
-
 
       case 'Social Winter of Code':
         Navigator.push(
@@ -808,7 +950,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           ),
         );
         break;
-      
+
       case 'Hacktoberfest':
         Navigator.push(
           context,
@@ -827,17 +969,16 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-
       case 'Linux Foundation':
         Navigator.push(
           context,
-            MaterialPageRoute(
-              builder: (context) => const LinuxFoundation(),
-            ),
-            );
+          MaterialPageRoute(
+            builder: (context) => const LinuxFoundation(),
+          ),
+        );
         break;
 
-        case 'Open Summer of Code':
+      case 'Open Summer of Code':
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -846,19 +987,15 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-
-
       default:
         break;
     }
   }
 }
 
-
 class Program {
   final String title;
   final String imageAssetPath;
-
 
   Program({
     required this.title,

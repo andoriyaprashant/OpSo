@@ -136,7 +136,13 @@ class _FOSSASIAState extends State<FOSSASIA> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('FOSSASIA Codeheat'),
+          title: const Text(
+            'FOSSASIA Codeheat',
+            style: TextStyle(
+              fontFamily: 'Outfit',
+                fontWeight: FontWeight.w500, 
+                ),
+            ),
           actions: <Widget>[
             IconButton(
               icon: Icon(

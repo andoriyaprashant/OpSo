@@ -44,7 +44,12 @@ class _GithubCampusState extends State<GithubCampus> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Github Campus Expert'),
+          title: const Text('Github Campus Expert',
+          style: TextStyle(
+              fontFamily: 'Outfit',
+                fontWeight: FontWeight.w500, 
+                ),
+          ),
           actions: <Widget>[
             IconButton(
               icon: (isBookmarked)

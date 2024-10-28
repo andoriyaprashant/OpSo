@@ -180,7 +180,12 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar: AppBar(title: const Text('GSSoC'), actions: <Widget>[
+        appBar: AppBar(title: const Text('GSSoC',
+        style: TextStyle(
+              fontFamily: 'Outfit',
+                fontWeight: FontWeight.w500, 
+                ),
+        ), actions: <Widget>[
           IconButton(
             icon: (isBookmarked)
                 ? const Icon(Icons.bookmark_add_rounded)

@@ -138,7 +138,12 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar: AppBar(title: const Text('Outreachy'), actions: <Widget>[
+        appBar: AppBar(title: const Text('Outreachy',
+                    style: TextStyle(
+              fontFamily: 'Outfit',
+                fontWeight: FontWeight.w500, 
+                ),
+        ), actions: <Widget>[
           IconButton(
             icon: (isBookmarked)
                 ? const Icon(Icons.bookmark_add_rounded)

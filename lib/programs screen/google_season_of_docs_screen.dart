@@ -229,7 +229,12 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar: AppBar(title: const Text('GSoD'), actions: <Widget>[
+        appBar: AppBar(title: const Text('GSoD',
+                    style: TextStyle(
+              fontFamily: 'Outfit',
+                fontWeight: FontWeight.w500, 
+                ),
+        ), actions: <Widget>[
           IconButton(
             icon: (isBookmarked)
                 ? const Icon(Icons.bookmark_add_rounded)

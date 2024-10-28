@@ -122,7 +122,12 @@ class _HyperledgerState extends State<Hyperledger> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Hyperledger'),
+          title: const Text('Hyperledger',
+                      style: TextStyle(
+              fontFamily: 'Outfit',
+                fontWeight: FontWeight.w500, 
+                ),
+          ),
           actions: <Widget>[
             IconButton(
               icon: Icon(

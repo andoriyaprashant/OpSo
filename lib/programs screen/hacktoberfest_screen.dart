@@ -43,7 +43,12 @@ class _HacktoberfestState extends State<Hacktoberfest> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Hacktoberfest'),
+          title: const Text('Hacktoberfest',
+                      style: TextStyle(
+              fontFamily: 'Outfit',
+                fontWeight: FontWeight.w500, 
+                ),
+          ),
           actions: <Widget>[
             IconButton(
               icon: (isBookmarked)

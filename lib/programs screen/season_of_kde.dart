@@ -111,7 +111,12 @@ class _SeasonOfKDEState extends State<SeasonOfKDE> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Season of KDE'),
+          title: const Text('Season of KDE',
+                              style: TextStyle(
+              fontFamily: 'Outfit',
+                fontWeight: FontWeight.w500, 
+                ),
+          ),
           actions: <Widget>[
             IconButton(
               icon: Icon(

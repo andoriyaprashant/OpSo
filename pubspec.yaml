@@ -45,6 +45,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   flutter_screenutil: ^5.9.1
   multi_select_flutter: ^4.1.3
+  carousel_slider:
 dev_dependencies:
   awesome_notifications: ^0.9.3+1
   flutter_launcher_icons: ^0.13.1
@@ -118,6 +119,7 @@ flutter:
     - assets/projects/osoc/osoc2021.json
     - assets/projects/osoc/osoc2022.json
     - assets/projects/gsoc_org/
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -128,17 +130,22 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
+  fonts:
+    - family: Outfit
+      fonts:
+        - asset: assets/fonts/Outfit-Light.ttf
+        - asset: assets/fonts/Outfit-Regular.ttf
+        - asset: assets/fonts/Outfit-Medium.ttf
+        - asset: assets/fonts/Outfit-SemiBold.ttf
+        - asset: assets/fonts/Outfit-ExtraBold.ttf
+        - asset: assets/fonts/Outfit-Regular.ttf
+        - asset: assets/fonts/Outfit-Light.ttf
+        - asset: assets/fonts/Outfit-Medium.ttf
+        
+    - family: Mulish
+      fonts:
+        - asset: assets/fonts/Mulish-Bold.ttf
+        - asset: assets/fonts/Mulish-Black.ttf
+        - asset: assets/fonts/Mulish-ExtraBold.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

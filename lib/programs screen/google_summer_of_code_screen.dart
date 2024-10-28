@@ -150,7 +150,12 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Google Summer of Code'),
+          title: const Text('Google Summer of Code',
+                      style: TextStyle(
+              fontFamily: 'Outfit',
+                fontWeight: FontWeight.w500, 
+                ),
+          ),
           actions: <Widget>[
             IconButton(
               icon: (isBookmarked)
