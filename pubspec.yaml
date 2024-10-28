@@ -117,6 +117,7 @@ flutter:
     - assets/no-results.png
     - assets/projects/osoc/osoc2021.json
     - assets/projects/osoc/osoc2022.json
+    - assets/projects/gsoc_org/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
