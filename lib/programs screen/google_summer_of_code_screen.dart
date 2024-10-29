@@ -1,15 +1,14 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:convert';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/programs_info_pages/gsoc_info.dart';
 import 'package:opso/widgets/gsoc/GsocProjectWidget.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import '../modals/GSoC/Gsoc.dart';
-import '../services/ApiService.dart';
-import '../widgets/SearchandFilterWidget.dart';
 import '../widgets/year_button.dart';
-
 
 class GoogleSummerOfCodeScreen extends StatefulWidget {
   const GoogleSummerOfCodeScreen({super.key});
@@ -19,19 +18,23 @@ class GoogleSummerOfCodeScreen extends StatefulWidget {
       _GoogleSummerOfCodeScreenState();
 }
 
-
 class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   bool _isRefreshing = false;
+
   bool isBookmarked = true;
   String currentPage = "/google_summer_of_code";
   String currentProject = "Google Summer of Code";
-  String selectedOrg = ''; // Ensure this is defined
+
+  int selectedYear = 2024;
+  List<String> selectedProposals = ['All'];
+
   List<Organization> gsoc2024 = [];
   List<Organization> gsoc2023 = [];
   List<Organization> gsoc2022 = [];
   List<Organization> gsoc2021 = [];
-  int selectedYear = 2024;
+
   List<String> languages = [
+    'All',
     'js',
     'python',
     'django',
@@ -48,21 +51,27 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     'flutter',
     'Dart'
   ];
+
   List<Organization> orgList = [];
   List<String> selectedLanguages = [];
-  List<String> allOrganizations = [];
-  List<String> selectedOrganizations = [];
+
   late Future<void> _dataFetchFuture;
-
-
-
 
   @override
   void initState() {
     super.initState();
-    _refresh();
-    _dataFetchFuture = getProjectData();
+    _dataFetchFuture = initializeProjectLists();
     _checkBookmarkStatus();
+  }
+
+  Future<List<Organization>> loadOrganizations(int year) async {
+    setState(() { _isRefreshing = true; });
+    String path = 'assets/projects/gsoc_org/gsoc${year}org.json';
+    String response = await rootBundle.loadString(path);
+
+    setState(() { _isRefreshing = false; });
+    var decodedResponse = json.decode(response) as List;
+    return decodedResponse.map((org) => Organization.fromJson(org)).toList();
   }
 
   Future<void> _checkBookmarkStatus() async {
@@ -72,144 +81,70 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     });
   }
 
+  void filterProjects() async {
+    orgList = await _getOrganizationsByYear(selectedYear);
 
-
-  Future<void> getProjectData() async {
-    ApiService apiService = ApiService();
-    try {
-      Gsoc orgData2021 = await apiService.getOrgByYear('2021');
-      Gsoc orgData2022 = await apiService.getOrgByYear('2022');
-      Gsoc orgData2023 = await apiService.getOrgByYear('2023');
-      Gsoc orgData2024 = await apiService.getOrgByYear('2024');
-
-
-
-
-      setState(() {
-        gsoc2021 = orgData2021.organizations ?? [];
-        gsoc2022 = orgData2022.organizations ?? [];
-        gsoc2023 = orgData2023.organizations ?? [];
-        gsoc2024 = orgData2024.organizations ?? [];
-        orgList = gsoc2024; // Default to the latest year
-        allOrganizations = [...orgList.map((org) => org.name).toSet()];
-      });
-    } catch (e) {
-      print('Error: $e');
-    }
-  }
-
-
-
-
-  void filterProjects() {
-    orgList = _getOrganizationsByYear(selectedYear);
-    if(selectedLanguages.length>=2){
+    if (selectedLanguages.length >= 2) {
       selectedLanguages.removeAt(0);
     }
-    if(selectedOrganizations.length>=2){
-      selectedOrganizations.removeAt(0);
-    }
+
     if (!selectedLanguages.contains('All')) {
-      orgList = orgList.where((project) =>
-          selectedLanguages.every((language) => project.technologies.contains(language) == true)
-      ).toList();
-    }
-
-
-
-
-
-
-    if (!selectedOrganizations.contains('All')) {
       orgList = orgList
-          .where((project) => selectedOrganizations.contains(project.name))
+          .where((project) => selectedLanguages.every(
+              (language) => project.technologies.contains(language) == true))
           .toList();
     }
-
-
-
-    // Update organization filter based on selected languages
-    allOrganizations = [
-      ..._getOrganizationsByYear(selectedYear)
-          .where((org) =>
-      selectedLanguages.contains('All') ||
-          org.technologies.any(selectedLanguages.contains) == true)
-          .map((org) => org.name)
-          .toSet()
-    ];
-
-
-
 
     setState(() {});
   }
 
-
-
-
-  List<Organization> _getOrganizationsByYear(int year) {
+  Future<List<Organization>> _getOrganizationsByYear(int year) async {
     switch (year) {
       case 2021:
+        if (gsoc2021.isEmpty) gsoc2021 = await loadOrganizations(year);
         return gsoc2021;
       case 2022:
+        if (gsoc2022.isEmpty) gsoc2022 = await loadOrganizations(year);
         return gsoc2022;
       case 2023:
+        if (gsoc2023.isEmpty) gsoc2023 = await loadOrganizations(year);
         return gsoc2023;
       case 2024:
+        if (gsoc2024.isEmpty) gsoc2024 = await loadOrganizations(year);
         return gsoc2024;
       default:
         return [];
     }
   }
 
-
-
-
   Future<void> _refresh() async {
     setState(() {
-      _isRefreshing = true;
-    });
-    await getProjectData();
-    setState(() {
+      initializeProjectLists();
       selectedYear = 2024;
       selectedLanguages = ['All'];
-      selectedOrganizations = ['All'];
       filterProjects();
-      _isRefreshing = false;
     });
   }
-
-
-
 
   // Add this method to the _GoogleSummerOfCodeScreenState class
-  void search(String searchText) {
-    setState(() {
-      selectedOrg = 'All'; // Reset selectedOrg to avoid mismatch
-      if (searchText.isEmpty) {
-        orgList = _getOrganizationsByYear(selectedYear);
-      } else {
-        orgList = _getOrganizationsByYear(selectedYear)
-            .where((element) =>
-        element.name
-            .toLowerCase()
-            .contains(searchText.toLowerCase()) ==
-            true)
-            .toList();
-      }
-    });
+  void search(String searchText) async {
+    orgList = await _getOrganizationsByYear(selectedYear);
+
+    if (searchText.isNotEmpty) {
+      orgList = orgList
+          .where((element) =>
+              element.name.toLowerCase().contains(searchText.toLowerCase()) ==
+              true)
+          .toList();
+    }
+
+    setState(() {});
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-
-
-
 
     return RefreshIndicator(
       onRefresh: _refresh,
@@ -223,6 +158,12 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
         centerTitle: true,
           title: const Text('GSoC'),
           actions: <Widget>[IconButton(
+
+        appBar: AppBar(
+          title: const Text('Google Summer of Code'),
+          actions: <Widget>[
+            IconButton(
+
               icon: (isBookmarked)
                   ? const Icon(Icons.bookmark_add_rounded)
                   : const Icon(Icons.bookmark_add_outlined),
@@ -238,35 +179,39 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                   ),
                 );
                 if (isBookmarked) {
-                  print("Adding");
+                  if (kDebugMode) {
+                    print("Adding");
+                  }
                   HandleBookmark.addBookmark(currentProject, currentPage);
                 } else {
-                  print("Deleting");
+                  if (kDebugMode) {
+                    print("Deleting");
+                  }
                   HandleBookmark.deleteBookmark(currentProject);
                 }
               },
             ),
             IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const GSOCInfo()),                );
-            },
-          ),],
+              icon: const Icon(Icons.info_outline),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const GSOCInfo()),
+                );
+              },
+            ),
+          ],
         ),
         body: FutureBuilder<void>(
           future: _dataFetchFuture,
           builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator());
-            } else if (snapshot.hasError) {
+            if (snapshot.hasError) {
               return Center(child: Text('Error: ${snapshot.error}'));
             } else {
               return SingleChildScrollView(
                 child: Padding(
                   padding:
-                  const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
+                      const EdgeInsets.symmetric(horizontal: 46, vertical: 16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -318,73 +263,27 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                         child: GridView(
                           physics: const NeverScrollableScrollPhysics(),
                           gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             childAspectRatio: 1.5 / 0.6,
                             crossAxisSpacing: 15,
                             mainAxisSpacing: 15,
                           ),
                           children: [
-                            YearButton(
-                              year: "2021",
-                              isEnabled: selectedYear == 2021,
-                              onTap: () {
-                                setState(() {
-                                  selectedYear = 2021;
-                                  selectedLanguages = [];
-                                  selectedOrganizations = [];
-                                  filterProjects();
-                                });
-                              },
-                              backgroundColor: selectedYear == 2021
-                                  ? Colors.white
-                                  : const Color.fromRGBO(255, 183, 77, 1),
-                            ),
-                            YearButton(
-                              year: "2022",
-                              isEnabled: selectedYear == 2022,
-                              onTap: () {
-                                setState(() {
-                                  selectedYear = 2022;
-                                  selectedLanguages = [];
-                                  selectedOrganizations = [];
-                                  filterProjects();
-                                });
-                              },
-                              backgroundColor: selectedYear == 2022
-                                  ? Colors.white
-                                  : const Color.fromRGBO(255, 183, 77, 1),
-                            ),
-                            YearButton(
-                              year: "2023",
-                              isEnabled: selectedYear == 2023,
-                              onTap: () {
-                                setState(() {
-                                  selectedYear = 2023;
-                                  selectedLanguages = [];
-                                  selectedOrganizations = [];
-                                  filterProjects();
-                                });
-                              },
-                              backgroundColor: selectedYear == 2023
-                                  ? Colors.white
-                                  : const Color.fromRGBO(255, 183, 77, 1),
-                            ),
-                            YearButton(
-                              isEnabled: selectedYear == 2024,
-                              year: "2024",
-                              onTap: () {
-                                setState(() {
-                                  selectedYear = 2024;
-                                  selectedLanguages = [];
-                                  selectedOrganizations = [];
-                                  filterProjects();
-                                });
-                              },
-                              backgroundColor: selectedYear == 2024
-                                  ? Colors.white
-                                  : const Color.fromRGBO(255, 183, 77, 1),
-                            ),
+                            for (int year = 2021; year <= 2024; year++)
+                              YearButton(
+                                year: year.toString(),
+                                isEnabled: selectedYear == year,
+                                onTap: () {
+                                  setState(() {
+                                    selectedYear = year;
+                                    filterProjects();
+                                  });
+                                },
+                                backgroundColor: selectedYear == year
+                                    ? Colors.white
+                                    : const Color.fromRGBO(255, 183, 77, 1),
+                              ),
                           ],
                         ),
                       ),
@@ -397,74 +296,62 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                         onConfirm: (results) {
                           setState(() {
                             selectedLanguages =
-                            results.isNotEmpty ? results : [];
-                            print(selectedLanguages);
+                                results.isNotEmpty ? results : [];
+                            if (kDebugMode) {
+                              print(selectedLanguages);
+                            }
                             filterProjects();
                           });
                         },
                       ),
                       const SizedBox(height: 20),
-                      orgList.isEmpty
-                          ? _isRefreshing
+                      _isRefreshing
                           ? const Column(
-                        children: [
-                          Center(
-                              child: Column(
-                                children: [
-                                  CircularProgressIndicator(),
-                                  SizedBox(height: 10),
-                                  Text('Refreshing...'),
-                                ],
-                              )
-                          ),
-                          SizedBox(height: 20),
-                        ],
-                      )
-                          : Column(
-                        children: [
-                          const Center(child: Text('No projects found')),
-                          const SizedBox(height: 20),
-                          TextButton(
-                            onPressed: () {
-                              _refresh();
-                            },
-                            child: const Text('Refresh'),
-                          ),
-                        ],
-                      )
-                          : SizedBox(
-                        height: height,
-                        child: ListView.builder(
-                          itemCount: orgList.length,
-                          itemBuilder: (context, index) {
-                            return Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 2,
-                                      blurRadius: 5,
-                                      offset: const Offset(0, 3), // changes position of shadow
-                                    ),
+                              children: [
+                                SizedBox(height: 50),
+                                Center(
+                                    child: Column(
+                                  children: [
+                                    CircularProgressIndicator(),
+                                    SizedBox(height: 10),
+                                    Text('Loading...'),
                                   ],
-                                ),
-                                child: GsocProjectWidget(
-                                  index: index + 1,
-                                  modal: orgList[index],
-                                  height: height * 0.2,
-                                  width: width,
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-
-
+                                )),
+                                SizedBox(height: 20),
+                              ],
+                            )
+                          : ListView.builder(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: orgList.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 10),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.5),
+                                          spreadRadius: 2,
+                                          blurRadius: 5,
+                                          offset: const Offset(0,
+                                              3), // changes position of shadow
+                                        ),
+                                      ],
+                                    ),
+                                    child: GsocProjectWidget(
+                                      index: index + 1,
+                                      modal: orgList[index],
+                                      height: height * 0.2,
+                                      width: width,
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
                     ],
                   ),
                 ),
@@ -475,9 +362,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       ),
     );
   }
-
-
-
 
   Widget _buildMultiSelectField({
     required List<String> items,
@@ -501,13 +385,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       ),
     );
   }
-}
 
-
-
-
-void main() {
-  runApp(MaterialApp(
-    home: GoogleSummerOfCodeScreen(),
-  ));
+  Future<void> initializeProjectLists() async {
+    orgList = await _getOrganizationsByYear(selectedYear);
+  }
 }
