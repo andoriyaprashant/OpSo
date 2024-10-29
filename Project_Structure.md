@@ -1,6 +1,46 @@
 ## Project Structure
 
 ```
+.github
+├── ISSUE_TEMPLATE
+│   ├── bug.yml               
+│   ├── documentation.yml      
+│   └── feature.yml            
+├── workflows
+│   ├── auto-comment-on-issue.yml     
+│   ├── auto-comment-on-pr-merge.yml   
+│   ├── auto-comment-pr-raise.yml     
+│   ├── autocomment-iss-close.yml     
+│   ├── close-old-pr.yml              
+│   ├── codeql.yml                     
+│   ├── dependabot.yml                
+│   └── issue-assign.yml              
+└── pull_request_template.md
+
+.gradle
+├── 8.0.2
+│   ├── checksums
+│   │   └── checksums.lock                   
+│   ├── fileChanges
+│   │   └── last-build.bin                  
+│   ├── fileHashes
+│   │   └── fileHashes.lock                  
+│   └── gc.properties                  
+├── 8.1.1
+│   ├── checksums
+│   │   └── checksums.lock                  
+│   ├── dependencies-accessors
+│   │   ├── dependencies-accessors.lock     
+│   │   └── gc.properties                   
+│   ├── executionHistory
+│   │   └── executionHistory.lock                     
+│   ├── fileChanges
+│   │   └── last-build.bin                     
+│   ├── fileHashes
+│   │   └── fileHashes.lock
+│   └── gc.properties                
+
+
 android/
 ├── app/
 │   └── src/
