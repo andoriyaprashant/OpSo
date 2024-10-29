@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FAQPage extends StatelessWidget {
+  final TextEditingController searchController = TextEditingController();
+
   final List<FAQ> faqs = [
     FAQ("What is “Open Source” software?", "Generally, Open Source software is software that can be freely accessed, used, changed, and shared (in modified or unmodified form) by anyone. Open source software is made by many people, and distributed under licenses that comply with the Open Source Definition. The internationally recognized Open Source Definition provides ten criteria that must be met for any software license, and the software distributed under that license, to be labeled “Open Source software.” Only software licensed under an OSI-approved Open Source license should be labeled “Open Source” software."),
     FAQ("Can Open Source software be used for commercial purposes?", "Absolutely. All Open Source software can be used for commercial purpose; the Open Source Definition guarantees this. You can even sell Open Source software."),
@@ -40,6 +42,21 @@ class FAQPage extends StatelessWidget {
     FAQ("How can I apply for Summer of Bitcoin?", "To apply for Summer of Bitcoin, visit the official website, review the application criteria and timelines, and submit your application along with any required documents."),
   ];
 
+  final ValueNotifier<List<FAQ>> filteredFaqs = ValueNotifier<List<FAQ>>([]);
+
+  FAQPage() {
+    // Initialize filtered FAQs with the full list initially
+    filteredFaqs.value = faqs;
+    searchController.addListener(() {
+      final query = searchController.text.toLowerCase();
+      filteredFaqs.value = faqs
+          .where((faq) =>
+      faq.question.toLowerCase().contains(query) ||
+          faq.answer.toLowerCase().contains(query))
+          .toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     const ScreenUtilInit(
@@ -60,7 +77,40 @@ class FAQPage extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(20.w),
           child: Column(
-            children: faqs.map((faq) => CustomExpansionTile(faq: faq)).toList(),
+            children: [
+              TextField(
+                controller: searchController,
+                cursorColor: Colors.grey[800],
+
+                decoration: InputDecoration(
+                  labelText: 'Search FAQs',
+                  labelStyle: TextStyle(
+                    color: Colors.grey.shade800, // Default label color
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                    borderSide: BorderSide(color: Colors.grey.shade800), // Focused border color
+                  ),
+                  suffixIcon: const Icon(Icons.search),
+                ),
+              ),
+              SizedBox(height: 16.h),
+              ValueListenableBuilder<List<FAQ>>(
+                  valueListenable: filteredFaqs,
+                  builder: (context, faqs, _) {
+                    return Column(
+                      children: faqs
+                          .map((faq) => CustomExpansionTile(faq: faq))
+                          .toList(),
+                    );
+                  },
+
+              ),
+            ],
           ),
         ),
       ),

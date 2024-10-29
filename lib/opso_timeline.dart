@@ -125,9 +125,9 @@ class OpsoTimeLineScreen extends StatelessWidget {
       },
       {
         'description':
-        "GirlScript Summer Of Code Extended\nApplication Period - 15/09/2024 to 10/10/2024",
+        "GirlScript Summer Of Code Extended\nApplication Period - 15/09/2024 to 25/10/2024",
         'startDate': DateTime.utc(2024, 9, 15),
-        'endDate': DateTime.utc(2024, 10, 10),
+        'endDate': DateTime.utc(2024, 10, 25),
       },
       {
         'description':

@@ -417,6 +417,16 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
+      case 'Summer of Bitcoin':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => const SummerOfBitcoin()),
+        );
+        break;
+
+        
+
 
       case 'GirlScript Summer of Code':
         Navigator.push(
@@ -467,20 +477,24 @@ class _HomePageState extends State<HomePage> {
 
       case 'Outreachy':
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const OutreachyScreen()));
+            MaterialPageRoute(builder: (context) => const OutreachyScreen(),
+            ),
+            );
 
 
-      case 'Summer of Bitcoin':
-        Navigator.pushNamed(context, "/summer_of_bitcoin");
       
 
       case 'Hacktoberfest':
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const Hacktoberfest()));
+            MaterialPageRoute(builder: (context) => const Hacktoberfest(),
+            ),
+            );
       
       case 'Github Campus Expert':
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const GithubCampus()));
+            MaterialPageRoute(builder: (context) => const GithubCampus(),
+            ),
+            );
       
 
       case 'Open Summer of Code':
@@ -495,7 +509,11 @@ class _HomePageState extends State<HomePage> {
 
       case 'Linux Foundation':
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const LinuxFoundation()));
+            MaterialPageRoute(builder: (context) => const LinuxFoundation(),
+            ),
+            );
+
+
 
       default:
         break;
@@ -695,6 +713,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           ),
         );
         break;
+
       case 'Google Season of Docs':
         Navigator.push(
           context,
@@ -713,6 +732,33 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
+         case 'Major League Hacking Fellowship':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const MajorLeagueHackingFellowship(),
+          ),
+        );
+        break;
+
+         case 'Summer of Bitcoin':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SummerOfBitcoin(),
+          ),
+        );
+        break;
+
+        case 'Hyperledger':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const Hyperledger(),
+          ),
+        );
+        break;
+
       case 'Redox OS Summer of Code':
         Navigator.push(
           context,
@@ -722,25 +768,11 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-      case 'Hyperledger':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const Hyperledger(),
-          ),
-        );
-        break;
+      
 
-      case 'Major League Hacking Fellowship':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const MajorLeagueHackingFellowship(),
-          ),
-        );
-        break;
+     
 
-      case 'outreachy':
+      case 'Outreachy':
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -798,9 +830,23 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
 
 
       case 'Linux Foundation':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const LinuxFoundation()));
+        Navigator.push(
+          context,
+            MaterialPageRoute(
+              builder: (context) => const LinuxFoundation(),
+            ),
+            );
         break;
+
+        case 'Open Summer of Code':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const OpenSummerOfCode(),
+          ),
+        );
+        break;
+
 
 
       default:

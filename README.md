@@ -5,6 +5,27 @@
 
 OpSo is a Flutter app that provides comprehensive information about various open-source programs, including Google Summer of Code, Summer of Bitcoin, Linux Foundation, and more. It allows users to explore different open-source opportunities, learn about their eligibility criteria, and access important resources.
 
+<table align="center">
+    <thead align="center">
+        <tr border: 2px;>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🍴 Forks</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Close PRs</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/andoriyaprashant/OpSo?style=flat&logo=github"/></td>
+             <td><img alt="Forks" src="https://img.shields.io/github/forks/andoriyaprashant/OpSo?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/andoriyaprashant/OpSo?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/andoriyaprashant/OpSo?style=flat&logo=github"/></td>
+           <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/andoriyaprashant/OpSo?style=flat&color=green&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+
 <div align="center">
   <img src="https://github.com/user-attachments/assets/3356c768-fd24-4e10-a59c-6b6d4a0229d8" alt="Screenshot 1" width="300"/>
   <img src="https://github.com/user-attachments/assets/02c3ce48-6d42-4108-8860-297b842687cf" alt="Screenshot 2" width="300"/>
