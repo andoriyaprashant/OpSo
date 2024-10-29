@@ -9,6 +9,12 @@ class LearningPathPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+         
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        centerTitle: true,
         title: const Text('GitHub Workflow'),
       ),
       body: Padding(
