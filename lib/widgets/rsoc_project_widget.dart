@@ -4,16 +4,12 @@ import 'package:url_launcher/url_launcher.dart';
 
 class RsocProjectWidget extends StatelessWidget {
   final RsocProjectModal modal;
-  final double height;
-  final double width;
   final int index;
 
   const RsocProjectWidget({
     super.key,
     required this.modal,
     required this.index,
-    this.height = 100,
-    this.width = 100,
   });
 
   @override
@@ -29,8 +25,6 @@ class RsocProjectWidget extends StatelessWidget {
         }
       },
       child: Container(
-        width: width,
-        constraints: BoxConstraints(minHeight: height),
         decoration: BoxDecoration(
           border: Border.all(
             color: isDarkMode ? Colors.orange.shade100 : Colors.orange.shade300,
