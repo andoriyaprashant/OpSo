@@ -16,7 +16,7 @@ class RsocPage extends StatefulWidget {
 
 class _RsocPageState extends State<RsocPage> {
   List<RsocProjectModal> projects = [];
-  List<RsocProjectModal> allProjects =[];
+  List<RsocProjectModal> allProjects = [];
 
   String currectPage = "/rsoc";
   String currentProject = "RSoC";
@@ -76,12 +76,11 @@ class _RsocPageState extends State<RsocPage> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
-           leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-         
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-        centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          centerTitle: true,
           title: const Text('Redox Summer of Code'),
           actions: <Widget>[
             IconButton(
@@ -130,8 +129,7 @@ class _RsocPageState extends State<RsocPage> {
             } else if (snapshot.connectionState == ConnectionState.done) {
               return Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: ScreenUtil().setWidth(42), 
-                  vertical: ScreenUtil().setHeight(10), 
+                  horizontal: ScreenUtil().setWidth(42),
                 ),
                 child: SingleChildScrollView(
                   child: Column(
@@ -144,19 +142,23 @@ class _RsocPageState extends State<RsocPage> {
                           suffixIcon: const Icon(Icons.search),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                            borderSide:
+                                const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                            borderSide:
+                                const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
                           disabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                            borderSide:
+                                const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+                            borderSide:
+                                const BorderSide(color: Color(0xFFEEEEEE)),
                           ),
                           contentPadding: EdgeInsets.symmetric(
                             vertical: ScreenUtil().setHeight(12),
@@ -168,22 +170,19 @@ class _RsocPageState extends State<RsocPage> {
                         },
                       ),
                       SizedBox(height: ScreenUtil().setHeight(20)),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.9,
-                        child: ListView.builder(
-                          itemCount: projects.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 8),
-                              child: RsocProjectWidget(
-                                modal: projects[index],
-                                height: ScreenUtil().screenHeight * 0.10, 
-                                width: ScreenUtil().screenWidth,
-                                index: index+1,
-                              ),
-                            );
-                          },
-                        ),
+                      ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: projects.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8),
+                            child: RsocProjectWidget(
+                              modal: projects[index],
+                              index: index + 1,
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
