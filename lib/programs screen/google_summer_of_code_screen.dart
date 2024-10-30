@@ -65,11 +65,15 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
   }
 
   Future<List<Organization>> loadOrganizations(int year) async {
-    setState(() { _isRefreshing = true; });
+    setState(() {
+      _isRefreshing = true;
+    });
     String path = 'assets/projects/gsoc_org/gsoc${year}org.json';
     String response = await rootBundle.loadString(path);
 
-    setState(() { _isRefreshing = false; });
+    setState(() {
+      _isRefreshing = false;
+    });
     var decodedResponse = json.decode(response) as List;
     return decodedResponse.map((org) => Organization.fromJson(org)).toList();
   }
@@ -149,21 +153,14 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-               appBar: AppBar(
-                 leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-         
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-        centerTitle: true,
-          title: const Text('GSoC'),
-          actions: <Widget>[IconButton(
-
         appBar: AppBar(
-          title: const Text('Google Summer of Code'),
+          leading: IconButton(
+              icon: const Icon(Icons.arrow_back_ios),
+              onPressed: () => Navigator.of(context).pop()),
+          centerTitle: true,
+          title: const Text('GSoC'),
           actions: <Widget>[
             IconButton(
-
               icon: (isBookmarked)
                   ? const Icon(Icons.bookmark_add_rounded)
                   : const Icon(Icons.bookmark_add_outlined),
