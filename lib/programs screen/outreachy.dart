@@ -90,13 +90,20 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
     }
   }
 
-  void filterProjects() {
+  void filterProjects([String query = ""]) {
     projectList = _getProjectsByYear();
 
     if (!selectedSkills.contains('All')) {
       projectList = projectList
           .where((project) =>
               project.skills.any((skill) => selectedSkills.contains(skill)))
+          .toList();
+    }
+
+    if (query.isNotEmpty) {
+      projectList = projectList
+          .where((project) =>
+              project.name.toLowerCase().contains(query.toLowerCase()))
           .toList();
     }
 
@@ -139,45 +146,45 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
       onRefresh: _refresh,
       child: Scaffold(
         appBar: AppBar(
-           leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-         
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-        centerTitle: true,
-          title: const Text('Outreachy'), actions: <Widget>[
-          IconButton(
-            icon: (isBookmarked)
-                ? const Icon(Icons.bookmark_add_rounded)
-                : const Icon(Icons.bookmark_add_outlined),
-            onPressed: () {
-              setState(() {
-                isBookmarked = !isBookmarked;
-              });
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                      isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
-                  duration: const Duration(seconds: 2),
-                ),
-              );
-              if (isBookmarked) {
-                HandleBookmark.addBookmark(currentProject, currentPage);
-              } else {
-                HandleBookmark.deleteBookmark(currentProject);
-              }
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.info_outline),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => OUTREACHYInfo()),
-              );
-            },
-          ),
-        ]),
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back_ios),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            centerTitle: true,
+            title: const Text('Outreachy'),
+            actions: <Widget>[
+              IconButton(
+                icon: (isBookmarked)
+                    ? const Icon(Icons.bookmark_add_rounded)
+                    : const Icon(Icons.bookmark_add_outlined),
+                onPressed: () {
+                  setState(() {
+                    isBookmarked = !isBookmarked;
+                  });
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                          isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                      duration: const Duration(seconds: 2),
+                    ),
+                  );
+                  if (isBookmarked) {
+                    HandleBookmark.addBookmark(currentProject, currentPage);
+                  } else {
+                    HandleBookmark.deleteBookmark(currentProject);
+                  }
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.info_outline),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OUTREACHYInfo()),
+                  );
+                },
+              ),
+            ]),
         body: FutureBuilder<void>(
           future: getProjectFunction,
           builder: (context, snapshot) {
@@ -191,6 +198,8 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
+                      _buildSearchBar(),
+                      const SizedBox(height: 20),
                       _buildYearButtons(),
                       const SizedBox(height: 20),
                       _buildMultiSelectField(
@@ -218,6 +227,42 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
           },
         ),
       ),
+    );
+  }
+
+  Widget _buildSearchBar() {
+    return TextFormField(
+      decoration: InputDecoration(
+        filled: true,
+        hintText: 'Search',
+        suffixIcon: const Icon(Icons.search),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: Color(0xFFEEEEEE)),
+        ),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+      ),
+      onFieldSubmitted: (value) {
+        filterProjects(value);
+      },
+      onChanged: (value) {
+        if (value.isEmpty) {
+          filterProjects(value);
+        }
+      },
     );
   }
 
