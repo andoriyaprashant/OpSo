@@ -2,13 +2,11 @@ import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:opso/modals/osoc_modal.dart';
 import 'package:opso/widgets/osoc_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 import 'package:opso/programs_info_pages/osoc_info.dart';
 import '../modals/book_mark_model.dart';
-import '../widgets/SearchandFilterWidget.dart';
 
 class OpenSummerOfCode extends StatefulWidget {
   const OpenSummerOfCode({super.key});
@@ -124,60 +122,57 @@ class _OpenSummerOfCodeState extends State<OpenSummerOfCode> {
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
-        appBar:
-            AppBar(
-               leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-         
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-        centerTitle: true,
-              title: const Text('Open Summer of Code'), actions: <Widget>[
-          IconButton(
-            icon: (isBookmarked)
-                ? const Icon(Icons.bookmark_add_rounded)
-                : const Icon(Icons.bookmark_add_outlined),
-            onPressed: () {
-              setState(() {
-                isBookmarked = !isBookmarked;
-              });
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                      isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
-                  duration: const Duration(
-                      seconds: 2), // Adjust the duration as needed
-                ),
-              );
-              if (isBookmarked) {
-                print("Adding");
-                HandleBookmark.addBookmark(currentProject, currectPage);
-              } else {
-                print("Deleting");
-                HandleBookmark.deleteBookmark(currentProject);
-              }
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const OSOCInfo()),
-              );
-            },
-          ),
-        ]),
+        appBar: AppBar(
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back_ios),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            centerTitle: true,
+            title: const Text('Open Summer of Code'),
+            actions: <Widget>[
+              IconButton(
+                icon: (isBookmarked)
+                    ? const Icon(Icons.bookmark_add_rounded)
+                    : const Icon(Icons.bookmark_add_outlined),
+                onPressed: () {
+                  setState(() {
+                    isBookmarked = !isBookmarked;
+                  });
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                          isBookmarked ? 'Bookmark added' : 'Bookmark removed'),
+                      duration: const Duration(
+                          seconds: 2), // Adjust the duration as needed
+                    ),
+                  );
+                  if (isBookmarked) {
+                    print("Adding");
+                    HandleBookmark.addBookmark(currentProject, currectPage);
+                  } else {
+                    print("Deleting");
+                    HandleBookmark.deleteBookmark(currentProject);
+                  }
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.info_outline),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const OSOCInfo()),
+                  );
+                },
+              ),
+            ]),
         body: FutureBuilder<void>(
             future: getProjectFunction,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: CircularProgressIndicator());
               } else if (snapshot.connectionState == ConnectionState.done) {
-                return Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: ScreenUtil().setWidth(46),
-                      vertical: ScreenUtil().setHeight(16)),
+                return SingleChildScrollView(
+                  padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 6),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -224,107 +219,60 @@ class _OpenSummerOfCodeState extends State<OpenSummerOfCode> {
                         },
                       ),
                       SizedBox(height: ScreenUtil().setHeight(20)),
-                      SizedBox(
-                        height: height * 0.1,
-                        width: width,
-                        child: GridView(
-                          physics: const NeverScrollableScrollPhysics(),
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: 1.5 / 0.6,
-                            crossAxisSpacing: 15,
-                            mainAxisSpacing: 15,
-                          ),
-                          children: [
-                            YearButton(
-                              year: "2021",
-                              isEnabled: selectedYear == 2021 ? true : false,
-                              onTap: () {
-                                setState(() {
-                                  projectList = osoc2021;
-                                  selectedYear = 2021;
-                                });
-                              },
-                              backgroundColor: selectedYear == 2021
-                                  ? Colors.white
-                                  : const Color.fromRGBO(255, 183, 77, 1),
-                            ),
-                            YearButton(
-                              year: "2022",
-                              isEnabled: selectedYear == 2022 ? true : false,
-                              onTap: () {
-                                setState(() {
-                                  projectList = osoc2022;
-                                  selectedYear = 2022;
-                                });
-                              },
-                              backgroundColor: selectedYear == 2022
-                                  ? Colors.white
-                                  : const Color.fromRGBO(255, 183, 77, 1),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      // Row(
-                      //   crossAxisAlignment: CrossAxisAlignment.center,
-                      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      //   children: [
-                      //     const Text(
-                      //       'Filter by Org:',
-                      //       style: TextStyle(fontWeight: FontWeight.w400),
-                      //     ),
-                      //     Padding(
-                      //       padding: EdgeInsets.all(ScreenUtil().setHeight(8)),
-                      //       child: Row(
-                      //         crossAxisAlignment: CrossAxisAlignment.center,
-                      //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      //         children: [
-                      //           DropdownWidget(
-                      //             items: languages,
-                      //             hintText: 'Org',
-                      //             onChanged: (newValue) {
-                      //               setState(() {
-                      //                 switch (selectedYear) {
-                      //                   case 2021:
-                      //                     projectList = sob2021;
-                      //                     break;
-                      //                   case 2022:
-                      //                     projectList = sob2022;
-                      //                     break;
-                      //                   case 2023:
-                      //                     projectList = sob2023;
-                      //                     break;
-                      //                 }
-                      //                 searchTag(newValue);
-                      //               });
-                      //               // Perform filtering based on selectedLanguage
-                      //             },
-                      //           ),
-                      //         ],
-                      //       ),
-                      //     )
-                      //   ],
-                      // ),
-                      // SizedBox(
-                      //   height: ScreenUtil().setHeight(20),
-                      // ),
-                      Expanded(
-                        // width: width,
-                        child: ListView.builder(
-                          itemCount: projectList.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: OsocWidget(
-                                modal: projectList[index],
-                                height: ScreenUtil().screenHeight * 0.2,
-                                width: ScreenUtil().screenWidth,
+                      LayoutBuilder(
+                        builder: (context, constraints) {
+                          return Wrap(
+                            spacing: 15,
+                            runSpacing: 15,
+                            alignment: WrapAlignment.spaceBetween,
+                            children: [
+                              YearButton(
+                                year: "2021",
+                                isEnabled: selectedYear == 2021 ? true : false,
+                                onTap: () {
+                                  setState(() {
+                                    projectList = osoc2021;
+                                    selectedYear = 2021;
+                                  });
+                                },
+                                backgroundColor: selectedYear == 2021
+                                    ? Colors.white
+                                    : const Color.fromRGBO(255, 183, 77, 1),
+                              
                               ),
-                            );
-                          },
-                        ),
+                              YearButton(
+                                year: "2022",
+                                isEnabled: selectedYear == 2022 ? true : false,
+                                onTap: () {
+                                  setState(() {
+                                    projectList = osoc2022;
+                                    selectedYear = 2022;
+                                  });
+                                },
+                                backgroundColor: selectedYear == 2022
+                                    ? Colors.white
+                                    : const Color.fromRGBO(255, 183, 77, 1),
+                      
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+                      SizedBox(height: ScreenUtil().setHeight(20)),                     
+                      ListView.builder(
+                        itemCount: projectList.length,
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            child: OsocWidget(
+                              modal: projectList[index],
+                              height: ScreenUtil().screenHeight * 0.2,
+                              width: ScreenUtil().screenWidth,
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
