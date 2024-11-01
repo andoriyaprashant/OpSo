@@ -20,6 +20,7 @@ class GsocProjectWidget extends StatelessWidget {
       throw 'Could not launch $url';
     }
   }
+
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
@@ -54,70 +55,37 @@ class GsocProjectWidget extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: Text(
-                  "By ${modal.description}",
-                  style: TextStyle(
-                    color: textColor,
-                  ),
+              Text(
+                modal.description,
+                style: TextStyle(
+                  color: textColor,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
-                  children: [
-                    if (modal.contactEmail.isNotEmpty)
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          _launchUrl('mailto:${modal.contactEmail}');
-                        },
-                        icon: Icon(Icons.email, color: Colors.white),
-                        label: Text("Email"),
-                        style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white, backgroundColor: Colors.orange,
-                        ),
-                      ),
-                    if (modal.blogUrl.isNotEmpty)
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          _launchUrl(modal.blogUrl);
-                        },
-                        icon: Icon(Icons.web, color: Colors.white),
-                        label: Text("Blog"),
-                        style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white, backgroundColor: Colors.orange,
-                        ),
-                      ),
-                  ],
-                ),
+              SizedBox(
+                height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Wrap(
-                  alignment: WrapAlignment.start,
-                  runSpacing: 10,
-                  children: List.generate(
-                    modal.technologies.length,
-                        (index) => Container(
-                      margin: const EdgeInsets.only(right: 10),
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 249, 241, 226),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: IntrinsicWidth(
-                        stepWidth: 30,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Center(
-                            child: Text(
-                              modal.technologies[index],
-                              style: TextStyle(
-                                color: Colors.orange,
-                                fontWeight: FontWeight.bold,
-                              ),
+              Wrap(
+                alignment: WrapAlignment.start,
+                runSpacing: 10,
+                children: List.generate(
+                  modal.technologies.length,
+                  (index) => Container(
+                    margin: const EdgeInsets.only(right: 5),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 249, 241, 226),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: IntrinsicWidth(
+                      stepWidth: 30,
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Center(
+                          child: Text(
+                            modal.technologies[index],
+                            style: TextStyle(
+                              color: Colors.orange,
+                              fontSize: 10,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ),
@@ -126,8 +94,141 @@ class GsocProjectWidget extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        showModalBottomSheet(
+                          backgroundColor: Colors.white,
+                          showDragHandle: true,
+                          context: context,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          builder: (BuildContext context) {
+                            return SingleChildScrollView(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(16, 16, 16, 16),
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        padding: EdgeInsets.all(20),
+                                        color: Colors.grey[100],
+                                        child: Center(
+                                          child: Image.network(
+                                            modal.imageUrl,
+                                            width: 80,
+                                            height: 80,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(modal.description),
+                                      Divider(
+                                        thickness: 2,
+                                        color: Colors.grey[200],
+                                      ),
+                                      ListView.builder(
+                                        physics: NeverScrollableScrollPhysics(),
+                                        shrinkWrap: true,
+                                        itemCount: modal.projects.length,
+                                        itemBuilder: (context, projectIndex) {
+                                          return _buildProjectCard(
+                                              modal.projects[projectIndex]);
+                                        },
+                                      )
+                                    ]),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      style: ButtonStyle(
+                          backgroundColor:
+                              WidgetStateProperty.all(Colors.orange),
+                          foregroundColor:
+                              WidgetStateProperty.all(Colors.white)),
+                      child: Text('View Projects')))
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildProjectCard(Project project) {
+    return Card(
+      color: Colors.grey[100],
+      elevation: 0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              project.title,
+              style: TextStyle(fontWeight: FontWeight.w600),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(project.shortDescription,
+                style: TextStyle(color: Colors.grey[700])),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      await _launchUrl(project.projectUrl);
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(Colors.orange),
+                      foregroundColor: WidgetStateProperty.all(Colors.white),
+                      shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8))),
+                      padding: WidgetStateProperty.all(
+                          EdgeInsets.symmetric(vertical: 8, horizontal: 16)),
+                    ),
+                    child: Text('View Project Details'),
+                  ),
+                ),
+                SizedBox(width: 8),
+                SizedBox(
+                  width: 100, // Reduced width of the button
+                  child: OutlinedButton(
+                     onPressed: () async {
+                      await _launchUrl(project.codeUrl);
+                    },
+                    style: ButtonStyle(
+                      side: WidgetStateProperty.all(
+                        BorderSide(
+                            color: Colors.orange,
+                            width: 1), // Outline color and width
+                      ),
+                      foregroundColor: WidgetStateProperty.all(Colors.orange),
+                      shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8))),
+                      padding: WidgetStateProperty.all(
+                          EdgeInsets.symmetric(vertical: 8, horizontal: 8)),
+                    ),
+                    child: Text('View Code'),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
