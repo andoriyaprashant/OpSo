@@ -339,16 +339,11 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                                         ),
                                       ],
                                     ),
-                                    child: Column(
-                                      children: [
-                                        GsocProjectWidget(
-                                          index: index + 1,
-                                          modal: orgList[index],
-                                          height: height * 0.2,
-                                          width: width,
-                                        ),
-                                  
-                                      ],
+                                    child: GsocProjectWidget(
+                                      index: index + 1,
+                                      modal: orgList[index],
+                                      height: height * 0.2,
+                                      width: width,
                                     ),
                                   ),
                                 );
@@ -364,7 +359,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
       ),
     );
   }
-
 
   Widget _buildMultiSelectField({
     required List<String> items,
