@@ -339,11 +339,15 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                                         ),
                                       ],
                                     ),
-                                    child: GsocProjectWidget(
-                                      index: index + 1,
-                                      modal: orgList[index],
-                                      height: height * 0.2,
-                                      width: width,
+                                    child: Column(
+                                      children: [
+                                        GsocProjectWidget(
+                                          index: index + 1,
+                                          modal: orgList[index],
+                                          height: height * 0.2,
+                                          width: width,
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 );
