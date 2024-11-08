@@ -19,14 +19,18 @@ class OutreachyScreen extends StatefulWidget {
 class _OutreachyScreenState extends State<OutreachyScreen> {
   String currentPage = "/outreachy";
   String currentProject = "Outreachy";
+
   List<OutreachyProjectModal> outreachy2024 = [];
   List<OutreachyProjectModal> outreachy2023 = [];
   List<OutreachyProjectModal> outreachy2022 = [];
   List<OutreachyProjectModal> outreachy2021 = [];
+
   bool isBookmarked = false;
   bool isBookmarkEnabled = false;
+
   List<String> allSkills = [];
   List<String> selectedSkills = ['All'];
+
   int selectedYear = 2021;
 
   List<OutreachyProjectModal> projectList = [];
@@ -34,17 +38,11 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
   Future<void>? getProjectFunction;
 
   Future<void> initializeProjectLists() async {
-    await _loadProjects(
-        'assets/projects/outreachy/outreachy2024.json', outreachy2024);
-    await _loadProjects(
-        'assets/projects/outreachy/outreachy2023.json', outreachy2023);
-    await _loadProjects(
-        'assets/projects/outreachy/outreachy2022.json', outreachy2022);
-    await _loadProjects(
-        'assets/projects/outreachy/outreachy2021.json', outreachy2021);
+    await _loadProjects('assets/projects/outreachy/outreachy$selectedYear.json',
+        _getProjectsByYear());
 
     allSkills = _extractUniqueSkills();
-    projectList = List.from(outreachy2021);
+    projectList = List.from(_getProjectsByYear());
   }
 
   Future<void> _loadProjects(
@@ -66,13 +64,18 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
   }
 
   List<String> _extractUniqueSkills() {
-    return {
-      'All',
-      ...outreachy2024.expand((project) => project.skills),
-      ...outreachy2023.expand((project) => project.skills),
-      ...outreachy2022.expand((project) => project.skills),
-      ...outreachy2021.expand((project) => project.skills),
-    }.toSet().toList();
+    final skillsSet = <String>{'All'};
+    
+    for (var project in [
+      ...outreachy2021,
+      ...outreachy2022,
+      ...outreachy2023,
+      ...outreachy2024
+    ]) {
+      skillsSet.addAll(project.skills);
+    }
+
+    return skillsSet.toList();
   }
 
   List<OutreachyProjectModal> _getProjectsByYear() {
@@ -110,11 +113,6 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
     setState(() {});
   }
 
-  void _updateSkillsList() {
-    allSkills = _extractUniqueSkills();
-    allSkills.insert(0, 'All');
-  }
-
   @override
   void initState() {
     super.initState();
@@ -132,7 +130,6 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
   Future<void> _refresh() async {
     await initializeProjectLists();
     setState(() {
-      selectedYear = 2021;
       selectedSkills = ['All'];
     });
   }
@@ -267,71 +264,35 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
   }
 
   Widget _buildYearButtons() {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.2,
-      child: GridView(
-        physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 1.5 / 0.6,
-          crossAxisCount: 2,
-          crossAxisSpacing: 15,
-          mainAxisSpacing: 15,
-        ),
-        children: [
-          YearButton(
-            year: "2021",
-            isEnabled: selectedYear == 2021,
-            onTap: () {
+    return GridView.count(
+      crossAxisCount: 2,
+      childAspectRatio: 1.5 / 0.6,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      children: [2021, 2022, 2023, 2024].map((year) {
+        bool isSelected = selectedYear == year;
+        return Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: YearButton(
+            year: year.toString(),
+            isEnabled: isSelected,
+            onTap: () async {
+              selectedYear = year;
+
+              if (_getProjectsByYear().isEmpty) {
+                _loadProjects('assets/projects/outreachy/outreachy$year.json', _getProjectsByYear());
+                allSkills = _extractUniqueSkills();
+              }
+
               setState(() {
-                selectedYear = 2021;
                 filterProjects();
               });
             },
-            backgroundColor: selectedYear == 2021
-                ? Colors.white
-                : Color.fromRGBO(255, 183, 77, 1),
+            backgroundColor:
+                isSelected ? Colors.white : Color.fromRGBO(255, 183, 77, 1),
           ),
-          YearButton(
-            year: "2022",
-            isEnabled: selectedYear == 2022,
-            onTap: () {
-              setState(() {
-                selectedYear = 2022;
-                filterProjects();
-              });
-            },
-            backgroundColor: selectedYear == 2022
-                ? Colors.white
-                : Color.fromRGBO(255, 183, 77, 1),
-          ),
-          YearButton(
-            year: "2023",
-            isEnabled: selectedYear == 2023,
-            onTap: () {
-              setState(() {
-                selectedYear = 2023;
-                filterProjects();
-              });
-            },
-            backgroundColor: selectedYear == 2023
-                ? Colors.white
-                : Color.fromRGBO(255, 183, 77, 1),
-          ),
-          YearButton(
-            year: "2024",
-            isEnabled: selectedYear == 2024,
-            onTap: () {
-              setState(() {
-                selectedYear = 2024;
-                filterProjects();
-              });
-            },
-            backgroundColor: selectedYear == 2024
-                ? Colors.white
-                : Color.fromRGBO(255, 183, 77, 1),
-          ),
-        ],
-      ),
+        );
+      }).toList(),
     );
   }
 
@@ -342,33 +303,55 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
     required String buttonText,
     required void Function(List<String>) onConfirm,
   }) {
-    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    return MultiSelectDialogField(
-      backgroundColor: isDarkMode ? Colors.grey.shade100 : Colors.white,
-      items: items.map((e) => MultiSelectItem<String>(e, e)).toList(),
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final textColor = isDarkMode ? Colors.white : Colors.black;
+
+    return MultiSelectDialogField<String>(
+      backgroundColor: isDarkMode ? Colors.black : Colors.white,
+      items: [for (final item in items) MultiSelectItem<String>(item, item)],
       initialValue: selectedValues,
-      title: Text(title),
-      buttonText: Text(buttonText),
+      selectedColor: Colors.orange[500],
+      itemsTextStyle: TextStyle(color: textColor),
+      selectedItemsTextStyle: TextStyle(color: textColor),
+      confirmText: Text('OK', style: TextStyle(color: textColor)),
+      cancelText: Text('CANCEL', style: TextStyle(color: textColor)),
+      title: Text(
+        title,
+        style: TextStyle(color: textColor),
+      ),
+      buttonText: Text(
+        buttonText,
+        style: TextStyle(color: textColor),
+      ),
       onConfirm: onConfirm,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: isDarkMode ? Colors.white : Colors.grey),
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
+      searchable: true, // Enable search functionality
+      searchHint: 'Search skills',
+      searchHintStyle: TextStyle(color: textColor),
     );
   }
 
-  List _projectListItems(double height, double width) {
-    return List.generate(
-      projectList.length,
-      (index) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
-        child: OutreachyProjectWidget(
-          modal: projectList[index],
-          index: index + 1,
-          height: height * 0.2,
-          width: width,
-        ),
-      ),
-    );
+  List<Widget> _projectListItems(double height, double width) {
+    return [
+      ListView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: projectList.length,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: OutreachyProjectWidget(
+              modal: projectList[index],
+              index: index + 1,
+              height: height * 0.2,
+              width: width,
+            ),
+          );
+        },
+      )
+    ];
   }
 }
