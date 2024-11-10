@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:opso/modals/osoc_modal.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:jovial_svg/jovial_svg.dart';
 
 class OsocWidget extends StatelessWidget {
   final OsocModal modal;
@@ -15,6 +16,7 @@ class OsocWidget extends StatelessWidget {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     final textColor = isDarkMode ? Colors.white : Colors.black;
     final cardColor = isDarkMode ? Colors.grey.shade800 : Colors.white;
+
     return GestureDetector(
       onTap: () => launchUrl(
         Uri.parse(modal.project_url),
@@ -32,9 +34,16 @@ class OsocWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SvgPicture.network(
-              modal.image_url,
-              height: height * 0.5,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: SizedBox(
+                height: 100,
+                width: 100,
+                child: ScalableImageWidget.fromSISource(
+                    si: ScalableImageSource.fromSvgHttpUrl(
+                  Uri.parse(modal.image_url),
+                )),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
