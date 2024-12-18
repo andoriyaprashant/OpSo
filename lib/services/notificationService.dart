@@ -70,21 +70,48 @@ class NotificationService {
     }
   }
 
-  static Future<bool> showNotification(
-      {required final String title,
-      required final String body,
-      final String? summary,
-      final Map<String, String>? payload,
-      final ActionType actionType = ActionType.Default,
-      final NotificationLayout notificationLayout = NotificationLayout.Default,
-      final NotificationCategory? category,
-      final String? bigPicture,
-      final List<NotificationActionButton>? actionButtons,
-      final bool scheduled = false,
-      final int? interval}) async {
-    assert(!scheduled || (scheduled && interval != null));
-    bool allowed =
-        await AwesomeNotifications().requestPermissionToSendNotifications();
+static Future<bool> showNotification({
+  required final String title,
+  required final String body,
+  final String? summary,
+  final Map<String, String>? payload,
+  final ActionType actionType = ActionType.Default,
+  final NotificationLayout notificationLayout = NotificationLayout.Default,
+  final NotificationCategory? category,
+  final String? bigPicture,
+  final List<NotificationActionButton>? actionButtons,
+  final bool scheduled = false,
+  final int? interval,
+}) async {
+  assert(!scheduled || (scheduled && interval != null));
+  bool allowed =
+      await AwesomeNotifications().requestPermissionToSendNotifications();
+  if (allowed) {
+    await AwesomeNotifications().createNotification(
+      content: NotificationContent(
+        id: -1,
+        channelKey: 'high_importance_channel',
+        title: title,
+        body: body,
+        actionType: actionType,
+        notificationLayout: notificationLayout,
+        summary: summary,
+        category: category,
+        payload: payload,
+        bigPicture: bigPicture,
+      ),
+      actionButtons: actionButtons,
+      schedule: scheduled
+          ? NotificationInterval(
+              interval: interval != null ? Duration(seconds: interval) : null,
+              timeZone:
+                  await AwesomeNotifications().getLocalTimeZoneIdentifier(),
+              preciseAlarm: true,
+            )
+          : null,
+    );
+  } else {
+    allowed = await AwesomeNotifications().isNotificationAllowed();
     if (allowed) {
       await AwesomeNotifications().createNotification(
         content: NotificationContent(
@@ -102,43 +129,17 @@ class NotificationService {
         actionButtons: actionButtons,
         schedule: scheduled
             ? NotificationInterval(
-                interval: interval,
+                interval: interval != null ? Duration(seconds: interval) : null,
                 timeZone:
                     await AwesomeNotifications().getLocalTimeZoneIdentifier(),
                 preciseAlarm: true,
               )
             : null,
       );
-    } else {
-      allowed = await AwesomeNotifications().isNotificationAllowed();
-      if (allowed) {
-        await AwesomeNotifications().createNotification(
-          content: NotificationContent(
-            id: -1,
-            channelKey: 'high_importance_channel',
-            title: title,
-            body: body,
-            actionType: actionType,
-            notificationLayout: notificationLayout,
-            summary: summary,
-            category: category,
-            payload: payload,
-            bigPicture: bigPicture,
-          ),
-          actionButtons: actionButtons,
-          schedule: scheduled
-              ? NotificationInterval(
-                  interval: interval,
-                  timeZone:
-                      await AwesomeNotifications().getLocalTimeZoneIdentifier(),
-                  preciseAlarm: true,
-                )
-              : null,
-        );
-      }
     }
-    return allowed;
   }
+  return allowed;
+}
 
   static Future<void> scheduleNotificationsForEvent(
       String description, DateTime startDate, DateTime endDate) async {
