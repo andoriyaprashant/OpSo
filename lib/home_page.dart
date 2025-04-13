@@ -7,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:opso/ChatBotpage.dart';
 import 'package:opso/learning_path.dart';
 import 'package:opso/opso_timeline.dart';
+import 'package:opso/programs%20screen/djangonautspace.dart';
 import 'package:opso/programs%20screen/fossasia.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/github_campus.dart';
@@ -102,6 +103,10 @@ class _HomePageState extends State<HomePage> {
     Program(
       title: 'Major League Hacking Fellowship',
       imageAssetPath: 'assets/mlh_logo.jpg',
+    ),
+    Program(
+      title: 'Djangonaut Space',
+      imageAssetPath: 'assets/djangonaut.png',
     ),
     Program(
       title: 'Summer of Bitcoin',
@@ -417,6 +422,14 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
+        case 'Djangonaut Space':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => const DjangonautSpaceProgram()),
+        );
+        break;
+
       case 'Summer of Bitcoin':
         Navigator.push(
           context,
@@ -424,9 +437,6 @@ class _HomePageState extends State<HomePage> {
               builder: (context) => const SummerOfBitcoin()),
         );
         break;
-
-        
-
 
       case 'GirlScript Summer of Code':
         Navigator.push(
@@ -602,6 +612,11 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
       imageAssetPath: 'assets/mlh_logo.jpg',
     ),
     Program(
+      title: 'Djangonaut Space',
+      imageAssetPath: 'assets/djangonaut.png',
+    ),
+
+    Program(
       title: 'Hyperledger',
       imageAssetPath: 'assets/hyperledger.png',
     ),
@@ -737,6 +752,15 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           context,
           MaterialPageRoute(
             builder: (context) => const MajorLeagueHackingFellowship(),
+          ),
+        );
+        break;
+
+        case 'Djangonaut Space':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const DjangonautSpaceProgram(),
           ),
         );
         break;
