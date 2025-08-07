@@ -9,8 +9,10 @@ import 'package:opso/widgets/gsod/gsod_project_widget_new.dart';
 import 'package:opso/widgets/gsod/gsod_project_widget_old.dart';
 import 'package:opso/widgets/year_button.dart';
 import 'package:opso/programs_info_pages/gsod_info.dart';
+import 'package:opso/services/logger_service.dart';
 
 class GoogleSeasonOfDocsScreen extends StatefulWidget {
+  const GoogleSeasonOfDocsScreen({super.key});
   @override
   State<GoogleSeasonOfDocsScreen> createState() =>
       _GoogleSeasonOfDocsScreenState();
@@ -147,8 +149,7 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
       selectedOrganizations = ['All'];
       selectedProposals = ['All'];
       selectedYear = 2023;
-      if (selectedYear > 2023)
-        selectedYear = 2019; // Reset to the beginning if it exceeds 2023
+      if (selectedYear > 2023) selectedYear = 2019; // Reset to the beginning if it exceeds 2023
     });
   }
 
@@ -184,7 +185,7 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
 
   void filterProjects() {
     var filteredProjects = List.from(projectList);
-    print("!@# $selectedOrganizations");
+    logger.info("!@# $selectedOrganizations");
 
     // Filter by organizations
     if (!selectedOrganizations.contains('All')) {
@@ -223,7 +224,6 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     var height = MediaQuery.sizeOf(context).height;
     var width = MediaQuery.sizeOf(context).width;
     return RefreshIndicator(
@@ -429,7 +429,7 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                           setState(() {
                             selectedOrganizations =
                                 results.isNotEmpty ? results : ['All'];
-                            print(
+                            logger.info(
                                 "this is selected organization $selectedOrganizations");
                             filterProjects();
                           });

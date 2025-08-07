@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:opso/ChatBotpage.dart';
+import 'package:opso/chat_bot_page.dart';
 import 'package:opso/learning_path.dart';
 import 'package:opso/opso_timeline.dart';
 import 'package:opso/programs%20screen/djangonautspace.dart';
@@ -23,7 +23,7 @@ import 'package:opso/programs%20screen/redox.dart';
 import 'package:opso/programs%20screen/season_of_kde.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/programs%20screen/social_winter_of_code.dart';
-import 'package:opso/services/notificationService.dart';
+import 'package:opso/services/notification_service.dart';
 import 'package:opso/widgets/book_mark_screen.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:opso/widgets/faq.dart';
@@ -47,26 +47,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     showNotification();
     super.initState();
-
-    _getInitialThemeMode();
   }
-
-
-  int _initialLabelIndex = 0;
-  void _getInitialThemeMode() async {
-    final savedThemeMode = await AdaptiveTheme.getThemeMode();
-    setState(() {
-      if (savedThemeMode == AdaptiveThemeMode.light) {
-        _initialLabelIndex = 0;
-      } else if (savedThemeMode == AdaptiveThemeMode.dark) {
-        _initialLabelIndex = 1;
-      } else {
-        _initialLabelIndex = 0;
-      }
-    });
-
-  }
-
 
 //show various notification from here
   void showNotification() async {
@@ -159,8 +140,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     // var media = MediaQuery.of(context).size;
     Color backgroundColor = Theme.of(context).brightness == Brightness.dark
-        ? Colors.black.withOpacity(0.6) // Example dark mode color
-        : Colors.white.withOpacity(0.6); // Example light mode color
+        ? Colors.black.withAlpha((0.6 * 255).toInt()) // Example dark mode color
+        : Colors.white.withAlpha((0.6 * 255).toInt()); // Example light mode color
 
 
     ScreenUtil.init(
@@ -168,7 +149,6 @@ class _HomePageState extends State<HomePage> {
     );
     final double appBarFontSize = ScreenUtil().setSp(18);
     final double appTextFontSize = ScreenUtil().setSp(20);
-    final double SizedSize = ScreenUtil().setHeight(20);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

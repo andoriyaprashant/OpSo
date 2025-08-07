@@ -7,14 +7,15 @@ class DropdownWidget extends StatefulWidget {
   final String hintText;
   final ValueChanged<String> onChanged;
 
-  DropdownWidget({
+  const DropdownWidget({
+    super.key,
     required this.items,
     required this.hintText,
     required this.onChanged,
   });
 
   @override
-  _DropdownWidgetState createState() => _DropdownWidgetState();
+  State<DropdownWidget> createState() => _DropdownWidgetState();
 }
 
 class _DropdownWidgetState extends State<DropdownWidget> {
@@ -50,9 +51,9 @@ class _DropdownWidgetState extends State<DropdownWidget> {
 
 class SearchAndFilterWidget extends StatefulWidget {
   final List<GssocProjectModal> projectList;
-  SearchAndFilterWidget({ required this.projectList});
+  const SearchAndFilterWidget({super.key, required this.projectList});
   @override
-  _SearchAndFilterWidgetState createState() => _SearchAndFilterWidgetState();
+  State<SearchAndFilterWidget> createState() => _SearchAndFilterWidgetState();
 }
 
 class _SearchAndFilterWidgetState extends State<SearchAndFilterWidget> {

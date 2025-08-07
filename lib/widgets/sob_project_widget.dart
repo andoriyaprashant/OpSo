@@ -136,7 +136,7 @@ class SobProjectWidget extends StatelessWidget {
                                 : Colors.grey.shade200,
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.0),
+                                color: Colors.black.withValues(alpha: 0.0),
                                 spreadRadius: 1,
                                 blurRadius: 5,
                                 offset: const Offset(0, 3),

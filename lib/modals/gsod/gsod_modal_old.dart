@@ -29,6 +29,7 @@ class GsodModalOld {
   });
 
   GsodModalOld copyWith({
+    String? organizationName,
     String? organization,
     String? organizationUrl,
     String? technicalWriter,

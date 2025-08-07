@@ -11,10 +11,10 @@ class RsocPage extends StatefulWidget {
   const RsocPage({super.key});
 
   @override
-  _RsocPageState createState() => _RsocPageState();
+  RsocPageState createState() => RsocPageState();
 }
 
-class _RsocPageState extends State<RsocPage> {
+class RsocPageState extends State<RsocPage> {
   List<RsocProjectModal> projects = [];
   List<RsocProjectModal> allProjects = [];
 

@@ -10,7 +10,7 @@ class YearButton extends StatelessWidget {
   final Color selectedFontColor;
 
   const YearButton({
-    Key? key,
+    super.key,
     required this.year,
     required this.isEnabled,
     this.onTap,
@@ -18,7 +18,7 @@ class YearButton extends StatelessWidget {
     this.fontSize = 20,
     this.fontColor = Colors.white,
     this.selectedFontColor = Colors.orange,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

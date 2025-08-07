@@ -15,7 +15,7 @@ import 'package:opso/programs%20screen/redox.dart';
 import 'package:opso/programs%20screen/season_of_kde.dart';
 import 'package:opso/programs%20screen/summer_of_bitcoin.dart';
 import 'package:opso/programs%20screen/social_winter_of_code.dart';
-import 'package:opso/services/notificationService.dart';
+import 'package:opso/services/notification_service.dart';
 import 'home_page.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'splash_screen.dart';

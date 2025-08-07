@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:opso/modals/osoc_modal.dart';
+import 'package:opso/services/logger_service.dart';
 import 'package:opso/widgets/osoc_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 import 'package:opso/programs_info_pages/osoc_info.dart';
@@ -34,7 +35,7 @@ class _OpenSummerOfCodeState extends State<OpenSummerOfCode> {
       osoc2022.add(OsocModal.fromMap(data));
     }
     projectList = osoc2022;
-    print(projectList);
+    logger.info("OpenSummerOfCode: Loaded ${projectList.length} projects for 2022");
     response =
         await rootBundle.loadString('assets/projects/osoc/osoc2021.json');
     jsonList = await json.decode(response);
@@ -114,8 +115,6 @@ class _OpenSummerOfCodeState extends State<OpenSummerOfCode> {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.sizeOf(context).height;
-    var width = MediaQuery.sizeOf(context).width;
     const ScreenUtilInit(
       designSize: Size(360, 690),
     );
@@ -147,10 +146,10 @@ class _OpenSummerOfCodeState extends State<OpenSummerOfCode> {
                     ),
                   );
                   if (isBookmarked) {
-                    print("Adding");
+                    logger.info("OpenSummerOfCode: Adding bookmark for $currentProject");
                     HandleBookmark.addBookmark(currentProject, currectPage);
                   } else {
-                    print("Deleting");
+                    logger.info("OpenSummerOfCode: Deleting bookmark for $currentProject");
                     HandleBookmark.deleteBookmark(currentProject);
                   }
                 },

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/sokde_project_modal.dart';
 import 'package:opso/programs_info_pages/sokde_info.dart';
+import 'package:opso/services/logger_service.dart';
 import 'package:opso/widgets/sokde_project_widget.dart';
 import 'package:opso/widgets/small_year_button.dart';
 
@@ -12,10 +13,10 @@ class SeasonOfKDE extends StatefulWidget {
   const SeasonOfKDE({super.key});
 
   @override
-  _SeasonOfKDEState createState() => _SeasonOfKDEState();
+  SeasonOfKDEState createState() => SeasonOfKDEState();
 }
 
-class _SeasonOfKDEState extends State<SeasonOfKDE> {
+class SeasonOfKDEState extends State<SeasonOfKDE> {
   List<SokdeProjectModal> sokde2024 = [];
   List<SokdeProjectModal> sokde2023 = [];
   List<SokdeProjectModal> sokde2022 = [];
@@ -35,7 +36,7 @@ class _SeasonOfKDEState extends State<SeasonOfKDE> {
       sokde2024.add(SokdeProjectModal.fromJson(data));
     }
     projectList = sokde2024;
-    print(projectList);
+    logger.info("SeasonOfKDE: Loaded ${projectList.length} projects for 2024");
     response =
         await rootBundle.loadString('assets/projects/sokde/sokde2023.json');
     jsonList = await json.decode(response);

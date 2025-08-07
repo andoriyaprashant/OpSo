@@ -44,7 +44,7 @@ class FAQPage extends StatelessWidget {
 
   final ValueNotifier<List<FAQ>> filteredFaqs = ValueNotifier<List<FAQ>>([]);
 
-  FAQPage() {
+  FAQPage({super.key}) {
     // Initialize filtered FAQs with the full list initially
     filteredFaqs.value = faqs;
     searchController.addListener(() {
@@ -121,7 +121,7 @@ class FAQPage extends StatelessWidget {
 class CustomExpansionTile extends StatelessWidget {
   final FAQ faq;
 
-  CustomExpansionTile({required this.faq});
+  const CustomExpansionTile({super.key, required this.faq});
 
   @override
   Widget build(BuildContext context) {

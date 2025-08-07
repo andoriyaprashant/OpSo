@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:opso/modals/osoc_modal.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:jovial_svg/jovial_svg.dart';
@@ -14,7 +13,6 @@ class OsocWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final textColor = isDarkMode ? Colors.white : Colors.black;
     final cardColor = isDarkMode ? Colors.grey.shade800 : Colors.white;
 
     return GestureDetector(

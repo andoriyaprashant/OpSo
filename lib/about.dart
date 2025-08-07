@@ -3,6 +3,7 @@ import 'package:url_launcher/link.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AboutScreen  extends StatelessWidget {
+  const AboutScreen({super.key});
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(

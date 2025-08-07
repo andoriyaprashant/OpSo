@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/linux_foundation_modal.dart';
 import 'package:opso/programs_info_pages/linux_info.dart';
+import 'package:opso/services/logger_service.dart';
 import 'package:opso/widgets/linux_foundation_widget.dart';
 
 class LinuxFoundation extends StatefulWidget {
@@ -100,10 +101,10 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
                 ),
               );
               if (isBookmarked) {
-                print("Adding");
+                logger.info("Adding");
                 HandleBookmark.addBookmark(currentProject, currectPage);
               } else {
-                print("Deleting");
+                logger.info("Deleting");
                 HandleBookmark.deleteBookmark(currentProject);
               }
             },
@@ -165,7 +166,7 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
                             horizontal: ScreenUtil().setWidth(40)),
                       ),
                       onFieldSubmitted: (value) {
-                        print("value is $value");
+                        logger.info("value is $value");
                         search(value.trim());
                       },
                       onChanged: (value) {

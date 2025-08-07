@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:opso/modals/book_mark_model.dart';
+import 'package:opso/services/logger_service.dart';
 
 class BookMarkScreen extends StatefulWidget {
   const BookMarkScreen({super.key});
@@ -35,14 +36,14 @@ class _BookMarkScreenState extends State<BookMarkScreen> {
       body: FutureBuilder<List<Map<String, String>>>(
         future: bookmarks,
         builder: (context, snapshot) {
-          print("working");
-          print(snapshot.data);
+          logger.debug("BookmarkScreen: FutureBuilder executing");
+          logger.debug("BookmarkScreen: Snapshot data: ${snapshot.data}");
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return const Center(child: Text('Error loading bookmarks'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            print(bookmarks);
+            logger.debug("BookmarkScreen: No bookmarks available");
             return const Center(child: Text('No bookmarks available'));
           } else {
             final bookmarks = snapshot.data!;

@@ -12,10 +12,10 @@ class FOSSASIA extends StatefulWidget {
   const FOSSASIA({super.key});
 
   @override
-  _FOSSASIAState createState() => _FOSSASIAState();
+  FOSSASIAState createState() => FOSSASIAState();
 }
 
-class _FOSSASIAState extends State<FOSSASIA> {
+class FOSSASIAState extends State<FOSSASIA> {
   List<FOSSASIAProjectModel> fossasia2020 = [];
   List<FOSSASIAProjectModel> fossasia2019 = [];
   List<FOSSASIAProjectModel> fossasia2018 = [];

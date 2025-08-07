@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:opso/modals/book_mark_model.dart';
+import 'package:opso/services/logger_service.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -67,10 +68,10 @@ class _HacktoberfestState extends State<Hacktoberfest> {
                   ),
                 );
                 if (isBookmarked) {
-                  print("Adding");
+                  logger.info("Adding");
                   HandleBookmark.addBookmark(currentProject, currectPage);
                 } else {
-                  print("Deleting");
+                  logger.info("Deleting");
                   HandleBookmark.deleteBookmark(currentProject);
                 }
               },
@@ -185,71 +186,72 @@ class _HacktoberfestState extends State<Hacktoberfest> {
     );
   }
 
-  Widget _buildTrackTile(String title, String description, VoidCallback onTap) {
-    return InkWell(
-      onTap: onTap,
-      child: Card(
-        surfaceTintColor: Colors.orange,
-        elevation: 4.0,
-        margin: const EdgeInsets.symmetric(vertical: 10.0),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title,
-                  style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.orange)),
-              const SizedBox(height: 8),
-              Text(description),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+  
+  // Widget _buildTrackTile(String title, String description, VoidCallback onTap) {
+  //   return InkWell(
+  //     onTap: onTap,
+  //     child: Card(
+  //       surfaceTintColor: Colors.orange,
+  //       elevation: 4.0,
+  //       margin: const EdgeInsets.symmetric(vertical: 10.0),
+  //       child: Padding(
+  //         padding: const EdgeInsets.all(16.0),
+  //         child: Column(
+  //           crossAxisAlignment: CrossAxisAlignment.start,
+  //           children: [
+  //             Text(title,
+  //                 style: const TextStyle(
+  //                     fontSize: 18,
+  //                     fontWeight: FontWeight.bold,
+  //                     color: Colors.orange)),
+  //             const SizedBox(height: 8),
+  //             Text(description),
+  //           ],
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 
-  Widget _buildTimelineItem(
-      {required String time,
-      required String title,
-      required String description}) {
-    return TimelineTile(
-      alignment: TimelineAlign.start,
-      isFirst: true,
-      indicatorStyle: const IndicatorStyle(
-        width: 40.0,
-        color: Colors.orange,
-        padding: EdgeInsets.all(8.0),
-      ),
-      endChild: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              time,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8.0),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 4.0),
-            Text(description),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   Widget _buildTimelineItem(
+//       {required String time,
+//       required String title,
+//       required String description}) {
+//     return TimelineTile(
+//       alignment: TimelineAlign.start,
+//       isFirst: true,
+//       indicatorStyle: const IndicatorStyle(
+//         width: 40.0,
+//         color: Colors.orange,
+//         padding: EdgeInsets.all(8.0),
+//       ),
+//       endChild: Padding(
+//         padding: const EdgeInsets.all(8.0),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             Text(
+//               time,
+//               style: const TextStyle(
+//                 fontWeight: FontWeight.bold,
+//               ),
+//             ),
+//             const SizedBox(height: 8.0),
+//             Text(
+//               title,
+//               style: const TextStyle(
+//                 fontSize: 18.0,
+//                 fontWeight: FontWeight.bold,
+//               ),
+//             ),
+//             const SizedBox(height: 4.0),
+//             Text(description),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
 
  Widget _buildTimeline() {
     return Column(
@@ -308,6 +310,7 @@ class _HacktoberfestState extends State<Hacktoberfest> {
       ),
     );
   }
+}
 
 
 class TrackDetailsScreen extends StatelessWidget {

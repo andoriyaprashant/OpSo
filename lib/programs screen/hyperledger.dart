@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/hyperledger_modal.dart';
 import 'package:opso/programs_info_pages/hyperledger_info.dart';
+import 'package:opso/services/logger_service.dart';
 import 'package:opso/widgets/hyperledger_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
@@ -12,10 +13,10 @@ class Hyperledger extends StatefulWidget {
   const Hyperledger({super.key});
 
   @override
-  _HyperledgerState createState() => _HyperledgerState();
+  HyperledgerState createState() => HyperledgerState();
 }
 
-class _HyperledgerState extends State<Hyperledger> {
+class HyperledgerState extends State<Hyperledger> {
   List<HyperledgerProjectModal> hyperledger2024 = [];
   List<HyperledgerProjectModal> hyperledger2023 = [];
   List<HyperledgerProjectModal> hyperledger2022 = [];
@@ -36,7 +37,7 @@ class _HyperledgerState extends State<Hyperledger> {
       hyperledger2024.add(HyperledgerProjectModal.fromJson(data));
     }
     projectList = hyperledger2024;
-    print(projectList);
+    logger.info(projectList);
     response = await rootBundle
         .loadString('assets/projects/hyperledger/hyperledger2023.json');
     jsonList = await json.decode(response);

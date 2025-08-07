@@ -6,6 +6,7 @@ import 'package:multi_select_flutter/util/multi_select_item.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/swoc_project_modal.dart';
 import 'package:opso/programs_info_pages/swoc_info.dart';
+import 'package:opso/services/logger_service.dart';
 import 'package:opso/widgets/swoc_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
@@ -71,12 +72,12 @@ class _SWOCScreenState extends State<SWOCScreen> {
         list.addAll(jsonList
             .map((data) => SwocProjectModal.getDataFromJson(data))
             .toList());
-        print('Loaded projects from $path: ${list.length}');
+        logger.info('SWOC: Loaded projects from $path - ${list.length} projects');
       } else {
-        print('Error: JSON data is null or empty in $path');
+        logger.warning('SWOC: JSON data is null or empty in $path');
       }
     } catch (e) {
-      print('Error loading projects from $path: $e');
+      logger.error('SWOC: Error loading projects from $path', e);
     }
   }
 
@@ -91,16 +92,16 @@ class _SWOCScreenState extends State<SWOCScreen> {
     }.toList();
   }
 
-  List<String> _extractUniqueLanguages(
-      List<String> Function(SwocProjectModal) extractor) {
-    final allLanguages = [
-      for (var project in swoc2024) ...extractor(project),
-      for (var project in swoc2023) ...extractor(project),
-      for (var project in swoc2021) ...extractor(project),
-      for (var project in swoc2020) ...extractor(project),
-    ];
-    return ['All', ...allLanguages.toSet()];
-  }
+  // List<String> _extractUniqueLanguages(
+  //     List<String> Function(SwocProjectModal) extractor) {
+  //   final allLanguages = [
+  //     for (var project in swoc2024) ...extractor(project),
+  //     for (var project in swoc2023) ...extractor(project),
+  //     for (var project in swoc2021) ...extractor(project),
+  //     for (var project in swoc2020) ...extractor(project),
+  //   ];
+  //   return ['All', ...allLanguages.toSet()];
+  // }
 
   @override
   void initState() {

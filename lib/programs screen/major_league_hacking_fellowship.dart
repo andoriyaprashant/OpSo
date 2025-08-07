@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:opso/modals/book_mark_model.dart';
+import 'package:opso/services/logger_service.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -73,10 +74,10 @@ class _MajorLeagueHackingFellowshipState
                   ),
                 );
                 if (isBookmarked) {
-                  print("Adding");
+                  logger.info("MajorLeagueHackingFellowship: Adding bookmark for $currentProject");
                   HandleBookmark.addBookmark(currentProject, currectPage);
                 } else {
-                  print("Deleting");
+                  logger.info("MajorLeagueHackingFellowship: Deleting bookmark for $currentProject");
                   HandleBookmark.deleteBookmark(currentProject);
                 }
               },

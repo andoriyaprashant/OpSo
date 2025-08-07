@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-import 'package:opso/services/notificationService.dart';
+import 'package:opso/services/notification_service.dart';
 import 'widgets/event_card.dart';
 
 class OpsoTimeLineScreen extends StatelessWidget {

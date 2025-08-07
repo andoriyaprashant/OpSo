@@ -39,7 +39,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
   int itemsPerPage = 50;
   int pageNumber = 0;
 
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   Future<void> initializeProjectLists() async {
     projectList = await _getProjectsByYear(selectedYear);
@@ -83,7 +83,7 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
   }
 
   Future<List<GssocProjectModal>> loadProjects(int year) async {
-    String path = 'assets/projects/gssoc/gssoc${year}.json';
+    String path = 'assets/projects/gssoc/gssoc$year.json';
     String response = await rootBundle.loadString(path);
 
     var jsonList = json.decode(response) as List;
@@ -174,9 +174,6 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
-
     return RefreshIndicator(
       onRefresh: _refresh,
       child: Scaffold(
@@ -403,23 +400,21 @@ class _GSSOCScreenState extends State<GSSOCScreen> {
   }
 
   Widget _buildProjectList() {
-    return Container(
-      child: ListView.builder(
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        itemCount: _getPaginatedProjects().length,
-        itemBuilder: (BuildContext context, int index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: GssocProjectWidget(
-              index: index +
-                  1 +
-                  (pageNumber * itemsPerPage), // Adjust index for pagination
-              modal: _getPaginatedProjects()[index],
-            ),
-          );
-        },
-      ),
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemCount: _getPaginatedProjects().length,
+      itemBuilder: (BuildContext context, int index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: GssocProjectWidget(
+            index: index +
+                1 +
+                (pageNumber * itemsPerPage), // Adjust index for pagination
+            modal: _getPaginatedProjects()[index],
+          ),
+        );
+      },
     );
   }
 

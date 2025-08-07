@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/programs_info_pages/gsoc_info.dart';
-import 'package:opso/widgets/gsoc/GsocProjectWidget.dart';
+import 'package:opso/widgets/gsoc/gsoc_project_widget.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
-import '../modals/GSoC/Gsoc.dart';
+import '../modals/gsoc/gsoc.dart';
 import '../widgets/year_button.dart';
 
 class GoogleSummerOfCodeScreen extends StatefulWidget {
@@ -331,7 +331,7 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                                       borderRadius: BorderRadius.circular(20),
                                       boxShadow: [
                                         BoxShadow(
-                                          color: Colors.grey.withOpacity(0.5),
+                                          color: Colors.grey.withAlpha((0.5 * 255).toInt()),
                                           spreadRadius: 2,
                                           blurRadius: 5,
                                           offset: const Offset(0,

@@ -67,8 +67,8 @@ class LearningPathPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           const url = 'https://goodfirstissue.dev/';
-          if (await canLaunch(url)) {
-            await launch(url);
+          if (await canLaunchUrl(Uri.parse(url))) {
+            await launchUrl(Uri.parse(url));
           } else {
             throw 'Could not launch $url';
           }

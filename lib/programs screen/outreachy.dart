@@ -6,17 +6,18 @@ import 'package:multi_select_flutter/util/multi_select_item.dart';
 import 'package:opso/modals/book_mark_model.dart';
 import 'package:opso/modals/outreachy_project_modal.dart';
 import 'package:opso/programs_info_pages/outreachy_info.dart';
+import 'package:opso/services/logger_service.dart';
 import 'package:opso/widgets/outreachy_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
 class OutreachyScreen extends StatefulWidget {
-  const OutreachyScreen({Key? key}) : super(key: key);
+  const OutreachyScreen({super.key});
 
   @override
-  _OutreachyScreenState createState() => _OutreachyScreenState();
+  OutreachyScreenState createState() => OutreachyScreenState();
 }
 
-class _OutreachyScreenState extends State<OutreachyScreen> {
+class OutreachyScreenState extends State<OutreachyScreen> {
   String currentPage = "/outreachy";
   String currentProject = "Outreachy";
 
@@ -54,12 +55,12 @@ class _OutreachyScreenState extends State<OutreachyScreen> {
         list.addAll(jsonList
             .map((data) => OutreachyProjectModal.fromMap(data))
             .toList());
-        print('Loaded projects from $path: ${list.length}');
+        logger.info('Outreachy: Loaded projects from $path - ${list.length} projects');
       } else {
-        print('Error: JSON data is null or empty in $path');
+        logger.warning('Outreachy: JSON data is null or empty in $path');
       }
     } catch (e) {
-      print('Error loading projects from $path: $e');
+      logger.error('Outreachy: Error loading projects from $path', e);
     }
   }
 

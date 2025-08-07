@@ -32,9 +32,7 @@ class GsodProjectWidgetNew extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final textColor = isDarkMode ? Colors.white : Colors.black;
     final cardColor = isDarkMode ? Colors.grey.shade800 : Colors.white;
-    final linkColor = isDarkMode ? Colors.white : primaryColor;
 
     return Container(
       width: width,

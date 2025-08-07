@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../modals/GSoC/Gsoc.dart';
+import '../../modals/gsoc/gsoc.dart';
 
 class GsocProjectWidget extends StatelessWidget {
   final Organization modal;
@@ -8,12 +8,12 @@ class GsocProjectWidget extends StatelessWidget {
   final double width;
   final int index;
   const GsocProjectWidget({
-    Key? key,
+    super.key,
     required this.modal,
     required this.index,
     this.height = 100,
     this.width = 100,
-  }) : super(key: key);
+  });
   Future<void> _launchUrl(String url) async {
     final Uri uri = Uri.parse(url);
     if (!await launchUrl(uri)) {

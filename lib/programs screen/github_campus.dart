@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:opso/modals/book_mark_model.dart';
-import 'package:timeline_tile/timeline_tile.dart';
+import 'package:opso/services/logger_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class GithubCampus extends StatefulWidget {
@@ -68,10 +68,10 @@ class _GithubCampusState extends State<GithubCampus> {
                   ),
                 );
                 if (isBookmarked) {
-                  print("Adding");
+                  logger.info("GithubCampus: Adding bookmark for $currentProject");
                   HandleBookmark.addBookmark(currentProject, currectPage);
                 } else {
-                  print("Deleting");
+                  logger.info("GithubCampus: Deleting bookmark for $currentProject");
                   HandleBookmark.deleteBookmark(currentProject);
                 }
               },
@@ -106,7 +106,7 @@ class _GithubCampusState extends State<GithubCampus> {
         borderRadius: BorderRadius.circular(8.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withAlpha((0.1 * 255).toInt()),
             spreadRadius: 2,
             blurRadius: 8,
             offset: const Offset(0, 4),
@@ -170,7 +170,7 @@ class _GithubCampusState extends State<GithubCampus> {
         borderRadius: BorderRadius.circular(8.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withAlpha((0.1 * 255).toInt()),
             spreadRadius: 2,
             blurRadius: 8,
             offset: const Offset(0, 4),
@@ -205,7 +205,7 @@ class _GithubCampusState extends State<GithubCampus> {
         borderRadius: BorderRadius.circular(8.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withAlpha((0.1 * 255).toInt()),
             spreadRadius: 2,
             blurRadius: 8,
             offset: const Offset(0, 4),
@@ -241,7 +241,7 @@ class _GithubCampusState extends State<GithubCampus> {
         borderRadius: BorderRadius.circular(8.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withAlpha((0.1 * 255).toInt()),
             spreadRadius: 2,
             blurRadius: 8,
             offset: const Offset(0, 4),
@@ -371,8 +371,8 @@ class _GithubCampusState extends State<GithubCampus> {
   }
 
   Future<void> _launchUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
     } else {
       throw 'Could not launch $url';
     }

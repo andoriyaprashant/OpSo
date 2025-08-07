@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:opso/modals/sob_project_modal.dart';
 import 'package:opso/programs_info_pages/sob_info.dart';
+import 'package:opso/services/logger_service.dart';
 import 'package:opso/widgets/sob_project_widget.dart';
 import 'package:opso/widgets/year_button.dart';
 
 import '../modals/book_mark_model.dart';
-import '../widgets/SearchandFilterWidget.dart';
+import '../widgets/search_and_filter_widget.dart';
 
 class SummerOfBitcoin extends StatefulWidget {
   const SummerOfBitcoin({super.key});
@@ -162,10 +163,10 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                 ),
               );
               if (isBookmarked) {
-                print("Adding");
+                logger.info("Adding");
                 HandleBookmark.addBookmark(currentProject, currectPage);
               } else {
-                print("Deleting");
+                logger.info("Deleting");
                 HandleBookmark.deleteBookmark(currentProject);
               }
             },

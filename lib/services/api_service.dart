@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:opso/services/logger_service.dart';
 
-
-import '../modals/GSoC/Gsoc.dart';
+import '../modals/gsoc/gsoc.dart';
 
 class ApiService {
   // All org
@@ -30,9 +30,9 @@ class ApiService {
         break;
     }
     final String allOrg = '$baseUrl$yearOrgUrl';
-    print("status is" + allOrg);
+    logger.info("ApiService: Requesting GSoC organizations from URL: $allOrg");
     try {
-      Response response = await Dio().get(allOrg + ".json");
+      Response response = await Dio().get("$allOrg.json");
       if (response.statusCode == 200) {
         // Parse the JSON response into a Gsoc object
         return Gsoc.fromJson(response.data);
