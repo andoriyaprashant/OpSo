@@ -28,34 +28,35 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
-  font_awesome_flutter: ^10.7.0
-  html: ^0.15.4
-  http: ^1.2.1
-  url_launcher: ^6.2.6
-  shared_preferences: ^2.0.11
-  google_generative_ai: ^0.4.3
-  dio: ^5.4.3+1
-  animated_text_kit: ^4.2.2
-  adaptive_theme: ^3.6.0
+  font_awesome_flutter: ^10.10.0          # Updated from 10.7.0
+  html: ^0.15.6                           # Updated from 0.15.4
+  http: ^1.5.0                            # Updated from 1.2.1
+  url_launcher: ^6.3.2                    # Updated from 6.2.6
+  shared_preferences: ^2.5.3              # Updated from 2.0.11
+  google_generative_ai: ^0.4.7            # Updated from 0.4.3
+  dio: ^5.9.0                            # Updated from 5.4.3+1
+  animated_text_kit: ^4.2.3               # Updated from 4.2.2
+  adaptive_theme: ^3.7.1+2                 # Updated from 3.6.0
   timeline_tile: ^2.0.0
-  flutter_svg: ^2.0.10+1
+  flutter_svg: ^2.2.1                      # Updated from 2.0.10+1
   flutter_screenutil: ^5.9.1
   multi_select_flutter: ^4.1.3
-  jovial_svg: ^1.1.23
+  jovial_svg: ^1.1.27                     # Updated from 1.1.23
+
 dev_dependencies:
-  awesome_notifications: ^0.10.0
-  flutter_launcher_icons: ^0.14.2
+  awesome_notifications: ^0.10.1
+  flutter_launcher_icons: ^0.14.4           # Updated from 0.14.2
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
 

@@ -1,3 +1,17 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Android Gradle Plugin version 8.6.0 or higher
+        classpath 'com.android.tools.build:gradle:8.6.0'
+
+        // Kotlin version 2.1.0 or higher
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0"
+    }
+}
+
 allprojects {
     repositories {
         google()

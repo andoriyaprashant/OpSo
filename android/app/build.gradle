@@ -24,16 +24,16 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.example.opso"
-    compileSdk 34
+    compileSdk 36
     ndkVersion flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11       // Updated Java 11
+        targetCompatibility JavaVersion.VERSION_11       // Updated Java 11
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'                                  // Updated Kotlin JVM target 11
     }
 
     sourceSets {
@@ -44,9 +44,9 @@ android {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.opso"
         // You can update the following values to match your application needs.
-        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion 23
-        targetSdkVersion 34
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration
+        minSdkVersion flutter.minSdkVersion
+        targetSdkVersion 36
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
