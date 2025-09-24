@@ -1,61 +1,35 @@
 name: opso
 description: "A new Flutter project."
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
+publish_to: "none"
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-# In Windows, build-name is used as the major, minor, and patch parts
-# of the product and file versions while build-number is used as the build suffix.
 version: 1.0.0+1
 
 environment:
   sdk: ">=3.3.3 <4.0.0"
 
-# Dependencies specify other packages that your package needs in order to work.
-# To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
-# dependencies can be manually updated by changing the version numbers below to
-# the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
-  font_awesome_flutter: ^10.10.0          # Updated from 10.7.0
-  html: ^0.15.6                           # Updated from 0.15.4
-  http: ^1.5.0                            # Updated from 1.2.1
-  url_launcher: ^6.3.2                    # Updated from 6.2.6
-  shared_preferences: ^2.5.3              # Updated from 2.0.11
-  google_generative_ai: ^0.4.7            # Updated from 0.4.3
-  dio: ^5.9.0                            # Updated from 5.4.3+1
-  animated_text_kit: ^4.2.3               # Updated from 4.2.2
-  adaptive_theme: ^3.7.1+2                 # Updated from 3.6.0
+  font_awesome_flutter: ^10.10.0
+  html: ^0.15.6
+  http: ^1.5.0
+  url_launcher: ^6.3.2
+  shared_preferences: ^2.5.3
+  google_generative_ai: ^0.4.7
+  dio: ^5.9.0
+  animated_text_kit: ^4.2.3
+  adaptive_theme: ^3.7.1+2
   timeline_tile: ^2.0.0
-  flutter_svg: ^2.2.1                      # Updated from 2.0.10+1
+  flutter_svg: ^2.2.1
   flutter_screenutil: ^5.9.1
   multi_select_flutter: ^4.1.3
-  jovial_svg: ^1.1.27                     # Updated from 1.1.23
+  jovial_svg: ^1.1.27
+  flutter_dotenv: ^5.0.2
+  awesome_notifications: ^0.10.1
 
 dev_dependencies:
-  awesome_notifications: ^0.10.1
-  flutter_launcher_icons: ^0.14.4           # Updated from 0.14.2
-
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
+  flutter_launcher_icons: ^0.14.4
   flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
@@ -64,39 +38,12 @@ flutter_icons:
   android: true
   ios: true
   image_path: "assets/OpSo_main.png"
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-# The following section is specific to Flutter packages.
+
 flutter:
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
-  #  # To add assets to your application, add an assets section, like this:
-  #  assets:
-  #      - assets\summer_of_bitcoin_logo.png
-  #      - assets\girlscript_logo.png
-  #      - assets\linux_foundation_logo.png
-  #      - assets\gsoc_logo.png
-  #      - assets\hyperledger.png
-  #      - assets\mlh_logo.jpg
-  #      - assets\fossasia.png
-  #      - assets\outreachy.png
-  #      - assets\swoc_logo.png
-  #      - assets\Google_season_of_docs.png
-  #      - assets\sokde.png
-  #      - assets\redox.png
-  #  #   - images/a_dot_ham.jpeg
   assets:
     - assets/
-    - assets/projects/gssoc/
-    - assets/projects/fossasia/
-    - assets/projects/gsod/
-    - assets/projects/sob/
-    - assets/projects/swoc/
-    - assets/projects/hyperledger/
-    - assets/projects/linux_foundation/
     - assets/splash_main.png
     - assets/OpSo_about.png
     - assets/github_swag.png
@@ -109,39 +56,5 @@ flutter:
     - assets/xyz_domain.png
     - assets/participation_certificate.png
     - assets/coding_ninja_swag.png
-    - assets/projects/osoc/
-    - assets/projects/sokde/
     - assets/git_campus_logo.png
-    - assets/projects/outreachy/outreachy2021.json
-    - assets/projects/outreachy/outreachy2022.json
-    - assets/projects/outreachy/outreachy2023.json
-    - assets/projects/outreachy/outreachy2024.json
-    - assets/projects/redox/redox.json
     - assets/no-results.png
-    - assets/projects/osoc/osoc2021.json
-    - assets/projects/osoc/osoc2022.json
-    - assets/projects/gsoc_org/
-
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
