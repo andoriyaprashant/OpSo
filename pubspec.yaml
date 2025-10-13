@@ -43,6 +43,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - .env
     - assets/
     - assets/splash_main.png
     - assets/OpSo_about.png
@@ -58,3 +59,4 @@ flutter:
     - assets/coding_ninja_swag.png
     - assets/git_campus_logo.png
     - assets/no-results.png
+
