@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
 // Replace with your actual Gemini API key
-const apiKey = 'api-key';
+const apiKey = 'API_KEY';
 
 class ChatBotPage extends StatefulWidget {
   const ChatBotPage({Key? key}) : super(key: key);
@@ -25,7 +25,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
 
   void _initializeModel() async {
     _model = GenerativeModel(
-      model: 'gemini-1.5-flash-latest',
+      model: 'gemini-2.5-flash',
       apiKey: apiKey,
     );
   }
