@@ -153,7 +153,7 @@ class OpsoTimeLineScreen extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
         centerTitle: true,
-        title: const Text('Open-Source Timeline of 2024'),
+        title: const Text('Open-Source Timeline of 2026'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50.0),
