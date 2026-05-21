@@ -1,9 +1,9 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-// Replace with your actual Gemini API key
-const apiKey = 'api-key';
+final String apiKey = dotenv.env['API_KEY'] ?? '';
 
 class ChatBotPage extends StatefulWidget {
   const ChatBotPage({Key? key}) : super(key: key);
@@ -23,28 +23,46 @@ class _ChatBotPageState extends State<ChatBotPage> {
     _initializeModel();
   }
 
-  void _initializeModel() async {
+  void _initializeModel() {
+
     _model = GenerativeModel(
-      model: 'gemini-1.5-flash-latest',
+      model: 'gemini-2.5-flash',
       apiKey: apiKey,
     );
   }
 
   void _sendMessage() async {
-    if (_controller.text.isEmpty) return;
+    if (_controller.text.trim().isEmpty) return;
+
+    final userMessage = _controller.text.trim();
 
     setState(() {
-      _messages.add({"sender": "user", "text": _controller.text});
+      _messages.add({
+        "sender": "user",
+        "text": userMessage,
+      });
     });
 
-    final prompt = _controller.text + " don't give answer in markdown format";
     _controller.clear();
+    try {
+      if (_model == null) return;
 
-    if (_model != null) {
-      final content = [Content.text(prompt)];
-      final response = await _model!.generateContent(content);
+      final response = await _model!.generateContent([
+        Content.text(userMessage),
+      ]);
+
       setState(() {
-        _messages.add({"sender": "bot", "text": response.text!});
+        _messages.add({
+          "sender": "bot",
+          "text": response.text ?? "No response",
+        });
+      });
+    } catch (e) {
+      setState(() {
+        _messages.add({
+          "sender": "bot",
+          "text": "Error: $e",
+        });
       });
     }
   }
@@ -53,9 +71,8 @@ class _ChatBotPageState extends State<ChatBotPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         leading: IconButton(
+        leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
-         
           onPressed: () => Navigator.of(context).pop(),
         ),
         centerTitle: true,
@@ -70,23 +87,30 @@ class _ChatBotPageState extends State<ChatBotPage> {
                 final message = _messages[index];
                 final isUser = message["sender"] == "user";
                 return Align(
-                  alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
+                  alignment:
+                      isUser ? Alignment.centerRight : Alignment.centerLeft,
                   child: Container(
                     constraints: BoxConstraints(
                       maxWidth: MediaQuery.of(context).size.width * 0.75,
                     ),
-                    margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 5.0, horizontal: 10.0),
                     padding: const EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
                       color: isUser
-                          ? (AdaptiveTheme.of(context).mode.isDark ? Color.fromARGB(255, 31, 49, 70) : Colors.blue[100])
-                          : (AdaptiveTheme.of(context).mode.isDark ? Colors.grey[700] : Colors.grey[300]),
+                          ? (AdaptiveTheme.of(context).mode.isDark
+                              ? Color.fromARGB(255, 31, 49, 70)
+                              : Colors.blue[100])
+                          : (AdaptiveTheme.of(context).mode.isDark
+                              ? Colors.grey[700]
+                              : Colors.grey[300]),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        if (!isUser) const CircleAvatar(child: Icon(Icons.android)),
+                        if (!isUser)
+                          const CircleAvatar(child: Icon(Icons.android)),
                         if (!isUser) const SizedBox(width: 5.0),
                         Expanded(
                           child: Column(
@@ -97,7 +121,8 @@ class _ChatBotPageState extends State<ChatBotPage> {
                           ),
                         ),
                         if (isUser) const SizedBox(width: 5.0),
-                        if (isUser) const CircleAvatar(child: Icon(Icons.person)),
+                        if (isUser)
+                          const CircleAvatar(child: Icon(Icons.person)),
                       ],
                     ),
                   ),
@@ -130,14 +155,12 @@ class _ChatBotPageState extends State<ChatBotPage> {
     );
   }
 
-
   @override
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
 }
-
 
 void main() {
   runApp(const MaterialApp(
