@@ -212,156 +212,164 @@ class _HomePageState extends State<HomePage> {
             sigmaX: 5.0,
             sigmaY: 5,
           ),
-          child: Stack(
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width * 0.70,
-                color: backgroundColor,
-                // decoration: const BoxDecoration(color: Colors.white),
-                child: SafeArea(
-                  child: Padding(
-                    padding:
-                    const EdgeInsets.only(left: 30, right: 30, top: 30),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: kTextTabBarHeight,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              IconButton(
-                                icon: Icon(Icons.close),
-                                onPressed: () => Navigator.pop(context),
-                              ),
-                              SizedBox(
-                                width: ScreenUtil().setWidth(10),
-                              ),
-                              Text(
-                                'Menu',
-                                style: TextStyle(
-                                  fontSize: appTextFontSize,
-                                  // color: Colors.black,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: ScreenUtil().setHeight(15)),
-                        const Divider(
-                          color: Colors.black26,
-                          height: 1,
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: ScreenUtil().setHeight(15)),
-                              InkWell(
-                                onTap: () {},
-                                child: ListTile(
-                                  leading: Icon(
-                                    AdaptiveTheme.of(context).mode.isDark
-                                        ? FontAwesomeIcons.solidSun
-                                        : FontAwesomeIcons.solidMoon,
+          child: GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: () => Navigator.pop(context),
+            child: Stack(
+              children: [
+                GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () {}, // Consume taps inside the drawer to prevent dismissing
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.70,
+                    color: backgroundColor,
+                    // decoration: const BoxDecoration(color: Colors.white),
+                    child: SafeArea(
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(left: 30, right: 30, top: 30),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: kTextTabBarHeight,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  IconButton(
+                                    icon: Icon(Icons.close),
+                                    onPressed: () => Navigator.pop(context),
                                   ),
-                                  title: const Text('Switch Theme'),
-                                  onTap: () {
-                                    setState(() {
-                                      AdaptiveTheme.of(context)
-                                          .toggleThemeMode(useSystem: false);
-                                    });
-                                  },
-                                ),
-                              ),
-                              const SizedBox(height: 15),
-                              ListTile(
-                                leading: const Icon(FontAwesomeIcons.bookmark),
-                                title: const Text('Bookmarks'),
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                          const BookMarkScreen()));
-                                },
-                              ),
-                              const SizedBox(height: 15),
-                              ListTile(
-                                leading: const Icon(FontAwesomeIcons.code),
-                                title: const Text('GitHub Workflow'),
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                          LearningPathPage()));
-                                },
-                              ),
-                              const SizedBox(height: 15),
-                              ListTile(
-                                leading: Transform.rotate(
-                                  angle: 90 * math.pi / 180,
-                                  child: const Icon(
-                                    FontAwesomeIcons.timeline,
+                                  SizedBox(
+                                    width: ScreenUtil().setWidth(10),
                                   ),
-                                ),
-                                title: const Text('Program Timeline'),
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                      const OpsoTimeLineScreen(),
+                                  Text(
+                                    'Menu',
+                                    style: TextStyle(
+                                      fontSize: appTextFontSize,
+                                      // color: Colors.black,
+                                      fontWeight: FontWeight.w700,
                                     ),
-                                  );
-                                },
+                                  ),
+                                ],
                               ),
-                              const SizedBox(height: 15),
-                              ListTile(
-                                leading: const Icon(
-                                    FontAwesomeIcons.solidCircleQuestion),
-                                title: const Text('Freuently Asked Questions'),
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          FAQPage(),
+                            ),
+                            SizedBox(height: ScreenUtil().setHeight(15)),
+                            const Divider(
+                              color: Colors.black26,
+                              height: 1,
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: ScreenUtil().setHeight(15)),
+                                  InkWell(
+                                    onTap: () {},
+                                    child: ListTile(
+                                      leading: FaIcon(
+                                        AdaptiveTheme.of(context).mode.isDark
+                                            ? FontAwesomeIcons.solidSun
+                                            : FontAwesomeIcons.solidMoon,
+                                      ),
+                                      title: const Text('Switch Theme'),
+                                      onTap: () {
+                                        setState(() {
+                                          AdaptiveTheme.of(context)
+                                              .toggleThemeMode(useSystem: false);
+                                        });
+                                      },
                                     ),
-                                  );
-                                },
-                              ),
-                              SizedBox(height: ScreenUtil().setHeight(15)),
-                              ListTile(
-                                leading:
-                                const Icon(FontAwesomeIcons.circleInfo),
-                                title: const Text('About'),
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => AboutScreen(),
+                                  ),
+                                  const SizedBox(height: 15),
+                                  ListTile(
+                                    leading: const FaIcon(FontAwesomeIcons.bookmark),
+                                    title: const Text('Bookmarks'),
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                              const BookMarkScreen()));
+                                    },
+                                  ),
+                                  const SizedBox(height: 15),
+                                  ListTile(
+                                    leading: const FaIcon(FontAwesomeIcons.code),
+                                    title: const Text('GitHub Workflow'),
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                              LearningPathPage()));
+                                    },
+                                  ),
+                                  const SizedBox(height: 15),
+                                  ListTile(
+                                    leading: Transform.rotate(
+                                      angle: 90 * math.pi / 180,
+                                      child: const FaIcon(
+                                        FontAwesomeIcons.timeline,
+                                      ),
                                     ),
-                                  );
-                                },
+                                    title: const Text('Program Timeline'),
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                          const OpsoTimeLineScreen(),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                  const SizedBox(height: 15),
+                                  ListTile(
+                                    leading: const FaIcon(
+                                        FontAwesomeIcons.solidCircleQuestion),
+                                    title: const Text('Freuently Asked Questions'),
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              FAQPage(),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                  SizedBox(height: ScreenUtil().setHeight(15)),
+                                  ListTile(
+                                    leading:
+                                    const FaIcon(FontAwesomeIcons.circleInfo),
+                                    title: const Text('About'),
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => AboutScreen(),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                  SizedBox(height: ScreenUtil().setHeight(15)),
+                                ],
                               ),
-                              SizedBox(height: ScreenUtil().setHeight(15)),
-                            ],
-                          ),
+                            ),
+                            const Divider(
+                              color: Colors.black26,
+                              height: 1,
+                            ),
+                            SizedBox(height: ScreenUtil().setHeight(15)),
+                          ],
                         ),
-                        const Divider(
-                          color: Colors.black26,
-                          height: 1,
-                        ),
-                        SizedBox(height: ScreenUtil().setHeight(15)),
-                      ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
