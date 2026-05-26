@@ -64,7 +64,7 @@ class GssocProjectWidget extends StatelessWidget {
                     (index) => Container(
                       margin: const EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 249, 241, 226),
+                        color: isDarkMode ? Colors.grey.shade800 : const Color.fromARGB(255, 249, 241, 226),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: IntrinsicWidth(
