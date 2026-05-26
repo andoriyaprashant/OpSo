@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:opso/ChatBotpage.dart';
@@ -27,20 +26,15 @@ import 'package:opso/services/notificationService.dart';
 import 'package:opso/widgets/book_mark_screen.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:opso/widgets/faq.dart';
-import 'dart:math' as math;
-
 
 import 'about.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -50,7 +44,6 @@ class _HomePageState extends State<HomePage> {
 
     _getInitialThemeMode();
   }
-
 
   int _initialLabelIndex = 0;
   void _getInitialThemeMode() async {
@@ -64,9 +57,7 @@ class _HomePageState extends State<HomePage> {
         _initialLabelIndex = 0;
       }
     });
-
   }
-
 
 //show various notification from here
   void showNotification() async {
@@ -76,7 +67,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-
 //used to show the notification every 5 ms
   void showScheduleNotification() async {
     await NotificationService.showNotification(
@@ -85,7 +75,6 @@ class _HomePageState extends State<HomePage> {
         scheduled: true,
         interval: 5);
   }
-
 
   final List<Program> programs = [
     Program(
@@ -120,7 +109,7 @@ class _HomePageState extends State<HomePage> {
       title: 'Linux Foundation',
       imageAssetPath: 'assets/linux_foundation_logo.png',
     ),
-     Program(
+    Program(
       title: 'Hacktoberfest',
       imageAssetPath: 'assets/hacktoberfest.png',
     ),
@@ -154,59 +143,109 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
+  Widget _buildDrawerCard({
+    required String title,
+    required String subtitle,
+    required dynamic icon, // dynamic to accept both FaIconData and IconData
+    required Gradient gradient,
+    required VoidCallback onTap,
+  }) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(16.r),
+        child: Container(
+          padding: EdgeInsets.all(12.w),
+          decoration: BoxDecoration(
+            gradient: gradient,
+            borderRadius: BorderRadius.circular(16.r),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(6.w),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.15),
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(
+                          color: Colors.white.withOpacity(0.3), width: 0.5),
+                    ),
+                    child: FaIcon(icon, color: Colors.white, size: 16.sp),
+                  ),
+                  Icon(Icons.arrow_outward,
+                      color: Colors.white.withOpacity(0.6), size: 14.sp),
+                ],
+              ),
+              SizedBox(height: 16.h),
+              Text(
+                title,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0.5,
+                ),
+              ),
+              SizedBox(height: 2.h),
+              Text(
+                subtitle,
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.8),
+                  fontSize: 10.sp,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    // var media = MediaQuery.of(context).size;
-    Color backgroundColor = Theme.of(context).brightness == Brightness.dark
-        ? Colors.black.withOpacity(0.6) // Example dark mode color
-        : Colors.white.withOpacity(0.6); // Example light mode color
-
-
     ScreenUtil.init(
       context,
     );
     final double appBarFontSize = ScreenUtil().setSp(18);
-    final double appTextFontSize = ScreenUtil().setSp(20);
-    final double SizedSize = ScreenUtil().setHeight(20);
+
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'OpSo',
-          style:
-          TextStyle(fontWeight: FontWeight.bold, fontSize: appBarFontSize),
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search_sharp),
-            onPressed: () {
-              showSearch(context: context, delegate: ProgramSearchDelegate(), );
-            },
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(right: 16.0, bottom: 16.0),
+        child: FloatingActionButton.extended(
+          elevation: 50,
+          backgroundColor: Colors.orange[400],
+          foregroundColor: Colors.white,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ChatBotPage(),
+              ),
+            );
+          },
+          icon: const FaIcon(
+            FontAwesomeIcons.robot,
           ),
-          /*IconButton(
-           icon: Icon(Icons.menu),
-           onPressed: () {
-             // Open drawer when the menu icon is clicked
-             Scaffold.of(context).openDrawer();
-           },
-         ),*/
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const ChatBotPage(),
+          label: const Text(
+            'ChatBot',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              letterSpacing: 0.5,
             ),
-          );
-        },
-        child: const Icon(Icons.chat_bubble_outline),
+          ),
+        ),
       ),
       drawer: Drawer(
         backgroundColor: Colors.transparent,
-        width: MediaQuery.of(context).size.width,
+        width: MediaQuery.of(context).size.width * 0.75,
         child: BackdropFilter(
           filter: ImageFilter.blur(
             sigmaX: 5.0,
@@ -371,25 +410,34 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView(
-          children: programs.map((program) {
-            return ProgramOption(
-              title: program.title,
-              imageAssetPath: program.imageAssetPath,
-              onTap: () {
-                navigateToScreen(context, program);
-              },
-            );
-          }).toList(),
-        ),
+          SliverPadding(
+            padding: EdgeInsets.all(16.w),
+            sliver: SliverGrid(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 16.w,
+                mainAxisSpacing: 16.h,
+                childAspectRatio: 0.82,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  final program = programs[index];
+                  return ProgramOption(
+                    title: program.title,
+                    imageAssetPath: program.imageAssetPath,
+                    onTap: () {
+                      navigateToScreen(context, program);
+                    },
+                  );
+                },
+                childCount: programs.length,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
-
 
   void navigateToScreen(BuildContext context, Program program) {
     switch (program.title) {
@@ -401,7 +449,6 @@ class _HomePageState extends State<HomePage> {
           ),
         );
         break;
-
 
       case 'Google Season of Docs':
         Navigator.push(
@@ -421,7 +468,6 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
-
       case 'Major League Hacking Fellowship':
         Navigator.push(
           context,
@@ -430,7 +476,7 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
-        case 'Djangonaut Space':
+      case 'Djangonaut Space':
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -441,8 +487,7 @@ class _HomePageState extends State<HomePage> {
       case 'Summer of Bitcoin':
         Navigator.push(
           context,
-          MaterialPageRoute(
-              builder: (context) => const SummerOfBitcoin()),
+          MaterialPageRoute(builder: (context) => const SummerOfBitcoin()),
         );
         break;
 
@@ -454,7 +499,6 @@ class _HomePageState extends State<HomePage> {
           ),
         );
         break;
-
 
       case 'Social Winter of Code':
         Navigator.push(
@@ -492,46 +536,50 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
-
       case 'Outreachy':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const OutreachyScreen(),
-            ),
-            );
-
-
-      
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const OutreachyScreen(),
+          ),
+        );
+        break;
 
       case 'Hacktoberfest':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const Hacktoberfest(),
-            ),
-            );
-      
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const Hacktoberfest(),
+          ),
+        );
+        break;
+
       case 'Github Campus Expert':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const GithubCampus(),
-            ),
-            );
-      
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const GithubCampus(),
+          ),
+        );
+        break;
 
       case 'Open Summer of Code':
-
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => const OpenSummerOfCode(),
           ),
         );
-
+        break;
 
       case 'Linux Foundation':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const LinuxFoundation(),
-            ),
-            );
-
-
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LinuxFoundation(),
+          ),
+        );
+        break;
 
       default:
         break;
@@ -539,12 +587,10 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-
 class ProgramOption extends StatelessWidget {
   final String title;
   final String imageAssetPath;
   final VoidCallback onTap;
-
 
   const ProgramOption({
     super.key,
@@ -553,53 +599,89 @@ class ProgramOption extends StatelessWidget {
     required this.onTap,
   });
 
-
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final borderColor = isDarkMode ? Colors.white : Colors.black45;
-    return Column(
-      children: [
-        GestureDetector(
+
+    return Container(
+      decoration: BoxDecoration(
+        color: isDarkMode ? Colors.grey[900] : Colors.white,
+        borderRadius: BorderRadius.circular(16.r),
+        boxShadow: [
+          BoxShadow(
+            color: isDarkMode ? Colors.black45 : Colors.grey.withOpacity(0.15),
+            spreadRadius: 1,
+            blurRadius: 6,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
           onTap: onTap,
-          child: Container(
-            padding: EdgeInsets.all(ScreenUtil().setWidth(20)),
-            decoration: BoxDecoration(
-              // color: const Color.fromARGB(255, 237, 237, 239),
-              borderRadius: BorderRadius.circular(15),
-              border: Border.all(
-                width: 1,
-                color: borderColor,
-              ),
-            ),
-            child: Row(
+          borderRadius: BorderRadius.circular(16.r),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 14.h),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(
-                  imageAssetPath,
-                  width: ScreenUtil().setWidth(50),
-                  height: ScreenUtil().setHeight(50),
-                ),
-                SizedBox(width: ScreenUtil().setWidth(20)),
                 Expanded(
-                  child: Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: ScreenUtil().setSp(18),
-                      fontWeight: FontWeight.bold,
+                  flex: 4,
+                  child: Center(
+                    child: Container(
+                      padding: EdgeInsets.all(4.w),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.05),
+                              blurRadius: 4,
+                            )
+                          ]),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(25.r),
+                        child: Image.asset(
+                          imageAssetPath,
+                          width: 50.w,
+                          height: 50.h,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
                     ),
                   ),
                 ),
-                const Icon(Icons.arrow_forward),
+                SizedBox(height: 8.h),
+                Expanded(
+                  flex: 3,
+                  child: Text(
+                    title,
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w700,
+                      height: 1.2,
+                      color: isDarkMode ? Colors.white : Colors.black87,
+                    ),
+                  ),
+                ),
+                Icon(
+                  Icons.arrow_forward_rounded,
+                  size: 16.sp,
+                  color: Colors.orange[400], // Changed to match orange theme
+                ),
               ],
             ),
           ),
         ),
-        SizedBox(height: ScreenUtil().setHeight(20)),
-      ],
+      ),
     );
   }
 }
-
 
 class ProgramSearchDelegate extends SearchDelegate<String> {
   final List<Program> programs = [
@@ -623,7 +705,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
       title: 'Djangonaut Space',
       imageAssetPath: 'assets/djangonaut.png',
     ),
-
     Program(
       title: 'Hyperledger',
       imageAssetPath: 'assets/hyperledger.png',
@@ -632,11 +713,11 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
       title: 'Summer of Bitcoin',
       imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
     ),
-     Program(
+    Program(
       title: 'Hacktoberfest',
       imageAssetPath: 'assets/hacktoberfest.png',
     ),
-     Program(
+    Program(
       title: 'Github Campus Expert',
       imageAssetPath: 'assets/git_campus_logo.png',
     ),
@@ -670,7 +751,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     ),
   ];
 
-
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -683,7 +763,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     ];
   }
 
-
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
@@ -694,39 +773,39 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
     );
   }
 
-
   @override
   Widget buildResults(BuildContext context) {
     return Container();
   }
-
 
   @override
   Widget buildSuggestions(BuildContext context) {
     final List<String> suggestionList = query.isEmpty
         ? ['']
         : programs
-        .where((program) =>
-        program.title.toLowerCase().contains(query.toLowerCase()))
-        .map((program) => program.title)
-        .toList();
+            .where((program) =>
+                program.title.toLowerCase().contains(query.toLowerCase()))
+            .map((program) => program.title)
+            .toList();
 
-
-    return suggestionList.isNotEmpty ? ListView.builder(
-      itemCount: suggestionList.length,
-      itemBuilder: (context, index) => suggestionList[0] == '' ? Container(): ListTile(
-        title: Text(suggestionList[index]),
-        onTap: () {
-          navigateToScreen(context, suggestionList[index]);
-        },
-      ),
-    ) : Image.asset('assets/no-results.png');
+    return suggestionList.isNotEmpty
+        ? ListView.builder(
+            itemCount: suggestionList.length,
+            itemBuilder: (context, index) => suggestionList[0] == ''
+                ? Container()
+                : ListTile(
+                    title: Text(suggestionList[index]),
+                    onTap: () {
+                      navigateToScreen(context, suggestionList[index]);
+                    },
+                  ),
+          )
+        : Image.asset('assets/no-results.png');
   }
-
 
   void navigateToScreen(BuildContext context, String title) {
     final Program selectedProgram =
-    programs.firstWhere((program) => program.title == title);
+        programs.firstWhere((program) => program.title == title);
     switch (selectedProgram.title) {
       case 'Google Summer of Code':
         Navigator.push(
@@ -755,7 +834,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-         case 'Major League Hacking Fellowship':
+      case 'Major League Hacking Fellowship':
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -764,7 +843,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-        case 'Djangonaut Space':
+      case 'Djangonaut Space':
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -773,7 +852,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-         case 'Summer of Bitcoin':
+      case 'Summer of Bitcoin':
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -782,7 +861,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-        case 'Hyperledger':
+      case 'Hyperledger':
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -800,10 +879,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-      
-
-     
-
       case 'Outreachy':
         Navigator.push(
           context,
@@ -813,7 +888,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-
       case 'GirlScript Summer of Code':
         Navigator.push(
           context,
@@ -822,7 +896,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           ),
         );
         break;
-
 
       case 'Social Winter of Code':
         Navigator.push(
@@ -841,7 +914,7 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           ),
         );
         break;
-      
+
       case 'Hacktoberfest':
         Navigator.push(
           context,
@@ -860,17 +933,16 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-
       case 'Linux Foundation':
         Navigator.push(
           context,
-            MaterialPageRoute(
-              builder: (context) => const LinuxFoundation(),
-            ),
-            );
+          MaterialPageRoute(
+            builder: (context) => const LinuxFoundation(),
+          ),
+        );
         break;
 
-        case 'Open Summer of Code':
+      case 'Open Summer of Code':
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -879,19 +951,15 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-
-
       default:
         break;
     }
   }
 }
 
-
 class Program {
   final String title;
   final String imageAssetPath;
-
 
   Program({
     required this.title,
