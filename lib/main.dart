@@ -50,7 +50,7 @@ class OpSoApp extends StatelessWidget {
               initialRoute: '/splash_screen',
               routes: {
                 "/progarm_page": (context) => const HomePage(),
-                "/girl_script_summer_of_code": (context) => const GSSOCScreen(),
+                "/girl_script_summer_of_code": (context)=> const GSSOCScreen(),
                 "/social_winter_of_code": (context) => const SWOCScreen(),
                 "/season_of_kde": (context) => const SeasonOfKDE(),
                 "/google_summer_of_code": (context) =>
