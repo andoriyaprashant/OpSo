@@ -247,374 +247,167 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         width: MediaQuery.of(context).size.width * 0.75,
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-          child: Builder(builder: (context) {
-            // Detect current theme
-            final bool isDarkMode =
-                Theme.of(context).brightness == Brightness.dark;
-
-            return Container(
-              // Swaps background based on theme
-              color: isDarkMode
-                  ? const Color(0xFF121212).withOpacity(0.85)
-                  : Colors.white.withOpacity(0.85),
-              child: SafeArea(
-                child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // --- HEADER (Adaptive Colors) ---
-                      Padding(
+          filter: ImageFilter.blur(
+            sigmaX: 5.0,
+            sigmaY: 5,
+          ),
+          child: GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: () => Navigator.pop(context),
+            child: Stack(
+              children: [
+                GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () {}, // Consume taps inside the drawer to prevent dismissing
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.70,
+                    color: backgroundColor,
+                    // decoration: const BoxDecoration(color: Colors.white),
+                    child: SafeArea(
+                      child: Padding(
                         padding:
-                            EdgeInsets.only(left: 4.w, top: 8.h, bottom: 4.h),
-                        child: Row(
+                        const EdgeInsets.only(left: 30, right: 30, top: 30),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(Icons.widgets_rounded,
-                                color:
-                                    isDarkMode ? Colors.white : Colors.black87,
-                                size: 22.sp),
-                            SizedBox(width: 12.w),
-                            Text(
-                              'OpSo Menu',
-                              style: TextStyle(
-                                color:
-                                    isDarkMode ? Colors.white : Colors.black87,
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 0.5,
+                            SizedBox(
+                              height: kTextTabBarHeight,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  IconButton(
+                                    icon: Icon(Icons.close),
+                                    onPressed: () => Navigator.pop(context),
+                                  ),
+                                  SizedBox(
+                                    width: ScreenUtil().setWidth(10),
+                                  ),
+                                  Text(
+                                    'Menu',
+                                    style: TextStyle(
+                                      fontSize: appTextFontSize,
+                                      // color: Colors.black,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
-                        ),
-                      ),
-                      Divider(
-                        color: isDarkMode
-                            ? Colors.white.withOpacity(0.15)
-                            : Colors.black.withOpacity(0.1),
-                        thickness: 1,
-                        height: 24.h,
-                      ),
-
-                      // --- MENU GRID ---
-                      Expanded(
-                        child: SingleChildScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          child: Column(
-                            children: [
-                              _buildDrawerCard(
-                                title: 'Bookmarks',
-                                subtitle: 'Manage saved programs',
-                                icon: FontAwesomeIcons.bookmark,
-                                gradient: const LinearGradient(
-                                  colors: [
-                                    Color(0xFF2563EB),
-                                    Color(0xFF7C3AED)
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                ),
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const BookMarkScreen()));
-                                },
-                              ),
-                              SizedBox(height: 10.h),
-                              Row(
+                            SizedBox(height: ScreenUtil().setHeight(15)),
+                            const Divider(
+                              color: Colors.black26,
+                              height: 1,
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Expanded(
-                                    child: _buildDrawerCard(
-                                      title: 'Theme',
-                                      subtitle: 'Toggle UI',
-                                      icon:
-                                          AdaptiveTheme.of(context).mode.isDark
-                                              ? FontAwesomeIcons.solidSun
-                                              : FontAwesomeIcons.solidMoon,
-                                      gradient: const LinearGradient(
-                                        colors: [
-                                          Color(0xFF059669),
-                                          Color(0xFF10B981)
-                                        ],
-                                        begin: Alignment.topLeft,
-                                        end: Alignment.bottomRight,
+                                  SizedBox(height: ScreenUtil().setHeight(15)),
+                                  InkWell(
+                                    onTap: () {},
+                                    child: ListTile(
+                                      leading: FaIcon(
+                                        AdaptiveTheme.of(context).mode.isDark
+                                            ? FontAwesomeIcons.solidSun
+                                            : FontAwesomeIcons.solidMoon,
                                       ),
+                                      title: const Text('Switch Theme'),
                                       onTap: () {
                                         setState(() {
                                           AdaptiveTheme.of(context)
-                                              .toggleThemeMode(
-                                                  useSystem: false);
+                                              .toggleThemeMode(useSystem: false);
                                         });
                                       },
                                     ),
                                   ),
-                                  SizedBox(width: 10.w),
-                                  Expanded(
-                                    child: _buildDrawerCard(
-                                      title: 'FAQs',
-                                      subtitle: 'Get help',
-                                      icon:
-                                          FontAwesomeIcons.solidCircleQuestion,
-                                      gradient: const LinearGradient(
-                                        colors: [
-                                          Color(0xFFEA580C),
-                                          Color(0xFFF97316)
-                                        ],
-                                        begin: Alignment.topLeft,
-                                        end: Alignment.bottomRight,
-                                      ),
-                                      onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    FAQPage()));
-                                      },
-                                    ),
+                                  const SizedBox(height: 15),
+                                  ListTile(
+                                    leading: const FaIcon(FontAwesomeIcons.bookmark),
+                                    title: const Text('Bookmarks'),
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                              const BookMarkScreen()));
+                                    },
                                   ),
-                                ],
-                              ),
-                              SizedBox(height: 10.h),
-                              _buildDrawerCard(
-                                title: 'GitHub Workflow',
-                                subtitle: 'Learn open-source basics',
-                                icon: FontAwesomeIcons.code,
-                                gradient: const LinearGradient(
-                                  colors: [
-                                    Color(0xFF0284C7),
-                                    Color(0xFF3B82F6)
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                ),
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
+                                  const SizedBox(height: 15),
+                                  ListTile(
+                                    leading: const FaIcon(FontAwesomeIcons.code),
+                                    title: const Text('GitHub Workflow'),
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
                                               LearningPathPage()));
-                                },
-                              ),
-                              SizedBox(height: 10.h),
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: _buildDrawerCard(
-                                      title: 'Timeline',
-                                      subtitle: 'Schedules',
-                                      icon: FontAwesomeIcons.timeline,
-                                      gradient: const LinearGradient(
-                                        colors: [
-                                          Color(0xFF0D9488),
-                                          Color(0xFF14B8A6)
-                                        ],
-                                        begin: Alignment.topLeft,
-                                        end: Alignment.bottomRight,
-                                      ),
-                                      onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const OpsoTimeLineScreen()));
-                                      },
-                                    ),
+                                    },
                                   ),
-                                  SizedBox(width: 10.w),
-                                  Expanded(
-                                    child: _buildDrawerCard(
-                                      title: 'About',
-                                      subtitle: 'App info',
-                                      icon: FontAwesomeIcons.circleInfo,
-                                      gradient: const LinearGradient(
-                                        colors: [
-                                          Color(0xFF4B5563),
-                                          Color(0xFF6B7280)
-                                        ],
-                                        begin: Alignment.topLeft,
-                                        end: Alignment.bottomRight,
+                                  const SizedBox(height: 15),
+                                  ListTile(
+                                    leading: Transform.rotate(
+                                      angle: 90 * math.pi / 180,
+                                      child: const FaIcon(
+                                        FontAwesomeIcons.timeline,
                                       ),
-                                      onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    AboutScreen()));
-                                      },
                                     ),
+                                    title: const Text('Program Timeline'),
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                          const OpsoTimeLineScreen(),
+                                        ),
+                                      );
+                                    },
                                   ),
+                                  const SizedBox(height: 15),
+                                  ListTile(
+                                    leading: const FaIcon(
+                                        FontAwesomeIcons.solidCircleQuestion),
+                                    title: const Text('Freuently Asked Questions'),
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              FAQPage(),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                  SizedBox(height: ScreenUtil().setHeight(15)),
+                                  ListTile(
+                                    leading:
+                                    const FaIcon(FontAwesomeIcons.circleInfo),
+                                    title: const Text('About'),
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => AboutScreen(),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                  SizedBox(height: ScreenUtil().setHeight(15)),
                                 ],
-                              ),
-                              SizedBox(height: 20.h),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            );
-          }),
-        ),
-      ),
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            expandedHeight: 230.h, // Slightly increased to fit the new widget
-            floating: false,
-            pinned: true,
-            centerTitle: true,
-            elevation: 0,
-            backgroundColor: Colors.orange[400],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(
-                bottom: Radius.circular(30.r),
-              ),
-            ),
-            leadingWidth: 65.w,
-            leading: Builder(
-              builder: (BuildContext scaffoldContext) => Padding(
-                padding: EdgeInsets.only(left: 16.w, top: 8.h, bottom: 8.h),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(14.r),
-                  onTap: () => Scaffold.of(scaffoldContext).openDrawer(),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.25),
-                      borderRadius: BorderRadius.circular(14.r),
-                    ),
-                    child: Center(
-                      child: Icon(
-                        Icons.menu,
-                        color: Colors.white,
-                        size: 22.sp,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            actions: [
-              Padding(
-                padding: EdgeInsets.only(right: 16.w, top: 8.h, bottom: 8.h),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(14.r),
-                  onTap: () {
-                    showSearch(
-                      context: context,
-                      delegate: ProgramSearchDelegate(),
-                    );
-                  },
-                  child: Container(
-                    width: 49.w,
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.25),
-                      borderRadius: BorderRadius.circular(14.r),
-                    ),
-                    child: Center(
-                      child: Icon(
-                        Icons.search_sharp,
-                        color: Colors.white,
-                        size: 22.sp,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-            flexibleSpace: FlexibleSpaceBar(
-              centerTitle: true,
-              titlePadding: EdgeInsets.only(bottom: 16.h),
-              title: Text(
-                'OpSo',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: appBarFontSize,
-                  color: Colors.white,
-                ),
-              ),
-              background: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(30.r),
-                  ),
-                  gradient: LinearGradient(
-                    colors: [Colors.orange[400]!, Colors.orange[600]!],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
-                ),
-                child: SafeArea(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(height: 10.h),
-                      Text(
-                        'WELCOME TO OpSo',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 1.6,
-                        ),
-                      ),
-                      SizedBox(height: 2.h),
-                      Text(
-                        'the open source hub',
-                        style: TextStyle(
-                          color: Colors.white70,
-                          fontSize: 13.sp,
-                          fontStyle: FontStyle.italic,
-                          letterSpacing: 1.1,
-                        ),
-                      ),
-                      SizedBox(height: 10.h),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 28.w),
-                        child: Text(
-                          'Discover programs, kickstart your path, and contribute to great projects.',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white60,
-                            fontSize: 11.sp,
-                            height: 1.3,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 15.h),
-                      // --- NEW TRANSPARENT PROGRAM COUNT BOX ---
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(20.r),
-                          border: Border.all(color: Colors.white.withOpacity(0.3), width: 1),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(Icons.library_books, color: Colors.white, size: 14.sp),
-                            SizedBox(width: 8.w),
-                            Text(
-                              '${programs.length} Programs',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w600,
                               ),
                             ),
+                            const Divider(
+                              color: Colors.black26,
+                              height: 1,
+                            ),
+                            SizedBox(height: ScreenUtil().setHeight(15)),
                           ],
                         ),
                       ),
-                      SizedBox(height: 20.h),
-                    ],
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
           ),
           SliverPadding(
