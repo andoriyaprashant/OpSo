@@ -49,7 +49,7 @@ class OpSoApp extends StatelessWidget {
             builder: (theme, darkTheme) => MaterialApp(
               initialRoute: '/splash_screen',
               routes: {
-                "/progarm_page": (context) => const HomePage(),
+                "/program_page": (context) => const HomePage(),
                 "/girl_script_summer_of_code": (context) => const GSSOCScreen(),
                 "/social_winter_of_code": (context) => const SWOCScreen(),
                 "/season_of_kde": (context) => const SeasonOfKDE(),
