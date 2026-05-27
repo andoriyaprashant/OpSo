@@ -55,12 +55,11 @@ class OpSoApp extends StatelessWidget {
                 "/season_of_kde": (context) => const SeasonOfKDE(),
                 "/google_summer_of_code": (context) =>
                     const GoogleSummerOfCodeScreen(),
-                "/google_season_of_docs": (context) =>
-                    GoogleSeasonOfDocsScreen(),
+                // "/google_season_of_docs": (context) => GoogleSeasonOfDocsScreen(), PROGRAM CONCLUDED 
                 "/summer_of_bitcoin": (context) => const SummerOfBitcoin(),
                 "/fossasia": (context) => const FOSSASIA(),
                 "/Hacktoberfest": (context) => const Hacktoberfest(),
-                "/open_summer_of_code": (context) => const OpenSummerOfCode(),
+                // "/open_summer_of_code": (context) => const OpenSummerOfCode(), NOT DONE IN 2025 NO INFORMATION ABOUT 2026
                 "/hyperledger": (context) => const Hyperledger(),
                 "/rsoc": (context) => const RsocPage(),
                 "/outreachy": (context) => const OutreachyScreen(),

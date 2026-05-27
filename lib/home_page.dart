@@ -10,13 +10,13 @@ import 'package:opso/programs%20screen/djangonautspace.dart';
 import 'package:opso/programs%20screen/fossasia.dart';
 import 'package:opso/programs%20screen/girl_script.dart';
 import 'package:opso/programs%20screen/github_campus.dart';
-import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
+// import 'package:opso/programs%20screen/google_season_of_docs_screen.dart';
 import 'package:opso/programs%20screen/google_summer_of_code_screen.dart';
 import 'package:opso/programs%20screen/hacktoberfest_screen.dart';
 import 'package:opso/programs%20screen/hyperledger.dart';
 import 'package:opso/programs%20screen/linux_foundation.dart';
 import 'package:opso/programs%20screen/major_league_hacking_fellowship.dart';
-import 'package:opso/programs%20screen/open_summer_of_code.dart';
+// import 'package:opso/programs%20screen/open_summer_of_code.dart';
 import 'package:opso/programs%20screen/outreachy.dart';
 import 'package:opso/programs%20screen/redox.dart';
 import 'package:opso/programs%20screen/season_of_kde.dart';
@@ -81,10 +81,10 @@ class _HomePageState extends State<HomePage> {
       title: 'Google Summer of Code',
       imageAssetPath: 'assets/gsoc_logo.png',
     ),
-    Program(
+    /*Program( PROGRAM CONCLUDED
       title: 'Google Season of Docs',
       imageAssetPath: 'assets/Google_season_of_docs.png',
-    ),
+    ),*/
     Program(
       title: 'FOSSASIA Codeheat',
       imageAssetPath: 'assets/fossasia.png',
@@ -137,10 +137,10 @@ class _HomePageState extends State<HomePage> {
       title: 'Redox OS Summer of Code',
       imageAssetPath: 'assets/redox.png',
     ),
-    Program(
+    /*Program( NOT DONE IN 2025 NO INFORMATION ABOUT 2026
       title: 'Open Summer of Code',
       imageAssetPath: 'assets/open_summer_of_code.png',
-    ),
+    ),*/
   ];
 
   Widget _buildDrawerCard({
@@ -657,14 +657,15 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
-      case 'Google Season of Docs':
-        Navigator.push(
+
+      /*case 'Google Season of Docs':
+        Navigator.push( PROGRAM CONCLUDED
           context,
           MaterialPageRoute(
             builder: (context) => GoogleSeasonOfDocsScreen(),
           ),
         );
-        break;
+        break;*/
 
       case 'FOSSASIA Codeheat':
         Navigator.push(
@@ -744,6 +745,15 @@ class _HomePageState extends State<HomePage> {
         break;
 
       case 'Outreachy':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const OutreachyScreen(),
+            ),
+            );
+        break;
+      
+
+      /*case 'Open Summer of Code':
+        NOT DONE IN 2025 NO INFORMATION ABOUT 2026      
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -776,8 +786,7 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(
             builder: (context) => const OpenSummerOfCode(),
           ),
-        );
-        break;
+        );*/
 
       case 'Linux Foundation':
         Navigator.push(
@@ -896,10 +905,10 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
       title: 'Google Summer of Code',
       imageAssetPath: 'assets/gsoc_logo.png',
     ),
-    Program(
+    /*Program( PROGRAM CONCLUDED
       title: 'Google Season of Docs',
       imageAssetPath: 'assets/Google_season_of_docs.png',
-    ),
+    ),*/
     Program(
       title: 'FOSSASIA Codeheat',
       imageAssetPath: 'assets/fossasia.png',
@@ -952,10 +961,10 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
       title: 'Season of KDE',
       imageAssetPath: 'assets/sokde.png',
     ),
-    Program(
+    /*Program(NOT DONE IN 2025 NO INFORMATION ABOUT 2026
       title: 'Open Summer of Code',
       imageAssetPath: 'assets/open_summer_of_code.png',
-    ),
+    ),*/
   ];
 
   @override
@@ -1023,14 +1032,14 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
         );
         break;
 
-      case 'Google Season of Docs':
-        Navigator.push(
+      /*case 'Google Season of Docs':
+        Navigator.push( PROGRAM CONCLUDED
           context,
           MaterialPageRoute(
             builder: (context) => GoogleSeasonOfDocsScreen(),
           ),
         );
-        break;
+        break;*/
 
       case 'FOSSASIA Codeheat':
         Navigator.push(
@@ -1145,15 +1154,6 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
           context,
           MaterialPageRoute(
             builder: (context) => const LinuxFoundation(),
-          ),
-        );
-        break;
-
-      case 'Open Summer of Code':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const OpenSummerOfCode(),
           ),
         );
         break;
