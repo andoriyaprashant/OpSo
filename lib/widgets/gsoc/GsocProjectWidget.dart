@@ -118,12 +118,18 @@ class GsocProjectWidget extends StatelessWidget {
                                     children: [
                                       Container(
                                         padding: EdgeInsets.all(20),
-                                        color: Colors.grey[100],
+                                        color: isDarkMode ? Colors.grey[800]: Colors.grey[100],
                                         child: Center(
-                                          child: Image.network(
-                                            modal.imageUrl,
-                                            width: 80,
-                                            height: 80,
+                                          child: ColorFiltered(
+                                            colorFilter: ColorFilter.mode(
+                                              isDarkMode ? Colors.white.withOpacity(0.85) : Colors.transparent,
+                                              BlendMode.dstOver,
+                                            ),
+                                            child: Image.network(
+                                              modal.imageUrl,
+                                              width: 80,
+                                              height: 80,
+                                            ),
                                           ),
                                         ),
                                       ),
