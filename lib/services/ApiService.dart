@@ -30,7 +30,6 @@ class ApiService {
         break;
     }
     final String allOrg = '$baseUrl$yearOrgUrl';
-    print("status is" + allOrg);
     try {
       Response response = await Dio().get(allOrg + ".json");
       if (response.statusCode == 200) {
