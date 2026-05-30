@@ -35,7 +35,6 @@ class _SeasonOfKDEState extends State<SeasonOfKDE> {
       sokde2024.add(SokdeProjectModal.fromJson(data));
     }
     projectList = sokde2024;
-    print(projectList);
     response =
         await rootBundle.loadString('assets/projects/sokde/sokde2023.json');
     jsonList = await json.decode(response);
