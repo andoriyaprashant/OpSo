@@ -73,10 +73,10 @@ class _MajorLeagueHackingFellowshipState
                   ),
                 );
                 if (isBookmarked) {
-                  print("Adding");
+ 
                   HandleBookmark.addBookmark(currentProject, currectPage);
                 } else {
-                  print("Deleting");
+ 
                   HandleBookmark.deleteBookmark(currentProject);
                 }
               },

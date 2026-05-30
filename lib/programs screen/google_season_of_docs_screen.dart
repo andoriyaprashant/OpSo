@@ -184,7 +184,6 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
 
   void filterProjects() {
     var filteredProjects = List.from(projectList);
-    print("!@# $selectedOrganizations");
 
     // Filter by organizations
     if (!selectedOrganizations.contains('All')) {
@@ -429,8 +428,6 @@ class _GoogleSeasonOfDocsScreenState extends State<GoogleSeasonOfDocsScreen> {
                           setState(() {
                             selectedOrganizations =
                                 results.isNotEmpty ? results : ['All'];
-                            print(
-                                "this is selected organization $selectedOrganizations");
                             filterProjects();
                           });
                         },
