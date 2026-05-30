@@ -102,7 +102,7 @@ class GsocProjectWidget extends StatelessWidget {
                   child: ElevatedButton(
                       onPressed: () {
                         showModalBottomSheet(
-                          backgroundColor: Colors.white,
+                          backgroundColor: isDarkMode ? Colors.grey.shade900 : Colors.white,
                           showDragHandle: true,
                           context: context,
                           isScrollControlled: true,
@@ -117,14 +117,30 @@ class GsocProjectWidget extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                        padding: EdgeInsets.all(20),
-                                        color: Colors.grey[100],
+                                        padding: const EdgeInsets.all(20),
+                                        decoration: BoxDecoration(
+                                          color: isDarkMode
+                                              ? Colors.grey.shade800
+                                              : Colors.grey[100],
+                                          borderRadius: BorderRadius.circular(12),
+                                        ),
                                         child: Center(
-                                          child: Image.network(
-                                            modal.imageUrl,
-                                            width: 80,
-                                            height: 80,
-                                          ),
+                                          child: isDarkMode
+                                              ? ColorFiltered(
+                                                  colorFilter: ColorFilter.mode(
+                                                      Colors.grey.shade800,
+                                                      BlendMode.multiply),
+                                                  child: Image.network(
+                                                    modal.imageUrl,
+                                                    width: 80,
+                                                    height: 80,
+                                                  ),
+                                                )
+                                              : Image.network(
+                                                  modal.imageUrl,
+                                                  width: 80,
+                                                  height: 80,
+                                                ),
                                         ),
                                       ),
                                       SizedBox(
@@ -141,6 +157,7 @@ class GsocProjectWidget extends StatelessWidget {
                                         itemCount: modal.projects.length,
                                         itemBuilder: (context, projectIndex) {
                                           return _buildProjectCard(
+                                              context,
                                               modal.projects[projectIndex]);
                                         },
                                       )
@@ -163,9 +180,14 @@ class GsocProjectWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildProjectCard(Project project) {
+  Widget _buildProjectCard(BuildContext context, Project project) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final cardColor = isDarkMode ? Colors.grey.shade800 : Colors.grey[100];
+    final textColor = isDarkMode ? Colors.white70 : Colors.grey[700];
+    final titleColor = isDarkMode ? Colors.white : Colors.black;
+
     return Card(
-      color: Colors.grey[100],
+      color: cardColor,
       elevation: 0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: Padding(
@@ -175,13 +197,16 @@ class GsocProjectWidget extends StatelessWidget {
           children: [
             Text(
               project.title,
-              style: TextStyle(fontWeight: FontWeight.w600),
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                color: titleColor,
+              ),
             ),
             SizedBox(
               height: 10,
             ),
             Text(project.shortDescription,
-                style: TextStyle(color: Colors.grey[700])),
+                style: TextStyle(color: textColor)),
             SizedBox(
               height: 10,
             ),
