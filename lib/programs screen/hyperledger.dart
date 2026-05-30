@@ -36,7 +36,6 @@ class _HyperledgerState extends State<Hyperledger> {
       hyperledger2024.add(HyperledgerProjectModal.fromJson(data));
     }
     projectList = hyperledger2024;
-    print(projectList);
     response = await rootBundle
         .loadString('assets/projects/hyperledger/hyperledger2023.json');
     jsonList = await json.decode(response);
