@@ -71,12 +71,11 @@ class _SWOCScreenState extends State<SWOCScreen> {
         list.addAll(jsonList
             .map((data) => SwocProjectModal.getDataFromJson(data))
             .toList());
-        print('Loaded projects from $path: ${list.length}');
       } else {
-        print('Error: JSON data is null or empty in $path');
+        debugPrint('Warning: JSON data is null or empty in $path');
       }
     } catch (e) {
-      print('Error loading projects from $path: $e');
+      debugPrint('Error loading projects from $path: $e');
     }
   }
 

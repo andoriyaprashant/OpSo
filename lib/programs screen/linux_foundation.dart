@@ -100,10 +100,8 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
                 ),
               );
               if (isBookmarked) {
-                print("Adding");
                 HandleBookmark.addBookmark(currentProject, currectPage);
               } else {
-                print("Deleting");
                 HandleBookmark.deleteBookmark(currentProject);
               }
             },
@@ -165,7 +163,6 @@ class _LinuxFoundationState extends State<LinuxFoundation> {
                             horizontal: ScreenUtil().setWidth(40)),
                       ),
                       onFieldSubmitted: (value) {
-                        print("value is $value");
                         search(value.trim());
                       },
                       onChanged: (value) {
