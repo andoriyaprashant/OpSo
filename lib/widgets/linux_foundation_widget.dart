@@ -43,8 +43,8 @@ class LinuxFoundationWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 modal.imageUrl == ""
-                    ? SvgPicture.asset(
-                  'assets/logo.png',
+                    ? Image.asset(
+                  'assets/linux_foundation_logo.png',
                   fit: BoxFit.fitWidth,
                   height: 60,
                 )
