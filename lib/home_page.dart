@@ -37,6 +37,27 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+String selectedCategory = 'All';
+
+final List<String> categories = [
+  'All',
+  'Stipend',
+  'Mentorship',
+  'Beginner Friendly',
+  'Community',
+];
+
+List<Program> get filteredPrograms {
+  if (selectedCategory == 'All') {
+    return programs;
+  }
+
+  return programs
+      .where((program) => program.category == selectedCategory)
+      .toList();
+}
+
   @override
   void initState() {
     showNotification();
@@ -78,69 +99,100 @@ class _HomePageState extends State<HomePage> {
 
   final List<Program> programs = [
     Program(
-      title: 'Google Summer of Code',
-      imageAssetPath: 'assets/gsoc_logo.png',
-    ),
-    Program(
-      title: 'Google Season of Docs',
-      imageAssetPath: 'assets/Google_season_of_docs.png',
-    ),
-    Program(
-      title: 'FOSSASIA Codeheat',
-      imageAssetPath: 'assets/fossasia.png',
-    ),
-    Program(
-      title: 'Major League Hacking Fellowship',
-      imageAssetPath: 'assets/mlh_logo.jpg',
-    ),
-    Program(
-      title: 'Djangonaut Space',
-      imageAssetPath: 'assets/djangonaut.png',
-    ),
-    Program(
-      title: 'Summer of Bitcoin',
-      imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
-    ),
-    Program(
-      title: 'Hyperledger',
-      imageAssetPath: 'assets/hyperledger.png',
-    ),
-    Program(
-      title: 'Linux Foundation',
-      imageAssetPath: 'assets/linux_foundation_logo.png',
-    ),
-    Program(
-      title: 'Hacktoberfest',
-      imageAssetPath: 'assets/hacktoberfest.png',
-    ),
-    Program(
-      title: 'Github Campus Expert',
-      imageAssetPath: 'assets/git_campus_logo.png',
-    ),
-    Program(
-      title: 'Outreachy',
-      imageAssetPath: 'assets/outreachy.png',
-    ),
-    Program(
-      title: 'GirlScript Summer of Code',
-      imageAssetPath: 'assets/girlscript_logo.png',
-    ),
-    Program(
-      title: 'Social Winter of Code',
-      imageAssetPath: 'assets/swoc.png',
-    ),
-    Program(
-      title: 'Season of KDE',
-      imageAssetPath: 'assets/sokde.png',
-    ),
-    Program(
-      title: 'Redox OS Summer of Code',
-      imageAssetPath: 'assets/redox.png',
-    ),
-    Program(
-      title: 'Open Summer of Code',
-      imageAssetPath: 'assets/open_summer_of_code.png',
-    ),
+  title: 'Google Summer of Code',
+  imageAssetPath: 'assets/gsoc_logo.png',
+  category: 'Stipend',
+),
+
+Program(
+  title: 'Google Season of Docs',
+  imageAssetPath: 'assets/Google_season_of_docs.png',
+  category: 'Stipend',
+),
+
+Program(
+  title: 'FOSSASIA Codeheat',
+  imageAssetPath: 'assets/fossasia.png',
+  category: 'Stipend',
+),
+
+Program(
+  title: 'Major League Hacking Fellowship',
+  imageAssetPath: 'assets/mlh_logo.jpg',
+  category: 'Stipend',
+),
+
+Program(
+  title: 'Djangonaut Space',
+  imageAssetPath: 'assets/djangonaut.png',
+  category: 'Mentorship',
+),
+
+Program(
+  title: 'Summer of Bitcoin',
+  imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
+  category: 'Stipend',
+),
+
+Program(
+  title: 'Hyperledger',
+  imageAssetPath: 'assets/hyperledger.png',
+  category: 'Mentorship',
+),
+
+Program(
+  title: 'Linux Foundation',
+  imageAssetPath: 'assets/linux_foundation_logo.png',
+  category: 'Mentorship',
+),
+
+Program(
+  title: 'Hacktoberfest',
+  imageAssetPath: 'assets/hacktoberfest.png',
+  category: 'Beginner Friendly',
+),
+
+Program(
+  title: 'Github Campus Expert',
+  imageAssetPath: 'assets/git_campus_logo.png',
+  category: 'Community',
+),
+
+Program(
+  title: 'Outreachy',
+  imageAssetPath: 'assets/outreachy.png',
+  category: 'Stipend',
+),
+
+Program(
+  title: 'GirlScript Summer of Code',
+  imageAssetPath: 'assets/girlscript_logo.png',
+  category: 'Beginner Friendly',
+),
+
+Program(
+  title: 'Social Winter of Code',
+  imageAssetPath: 'assets/swoc.png',
+  category: 'Beginner Friendly',
+),
+
+Program(
+  title: 'Season of KDE',
+  imageAssetPath: 'assets/sokde.png',
+  category: 'Mentorship',
+),
+
+Program(
+  title: 'Redox OS Summer of Code',
+  imageAssetPath: 'assets/redox.png',
+  category: 'Mentorship',
+),
+
+Program(
+  title: 'Open Summer of Code',
+  imageAssetPath: 'assets/open_summer_of_code.png',
+  category: 'Community',
+),
   ];
 
   Widget _buildDrawerCard({
@@ -600,7 +652,7 @@ class _HomePageState extends State<HomePage> {
                             Icon(Icons.library_books, color: Colors.white, size: 14.sp),
                             SizedBox(width: 8.w),
                             Text(
-                              '${programs.length} Programs',
+                              '${filteredPrograms.length} Programs',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 12.sp,
@@ -617,34 +669,90 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          SliverPadding(
-            padding: EdgeInsets.all(16.w),
-            sliver: SliverGrid(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16.w,
-                mainAxisSpacing: 16.h,
-                childAspectRatio: 0.82,
-              ),
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  final program = programs[index];
-                  return ProgramOption(
-                    title: program.title,
-                    imageAssetPath: program.imageAssetPath,
-                    onTap: () {
-                      navigateToScreen(context, program);
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 12.h),
+              child: SizedBox(
+                height: 45.h,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  itemCount: categories.length,
+                  itemBuilder: (context, index) {
+                    final category = categories[index];
+                    final isSelected = selectedCategory == category;
+
+                    return Padding(
+                      padding: EdgeInsets.only(right: 8.w),
+                      child: ChoiceChip(
+                          showCheckmark: false,
+                          label: Text(category),
+                          selected: selectedCategory == category,
+                          onSelected: (_) {
+                            setState(() {
+                              selectedCategory = category;
+                            });
+                          },
+
+                          selectedColor: Colors.orange.shade400,
+
+                          backgroundColor: Theme.of(context).brightness == Brightness.dark
+                              ? Colors.grey.shade900
+                              : Colors.white,
+
+                          side: BorderSide(
+                            color: selectedCategory == category
+                                ? Colors.orange.shade400
+                                : Colors.orange.shade300,
+                          ),
+
+                          labelStyle: TextStyle(
+                            color: selectedCategory == category
+                                ? Colors.white
+                                : Theme.of(context).brightness == Brightness.dark
+                                    ? Colors.white
+                                    : Colors.black87,
+                            fontWeight: FontWeight.w600,
+                          ),
+
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        )
+                      );
                     },
-                  );
-                },
-                childCount: programs.length,
+                  ),
+                ),
               ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
+            SliverPadding(
+              padding: EdgeInsets.all(16.w),
+              sliver: SliverGrid(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16.w,
+                  mainAxisSpacing: 16.h,
+                  childAspectRatio: 0.82,
+                ),
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    final program = filteredPrograms[index];
+                    return ProgramOption(
+                      title: program.title,
+                      imageAssetPath: program.imageAssetPath,
+                      onTap: () {
+                        navigateToScreen(context, program);
+                      },
+                    );
+                  },
+                  childCount: filteredPrograms.length,
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
 
   void navigateToScreen(BuildContext context, Program program) {
     switch (program.title) {
@@ -892,70 +1000,101 @@ class ProgramOption extends StatelessWidget {
 
 class ProgramSearchDelegate extends SearchDelegate<String> {
   final List<Program> programs = [
-    Program(
-      title: 'Google Summer of Code',
-      imageAssetPath: 'assets/gsoc_logo.png',
-    ),
-    Program(
-      title: 'Google Season of Docs',
-      imageAssetPath: 'assets/Google_season_of_docs.png',
-    ),
-    Program(
-      title: 'FOSSASIA Codeheat',
-      imageAssetPath: 'assets/fossasia.png',
-    ),
-    Program(
-      title: 'Major League Hacking Fellowship',
-      imageAssetPath: 'assets/mlh_logo.jpg',
-    ),
-    Program(
-      title: 'Djangonaut Space',
-      imageAssetPath: 'assets/djangonaut.png',
-    ),
-    Program(
-      title: 'Hyperledger',
-      imageAssetPath: 'assets/hyperledger.png',
-    ),
-    Program(
-      title: 'Summer of Bitcoin',
-      imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
-    ),
-    Program(
-      title: 'Hacktoberfest',
-      imageAssetPath: 'assets/hacktoberfest.png',
-    ),
-    Program(
-      title: 'Github Campus Expert',
-      imageAssetPath: 'assets/git_campus_logo.png',
-    ),
-    Program(
-      title: 'Redox OS Summer of Code',
-      imageAssetPath: 'assets/redox.png',
-    ),
-    Program(
-      title: 'Linux Foundation',
-      imageAssetPath: 'assets/linux_foundation_logo.png',
-    ),
-    Program(
-      title: 'Outreachy',
-      imageAssetPath: 'assets/outreachy.png',
-    ),
-    Program(
-      title: 'GirlScript Summer of Code',
-      imageAssetPath: 'assets/girlscript_logo.png',
-    ),
-    Program(
-      title: 'Social Winter of Code',
-      imageAssetPath: 'assets/swoc.png',
-    ),
-    Program(
-      title: 'Season of KDE',
-      imageAssetPath: 'assets/sokde.png',
-    ),
-    Program(
-      title: 'Open Summer of Code',
-      imageAssetPath: 'assets/open_summer_of_code.png',
-    ),
+ Program(
+  title: 'Google Summer of Code',
+  imageAssetPath: 'assets/gsoc_logo.png',
+  category: 'Stipend',
+),
+
+Program(
+  title: 'Google Season of Docs',
+  imageAssetPath: 'assets/Google_season_of_docs.png',
+  category: 'Stipend',
+),
+
+Program(
+  title: 'FOSSASIA Codeheat',
+  imageAssetPath: 'assets/fossasia.png',
+  category: 'Stipend',
+),
+
+Program(
+  title: 'Major League Hacking Fellowship',
+  imageAssetPath: 'assets/mlh_logo.jpg',
+  category: 'Stipend',
+),
+
+Program(
+  title: 'Djangonaut Space',
+  imageAssetPath: 'assets/djangonaut.png',
+  category: 'Mentorship',
+),
+
+Program(
+  title: 'Summer of Bitcoin',
+  imageAssetPath: 'assets/summer_of_bitcoin_logo.png',
+  category: 'Stipend',
+),
+
+Program(
+  title: 'Hyperledger',
+  imageAssetPath: 'assets/hyperledger.png',
+  category: 'Mentorship',
+),
+
+Program(
+  title: 'Linux Foundation',
+  imageAssetPath: 'assets/linux_foundation_logo.png',
+  category: 'Mentorship',
+),
+
+Program(
+  title: 'Hacktoberfest',
+  imageAssetPath: 'assets/hacktoberfest.png',
+  category: 'Beginner Friendly',
+),
+
+Program(
+  title: 'Github Campus Expert',
+  imageAssetPath: 'assets/git_campus_logo.png',
+  category: 'Community',
+),
+
+Program(
+  title: 'Outreachy',
+  imageAssetPath: 'assets/outreachy.png',
+  category: 'Stipend',
+),
+
+Program(
+  title: 'GirlScript Summer of Code',
+  imageAssetPath: 'assets/girlscript_logo.png',
+  category: 'Beginner Friendly',
+),
+
+Program(
+  title: 'Social Winter of Code',
+  imageAssetPath: 'assets/swoc.png',
+  category: 'Beginner Friendly',
+),
+
+Program(
+  title: 'Season of KDE',
+  imageAssetPath: 'assets/sokde.png',
+  category: 'Mentorship',
+),
+
+Program(
+  title: 'Redox OS Summer of Code',
+  imageAssetPath: 'assets/redox.png',
+  category: 'Mentorship',
+),
+
+Program(
+  title: 'Open Summer of Code',
+  imageAssetPath: 'assets/open_summer_of_code.png',
+  category: 'Community',
+),
   ];
 
   @override
@@ -1167,9 +1306,11 @@ class ProgramSearchDelegate extends SearchDelegate<String> {
 class Program {
   final String title;
   final String imageAssetPath;
+  final String category;
 
   Program({
     required this.title,
     required this.imageAssetPath,
+    required this.category,
   });
 }
