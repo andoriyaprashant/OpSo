@@ -162,10 +162,10 @@ class _SummerOfBitcoinState extends State<SummerOfBitcoin> {
                 ),
               );
               if (isBookmarked) {
-                print("Adding");
+
                 HandleBookmark.addBookmark(currentProject, currectPage);
               } else {
-                print("Deleting");
+
                 HandleBookmark.deleteBookmark(currentProject);
               }
             },

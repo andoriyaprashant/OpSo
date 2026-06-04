@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:opso/modals/book_mark_model.dart';
@@ -176,14 +176,8 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                   ),
                 );
                 if (isBookmarked) {
-                  if (kDebugMode) {
-                    print("Adding");
-                  }
                   HandleBookmark.addBookmark(currentProject, currentPage);
                 } else {
-                  if (kDebugMode) {
-                    print("Deleting");
-                  }
                   HandleBookmark.deleteBookmark(currentProject);
                 }
               },
@@ -294,9 +288,6 @@ class _GoogleSummerOfCodeScreenState extends State<GoogleSummerOfCodeScreen> {
                           setState(() {
                             selectedLanguages =
                                 results.isNotEmpty ? results : [];
-                            if (kDebugMode) {
-                              print(selectedLanguages);
-                            }
                             filterProjects();
                           });
                         },
