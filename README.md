@@ -59,7 +59,7 @@ Thank you for considering contributing to OpSo! We welcome contributions from th
 
 ### Bug Reports and Feature Requests
 
-If you encounter any bugs or have ideas for new features, please [open an issue](https://github.com/yourusername/OpSo/issues) on GitHub. Make sure to provide detailed information about the issue or feature request, including steps to reproduce the bug if applicable.
+If you encounter any bugs or have ideas for new features, please [open an issue](https://github.com/andoriyaprashant/OpSo/issues) on GitHub. Make sure to provide detailed information about the issue or feature request, including steps to reproduce the bug if applicable.
 
 ### Code Contributions
 
