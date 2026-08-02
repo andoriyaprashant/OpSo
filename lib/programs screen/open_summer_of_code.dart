@@ -278,7 +278,7 @@ class _OpenSummerOfCodeState extends State<OpenSummerOfCode> {
                   ),
                 );
               } else {
-                return const Center(child: Text("Some error occured"));
+                return const Center(child: Text("Some error occurred"));
               }
             }),
       ),
