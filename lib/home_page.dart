@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:opso/ChatBotpage.dart';
+import 'package:opso/ChatBotPage.dart';
 import 'package:opso/learning_path.dart';
 import 'package:opso/opso_timeline.dart';
 import 'package:opso/programs%20screen/djangonautspace.dart';
