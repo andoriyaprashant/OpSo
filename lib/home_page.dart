@@ -609,12 +609,12 @@ Program(
                         'WELCOME TO OpSo',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 18.sp,
+                          fontSize: 24.sp,
                           fontWeight: FontWeight.w900,
                           letterSpacing: 1.6,
                         ),
                       ),
-                      SizedBox(height: 2.h),
+                      SizedBox(height: 4.h),
                       Text(
                         'the open source hub',
                         style: TextStyle(
@@ -624,7 +624,7 @@ Program(
                           letterSpacing: 1.1,
                         ),
                       ),
-                      SizedBox(height: 10.h),
+                      SizedBox(height: 14.h),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 28.w),
                         child: Text(
@@ -637,7 +637,7 @@ Program(
                           ),
                         ),
                       ),
-                      SizedBox(height: 15.h),
+                      SizedBox(height: 18.h),
                       // --- NEW TRANSPARENT PROGRAM COUNT BOX ---
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
