@@ -167,10 +167,12 @@ static Future<bool> showNotification({
 
   static Future<bool> _scheduleNotification(
       String description, String body, DateTime dateTime) async {
-    if (await AwesomeNotifications().isNotificationAllowed()) {
+    bool allowed = await AwesomeNotifications().isNotificationAllowed();
+    if (allowed) {
+      int uniqueId = _generateDeterministicId(description, body);
       await AwesomeNotifications().createNotification(
         content: NotificationContent(
-          id: DateTime.now().millisecondsSinceEpoch.remainder(100000),
+          id: uniqueId,
           channelKey: 'high_importance_channel',
           title: description,
           body: body,
@@ -178,22 +180,16 @@ static Future<bool> showNotification({
         ),
         schedule: NotificationCalendar.fromDate(date: dateTime),
       );
-      return true;
-    } else {
-      bool allowed = await AwesomeNotifications().isNotificationAllowed();
-      if (allowed) {
-        await AwesomeNotifications().createNotification(
-          content: NotificationContent(
-            id: DateTime.now().millisecondsSinceEpoch.remainder(100000),
-            channelKey: 'high_importance_channel',
-            title: description,
-            body: body,
-            notificationLayout: NotificationLayout.Default,
-          ),
-          schedule: NotificationCalendar.fromDate(date: dateTime),
-        );
-      }
-      return allowed;
     }
+    return allowed;
+  }
+
+  static int _generateDeterministicId(String title, String body) {
+    String key = "$title|$body";
+    int hash = 0;
+    for (int i = 0; i < key.length; i++) {
+      hash = (hash * 31 + key.codeUnitAt(i)) & 0x7FFFFFFF;
+    }
+    return hash;
   }
 }
